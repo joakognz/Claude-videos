@@ -12,9 +12,9 @@ export const IABadge: React.FC<{ frame: number; t: number }> = ({ frame, t }) =>
     <div style={{
       position: "absolute", left: 540, top: 700 + drift(t, 4, 10), translate: `-50% ${-50 - out * 40}%`,
       scale: String(Math.max(0, s) * (1 - out * 0.3)), rotate: `${-4 + drift(t, 5, 2)}deg`, opacity: 1 - out,
-      filter: `blur(${out * 12}px)`, padding: "6px 48px", borderRadius: 34, background: C.green,
-      fontFamily: SANS, fontWeight: 800, fontSize: 190, lineHeight: 1.1, color: C.bg,
-      boxShadow: "0 0 80px rgba(61,220,151,0.65), 0 30px 60px rgba(0,0,0,0.5)",
+      filter: `blur(${out * 12}px)`, padding: "6px 48px", borderRadius: 34, background: C.accent,
+      fontFamily: SANS, fontWeight: 800, fontSize: 190, lineHeight: 1.1, color: C.ink,
+      boxShadow: "0 0 80px rgba(255,107,26,0.65), 0 30px 60px rgba(0,0,0,0.5)",
     }}>IA</div>
   );
 };

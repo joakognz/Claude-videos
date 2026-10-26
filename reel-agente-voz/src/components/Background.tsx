@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, random } from "remotion";
 import { C, drift } from "../theme";
 
-/** Deep green backdrop with drifting glows and a parallax dot grid. */
+/** Deep teal backdrop with drifting glows and a parallax dot grid. */
 export const Background: React.FC<{ t: number; camX: number; camY: number }> = ({ t, camX, camY }) => {
   const gx = -camX * 0.35 + drift(t, 1, 20);
   const gy = -camY * 0.35 - t * 6;
@@ -10,7 +10,7 @@ export const Background: React.FC<{ t: number; camX: number; camY: number }> = (
     <AbsoluteFill style={{ background: `radial-gradient(130% 90% at 50% 40%, #12332a 0%, ${C.bg} 48%, ${C.bgDeep} 100%)`, overflow: "hidden" }}>
       <div style={{
         position: "absolute", inset: -200,
-        backgroundImage: "radial-gradient(rgba(61,220,151,0.16) 1.6px, transparent 1.8px)",
+        backgroundImage: "radial-gradient(rgba(120,214,186,0.13) 1.6px, transparent 1.8px)",
         backgroundSize: "54px 54px", backgroundPosition: `${gx}px ${gy % 54}px`,
       }} />
       {[0, 1, 2].map((i) => (
@@ -18,7 +18,7 @@ export const Background: React.FC<{ t: number; camX: number; camY: number }> = (
           position: "absolute", width: 900, height: 900, borderRadius: "50%",
           left: 540 - 450 + Math.sin(t * 0.21 + i * 2.1) * 320 - camX * (0.15 + i * 0.05),
           top: 960 - 450 + Math.cos(t * 0.17 + i * 1.7) * 520 - camY * (0.15 + i * 0.05),
-          background: `radial-gradient(circle, rgba(61,220,151,${0.12 - i * 0.025}) 0%, rgba(61,220,151,0) 65%)`,
+          background: `radial-gradient(circle, ${i === 0 ? `rgba(255,107,26,0.07)` : `rgba(61,220,151,${0.09 - i * 0.02})`} 0%, rgba(0,0,0,0) 65%)`,
         }} />
       ))}
       {/* floating specks in a farther parallax layer */}
@@ -29,7 +29,7 @@ export const Background: React.FC<{ t: number; camX: number; camY: number }> = (
           <div key={i} style={{
             position: "absolute", left: x - camX * 0.6, top: (y < 0 ? y + 2100 : y) - 90 - camY * 0.6,
             width: 4 + random(`s${i}`) * 5, height: 4 + random(`s${i}`) * 5, borderRadius: 10,
-            background: C.green, opacity: 0.12 + random(`o${i}`) * 0.2, filter: "blur(1px)",
+            background: C.accent, opacity: 0.12 + random(`o${i}`) * 0.2, filter: "blur(1px)",
           }} />
         );
       })}

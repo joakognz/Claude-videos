@@ -118,8 +118,8 @@ export const Reel: React.FC = () => {
       {t >= S.WIPE - 0.05 && t < WIPE_END + 0.15 && (
         <div style={{
           position: "absolute", left: -40, right: -40, top: barY - 9, height: 18, borderRadius: 18,
-          background: "linear-gradient(90deg, rgba(61,220,151,0) 0%, #eafff5 30%, #ffffff 50%, #eafff5 70%, rgba(61,220,151,0) 100%)",
-          boxShadow: "0 0 60px 24px rgba(61,220,151,0.75), 0 0 160px 60px rgba(61,220,151,0.35)",
+          background: "linear-gradient(90deg, rgba(255,107,26,0) 0%, #fff0e4 30%, #ffffff 50%, #fff0e4 70%, rgba(255,107,26,0) 100%)",
+          boxShadow: "0 0 60px 24px rgba(255,107,26,0.75), 0 0 160px 60px rgba(255,107,26,0.35)",
           opacity: windowed(t, S.WIPE - 0.05, WIPE_END + 0.15, 0.06, 0.12),
         }} />
       )}

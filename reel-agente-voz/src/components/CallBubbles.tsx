@@ -45,18 +45,18 @@ export const CallBubbles: React.FC<{ frame: number; t: number }> = ({ frame, t }
           <div key={i} style={{
             position: "absolute", top: top + drift(t, i + 20, 4), [lucia ? "left" : "right"]: 80, maxWidth: MAX_W,
             padding: "22px 28px", borderRadius: 34, borderBottomLeftRadius: lucia ? 8 : 34, borderBottomRightRadius: lucia ? 34 : 8,
-            background: lucia ? "rgba(17,60,45,0.92)" : "rgba(255,255,255,0.95)",
-            border: lucia ? `2px solid ${C.green}` : "2px solid rgba(255,255,255,1)",
-            boxShadow: lucia ? "0 0 36px rgba(61,220,151,0.28), 0 18px 40px rgba(0,0,0,0.35)" : "0 18px 40px rgba(0,0,0,0.35)",
+            background: lucia ? "rgba(56,26,10,0.92)" : "rgba(255,255,255,0.95)",
+            border: lucia ? `2px solid ${C.accent}` : "2px solid rgba(255,255,255,1)",
+            boxShadow: lucia ? "0 0 36px rgba(255,107,26,0.28), 0 18px 40px rgba(0,0,0,0.35)" : "0 18px 40px rgba(0,0,0,0.35)",
             opacity: appear[i] * fade, scale: String(0.94 + 0.06 * appear[i]),
             transformOrigin: lucia ? "left bottom" : "right bottom", fontFamily: SANS,
           }}>
-            <div style={{ fontWeight: 800, fontSize: 24, letterSpacing: 1.5, marginBottom: 8, color: lucia ? C.green : "rgba(11,31,26,0.55)" }}>
+            <div style={{ fontWeight: 800, fontSize: 24, letterSpacing: 1.5, marginBottom: 8, color: lucia ? C.accent : "rgba(20,17,15,0.55)" }}>
               {lucia ? "LUCÍA (IA)" : "CLIENTE"}
             </div>
             <div style={{
               display: "flex", flexWrap: "wrap", columnGap: FONT * 0.26, fontWeight: 700, fontSize: FONT,
-              lineHeight: `${LINE_H}px`, color: lucia ? C.white : C.bg,
+              lineHeight: `${LINE_H}px`, color: lucia ? C.white : C.ink,
             }}>
               {l.words.map((w, k) => <AnimatedWord key={k} w={w} frame={frame} size={FONT} />)}
             </div>

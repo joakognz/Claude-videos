@@ -15,7 +15,7 @@ const ORDER: Placement[] = [
 
 const EXIT = 10 / FPS;
 
-const emoColor = (t: number) => (t < S.E3 ? "#CFE0FF" : t < S.E4 ? C.red : C.green);
+const emoColor = (t: number) => (t < S.E3 ? "#CFE0FF" : t < S.E4 ? C.red : C.accent);
 
 export const AnimatedWord: React.FC<{ w: Word; frame: number; size: number; color?: string }> = ({ w, frame, size, color = C.white }) => {
   const f0 = w.start * FPS - 2;
@@ -29,7 +29,7 @@ export const AnimatedWord: React.FC<{ w: Word; frame: number; size: number; colo
   };
   if (key) {
     return (
-      <span style={{ ...base, padding: `0 ${size * 0.22}px`, borderRadius: size * 0.2, background: C.green, color: C.bg, boxShadow: `0 0 ${size * 0.5}px rgba(61,220,151,0.55)` }}>
+      <span style={{ ...base, padding: `0 ${size * 0.22}px`, borderRadius: size * 0.2, background: C.accent, color: C.ink, boxShadow: `0 0 ${size * 0.5}px rgba(255,107,26,0.55)` }}>
         {w.text.replace(/[.,]$/, "")}
       </span>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 import { spring } from "remotion";
 import { C, FPS, S, SANS, SERIF, TL, clamp01, EASE, drift } from "../theme";
+import { Logo } from "./Logo";
 
 const pop = (frame: number, at: number, damping = 10) =>
   spring({ frame: frame - at * FPS, fps: FPS, config: { damping, stiffness: 150, mass: 0.8 } });
@@ -18,9 +19,9 @@ export const BigSix: React.FC<{ frame: number; t: number }> = ({ frame, t }) => 
     <div style={{ position: "absolute", inset: 0, opacity: 1 - out, translate: `0px ${-out * 260}px`, filter: `blur(${out * 18}px)` }}>
       <div style={{
         position: "absolute", left: 0, right: 0, top: 880 + drift(t, 50, 12), translate: "0px -50%", textAlign: "center",
-        fontFamily: SERIF, fontStyle: "italic", fontWeight: 700, fontSize: 820, lineHeight: 1, color: C.green,
+        fontFamily: SERIF, fontStyle: "italic", fontWeight: 700, fontSize: 820, lineHeight: 1, color: C.accent,
         scale: String(0.2 + 0.8 * s6), opacity: a6, rotate: `${drift(t, 51, 3)}deg`, filter: `blur(${(1 - a6) * 20}px)`,
-        textShadow: "0 0 90px rgba(61,220,151,0.55)",
+        textShadow: "0 0 90px rgba(255,107,26,0.55)",
       }}>6</div>
       <div style={{
         position: "absolute", left: 0, right: 0, top: 1300, textAlign: "center", fontFamily: SANS, fontWeight: 800,
@@ -30,7 +31,7 @@ export const BigSix: React.FC<{ frame: number; t: number }> = ({ frame, t }) => 
         position: "absolute", left: 0, right: 0, top: 1440, textAlign: "center", fontFamily: SANS, fontWeight: 800,
         fontSize: 60, color: "rgba(255,255,255,0.88)", opacity: clamp01(sZ * 1.4), translate: `0px ${(1 - sZ) * 40}px`,
       }}>
-        <span style={{ color: C.green }}>0</span> personas{" "}
+        <span style={{ color: C.accent }}>0</span> personas{" "}
         <span style={{ fontFamily: SERIF, fontStyle: "italic", fontWeight: 700, fontSize: 68 }}>despiertas</span>
       </div>
     </div>
@@ -45,7 +46,7 @@ export const CTA: React.FC<{ frame: number; t: number }> = ({ frame, t }) => {
   const s2 = pop(frame, w[1].start - 0.05, 9);
   const s3 = pop(frame, w[1].end, 12);
   const s4 = pop(frame, w[2].start, 200);
-  const s5 = pop(frame, w[5].end + 0.1, 200);
+  const s5 = pop(frame, w[3].start, 200);
   const bounce = Math.abs(Math.sin(t * 4.2)) * 26;
   return (
     <div style={{ position: "absolute", inset: 0, translate: `${drift(t, 60, 6)}px ${drift(t, 61, 10)}px` }}>
@@ -56,29 +57,28 @@ export const CTA: React.FC<{ frame: number; t: number }> = ({ frame, t }) => {
       }}>COMENTA</div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 800, display: "flex", justifyContent: "center" }}>
         <div style={{
-          padding: "6px 34px", borderRadius: 30, background: C.green, fontFamily: SANS, fontWeight: 800, fontSize: 122,
-          letterSpacing: 2, color: C.bg, scale: String(Math.max(0, s2)), rotate: `${-2 + drift(t, 62, 1.5)}deg`,
-          boxShadow: `0 0 ${70 + 20 * Math.sin(t * 4)}px rgba(61,220,151,0.6)`,
+          padding: "6px 34px", borderRadius: 30, background: C.accent, fontFamily: SANS, fontWeight: 800, fontSize: 122,
+          letterSpacing: 2, color: C.ink, scale: String(Math.max(0, s2)), rotate: `${-2 + drift(t, 62, 1.5)}deg`,
+          boxShadow: `0 0 ${70 + 20 * Math.sin(t * 4)}px rgba(255,107,26,0.6)`,
         }}>AUDITORIA</div>
       </div>
       <div style={{
         position: "absolute", left: 0, right: 0, top: 1010 + bounce * s3, textAlign: "center", fontFamily: SANS,
-        fontWeight: 800, fontSize: 130, color: C.green, opacity: clamp01(s3), textShadow: "0 0 40px rgba(61,220,151,0.6)",
+        fontWeight: 800, fontSize: 130, color: C.accent, opacity: clamp01(s3), textShadow: "0 0 40px rgba(255,107,26,0.6)",
       }}>↓</div>
       <div style={{
         position: "absolute", left: 80, right: 80, top: 1220, textAlign: "center", fontFamily: SANS, fontWeight: 700,
         fontSize: 56, lineHeight: 1.2, color: "rgba(255,255,255,0.9)", opacity: clamp01(s4 * 1.4), translate: `0px ${(1 - s4) * 40}px`,
       }}>
         Te digo qué automatizar{" "}
-        <span style={{ fontFamily: SERIF, fontStyle: "italic", fontWeight: 700, fontSize: 64, color: C.green }}>primero</span>
+        <span style={{ fontFamily: SERIF, fontStyle: "italic", fontWeight: 700, fontSize: 64, color: C.accent }}>primero</span>
       </div>
       <div style={{
-        position: "absolute", left: 0, right: 0, top: 1460, display: "flex", justifyContent: "center", alignItems: "center",
-        gap: 14, fontFamily: SANS, fontSize: 36, color: C.white, opacity: clamp01(s5) * 0.9, translate: `0px ${(1 - s5) * 30}px`,
+        position: "absolute", left: 0, right: 0, top: 1380, display: "flex", justifyContent: "center",
+        opacity: clamp01(s5 * 1.5), scale: String(0.6 + 0.4 * s5), rotate: `${(1 - s5) * -25 + drift(t, 63, 2)}deg`,
+        filter: `drop-shadow(0 0 30px rgba(255,107,26,0.45))`,
       }}>
-        <div style={{ width: 16, height: 16, borderRadius: 16, background: C.green, boxShadow: `0 0 16px ${C.green}` }} />
-        <span style={{ fontWeight: 800, letterSpacing: 1 }}>AIgencyx</span>
-        <span style={{ fontWeight: 500, letterSpacing: 1, marginLeft: -4 }}>Labs</span>
+        <Logo size={210} />
       </div>
     </div>
   );

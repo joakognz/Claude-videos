@@ -5,13 +5,19 @@ import timelineJson from "./timeline.json";
 // Google Fonts bundled locally (Montserrat is a variable font: one file covers 500-800)
 export const SANS = "Montserrat";
 export const SERIF = "Playfair Display";
+export const LOGO_FONT = "Sora";
 loadFont({ family: SANS, url: staticFile("fonts/Montserrat-latin.woff2"), weight: "500 800" });
 loadFont({ family: SERIF, url: staticFile("fonts/PlayfairDisplay-Italic700-latin.woff2"), weight: "700", style: "italic" });
+loadFont({ family: LOGO_FONT, url: staticFile("fonts/Sora-latin.woff2"), weight: "700 800" });
 
 export const C = {
   bg: "#0B1F1A",
   bgDeep: "#06130F",
-  green: "#3DDC97",
+  accent: "#FF6B1A", // AIgencyx Labs orange
+  accentSoft: "#FF9E4A",
+  teal: "#3DDC97",
+  ink: "#14110F",
+  cream: "#FFF4EC",
   red: "#FF5A5F",
   white: "#FFFFFF",
   muted: "rgba(255,255,255,0.62)",

@@ -67,12 +67,12 @@ export const Flow: React.FC<{ frame: number; t: number }> = ({ frame, t }) => {
           const head = bez(s.p0, s.p1, s.p2, s.p3, p);
           return (
             <g key={i}>
-              <path d={s.d} stroke="rgba(61,220,151,0.22)" strokeWidth={4} fill="none" strokeDasharray="2 12" strokeLinecap="round" opacity={baseIn} />
+              <path d={s.d} stroke="rgba(255,107,26,0.22)" strokeWidth={4} fill="none" strokeDasharray="2 12" strokeLinecap="round" opacity={baseIn} />
               {p > 0 && (
-                <path d={s.d} stroke={C.green} strokeWidth={6} fill="none" strokeLinecap="round" filter="url(#glow)"
+                <path d={s.d} stroke={C.accent} strokeWidth={6} fill="none" strokeLinecap="round" filter="url(#glow)"
                   strokeDasharray={s.len} strokeDashoffset={s.len * (1 - p)} opacity={0.75 + 0.25 * Math.sin(t * 5 + i)} />
               )}
-              {p > 0 && p < 1 && <circle cx={head[0]} cy={head[1]} r={13} fill="#d9fff0" filter="url(#glow)" />}
+              {p > 0 && p < 1 && <circle cx={head[0]} cy={head[1]} r={13} fill="#ffe3cf" filter="url(#glow)" />}
             </g>
           );
         })}
@@ -89,30 +89,30 @@ export const Flow: React.FC<{ frame: number; t: number }> = ({ frame, t }) => {
           <div key={i} style={{
             position: "absolute", left: x - CARD_W / 2, top: y - CARD_H / 2, width: CARD_W, height: CARD_H,
             borderRadius: 30, display: "flex", alignItems: "center", gap: 22, padding: "0 26px",
-            background: on > 0 ? `rgba(18,58,44,${0.75 + 0.15 * on})` : "rgba(12,36,29,0.72)",
-            border: `2px solid rgba(61,220,151,${0.22 + 0.78 * on})`,
-            boxShadow: `0 0 ${20 + 30 * pulse}px rgba(61,220,151,${0.12 + 0.3 * pulse}), 0 20px 40px rgba(0,0,0,0.35)`,
+            background: on > 0 ? `rgba(58,27,10,${0.75 + 0.15 * on})` : "rgba(12,36,29,0.72)",
+            border: `2px solid rgba(255,107,26,${0.22 + 0.78 * on})`,
+            boxShadow: `0 0 ${20 + 30 * pulse}px rgba(255,107,26,${0.12 + 0.3 * pulse}), 0 20px 40px rgba(0,0,0,0.35)`,
             opacity: appear * (0.5 + 0.5 * on) * (1 - gather), scale: String((0.96 + 0.04 * lit) * (1 - 0.7 * gather)),
             filter: `blur(${(1 - appear) * 10 + gather * 18}px)`, fontFamily: SANS,
           }}>
             <div style={{
               width: 76, height: 76, borderRadius: 22, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center",
-              background: on > 0.5 ? "rgba(61,220,151,0.16)" : "rgba(255,255,255,0.05)",
-              border: `2px solid rgba(61,220,151,${0.25 + 0.75 * on})`,
+              background: on > 0.5 ? "rgba(255,107,26,0.16)" : "rgba(255,255,255,0.05)",
+              border: `2px solid rgba(255,107,26,${0.25 + 0.75 * on})`,
             }}>
-              <Icon size={44} color={on > 0.5 ? C.green : "rgba(255,255,255,0.55)"} stroke={1.9} />
+              <Icon size={44} color={on > 0.5 ? C.accent : "rgba(255,255,255,0.55)"} stroke={1.9} />
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontWeight: 800, fontSize: 22, letterSpacing: 2, color: on > 0.5 ? C.green : "rgba(255,255,255,0.4)" }}>
+              <div style={{ fontWeight: 800, fontSize: 22, letterSpacing: 2, color: on > 0.5 ? C.accent : "rgba(255,255,255,0.4)" }}>
                 PASO {i + 1}
               </div>
               <div style={{ fontWeight: 800, fontSize: 33, lineHeight: 1.15, color: C.white, opacity: 0.55 + 0.45 * on }}>{n.label}</div>
             </div>
             <div style={{
-              width: 46, height: 46, borderRadius: 46, background: C.green, display: "flex", alignItems: "center",
+              width: 46, height: 46, borderRadius: 46, background: C.accent, display: "flex", alignItems: "center",
               justifyContent: "center", scale: String(Math.max(0, lit)), opacity: on,
             }}>
-              <IconCheck size={30} color={C.bg} stroke={3} />
+              <IconCheck size={30} color={C.ink} stroke={3} />
             </div>
           </div>
         );

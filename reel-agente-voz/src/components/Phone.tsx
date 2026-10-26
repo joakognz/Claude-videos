@@ -132,7 +132,7 @@ const BARS = 26;
 export const Waveform: React.FC<{ t: number; width: number; height: number; idle?: number }> = ({ t, width, height, idle = 0.18 }) => {
   const lu = envAt("lucia", t);
   const cl = envAt("cliente", t);
-  const color = cl > lu * 1.15 ? C.white : C.green;
+  const color = cl > lu * 1.15 ? C.white : C.accent;
   const level = Math.max(lu, cl);
   const bw = width / BARS;
   return (
@@ -144,7 +144,7 @@ export const Waveform: React.FC<{ t: number; width: number; height: number; idle
         return (
           <div key={i} style={{
             width: bw * 0.55, height: Math.min(1, h) * height, borderRadius: bw, background: color,
-            boxShadow: color === C.green ? `0 0 14px ${C.green}` : "0 0 10px rgba(255,255,255,0.5)",
+            boxShadow: color === C.accent ? `0 0 14px ${C.accent}` : "0 0 10px rgba(255,255,255,0.5)",
           }} />
         );
       })}
@@ -157,19 +157,19 @@ const AIScreen: React.FC<{ t: number }> = ({ t }) => {
   const timer = `00:${String(secs).padStart(2, "0")}`;
   const lu = envAt("lucia", t);
   return (
-    <div style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 70% at 50% 25%,#14523d 0%,#0a2219 55%,#06130f 100%)" }}>
-      <Ripples t={t} color={C.green} strength={0.5 + lu} />
+    <div style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 70% at 50% 25%,#6a2c0c 0%,#2a140a 55%,#0f0907 100%)" }}>
+      <Ripples t={t} color={C.accent} strength={0.5 + lu} />
       <div style={{
         position: "absolute", left: "50%", top: 250, width: 170, height: 170, marginLeft: -85, marginTop: -85,
-        borderRadius: "50%", background: "linear-gradient(135deg,#3DDC97,#1b8a5c)", display: "flex",
-        alignItems: "center", justifyContent: "center", boxShadow: `0 0 ${40 + lu * 60}px rgba(61,220,151,0.7)`,
-        fontFamily: SANS, fontWeight: 800, fontSize: 82, color: C.bg,
+        borderRadius: "50%", background: "linear-gradient(135deg,#FF8A3D,#E2560C)", display: "flex",
+        alignItems: "center", justifyContent: "center", boxShadow: `0 0 ${40 + lu * 60}px rgba(255,107,26,0.7)`,
+        fontFamily: SANS, fontWeight: 800, fontSize: 82, color: C.ink,
       }}>L</div>
       <div style={{ position: "absolute", top: 370, width: "100%", textAlign: "center", fontFamily: SANS }}>
         <div style={{ fontWeight: 800, fontSize: 34, color: C.white }}>Clínica Sonrisa Norte</div>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginTop: 14, padding: "8px 20px", borderRadius: 40, background: "rgba(61,220,151,0.16)", border: `2px solid ${C.green}` }}>
-          <div style={{ width: 12, height: 12, borderRadius: 12, background: C.green, opacity: 0.6 + 0.4 * Math.sin(t * 6) }} />
-          <span style={{ fontWeight: 800, fontSize: 28, color: C.green }}>Lucía (IA)</span>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginTop: 14, padding: "8px 20px", borderRadius: 40, background: "rgba(255,107,26,0.16)", border: `2px solid ${C.accent}` }}>
+          <div style={{ width: 12, height: 12, borderRadius: 12, background: C.accent, opacity: 0.6 + 0.4 * Math.sin(t * 6) }} />
+          <span style={{ fontWeight: 800, fontSize: 28, color: C.accent }}>Lucía (IA)</span>
         </div>
         <div style={{ fontWeight: 600, fontSize: 28, color: C.muted, marginTop: 14 }}>{timer}</div>
       </div>
@@ -224,9 +224,9 @@ export const Phone: React.FC<{ t: number; ry: number; rx: number; rz?: number; o
       {/* "opens in 3D": a floating glass copy of the UI lifts off the screen */}
       {open > 0.001 && (
         <div style={{
-          position: "absolute", inset: BEZEL, borderRadius: SCREEN_R, border: `2px solid rgba(61,220,151,${0.6 * open})`,
-          transform: `translateZ(${open * 90}px)`, background: `rgba(61,220,151,${0.06 * open})`,
-          boxShadow: `0 0 ${50 * open}px rgba(61,220,151,${0.35 * open})`,
+          position: "absolute", inset: BEZEL, borderRadius: SCREEN_R, border: `2px solid rgba(255,107,26,${0.6 * open})`,
+          transform: `translateZ(${open * 90}px)`, background: `rgba(255,107,26,${0.06 * open})`,
+          boxShadow: `0 0 ${50 * open}px rgba(255,107,26,${0.35 * open})`,
         }} />
       )}
     </div>
