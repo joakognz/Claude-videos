@@ -6,29 +6,17 @@ import { card, enter, Icon } from "./ui";
 
 /* ---------- Personajes que caminan por el mundo (coordenadas isométricas) ---------- */
 const walkerA = (t: number): [number, number] => {
-  // Sale por la puerta del verde y se aleja por la acera (escena 8)
-  const x = keys(t, [[T.s8, 0.41], [T.s8 + 0.55, 0.41], [T.s8 + 1.6, 1.35]], (p) => p);
-  const y = keys(t, [[T.s8, -1.45], [T.s8 + 0.55, -0.98], [T.s8 + 1.6, -0.98]], (p) => p);
+  // Sale por la puerta del verde y se aleja por la acera (reseñas)
+  const x = keys(t, [[T.s8, 0.41], [T.s8 + 0.4, 0.41], [T.s8 + 1.4, 1.35]], (p) => p);
+  const y = keys(t, [[T.s8, -1.45], [T.s8 + 0.4, -0.98], [T.s8 + 1.4, -0.98]], (p) => p);
   return [x, y];
-};
-const walkerB = (t: number): [number, number] => {
-  // Cliente que no vuelve: espera y, tras el mensaje, camina hacia el restaurante (escena 9)
-  const x = keys(t, [[T.s9, -2.9], [T.s9 + 1.4, -2.9], [T.s10 + 1.0, -1.5]], (p) => p);
-  return [x, 1.05];
 };
 
 export const Walkers: React.FC<{ t: number }> = ({ t }) => {
-  const a = vis(t, T.s8 + 0.05, T.s9 + 0.9, 0.2, 0.3);
-  const b = vis(t, T.s9 - 0.3, T.s10 + 1.4, 0.3, 0.4);
-  const bob = (k: number) => Math.abs(Math.sin(t * 9 + k)) * 0.025;
+  const a = vis(t, T.s8 + 0.05, T.s10 + 0.4, 0.2, 0.3);
+  const bob = Math.abs(Math.sin(t * 9)) * 0.025;
   const [ax, ay] = walkerA(t);
-  const [bx, by] = walkerB(t);
-  return (
-    <g>
-      {a > 0 ? <Person x={ax} y={ay} z={bob(0)} s={a} seed={0} tint={COLORS.lime} /> : null}
-      {b > 0 ? <Person x={bx} y={by} z={t > T.s9 + 1.4 ? bob(1) : 0} s={b} seed={2} /> : null}
-    </g>
-  );
+  return <g>{a > 0 ? <Person x={ax} y={ay} z={bob} s={a} seed={0} tint={COLORS.lime} /> : null}</g>;
 };
 
 /* ---------- Notificación flotante sobre un personaje ---------- */
@@ -94,61 +82,48 @@ const Notif: React.FC<{
 
 export const ReviewAndReturn: React.FC<{ t: number }> = ({ t }) => {
   const [ax, ay] = walkerA(t);
-  const [bx, by] = walkerB(t);
   return (
-    <>
-      <Notif
-        t={t}
-        start={T.s8 + 0.55}
-        end={T.s9 + 0.1}
-        anchor={toScreen(t, ax, ay, 0.3)}
-        title="¡Gracias por venir!"
-        body="¿Nos dejas tu reseña?"
-        cta="Dejar reseña"
-        ctaAt={T.s9 - 0.45}
-        extra={
-          <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
-            {[0, 1, 2, 3, 4].map((i) => {
-              const f = prog(t, T.s8 + 1.0 + i * 0.12, 0.2, easeOutBack);
-              return (
-                <div key={i} style={{ position: "relative", width: 46, height: 46 }}>
-                  <div style={{ position: "absolute", inset: 0 }}>
-                    <Icon name="star" size={46} color="#59606B" stroke={6} />
-                  </div>
-                  <div style={{ position: "absolute", inset: 0, scale: `${f}`, opacity: clamp(f) }}>
-                    <svg width={46} height={46} viewBox="0 0 100 100">
-                      <path d="M50 10 L61 37 L90 39 L67 57 L75 86 L50 70 L25 86 L33 57 L10 39 L39 37 Z" fill={COLORS.lime} />
-                    </svg>
-                  </div>
+    <Notif
+      t={t}
+      start={T.s8 + 0.3}
+      end={T.s10 + 0.05}
+      anchor={toScreen(t, ax, ay, 0.3)}
+      title="¡Gracias por venir!"
+      body="¿Nos dejas tu reseña?"
+      cta="Dejar reseña"
+      ctaAt={T.s10 - 0.45}
+      extra={
+        <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
+          {[0, 1, 2, 3, 4].map((i) => {
+            const f = prog(t, T.s8 + 0.75 + i * 0.09, 0.18, easeOutBack);
+            return (
+              <div key={i} style={{ position: "relative", width: 46, height: 46 }}>
+                <div style={{ position: "absolute", inset: 0 }}>
+                  <Icon name="star" size={46} color="#59606B" stroke={6} />
                 </div>
-              );
-            })}
-          </div>
-        }
-      />
-      <Notif
-        t={t}
-        start={T.s9 + 0.45}
-        end={T.s10 + 0.1}
-        anchor={toScreen(t, bx, by, 0.3)}
-        title="Hace tiempo que no te vemos."
-        body="Te guardamos tu mesa."
-        cta="Reservar"
-        ctaAt={T.s9 + 1.3}
-      />
-    </>
+                <div style={{ position: "absolute", inset: 0, scale: `${f}`, opacity: clamp(f) }}>
+                  <svg width={46} height={46} viewBox="0 0 100 100">
+                    <path d="M50 10 L61 37 L90 39 L67 57 L75 86 L50 70 L25 86 L33 57 L10 39 L39 37 Z" fill={COLORS.lime} />
+                  </svg>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      }
+    />
   );
 };
 
 /* ---------- Interior del ámbar: camarero, libreta y teléfono ---------- */
 export const Interior: React.FC<{ t: number }> = ({ t }) => {
-  const v = vis(t, T.s11 + 0.05, T.s12 + 0.25, 0.4, 0.35);
+  const v = vis(t, T.s11, T.s12 + 0.15, 0.3, 0.22);
   if (v <= 0) return null;
-  const e = prog(t, T.s11 + 0.05, 0.5);
+  const e = prog(t, T.s11, 0.35);
   const ringing = t > T.s11phone ? 1 : 0;
   const shake = ringing * Math.sin(t * 70) * 5 * (Math.sin(t * 6) > -0.3 ? 1 : 0.2);
-  const scribble = prog(t, T.s11 + 0.2, 1.6, (p) => p);
-  const msgs = [0, 1, 2].map((i) => prog(t, T.s11msgs + i * 0.28, 0.3, easeOutBack));
+  const scribble = prog(t, T.s11 + 0.1, 0.9, (p) => p);
+  const msgs = [0, 1, 2].map((i) => prog(t, T.s11msgs + i * 0.15, 0.22, easeOutBack));
   const lampFlicker = 0.75 + 0.25 * Math.sin(t * 17) * Math.sin(t * 5.3);
   return (
     <div
@@ -252,13 +227,13 @@ export const Interior: React.FC<{ t: number }> = ({ t }) => {
 
 /* ---------- 23:00 y mensajes sin respuesta ---------- */
 export const LateNight: React.FC<{ t: number }> = ({ t }) => {
-  const v = vis(t, T.s12 + 0.15, T.s13 + 0.15, 0.4, 0.3);
+  const v = vis(t, T.s12 + 0.05, T.s13 + 0.12, 0.3, 0.22);
   if (v <= 0) return null;
-  const minutes = keys(t, [[T.s12 + 0.2, -6], [T.s12 + 1.1, 0]], easeOutCubic);
+  const minutes = keys(t, [[T.s12 + 0.1, -6], [T.s12 + 0.8, 0]], easeOutCubic);
   const hourA = ((23 + minutes / 60) % 12) * 30;
   const minA = (minutes * 6 + 360) % 360;
   const none = prog(t, T.s12none, 0.4);
-  const ce = prog(t, T.s12 + 0.15, 0.45, easeOutBack);
+  const ce = prog(t, T.s12 + 0.05, 0.35, easeOutBack);
   const bubbles: [string, number, string][] = [
     ["¿Hay mesa mañana?", T.s12q1, "23:00"],
     ["Somos 8, ¿hay sitio?", T.s12q2, "23:01"],
@@ -295,8 +270,8 @@ export const LateNight: React.FC<{ t: number }> = ({ t }) => {
 
 /* ---------- La burbuja viaja del ámbar al verde ---------- */
 export const TravelBubble: React.FC<{ t: number }> = ({ t }) => {
-  const start = T.s13 + 0.35;
-  const dur = 1.15;
+  const start = T.s13 + 0.15;
+  const dur = 0.85;
   const v = vis(t, T.s13 + 0.1, T.s14a + 0.1, 0.25, 0.3);
   if (v <= 0) return null;
   const p = prog(t, start, dur, easeInOutCubic);
@@ -521,9 +496,9 @@ export const CommentBox: React.FC<{ t: number }> = ({ t }) => {
 /* Oscurecimiento del mundo cuando hay una tarjeta delante (legibilidad) */
 export const dimAmount = (t: number) =>
   Math.max(
-    0.42 * vis(t, T.s3, T.s8 + 0.2, 0.5, 0.4),
-    0.5 * vis(t, T.s11, T.s12 + 0.3, 0.5, 0.4),
-    0.3 * vis(t, T.s12 + 0.2, T.s13 + 0.1, 0.5, 0.3),
+    0.42 * vis(t, T.s3, T.s8 + 0.2, 0.35, 0.3),
+    0.5 * vis(t, T.s11, T.s12 + 0.2, 0.3, 0.25),
+    0.3 * vis(t, T.s12 + 0.1, T.s13 + 0.1, 0.3, 0.25),
     0.4 * vis(t, T.s16, T.close + 0.2, 0.5, 0.4),
   );
 

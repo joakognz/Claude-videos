@@ -12,9 +12,9 @@ const worldState = (t: number) => {
   const amberPeople = keys(t, [[0, 1], [T.s2 + 0.1, 1], [T.s2 + 1.0, 0], [T.close + 0.1, 0], [T.end - 0.15, 1]]);
   const lights = keys(t, [[0, 1], [T.s10, 1], [T.s10 + 1, 0.75], [T.s13 + 0.5, 0.75], [T.s14a + 0.6, 1], [T.s15, 1], [T.s15 + 0.9, 0.06], [T.close, 0.06], [T.end - 0.2, 1]]);
   const amberGlow = keys(t, [[0, 0.75], [T.s13, 0.75], [T.s13 + 1.2, 0.45], [T.s14a + 1, 0.55], [T.s15, 0.55], [T.s15 + 0.8, 0], [T.close, 0], [T.end - 0.2, 0.75]]);
-  const greenPulse = Math.max(0, 1 - Math.abs(t - (T.s13 + 1.3)) / 0.5);
+  const greenPulse = Math.max(0, 1 - Math.abs(t - (T.s13 + 1.0)) / 0.45);
   const greenGlow = keys(t, [[0, 1], [T.s15, 1], [T.s15 + 0.8, 1.45], [T.close, 1.45], [T.end - 0.2, 1]]) + greenPulse * 0.5;
-  const net = vis(t, T.s14a + 0.5, T.s14e + 0.7, 0.3, 0.6);
+  const net = vis(t, T.s14a + 0.3, T.s14e + 0.5, 0.3, 0.45);
   return { greenFull, amberPeople, lights, amberGlow, greenGlow, net };
 };
 
@@ -266,14 +266,14 @@ const pointAt = (poly: P2[], len: number, f: number): P2 => {
 
 const Network: React.FC<{ t: number; amount: number }> = ({ t, amount }) => {
   if (amount <= 0.001) return null;
-  const t0 = T.s14a + 0.6;
+  const t0 = T.s14a + 0.35;
   return (
     <g opacity={amount} style={{ mixBlendMode: "screen" }}>
       {EDGES.map((e, i) => {
-        const p = prog(t, t0 + e.delay, 1.3);
+        const p = prog(t, t0 + e.delay * 0.5, 0.8);
         if (p <= 0) return null;
         const d = `M ${pts(e.poly).replace(/ /g, " L ")}`;
-        const pulse = pointAt(e.poly, e.len, ((t - t0 - e.delay) * 0.45 + i * 0.17) % 1);
+        const pulse = pointAt(e.poly, e.len, (Math.max(0, t - t0 - e.delay * 0.5) * 0.7 + i * 0.17) % 1);
         const end = e.poly[e.poly.length - 1];
         return (
           <g key={i}>

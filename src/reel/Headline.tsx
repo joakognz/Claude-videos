@@ -4,8 +4,8 @@ import { CUES, Cue, LABELS, Part, T } from "./timeline";
 import { fontFamily } from "./fonts";
 import { withSerifI } from "./ui";
 
-const ENTER = 0.3;
-const EXIT = 0.2;
+const ENTER = 0.25;
+const EXIT = 0.15;
 
 const PartView: React.FC<{ p: Part; t: number; start: number; size: number }> = ({ p, t, start, size }) => {
   const at = p.at ?? start;

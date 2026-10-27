@@ -60,8 +60,8 @@ const ChatScreen: React.FC<{ t: number }> = ({ t }) => (
       <div style={enter(t, T.s3chat)}>
         <Bubble side="in">Hola, ¿tenéis mesa para 4 esta noche?</Bubble>
       </div>
-      {t > T.s3chat + 0.45 && t < T.s3reply ? (
-        <div style={{ ...enter(t, T.s3chat + 0.45, 10, 0.15), display: "flex", flexDirection: "column" }}>
+      {t > T.s3chat + 0.3 && t < T.s3reply ? (
+        <div style={{ ...enter(t, T.s3chat + 0.3, 10, 0.12), display: "flex", flexDirection: "column" }}>
           <Typing t={t} />
         </div>
       ) : null}
@@ -126,7 +126,7 @@ const BookingScreen: React.FC<{ t: number }> = ({ t }) => {
           <div
             key={label}
             style={{
-              ...enter(t, T.s4 + 0.25 + i * 0.22, 20),
+              ...enter(t, T.s4 + 0.15 + i * 0.14, 20, 0.25),
               display: "flex",
               alignItems: "center",
               gap: 18,
@@ -143,7 +143,7 @@ const BookingScreen: React.FC<{ t: number }> = ({ t }) => {
         ))}
         <div
           style={{
-            ...enter(t, T.s4 + 0.95, 20),
+            ...enter(t, T.s4 + 0.6, 20, 0.25),
             marginTop: 14,
             height: 96,
             borderRadius: 26,
@@ -176,7 +176,7 @@ const BookingScreen: React.FC<{ t: number }> = ({ t }) => {
 };
 
 const ReminderScreen: React.FC<{ t: number }> = ({ t }) => {
-  const drop = prog(t, T.s5notif, 0.5, easeOutCubic);
+  const drop = prog(t, T.s5notif, 0.35, easeOutCubic);
   const pressed = t >= T.s5press;
   const press = Math.sin(Math.PI * clamp((t - T.s5press + 0.12) / 0.26));
   const ok = prog(t, T.s5press + 0.15, 0.3);
@@ -244,8 +244,8 @@ const ReminderScreen: React.FC<{ t: number }> = ({ t }) => {
 
 const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
   const cancel = prog(t, T.s6cancel, 0.3);
-  const fly = prog(t, T.s6fill, 0.6, easeInOutCubic);
-  const filled = prog(t, T.s6fill + 0.55, 0.3);
+  const fly = prog(t, T.s6fill, 0.45, easeInOutCubic);
+  const filled = prog(t, T.s6fill + 0.42, 0.25);
   const ROW_Y = [150, 250, 350];
   const rows: [string, string, string][] = [
     ["Mesa 2", "20:30", "Marta"],
@@ -277,7 +277,7 @@ const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
               padding: "0 22px",
               background: showFilled ? `rgba(198,255,61,${0.16 * filled})` : "#1F2228",
               border: showFilled ? `2px solid ${COLORS.lime}` : "1.5px solid rgba(255,255,255,0.06)",
-              ...enter(t, T.s6 + 0.1 + i * 0.12, 16),
+              ...enter(t, T.s6 + 0.05 + i * 0.08, 16, 0.25),
             }}
           >
             <div style={{ fontSize: 26, fontWeight: 800, color: COLORS.white, width: 112, whiteSpace: "nowrap" }}>{mesa}</div>
@@ -301,7 +301,7 @@ const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
           </div>
         );
       })}
-      <div style={{ position: "absolute", left: 26, top: 480, fontSize: 22, fontWeight: 700, letterSpacing: "0.2em", color: COLORS.muted, ...enter(t, T.s6 + 0.4, 12) }}>
+      <div style={{ position: "absolute", left: 26, top: 480, fontSize: 22, fontWeight: 700, letterSpacing: "0.2em", color: COLORS.muted, ...enter(t, T.s6 + 0.2, 12, 0.25) }}>
         LISTA DE ESPERA
       </div>
       {/* Laura vuela desde la lista hasta la mesa liberada */}
@@ -321,7 +321,7 @@ const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
             gap: 16,
             padding: "0 22px",
             opacity: 1 - filled,
-            ...(t < T.s6 + 0.6 ? enter(t, T.s6 + 0.5, 16) : {}),
+            ...(t < T.s6 + 0.5 ? enter(t, T.s6 + 0.25, 16, 0.25) : {}),
           }}
         >
           <div style={{ width: 46, height: 46, borderRadius: 23, background: "#3A3F48", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -345,7 +345,7 @@ const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
           alignItems: "center",
           gap: 16,
           padding: "0 22px",
-          ...(t < T.s6 + 0.75 ? enter(t, T.s6 + 0.65, 16) : {}),
+          ...(t < T.s6 + 0.6 ? enter(t, T.s6 + 0.32, 16, 0.25) : {}),
         }}
       >
         <div style={{ width: 46, height: 46, borderRadius: 23, background: "#3A3F48", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -358,56 +358,16 @@ const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const MenuScreen: React.FC<{ t: number }> = ({ t }) => (
-  <>
-    <StatusBar time="13:05" />
-    <Header />
-    <div style={{ display: "flex", flexDirection: "column", gap: 16, padding: 26 }}>
-      <div style={enter(t, T.s7 + 0.15)}>
-        <Bubble side="in">¿El risotto lleva frutos secos?</Bubble>
-      </div>
-      <div style={{ ...enter(t, T.s7reply), alignSelf: "flex-end", width: "88%", ...card, borderRadius: 26, padding: 20, background: "#1C2014", border: `2px solid ${COLORS.lime}55` }}>
-        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-          <div style={{ width: 70, height: 70, borderRadius: 35, background: "radial-gradient(circle at 40% 35%, #F3E3C0, #C9A86A 70%)", border: "5px solid #EDEDED" }} />
-          <div>
-            <div style={{ fontSize: 20, color: COLORS.muted, fontWeight: 700, letterSpacing: "0.12em" }}>CARTA</div>
-            <div style={{ fontSize: 29, color: COLORS.white, fontWeight: 800 }}>Risotto de setas</div>
-          </div>
-        </div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 16 }}>
-          <div style={{ ...enter(t, T.s7pills[0], 10, 0.25), padding: "8px 14px", borderRadius: 14, background: COLORS.lime, color: COLORS.ink, fontSize: 22, fontWeight: 800 }}>
-            Sin frutos secos
-          </div>
-          <div style={{ ...enter(t, T.s7pills[0] + 0.2, 10, 0.25), padding: "8px 14px", borderRadius: 14, background: "#2A2E35", color: COLORS.white, fontSize: 22, fontWeight: 700 }}>
-            Alérgenos: lácteos
-          </div>
-        </div>
-      </div>
-      {t > T.s7pills[1] - 0.1 ? (
-        <div style={enter(t, T.s7pills[1] - 0.1)}>
-          <Bubble side="in">¿Y para un grupo de 10?</Bubble>
-        </div>
-      ) : null}
-      {t > T.s7pills[1] + 0.35 ? (
-        <div style={{ ...enter(t, T.s7pills[1] + 0.35), display: "flex", flexDirection: "column" }}>
-          <Bubble side="out">Perfecto, tenemos menú de grupo.</Bubble>
-        </div>
-      ) : null}
-    </div>
-  </>
-);
-
 const SCREENS: { start: number; end: number; C: React.FC<{ t: number }> }[] = [
   { start: T.s3 - 1, end: T.s4, C: ChatScreen },
   { start: T.s4, end: T.s5, C: BookingScreen },
   { start: T.s5, end: T.s6, C: ReminderScreen },
-  { start: T.s6, end: T.s7, C: WaitlistScreen },
-  { start: T.s7, end: T.s8 + 1, C: MenuScreen },
+  { start: T.s6, end: T.s8 + 1, C: WaitlistScreen },
 ];
 
 export const Phone: React.FC<{ t: number }> = ({ t }) => {
-  const inP = prog(t, T.s3, 0.6, easeOutCubic);
-  const outP = prog(t, T.s8 - 0.05, 0.45, easeInCubic);
+  const inP = prog(t, T.s3, 0.4, easeOutCubic);
+  const outP = prog(t, T.s8 - 0.05, 0.35, easeInCubic);
   if (inP <= 0 || outP >= 1) return null;
   const y = (1 - inP) * 1350 + outP * 1350;
   return (
@@ -428,8 +388,8 @@ export const Phone: React.FC<{ t: number }> = ({ t }) => {
     >
       <div style={{ position: "relative", width: SW, height: PH - 28, borderRadius: 56, overflow: "hidden", background: "linear-gradient(180deg,#15171C,#0E1013)" }}>
         {SCREENS.map(({ start, end, C }, i) => {
-          const a = i === 0 ? 1 : prog(t, start - 0.05, 0.42, easeInOutCubic);
-          const b = i === SCREENS.length - 1 ? 0 : prog(t, end - 0.05, 0.42, easeInOutCubic);
+          const a = i === 0 ? 1 : prog(t, start - 0.05, 0.3, easeInOutCubic);
+          const b = i === SCREENS.length - 1 ? 0 : prog(t, end - 0.05, 0.3, easeInOutCubic);
           if (a <= 0 || b >= 1) return null;
           return (
             <div key={i} style={{ position: "absolute", inset: 0, translate: `${(1 - a) * SW - b * SW}px 0`, fontFamily: "inherit" }}>

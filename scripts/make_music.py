@@ -1,4 +1,6 @@
-"""Genera una pista electrónica minimalista (105 BPM) con la automatización de volumen
+"""Uso: make_music.py salida.wav duración [funciones bajada cierre fin_voz bpm]
+
+Genera una pista electrónica minimalista (105 BPM) con la automatización de volumen
 del reel: baja en la intro, sube en las funciones, baja en "Mientras tanto, enfrente…"
 y vuelve a subir en el cierre. Siempre muy por debajo de la locución."""
 import sys
@@ -7,9 +9,11 @@ import wave
 import numpy as np
 
 SR = 44100
-DUR = float(sys.argv[2]) if len(sys.argv) > 2 else 63.28
 OUT = sys.argv[1] if len(sys.argv) > 1 else "public/music.wav"
-BPM = 105
+DUR = float(sys.argv[2]) if len(sys.argv) > 2 else 63.28
+# Secciones opcionales: inicio funciones, bajada, subida de cierre, fin de la voz, BPM
+SECTIONS = [float(v) for v in sys.argv[3:7]] if len(sys.argv) > 6 else [5.65, 26.6, 40.7, 62.28]
+BPM = float(sys.argv[7]) if len(sys.argv) > 7 else 105
 BEAT = 60 / BPM
 N = int(SR * DUR)
 t = np.arange(N) / SR
@@ -30,7 +34,7 @@ def chord_at(sec):
 
 
 # Secciones (segundos, sincronizadas con la locución)
-FEAT_START, DUCK_START, CLOSE_START, END_VOICE = 5.65, 26.6, 40.7, 62.28
+FEAT_START, DUCK_START, CLOSE_START, END_VOICE = SECTIONS
 
 
 def env_curve(points):

@@ -30,10 +30,10 @@ const cameraTravel = (t: number, fps: number) => {
 
 /** Ventanas con movimiento rápido de interfaz (entradas, transiciones, vuelos). */
 const UI_FAST: [number, number][] = [
-  [T.s3, 0.7], [T.s4 - 0.05, 0.5], [T.s5 - 0.05, 0.5], [T.s5notif, 0.55], [T.s6 - 0.05, 0.5], [T.s6fill, 0.65],
-  [T.s7 - 0.05, 0.5], [T.s8 - 0.05, 0.5], [T.s8 + 0.55, 0.45], [T.s9, 0.45], [T.s9 + 0.45, 0.45], [T.s10 - 0.2, 0.35],
-  [T.s11, 0.6], [T.s12 + 0.15, 0.5], [T.s13 + 0.1, 1.6], ...T.icons.map((x) => [x, 0.45] as [number, number]),
-  [T.s15 + 0.1, 0.6], [T.s16 + 0.1, 0.55], [T.close - 0.1, 0.5],
+  [T.s3, 0.5], [T.s4 - 0.05, 0.4], [T.s5 - 0.05, 0.45], [T.s6 - 0.05, 0.4], [T.s6fill, 0.5],
+  [T.s8 - 0.05, 0.45], [T.s8 + 0.3, 0.4], [T.s10 - 0.2, 0.35], [T.s11, 0.4], [T.s12, 0.45],
+  [T.s13 + 0.1, 1.0], [T.s14brand, 0.4], ...T.icons.map((x) => [x, 0.4] as [number, number]),
+  [T.s15 + 0.1, 0.6], [T.s16 + 0.1, 0.5], [T.close - 0.1, 0.5],
 ];
 const uiSamples = (t: number) => (UI_FAST.some(([a, d]) => t >= a - 0.05 && t <= a + d) ? 16 : 5);
 
@@ -111,8 +111,8 @@ export const Reel: React.FC<{ motionBlur?: boolean }> = ({ motionBlur = true }) 
       <MotionBlur samples={uiN} shutter={SHUTTER}>
         <UILayer />
       </MotionBlur>
-      <Audio src={staticFile("voiceover.mp3")} />
-      <Audio src={staticFile("music.wav")} />
+      <Audio src={staticFile("voiceover_30s.mp3")} />
+      <Audio src={staticFile("music_30s.wav")} />
     </AbsoluteFill>
   );
 };
