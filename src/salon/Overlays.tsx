@@ -1,5 +1,5 @@
 import React from "react";
-import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, float, lerp, prog, pulse, vis } from "../reel/anim";
+import { clamp, COLORS, easeInOutCubic, easeOutBack, float, lerp, prog, pulse, vis } from "../reel/anim";
 import { CommentCard } from "../reel/CommentCard";
 import { BRAND, Logo } from "../reel/Logo";
 import { card, enter, Icon } from "../reel/ui";
