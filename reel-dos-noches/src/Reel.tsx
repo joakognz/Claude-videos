@@ -72,6 +72,16 @@ const World: React.FC = () => {
       <ZeroColumn t={t} frame={frame} />
       <BigFive t={t} frame={frame} />
       <LightSweep t={t} />
+    </AbsoluteFill>
+  );
+};
+
+/** Text stays outside the camera push so it never drifts into the unsafe strips. */
+const TextLayer: React.FC = () => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  return (
+    <AbsoluteFill>
       <Kicker t={t} frame={frame} />
       <Captions frame={frame} t={t} />
       <NightCounters t={t} frame={frame} />
@@ -95,6 +105,9 @@ export const Reel: React.FC = () => {
           <World />
         </CameraMotionBlur>
       </AbsoluteFill>
+      <CameraMotionBlur samples={MB_SAMPLES} shutterAngle={180}>
+        <TextLayer />
+      </CameraMotionBlur>
       <GrainVignette frame={frame} />
       <Audio src={staticFile("audio/mix.wav")} />
     </AbsoluteFill>

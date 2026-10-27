@@ -52,16 +52,19 @@ export const AnimatedWord: React.FC<{ w: Word; frame: number; size: number; emoC
   return <span style={base}>{w.text}</span>;
 };
 
-export const CaptionBlock: React.FC<{ sentence: Sentence; frame: number; t: number; y: number; exitAt: number; emo?: string; size?: number }> = ({
-  sentence, frame, t, y, exitAt, emo, size = 66,
-}) => {
+export const CaptionBlock: React.FC<{
+  sentence: Sentence; frame: number; t: number; y: number; exitAt: number; handoffAt?: number; emo?: string; size?: number;
+}> = ({ sentence, frame, t, y, exitAt, handoffAt = Infinity, emo, size = 66 }) => {
   const p = EASE(clamp01((t - exitAt) / EXIT));
+  // the next sentence starts in the same place: step aside (up, dimmed) and leave once the 10-frame hold is over
+  const h = EASE(clamp01((t - handoffAt + 0.03) / 0.18));
   return (
     <div style={{
-      position: "absolute", left: 70, right: 70, top: y, translate: `0px ${-50 - p * 80}%`,
+      position: "absolute", left: 70, right: 70, top: y, translate: `0px ${-50 - h * 100 - p * 40}%`,
       display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "baseline",
       columnGap: size * 0.26, rowGap: size * 0.06, fontFamily: SANS, fontWeight: 800, fontSize: size,
-      lineHeight: 1.1, color: C.white, textAlign: "center", opacity: 1 - p, filter: `blur(${p * 14}px)`,
+      lineHeight: 1.1, color: C.white, textAlign: "center", opacity: (1 - 0.6 * h) * (1 - p),
+      filter: `blur(${h * 3 + p * 14}px)`, scale: String(1 - 0.12 * h),
       textShadow: "0 6px 30px rgba(0,0,0,0.7)",
     }}>
       {sentence.words.map((w, i) => (
@@ -80,7 +83,10 @@ export const Captions: React.FC<{ frame: number; t: number }> = ({ frame, t }) =
       // stays on screen at least 10 frames after its last word
       const exitAt = Math.max(Math.min(nextStart - 0.04, pl.until ?? Infinity), s.end + 10 / FPS);
       if (t < s.start - 0.15 || t > exitAt + EXIT) return null;
-      return <CaptionBlock key={pl.id} sentence={s} frame={frame} t={t} y={pl.y ?? ZONE_Y[pl.zone]} exitAt={exitAt} emo={pl.emo} />;
+      return (
+        <CaptionBlock key={pl.id} sentence={s} frame={frame} t={t} y={pl.y ?? ZONE_Y[pl.zone]} exitAt={exitAt}
+          handoffAt={exitAt > nextStart ? nextStart : Infinity} emo={pl.emo} />
+      );
     })}
   </>
 );
