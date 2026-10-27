@@ -6,7 +6,7 @@ export const Logo: React.FC<{ size: number }> = ({ size }) => (
   <div style={{ width: size, height: size, position: "relative" }}>
     <div style={{
       position: "absolute", left: 0, top: 0, width: 800, height: 800, scale: String(size / 800), transformOrigin: "0 0",
-      borderRadius: "50%", background: C.accent, display: "flex", alignItems: "center", justifyContent: "center",
+      borderRadius: "50%", background: C.logo, display: "flex", alignItems: "center", justifyContent: "center",
       fontFamily: LOGO_FONT, color: C.ink,
     }}>
       <div style={{

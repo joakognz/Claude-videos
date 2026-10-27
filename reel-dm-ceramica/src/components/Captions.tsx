@@ -8,13 +8,13 @@ const cap = TL.captions;
 // order of on-screen narration captions and where they sit
 const ORDER: Placement[] = [
   { id: "E1", y: 1488 }, { id: "E2", y: 1488 }, { id: "E3", y: 1488 }, { id: "E4", y: 1488, until: S.E5 },
-  { id: "E6", y: 360 }, { id: "E7", y: 360 }, { id: "E8", y: 360 }, { id: "E9", y: 360 },
-  { id: "E10", y: 360 }, { id: "E11", y: 360 }, { id: "E12", y: 360, until: S.E13 },
-  { id: "E14", y: 1490, until: S.E15 },
+  { id: "E6", y: 372 }, { id: "E7", y: 372 }, { id: "E8", y: 372 }, { id: "E9", y: 372 },
+  { id: "E10", y: 372 }, { id: "E11", y: 372 }, { id: "E12", y: 372, until: S.E13 },
+  { id: "E14", y: 1488, until: S.E15 },
 ];
 
 // long sentences are split into pages of max two lines (display-word index where each new page starts)
-const PAGES: Record<string, number[]> = { E3: [3], E12: [5], E13: [2], E14: [4] };
+const PAGES: Record<string, number[]> = { E3: [3], E14: [4] };
 
 type Page = Placement & { sentence: Sentence; key: string; lift?: number };
 const PAGED: Page[] = ORDER.flatMap((pl, i) => {
@@ -53,7 +53,7 @@ const lines = (s: Sentence) => {
 // (still fully readable) instead of overlapping the incoming words.
 PAGED.forEach((pg, i) => {
   const nx = PAGED[i + 1];
-  if (nx && nx.y === pg.y && pg.until !== undefined && pg.until < pg.sentence.end + HOLD) {
+  if (nx && nx.y === pg.y && pg.y > 960 && pg.until !== undefined && pg.until < pg.sentence.end + HOLD) {
     pg.lift = ((lines(pg.sentence) + lines(nx.sentence)) / 2) * LINE + 18;
   }
 });

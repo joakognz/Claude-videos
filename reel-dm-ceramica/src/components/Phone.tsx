@@ -2,6 +2,7 @@ import React from "react";
 import { spring } from "remotion";
 import { C, FPS, S, SANS, TL, clamp01, drift, windowed } from "../theme";
 import { IconBack, IconChecks, IconImage, IconInfo, IconMug, IconSend, IconSmile } from "./Icons";
+import { ChatThread } from "./Chat";
 
 export const PHONE_W = 480;
 export const PHONE_H = 980;
@@ -138,44 +139,26 @@ const InboxScreen: React.FC<{ t: number; frame: number; loop: boolean }> = ({ t,
   );
 };
 
-/** Green "escribiendo…" bubble (right). */
-export const TypingBubble: React.FC<{ t: number; p: number; size?: number }> = ({ t, p, size = 36 }) => (
-  <div style={{
-    alignSelf: "flex-end", display: "flex", gap: size * 0.28, padding: `${size * 0.62}px ${size * 0.75}px`, borderRadius: size,
-    borderBottomRightRadius: size * 0.25, background: C.accent, opacity: clamp01(p * 1.6), scale: String(0.6 + 0.4 * p),
-    transformOrigin: "right bottom", boxShadow: "0 0 30px rgba(61,220,151,0.35)",
-  }}>
-    {[0, 1, 2].map((i) => (
-      <div key={i} style={{
-        width: size * 0.36, height: size * 0.36, borderRadius: size, background: C.ink,
-        opacity: 0.35 + 0.65 * Math.max(0, Math.sin(t * 9 - i * 0.9)),
-        translate: `0px ${-Math.max(0, Math.sin(t * 9 - i * 0.9)) * size * 0.16}px`,
-      }} />
-    ))}
-  </div>
-);
-
 /** DESPUÉS: the same inbox, now answered by the shop's AI assistant. */
 const AIScreen: React.FC<{ t: number; frame: number }> = ({ t, frame }) => {
   const chip = pop(frame, S.E4 + 0.15);
-  const typingIn = pop(frame, S.E4 + 0.9);
-  const typingOut = clamp01((t - (S.E5 - 0.25)) / 0.2);
+  const chipOut = clamp01((t - (S.E5 - 0.3)) / 0.3);
   return (
     <div style={{ position: "absolute", inset: 0, background: "radial-gradient(120% 60% at 50% 0%,#13372a 0%,#0b1813 55%,#070d0a 100%)" }}>
       <Header t={t} ai />
-      <div style={{ position: "absolute", top: 205, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-        <div style={{
-          display: "flex", alignItems: "center", gap: 10, padding: "8px 18px", borderRadius: 30,
-          background: "rgba(61,220,151,0.12)", border: `1.5px solid ${C.accent}`, fontFamily: SANS, fontWeight: 800,
-          fontSize: 20, color: C.accent, opacity: clamp01(chip * 1.5), scale: String(0.7 + 0.3 * chip),
-        }}>
-          <div style={{ width: 10, height: 10, borderRadius: 10, background: C.accent, opacity: 0.6 + 0.4 * Math.sin(t * 6) }} />
-          Asistente IA activo · 24/7
+      {chipOut < 1 && (
+        <div style={{ position: "absolute", top: 205, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+          <div style={{
+            display: "flex", alignItems: "center", gap: 10, padding: "8px 18px", borderRadius: 30,
+            background: "rgba(61,220,151,0.12)", border: `1.5px solid ${C.accent}`, fontFamily: SANS, fontWeight: 800,
+            fontSize: 20, color: C.accent, opacity: clamp01(chip * 1.5) * (1 - chipOut), scale: String(0.7 + 0.3 * chip),
+          }}>
+            <div style={{ width: 10, height: 10, borderRadius: 10, background: C.accent, opacity: 0.6 + 0.4 * Math.sin(t * 6) }} />
+            Asistente IA activo · 24/7
+          </div>
         </div>
-      </div>
-      <div style={{ position: "absolute", left: 22, right: 22, bottom: 150, display: "flex", flexDirection: "column" }}>
-        {t >= S.E4 + 0.9 && typingOut < 1 && <TypingBubble t={t} p={typingIn * (1 - typingOut)} />}
-      </div>
+      )}
+      <ChatThread t={t} frame={frame} />
       <Composer t={t} frozen={false} ai />
     </div>
   );

@@ -2,19 +2,20 @@ import React from "react";
 import { spring } from "remotion";
 import { C, FPS, S, SANS, TL, clamp01, drift, EASE } from "../theme";
 
-/** E1-E4: giant "23:07" behind the phone. */
+/** E1-E4 and again in E14 (the loop): giant "23:07" behind the phone. */
 export const BigClock: React.FC<{ frame: number; t: number; camX: number; camY: number }> = ({ frame, t, camX, camY }) => {
-  const s = spring({ frame: frame - 2, fps: FPS, config: { damping: 200, stiffness: 90 } });
-  const out = EASE(clamp01((t - (S.E5 - 0.5)) / 0.6));
-  if (out >= 1) return null;
-  const green = clamp01((t - S.E4) / 0.4);
-  const settle = EASE(clamp01((t - S.E4 - 0.1) / 0.9));
+  const loop = t >= S.E14 - 0.3;
+  const s = spring({ frame: frame - (loop ? (S.E14 - 0.1) * FPS : 2), fps: FPS, config: { damping: 200, stiffness: 90 } });
+  const out = EASE(clamp01((t - (loop ? S.E15 - 0.1 : S.E5 - 0.5)) / 0.6));
+  if (out >= 1 || s <= 0.001) return null;
+  const green = loop ? 0 : clamp01((t - S.E4) / 0.4);
+  const settle = loop ? 0 : EASE(clamp01((t - S.E4 - 0.1) / 0.9));
   return (
     <div style={{
       position: "absolute", left: 0, right: 0, top: 352 + 22 * settle + drift(t, 31, 8) - camY * 0.3, translate: `${-camX * 0.3}px -50%`,
       textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 270, letterSpacing: -10, lineHeight: 1,
       color: green > 0 ? `rgba(${207 - 146 * green},${224 - 4 * green},${255 - 104 * green},0.95)` : "rgba(207,224,255,0.92)",
-      opacity: s * (1 - out), scale: String((0.9 + 0.1 * s + t * 0.004) * (1 - 0.16 * settle)), filter: `blur(${(1 - s) * 18 + out * 16}px)`,
+      opacity: s * (1 - out), scale: String((0.9 + 0.1 * s + (loop ? t - S.E14 : t) * 0.004) * (1 - 0.16 * settle)), filter: `blur(${(1 - s) * 18 + out * 16}px)`,
       textShadow: green > 0 ? `0 0 60px rgba(61,220,151,${0.35 * green})` : "0 0 50px rgba(207,224,255,0.25)",
     }}>23:07</div>
   );
