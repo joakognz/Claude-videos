@@ -5,13 +5,16 @@ import { BOT_Y, C, CAP, FPS, S, SANS, SERIF, Sentence, TOP_Y, Word, clamp01, rgb
 // caption zones: the upper strip of each panel (above the window and the phone)
 export const ZONE_Y = { top: TOP_Y + 102, bottom: BOT_Y + 102 };
 type Zone = keyof typeof ZONE_Y;
-type Placement = { id: string; zone: Zone; emo?: string; until?: number };
+type Placement = { id: string; zone: Zone; emo?: string; until?: number; y?: number };
 
 const ORDER: Placement[] = [
   { id: "S1a", zone: "bottom" }, { id: "S1b", zone: "bottom", emo: "#FF8A8D", until: S.E2 + 0.15 },
   { id: "S2a", zone: "top" }, { id: "S2b", zone: "top", until: S.E3 + 0.15 },
   { id: "S3a", zone: "bottom" }, { id: "S3b", zone: "bottom", emo: C.green, until: S.E4 + 0.15 },
   { id: "S4", zone: "top", until: S.E5 },
+  { id: "S6a", zone: "top", until: S.E7 }, { id: "S6b", zone: "bottom", until: S.E7 + 0.1 },
+  { id: "S7", zone: "top", emo: C.red, y: 334 }, { id: "S8", zone: "top", until: S.E9, y: 334 },
+  { id: "S9a", zone: "top", until: 999 },
 ];
 
 const EXIT = 10 / FPS;
@@ -77,7 +80,7 @@ export const Captions: React.FC<{ frame: number; t: number }> = ({ frame, t }) =
       // stays on screen at least 10 frames after its last word
       const exitAt = Math.max(Math.min(nextStart - 0.04, pl.until ?? Infinity), s.end + 10 / FPS);
       if (t < s.start - 0.15 || t > exitAt + EXIT) return null;
-      return <CaptionBlock key={pl.id} sentence={s} frame={frame} t={t} y={ZONE_Y[pl.zone]} exitAt={exitAt} emo={pl.emo} />;
+      return <CaptionBlock key={pl.id} sentence={s} frame={frame} t={t} y={pl.y ?? ZONE_Y[pl.zone]} exitAt={exitAt} emo={pl.emo} />;
     })}
   </>
 );

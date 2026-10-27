@@ -2,6 +2,7 @@ import React from "react";
 import { C, S, SANS, W, clamp01, drift, rgba, windowed, EASE_OUT } from "../theme";
 import { clockText } from "./Clock";
 import { IconMoon, IconSpark } from "./Icons";
+import { AlarmScreen, PhoneFeed } from "./Feed";
 
 // drawn at full size and scaled down inside the panels, so the close-ups in E7/E8 stay sharp
 export const PHONE_W = 400;
@@ -70,7 +71,8 @@ const DndOverlay: React.FC<{ t: number; side: Side }> = ({ t, side }) => {
       <div style={{
         position: "absolute", left: 40, right: 40, top: 350, padding: "22px 0", borderRadius: 34,
         background: "rgba(40,36,60,0.75)", display: "flex", alignItems: "center", justifyContent: "center", gap: 14,
-        fontFamily: SANS, fontWeight: 800, fontSize: 30, color: C.white, opacity: p * (top ? 1 : 1 - windowed(t, aiOnAt(), 999, 0.4, 0.01)),
+        fontFamily: SANS, fontWeight: 800, fontSize: 30, color: C.white,
+        opacity: p * (top ? 1 : 1 - windowed(t, aiOnAt(), 999, 0.4, 0.01)) * (1 - clamp01((t - S.E5) / 0.4)),
         translate: `0px ${(1 - p) * 30}px`,
       }}>
         <IconMoon size={36} color="#B9A7FF" stroke={2.4} /> No molestar
@@ -90,6 +92,7 @@ const AiOverlay: React.FC<{ t: number }> = ({ t }) => {
         background: rgba(C.green, 0.18), border: `3px solid ${C.green}`, display: "flex", alignItems: "center",
         justifyContent: "center", gap: 14, fontFamily: SANS, fontWeight: 800, fontSize: 30, color: C.green,
         boxShadow: `0 0 ${24 + 20 * pulse}px ${rgba(C.green, 0.5)}`, scale: String(0.9 + 0.1 * p),
+        opacity: 1 - clamp01((t - S.E5) / 0.4),
       }}>
         <div style={{ width: 16, height: 16, borderRadius: 16, background: C.green, opacity: 0.5 + 0.5 * pulse }} />
         IA activa
@@ -99,7 +102,7 @@ const AiOverlay: React.FC<{ t: number }> = ({ t }) => {
         position: "absolute", inset: 6, borderRadius: SCREEN_R - 6, border: `3px solid ${rgba(C.green, 0.35 + 0.35 * pulse)}`,
         boxShadow: `inset 0 0 40px ${rgba(C.green, 0.25 * pulse)}`,
       }} />
-      <div style={{ position: "absolute", left: "50%", top: 470, marginLeft: -40, opacity: 0.85, rotate: `${t * 30}deg` }}>
+      <div style={{ position: "absolute", left: "50%", top: 470, marginLeft: -40, opacity: 0.85 * (1 - clamp01((t - S.E5) / 0.4)), rotate: `${t * 30}deg` }}>
         <IconSpark size={80} color={C.green} stroke={1.8} />
       </div>
     </div>
@@ -123,6 +126,8 @@ export const Phone: React.FC<{ t: number; side: Side; screen?: React.ReactNode }
           <LockScreen t={t} side={side} />
           <DndOverlay t={t} side={side} />
           {side === "bottom" && <AiOverlay t={t} />}
+          <PhoneFeed t={t} side={side} />
+          <AlarmScreen t={t} />
           {screen}
           <StatusBar t={t} side={side} />
           <div style={{ position: "absolute", top: 18, left: "50%", width: 112, height: 32, marginLeft: -56, borderRadius: 18, background: "#000" }} />

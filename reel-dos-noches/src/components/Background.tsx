@@ -6,7 +6,7 @@ import { C, S, clamp01, drift } from "../theme";
 export const Background: React.FC<{ t: number; camX: number; camY: number }> = ({ t, camX, camY }) => {
   const gx = -camX * 0.35 + drift(t, 1, 20);
   const gy = -camY * 0.35 - t * 6;
-  const dawn = clamp01((t - S.E6 - 0.25) / 1.2);
+  const dawn = clamp01((t - S.E6 - 0.25) / 1.2) * (1 - clamp01((t - S.E9 - 0.4) / 0.8));
   return (
     <AbsoluteFill style={{ background: `radial-gradient(130% 90% at 50% 45%, #12332a 0%, ${C.bg} 48%, ${C.bgDeep} 100%)`, overflow: "hidden" }}>
       <div style={{

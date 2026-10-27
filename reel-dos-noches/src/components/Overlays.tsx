@@ -113,7 +113,7 @@ export const ClientsLabel: React.FC<{ t: number; frame: number }> = ({ t, frame 
 
 /** Small notice for the simulated night and morning. */
 export const Disclaimer: React.FC<{ t: number }> = ({ t }) => {
-  const o = windowed(t, S.E5, S.E9, 0.4, 0.4);
+  const o = windowed(t, S.E5, S.E9 + 0.3, 0.4, 0.4);
   if (o <= 0) return null;
   return (
     <div style={{

@@ -154,7 +154,7 @@ const Nightstand: React.FC<{ t: number; side: Side }> = ({ t, side }) => {
   );
 };
 
-export const PanelScene: React.FC<{ t: number; side: Side; camX: number; camY: number }> = ({ t, side, camX, camY }) => {
+export const PanelScene: React.FC<{ t: number; side: Side; camX: number; camY: number; hidePhone?: boolean }> = ({ t, side, camX, camY, hidePhone }) => {
   const top = side === "top";
   // top panel turns cold and desaturated once its owner switches everything off
   const cold = top ? EASE(clamp01((t - signOffAt("top")) / 0.6)) : 0;
@@ -183,26 +183,26 @@ export const PanelScene: React.FC<{ t: number; side: Side; camX: number; camY: n
         )}
         <Nightstand t={t} side={side} />
         {/* phone reflection on the glossy top */}
-        <div style={{
+        {!hidePhone && <div style={{
           position: "absolute", left: PHONE_CX - PHONE_W / 2, top: PHONE_BASE - 2, width: PHONE_W, height: PHONE_H,
           transformOrigin: "50% 0%", scale: `${PHONE_SCALE} ${-PHONE_SCALE * 0.6}`, opacity: 0.22, filter: "blur(2px)",
           rotate: `${-phoneTilt}deg`,
           maskImage: "linear-gradient(0deg, rgba(0,0,0,0) 55%, rgba(0,0,0,1) 100%)",
         }}>
           <Phone t={t} side={side} />
-        </div>
+        </div>}
         {/* contact shadow */}
         <div style={{
           position: "absolute", left: PHONE_CX - 90, top: PHONE_BASE - 10, width: 180, height: 24, borderRadius: "50%",
           background: "rgba(0,0,0,0.6)", filter: "blur(8px)",
         }} />
-        <div style={{
+        {!hidePhone && <div style={{
           position: "absolute", left: PHONE_CX - PHONE_W / 2, top: PHONE_BASE - PHONE_H + phoneY, width: PHONE_W, height: PHONE_H,
           transformOrigin: "50% 100%", scale: String(PHONE_SCALE), rotate: `${phoneTilt}deg`,
           filter: "drop-shadow(0 30px 40px rgba(0,0,0,0.6))",
         }}>
           <Phone t={t} side={side} />
-        </div>
+        </div>}
         <Zzz t={t} side={side} />
       </div>
       {/* grading: cold blue wash on the "apagado" panel; warm wash at dawn on both */}
