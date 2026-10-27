@@ -58,3 +58,17 @@ export const COLORS = {
   white: "#F4F6F8",
   muted: "#8A9099",
 };
+
+/** Pulso 0→1→0: sube en 0.08 s y se asienta en ~0.45 s. */
+export const pulse = (t: number, at: number) => {
+  const d = t - at;
+  if (d < 0 || d > 0.55) return 0;
+  return d < 0.08 ? d / 0.08 : 1 - easeInOutCubic(clamp((d - 0.08) / 0.45));
+};
+
+/** Flotación continua (px y grados) para que ningún elemento quede quieto. */
+export const float = (t: number, seed = 0, amp = 1) => ({
+  y: Math.sin(t * 2.1 + seed) * 10 * amp,
+  x: Math.sin(t * 1.3 + seed * 2) * 6 * amp,
+  rot: Math.sin(t * 1.7 + seed * 3) * 1.6 * amp,
+});

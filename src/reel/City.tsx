@@ -2,7 +2,7 @@ import React from "react";
 import { clamp, COLORS, easeOutBack, keys, prog, rand, vis } from "./anim";
 import { AMBER, Box, CITY, EXTENT, GREEN, LAMPS, NET_NODES, STREETS_X, STREETS_Y } from "./cityData";
 import { faceX, faceY, ground, iso, P2, pts } from "./iso";
-import { camera, T } from "./timeline";
+import { camera, T, worldTransform } from "./timeline";
 
 const N_PATTERNS = 6;
 
@@ -296,8 +296,9 @@ type Drawable = { depth: number; el: React.ReactNode; bbox: [number, number, num
 export const City: React.FC<{ t: number; sceneWalkers: React.ReactNode }> = ({ t, sceneWalkers }) => {
   const cam = camera(t);
   const s = worldState(t);
-  const halfW = 540 / cam.zoom + 260;
-  const halfH = 960 / cam.zoom + 420;
+  // margen extra para el giro de cámara
+  const halfW = 640 / cam.zoom + 260;
+  const halfH = 1010 / cam.zoom + 420;
   const vx0 = cam.cx - halfW;
   const vx1 = cam.cx + halfW;
   const vy0 = cam.cy - halfH;
@@ -372,7 +373,7 @@ export const City: React.FC<{ t: number; sceneWalkers: React.ReactNode }> = ({ t
   return (
     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
       <Defs />
-      <g transform={`translate(540 960) scale(${cam.zoom}) translate(${-cam.cx} ${-cam.cy})`}>
+      <g transform={worldTransform(cam)}>
         <polygon points={pts([iso(-E, -E), iso(E, -E), iso(E, E), iso(-E, E)])} fill="#14161B" />
         <g transform={ground(0)}>
           {STREETS_Y.map(([a, b], i) => (

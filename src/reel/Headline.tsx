@@ -8,14 +8,15 @@ import { withSerifI } from "./ui";
 const ENTER = 0.25;
 const EXIT = 0.15;
 
-const PartView: React.FC<{ p: Part; t: number; start: number; size: number }> = ({ p, t, start, size }) => {
+const PartView: React.FC<{ p: Part; t: number; start: number; size: number; dir: number }> = ({ p, t, start, size, dir }) => {
   const at = p.at ?? start;
   const e = prog(t, at, ENTER, easeOutCubic);
   const style: React.CSSProperties = {
     display: "inline-block",
     opacity: e,
     filter: `blur(${(1 - e) * 14}px)`,
-    translate: `0 ${(1 - e) * 26}px`,
+    translate: `${(1 - e) * 90 * dir}px ${(1 - e) * 18}px`,
+    scale: `${1.15 - 0.15 * e}`,
     margin: "0 0.12em",
     whiteSpace: "nowrap",
   };
@@ -45,7 +46,7 @@ const PartView: React.FC<{ p: Part; t: number; start: number; size: number }> = 
   );
 };
 
-const CueView: React.FC<{ cue: Cue; t: number }> = ({ cue, t }) => {
+const CueView: React.FC<{ cue: Cue; t: number; dir: number }> = ({ cue, t, dir }) => {
   const out = prog(t, cue.end - EXIT, EXIT, easeInCubic);
   const size = cue.size ?? 96;
   const lines: Part[][] = [[]];
@@ -80,7 +81,8 @@ const CueView: React.FC<{ cue: Cue; t: number }> = ({ cue, t }) => {
       style={{
         opacity: 1 - out,
         filter: `blur(${out * 12}px)`,
-        translate: `0 ${-out * 18}px`,
+        translate: `${-out * 110 * dir}px ${-out * 10}px`,
+        scale: `${1 + 0.03 * clamp((t - cue.start) / (cue.end - cue.start))}`,
         fontSize: size,
         lineHeight: 1.12,
         letterSpacing: "-0.03em",
@@ -89,7 +91,7 @@ const CueView: React.FC<{ cue: Cue; t: number }> = ({ cue, t }) => {
       {lines.map((l, i) => (
         <div key={i}>
           {l.map((p, j) => (
-            <PartView key={j} p={p} t={t} start={cue.start} size={size} />
+            <PartView key={j} p={p} t={t} start={cue.start} size={size} dir={dir} />
           ))}
         </div>
       ))}
@@ -154,7 +156,8 @@ const Eyebrow: React.FC<{ t: number }> = ({ t }) => {
 };
 
 export const Headlines: React.FC<{ t: number }> = ({ t }) => {
-  const cue = CUES.find((c) => t >= c.start && t < c.end);
+  const idx = CUES.findIndex((c) => t >= c.start && t < c.end);
+  const cue = idx >= 0 ? CUES[idx] : undefined;
   return (
     <div
       style={{
@@ -173,7 +176,7 @@ export const Headlines: React.FC<{ t: number }> = ({ t }) => {
       }}
     >
       <Eyebrow t={t} />
-      {cue ? <CueView key={cue.start} cue={cue} t={t} /> : null}
+      {cue ? <CueView key={cue.start} cue={cue} t={t} dir={idx % 2 === 0 ? 1 : -1} /> : null}
       {/* reservar espacio estable */}
       <div style={{ height: clamp(0) }} />
     </div>

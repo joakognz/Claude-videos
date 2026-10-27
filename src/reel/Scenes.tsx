@@ -1,5 +1,5 @@
 import React from "react";
-import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, keys, lerp, prog, vis } from "./anim";
+import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, float, keys, lerp, prog, vis } from "./anim";
 import { T, toScreen } from "./timeline";
 import { BRAND, Logo } from "./Logo";
 import { card, enter, Icon } from "./ui";
@@ -25,7 +25,9 @@ export const Interior: React.FC<{ t: number }> = ({ t }) => {
         borderRadius: 48,
         overflow: "hidden",
         opacity: v,
-        scale: `${0.88 + 0.12 * e}`,
+        scale: `${(0.88 + 0.12 * e) * (1 + 0.04 * clamp((t - T.s11) / 1.6))}`,
+        rotate: `${(1 - e) * -6 + float(t, 1).rot}deg`,
+        translate: `${float(t, 1).x}px ${float(t, 1).y}px`,
         filter: `blur(${(1 - e) * 14}px)`,
         boxShadow: `0 40px 120px rgba(0,0,0,0.7), 0 0 0 2px ${COLORS.amber}44`,
       }}
@@ -129,7 +131,7 @@ export const LateNight: React.FC<{ t: number }> = ({ t }) => {
   ];
   return (
     <div style={{ position: "absolute", inset: 0, opacity: v }}>
-      <div style={{ position: "absolute", left: 540 - 150, top: 650, width: 300, height: 300, scale: `${0.7 + 0.3 * ce}`, filter: `blur(${(1 - clamp(ce)) * 12}px)`, opacity: clamp(ce) }}>
+      <div style={{ position: "absolute", left: 540 - 150, top: 650, width: 300, height: 300, rotate: `${(1 - clamp(ce)) * -25 + float(t, 2, 1.5).rot}deg`, translate: `0 ${float(t, 2).y}px`, scale: `${0.7 + 0.3 * ce}`, filter: `blur(${(1 - clamp(ce)) * 12}px)`, opacity: clamp(ce) }}>
         <svg width={300} height={300} viewBox="0 0 300 300">
           <circle cx={150} cy={150} r={140} fill="#16120D" stroke={COLORS.amber} strokeWidth={8} />
           <circle cx={150} cy={150} r={150} fill="none" stroke={COLORS.amber} strokeOpacity={0.25} strokeWidth={14} />
@@ -229,7 +231,7 @@ const PROCESSES: [string, string][] = [
 ];
 
 export const ProcessIcons: React.FC<{ t: number }> = ({ t }) => {
-  const off = prog(t, T.s15 + 0.1, 0.6, easeInCubic);
+  const off = prog(t, T.s16 - 0.35, 0.3, easeInCubic);
   if (t < T.icons[0] - 0.1 || off >= 1) return null;
   const anchor = toScreen(t, 0, -2.25, 1.1);
   const R = 360;
@@ -314,7 +316,8 @@ export const CommentBox: React.FC<{ t: number }> = ({ t }) => {
         top: 1060,
         opacity: v,
         filter: `blur(${(1 - e) * 14}px)`,
-        translate: `0 ${(1 - e) * 120}px`,
+        translate: `${float(t, 3, 0.7).x}px ${(1 - e) * 120 + float(t, 3, 0.7).y}px`,
+        rotate: `${float(t, 3, 0.6).rot}deg`,
       }}
     >
       <div style={{ display: "flex", justifyContent: "center", marginBottom: -70, position: "relative", zIndex: 1 }}>
@@ -399,7 +402,9 @@ export const BrandReveal: React.FC<{ t: number }> = ({ t }) => {
         left: 540 - 260,
         top: 760,
         opacity: v,
-        scale: `${(0.6 + 0.4 * e) * (1 + 0.3 * out)}`,
+        scale: `${(0.6 + 0.4 * e) * (1 + 0.3 * out) * (1 + 0.05 * clamp((t - T.s14brand) / 1.4))}`,
+        rotate: `${(1 - clamp(e)) * -20 + float(t, 4).rot}deg`,
+        translate: `${float(t, 4).x}px ${float(t, 4).y}px`,
         filter: `blur(${(1 - clamp(e)) * 14 + out * 16}px)`,
       }}
     >

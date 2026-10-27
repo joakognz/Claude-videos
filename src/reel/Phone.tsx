@@ -1,5 +1,5 @@
 import React from "react";
-import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, prog } from "./anim";
+import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, float, prog, pulse } from "./anim";
 import { T } from "./timeline";
 import { Bubble, enter, Icon, Typing, withSerifI } from "./ui";
 
@@ -302,6 +302,9 @@ export const Phone: React.FC<{ t: number }> = ({ t }) => {
   const outP = prog(t, T.s10 - 0.05, 0.35, easeInCubic);
   if (inP <= 0 || outP >= 1) return null;
   const y = (1 - inP) * 1350 + outP * 1350;
+  const f = float(t, 0.5);
+  const k1 = pulse(t, T.s4);
+  const k2 = pulse(t, T.s6);
   return (
     <div
       style={{
@@ -310,8 +313,9 @@ export const Phone: React.FC<{ t: number }> = ({ t }) => {
         top: 670,
         width: PW,
         height: PH,
-        translate: `0 ${y}px`,
-        rotate: `${(1 - inP) * 6 - outP * 5}deg`,
+        translate: `${f.x - 40 * k1 + 40 * k2}px ${y + f.y}px`,
+        rotate: `${(1 - inP) * 6 - outP * 5 + f.rot - 5 * k1 + 5 * k2}deg`,
+        scale: `${1 - 0.04 * (k1 + k2)}`,
         borderRadius: 70,
         background: "#0A0B0D",
         padding: 14,

@@ -8,7 +8,7 @@ import { Headlines } from "./Headline";
 import { MotionBlur } from "./MotionBlur";
 import { Phone } from "./Phone";
 import { BrandReveal, CommentBox, dimAmount, Interior, LateNight, ProcessIcons, TravelBubble } from "./Scenes";
-import { camera, T } from "./timeline";
+import { camera, CUES, CUTS, T } from "./timeline";
 
 const SHUTTER = 0.6; // fracción de fotograma (≈216°)
 
@@ -19,10 +19,17 @@ const cameraTravel = (t: number, fps: number) => {
   const b = camera(t + dt);
   let max = 0;
   for (const [sx, sy] of [[0, 0], [1080, 0], [0, 1920], [1080, 1920], [540, 960]]) {
-    const wx = (sx - 540) / a.zoom + a.cx;
-    const wy = (sy - 960) / a.zoom + a.cy;
-    const nx = (wx - b.cx) * b.zoom + 540;
-    const ny = (wy - b.cy) * b.zoom + 960;
+    // punto del mundo bajo (sx, sy) en a, y dónde cae en b (con giro)
+    const ra = (-a.roll * Math.PI) / 180;
+    const ux = sx - 540;
+    const uy = sy - 960;
+    const wx = (ux * Math.cos(ra) - uy * Math.sin(ra)) / a.zoom + a.cx;
+    const wy = (ux * Math.sin(ra) + uy * Math.cos(ra)) / a.zoom + a.cy;
+    const rb = (b.roll * Math.PI) / 180;
+    const vx = (wx - b.cx) * b.zoom;
+    const vy = (wy - b.cy) * b.zoom;
+    const nx = 540 + vx * Math.cos(rb) - vy * Math.sin(rb);
+    const ny = 960 + vx * Math.sin(rb) + vy * Math.cos(rb);
     max = Math.max(max, Math.hypot(nx - sx, ny - sy));
   }
   return max;
@@ -34,7 +41,8 @@ const UI_FAST: [number, number][] = [
   [T.s12, 0.45], [T.s13 + 0.45, 1.0], [T.s14brand, 0.5], [T.s14b - 0.15, 0.3], ...T.icons.map((x) => [x, 0.4] as [number, number]),
   [T.s16, 0.7], [T.close - 0.1, 0.5],
 ];
-const uiSamples = (t: number) => (UI_FAST.some(([a, d]) => t >= a - 0.05 && t <= a + d) ? 16 : 5);
+const TEXT_FAST: [number, number][] = CUES.flatMap((c) => [[c.start - 0.03, 0.3], [c.end - 0.17, 0.2]] as [number, number][]);
+const uiSamples = (t: number) => ([...UI_FAST, ...TEXT_FAST].some(([a, d]) => t >= a - 0.05 && t <= a + d) ? 16 : 5);
 
 const WorldLayer: React.FC = () => {
   const frame = useCurrentFrame();
@@ -107,11 +115,12 @@ export const Reel: React.FC<{ motionBlur?: boolean }> = ({ motionBlur = true }) 
       {/* viñeta y velo superior para la legibilidad del texto */}
       <AbsoluteFill style={{ background: "radial-gradient(ellipse 85% 65% at 50% 55%, transparent 55%, rgba(3,4,6,0.75) 100%)" }} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(5,6,8,0.88) 0%, rgba(5,6,8,0.55) 22%, rgba(5,6,8,0) 38%)" }} />
+      {/* destello breve en cada corte de cámara */}
+      <AbsoluteFill style={{ background: "#F4FFE0", opacity: Math.max(0, ...CUTS.map((c) => 0.22 * (1 - clamp(Math.abs(t - c) / 0.13)))) }} />
       <MotionBlur samples={uiN} shutter={SHUTTER}>
         <UILayer />
       </MotionBlur>
       <Audio src={staticFile("voiceover_short.mp3")} />
-      <Audio src={staticFile("music_short.wav")} />
     </AbsoluteFill>
   );
 };
