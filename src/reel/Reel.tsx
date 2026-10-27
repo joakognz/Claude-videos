@@ -10,7 +10,7 @@ import { Phone } from "./Phone";
 import { BrandReveal, CommentBox, dimAmount, Interior, LateNight, ProcessIcons, TravelBubble } from "./Scenes";
 import { camera, CUES, CUTS, T } from "./timeline";
 
-const SHUTTER = 0.6; // fracción de fotograma (≈216°)
+const SHUTTER = 1.0; // fracción de fotograma (360°): desenfoque de movimiento marcado
 
 /** Desplazamiento máximo en pantalla (px) que produce la cámara durante el obturador. */
 const cameraTravel = (t: number, fps: number) => {
@@ -42,7 +42,7 @@ const UI_FAST: [number, number][] = [
   [T.s16, 0.7], [T.close - 0.1, 0.5],
 ];
 const TEXT_FAST: [number, number][] = CUES.flatMap((c) => [[c.start - 0.03, 0.3], [c.end - 0.17, 0.2]] as [number, number][]);
-const uiSamples = (t: number) => ([...UI_FAST, ...TEXT_FAST].some(([a, d]) => t >= a - 0.05 && t <= a + d) ? 16 : 5);
+const uiSamples = (t: number) => ([...UI_FAST, ...TEXT_FAST].some(([a, d]) => t >= a - 0.05 && t <= a + d) ? 20 : 8);
 
 const WorldLayer: React.FC = () => {
   const frame = useCurrentFrame();
@@ -101,7 +101,7 @@ export const Reel: React.FC<{ motionBlur?: boolean }> = ({ motionBlur = true }) 
   const { fps } = useVideoConfig();
   const t = frame / fps;
   const travel = cameraTravel(t, fps);
-  const worldN = motionBlur ? (travel < 0.6 ? 1 : clamp(Math.ceil(travel / 3), 3, 16)) : 1;
+  const worldN = motionBlur ? (travel < 0.3 ? 1 : clamp(Math.ceil(travel / 2.5), 4, 20)) : 1;
   const uiN = motionBlur ? uiSamples(t) : 1;
   return (
     <AbsoluteFill style={{ backgroundColor: "#06070A", overflow: "hidden" }}>
