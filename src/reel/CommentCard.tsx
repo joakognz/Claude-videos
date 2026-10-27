@@ -5,8 +5,8 @@ import { card, Icon } from "./ui";
 
 /** Campo de comentarios que escribe una palabra y la publica. */
 export const CommentCard: React.FC<{
-  t: number; start: number; typeFrom: number; typeTo: number; publish: number; end: number; word?: string; top?: number;
-}> = ({ t, start, typeFrom, typeTo, publish, end, word = "AUDITORIA", top = 1060 }) => {
+  t: number; start: number; typeFrom: number; typeTo: number; publish: number; end: number; word?: string; top?: number; accent?: string;
+}> = ({ t, start, typeFrom, typeTo, publish, end, word = "AUDITORIA", top = 1060, accent = COLORS.lime }) => {
   const v = vis(t, start + 0.1, end + 0.2, 0.4, 0.35);
   if (v <= 0) return null;
   const e = prog(t, start + 0.1, 0.5);
@@ -54,7 +54,7 @@ export const CommentCard: React.FC<{
               flex: 1,
               height: 84,
               borderRadius: 42,
-              border: `2px solid ${n > 0 && posted <= 0 ? COLORS.lime : "rgba(255,255,255,0.14)"}`,
+              border: `2px solid ${n > 0 && posted <= 0 ? accent : "rgba(255,255,255,0.14)"}`,
               display: "flex",
               alignItems: "center",
               padding: "0 26px",
@@ -68,12 +68,12 @@ export const CommentCard: React.FC<{
               <span style={{ color: "#6B717B", fontWeight: 600, letterSpacing: 0, fontSize: 28 }}>Añade un comentario…</span>
             ) : n === 0 ? (
               <span style={{ color: "#6B717B", fontWeight: 600, letterSpacing: 0, fontSize: 28 }}>
-                {caret ? <span style={{ color: COLORS.lime }}>|</span> : <span style={{ opacity: 0 }}>|</span>}Añade un comentario…
+                {caret ? <span style={{ color: accent }}>|</span> : <span style={{ opacity: 0 }}>|</span>}Añade un comentario…
               </span>
             ) : (
               <span>
                 {typed}
-                <span style={{ color: COLORS.lime, opacity: caret ? 1 : 0 }}>|</span>
+                <span style={{ color: accent, opacity: caret ? 1 : 0 }}>|</span>
               </span>
             )}
           </div>
@@ -82,11 +82,11 @@ export const CommentCard: React.FC<{
               fontSize: 32,
               fontWeight: 800,
               color: ready ? COLORS.ink : "#5A606A",
-              background: ready ? COLORS.lime : "transparent",
+              background: ready ? accent : "transparent",
               padding: "16px 24px",
               borderRadius: 24,
               scale: `${1 - 0.1 * (t > publish ? press : 0)}`,
-              boxShadow: ready ? `0 0 36px ${COLORS.lime}77` : "none",
+              boxShadow: ready ? `0 0 36px ${accent}77` : "none",
             }}
           >
             Publicar

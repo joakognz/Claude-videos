@@ -6,7 +6,7 @@ import { fontFamily } from "../reel/fonts";
 import { Headlines } from "../reel/Headline";
 import { MotionBlur } from "../reel/MotionBlur";
 import { AgentPanel, BrandTools, ClientMessage, FinalAnswer, SalonComment, salonDim, WebCard } from "./Overlays";
-import { SalonWorld } from "./Salon";
+import { SalonWorld, SOLVE } from "./Salon";
 import { A, camera, CUES, CUTS, LABELS } from "./timeline";
 
 const SHUTTER = 1.0;
@@ -33,7 +33,7 @@ const UILayer: React.FC = () => {
       <BrandTools t={t} />
       <SalonComment t={t} />
       <FinalAnswer t={t} />
-      <Headlines t={t} cues={CUES} labels={LABELS} eyebrow={[A.lee, A.peinando]} />
+      <Headlines t={t} cues={CUES} labels={LABELS} eyebrow={[A.lee, A.peinando]} accent={SOLVE} />
     </AbsoluteFill>
   );
 };
@@ -78,7 +78,7 @@ export const SalonReel: React.FC<{ motionBlur?: boolean }> = ({ motionBlur = tru
       <AbsoluteFill style={{ background: "#06070A", opacity: salonDim(t) }} />
       <AbsoluteFill style={{ background: "radial-gradient(ellipse 85% 65% at 50% 55%, transparent 55%, rgba(3,4,6,0.75) 100%)" }} />
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(5,6,8,0.88) 0%, rgba(5,6,8,0.55) 22%, rgba(5,6,8,0) 38%)" }} />
-      <AbsoluteFill style={{ background: "#F4FFE0", opacity: Math.max(0, ...CUTS.map((c) => 0.22 * (1 - clamp(Math.abs(t - c) / 0.13)))) }} />
+      <AbsoluteFill style={{ background: "#FFFFFF", opacity: Math.max(0, ...CUTS.map((c) => 0.22 * (1 - clamp(Math.abs(t - c) / 0.13)))) }} />
       <MotionBlur samples={uiN} shutter={SHUTTER}>
         <UILayer />
       </MotionBlur>

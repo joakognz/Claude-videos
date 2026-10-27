@@ -40,7 +40,7 @@ export const T = {
   end: 28.22,
 };
 
-export type Hl = "lime" | "amber";
+export type Hl = "lime" | "amber" | "white";
 export type Part = { text: string; hl?: Hl; at?: number; br?: boolean };
 export type Cue = { start: number; end: number; parts: Part[]; label?: string; size?: number; brand?: boolean };
 

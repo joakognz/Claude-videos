@@ -3,6 +3,7 @@ import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, 
 import { CommentCard } from "../reel/CommentCard";
 import { BRAND, Logo } from "../reel/Logo";
 import { card, enter, Icon } from "../reel/ui";
+import { SOLVE } from "./Salon";
 import { A, CLOSE, END, toScreen } from "./timeline";
 
 const W = 940;
@@ -181,7 +182,7 @@ export const WebCard: React.FC<{ t: number }> = ({ t }) => {
 const ROW_H = 104;
 const ROWS = ["16:00", "17:00", "18:30", "19:30"];
 
-const Block: React.FC<{ name: string; service: string; lime?: boolean; style?: React.CSSProperties; tag?: React.ReactNode }> = ({ name, service, lime, style, tag }) => (
+const Block: React.FC<{ name: string; service: string; active?: boolean; style?: React.CSSProperties; tag?: React.ReactNode }> = ({ name, service, active, style, tag }) => (
   <div
     style={{
       position: "absolute",
@@ -193,8 +194,8 @@ const Block: React.FC<{ name: string; service: string; lime?: boolean; style?: R
       display: "flex",
       alignItems: "center",
       gap: 14,
-      background: lime ? "rgba(198,255,61,0.16)" : "#23262D",
-      border: lime ? `2px solid ${COLORS.lime}` : "1.5px solid rgba(255,255,255,0.08)",
+      background: active ? "rgba(255,255,255,0.08)" : "#23262D",
+      border: active ? `2px solid ${SOLVE}` : "1.5px solid rgba(255,255,255,0.08)",
       ...style,
     }}
   >
@@ -204,15 +205,15 @@ const Block: React.FC<{ name: string; service: string; lime?: boolean; style?: R
   </div>
 );
 
-const Tag: React.FC<{ children: React.ReactNode; p: number; tone?: "lime" | "red" }> = ({ children, p, tone = "lime" }) => (
+const Tag: React.FC<{ children: React.ReactNode; p: number; tone?: "ok" | "red" }> = ({ children, p, tone = "ok" }) => (
   <div
     style={{
       padding: "6px 14px",
       borderRadius: 12,
       fontSize: 22,
       fontWeight: 800,
-      background: tone === "lime" ? COLORS.lime : "rgba(255,138,122,0.16)",
-      color: tone === "lime" ? COLORS.ink : "#FF8A7A",
+      background: tone === "ok" ? SOLVE : "rgba(255,138,122,0.16)",
+      color: tone === "ok" ? COLORS.ink : "#FF8A7A",
       opacity: clamp(p),
       scale: `${easeOutBack(clamp(p))}`,
       whiteSpace: "nowrap",
@@ -261,14 +262,14 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
         filter: `blur(${(1 - clamp(e)) * 14}px)`,
       }}
     >
-      <div style={{ ...card, position: "absolute", inset: 0, border: `2px solid ${COLORS.lime}55` }} />
+      <div style={{ ...card, position: "absolute", inset: 0, border: `2px solid ${SOLVE}55` }} />
       <div style={{ position: "absolute", left: 28, right: 28, top: 26, display: "flex", alignItems: "center", gap: 14 }}>
-        <div style={{ width: 52, height: 52, borderRadius: 16, background: COLORS.lime, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 30px ${COLORS.lime}66` }}>
+        <div style={{ width: 52, height: 52, borderRadius: 16, background: SOLVE, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 30px ${SOLVE}66` }}>
           <Icon name="chat" size={32} color={COLORS.ink} stroke={9} />
         </div>
         <div style={{ fontSize: 32, fontWeight: 800, color: COLORS.white, flex: 1 }}>Tu agente de IA</div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, color: COLORS.lime, fontSize: 24, fontWeight: 700 }}>
-          <div style={{ width: 12, height: 12, borderRadius: 6, background: COLORS.lime, opacity: 0.5 + 0.5 * Math.abs(Math.sin(t * 4)) }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 8, color: SOLVE, fontSize: 24, fontWeight: 700 }}>
+          <div style={{ width: 12, height: 12, borderRadius: 6, background: SOLVE, opacity: 0.5 + 0.5 * Math.abs(Math.sin(t * 4)) }} />
           Activo
         </div>
       </div>
@@ -292,7 +293,7 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
         <Block
           name="Lucía"
           service="Color"
-          lime
+          active
           style={{ top: rowY(3), translate: `${(1 - fill) * 700}px 0`, opacity: fill }}
           tag={<Tag p={prog(t, A.rellena + 0.4, 0.3)}>Hueco cubierto</Tag>}
         />
@@ -312,31 +313,31 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
               display: "flex",
               alignItems: "center",
               gap: 16,
-              background: "#1F2A12",
-              border: `2px solid ${COLORS.lime}`,
+              background: "#23262D",
+              border: `2px solid ${SOLVE}`,
               overflow: "hidden",
               opacity: clamp(inCard),
               scale: `${0.8 + 0.2 * inCard}`,
-              boxShadow: `0 0 40px ${COLORS.lime}44`,
+              boxShadow: `0 0 40px ${SOLVE}44`,
             }}
           >
-            <Avatar letter="L" color="#4A5A2A" />
+            <Avatar letter="L" color="#3A3F48" />
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 22, fontWeight: 700, color: COLORS.lime }}>NUEVA RESERVA</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: SOLVE }}>NUEVA RESERVA</div>
               <div style={{ fontSize: 30, fontWeight: 800, color: COLORS.white }}>Laura · Color · Jue 17:00</div>
             </div>
             <Tag p={read}>Leída</Tag>
-            <div style={{ position: "absolute", top: 0, bottom: 0, left: `${scan * 100}%`, width: 70, background: `linear-gradient(90deg, transparent, ${COLORS.lime}88, transparent)`, opacity: scan > 0 && scan < 1 ? 1 : 0 }} />
+            <div style={{ position: "absolute", top: 0, bottom: 0, left: `${scan * 100}%`, width: 70, background: `linear-gradient(90deg, transparent, ${SOLVE}88, transparent)`, opacity: scan > 0 && scan < 1 ? 1 : 0 }} />
           </div>
         ) : (
-          <Block name="Laura" service="Color" lime style={{ top: lauraY }} tag={<Tag p={move > 0 ? prog(t, A.cambia + 0.45, 0.3) : 1}>{move > 0 ? "Cambiada" : "En agenda"}</Tag>} />
+          <Block name="Laura" service="Color" active style={{ top: lauraY }} tag={<Tag p={move > 0 ? prog(t, A.cambia + 0.45, 0.3) : 1}>{move > 0 ? "Cambiada" : "En agenda"}</Tag>} />
         )
       ) : null}
       {/* mensajes con la clienta */}
       {conf > 0 ? (
         <div style={{ position: "absolute", left: 28, right: 28, top: 730, display: "flex", flexDirection: "column", gap: 12 }}>
           {ask <= 0 ? (
-            <div style={{ alignSelf: "flex-end", maxWidth: "88%", padding: "18px 24px", borderRadius: 26, borderBottomRightRadius: 8, background: COLORS.lime, color: COLORS.ink, fontSize: 28, fontWeight: 700, opacity: clamp(conf), scale: `${0.8 + 0.2 * conf}`, transformOrigin: "right bottom" }}>
+            <div style={{ alignSelf: "flex-end", maxWidth: "88%", padding: "18px 24px", borderRadius: 26, borderBottomRightRadius: 8, background: SOLVE, color: COLORS.ink, fontSize: 28, fontWeight: 700, opacity: clamp(conf), scale: `${0.8 + 0.2 * conf}`, transformOrigin: "right bottom" }}>
               Laura, tu cita del jueves a las 17:00 está confirmada ✓
             </div>
           ) : (
@@ -345,7 +346,7 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
                 ¿Puede ser a las 18:30?
               </div>
               {move > 0.6 ? (
-                <div style={{ ...enter(t, A.cambia + 0.3, 16, 0.25), alignSelf: "flex-end", padding: "16px 22px", borderRadius: 24, borderBottomRightRadius: 8, background: COLORS.lime, color: COLORS.ink, fontSize: 28, fontWeight: 700 }}>
+                <div style={{ ...enter(t, A.cambia + 0.3, 16, 0.25), alignSelf: "flex-end", padding: "16px 22px", borderRadius: 24, borderBottomRightRadius: 8, background: SOLVE, color: COLORS.ink, fontSize: 28, fontWeight: 700 }}>
                   Hecho. Te espero a las 18:30 ✓
                 </div>
               ) : null}
@@ -383,7 +384,7 @@ export const BrandTools: React.FC<{ t: number }> = ({ t }) => {
           const a = -Math.PI / 2 + (i / TOOLS.length) * Math.PI * 2 + t * 0.25;
           const p = prog(t, A.herramientas + 0.1 + i * 0.12, 0.35);
           const r = 330 * p;
-          return <line key={i} x1={cx} y1={cy} x2={cx + Math.cos(a) * r} y2={cy + Math.sin(a) * r} stroke={COLORS.lime} strokeWidth={3} strokeDasharray="8 10" strokeDashoffset={-t * 40} opacity={0.8 * p} />;
+          return <line key={i} x1={cx} y1={cy} x2={cx + Math.cos(a) * r} y2={cy + Math.sin(a) * r} stroke={SOLVE} strokeWidth={3} strokeDasharray="8 10" strokeDashoffset={-t * 40} opacity={0.8 * p} />;
         })}
       </svg>
       <div
@@ -421,8 +422,8 @@ export const BrandTools: React.FC<{ t: number }> = ({ t }) => {
               filter: `blur(${(1 - pc) * 10}px)`,
             }}
           >
-            <div style={{ width: 120, height: 120, borderRadius: 60, background: "rgba(16,20,10,0.9)", border: `3px solid ${COLORS.lime}`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 36px ${COLORS.lime}55` }}>
-              <Icon name={icon} size={62} stroke={6} />
+            <div style={{ width: 120, height: 120, borderRadius: 60, background: "rgba(16,20,10,0.9)", border: `3px solid ${SOLVE}`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 36px ${SOLVE}55` }}>
+              <Icon name={icon} size={62} color={SOLVE} stroke={6} />
             </div>
             <div style={{ fontSize: 28, fontWeight: 800, color: COLORS.white, textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}>{label}</div>
           </div>
@@ -433,7 +434,7 @@ export const BrandTools: React.FC<{ t: number }> = ({ t }) => {
 };
 
 export const SalonComment: React.FC<{ t: number }> = ({ t }) => (
-  <CommentCard t={t} start={A.comenta} typeFrom={A.auditoria} typeTo={A.auditoriaEnd} publish={A.auditoriaEnd + 0.2} end={A.sigue - 0.2} top={1000} />
+  <CommentCard t={t} start={A.comenta} typeFrom={A.auditoria} typeTo={A.auditoriaEnd} publish={A.auditoriaEnd + 0.2} end={A.sigue - 0.2} top={1000} accent={SOLVE} />
 );
 
 /* ---------- El móvil vuelve a vibrar: esta vez ya está contestado ---------- */
@@ -457,7 +458,7 @@ export const FinalAnswer: React.FC<{ t: number }> = ({ t }) => {
         filter: `blur(${(1 - clamp(e)) * 12}px)`,
       }}
     >
-      <div style={{ ...card, padding: 28, display: "flex", flexDirection: "column", gap: 14, border: `2px solid ${COLORS.lime}55` }}>
+      <div style={{ ...card, padding: 28, display: "flex", flexDirection: "column", gap: 14, border: `2px solid ${SOLVE}55` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <Avatar letter="S" />
           <div style={{ fontSize: 28, fontWeight: 800, color: COLORS.white, flex: 1 }}>Sara</div>
@@ -467,11 +468,11 @@ export const FinalAnswer: React.FC<{ t: number }> = ({ t }) => {
           ¿Tenéis hueco el sábado?
         </div>
         {ans > 0 ? (
-          <div style={{ alignSelf: "flex-end", maxWidth: "88%", padding: "18px 24px", borderRadius: 26, borderBottomRightRadius: 8, background: COLORS.lime, color: COLORS.ink, fontSize: 32, fontWeight: 700, opacity: clamp(ans), scale: `${0.8 + 0.2 * ans}`, transformOrigin: "right bottom" }}>
+          <div style={{ alignSelf: "flex-end", maxWidth: "88%", padding: "18px 24px", borderRadius: 26, borderBottomRightRadius: 8, background: SOLVE, color: COLORS.ink, fontSize: 32, fontWeight: 700, opacity: clamp(ans), scale: `${0.8 + 0.2 * ans}`, transformOrigin: "right bottom" }}>
             Sí, te reservo el sábado a las 11:00 ✓
           </div>
         ) : null}
-        <div style={{ ...enter(t, A.estavez + 0.35, 10, 0.25), alignSelf: "flex-end", color: COLORS.lime, fontSize: 22, fontWeight: 700 }}>Respondido por tu agente de IA</div>
+        <div style={{ ...enter(t, A.estavez + 0.35, 10, 0.25), alignSelf: "flex-end", color: SOLVE, fontSize: 22, fontWeight: 700 }}>Respondido por tu agente de IA</div>
       </div>
     </div>
   );

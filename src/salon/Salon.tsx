@@ -29,7 +29,9 @@ export const salonState = (t: number) => {
   return { acc, vib1, vib2, screenAmber, screenLime, rival, done };
 };
 
-const accent = (acc: number) => mix(COLORS.amber, COLORS.lime, acc);
+/** Ámbar = problema; blanco neutro = resuelto (sin fondos verdes). */
+export const SOLVE = COLORS.white;
+const accent = (acc: number) => mix(COLORS.amber, SOLVE, acc);
 
 /* ---------- Primitivas ---------- */
 type Cols = { top: string; fx: string; fy: string };
@@ -150,8 +152,8 @@ const Phone: React.FC<{ t: number; s: ReturnType<typeof salonState> }> = ({ t, s
   const jx = Math.sin(t * 95) * 2.2 * buzz;
   const jy = Math.cos(t * 83) * 1.2 * buzz;
   const [cx, cy] = iso(4.55, 0.65, 1.02);
-  const scr = s.screenLime > 0 ? mix("#15171A", COLORS.lime, s.screenLime) : mix("#15171A", COLORS.amber, s.screenAmber);
-  const ringCol = s.screenLime > 0 ? COLORS.lime : COLORS.amber;
+  const scr = s.screenLime > 0 ? mix("#15171A", SOLVE, s.screenLime) : mix("#15171A", COLORS.amber, s.screenAmber);
+  const ringCol = s.screenLime > 0 ? SOLVE : COLORS.amber;
   return (
     <g>
       <g transform={`translate(${jx} ${jy})`}>
