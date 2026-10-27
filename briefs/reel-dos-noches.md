@@ -17,7 +17,7 @@
 | E6 | 22-25 s | "Las ocho de la mañana. Se despiertan los dos." | Alarma, barrido de luz a las 08:00 y amanecer. |
 | E7 | 25-28,5 s | "Uno abre el móvil y ve cinco clientes perdidos." | Arriba a pantalla casi completa: "5 sin responder". |
 | E8 | 28,5-31,5 s | "El otro se despierta con cinco reservas." | Abajo a pantalla casi completa: un "5" gigante, "reservas mientras dormías". |
-| E9 | 31,5-35 s | "¿Cuál de los dos eres tú? Comenta auditoría." | El reloj rebobina a las 21:00. CTA "COMENTA AUDITORIA ↓" + "Te digo qué automatizar primero". |
+| E9 | 31,5-35 s | "¿Cuál de los dos eres tú? Comenta AUDITORIA." | El reloj rebobina a las 21:00. CTA "COMENTA AUDITORIA ↓" + "Te digo qué automatizar primero". |
 
 ## Guion para ElevenLabs: narrador (texto plano)
 
@@ -37,13 +37,13 @@ Esa noche, cinco clientes escriben a los dos.
 Las ocho de la mañana. Se despiertan los dos.
 Uno abre el móvil y ve cinco clientes perdidos.
 El otro se despierta con cinco reservas.
-¿Cuál de los dos eres tú? Comenta auditoría.
+¿Cuál de los dos eres tú? Comenta AUDITORIA.
 ```
 
 Notas de lectura:
-- "auditoría" va en minúscula y con tilde para que se lea como palabra y no letra a letra. En pantalla sale "AUDITORIA", sin tilde, que es la palabra clave que se comenta.
+- La palabra clave es **AUDITORIA**, sin tilde y en mayúsculas, tanto en pantalla como en el guion.
 - Las horas y las cifras van en letra ("nueve", "ocho", "cinco") para que se lean igual en todas las tomas.
-- Si "IA" sale deletreado raro ("i griega a"), cámbialo por "I.A." en esa toma.
+- En la toma entregada, la voz lee "IA" como "inteligencia artificial". En pantalla se mantiene "IA" en el recuadro verde, que aparece mientras suena "inteligencia artificial".
 - Cálculo a 180 palabras por minuto: el bloque A dura unos 11-12 s y el bloque B unos 11 s. Encaja con el reparto de 0-12,5 s y 22-35 s.
 
 ## Antes de publicar
