@@ -1,119 +1,8 @@
 import React from "react";
 import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, keys, lerp, prog, vis } from "./anim";
-import { Person } from "./City";
 import { T, toScreen } from "./timeline";
+import { BRAND, Logo } from "./Logo";
 import { card, enter, Icon } from "./ui";
-
-/* ---------- Personajes que caminan por el mundo (coordenadas isométricas) ---------- */
-const walkerA = (t: number): [number, number] => {
-  // Sale por la puerta del verde y se aleja por la acera (reseñas)
-  const x = keys(t, [[T.s8, 0.41], [T.s8 + 0.4, 0.41], [T.s8 + 1.4, 1.35]], (p) => p);
-  const y = keys(t, [[T.s8, -1.45], [T.s8 + 0.4, -0.98], [T.s8 + 1.4, -0.98]], (p) => p);
-  return [x, y];
-};
-
-export const Walkers: React.FC<{ t: number }> = ({ t }) => {
-  const a = vis(t, T.s8 + 0.05, T.s10 + 0.4, 0.2, 0.3);
-  const bob = Math.abs(Math.sin(t * 9)) * 0.025;
-  const [ax, ay] = walkerA(t);
-  return <g>{a > 0 ? <Person x={ax} y={ay} z={bob} s={a} seed={0} tint={COLORS.lime} /> : null}</g>;
-};
-
-/* ---------- Notificación flotante sobre un personaje ---------- */
-const Notif: React.FC<{
-  t: number; start: number; end: number; anchor: [number, number]; title: string; body: string; cta: string; ctaAt: number; extra?: React.ReactNode;
-}> = ({ t, start, end, anchor, title, body, cta, ctaAt, extra }) => {
-  const v = vis(t, start, end, 0.35, 0.3);
-  if (v <= 0) return null;
-  const e = prog(t, start, 0.4, easeOutBack);
-  const out = prog(t, end - 0.3, 0.3, easeInCubic);
-  const w = 640;
-  const top = clamp(anchor[1] - 470, 640, 1100);
-  const left = clamp(anchor[0] - w / 2, 70, 1080 - 70 - w);
-  const pressed = Math.sin(Math.PI * clamp((t - ctaAt) / 0.25));
-  const tail = clamp(anchor[0] - left, 60, w - 60);
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left,
-        top,
-        width: w,
-        opacity: v,
-        filter: `blur(${(1 - clamp(e)) * 12 + out * 10}px)`,
-        scale: `${0.85 + 0.15 * e}`,
-        translate: `0 ${(1 - clamp(e)) * 40 - out * 30}px`,
-        transformOrigin: `${tail}px 100%`,
-      }}
-    >
-      <div style={{ ...card, padding: 30 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, color: COLORS.muted, fontSize: 22, fontWeight: 600 }}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: COLORS.lime, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Icon name="fork" size={22} color={COLORS.ink} stroke={10} />
-          </div>
-          TU RESTAURANTE · ahora
-        </div>
-        <div style={{ fontSize: 38, fontWeight: 800, color: COLORS.white, marginTop: 16, lineHeight: 1.15 }}>{title}</div>
-        <div style={{ fontSize: 30, fontWeight: 600, color: "#C9CED6", marginTop: 6 }}>{body}</div>
-        {extra}
-        <div
-          style={{
-            marginTop: 20,
-            height: 76,
-            borderRadius: 22,
-            background: COLORS.lime,
-            color: COLORS.ink,
-            fontSize: 28,
-            fontWeight: 800,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            scale: `${1 - 0.07 * (t > ctaAt ? pressed : 0)}`,
-            boxShadow: `0 0 40px ${COLORS.lime}44`,
-          }}
-        >
-          {cta}
-        </div>
-      </div>
-      <div style={{ position: "absolute", left: tail - 18, bottom: -16, width: 36, height: 36, background: "#121418", rotate: "45deg", borderRight: "1.5px solid rgba(255,255,255,0.09)", borderBottom: "1.5px solid rgba(255,255,255,0.09)" }} />
-    </div>
-  );
-};
-
-export const ReviewAndReturn: React.FC<{ t: number }> = ({ t }) => {
-  const [ax, ay] = walkerA(t);
-  return (
-    <Notif
-      t={t}
-      start={T.s8 + 0.3}
-      end={T.s10 + 0.05}
-      anchor={toScreen(t, ax, ay, 0.3)}
-      title="¡Gracias por venir!"
-      body="¿Nos dejas tu reseña?"
-      cta="Dejar reseña"
-      ctaAt={T.s10 - 0.45}
-      extra={
-        <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
-          {[0, 1, 2, 3, 4].map((i) => {
-            const f = prog(t, T.s8 + 0.75 + i * 0.09, 0.18, easeOutBack);
-            return (
-              <div key={i} style={{ position: "relative", width: 46, height: 46 }}>
-                <div style={{ position: "absolute", inset: 0 }}>
-                  <Icon name="star" size={46} color="#59606B" stroke={6} />
-                </div>
-                <div style={{ position: "absolute", inset: 0, scale: `${f}`, opacity: clamp(f) }}>
-                  <svg width={46} height={46} viewBox="0 0 100 100">
-                    <path d="M50 10 L61 37 L90 39 L67 57 L75 86 L50 70 L25 86 L33 57 L10 39 L39 37 Z" fill={COLORS.lime} />
-                  </svg>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      }
-    />
-  );
-};
 
 /* ---------- Interior del ámbar: camarero, libreta y teléfono ---------- */
 export const Interior: React.FC<{ t: number }> = ({ t }) => {
@@ -227,7 +116,7 @@ export const Interior: React.FC<{ t: number }> = ({ t }) => {
 
 /* ---------- 23:00 y mensajes sin respuesta ---------- */
 export const LateNight: React.FC<{ t: number }> = ({ t }) => {
-  const v = vis(t, T.s12 + 0.05, T.s13 + 0.12, 0.3, 0.22);
+  const v = vis(t, T.s12 + 0.05, T.s13 + 0.55, 0.3, 0.22);
   if (v <= 0) return null;
   const minutes = keys(t, [[T.s12 + 0.1, -6], [T.s12 + 0.8, 0]], easeOutCubic);
   const hourA = ((23 + minutes / 60) % 12) * 30;
@@ -270,9 +159,9 @@ export const LateNight: React.FC<{ t: number }> = ({ t }) => {
 
 /* ---------- La burbuja viaja del ámbar al verde ---------- */
 export const TravelBubble: React.FC<{ t: number }> = ({ t }) => {
-  const start = T.s13 + 0.15;
-  const dur = 0.85;
-  const v = vis(t, T.s13 + 0.1, T.s14a + 0.1, 0.25, 0.3);
+  const start = T.s13 + 0.55;
+  const dur = 0.8;
+  const v = vis(t, T.s13 + 0.45, T.s14a + 0.1, 0.2, 0.3);
   if (v <= 0) return null;
   const p = prog(t, start, dur, easeInOutCubic);
   const from = toScreen(t, 3.0, 2.3, 1.1);
@@ -428,7 +317,10 @@ export const CommentBox: React.FC<{ t: number }> = ({ t }) => {
         translate: `0 ${(1 - e) * 120}px`,
       }}
     >
-      <div style={{ ...card, padding: "30px 30px 34px" }}>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: -70, position: "relative", zIndex: 1 }}>
+        <Logo size={150} draw={prog(t, T.s16 + 0.2, 0.7, (p) => p)} />
+      </div>
+      <div style={{ ...card, padding: "84px 30px 34px" }}>
         <div style={{ fontSize: 26, fontWeight: 700, color: COLORS.muted, textAlign: "center", marginBottom: 22 }}>Comentarios</div>
         {posted > 0 ? (
           <div style={{ display: "flex", gap: 18, alignItems: "center", marginBottom: 24, opacity: clamp(posted), scale: `${0.8 + 0.2 * posted}`, filter: `blur(${(1 - clamp(posted)) * 8}px)` }}>
@@ -493,12 +385,37 @@ export const CommentBox: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+/* ---------- Revelado del logo ---------- */
+export const BrandReveal: React.FC<{ t: number }> = ({ t }) => {
+  const v = vis(t, T.s14brand, T.s14b + 0.1, 0.25, 0.25);
+  if (v <= 0) return null;
+  const d = prog(t, T.s14brand, 0.9, (p) => p);
+  const e = prog(t, T.s14brand, 0.4, easeOutBack);
+  const out = prog(t, T.s14b - 0.15, 0.25, easeInCubic);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 540 - 260,
+        top: 760,
+        opacity: v,
+        scale: `${(0.6 + 0.4 * e) * (1 + 0.3 * out)}`,
+        filter: `blur(${(1 - clamp(e)) * 14 + out * 16}px)`,
+      }}
+    >
+      <div style={{ position: "absolute", inset: -120, borderRadius: "50%", background: `radial-gradient(circle, ${BRAND.orange}33, transparent 65%)` }} />
+      <Logo size={520} draw={d} />
+    </div>
+  );
+};
+
 /* Oscurecimiento del mundo cuando hay una tarjeta delante (legibilidad) */
 export const dimAmount = (t: number) =>
   Math.max(
-    0.42 * vis(t, T.s3, T.s8 + 0.2, 0.35, 0.3),
+    0.42 * vis(t, T.s3, T.s10 + 0.2, 0.35, 0.3),
     0.5 * vis(t, T.s11, T.s12 + 0.2, 0.3, 0.25),
-    0.3 * vis(t, T.s12 + 0.1, T.s13 + 0.1, 0.3, 0.25),
+    0.3 * vis(t, T.s12 + 0.1, T.s13 + 0.5, 0.3, 0.25),
+    0.35 * vis(t, T.s14brand, T.s14b + 0.15, 0.3, 0.25),
     0.4 * vis(t, T.s16, T.close + 0.2, 0.5, 0.4),
   );
 

@@ -1,5 +1,5 @@
 export const FPS = 30;
-export const VOICE_DURATION = 31.35;
+export const VOICE_DURATION = 27.22;
 // Duración final = locución + 1 s de cierre
 export const TOTAL_SECONDS = VOICE_DURATION + 1;
 export const W = 1080;

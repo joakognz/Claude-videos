@@ -7,65 +7,57 @@ import { iso } from "./iso";
  */
 export const T = {
   s1: 0.0, // "Misma calle, misma carta."
-  s1b: 0.91,
-  s2: 1.9, // "Pero uno siempre está lleno."
-  s3: 3.12, // "Responde solo a cualquier hora"
-  s3chat: 3.25,
-  s3reply: 3.85,
-  chips: [4.2, 4.35, 4.5],
-  s4: 4.92, // "Reserva la mesa sin que nadie descuelgue el teléfono."
-  s4confirm: 6.3,
-  s5: 7.08, // "evita los plantones."
-  s5notif: 7.12,
-  s5press: 7.72,
-  s6: 8.15, // "Si alguien cancela, avisa al siguiente al instante."
-  s6cancel: 8.56,
-  s6fill: 9.06,
-  s8: 10.58, // "Pide reseñas después de cada visita"
-  s10: 12.62, // "Mientras tanto, enfrente:"
-  s11: 13.0, // interior del ámbar (libreta, teléfono sonando, mensajes sin leer)
-  s11phone: 13.15,
-  s11msgs: 13.45,
-  s12: 14.24, // "A las once de la noche alguien escribe: ¿Hay mesa mañana?"
-  s12q1: 15.74,
-  s12q2: 16.2,
-  s12none: 16.55,
-  s13: 17.0, // "Y esa mesa se va a otro sitio."
-  s14a: 18.6, // "Ese sistema es un agente de IA"
-  s14brand: 20.66, // "y en AIgencyx Labs"
-  s14b: 22.12, // "te lo adaptamos a tu medida."
-  s14e: 23.42, // "reservas, pedidos, proveedores, turnos, facturas."
-  icons: [23.47, 24.08, 24.54, 25.24, 25.72],
-  s15: 26.45, // "Lo que hoy haces a mano lo hace solo."
-  s16: 28.3, // "Comenta auditoria y te muestro cómo quedaría el tuyo"
-  s16type: [28.7, 29.45] as [number, number],
-  s16publish: 29.62,
-  close: 31.12,
-  end: 32.35,
+  s1b: 1.36,
+  s2: 2.62, // "Pero uno siempre está lleno."
+  s3: 4.18, // "Responde solo a cualquier hora"
+  s3chat: 4.3,
+  s3reply: 4.95,
+  chips: [5.6, 5.75, 5.9],
+  s4: 6.62, // "Reserva la mesa sin que nadie descuelgue el teléfono."
+  s4confirm: 8.3,
+  s6: 9.22, // "Si alguien cancela, avisa al siguiente al instante."
+  s6cancel: 9.7,
+  s6fill: 10.56,
+  s10: 12.4, // "Mientras tanto, enfrente:"
+  s11: 12.75, // interior del ámbar (libreta, teléfono sonando, mensajes sin leer)
+  s11phone: 12.9,
+  s11msgs: 13.2,
+  s12: 14.4, // "¿Hay mesa mañana?"
+  s12q1: 14.46,
+  s12q2: 14.95,
+  s12none: 16.06,
+  s13: 15.98, // "Y nadie contesta." (la mesa se va al verde)
+  s14a: 17.6, // "Ese sistema es un agente de IA"
+  s14brand: 20.58, // "y en AIgencyx Labs"
+  s14b: 22.05, // "te lo adaptamos a tu medida."
+  s14e: 22.05,
+  icons: [22.15, 22.4, 22.65, 22.9, 23.15],
+  s16: 23.72, // "Comenta auditoria y te muestro cómo quedaría el tuyo"
+  s15: 23.72,
+  s16type: [24.19, 25.03] as [number, number],
+  s16publish: 25.2,
+  close: 27.0,
+  end: 28.22,
 };
 
 export type Hl = "lime" | "amber";
 export type Part = { text: string; hl?: Hl; at?: number; br?: boolean };
 export type Cue = { start: number; end: number; parts: Part[]; label?: string; size?: number; brand?: boolean };
 
-export const LABELS = ["RESPUESTA", "RESERVA", "RECORDATORIO", "ESPERA", "RESEÑAS"];
+export const LABELS = ["RESPUESTA", "RESERVA", "ESPERA"];
 
 export const CUES: Cue[] = [
   { start: 0.04, end: T.s2, parts: [{ text: "Misma calle." }, { text: "Misma carta.", at: T.s1b, br: true }] },
   { start: T.s2, end: T.s3, parts: [{ text: "Pero uno siempre está" }, { text: "lleno.", hl: "lime" }] },
   { start: T.s3, end: T.s4, label: "RESPUESTA", parts: [{ text: "Responde" }, { text: "solo.", hl: "lime" }] },
-  { start: T.s4, end: T.s5, label: "RESERVA", parts: [{ text: "Reservan" }, { text: "solos.", hl: "lime" }] },
-  { start: T.s5, end: T.s6, label: "RECORDATORIO", parts: [{ text: "Menos" }, { text: "plantones.", hl: "lime" }] },
-  { start: T.s6, end: T.s8, label: "ESPERA", parts: [{ text: "La mesa se" }, { text: "rellena.", hl: "lime" }] },
-  { start: T.s8, end: T.s10, label: "RESEÑAS", size: 84, parts: [{ text: "Reseñas en" }, { text: "piloto automático.", hl: "lime", br: true }] },
+  { start: T.s4, end: T.s6, label: "RESERVA", parts: [{ text: "Reservan" }, { text: "solos.", hl: "lime" }] },
+  { start: T.s6, end: T.s10, label: "ESPERA", parts: [{ text: "La mesa se" }, { text: "rellena.", hl: "lime" }] },
   { start: T.s10, end: T.s12, parts: [{ text: "Mientras tanto," }, { text: "enfrente…", hl: "amber", br: true }] },
   { start: T.s12, end: T.s13, parts: [{ text: "A las" }, { text: "23:00.", hl: "amber" }] },
   { start: T.s13, end: T.s14a, parts: [{ text: "Esa mesa se va." }] },
   { start: T.s14a, end: T.s14brand, parts: [{ text: "Agente de" }, { text: "IA.", hl: "lime" }] },
   { start: T.s14brand, end: T.s14b, brand: true, parts: [{ text: "AIgencyx Labs" }] },
-  { start: T.s14b, end: T.s14e, parts: [{ text: "A tu" }, { text: "medida.", hl: "lime" }] },
-  { start: T.s14e, end: T.s15, size: 84, parts: [{ text: "IA en un montón de" }, { text: "procesos.", hl: "lime", br: true }] },
-  { start: T.s15, end: T.s16, size: 84, parts: [{ text: "Lo que haces a mano," }, { text: "lo hace", br: true }, { text: "solo.", hl: "lime" }] },
+  { start: T.s14b, end: T.s16, parts: [{ text: "A tu" }, { text: "medida.", hl: "lime" }] },
   { start: T.s16, end: T.close, parts: [{ text: "Comenta" }, { text: "AUDITORIA", hl: "lime", br: true }] },
 ];
 
@@ -101,27 +93,25 @@ const CAMERA_KEYS: [number, Shot][] = [
   [T.s2 - 0.05, drift(S.street, -20, -15, 1.06)],
   [T.s3 - 0.15, S.streetPush],
   [T.s3 + 0.5, S.green],
-  [T.s8 - 0.1, S.greenDrift],
-  [T.s8 + 0.45, S.greenDoor],
-  [T.s10 - 0.05, drift(S.greenDoor, 25, 10, 1.07)],
+  [T.s10 - 0.1, S.greenDrift],
   [T.s10 + 0.55, S.amber],
   [T.s12 - 0.1, drift(S.amber, 10, -10, 1.1)],
   [T.s12 + 0.4, S.amberClose],
-  [T.s13 - 0.05, drift(S.amberClose, -15, 10, 1.06)],
-  [T.s13 + 0.45, S.wideStreet],
+  [T.s13 + 0.25, drift(S.amberClose, -15, 10, 1.06)],
+  [T.s13 + 0.6, S.wideStreet],
   [T.s14a - 0.05, drift(S.wideStreet, 10, -10, 1.05)],
   [T.s14a + 0.9, S.city],
-  [T.s14e - 0.4, S.cityDrift],
-  [T.s14e + 0.25, S.greenMid],
-  [T.s15 - 0.05, drift(S.greenMid, -10, -8, 1.06)],
-  [T.s15 + 0.6, S.greenHero],
+  [T.s14b - 0.35, S.cityDrift],
+  [T.s14b + 0.2, S.greenMid],
+  [T.s16 - 0.05, drift(S.greenMid, -10, -8, 1.06)],
+  [T.s16 + 0.6, S.greenHero],
   [T.close - 0.05, drift(S.greenHero, 8, 6, 1.1)],
   [T.end - 0.08, S.street],
   [T.end + 1, S.street],
 ];
 
 /** Golpe de zoom al entrar cada frase: sube rápido y se asienta. */
-const KICKS = [0.04, T.s2, T.s3, T.s4, T.s5, T.s6, T.s8, T.s12, T.s14brand, T.s14b, T.s14e, T.s15, T.s16];
+const KICKS = [0.04, T.s2, T.s3, T.s4, T.s6, T.s12, T.s13, T.s14brand, T.s14b, T.s16];
 const kick = (t: number) => {
   let k = 0;
   for (const c of KICKS) {

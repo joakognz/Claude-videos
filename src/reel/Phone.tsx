@@ -1,7 +1,7 @@
 import React from "react";
 import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, prog } from "./anim";
 import { T } from "./timeline";
-import { Bubble, card, enter, Icon, Typing, withSerifI } from "./ui";
+import { Bubble, enter, Icon, Typing, withSerifI } from "./ui";
 
 const PW = 500;
 const PH = 880;
@@ -175,73 +175,6 @@ const BookingScreen: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const ReminderScreen: React.FC<{ t: number }> = ({ t }) => {
-  const drop = prog(t, T.s5notif, 0.35, easeOutCubic);
-  const pressed = t >= T.s5press;
-  const press = Math.sin(Math.PI * clamp((t - T.s5press + 0.12) / 0.26));
-  const ok = prog(t, T.s5press + 0.15, 0.3);
-  return (
-    <>
-      <StatusBar time="19:00" />
-      <div style={{ textAlign: "center", color: COLORS.white, marginTop: 40 }}>
-        <div style={{ fontSize: 28, fontWeight: 600, color: COLORS.muted }}>Jueves</div>
-        <div style={{ fontSize: 128, fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1.05 }}>19:00</div>
-      </div>
-      <div
-        style={{
-          margin: "40px 22px 0",
-          ...card,
-          borderRadius: 30,
-          padding: 26,
-          translate: `0 ${(1 - drop) * -420}px`,
-          opacity: clamp(drop * 1.5),
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 12, color: COLORS.muted, fontSize: 21, fontWeight: 600 }}>
-          <div style={{ width: 34, height: 34, borderRadius: 10, background: COLORS.lime, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Icon name="fork" size={22} color={COLORS.ink} stroke={10} />
-          </div>
-          TU RESTAURANTE · ahora
-        </div>
-        <div style={{ fontSize: 24, color: COLORS.lime, fontWeight: 700, marginTop: 16 }}>Recordatorio</div>
-        <div style={{ fontSize: 34, color: COLORS.white, fontWeight: 800, marginTop: 6, lineHeight: 1.2 }}>Mañana 21:00, ¿confirmas?</div>
-        {ok < 1 ? (
-          <div style={{ display: "flex", gap: 12, marginTop: 22, opacity: 1 - ok }}>
-            <div
-              style={{
-                flex: 1,
-                height: 74,
-                borderRadius: 20,
-                background: COLORS.lime,
-                color: COLORS.ink,
-                fontSize: 26,
-                fontWeight: 800,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                scale: `${1 - (pressed ? 0.08 * press : 0)}`,
-              }}
-            >
-              Confirmar
-            </div>
-            <div style={{ flex: 1, height: 74, borderRadius: 20, background: "#2A2E35", color: COLORS.white, fontSize: 26, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              Cambiar
-            </div>
-          </div>
-        ) : null}
-        {ok > 0 ? (
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: ok < 1 ? -74 : 22, height: 74, fontSize: 28, fontWeight: 800, color: COLORS.lime, opacity: ok, filter: `blur(${(1 - ok) * 8}px)` }}>
-            <div style={{ scale: `${easeOutBack(ok)}` }}>
-              <Icon name="check" size={34} stroke={11} />
-            </div>
-            Confirmada. ¡Te esperamos!
-          </div>
-        ) : null}
-      </div>
-    </>
-  );
-};
-
 const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
   const cancel = prog(t, T.s6cancel, 0.3);
   const fly = prog(t, T.s6fill, 0.45, easeInOutCubic);
@@ -360,14 +293,13 @@ const WaitlistScreen: React.FC<{ t: number }> = ({ t }) => {
 
 const SCREENS: { start: number; end: number; C: React.FC<{ t: number }> }[] = [
   { start: T.s3 - 1, end: T.s4, C: ChatScreen },
-  { start: T.s4, end: T.s5, C: BookingScreen },
-  { start: T.s5, end: T.s6, C: ReminderScreen },
-  { start: T.s6, end: T.s8 + 1, C: WaitlistScreen },
+  { start: T.s4, end: T.s6, C: BookingScreen },
+  { start: T.s6, end: T.s10 + 1, C: WaitlistScreen },
 ];
 
 export const Phone: React.FC<{ t: number }> = ({ t }) => {
   const inP = prog(t, T.s3, 0.4, easeOutCubic);
-  const outP = prog(t, T.s8 - 0.05, 0.35, easeInCubic);
+  const outP = prog(t, T.s10 - 0.05, 0.35, easeInCubic);
   if (inP <= 0 || outP >= 1) return null;
   const y = (1 - inP) * 1350 + outP * 1350;
   return (

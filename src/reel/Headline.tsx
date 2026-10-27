@@ -2,6 +2,7 @@ import React from "react";
 import { clamp, COLORS, easeInCubic, easeOutCubic, prog, vis } from "./anim";
 import { CUES, Cue, LABELS, Part, T } from "./timeline";
 import { fontFamily } from "./fonts";
+import { BRAND } from "./Logo";
 import { withSerifI } from "./ui";
 
 const ENTER = 0.25;
@@ -68,9 +69,8 @@ const CueView: React.FC<{ cue: Cue; t: number }> = ({ cue, t }) => {
           letterSpacing: "-0.03em",
         }}
       >
-        <BrandMark size={92} t={t} start={cue.start} />
         <span>
-          {withSerifI("AIgencyx")} <span style={{ color: COLORS.lime }}>Labs</span>
+          {withSerifI("AIgencyx")} <span style={{ color: BRAND.orange }}>Labs</span>
         </span>
       </div>
     );
