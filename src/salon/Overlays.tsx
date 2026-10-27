@@ -17,7 +17,7 @@ const Avatar: React.FC<{ letter: string; color?: string }> = ({ letter, color = 
 
 /* ---------- Mensaje de la clienta (sin contestar) que acaba en otro sitio ---------- */
 export const ClientMessage: React.FC<{ t: number }> = ({ t }) => {
-  const v = vis(t, A.clienta, A.web + 0.3, 0.3, 0.3);
+  const v = vis(t, A.clienta, A.agente + 0.1, 0.3, 0.3);
   if (v <= 0) return null;
   const e = prog(t, A.clienta, 0.4, easeOutBack);
   // al tardar, la tarjeta se encoge en burbuja y vuela al salón de enfrente

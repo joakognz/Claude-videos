@@ -3,68 +3,58 @@ import { createCamera, drift, Key, project, shot, through } from "../reel/camera
 import type { Cue } from "../reel/timeline";
 
 /**
- * Inicio (s) de las palabras clave de la locución. Salen de la transcripción por palabra:
- * si cambia el mp3, solo hay que actualizar este bloque.
+ * Inicio (s) de las palabras clave en la locución recortada (public/voz_peluqueria_corta.mp3),
+ * según su transcripción por palabra. Si cambia el mp3, solo hay que actualizar este bloque.
  */
 export const A = {
-  manos: 0.15, // "Manos llenas de tinte."
-  movil: 2.04, // "Y el móvil vibrando."
-  clienta: 3.93, // "Es una clienta que quiere cambiar la hora."
-  nopuedes: 7.26, // "No puedes contestar."
-  tardas: 8.79, // "Si tardas, reserva en otro sitio."
-  otrositio: 10.3,
-  web: 11.65, // "Y tú tienes web de reservas."
-  pero: 14.26, // "Pero no confirma, no apunta, no mueve citas."
-  noapunta: 15.5,
-  nomueve: 16.6,
-  escaparate: 18.09, // "Es un escaparate."
-  agente: 19.62, // "Un agente de IA sí."
-  lee: 21.87, // "Lee la reserva al momento,"
-  agenda: 23.9, // "la mete en tu agenda"
-  confirma: 25.4, // "y confirma a la clienta por WhatsApp."
-  otrahora: 28.69, // "Si quiere otra hora, la cambia él."
-  cambia: 30.3,
-  cancela: 31.91, // "Si alguien cancela, rellena el hueco."
-  rellena: 33.2,
-  peinando: 34.77, // "Y tú, peinando."
-  montamos: 36.55, // "Lo montamos en AIgencyx Labs con las herramientas que ya usas."
-  aigencyx: 37.5,
-  herramientas: 38.8,
-  comenta: 40.96, // "Comenta AUDITORIA y te respondemos con los pasos…"
-  auditoria: 41.5,
-  auditoriaEnd: 42.3,
-  sigue: 46.81, // "El móvil sigue vibrando."
-  estavez: 48.7, // "Esta vez ya está contestado."
-  voiceEnd: 50.5,
+  manos: 0.12, // "Manos llenas de tinte"
+  movil: 1.7, // "y el móvil vibrando."
+  clienta: 2.94, // "Es una clienta que quiere cambiar la hora."
+  hora: 4.38,
+  nopuedes: 4.5, // (sin voz) arranca el contador "sin responder"
+  tardas: 4.88, // "Si tardas, reserva en otro sitio."
+  otrositio: 6.14,
+  agente: 6.9, // "Un agente de IA, sí,"
+  ia: 7.56,
+  si: 8.1,
+  lee: 8.6, // "lee la reserva al momento,"
+  agenda: 10.02, // "la mete en tu agenda"
+  confirma: 11.14, // "y confirma a la clienta por WhatsApp."
+  otrahora: 12.96, // "Si quiere otra hora, la cambia él."
+  cambia: 13.78,
+  peinando: 14.58, // "Y tú, peinando."
+  montamos: 15.74, // "Lo montamos en AIgencyx Labs con las herramientas que ya usas."
+  aigencyx: 16.5,
+  herramientas: 18.16,
+  comenta: 19.72, // "Comenta auditoria y te respondemos con los pasos…"
+  auditoria: 20.2,
+  auditoriaEnd: 20.8,
+  sigue: 24.26, // "El móvil sigue vibrando."
+  estavez: 25.6, // "Esta vez ya está contestado."
+  contestado: 26.46,
+  voiceEnd: 27.12,
 };
 
 export const VOICE_DURATION = A.voiceEnd;
 export const TOTAL = VOICE_DURATION + 1;
-export const CLOSE = A.voiceEnd - 0.1;
+export const CLOSE = A.voiceEnd - 0.02;
 export const END = TOTAL;
 
-export const LABELS = ["RESERVA", "AGENDA", "CONFIRMACIÓN", "CAMBIOS", "HUECOS"];
+export const LABELS = ["RESERVA", "AGENDA", "CONFIRMACIÓN", "CAMBIOS"];
 
 export const CUES: Cue[] = [
   { start: A.manos, end: A.movil, parts: [{ text: "Manos llenas de" }, { text: "tinte.", hl: "amber" }] },
   { start: A.movil, end: A.clienta, parts: [{ text: "Y el móvil" }, { text: "vibrando.", hl: "amber" }] },
-  { start: A.clienta, end: A.nopuedes, parts: [{ text: "Quiere cambiar la" }, { text: "hora.", hl: "amber" }] },
-  { start: A.nopuedes, end: A.tardas, parts: [{ text: "No puedes" }, { text: "contestar.", hl: "amber" }] },
-  { start: A.tardas, end: A.web, parts: [{ text: "Si tardas, reserva en" }, { text: "otro sitio.", hl: "amber", br: true }] },
-  { start: A.web, end: A.pero, parts: [{ text: "Tienes web de" }, { text: "reservas.", hl: "amber" }] },
-  { start: A.pero, end: A.noapunta, parts: [{ text: "No" }, { text: "confirma.", hl: "amber" }] },
-  { start: A.noapunta, end: A.nomueve, parts: [{ text: "No" }, { text: "apunta.", hl: "amber" }] },
-  { start: A.nomueve, end: A.escaparate, parts: [{ text: "No mueve" }, { text: "citas.", hl: "amber" }] },
-  { start: A.escaparate, end: A.agente, parts: [{ text: "Es un" }, { text: "escaparate.", hl: "amber" }] },
+  { start: A.clienta, end: A.tardas, parts: [{ text: "Quiere cambiar la" }, { text: "hora.", hl: "amber" }] },
+  { start: A.tardas, end: A.agente, parts: [{ text: "Si tardas, reserva en" }, { text: "otro sitio.", hl: "amber", br: true }] },
   { start: A.agente, end: A.lee, parts: [{ text: "Un agente de" }, { text: "IA", hl: "white" }, { text: "sí." }] },
   { start: A.lee, end: A.agenda, label: "RESERVA", parts: [{ text: "La lee al" }, { text: "momento.", hl: "white" }] },
   { start: A.agenda, end: A.confirma, label: "AGENDA", parts: [{ text: "La mete en tu" }, { text: "agenda.", hl: "white" }] },
   { start: A.confirma, end: A.otrahora, label: "CONFIRMACIÓN", parts: [{ text: "Confirma a la" }, { text: "clienta.", hl: "white" }] },
-  { start: A.otrahora, end: A.cancela, label: "CAMBIOS", parts: [{ text: "La cambia" }, { text: "él.", hl: "white" }] },
-  { start: A.cancela, end: A.peinando, label: "HUECOS", parts: [{ text: "Rellena el" }, { text: "hueco.", hl: "white" }] },
+  { start: A.otrahora, end: A.peinando, label: "CAMBIOS", parts: [{ text: "La cambia" }, { text: "él.", hl: "white" }] },
   { start: A.peinando, end: A.montamos, parts: [{ text: "Y tú," }, { text: "peinando.", hl: "white" }] },
   { start: A.montamos, end: A.herramientas, brand: true, parts: [{ text: "AIgencyx Labs" }] },
-  { start: A.herramientas, end: A.comenta, size: 84, parts: [{ text: "Con las herramientas" }, { text: "que" , br: true }, { text: "ya usas.", hl: "white" }] },
+  { start: A.herramientas, end: A.comenta, size: 84, parts: [{ text: "Con las herramientas" }, { text: "que", br: true }, { text: "ya usas.", hl: "white" }] },
   { start: A.comenta, end: A.sigue, parts: [{ text: "Comenta" }, { text: "AUDITORIA", hl: "white", br: true }] },
   { start: A.sigue, end: A.estavez, parts: [{ text: "El móvil sigue" }, { text: "vibrando.", hl: "white" }] },
   { start: A.estavez, end: CLOSE, size: 88, parts: [{ text: "Esta vez, ya está" }, { text: "contestado.", hl: "white", br: true }] },
@@ -92,17 +82,14 @@ const CAMERA_KEYS: Key[] = [
   [0, S.hands],
   [A.movil - 0.24, drift(S.hands, 10, -6, 1.06, 1.5)],
   ...through(A.movil, drift(S.hands, 10, -6, 1.06, 1.5), S.phone).slice(1),
-  [A.nopuedes - 0.05, drift(S.phone, -12, 8, 1.08, -1.5)],
-  [A.nopuedes + 0.35, S.phoneB, easeOutCubic],
+  [A.clienta, drift(S.phone, -12, 8, 1.08, -1.5)],
+  [A.clienta + 0.35, S.phoneB, easeOutCubic],
   [A.tardas, drift(S.phoneB, 8, 6, 1.04, 1)],
-  [A.tardas + 0.8, S.street],
-  [A.web - 0.05, drift(S.street, 20, -10, 1.06, 1.5)],
-  [A.web + 0.5, S.room, easeOutCubic],
-  [A.escaparate, drift(S.room, -20, 10, 1.1, -2)],
-  [A.agente - 0.24, drift(S.room, -25, 12, 1.12, -2.5)],
-  ...through(A.agente, drift(S.room, -25, 12, 1.12, -2.5), S.roomB).slice(1),
-  [A.lee, drift(S.roomB, 15, -8, 1.05, -1)],
-  [A.cancela, drift(S.roomB, -20, 10, 1.12, 2)],
+  [A.tardas + 0.7, S.street],
+  [A.agente - 0.24, drift(S.street, 20, -10, 1.06, 1.5)],
+  ...through(A.agente, drift(S.street, 20, -10, 1.06, 1.5), S.roomB).slice(1),
+  [A.agenda, drift(S.roomB, 15, -8, 1.05, -1)],
+  [A.otrahora, drift(S.roomB, -20, 10, 1.1, 2)],
   [A.peinando - 0.24, drift(S.roomB, -25, 12, 1.14, 2.5)],
   ...through(A.peinando, drift(S.roomB, -25, 12, 1.14, 2.5), S.stylist).slice(1),
   [A.montamos - 0.05, drift(S.stylist, 10, 6, 1.06, -1.5)],
@@ -116,7 +103,7 @@ const CAMERA_KEYS: Key[] = [
   [END + 1, S.hands],
 ];
 
-const KICKS = [0.15, A.clienta, A.nopuedes, A.otrositio, A.pero, A.noapunta, A.nomueve, A.escaparate, A.lee, A.agenda, A.confirma, A.otrahora, A.cancela, A.aigencyx, A.herramientas, A.estavez];
+const KICKS = [A.manos, A.clienta, A.hora, A.otrositio, A.ia, A.si, A.lee, A.agenda, A.confirma, A.otrahora, A.cambia, A.aigencyx, A.herramientas, A.auditoria, A.estavez];
 
 export const camera = createCamera(CAMERA_KEYS, KICKS);
 

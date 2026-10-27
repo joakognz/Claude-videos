@@ -26,7 +26,7 @@ Versiones anteriores: 63 s en el commit `831c181`, 32 s en `7dd59d1`.
 npm i
 npx remotion studio                       # previsualizar (composición AIgencyxReelPreview = sin motion blur, más rápida)
 npx remotion render AIgencyxReel out/reel.mp4 --crf=16
-python3 scripts/cut_voice.py public/voiceover.mp3 public/voiceover_short.mp3
+python3 scripts/cut_voice.py restaurante public/voiceover.mp3 public/voiceover_short.mp3
 ```
 
 Sin acceso a remotion.media, se puede usar un Chromium local: `REMOTION_BROWSER=/ruta/chrome-headless-shell`.
@@ -35,8 +35,10 @@ Tipografías: Inter y Sora (SIL Open Font License), incluidas en `public/fonts`.
 
 ## Reel peluquerías (`AIgencyxPeluqueria`)
 
-- `src/salon/timeline.ts`: inicio de cada palabra clave de la locución (`A`), textos en pantalla y cámara.
-  **Al recibir el mp3**: transcribir con marcas por palabra y actualizar solo el bloque `A`.
+- Locución: toma de Guillermo (`public/voz_peluqueria.mp3`), recortada a frases completas y con +5 dB
+  (`python3 scripts/cut_voice.py peluqueria public/voz_peluqueria.mp3 public/voz_peluqueria_corta.mp3`): 27,1 s + 1 s = 28,1 s.
+  Fuera: la web de reservas, "No puedes contestar" y "Si alguien cancela, rellena el hueco".
+- `src/salon/timeline.ts`: inicio de cada palabra clave de la locución recortada (`A`), textos en pantalla y cámara.
 - `src/salon/Salon.tsx`: peluquería isométrica en corte (espejos, sillón, estilista con guantes de tinte,
   mostrador con el móvil) y salón de enfrente al otro lado de la calle. Ámbar = problema; lima = con agente.
 - `src/salon/Overlays.tsx`: mensaje sin contestar, web de reservas → escaparate, panel del agente con la agenda,

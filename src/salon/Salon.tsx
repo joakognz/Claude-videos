@@ -22,9 +22,9 @@ export const salonState = (t: number) => {
   const acc = keys(t, [[A.agente - 0.05, 0], [A.agente + 0.45, 1], [CLOSE + 0.3, 1], [END - 0.15, 0]]);
   const vib1 = vis(t, A.movil, A.tardas + 0.5, 0.05, 0.1);
   const vib2 = vis(t, A.sigue, A.estavez + 0.5, 0.05, 0.1);
-  const screenAmber = vis(t, A.movil - 0.05, A.web, 0.1, 0.3);
+  const screenAmber = vis(t, A.movil - 0.05, A.agente, 0.1, 0.3);
   const screenLime = vis(t, A.sigue - 0.05, END - 0.2, 0.1, 0.2);
-  const rival = vis(t, A.otrositio, A.web + 1.2, 0.25, 0.5);
+  const rival = vis(t, A.otrositio, A.agente + 0.4, 0.25, 0.4);
   const done = keys(t, [[A.peinando - 0.05, 0], [A.peinando + 0.25, 1], [CLOSE + 0.3, 1], [END - 0.15, 0]]);
   return { acc, vib1, vib2, screenAmber, screenLime, rival, done };
 };
