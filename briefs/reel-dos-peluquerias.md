@@ -68,6 +68,13 @@ Notas de lectura:
 - Si "WhatsApp" suena raro, prueba "guasap" en esa toma.
 - Cálculo a unas 150 palabras por minuto: el bloque A dura unos 8 s, el B unos 19 s y el C unos 12 s. El resto son pausas y transiciones de cámara. Encaja en los 58 s.
 
+## Decisiones de montaje
+- Proyecto Remotion: `reel-dos-peluquerias/`. Ciudad 3D isométrica real (Three.js, cámara ortográfica con un único eje en todo el vídeo), con bloom y profundidad de campo tipo maqueta.
+- La voz se coloca frase a frase al inicio de cada escena (`scripts/build.py`). Las tomas se usan tal cual, sin estirarlas.
+- E9: quien estaba en la lista de espera es Laura. Su etiqueta "LAURA · 17:30" sustituye a la de Fede, y es la misma Laura de la tarjeta de puntos (E11).
+- E14: además de las cuatro preguntas del guion, siguen llegando burbujas ("¿Hola?", "¿Abrís el sábado?"…) y un contador "SIN RESPONDER".
+- Cierre (E17): logo de AIgencyx Labs, icono de Instagram y @aigencyxlabs.
+
 ## Antes de publicar
 - Las dos peluquerías, los nombres (Nico, Lucas, Fede, Laura) y los puntos son ficticios.
 - El icono de Instagram solo aparece junto a @aigencyxlabs (marca de agua, barra de comentarios y cierre). No sale ningún otro logo real.
