@@ -143,9 +143,9 @@ const Nightstand: React.FC<{ t: number; side: Side }> = ({ t, side }) => {
         clipPath: "polygon(4% 0, 96% 0, 100% 100%, 0 100%)",
       }} />
       <div style={{ position: "absolute", left: -20, right: -20, top: 546, height: 60, background: top ? "#1d1b19" : "#2b1d14", borderTop: "2px solid rgba(255,255,255,0.08)" }} />
-      {/* nameplate on the front */}
+      {/* nameplate on the nightstand (kept clear of the bottom unsafe strip) */}
       <div style={{
-        position: "absolute", left: 36, top: 552, padding: "2px 14px", borderRadius: 10,
+        position: "absolute", left: 620, top: 488, padding: "2px 14px", borderRadius: 10,
         background: rgba(top ? C.redDim : C.green, 0.22), border: `2px solid ${rgba(top ? C.redDim : C.green, 0.7)}`,
         fontFamily: SANS, fontWeight: 800, fontSize: 26, letterSpacing: 2, color: top ? "#F2C9CA" : "#CFFFE6",
         opacity: nameP, translate: `${(1 - nameP) * -30 + drift(t, top ? 51 : 52, 3)}px 0px`,
