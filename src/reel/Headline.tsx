@@ -2,6 +2,7 @@ import React from "react";
 import { clamp, COLORS, easeInCubic, easeOutCubic, prog, vis } from "./anim";
 import { CUES, Cue, LABELS, Part, T } from "./timeline";
 import { fontFamily } from "./fonts";
+import { withSerifI } from "./ui";
 
 const ENTER = 0.3;
 const EXIT = 0.2;
@@ -17,7 +18,7 @@ const PartView: React.FC<{ p: Part; t: number; start: number; size: number }> = 
     margin: "0 0.12em",
     whiteSpace: "nowrap",
   };
-  if (!p.hl) return <span style={style}>{p.text}</span>;
+  if (!p.hl) return <span style={style}>{withSerifI(p.text)}</span>;
   const w = prog(t, at + 0.1, 0.32, easeOutCubic);
   const bg = p.hl === "amber" ? COLORS.amber : COLORS.lime;
   return (
@@ -37,7 +38,7 @@ const PartView: React.FC<{ p: Part; t: number; start: number; size: number }> = 
         }}
       />
       <span style={{ position: "relative", color: w > 0.55 ? COLORS.ink : COLORS.white, textShadow: w > 0.55 ? "none" : undefined }}>
-        {p.text}
+        {withSerifI(p.text)}
       </span>
     </span>
   );
@@ -69,7 +70,7 @@ const CueView: React.FC<{ cue: Cue; t: number }> = ({ cue, t }) => {
       >
         <BrandMark size={92} t={t} start={cue.start} />
         <span>
-          AIgencyx <span style={{ color: COLORS.lime }}>Labs</span>
+          {withSerifI("AIgencyx")} <span style={{ color: COLORS.lime }}>Labs</span>
         </span>
       </div>
     );

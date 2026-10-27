@@ -1,7 +1,7 @@
 import React from "react";
 import { clamp, COLORS, easeInCubic, easeInOutCubic, easeOutBack, easeOutCubic, prog } from "./anim";
 import { T } from "./timeline";
-import { Bubble, card, enter, Icon, Typing } from "./ui";
+import { Bubble, card, enter, Icon, Typing, withSerifI } from "./ui";
 
 const PW = 500;
 const PH = 880;
@@ -27,7 +27,7 @@ const Header: React.FC = () => (
       <div style={{ fontSize: 30, fontWeight: 700, color: COLORS.white }}>Tu restaurante</div>
       <div style={{ fontSize: 22, fontWeight: 600, color: COLORS.lime, display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 10, height: 10, borderRadius: 5, background: COLORS.lime, display: "inline-block" }} />
-        Agente IA · en línea
+        <span>{withSerifI("Agente IA · en línea")}</span>
       </div>
     </div>
   </div>

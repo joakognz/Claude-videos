@@ -120,3 +120,29 @@ export const Typing: React.FC<{ t: number }> = ({ t }) => (
     ))}
   </div>
 );
+
+/** "I" mayúscula con remates: en Inter la I y la l son casi iguales ("AIgencyx", "IA"). */
+export const SerifI: React.FC = () => (
+  <span style={{ display: "inline-block", position: "relative", width: "0.4em", height: "0.727em", verticalAlign: "baseline" }}>
+    <span style={{ position: "absolute", left: "0.145em", width: "0.11em", top: 0, bottom: 0, background: "currentColor" }} />
+    <span style={{ position: "absolute", left: "0.04em", right: "0.04em", top: 0, height: "0.1em", background: "currentColor" }} />
+    <span style={{ position: "absolute", left: "0.04em", right: "0.04em", bottom: 0, height: "0.1em", background: "currentColor" }} />
+  </span>
+);
+
+/** Sustituye la I mayúscula en palabras con minúsculas o en "IA". */
+export const withSerifI = (text: string): React.ReactNode =>
+  text.split(/(\s+)/).map((word, wi) => {
+    const needs = /^IA[.,]?$/.test(word) || (/I/.test(word) && /[a-záéíóúñ]/.test(word));
+    if (!needs) return word;
+    return (
+      <React.Fragment key={wi}>
+        {word.split("I").map((chunk, ci) => (
+          <React.Fragment key={ci}>
+            {ci > 0 ? <SerifI /> : null}
+            {chunk}
+          </React.Fragment>
+        ))}
+      </React.Fragment>
+    );
+  });
