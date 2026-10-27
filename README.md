@@ -1,4 +1,4 @@
-# AIgencyx Labs · Reel restaurantes (9:16)
+# AIgencyx Labs · Reels 9:16
 
 Vídeo vertical 1080×1920 a 30 fps para Instagram Reels, hecho con [Remotion](https://remotion.dev).
 Versión corta: frases completas de la locución a velocidad natural (27,22 s) + 1 s de cierre en bucle = 28,22 s.
@@ -32,3 +32,17 @@ python3 scripts/cut_voice.py public/voiceover.mp3 public/voiceover_short.mp3
 Sin acceso a remotion.media, se puede usar un Chromium local: `REMOTION_BROWSER=/ruta/chrome-headless-shell`.
 
 Tipografías: Inter y Sora (SIL Open Font License), incluidas en `public/fonts`.
+
+## Reel peluquerías (`AIgencyxPeluqueria`)
+
+- `src/salon/timeline.ts`: inicio de cada palabra clave de la locución (`A`), textos en pantalla y cámara.
+  **Al recibir el mp3**: transcribir con marcas por palabra y actualizar solo el bloque `A`.
+- `src/salon/Salon.tsx`: peluquería isométrica en corte (espejos, sillón, estilista con guantes de tinte,
+  mostrador con el móvil) y salón de enfrente al otro lado de la calle. Ámbar = problema; lima = con agente.
+- `src/salon/Overlays.tsx`: mensaje sin contestar, web de reservas → escaparate, panel del agente con la agenda,
+  logo + herramientas, comentario AUDITORIA y respuesta final.
+- Partes compartidas en `src/reel/`: `camera.ts`, `Headline.tsx`, `MotionBlur.tsx`, `CommentCard.tsx`, `Logo.tsx`.
+
+```bash
+npx remotion render AIgencyxPeluqueria out/peluqueria.mp4 --crf=16
+```

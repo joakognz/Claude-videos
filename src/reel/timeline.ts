@@ -1,5 +1,5 @@
-import { clamp, easeInCubic, easeInOutCubic, easeOutCubic, lerp } from "./anim";
-import { iso } from "./iso";
+import { easeOutCubic } from "./anim";
+import { createCamera, drift, Key, project, shot, through } from "./camera";
 
 /**
  * Tiempos (segundos) tomados de la transcripción con marcas por palabra de la locución.
@@ -63,13 +63,6 @@ export const CUES: Cue[] = [
 
 /* ---------------- Cámara ---------------- */
 
-/** Plano de cámara: centro (px del mundo), zoom y giro (grados). */
-export type Shot = { cx: number; cy: number; zoom: number; roll: number };
-const shot = (x: number, y: number, z: number, zoom: number, roll = 0): Shot => {
-  const [cx, cy] = iso(x, y, z);
-  return { cx, cy, zoom, roll };
-};
-
 export const SHOTS = {
   street: shot(1.9, -0.2, 1.3, 1.8, 0),
   streetPush: shot(1.4, -0.8, 1.1, 2.05, -2.5),
@@ -86,20 +79,6 @@ export const SHOTS = {
 };
 
 const S = SHOTS;
-const drift = (a: Shot, dx: number, dy: number, dz: number, droll = 0): Shot => ({
-  cx: a.cx + dx, cy: a.cy + dy, zoom: a.zoom * dz, roll: a.roll + droll,
-});
-const zoomed = (a: Shot, k: number, droll = 0): Shot => ({ ...a, zoom: a.zoom * k, roll: a.roll + droll });
-
-type Key = [number, Shot, ((p: number) => number)?];
-
-/** Transición "zoom a través": acelera hacia dentro, corta y el plano nuevo se asienta desde cerca. */
-const through = (t: number, from: Shot, to: Shot): Key[] => [
-  [t - 0.24, from],
-  [t, zoomed(from, 1.55, 4), easeInCubic],
-  [t + 0.001, zoomed(to, 1.4, -4)],
-  [t + 0.42, to, easeOutCubic],
-];
 
 /** Momentos de corte (para el destello de transición). */
 export const CUTS = [T.s3, T.s10, T.s16];
@@ -132,58 +111,9 @@ const CAMERA_KEYS: Key[] = [
   [T.end + 1, S.street],
 ];
 
-/** Golpe de zoom y giro al entrar cada frase: sube rápido y se asienta. */
 const KICKS = [0.04, T.s1b, T.s2, T.s4, T.s6, T.s6fill, T.s12, T.s13, T.s14a, T.s14brand, T.s14b, T.s16publish];
-const kick = (t: number) => {
-  let k = 0;
-  let dir = 1;
-  KICKS.forEach((c, i) => {
-    const d = t - c;
-    if (d < 0 || d > 0.6) return;
-    const v = d < 0.07 ? d / 0.07 : 1 - easeInOutCubic(clamp((d - 0.07) / 0.5));
-    if (v > k) {
-      k = v;
-      dir = i % 2 === 0 ? 1 : -1;
-    }
-  });
-  return { zoom: 1 + 0.065 * k, roll: 1.4 * k * dir };
-};
 
-export const camera = (t: number): Shot => {
-  const c = baseCamera(t);
-  const k = kick(t);
-  return { ...c, zoom: c.zoom * k.zoom, roll: c.roll + k.roll };
-};
-
-const baseCamera = (t: number): Shot => {
-  const k = CAMERA_KEYS;
-  if (t <= k[0][0]) return k[0][1];
-  for (let i = 0; i < k.length - 1; i++) {
-    const [t0, a] = k[i];
-    const [t1, b, ease] = k[i + 1];
-    if (t <= t1) {
-      const p = (ease ?? easeInOutCubic)(clamp((t - t0) / (t1 - t0)));
-      return {
-        cx: lerp(a.cx, b.cx, p),
-        cy: lerp(a.cy, b.cy, p),
-        zoom: Math.exp(lerp(Math.log(a.zoom), Math.log(b.zoom), p)),
-        roll: lerp(a.roll, b.roll, p),
-      };
-    }
-  }
-  return k[k.length - 1][1];
-};
-
-/** Transformación SVG del mundo para un plano. */
-export const worldTransform = (c: Shot) =>
-  `translate(540 960) rotate(${c.roll}) scale(${c.zoom}) translate(${-c.cx} ${-c.cy})`;
+export const camera = createCamera(CAMERA_KEYS, KICKS);
 
 /** Posición en pantalla (px) de un punto del mundo isométrico en el instante t. */
-export const toScreen = (t: number, x: number, y: number, z = 0): [number, number] => {
-  const c = camera(t);
-  const [wx, wy] = iso(x, y, z);
-  const dx = (wx - c.cx) * c.zoom;
-  const dy = (wy - c.cy) * c.zoom;
-  const r = (c.roll * Math.PI) / 180;
-  return [540 + dx * Math.cos(r) - dy * Math.sin(r), 960 + dx * Math.sin(r) + dy * Math.cos(r)];
-};
+export const toScreen = (t: number, x: number, y: number, z = 0) => project(camera(t), x, y, z);

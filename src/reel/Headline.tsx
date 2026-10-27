@@ -1,6 +1,6 @@
 import React from "react";
 import { clamp, COLORS, easeInCubic, easeOutCubic, prog, vis } from "./anim";
-import { CUES, Cue, LABELS, Part, T } from "./timeline";
+import type { Cue, Part } from "./timeline";
 import { fontFamily } from "./fonts";
 import { BRAND } from "./Logo";
 import { withSerifI } from "./ui";
@@ -110,17 +110,17 @@ export const BrandMark: React.FC<{ size: number; t: number; start: number }> = (
   );
 };
 
-const Eyebrow: React.FC<{ t: number }> = ({ t }) => {
-  const shown = vis(t, T.s3, T.s10, 0.3, 0.25);
+const Eyebrow: React.FC<{ t: number; cues: Cue[]; labels: string[]; range: [number, number] }> = ({ t, cues, labels, range }) => {
+  const shown = vis(t, range[0], range[1], 0.3, 0.25);
   if (shown <= 0) return null;
-  const idx = CUES.filter((c) => c.label).findIndex((c) => t >= c.start && t < c.end);
-  const active = CUES.find((c) => c.label && t >= c.start && t < c.end);
+  const active = cues.find((c) => c.label && t >= c.start && t < c.end);
+  const idx = active ? labels.indexOf(active.label as string) : -1;
   const e = active ? prog(t, active.start, 0.3) : 0;
   const out = active ? prog(t, active.end - 0.18, 0.18, easeInCubic) : 1;
   return (
     <div style={{ opacity: shown, display: "flex", flexDirection: "column", alignItems: "center", gap: 18, marginBottom: 22 }}>
       <div style={{ display: "flex", gap: 10 }}>
-        {LABELS.map((l, i) => {
+        {labels.map((l, i) => {
           const on = i === idx ? 1 : i < idx ? 0.45 : 0.14;
           return (
             <div
@@ -155,9 +155,9 @@ const Eyebrow: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-export const Headlines: React.FC<{ t: number }> = ({ t }) => {
-  const idx = CUES.findIndex((c) => t >= c.start && t < c.end);
-  const cue = idx >= 0 ? CUES[idx] : undefined;
+export const Headlines: React.FC<{ t: number; cues: Cue[]; labels: string[]; eyebrow: [number, number] }> = ({ t, cues, labels, eyebrow }) => {
+  const idx = cues.findIndex((c) => t >= c.start && t < c.end);
+  const cue = idx >= 0 ? cues[idx] : undefined;
   return (
     <div
       style={{
@@ -175,7 +175,7 @@ export const Headlines: React.FC<{ t: number }> = ({ t }) => {
         textShadow: "0 6px 30px rgba(0,0,0,0.55)",
       }}
     >
-      <Eyebrow t={t} />
+      <Eyebrow t={t} cues={cues} labels={labels} range={eyebrow} />
       {cue ? <CueView key={cue.start} cue={cue} t={t} dir={idx % 2 === 0 ? 1 : -1} /> : null}
       {/* reservar espacio estable */}
       <div style={{ height: clamp(0) }} />

@@ -2,7 +2,8 @@ import React from "react";
 import { clamp, COLORS, easeOutBack, keys, prog, rand, vis } from "./anim";
 import { AMBER, Box, CITY, EXTENT, GREEN, LAMPS, NET_NODES, STREETS_X, STREETS_Y } from "./cityData";
 import { faceX, faceY, ground, iso, P2, pts } from "./iso";
-import { camera, T, worldTransform } from "./timeline";
+import { worldTransform } from "./camera";
+import { camera, T } from "./timeline";
 
 const N_PATTERNS = 6;
 
@@ -25,7 +26,7 @@ const shade = (seed: number) => {
   return { top: `rgb(${44 + k},${47 + k},${54 + k})`, fx: `rgb(${30 + k},${33 + k},${39 + k})`, fy: `rgb(${21 + k},${23 + k},${28 + k})` };
 };
 
-const Building: React.FC<{ b: Box; lights: number }> = ({ b, lights }) => {
+export const Building: React.FC<{ b: Box; lights: number }> = ({ b, lights }) => {
   const { x0, y0, x1, y1, h, seed } = b;
   const c = shade(seed);
   const r = rand(seed + 3);
@@ -113,7 +114,7 @@ const Table: React.FC<{ x: number; y: number; glow: string }> = ({ x, y, glow })
   );
 };
 
-const Lamp: React.FC<{ x: number; y: number; on: number }> = ({ x, y, on }) => {
+export const Lamp: React.FC<{ x: number; y: number; on: number }> = ({ x, y, on }) => {
   const [bx, by] = iso(x, y, 0);
   const [hx, hy] = iso(x, y, 0.95);
   return (
@@ -126,7 +127,7 @@ const Lamp: React.FC<{ x: number; y: number; on: number }> = ({ x, y, on }) => {
   );
 };
 
-const TreeG: React.FC<{ x: number; y: number; s: number }> = ({ x, y, s }) => {
+export const TreeG: React.FC<{ x: number; y: number; s: number }> = ({ x, y, s }) => {
   const [bx, by] = iso(x, y, 0);
   const [cx, cy] = iso(x, y, 0.42 * s);
   return (
@@ -372,7 +373,7 @@ export const City: React.FC<{ t: number; sceneWalkers: React.ReactNode }> = ({ t
   const E = EXTENT + 2;
   return (
     <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
-      <Defs />
+      <WorldDefs />
       <g transform={worldTransform(cam)}>
         <polygon points={pts([iso(-E, -E), iso(E, -E), iso(E, E), iso(-E, E)])} fill="#14161B" />
         <g transform={ground(0)}>
@@ -409,7 +410,7 @@ export const City: React.FC<{ t: number; sceneWalkers: React.ReactNode }> = ({ t
   );
 };
 
-const Defs: React.FC = () => {
+export const WorldDefs: React.FC = () => {
   const patterns = new Array(N_PATTERNS).fill(0).map((_, k) => {
     const r = rand(1000 + k);
     const wins: React.ReactNode[] = [];

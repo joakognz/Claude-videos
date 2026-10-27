@@ -8,32 +8,10 @@ import { Headlines } from "./Headline";
 import { MotionBlur } from "./MotionBlur";
 import { Phone } from "./Phone";
 import { BrandReveal, CommentBox, dimAmount, Interior, LateNight, ProcessIcons, TravelBubble } from "./Scenes";
-import { camera, CUES, CUTS, T } from "./timeline";
+import { cameraTravel } from "./camera";
+import { camera, CUES, CUTS, LABELS, T } from "./timeline";
 
 const SHUTTER = 1.0; // fracción de fotograma (360°): desenfoque de movimiento marcado
-
-/** Desplazamiento máximo en pantalla (px) que produce la cámara durante el obturador. */
-const cameraTravel = (t: number, fps: number) => {
-  const dt = SHUTTER / fps / 2;
-  const a = camera(t - dt);
-  const b = camera(t + dt);
-  let max = 0;
-  for (const [sx, sy] of [[0, 0], [1080, 0], [0, 1920], [1080, 1920], [540, 960]]) {
-    // punto del mundo bajo (sx, sy) en a, y dónde cae en b (con giro)
-    const ra = (-a.roll * Math.PI) / 180;
-    const ux = sx - 540;
-    const uy = sy - 960;
-    const wx = (ux * Math.cos(ra) - uy * Math.sin(ra)) / a.zoom + a.cx;
-    const wy = (ux * Math.sin(ra) + uy * Math.cos(ra)) / a.zoom + a.cy;
-    const rb = (b.roll * Math.PI) / 180;
-    const vx = (wx - b.cx) * b.zoom;
-    const vy = (wy - b.cy) * b.zoom;
-    const nx = 540 + vx * Math.cos(rb) - vy * Math.sin(rb);
-    const ny = 960 + vx * Math.sin(rb) + vy * Math.cos(rb);
-    max = Math.max(max, Math.hypot(nx - sx, ny - sy));
-  }
-  return max;
-};
 
 /** Ventanas con movimiento rápido de interfaz (entradas, transiciones, vuelos). */
 const UI_FAST: [number, number][] = [
@@ -68,7 +46,7 @@ const UILayer: React.FC = () => {
       <LateNight t={t} />
       <ProcessIcons t={t} />
       <CommentBox t={t} />
-      <Headlines t={t} />
+      <Headlines t={t} cues={CUES} labels={LABELS} eyebrow={[T.s3, T.s10]} />
     </AbsoluteFill>
   );
 };
@@ -100,7 +78,7 @@ export const Reel: React.FC<{ motionBlur?: boolean }> = ({ motionBlur = true }) 
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const travel = cameraTravel(t, fps);
+  const travel = cameraTravel(camera, t, fps, SHUTTER);
   const worldN = motionBlur ? (travel < 0.3 ? 1 : clamp(Math.ceil(travel / 2.5), 4, 20)) : 1;
   const uiN = motionBlur ? uiSamples(t) : 1;
   return (
