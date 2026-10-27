@@ -1,7 +1,7 @@
 """Builds the reel's voice edit, audio mix and timeline.
 
 Inputs:  ../audio/raw/dos-noches/*.mp3 (ElevenLabs takes), data/words.json (from align.py)
-Outputs: ../audio/clean/dos-noches/narrador-{A,B}.mp3 (trimmed + tempo),
+Outputs: ../audio/clean/dos-noches/narrador-{A,B}.mp3 (trimmed + tempo, WSOLA),
          public/audio/mix.wav (voice + music + sfx, -14 LUFS), src/timeline.json
 
 Run: python scripts/build.py
@@ -24,10 +24,18 @@ ALIGN = json.load(open(os.path.join(ROOT, "data", "words.json")))
 
 
 def load(path, tempo=1.0):
-    af = ["-af", f"rubberband=tempo={tempo:.4f}:pitchq=quality:transients=smooth:window=standard"] if tempo != 1 else []
-    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", path, *af, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
                          capture_output=True, check=True).stdout
-    return np.frombuffer(pcm, np.float32).astype(np.float64)
+    x = np.frombuffer(pcm, np.float32).astype(np.float64)
+    if tempo == 1:
+        return x
+    # time-domain WSOLA keeps the pitch and the harmonics intact; the phase vocoder
+    # (rubberband) smeared them and the voice sounded doubled
+    from audiotsm import wsola
+    from audiotsm.io.array import ArrayReader, ArrayWriter
+    w = ArrayWriter(1)
+    wsola(1, speed=tempo, frame_length=1024, synthesis_hop=256).run(ArrayReader(x[None, :]), w)
+    return w.data[0]
 
 
 def speech_rms(x):
