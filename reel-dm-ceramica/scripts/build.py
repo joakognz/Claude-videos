@@ -70,7 +70,7 @@ A = norm_voice(load("dm-narrador-A.mp3"))
 B = norm_voice(load("dm-narrador-B.mp3"))
 A_SPLIT = [25]                                   # "Pero" (wipe ANTES → DESPUÉS)
 B_SPLIT = [6, 9, 15, 18, 21, 26, 35]             # each node sentence, then "Seis"
-B_GAP = [0.35, 0.3, 0.3, 0.3, 0.3, 0.3, 0.35]    # breathing room for the phone opening and each node
+B_GAP = [0.45, 0.5, 0.45, 0.5, 0.5, 0.5, 0.35]    # breathing room for the phone opening and each node
 a_chunks = split(A, wa, A_SPLIT)
 b_chunks = split(B, wb, B_SPLIT)
 
@@ -192,6 +192,18 @@ def place(buf, x, t0, gain=1.0):
 
 for x, t0, _, _ in placed:
     place(voice, x, t0)
+
+# ASR word ends run into the following pause: end each word where the voice actually falls silent
+_hop = SR // 100
+_rms = 20 * np.log10(np.sqrt(np.mean(voice[: len(voice) // _hop * _hop].reshape(-1, _hop) ** 2, axis=1)) + 1e-9)
+_thr = np.percentile(_rms[_rms > -80], 90) - 30
+for cap in caps.values():
+    for w in cap["words"]:
+        i = int((w["start"] + 0.1) * 100)
+        while i < int(w["end"] * 100) and not (_rms[i:i + 6] < _thr).all():
+            i += 1
+        w["end"] = round(max(w["start"] + 0.1, min(w["end"], i / 100 + 0.03)), 3)
+    cap["end"] = cap["words"][-1]["end"]
 
 # ── music (original, synthesised) ───────────────────────────────────────
 BPM = 100

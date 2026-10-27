@@ -7,16 +7,16 @@ type Placement = { id: string; y: number; until?: number };
 const cap = TL.captions;
 // order of on-screen narration captions and where they sit
 const ORDER: Placement[] = [
-  { id: "E1", y: 1488 }, { id: "E2", y: 1488 }, { id: "E3", y: 1488 }, { id: "E4", y: 1488, until: S.E5 },
+  { id: "E1", y: 1470 }, { id: "E2", y: 1470 }, { id: "E3", y: 1470 }, { id: "E4", y: 1470, until: S.E5 },
   { id: "E6", y: 372 }, { id: "E7", y: 372 }, { id: "E8", y: 372 }, { id: "E9", y: 372 },
   { id: "E10", y: 372 }, { id: "E11", y: 372 }, { id: "E12", y: 372, until: S.E13 },
-  { id: "E14", y: 1488, until: S.E15 },
+  { id: "E14", y: 1470, until: S.E15 },
 ];
 
 // long sentences are split into pages of max two lines (display-word index where each new page starts)
 const PAGES: Record<string, number[]> = { E3: [3], E14: [4] };
 
-type Page = Placement & { sentence: Sentence; key: string; lift?: number };
+type Page = Placement & { sentence: Sentence; key: string; lift?: number; nextStart?: number };
 const PAGED: Page[] = ORDER.flatMap((pl, i) => {
   const s = cap[pl.id];
   const cuts = [0, ...(PAGES[pl.id] ?? []), s.words.length];
@@ -53,6 +53,7 @@ const lines = (s: Sentence) => {
 // (still fully readable) instead of overlapping the incoming words.
 PAGED.forEach((pg, i) => {
   const nx = PAGED[i + 1];
+  if (nx && nx.y === pg.y) pg.nextStart = nx.sentence.start;
   if (nx && nx.y === pg.y && pg.y > 960 && pg.until !== undefined && pg.until < pg.sentence.end + HOLD) {
     pg.lift = ((lines(pg.sentence) + lines(nx.sentence)) / 2) * LINE + 18;
   }
@@ -87,10 +88,10 @@ export const AnimatedWord: React.FC<{ w: Word; frame: number; size: number; colo
   return <span style={{ ...base }}>{w.text}</span>;
 };
 
-const CaptionBlock: React.FC<{ sentence: Sentence; frame: number; t: number; y: number; exitAt: number; emo: string; liftAt?: number; lift?: number }> = ({
-  sentence, frame, t, y, exitAt, emo, liftAt = 0, lift = 0,
-}) => {
-  const p = EASE(clamp01((t - exitAt) / EXIT));
+const CaptionBlock: React.FC<{
+  sentence: Sentence; frame: number; t: number; y: number; exitAt: number; exitDur: number; emo: string; liftAt?: number; lift?: number;
+}> = ({ sentence, frame, t, y, exitAt, exitDur, emo, liftAt = 0, lift = 0 }) => {
+  const p = EASE(clamp01((t - exitAt) / exitDur));
   const up = lift * EASE(clamp01((t - liftAt) / (7 / FPS)));
   const size = SIZE;
   return (
@@ -115,10 +116,17 @@ export const Captions: React.FC<{ frame: number; t: number }> = ({ frame, t }) =
         const s = pl.sentence;
         // fully readable for at least 10 frames after the last word, then exits up with blur
         const liftAt = (pl.until ?? s.end) - (pl.lift ? 0.3 : 0.04);
-        const exitAt = Math.max(liftAt, s.end + HOLD);
-        if (t < s.start - 0.15 || t > exitAt + EXIT) return null;
+        let exitAt = Math.max(liftAt, s.end + HOLD);
+        let exitDur = EXIT;
+        if (!pl.lift && pl.nextStart !== undefined) {
+          // in place (no lift): finish leaving just before the next sentence's first word lands
+          const gone = pl.nextStart - 0.07;
+          exitDur = Math.min(EXIT, Math.max(4 / FPS, gone - (s.end + HOLD)));
+          exitAt = Math.max(s.end + HOLD, gone - exitDur);
+        }
+        if (t < s.start - 0.15 || t > exitAt + exitDur) return null;
         return (
-          <CaptionBlock key={pl.key} sentence={s} frame={frame} t={t} y={pl.y} exitAt={exitAt} liftAt={liftAt} lift={pl.lift}
+          <CaptionBlock key={pl.key} sentence={s} frame={frame} t={t} y={pl.y} exitAt={exitAt} exitDur={exitDur} liftAt={liftAt} lift={pl.lift}
             emo={emoColor(cap[pl.key.split("-")[0]].start)} />
         );
       })}

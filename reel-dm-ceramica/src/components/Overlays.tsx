@@ -12,8 +12,8 @@ export const BigClock: React.FC<{ frame: number; t: number; camX: number; camY: 
   const settle = loop ? 0 : EASE(clamp01((t - S.E4 - 0.1) / 0.9));
   return (
     <div style={{
-      position: "absolute", left: 0, right: 0, top: 352 + 22 * settle + drift(t, 31, 8) - camY * 0.3, translate: `${-camX * 0.3}px -50%`,
-      textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 270, letterSpacing: -10, lineHeight: 1,
+      position: "absolute", left: 0, right: 0, top: 388 + 10 * settle + drift(t, 31, 8) - camY * 0.3, translate: `${-camX * 0.3}px -50%`,
+      textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 252, letterSpacing: -9, lineHeight: 1,
       color: green > 0 ? `rgba(${207 - 146 * green},${224 - 4 * green},${255 - 104 * green},0.95)` : "rgba(207,224,255,0.92)",
       opacity: s * (1 - out), scale: String((0.9 + 0.1 * s + (loop ? t - S.E14 : t) * 0.004) * (1 - 0.16 * settle)), filter: `blur(${(1 - s) * 18 + out * 16}px)`,
       textShadow: green > 0 ? `0 0 60px rgba(61,220,151,${0.35 * green})` : "0 0 50px rgba(207,224,255,0.25)",
@@ -28,11 +28,11 @@ export const UnreadBadge: React.FC<{ frame: number; t: number; x: number; y: num
     : TL.inbox.map((m) => m.t);
   const base = after ? 3 : 0;
   const n = times.filter((v) => t >= v).length;
-  const visible = after ? t >= S.E14 - 0.2 : true;
+  const visible = after ? t >= S.E14 + 0.1 : true;
   if (!visible || (n === 0 && !after)) return null;
   const last = times[Math.max(0, n - 1)] ?? S.E14;
   const s = spring({ frame: frame - last * FPS, fps: FPS, config: { damping: 8, stiffness: 220, mass: 0.6 } });
-  const intro = after ? spring({ frame: frame - (S.E14 - 0.2) * FPS, fps: FPS, config: { damping: 14 } }) : 1;
+  const intro = after ? spring({ frame: frame - (S.E14 + 0.12) * FPS, fps: FPS, config: { damping: 14 } }) : 1;
   // ANTES badge leaves as soon as the wipe's light bar passes over it
   const out = EASE(clamp01((t - (after ? S.E15 : S.WIPE + 0.04)) / 0.25));
   if (out >= 1) return null;
