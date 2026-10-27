@@ -5,7 +5,7 @@ import { cameraTravel } from "../reel/camera";
 import { fontFamily } from "../reel/fonts";
 import { Headlines } from "../reel/Headline";
 import { MotionBlur } from "../reel/MotionBlur";
-import { AgentPanel, BrandTools, ClientMessage, FinalAnswer, SalonComment, salonDim, WebCard } from "./Overlays";
+import { AgentPanel, BrandTools, ClientMessage, FinalAnswer, SalonComment, salonDim } from "./Overlays";
 import { SalonWorld, SOLVE } from "./Salon";
 import { A, camera, CUES, CUTS, LABELS } from "./timeline";
 
@@ -28,7 +28,6 @@ const UILayer: React.FC = () => {
   return (
     <AbsoluteFill style={{ fontFamily, fontFeatureSettings: '"cv08" 1' }}>
       <ClientMessage t={t} />
-      <WebCard t={t} />
       <AgentPanel t={t} />
       <BrandTools t={t} />
       <SalonComment t={t} />

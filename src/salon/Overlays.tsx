@@ -92,92 +92,6 @@ export const ClientMessage: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-/* ---------- Web de reservas: no confirma, no apunta, no mueve citas → escaparate ---------- */
-export const WebCard: React.FC<{ t: number }> = ({ t }) => {
-  const v = vis(t, A.web, A.agente + 0.15, 0.3, 0.25);
-  if (v <= 0) return null;
-  const e = prog(t, A.web, 0.45, easeOutBack);
-  const glass = prog(t, A.escaparate, 0.5);
-  const out = prog(t, A.agente - 0.1, 0.25, easeInCubic);
-  const f = float(t, 7, 0.8);
-  const rows: [string, number][] = [
-    ["Confirma la cita", A.pero + 0.15],
-    ["La apunta en tu agenda", A.noapunta],
-    ["Mueve citas", A.nomueve],
-  ];
-  return (
-    <div
-      style={{
-        position: "absolute",
-        left: LEFT,
-        top: 600,
-        width: W,
-        opacity: v,
-        scale: `${(0.85 + 0.15 * e) * (1 - 0.06 * glass) * (1 + 0.25 * out)}`,
-        rotate: `${(1 - clamp(e)) * 8 + f.rot}deg`,
-        translate: `${f.x + out * 400}px ${(1 - clamp(e)) * 80 + f.y}px`,
-        filter: `blur(${(1 - clamp(e)) * 12 + out * 18}px) saturate(${1 - 0.6 * glass})`,
-      }}
-    >
-      <div style={{ ...card, overflow: "hidden", padding: 0, border: `${2 + glass * 14}px solid ${glass > 0 ? "#3A3D45" : "rgba(255,255,255,0.09)"}` }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "18px 24px", background: "#1A1C21" }}>
-          {["#FF6159", "#FFBD2E", "#28C941"].map((c) => (
-            <div key={c} style={{ width: 16, height: 16, borderRadius: 8, background: c, opacity: 0.8 }} />
-          ))}
-          <div style={{ flex: 1, marginLeft: 14, padding: "8px 18px", borderRadius: 14, background: "#262A31", color: COLORS.muted, fontSize: 22, fontWeight: 600 }}>tu web · reservas</div>
-        </div>
-        <div style={{ padding: "28px 30px 30px", position: "relative" }}>
-          <div style={{ fontSize: 40, fontWeight: 800, color: COLORS.white }}>Reserva tu cita</div>
-          <div style={{ display: "flex", gap: 10, marginTop: 18 }}>
-            {["Corte", "Color", "Mechas", "Peinado"].map((s, i) => (
-              <div key={s} style={{ padding: "10px 18px", borderRadius: 16, background: i === 1 ? "#3A3D45" : "#23262D", color: COLORS.white, fontSize: 24, fontWeight: 700 }}>{s}</div>
-            ))}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 8, marginTop: 22 }}>
-            {new Array(14).fill(0).map((_, i) => (
-              <div key={i} style={{ height: 52, borderRadius: 12, background: i === 9 ? "#3A3D45" : "#1F2228", color: "#7E848E", fontSize: 22, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>{i + 8}</div>
-            ))}
-          </div>
-          <div style={{ marginTop: 22, height: 78, borderRadius: 22, background: "#2A2E35", color: COLORS.white, fontSize: 28, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>Enviar solicitud</div>
-          {/* reflejo de cristal: es solo un escaparate */}
-          <div style={{ position: "absolute", inset: 0, background: `linear-gradient(115deg, transparent ${lerp(-40, 70, glass)}%, rgba(255,255,255,0.16) ${lerp(-30, 80, glass)}%, transparent ${lerp(-20, 90, glass)}%)`, opacity: glass }} />
-          <div style={{ position: "absolute", inset: 0, background: "rgba(10,12,16,0.35)", opacity: glass }} />
-        </div>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 26 }}>
-        {rows.map(([label, at]) => {
-          const r = prog(t, at, 0.3, easeOutBack);
-          const cross = prog(t, at + 0.12, 0.25);
-          return (
-            <div
-              key={label}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 18,
-                padding: "18px 26px",
-                borderRadius: 24,
-                background: "rgba(28,31,37,0.95)",
-                border: `2px solid ${COLORS.amber}55`,
-                opacity: clamp(r),
-                translate: `${(1 - clamp(r)) * -80}px 0`,
-                scale: `${0.9 + 0.1 * r}`,
-              }}
-            >
-              <div style={{ width: 46, height: 46, borderRadius: 23, background: "rgba(255,138,122,0.15)", display: "flex", alignItems: "center", justifyContent: "center", scale: `${easeOutBack(cross)}` }}>
-                <svg width={26} height={26} viewBox="0 0 100 100">
-                  <path d="M25 25 L75 75 M75 25 L25 75" stroke="#FF8A7A" strokeWidth={14} strokeLinecap="round" />
-                </svg>
-              </div>
-              <div style={{ fontSize: 32, fontWeight: 700, color: COLORS.white, textDecoration: cross > 0.5 ? "line-through" : "none", textDecorationColor: "#FF8A7A" }}>{label}</div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
 /* ---------- Panel del agente: lee, agenda, confirma, cambia y rellena huecos ---------- */
 const ROW_H = 104;
 const ROWS = ["16:00", "17:00", "18:30", "19:30"];
@@ -228,7 +142,7 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
   if (v <= 0) return null;
   const e = prog(t, A.agente + 0.25, 0.45, easeOutBack);
   const f = float(t, 8, 0.7);
-  const kick = pulse(t, A.agenda) + pulse(t, A.cambia) + pulse(t, A.rellena);
+  const kick = pulse(t, A.agenda) + pulse(t, A.cambia);
   // 1) nueva reserva leída al momento
   const inCard = prog(t, A.lee, 0.35, easeOutBack);
   const scan = clamp((t - A.lee - 0.2) / 0.7);
@@ -240,9 +154,6 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
   // 4) cambio de hora: 17:00 → 18:30
   const ask = prog(t, A.otrahora, 0.3, easeOutBack);
   const move = prog(t, A.cambia, 0.45, easeInOutCubic);
-  // 5) cancelación y hueco cubierto
-  const cancel = prog(t, A.cancela + 0.2, 0.3);
-  const fill = prog(t, A.rellena, 0.45, easeOutCubic);
   const AG_TOP = 300;
   const rowY = (i: number) => AG_TOP + i * ROW_H;
   const lauraY = lerp(rowY(1), rowY(2), move);
@@ -280,24 +191,7 @@ export const AgentPanel: React.FC<{ t: number }> = ({ t }) => {
         </div>
       ))}
       <Block name="Ana" service="Corte" style={{ top: rowY(0) }} />
-      {/* Marta cancela y Lucía (lista de espera) ocupa el hueco */}
-      {fill < 1 ? (
-        <Block
-          name="Marta"
-          service="Mechas"
-          style={{ top: rowY(3), opacity: 1 - 0.55 * cancel - 0.45 * fill, textDecoration: cancel > 0.5 ? "line-through" : "none", scale: `${1 - 0.1 * fill}` }}
-          tag={<Tag p={cancel} tone="red">Cancelada</Tag>}
-        />
-      ) : null}
-      {fill > 0 ? (
-        <Block
-          name="Lucía"
-          service="Color"
-          active
-          style={{ top: rowY(3), translate: `${(1 - fill) * 700}px 0`, opacity: fill }}
-          tag={<Tag p={prog(t, A.rellena + 0.4, 0.3)}>Hueco cubierto</Tag>}
-        />
-      ) : null}
+      <Block name="Marta" service="Mechas" style={{ top: rowY(3) }} />
       {/* Laura: llega como reserva nueva, se lee, entra en la agenda y luego cambia de hora */}
       {inCard > 0 ? (
         drop < 1 ? (
@@ -482,7 +376,6 @@ export const FinalAnswer: React.FC<{ t: number }> = ({ t }) => {
 export const salonDim = (t: number) =>
   Math.max(
     0.35 * vis(t, A.clienta, A.tardas + 0.3, 0.3, 0.3),
-    0.45 * vis(t, A.web, A.agente + 0.1, 0.3, 0.25),
     0.45 * vis(t, A.agente + 0.25, A.peinando + 0.1, 0.35, 0.25),
     0.4 * vis(t, A.aigencyx - 0.15, A.sigue, 0.3, 0.3),
     0.25 * vis(t, A.sigue + 0.3, END, 0.3, 0.3),
