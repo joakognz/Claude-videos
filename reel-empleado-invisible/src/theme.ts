@@ -1,5 +1,6 @@
 import { loadFont } from "@remotion/fonts";
 import { Easing, staticFile } from "remotion";
+import timelineJson from "./timeline.json";
 
 // Google Fonts bundled locally
 export const SANS = "Sora";
@@ -32,49 +33,57 @@ export const C = {
 export const FPS = 30;
 export const DURATION = 45;
 
-// ── scenes (seconds) ─────────────────────────────────────────────────────
-export const S = { E1: 0, E2: 4, E3: 10, E4: 14, E5: 19, E6: 27, E7: 33, E8: 38, E9: 42.5, END: DURATION };
+// ── voice timeline (scripts/build.py): phrase spans and word start times, in seconds ──
+type TLWord = { text: string; start: number; end: number };
+const TLJ = timelineJson as unknown as { phrases: Record<string, [number, number]>; words: Record<string, TLWord[]> };
+export const PH = TLJ.phrases;
+/** Start of the i-th word of a phrase. */
+export const W = (pid: string, i: number) => TLJ.words[pid][i].start;
+
+// ── scenes (seconds), set by the voice ──────────────────────────────────
+export const S = { E1: 0, E2: 4, E3: 9.85, E4: 12.55, E5: 17.8, E6: 25.55, E7: 36.1, E8: 38.75, E9: 42.85, END: DURATION };
 
 // ── events (seconds) ─────────────────────────────────────────────────────
 export const EV = {
-  // E2 chaos
-  ring: [4.5, 6.9, 8.6],
-  scribble: [4.9, 5.6, 6.3, 7.2, 7.9, 8.8],
-  chatIn: [5.2, 6.4, 7.7],
+  // E2 chaos ("…llamadas, mensajes, citas apuntadas en una libreta")
+  ring: [4.3, W("a3", 0) + 0.1, 8.4],
+  scribble: [4.6, 5.3, 6.0, 6.9, W("a3", 6) - 0.2, W("a3", 6) + 0.3],
+  chatIn: [5.0, W("a3", 1), 7.9],
   // E3
-  chatClear: 10.0,
-  // E4 the invisible employee
-  ghostIn: 14.25,
-  split: 16.0,
-  ghostLabels: 17.0,
-  ghostLabelsOut: 18.75,
-  // E5 tasks: tag appears, then its check lights a part of the shop
-  tag: [19.4, 21.2, 23.0, 24.8],
-  check: [20.2, 22.0, 23.8, 25.6],
-  tagsOut: 26.55,
-  msgIn: 19.95,
-  typing: 20.35,
-  reply: 20.8,
-  msgOk: 21.8,
-  confirm: 22.6,
-  notifs: [23.9, 25.6],
-  // E6 comparison cards
-  cardRed: 27.2,
-  cardOrange: 27.65,
-  redOff: 30.3,
-  orangeOn: 30.75,
-  cardsOut: 32.7,
+  chatClear: 9.8,
+  // E4 the invisible employee: copies labelled as the voice names them
+  ghostIn: 12.65,
+  split: W("a6", 0),
+  ghostLabel: [W("a6", 10), W("a6", 6), W("a6", 3)], // agenda, mostrador, móvil
+  ghostLabelsOut: 17.55,
+  // E5 tasks: each tag appears with its phrase and is checked when the phrase ends
+  tag: [PH.b1[0], PH.b2[0], PH.b3[0], PH.b4[0]],
+  check: [PH.b1[1] - 0.05, PH.b2[1] - 0.05, PH.b3[1] - 0.05, PH.b4[1] - 0.05],
+  tagsOut: S.E6 - 0.15,
+  msgIn: 18.4,
+  typing: 18.8,
+  reply: 19.2,
+  msgOk: 20.1,
+  confirm: 20.9,
+  notifs: [PH.b3[1], PH.b4[1]],
+  // E6 comparison cards: rows appear as they are said
+  cardRed: PH.b6[0],
+  cardOrange: PH.b6[0] + 0.45,
+  redRows: [W("b6", 2), W("b6", 4), W("b6", 5), W("b6", 7)],
+  orangeRows: [W("b7", 2), W("b7", 4), W("b7", 7)],
+  redOff: PH.b7[0] - 0.15,
+  orangeOn: PH.b7[0] + 0.1,
+  cardsOut: PH.b7[1] - 0.05,
   // E7 all on
-  allOn: 33.0,
-  counters: [34.0, 34.6],
+  allOn: 36.1,
+  counters: [36.85, 37.3],
   // E8 CTA
-  bar: 38.35,
-  typeStart: 39.0,
-  typeEnd: 40.3,
+  bar: 38.75,
+  typeStart: W("c2", 1),
+  typeEnd: W("c2", 1) + 0.6,
   // the white phone mockup, always bottom-right: [in, out]
-  phone: [[4.7, 10.55], [19.25, 26.15], [33.7, 37.95]] as [number, number][],
+  phone: [[4.55, 10.25], [17.75, 25.3], [36.45, 38.5]] as [number, number][],
 };
-
 export const EASE = Easing.bezier(0.65, 0, 0.35, 1);
 export const EASE_OUT = Easing.bezier(0.16, 1, 0.3, 1);
 export const EASE_IN = Easing.bezier(0.5, 0, 0.75, 0);

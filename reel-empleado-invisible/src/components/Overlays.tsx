@@ -19,11 +19,11 @@ const Check: React.FC<{ size: number; p: number; draw?: number }> = ({ size, p, 
 
 // ── E4: a mono tag over each copy of the assistant ─────────────────────
 export const GhostLabels: React.FC<{ t: number }> = ({ t }) => {
-  if (t < EV.ghostLabels - 0.1 || t > EV.ghostLabelsOut + 0.4) return null;
+  if (t < Math.min(...EV.ghostLabel) - 0.1 || t > EV.ghostLabelsOut + 0.4) return null;
   return (
     <>
       {GHOSTS.map((g, i) => {
-        const p = windowed(t, EV.ghostLabels + i * 0.15, EV.ghostLabelsOut, 0.3, 0.3);
+        const p = windowed(t, EV.ghostLabel[i], EV.ghostLabelsOut, 0.3, 0.3);
         const [x, y] = ghostLabelPos(t, i);
         return (
           <div key={g.id} style={{
@@ -102,10 +102,10 @@ export const PhoneLink: React.FC<{ t: number }> = ({ t }) => {
 };
 
 // ── E6: employee vs assistant cards, one on each side of the shop ──────
-const CardRows: React.FC<{ rows: string[]; t: number; a: number; color: string; check?: boolean }> = ({ rows, t, a, color, check }) => (
+const CardRows: React.FC<{ rows: string[]; t: number; at: number[]; color: string; check?: boolean }> = ({ rows, t, at, color, check }) => (
   <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 16 }}>
     {rows.map((r, i) => {
-      const p = rise(t, a + 0.35 + i * 0.22, 0.3);
+      const p = rise(t, at[i] - 0.05, 0.3);
       return (
         <div key={i} style={{
           opacity: p, transform: `translateX(${(1 - p) * -14}px)`, display: "flex", alignItems: "center", gap: 10,
@@ -145,7 +145,7 @@ export const Cards: React.FC<{ t: number }> = ({ t }) => {
       }}>
         <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 34, letterSpacing: "0.12em", color: C.white }}>EMPLEADO</div>
         <div style={{ height: 2, background: C.red2, marginTop: 12 }} />
-        <CardRows rows={["8 H", "VACACIONES", "BAJAS", "NÓMINA"]} t={t} a={EV.cardRed} color="#F2D6D0" />
+        <CardRows rows={["8 H", "VACACIONES", "BAJAS", "NÓMINA"]} t={t} at={EV.redRows} color="#F2D6D0" />
       </div>
       {/* orange: lit, and it lights up for real when the red one goes out */}
       <div style={{
@@ -156,7 +156,7 @@ export const Cards: React.FC<{ t: number }> = ({ t }) => {
       }}>
         <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 34, letterSpacing: "0.12em", color: on > 0.5 ? C.ink : C.orange }}>ASISTENTE</div>
         <div style={{ height: 2, background: on > 0.5 ? C.ink : C.orange, marginTop: 12 }} />
-        <CardRows check rows={["24 H", "SIN BAJAS", "SIEMPRE CONTESTA"]} t={t} a={EV.cardOrange} color={on > 0.5 ? C.ink : C.orangeHi} />
+        <CardRows check rows={["24 H", "SIN BAJAS", "SIEMPRE CONTESTA"]} t={t} at={EV.orangeRows} color={on > 0.5 ? C.ink : C.orangeHi} />
       </div>
     </>
   );

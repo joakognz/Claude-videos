@@ -1,5 +1,6 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
+import { Audio } from "@remotion/media";
 import { C, CAM_PIVOT, FPS, beaconAt, camScale, orangeAt, partAt } from "./theme";
 import { Bokeh, CityBack, CityFront, GroundGlow, View, Wave, WindowPatterns } from "./components/City";
 import { ChaosIcons, ShopFront, ShopInterior } from "./components/Shop";
@@ -17,7 +18,7 @@ const Filters: React.FC = () => (
   </defs>
 );
 
-/** One shot: a far → close dolly over 0-4 s, then the camera is locked. Only light, people and overlays change. No audio. */
+/** One shot: a far → close dolly over 0-4 s, then the camera is locked. Only light, people and overlays change. */
 export const Reel: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
@@ -71,6 +72,7 @@ export const Reel: React.FC = () => {
       <CommentBar t={t} />
       <Captions t={t} />
       <Outro t={t} />
+      <Audio src={staticFile("audio/mix.wav")} />
     </AbsoluteFill>
   );
 };

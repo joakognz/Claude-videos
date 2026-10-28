@@ -1,5 +1,5 @@
 import React from "react";
-import { C, EASE, EASE_OUT, FPS, S, SANS, clamp01, rise } from "../theme";
+import { C, EASE, EASE_OUT, FPS, S, SANS, W, clamp01, rise } from "../theme";
 
 // Captions live between 10 % and 25 % of the height (192-480 px), clear of Instagram's UI.
 const TOP = 206;
@@ -11,16 +11,17 @@ type Word = [string, number, Kind?];
 type Cap = { lines: Word[][]; until: number; small?: { text: string; start: number } };
 
 const CAPS: Cap[] = [
-  { lines: [[["Tu", 0.35], ["mejor", 0.5], ["empleado", 0.68]], [["no", 1.75, "pos"], ["cobra", 1.75, "pos"], ["nómina", 1.75, "pos"]]], until: S.E2 - 0.1 },
-  { lines: [[["Todo", 4.35], ["a", 4.6, "neg"], ["mano…", 4.6, "neg"]]], until: S.E3 - 0.1 },
-  { lines: [[["Ahora", 10.75], ["imagina…", 11.0]]], until: S.E4 - 0.1 },
-  { lines: [[["Tu", 14.3], ["empleado", 14.45]], [["invisible", 14.95, "pos"]]], until: S.E5 - 0.12 },
-  { lines: [[["A", 19.15, "pos"], ["la", 19.15, "pos"], ["vez", 19.15, "pos"]]], until: S.E6 - 0.12 },
-  { lines: [[["Tú,", 33.25]], [["a", 33.5], ["lo", 33.75, "pos"], ["importante", 33.75, "pos"]]], until: S.E8 - 0.12 },
+  // word times follow the voice (src/timeline.json)
+  { lines: [[["Tu", W("a1", 0)], ["mejor", W("a1", 1)], ["empleado", W("a1", 2)]], [["no", W("a1", 3), "pos"], ["cobra", 0, "pos"], ["nómina", 0, "pos"]]], until: S.E2 - 0.1 },
+  { lines: [[["Todo", W("a2", 4)], ["a", W("a2", 5), "neg"], ["mano…", 0, "neg"]]], until: S.E3 - 0.1 },
+  { lines: [[["Ahora", W("a4", 0)], ["imagina…", W("a4", 1)]]], until: S.E4 - 0.1 },
+  { lines: [[["Tu", W("a5", 0)], ["empleado", W("a5", 1)]], [["invisible", W("a5", 2), "pos"]]], until: S.E5 - 0.12 },
+  { lines: [[["A", S.E5 + 0.1, "pos"], ["la", 0, "pos"], ["vez", 0, "pos"]]], until: S.E6 - 0.12 },
+  { lines: [[["Tú,", W("c1", 1)]], [["a", W("c1", 4)], ["lo", W("c1", 5), "pos"], ["importante", 0, "pos"]]], until: S.E8 - 0.12 },
   {
-    lines: [[["Comenta", 38.2]], [["AUDITORIA", 38.55, "pos"]]],
+    lines: [[["Comenta", W("c2", 0)]], [["AUDITORIA", W("c2", 1), "pos"]]],
     until: S.E9 - 0.05,
-    small: { text: "y vemos qué podemos automatizar\nen tu negocio.", start: 39.2 },
+    small: { text: "y vemos qué podemos automatizar\nen tu negocio.", start: W("c2", 2) },
   },
 ];
 const OUT = 0.22;

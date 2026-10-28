@@ -1,6 +1,6 @@
 #!/bin/bash
-# Renders the reel in chunks, several at a time, joins them and adds an empty (silent) stereo audio track:
-# the video carries no sound; the voice-over is added later in editing.
+# Renders the reel in chunks, several at a time, joins them and muxes the mix (music + voice, scripts/build.py).
+# Also writes a copy with a silent audio track (<out>-sin-audio.mp4) for editing.
 # Resumable: chunks already finished (part<i>.done) are skipped.
 # Usage: scripts/render.sh [chunks] [parallel] [out.mp4]
 set -euo pipefail
@@ -30,6 +30,8 @@ for ((i = 0; i < CHUNKS; i++)); do
   [ -f "$PARTS/part$i.done" ] || { echo "chunk $i missing"; exit 1; }
   echo "file 'part$i.mp4'" >> "$PARTS/list.txt"
 done
+ffmpeg -v error -y -f concat -safe 0 -i "$PARTS/list.txt" -i public/audio/mix.wav -map 0:v -map 1:a \
+  -c:v copy -c:a aac -b:a 320k -t 45 -movflags +faststart "$OUT"
 ffmpeg -v error -y -f concat -safe 0 -i "$PARTS/list.txt" -f lavfi -i anullsrc=r=48000:cl=stereo -map 0:v -map 1:a \
-  -c:v copy -c:a aac -b:a 128k -t 45 -movflags +faststart "$OUT"
+  -c:v copy -c:a aac -b:a 128k -t 45 -movflags +faststart "${OUT%.mp4}-sin-audio.mp4"
 echo "done $OUT"

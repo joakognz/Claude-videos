@@ -1,0 +1,513 @@
+{
+ "fps": 30,
+ "duration": 45.0,
+ "phrases": {
+  "a1": [
+   0.35,
+   2.4
+  ],
+  "a2": [
+   4.05,
+   5.9
+  ],
+  "a3": [
+   6.15,
+   9.67
+  ],
+  "a4": [
+   10.05,
+   11.11
+  ],
+  "a5": [
+   12.7,
+   14.13
+  ],
+  "a6": [
+   14.45,
+   17.36
+  ],
+  "b1": [
+   17.95,
+   19.02
+  ],
+  "b2": [
+   19.6,
+   20.62
+  ],
+  "b3": [
+   21.2,
+   22.57
+  ],
+  "b4": [
+   22.95,
+   24.07
+  ],
+  "b5": [
+   24.45,
+   25.32
+  ],
+  "b6": [
+   25.75,
+   31.1
+  ],
+  "b7": [
+   31.35,
+   35.91
+  ],
+  "c1": [
+   36.35,
+   38.51
+  ],
+  "c2": [
+   38.95,
+   42.43
+  ]
+ },
+ "words": {
+  "a1": [
+   {
+    "text": "Tu",
+    "start": 0.35,
+    "end": 0.508
+   },
+   {
+    "text": "mejor",
+    "start": 0.508,
+    "end": 0.823
+   },
+   {
+    "text": "empleado",
+    "start": 0.823,
+    "end": 1.454
+   },
+   {
+    "text": "no",
+    "start": 1.454,
+    "end": 1.612
+   },
+   {
+    "text": "cobra",
+    "start": 1.612,
+    "end": 1.927
+   },
+   {
+    "text": "nómina.",
+    "start": 1.927,
+    "end": 2.4
+   }
+  ],
+  "a2": [
+   {
+    "text": "Ahora",
+    "start": 4.05,
+    "end": 4.477
+   },
+   {
+    "text": "mismo",
+    "start": 4.477,
+    "end": 4.762
+   },
+   {
+    "text": "lo",
+    "start": 4.762,
+    "end": 4.904
+   },
+   {
+    "text": "haces",
+    "start": 4.904,
+    "end": 5.188
+   },
+   {
+    "text": "todo",
+    "start": 5.188,
+    "end": 5.473
+   },
+   {
+    "text": "a",
+    "start": 5.473,
+    "end": 5.615
+   },
+   {
+    "text": "mano:",
+    "start": 5.615,
+    "end": 5.9
+   }
+  ],
+  "a3": [
+   {
+    "text": "llamadas,",
+    "start": 6.15,
+    "end": 6.737
+   },
+   {
+    "text": "mensajes,",
+    "start": 6.737,
+    "end": 7.323
+   },
+   {
+    "text": "citas",
+    "start": 7.323,
+    "end": 7.714
+   },
+   {
+    "text": "apuntadas",
+    "start": 7.714,
+    "end": 8.497
+   },
+   {
+    "text": "en",
+    "start": 8.497,
+    "end": 8.692
+   },
+   {
+    "text": "una",
+    "start": 8.692,
+    "end": 9.083
+   },
+   {
+    "text": "libreta…",
+    "start": 9.083,
+    "end": 9.67
+   }
+  ],
+  "a4": [
+   {
+    "text": "Ahora",
+    "start": 10.05,
+    "end": 10.504
+   },
+   {
+    "text": "imagina…",
+    "start": 10.504,
+    "end": 11.11
+   }
+  ],
+  "a5": [
+   {
+    "text": "Tu",
+    "start": 12.7,
+    "end": 12.859
+   },
+   {
+    "text": "empleado",
+    "start": 12.859,
+    "end": 13.494
+   },
+   {
+    "text": "invisible.",
+    "start": 13.494,
+    "end": 14.13
+   }
+  ],
+  "a6": [
+   {
+    "text": "Está",
+    "start": 14.45,
+    "end": 14.792
+   },
+   {
+    "text": "en",
+    "start": 14.792,
+    "end": 14.964
+   },
+   {
+    "text": "el",
+    "start": 14.964,
+    "end": 15.135
+   },
+   {
+    "text": "móvil,",
+    "start": 15.135,
+    "end": 15.477
+   },
+   {
+    "text": "en",
+    "start": 15.477,
+    "end": 15.648
+   },
+   {
+    "text": "el",
+    "start": 15.648,
+    "end": 15.819
+   },
+   {
+    "text": "mostrador",
+    "start": 15.819,
+    "end": 16.333
+   },
+   {
+    "text": "y",
+    "start": 16.333,
+    "end": 16.504
+   },
+   {
+    "text": "en",
+    "start": 16.504,
+    "end": 16.675
+   },
+   {
+    "text": "la",
+    "start": 16.675,
+    "end": 16.846
+   },
+   {
+    "text": "agenda.",
+    "start": 16.846,
+    "end": 17.36
+   }
+  ],
+  "b1": [
+   {
+    "text": "Responde",
+    "start": 17.95,
+    "end": 18.592
+   },
+   {
+    "text": "WhatsApp.",
+    "start": 18.592,
+    "end": 19.02
+   }
+  ],
+  "b2": [
+   {
+    "text": "Confirma",
+    "start": 19.6,
+    "end": 20.212
+   },
+   {
+    "text": "citas.",
+    "start": 20.212,
+    "end": 20.62
+   }
+  ],
+  "b3": [
+   {
+    "text": "Envía",
+    "start": 21.2,
+    "end": 21.714
+   },
+   {
+    "text": "recordatorios.",
+    "start": 21.714,
+    "end": 22.57
+   }
+  ],
+  "b4": [
+   {
+    "text": "Avisa",
+    "start": 22.95,
+    "end": 23.51
+   },
+   {
+    "text": "de",
+    "start": 23.51,
+    "end": 23.697
+   },
+   {
+    "text": "cambios.",
+    "start": 23.697,
+    "end": 24.07
+   }
+  ],
+  "b5": [
+   {
+    "text": "Todo",
+    "start": 24.45,
+    "end": 24.798
+   },
+   {
+    "text": "a",
+    "start": 24.798,
+    "end": 24.972
+   },
+   {
+    "text": "la",
+    "start": 24.972,
+    "end": 25.146
+   },
+   {
+    "text": "vez.",
+    "start": 25.146,
+    "end": 25.32
+   }
+  ],
+  "b6": [
+   {
+    "text": "Un",
+    "start": 25.75,
+    "end": 25.983
+   },
+   {
+    "text": "empleado:",
+    "start": 25.983,
+    "end": 26.917
+   },
+   {
+    "text": "ocho",
+    "start": 26.917,
+    "end": 27.383
+   },
+   {
+    "text": "horas,",
+    "start": 27.383,
+    "end": 27.85
+   },
+   {
+    "text": "vacaciones,",
+    "start": 28.09,
+    "end": 29.294
+   },
+   {
+    "text": "bajas",
+    "start": 29.294,
+    "end": 29.896
+   },
+   {
+    "text": "y",
+    "start": 29.896,
+    "end": 30.197
+   },
+   {
+    "text": "nómina.",
+    "start": 30.197,
+    "end": 31.1
+   }
+  ],
+  "b7": [
+   {
+    "text": "Tu",
+    "start": 31.35,
+    "end": 31.578
+   },
+   {
+    "text": "asistente:",
+    "start": 31.578,
+    "end": 32.49
+   },
+   {
+    "text": "veinticuatro",
+    "start": 32.49,
+    "end": 33.402
+   },
+   {
+    "text": "horas,",
+    "start": 33.402,
+    "end": 33.858
+   },
+   {
+    "text": "sin",
+    "start": 33.858,
+    "end": 34.086
+   },
+   {
+    "text": "bajas,",
+    "start": 34.086,
+    "end": 34.542
+   },
+   {
+    "text": "y",
+    "start": 34.542,
+    "end": 34.77
+   },
+   {
+    "text": "siempre",
+    "start": 34.77,
+    "end": 35.226
+   },
+   {
+    "text": "contesta.",
+    "start": 35.226,
+    "end": 35.91
+   }
+  ],
+  "c1": [
+   {
+    "text": "Y",
+    "start": 36.35,
+    "end": 36.566
+   },
+   {
+    "text": "tú,",
+    "start": 36.566,
+    "end": 36.782
+   },
+   {
+    "text": "por",
+    "start": 36.782,
+    "end": 36.998
+   },
+   {
+    "text": "fin,",
+    "start": 36.998,
+    "end": 37.214
+   },
+   {
+    "text": "a",
+    "start": 37.214,
+    "end": 37.43
+   },
+   {
+    "text": "lo",
+    "start": 37.43,
+    "end": 37.646
+   },
+   {
+    "text": "importante.",
+    "start": 37.646,
+    "end": 38.51
+   }
+  ],
+  "c2": [
+   {
+    "text": "Comenta",
+    "start": 38.95,
+    "end": 39.368
+   },
+   {
+    "text": "auditoría",
+    "start": 39.368,
+    "end": 40.064
+   },
+   {
+    "text": "y",
+    "start": 40.064,
+    "end": 40.203
+   },
+   {
+    "text": "vemos",
+    "start": 40.203,
+    "end": 40.481
+   },
+   {
+    "text": "qué",
+    "start": 40.481,
+    "end": 40.62
+   },
+   {
+    "text": "podemos",
+    "start": 40.62,
+    "end": 41.038
+   },
+   {
+    "text": "automatizar",
+    "start": 41.038,
+    "end": 41.734
+   },
+   {
+    "text": "en",
+    "start": 41.734,
+    "end": 41.873
+   },
+   {
+    "text": "tu",
+    "start": 41.873,
+    "end": 42.012
+   },
+   {
+    "text": "negocio.",
+    "start": 42.012,
+    "end": 42.43
+   }
+  ]
+ }
+}
