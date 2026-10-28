@@ -64,6 +64,12 @@ Notas de lectura:
 - La lista de E6 es la parte más justa (unos 4 s). Si la toma va lenta, alargo E6 hasta 1 s y recorto el silencio de E7.
 - Cálculo a unas 150 palabras por minuto: el bloque A dura unos 8 s, el B unos 22 s y el C unos 9 s. El resto son pausas, la onda naranja de E11 y el cierre. Encaja en los 58 s.
 
+## Montaje (tomas entregadas)
+- Tomas: A `8e6035ca` (9,6 s), B `2f6384e0` (28,8 s), C `1dd43732` (11,1 s). Proyecto: `reel-que-es-automatizar/`.
+- La toma B trae unos 3,5 s de voz después de "un empleado que no duerme" que no están en el guion. No se usan.
+- Duración final: 58,6 s (1.758 fotogramas), -14 LUFS. La voz se coloca frase a frase (`scripts/build.py`), y de ahí salen los tiempos de textos y animaciones.
+- En pantalla, E11 dice "Así es tu negocio con automatización." aunque la voz dice "Y así es…".
+
 ## Antes de publicar
 - El negocio, los mensajes y los contadores ("-10 H / SEMANA", "0 LLAMADAS PERDIDAS") son ilustrativos.
 - La burbuja del móvil es genérica (sin logo de WhatsApp). El icono de Instagram solo aparece junto a @aigencyxlabs (marca de agua, barra de comentarios y cierre).
