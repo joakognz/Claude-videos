@@ -1,8 +1,13 @@
 """Builds the ad's audio mix and voice timeline.
 
 Inputs:  ../audio/raw/empleado-invisible/<take>.mp3 (three ElevenLabs narrator takes, A/B/C)
-         ../audio/raw/empleado-invisible/music-28s.m4a (the music, already cut from its second 28: the chorus)
+         ../audio/raw/empleado-invisible/music-28s.m4a (50 s of the song, cut from its second 28)
 Outputs: public/audio/mix.wav (music from the first frame to the end + voice, -14 LUFS), src/timeline.json
+
+The music starts one bar after the song's second 28 (MUSIC_IN) so that the bass drop (song 43.0 s) lands on
+"Tu empleado invisible" at 12.6 s, and the bar at song 60.2 s on "Tu asistente" (the shop lights up), 29.8 s.
+Voice phrases are packed with short gaps so there are no dead holes; the music's energy curve and hits go to
+the timeline so the shop's light reacts to the song.
 
 Phrase boundaries come from the takes' pauses (silencedetect -45 dB, 0.18 s); the script text is known,
 so word times are spread over each speech run by syllable count (no ASR needed).
@@ -20,6 +25,9 @@ SR = 48000
 FPS = 30
 DUR = 45.0
 TAKES = {"A": "5f74b8b5", "B": "469c3d08", "C": "d162facd"}
+MUSIC_IN = 2.4             # seconds into music-28s.m4a (song 30.4 s)
+DROP = 43.0 - 28 - MUSIC_IN    # 12.6: the bass comes in
+ALL_ON = 60.21 - 28 - MUSIC_IN  # 29.81: bar start, the shop lights up
 
 
 def load(name):
@@ -34,21 +42,21 @@ X = {k: load(p).mean(axis=1) for k, p in TAKES.items()}
 # ── phrases: (take, [(raw start, raw end, text)], timeline start) ─────────
 # Sub-segments are the take's speech runs between pauses.
 PHRASES = {
-    "a1": ("A", [(0.00, 2.16, "Tu mejor empleado no cobra nómina.")], 0.35),
-    "a2": ("A", [(2.53, 4.38, "Ahora mismo lo haces todo a mano:")], 4.05),
-    "a3": ("A", [(4.65, 8.17, "llamadas, mensajes, citas apuntadas en una libreta…")], 6.15),
-    "a4": ("A", [(8.64, 9.71, "Ahora imagina…")], 10.05),
-    "a5": ("A", [(10.13, 11.56, "Tu empleado invisible.")], 12.7),
-    "a6": ("A", [(11.85, None, "Está en el móvil, en el mostrador y en la agenda.")], 14.45),
-    "b1": ("B", [(0.00, 1.09, "Responde WhatsApp.")], 17.95),
-    "b2": ("B", [(1.36, 2.38, "Confirma citas.")], 19.6),
-    "b3": ("B", [(2.62, 3.99, "Envía recordatorios.")], 21.2),
-    "b4": ("B", [(4.23, 5.35, "Avisa de cambios.")], 22.95),
-    "b5": ("B", [(5.69, 6.57, "Todo a la vez.")], 24.45),
-    "b6": ("B", [(7.00, 9.11, "Un empleado: ocho horas,"), (9.34, 12.36, "vacaciones, bajas y nómina.")], 25.75),
-    "b7": ("B", [(12.70, None, "Tu asistente: veinticuatro horas, sin bajas, y siempre contesta.")], 31.35),
-    "c1": ("C", [(0.00, 2.22, "Y tú, por fin, a lo importante.")], 36.35),
-    "c2": ("C", [(2.62, None, "Comenta auditoría y vemos qué podemos automatizar en tu negocio.")], 38.95),
+    "a1": ("A", [(0.00, 2.16, "Tu mejor empleado no cobra nómina.")], 0.45),
+    "a2": ("A", [(2.53, 4.38, "Ahora mismo lo haces todo a mano:")], 2.85),
+    "a3": ("A", [(4.65, 8.17, "llamadas, mensajes, citas apuntadas en una libreta…")], 5.0),
+    "a4": ("A", [(8.64, 9.71, "Ahora imagina…")], 9.95),
+    "a5": ("A", [(10.13, 11.56, "Tu empleado invisible.")], DROP),
+    "a6": ("A", [(11.85, None, "Está en el móvil, en el mostrador y en la agenda.")], 14.25),
+    "b1": ("B", [(0.00, 1.09, "Responde WhatsApp.")], 17.4),
+    "b2": ("B", [(1.36, 2.38, "Confirma citas.")], 18.75),
+    "b3": ("B", [(2.62, 3.99, "Envía recordatorios.")], 20.05),
+    "b4": ("B", [(4.23, 5.35, "Avisa de cambios.")], 21.7),
+    "b5": ("B", [(5.69, 6.57, "Todo a la vez.")], 23.1),
+    "b6": ("B", [(7.00, 9.11, "Un empleado: ocho horas,"), (9.34, 12.36, "vacaciones, bajas y nómina.")], 24.25),
+    "b7": ("B", [(12.70, None, "Tu asistente: veinticuatro horas, sin bajas, y siempre contesta.")], ALL_ON),
+    "c1": ("C", [(0.00, 2.22, "Y tú, por fin, a lo importante.")], 34.85),
+    "c2": ("C", [(2.62, None, "Comenta auditoría y vemos qué podemos automatizar en tu negocio.")], 37.55),
 }
 
 V = "aeiouáéíóúü"
@@ -128,7 +136,7 @@ for (p, (a, b)), (q, (c, d)) in zip(order, order[1:]):
 mf = next(x for x in os.listdir(RAW) if x.startswith("music-28s"))
 mpcm = subprocess.run(["ffmpeg", "-v", "error", "-i", os.path.join(RAW, mf), "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"],
                       capture_output=True, check=True).stdout
-music = np.frombuffer(mpcm, np.float32).astype(np.float64).reshape(-1, 2)[: len(voice)]
+music = np.frombuffer(mpcm, np.float32).astype(np.float64).reshape(-1, 2)[int(MUSIC_IN * SR):][: len(voice)]
 music = np.pad(music, ((0, len(voice) - len(music)), (0, 0)))
 
 # voice activity envelope (attack 60 ms, release 350 ms) → music gain
@@ -143,18 +151,18 @@ for i in range(1, len(env)):
     c = 0.08 if env[i] > sm[i - 1] else 0.014  # per 5 ms step
     sm[i] = sm[i - 1] + (env[i] - sm[i - 1]) * c
 duck = np.interp(t, np.arange(len(sm)) * k / SR, sm)
-DUCK_DB = -11.0
+DUCK_DB = -8.0
 gain = 10 ** (DUCK_DB * duck / 20)
 gain *= np.clip(t / 0.15, 0, 1)                 # click-free start on the chorus
 gain *= np.clip((DUR - t) / 1.2, 0, 1) ** 1.5   # fade out over the last 1.2 s
 
-# levels: voice at -16 LUFS on its own, music bed 6 dB under it when nothing is said
+# levels: voice at -16 LUFS on its own, music 3 dB under it (before ducking) so the gaps stay full
 meter = pyln.Meter(SR)
 v2 = np.stack([voice, voice], axis=1)
 vl = meter.integrated_loudness(v2)
 v2 *= 10 ** ((-16 - vl) / 20)
 ml = meter.integrated_loudness(music)
-music *= 10 ** ((-22 - ml) / 20)
+music *= 10 ** ((-19 - ml) / 20)
 mix = v2 + music * gain[:, None]
 
 ln = meter.integrated_loudness(mix)
@@ -171,6 +179,26 @@ pcm16 = (np.clip(mix, -1, 1) * 32767).astype("<i2").tobytes()
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "s16le", "-ar", str(SR), "-ac", "2", "-i", "-", os.path.join(ROOT, "public", "audio", "mix.wav")],
                input=pcm16, check=True)
 
-json.dump({"fps": FPS, "duration": DUR, "phrases": spans, "words": words}, open(os.path.join(ROOT, "src", "timeline.json"), "w"), ensure_ascii=False, indent=1)
+# music activity as placed in the video, for visuals that react to it: a per-frame energy curve (0-1)
+# and the strongest onsets ("hits"). The song is loosely played, so this follows the music better than a beat grid.
+import librosa
+mono = music.mean(axis=1).astype(np.float32)
+hop = SR // FPS
+nf = int(DUR * FPS)
+rms = np.sqrt(np.array([np.mean(mono[i * hop:(i + 1) * hop] ** 2) for i in range(nf)]) + 1e-12)
+db = 20 * np.log10(rms)
+lo, hi = np.percentile(db, 5), np.percentile(db, 97)
+en = np.clip((db - lo) / (hi - lo), 0, 1)
+sm = np.zeros_like(en)
+for i in range(1, nf):  # fast attack, ~150 ms release
+    sm[i] = en[i] if en[i] > sm[i - 1] else sm[i - 1] + (en[i] - sm[i - 1]) * 0.2
+energy = [round(float(v), 3) for v in sm]
+oenv = librosa.onset.onset_strength(y=mono, sr=SR, hop_length=512)
+ons = librosa.onset.onset_detect(onset_envelope=oenv, sr=SR, hop_length=512, units="time", delta=0.25, wait=8)
+strength = np.interp(ons, librosa.times_like(oenv, sr=SR, hop_length=512), oenv)
+hits = [round(float(t), 3) for t, v in zip(ons, strength) if v > np.percentile(strength, 55) and t > DROP - 0.1]
+print("hits after the drop:", len(hits))
+
+json.dump({"fps": FPS, "duration": DUR, "drop": round(DROP, 3), "allOn": round(ALL_ON, 3), "energy": energy, "hits": hits, "phrases": spans, "words": words}, open(os.path.join(ROOT, "src", "timeline.json"), "w"), ensure_ascii=False, indent=1)
 for pid, ws in words.items():
     print(pid, spans[pid], " ".join(f"{w['text']}@{w['start']:.2f}" for w in ws))

@@ -1,5 +1,5 @@
 import React from "react";
-import { C, EASE, EASE_OUT, EV, MONO, chaosAt, clamp01, lerp, mix, orangeAt, partAt, rise, rnd, windowed } from "../theme";
+import { C, DROP, EASE, EASE_OUT, EV, MONO, chaosAt, clamp01, glowAt, lerp, mix, orangeAt, partAt, rise, rnd, windowed } from "../theme";
 import { Box, U, boxFaces, groundEllipse, iso, matY, matZ, pts, quadX, quadY, quadZ } from "../iso";
 
 const H = 3.2; // wall height
@@ -25,10 +25,10 @@ const Solid: React.FC<{ b: Box; o: number; dim?: number; edge?: boolean }> = ({ 
 };
 
 /** Bloom behind an element that is lit (orange only). */
-const Bloom: React.FC<{ x: number; y: number; z: number; r: number; o: number }> = ({ x, y, z, r, o }) => {
+const Bloom: React.FC<{ x: number; y: number; z: number; r: number; o: number; t: number }> = ({ x, y, z, r, o, t }) => {
   if (o <= 0.01) return null;
   const [cx, cy] = iso(x, y, z);
-  return <circle cx={cx} cy={cy} r={r} fill={C.orange} opacity={0.45 * o} filter="url(#blur18)" style={{ mixBlendMode: "screen" }} />;
+  return <circle cx={cx} cy={cy} r={r} fill={C.orange} opacity={Math.min(0.85, 0.45 * o * glowAt(t))} filter="url(#blur18)" style={{ mixBlendMode: "screen" }} />;
 };
 
 // ── shelves: boards + products, generated once ─────────────────────────
@@ -86,7 +86,7 @@ export const Person: React.FC<{ x: number; y: number; t: number; seed: number; k
   const bob = Math.sin(t * 1.6 + seed) * 1.2;
   const body = kind === "owner" ? C.cream : kind === "client" ? C.client : C.orange;
   const ghost = kind === "ghost";
-  const shimmer = ghost ? 0.85 + 0.15 * Math.sin(t * 7 + seed * 3) : 1;
+  const shimmer = ghost ? Math.min(1.25, (0.85 + 0.15 * Math.sin(t * 7 + seed * 3)) * glowAt(t)) : 1;
   return (
     <g opacity={op} transform={`translate(${sx} ${sy}) scale(${U / 46} ${(U / 46) * scaleY})`}>
       {!ghost && <ellipse cx={0} cy={0} rx={18} ry={7} fill="#000" opacity={0.4} />}
@@ -164,7 +164,7 @@ const Notebook: React.FC<{ t: number; o: number }> = ({ t, o }) => {
           <line x1={0} y1={0} x2={0.18} y2={-0.18} stroke="#C9B8A8" strokeWidth={0.04} />
         </g>
       )}
-      <Bloom x={-0.45} y={0.22} z={1.12} r={40} o={o} />
+      <Bloom x={-0.45} y={0.22} z={1.12} r={40} o={o} t={t} />
     </g>
   );
 };
@@ -196,7 +196,7 @@ const Landline: React.FC<{ t: number; o: number }> = ({ t, o }) => {
       {[0, 1, 2].map((i) => (
         <polygon key={i} points={quadZ(1.285, 0.7 + i * 0.12, 0.78 + i * 0.12, 0.28, 0.4)} fill={mix("#2A0606", "#7A3000", o)} />
       ))}
-      <Bloom x={0.85} y={0.22} z={1.3} r={34} o={o} />
+      <Bloom x={0.85} y={0.22} z={1.3} r={34} o={o} t={t} />
     </g>
   );
 };
@@ -218,7 +218,7 @@ const Computer: React.FC<{ t: number; o: number }> = ({ t, o }) => {
         </g>
       </g>
       {o > 0 && <polygon points={quadY(PC.y1 + 0.003, scr.x0, scr.x1, scr.z0, scr.z1)} fill={C.orange} opacity={o * 0.25} filter="url(#blur6)" />}
-      <Bloom x={1.75} y={0.13} z={1.5} r={46} o={o} />
+      <Bloom x={1.75} y={0.13} z={1.5} r={46} o={o} t={t} />
     </g>
   );
 };
@@ -311,7 +311,7 @@ const Checks: React.FC<{ t: number; o: number }> = ({ t, o }) => {
 
 // ── the sign ───────────────────────────────────────────────────────────
 const SIGN: Required<Box> = { x0: -2.75, x1: 2.0, y0: 3.0, y1: 3.32, z0: H - 0.05, z1: H + 1.05 };
-const Sign: React.FC<{ o: number }> = ({ o }) => {
+const Sign: React.FC<{ o: number; t: number }> = ({ o, t }) => {
   const f = boxFaces(SIGN);
   const w = SIGN.x1 - SIGN.x0;
   const h = SIGN.z1 - SIGN.z0;
@@ -336,7 +336,7 @@ const Sign: React.FC<{ o: number }> = ({ o }) => {
           </>
         )}
       </g>
-      {o > 0 && <polygon points={f.left} fill={C.orange} opacity={o * 0.45} filter="url(#blur12)" style={{ mixBlendMode: "screen" }} />}
+      {o > 0 && <polygon points={f.left} fill={C.orange} opacity={Math.min(0.9, o * 0.45 * glowAt(t))} filter="url(#blur12)" style={{ mixBlendMode: "screen" }} />}
     </g>
   );
 };
@@ -383,8 +383,8 @@ const Glass: React.FC<{ o: number; t: number }> = ({ o, t }) => {
         <>
           <polyline points={pts([iso(-3.7, 3.06, H), iso(3.64, 3.06, H), iso(3.64, -3.2, H)])} fill="none" stroke="#FFE2C4" strokeWidth={2} opacity={o} />
           {/* light spilling out of the windows */}
-          <polygon points={quadY(3, -3.5, 3.5, KNEE, H)} fill={C.orange} opacity={o * 0.35} filter="url(#blur18)" style={{ mixBlendMode: "screen" }} />
-          <polygon points={quadX(3.5, -3, 3, KNEE, H)} fill={C.orange} opacity={o * 0.3} filter="url(#blur18)" style={{ mixBlendMode: "screen" }} />
+          <polygon points={quadY(3, -3.5, 3.5, KNEE, H)} fill={C.orange} opacity={Math.min(0.8, o * 0.35 * glowAt(t))} filter="url(#blur18)" style={{ mixBlendMode: "screen" }} />
+          <polygon points={quadX(3.5, -3, 3, KNEE, H)} fill={C.orange} opacity={Math.min(0.75, o * 0.3 * glowAt(t))} filter="url(#blur18)" style={{ mixBlendMode: "screen" }} />
         </>
       )}
     </g>
@@ -449,7 +449,8 @@ export const GHOSTS: { id: string; label: string; to: Pt }[] = [
   { id: "mostrador", label: "MOSTRADOR", to: [2.95, 0.85] },
   { id: "movil", label: "MÓVIL", to: [2.05, -0.95] },
 ];
-export const ghostIn = (t: number) => rise(t, EV.ghostIn + 0.35, 0.8, EASE);
+/** The assistant snaps in on the drop (the particles gather just before it). */
+export const ghostIn = (t: number) => rise(t, DROP - 0.04, 0.3, EASE_OUT);
 const ghostPos = (t: number, i: number): Pt => {
   const p = EASE(clamp01((t - EV.split - i * 0.12) / 0.95));
   const [x0, y0] = G_ORIGIN;
@@ -463,7 +464,7 @@ export const ghostScreen = (t: number, i: number, z = 0) => iso(...ghostPos(t, i
 /** Particles converging into the assistant's shape (E4). */
 const Materialize: React.FC<{ t: number }> = ({ t }) => {
   const a = EV.ghostIn;
-  const p = clamp01((t - a) / 1.0);
+  const p = clamp01((t - a) / (DROP - a + 0.1));
   if (p <= 0 || p >= 1) return null;
   const [cx, cy] = iso(...G_ORIGIN, 0);
   return (
@@ -536,7 +537,7 @@ export const ShopInterior: React.FC<{ t: number }> = ({ t }) => {
       <Materialize t={t} />
       <Solid b={COUNTER} o={partAt(t, 3)} dim={0.05} edge />
       <polygon points={quadY(COUNTER.y1 + 0.001, COUNTER.x0 + 0.15, COUNTER.x1 - 0.15, 0.25, 0.85)} fill={mix("#4A0E0E", "#FFC48A", partAt(t, 3))} />
-      <Bloom x={0.7} y={0.72} z={0.6} r={70} o={partAt(t, 3)} />
+      <Bloom x={0.7} y={0.72} z={0.6} r={70} o={partAt(t, 3)} t={t} />
       <Notebook t={t} o={partAt(t, 1)} />
       <Landline t={t} o={partAt(t, 2)} />
       <Computer t={t} o={partAt(t, 0)} />
@@ -612,7 +613,7 @@ export const ShopFront: React.FC<{ t: number }> = ({ t }) => {
   return (
     <g>
       <Glass o={o} t={t} />
-      <Sign o={o} />
+      <Sign o={o} t={t} />
       {[...strollers(t), ...outside].map(({ p, op, seed }) => <Person key={seed} x={p[0]} y={p[1]} t={t} seed={seed} kind="client" op={op} />)}
     </g>
   );

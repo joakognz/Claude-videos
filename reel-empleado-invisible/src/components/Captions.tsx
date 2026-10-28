@@ -1,5 +1,5 @@
 import React from "react";
-import { C, EASE, EASE_OUT, FPS, S, SANS, W, clamp01, rise } from "../theme";
+import { C, EASE, EASE_OUT, FPS, PH, S, SANS, W, clamp01, rise } from "../theme";
 
 // Captions live between 10 % and 25 % of the height (192-480 px), clear of Instagram's UI.
 const TOP = 206;
@@ -12,7 +12,7 @@ type Cap = { lines: Word[][]; until: number; small?: { text: string; start: numb
 
 const CAPS: Cap[] = [
   // word times follow the voice (src/timeline.json)
-  { lines: [[["Tu", W("a1", 0)], ["mejor", W("a1", 1)], ["empleado", W("a1", 2)]], [["no", W("a1", 3), "pos"], ["cobra", 0, "pos"], ["nómina", 0, "pos"]]], until: S.E2 - 0.1 },
+  { lines: [[["Tu", W("a1", 0)], ["mejor", W("a1", 1)], ["empleado", W("a1", 2)]], [["no", W("a1", 3), "pos"], ["cobra", 0, "pos"], ["nómina", 0, "pos"]]], until: PH.a2[0] - 0.05 },
   { lines: [[["Todo", W("a2", 4)], ["a", W("a2", 5), "neg"], ["mano…", 0, "neg"]]], until: S.E3 - 0.1 },
   { lines: [[["Ahora", W("a4", 0)], ["imagina…", W("a4", 1)]]], until: S.E4 - 0.1 },
   { lines: [[["Tu", W("a5", 0)], ["empleado", W("a5", 1)]], [["invisible", W("a5", 2), "pos"]]], until: S.E5 - 0.12 },

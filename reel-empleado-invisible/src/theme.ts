@@ -33,56 +33,66 @@ export const C = {
 export const FPS = 30;
 export const DURATION = 45;
 
-// ── voice timeline (scripts/build.py): phrase spans and word start times, in seconds ──
+// ── voice + music timeline (scripts/build.py) ─────────────────────────────
 type TLWord = { text: string; start: number; end: number };
-const TLJ = timelineJson as unknown as { phrases: Record<string, [number, number]>; words: Record<string, TLWord[]> };
+const TLJ = timelineJson as unknown as {
+  drop: number; allOn: number; energy: number[]; hits: number[];
+  phrases: Record<string, [number, number]>; words: Record<string, TLWord[]>;
+};
 export const PH = TLJ.phrases;
 /** Start of the i-th word of a phrase. */
 export const W = (pid: string, i: number) => TLJ.words[pid][i].start;
+/** The music's energy at time t (0-1, per frame). */
+export const musicAt = (t: number) => TLJ.energy[Math.max(0, Math.min(TLJ.energy.length - 1, Math.round(t * 30)))] ?? 0;
+/** A short 0→1→0 kick on each strong musical hit. */
+export const hitAt = (t: number) => Math.max(0, ...TLJ.hits.map((h) => (t >= h && t < h + 0.35 ? 1 - (t - h) / 0.35 : 0)));
+/** The bass drop (on "Tu empleado invisible") and the bar where the whole shop lights up (on "Tu asistente"). */
+export const DROP = TLJ.drop;
+export const ALL_ON = TLJ.allOn;
 
-// ── scenes (seconds), set by the voice ──────────────────────────────────
-export const S = { E1: 0, E2: 4, E3: 9.85, E4: 12.55, E5: 17.8, E6: 25.55, E7: 36.1, E8: 38.75, E9: 42.85, END: DURATION };
+// ── scenes (seconds), set by the voice and the music ─────────────────────
+export const S = { E1: 0, E2: 4, E3: 9.0, E4: 11.85, E5: 17.25, E6: 24.1, E7: 34.45, E8: 37.4, E9: 42.25, END: DURATION };
 
 // ── events (seconds) ─────────────────────────────────────────────────────
 export const EV = {
   // E2 chaos ("…llamadas, mensajes, citas apuntadas en una libreta")
-  ring: [4.3, W("a3", 0) + 0.1, 8.4],
-  scribble: [4.6, 5.3, 6.0, 6.9, W("a3", 6) - 0.2, W("a3", 6) + 0.3],
-  chatIn: [5.0, W("a3", 1), 7.9],
+  ring: [4.1, W("a3", 0) + 0.1, 7.6],
+  scribble: [4.3, 4.9, 5.6, 6.3, W("a3", 6) - 0.2, W("a3", 6) + 0.3],
+  chatIn: [4.6, W("a3", 1), 7.0],
   // E3
-  chatClear: 9.8,
-  // E4 the invisible employee: copies labelled as the voice names them
-  ghostIn: 12.65,
+  chatClear: 8.95,
+  // E4 the invisible employee: particles gather on the pre-hit, it bursts out on the drop
+  ghostIn: DROP - 0.65,
   split: W("a6", 0),
   ghostLabel: [W("a6", 10), W("a6", 6), W("a6", 3)], // agenda, mostrador, móvil
-  ghostLabelsOut: 17.55,
+  ghostLabelsOut: 17.2,
   // E5 tasks: each tag appears with its phrase and is checked when the phrase ends
   tag: [PH.b1[0], PH.b2[0], PH.b3[0], PH.b4[0]],
   check: [PH.b1[1] - 0.05, PH.b2[1] - 0.05, PH.b3[1] - 0.05, PH.b4[1] - 0.05],
   tagsOut: S.E6 - 0.15,
-  msgIn: 18.4,
-  typing: 18.8,
-  reply: 19.2,
-  msgOk: 20.1,
-  confirm: 20.9,
+  msgIn: 17.75,
+  typing: 18.1,
+  reply: 18.5,
+  msgOk: 19.3,
+  confirm: 20.0,
   notifs: [PH.b3[1], PH.b4[1]],
   // E6 comparison cards: rows appear as they are said
   cardRed: PH.b6[0],
   cardOrange: PH.b6[0] + 0.45,
   redRows: [W("b6", 2), W("b6", 4), W("b6", 5), W("b6", 7)],
   orangeRows: [W("b7", 2), W("b7", 4), W("b7", 7)],
-  redOff: PH.b7[0] - 0.15,
-  orangeOn: PH.b7[0] + 0.1,
+  redOff: ALL_ON - 0.15,
+  orangeOn: ALL_ON + 0.05,
   cardsOut: PH.b7[1] - 0.05,
-  // E7 all on
-  allOn: 36.1,
-  counters: [36.85, 37.3],
+  // the whole shop lights up on "Tu asistente", on a bar of the song
+  allOn: ALL_ON,
+  counters: [35.3, 35.75],
   // E8 CTA
-  bar: 38.75,
+  bar: S.E8 + 0.05,
   typeStart: W("c2", 1),
   typeEnd: W("c2", 1) + 0.6,
   // the white phone mockup, always bottom-right: [in, out]
-  phone: [[4.55, 10.25], [17.75, 25.3], [36.45, 38.5]] as [number, number][],
+  phone: [[4.4, 9.4], [17.2, 23.95], [34.6, 37.3]] as [number, number][],
 };
 export const EASE = Easing.bezier(0.65, 0, 0.35, 1);
 export const EASE_OUT = Easing.bezier(0.16, 1, 0.3, 1);
@@ -128,6 +138,8 @@ export const switchOn = (t: number, a: number) => {
 // ── state of the business over time ─────────────────────────────────────
 /** Whole shop: dark red until E7, then orange for good. */
 export const orangeAt = (t: number) => switchOn(t, EV.allOn);
+/** Light intensity of everything orange: steady before the drop, then it breathes with the music and kicks on its hits. */
+export const glowAt = (t: number) => (t < DROP ? 1 : 0.78 + 0.35 * musicAt(t) + 0.4 * hitAt(t));
 /** Single parts lit by each task's check in E5: 0 computer, 1 notebook, 2 landline, 3 counter. */
 export const partAt = (t: number, k: number) => Math.max(orangeAt(t), switchOn(t, EV.check[k]));
 /** Chaos (rings, notes, unread messages): E2. */

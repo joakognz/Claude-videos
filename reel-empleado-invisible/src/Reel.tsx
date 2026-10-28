@@ -6,6 +6,7 @@ import { Bokeh, CityBack, CityFront, GroundGlow, View, Wave, WindowPatterns } fr
 import { ChaosIcons, ShopFront, ShopInterior } from "./components/Shop";
 import { Phone } from "./components/Phone";
 import { Captions } from "./components/Captions";
+import { AllOnBurst, DropBurst, ScreenFlash } from "./components/Effects";
 import { Cards, CommentBar, Counters, GhostLabels, Outro, PhoneLink, Tasks } from "./components/Overlays";
 
 const Filters: React.FC = () => (
@@ -43,6 +44,8 @@ export const Reel: React.FC = () => {
           <CityFront t={t} view={view} o={o} s={s} />
           <Wave t={t} />
           <ChaosIcons t={t} />
+          <DropBurst t={t} />
+          <AllOnBurst t={t} />
         </g>
         {/* aerial haze at the far end of the opening move hides the city's edge */}
         {fog > 0 && <rect x={0} y={0} width={1080} height={1920} fill="url(#fog)" opacity={fog} />}
@@ -63,6 +66,7 @@ export const Reel: React.FC = () => {
       </svg>
       {/* top shade keeps the captions legible over the skyline */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 26%, rgba(0,0,0,0) 38%)" }} />
+      <ScreenFlash t={t} />
       <GhostLabels t={t} />
       <PhoneLink t={t} />
       <Tasks t={t} />

@@ -1,5 +1,5 @@
 import React from "react";
-import { C, CAM_FROM, CAM_PIVOT, EV, clamp01, mix, rnd } from "../theme";
+import { C, CAM_FROM, CAM_PIVOT, EV, clamp01, glowAt, hitAt, mix, rnd } from "../theme";
 import { Box, OX, OY, U, boxFaces, groundEllipse, iso, matX, matY, pts, quadZ } from "../iso";
 
 // ── layout (world units) ────────────────────────────────────────────────
@@ -305,7 +305,7 @@ const CurbLights: React.FC<{ t: number; view: View; k: number }> = ({ t, view, k
       const [sx, sy] = iso(x, y, 0.05);
       if (!inView(sx, sy, view)) return null;
       const lit = litBy(t, x, y);
-      const tw = 0.75 + 0.25 * Math.sin(t * 2.1 + i * 1.7);
+      const tw = (0.75 + 0.25 * Math.sin(t * 2.1 + i * 1.7)) * (1 + lit * 0.6 * hitAt(t));
       return (
         <g key={i}>
           <circle cx={sx} cy={sy} r={(7 + lit * 5) * Math.sqrt(k)} fill={mix("#F2D9B8", C.orange, lit)} opacity={(0.1 + lit * 0.22) * tw} />
@@ -337,7 +337,7 @@ export const GroundGlow: React.FC<{ o: number; p: number; t: number }> = ({ o, p
   if (o <= 0 && p <= 0) return null;
   const big = groundEllipse(13);
   const mid = groundEllipse(6.5);
-  const pulse = 0.92 + 0.08 * Math.sin(t * 2.2);
+  const pulse = Math.min(1.3, glowAt(t));
   return (
     <g style={{ mixBlendMode: "screen" }}>
       <ellipse cx={OX} cy={OY + 0.5 * U} rx={big.rx} ry={big.ry} fill="url(#poolOrange)" opacity={o * pulse} />
