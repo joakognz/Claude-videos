@@ -6,7 +6,7 @@ import { Bokeh, CityBack, CityFront, GroundGlow, View, Wave, WindowPatterns } fr
 import { ChaosIcons, ShopFront, ShopInterior } from "./components/Shop";
 import { Phone } from "./components/Phone";
 import { Captions } from "./components/Captions";
-import { CommentBar, Counters, ListPanel, Outro, PhoneLine, Watermark, WebSign } from "./components/Overlays";
+import { CommentBar, Counters, ListPanel, Outro, PhoneLine, WebSign } from "./components/Overlays";
 
 const Filters: React.FC = () => (
   <defs>
@@ -51,7 +51,6 @@ export const Reel: React.FC = () => {
       <Counters t={t} />
       <Phone t={t} />
       <CommentBar t={t} />
-      <Watermark t={t} />
       <Captions t={t} />
       <Outro t={t} />
       <Audio src={staticFile("audio/mix.wav")} />

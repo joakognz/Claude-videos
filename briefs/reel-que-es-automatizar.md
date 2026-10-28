@@ -78,5 +78,5 @@ Notas de lectura:
 
 ## Antes de publicar
 - El negocio, los mensajes y los contadores ("-10 H / SEMANA", "0 LLAMADAS PERDIDAS") son ilustrativos.
-- La burbuja del móvil es genérica (sin logo de WhatsApp). El icono de Instagram solo aparece junto a @aigencyx.labs (marca de agua, barra de comentarios y cierre).
+- La burbuja del móvil es genérica (sin logo de WhatsApp). El icono de Instagram solo aparece junto a @aigencyx.labs, en el cierre. Sin marca de agua.
 - **Portada sugerida:** "¿Qué es una automatización?"

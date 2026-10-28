@@ -127,18 +127,6 @@ export const IgGlyph: React.FC<{ size: number; color?: string }> = ({ size, colo
   </svg>
 );
 
-export const Watermark: React.FC<{ t: number }> = ({ t }) => {
-  const p = 1 - clamp01((t - S.OUTRO) / 0.3);
-  return (
-    <div style={{ position: "absolute", left: 30, top: 930, display: "flex", alignItems: "center", gap: 9, opacity: 0.78 * p }}>
-      <IgGlyph size={30} />
-      <div style={{ fontFamily: MONO, fontWeight: 500, fontSize: 21, color: C.white, letterSpacing: "0.02em", textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}>
-        @aigencyx.labs
-      </div>
-    </div>
-  );
-};
-
 // ── E13: Instagram-style comment bar ───────────────────────────────────
 export const CommentBar: React.FC<{ t: number }> = ({ t }) => {
   const p = rise(t, EV.bar, 0.45);
