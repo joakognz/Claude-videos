@@ -1,0 +1,772 @@
+{
+ "fps": 30,
+ "durationInFrames": 1350,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 6.025,
+  "E3": 10.76,
+  "E4": 16.135,
+  "E5": 18.19,
+  "E5B": 22.645,
+  "E6": 26.23,
+  "E7": 31.715,
+  "E8": 36.99,
+  "E9": 42.795,
+  "END": 45.0
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Una",
+     "t": 0.855,
+     "hl": null
+    },
+    {
+     "text": "IA,",
+     "t": 1.04,
+     "hl": null
+    },
+    {
+     "text": "sola",
+     "t": 2.33,
+     "hl": "o"
+    },
+    {
+     "text": "en una isla",
+     "t": 2.945,
+     "hl": null
+    }
+   ],
+   "start": 0.735,
+   "end": 5.925,
+   "micro": [
+    [
+     "SIN TAREAS",
+     3.865
+    ],
+    [
+     "· SIN OBJETIVOS",
+     4.355
+    ]
+   ]
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "30 horas",
+     "t": 6.175,
+     "hl": "o"
+    },
+    {
+     "text": "después…",
+     "t": 6.915,
+     "hl": null
+    }
+   ],
+   "start": 6.055,
+   "end": 10.66
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "Inventó",
+     "t": 11.2,
+     "hl": "o"
+    },
+    {
+     "text": "juegos,",
+     "t": 11.68,
+     "hl": null
+    },
+    {
+     "text": "templos",
+     "t": 12.77,
+     "hl": null
+    },
+    {
+     "text": "y mandalas",
+     "t": 14.94,
+     "hl": null
+    }
+   ],
+   "start": 11.08,
+   "end": 16.035
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "Hasta",
+     "t": 16.285,
+     "hl": null
+    },
+    {
+     "text": "escribió",
+     "t": 16.56,
+     "hl": null
+    },
+    {
+     "text": "su nombre",
+     "t": 17.065,
+     "hl": "o"
+    }
+   ],
+   "start": 16.165,
+   "end": 18.09
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "Nadie",
+     "t": 20.795,
+     "hl": "o"
+    },
+    {
+     "text": "se lo",
+     "t": 21.26,
+     "hl": null
+    },
+    {
+     "text": "programó",
+     "t": 21.78,
+     "hl": null
+    }
+   ],
+   "start": 20.675,
+   "end": 26.13,
+   "micro": [
+    [
+     "6 DE 13 AGENTES",
+     18.435
+    ],
+    [
+     "LO DESCUBRIERON",
+     19.735
+    ]
+   ],
+   "microEnd": 22.845
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "Jugar",
+     "t": 29.51,
+     "hl": null
+    },
+    {
+     "text": "los hizo",
+     "t": 29.885,
+     "hl": null
+    },
+    {
+     "text": "mejores",
+     "t": 30.425,
+     "hl": "o"
+    }
+   ],
+   "start": 29.39,
+   "end": 31.615,
+   "micro": [
+    [
+     "LOS QUE JUGARON",
+     28.59
+    ],
+    [
+     "RINDIERON MEJOR",
+     29.885
+    ]
+   ]
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "La IA",
+     "t": 31.865,
+     "hl": null
+    },
+    {
+     "text": "ya no solo",
+     "t": 32.11,
+     "hl": null
+    },
+    {
+     "text": "obedece",
+     "t": 33.2,
+     "hl": "o"
+    }
+   ],
+   "start": 31.745,
+   "end": 36.89,
+   "sub": [
+    [
+     "Explora,",
+     34.125
+    ],
+    [
+     "aprende",
+     34.755
+    ],
+    [
+     "y se las ingenia.",
+     35.815
+    ]
+   ]
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "Imagina eso",
+     "t": 37.14,
+     "hl": null
+    },
+    {
+     "text": "en tu negocio",
+     "t": 38.41,
+     "hl": "o"
+    }
+   ],
+   "start": 37.02,
+   "end": 39.26
+  }
+ },
+ "cta": {
+  "comenta": 39.36,
+  "keyword": 39.945,
+  "small": 41.005
+ },
+ "ev": {
+  "dolly": 4.0,
+  "eko": 2.15,
+  "counter0": 6.125,
+  "counter1": 10.41,
+  "bowl": 11.53,
+  "temple0": 12.32,
+  "templeStep": 0.11,
+  "mandala0": 14.54,
+  "mandalaStep": 0.17,
+  "letters": 16.51,
+  "letterStep": 0.3,
+  "lettersGlow": 17.615,
+  "row": 18.29,
+  "six": 18.435,
+  "sixStep": 0.12,
+  "throw1": 22.965,
+  "jump": 24.285,
+  "release": 24.705,
+  "spawn": 26.33,
+  "work": 27.61,
+  "leftStep": 0.34,
+  "rightStep": 1.1,
+  "net": 32.015,
+  "morph": 37.04,
+  "sign": 38.465,
+  "icons": 38.865,
+  "typeStart": 39.595,
+  "typeStep": 0.075,
+  "land1": 23.515,
+  "land2": 25.705,
+  "bowlHit": 12.03
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 2.15,
+   "type": "appear"
+  },
+  {
+   "t": 6.125,
+   "type": "tick"
+  },
+  {
+   "t": 6.225,
+   "type": "tick"
+  },
+  {
+   "t": 6.325,
+   "type": "tick"
+  },
+  {
+   "t": 6.425,
+   "type": "tick"
+  },
+  {
+   "t": 6.525,
+   "type": "tick"
+  },
+  {
+   "t": 6.625,
+   "type": "tick"
+  },
+  {
+   "t": 6.725,
+   "type": "tick"
+  },
+  {
+   "t": 6.825,
+   "type": "tick"
+  },
+  {
+   "t": 6.925,
+   "type": "tick"
+  },
+  {
+   "t": 7.025,
+   "type": "tick"
+  },
+  {
+   "t": 7.125,
+   "type": "tick"
+  },
+  {
+   "t": 7.225,
+   "type": "tick"
+  },
+  {
+   "t": 7.325,
+   "type": "tick"
+  },
+  {
+   "t": 7.425,
+   "type": "tick"
+  },
+  {
+   "t": 7.525,
+   "type": "tick"
+  },
+  {
+   "t": 7.625,
+   "type": "tick"
+  },
+  {
+   "t": 7.725,
+   "type": "tick"
+  },
+  {
+   "t": 7.825,
+   "type": "tick"
+  },
+  {
+   "t": 7.925,
+   "type": "tick"
+  },
+  {
+   "t": 8.025,
+   "type": "tick"
+  },
+  {
+   "t": 8.125,
+   "type": "tick"
+  },
+  {
+   "t": 8.225,
+   "type": "tick"
+  },
+  {
+   "t": 8.325,
+   "type": "tick"
+  },
+  {
+   "t": 8.425,
+   "type": "tick"
+  },
+  {
+   "t": 8.525,
+   "type": "tick"
+  },
+  {
+   "t": 8.625,
+   "type": "tick"
+  },
+  {
+   "t": 8.725,
+   "type": "tick"
+  },
+  {
+   "t": 8.825,
+   "type": "tick"
+  },
+  {
+   "t": 8.925,
+   "type": "tick"
+  },
+  {
+   "t": 9.025,
+   "type": "tick"
+  },
+  {
+   "t": 9.125,
+   "type": "tick"
+  },
+  {
+   "t": 9.225,
+   "type": "tick"
+  },
+  {
+   "t": 9.325,
+   "type": "tick"
+  },
+  {
+   "t": 9.425,
+   "type": "tick"
+  },
+  {
+   "t": 9.525,
+   "type": "tick"
+  },
+  {
+   "t": 9.625,
+   "type": "tick"
+  },
+  {
+   "t": 9.725,
+   "type": "tick"
+  },
+  {
+   "t": 9.825,
+   "type": "tick"
+  },
+  {
+   "t": 9.925,
+   "type": "tick"
+  },
+  {
+   "t": 10.025,
+   "type": "tick"
+  },
+  {
+   "t": 10.125,
+   "type": "tick"
+  },
+  {
+   "t": 10.225,
+   "type": "tick"
+  },
+  {
+   "t": 11.43,
+   "type": "swish"
+  },
+  {
+   "t": 12.03,
+   "type": "pins"
+  },
+  {
+   "t": 12.62,
+   "type": "clack"
+  },
+  {
+   "t": 12.73,
+   "type": "clack"
+  },
+  {
+   "t": 12.84,
+   "type": "clack"
+  },
+  {
+   "t": 12.95,
+   "type": "clack"
+  },
+  {
+   "t": 13.06,
+   "type": "clack"
+  },
+  {
+   "t": 13.17,
+   "type": "clack"
+  },
+  {
+   "t": 13.28,
+   "type": "clack"
+  },
+  {
+   "t": 13.39,
+   "type": "clack"
+  },
+  {
+   "t": 13.5,
+   "type": "clack"
+  },
+  {
+   "t": 13.61,
+   "type": "clack"
+  },
+  {
+   "t": 13.72,
+   "type": "clack"
+  },
+  {
+   "t": 13.83,
+   "type": "clack"
+  },
+  {
+   "t": 13.94,
+   "type": "clack"
+  },
+  {
+   "t": 14.05,
+   "type": "clack"
+  },
+  {
+   "t": 14.54,
+   "type": "chime"
+  },
+  {
+   "t": 14.71,
+   "type": "chime"
+  },
+  {
+   "t": 14.88,
+   "type": "chime"
+  },
+  {
+   "t": 15.05,
+   "type": "chime"
+  },
+  {
+   "t": 15.22,
+   "type": "chime"
+  },
+  {
+   "t": 15.39,
+   "type": "chime"
+  },
+  {
+   "t": 15.56,
+   "type": "chime"
+  },
+  {
+   "t": 15.73,
+   "type": "chime"
+  },
+  {
+   "t": 16.71,
+   "type": "clack"
+  },
+  {
+   "t": 17.01,
+   "type": "clack"
+  },
+  {
+   "t": 17.31,
+   "type": "clack"
+  },
+  {
+   "t": 17.615,
+   "type": "appear"
+  },
+  {
+   "t": 18.435,
+   "type": "blip"
+  },
+  {
+   "t": 18.555,
+   "type": "blip"
+  },
+  {
+   "t": 18.675,
+   "type": "blip"
+  },
+  {
+   "t": 18.795,
+   "type": "blip"
+  },
+  {
+   "t": 18.915,
+   "type": "blip"
+  },
+  {
+   "t": 19.035,
+   "type": "blip"
+  },
+  {
+   "t": 22.965,
+   "type": "swish"
+  },
+  {
+   "t": 23.515,
+   "type": "thud"
+  },
+  {
+   "t": 24.285,
+   "type": "swish"
+  },
+  {
+   "t": 24.705,
+   "type": "swish"
+  },
+  {
+   "t": 25.705,
+   "type": "thud"
+  },
+  {
+   "t": 25.805,
+   "type": "ding"
+  },
+  {
+   "t": 26.33,
+   "type": "pop"
+  },
+  {
+   "t": 26.4,
+   "type": "pop"
+  },
+  {
+   "t": 26.47,
+   "type": "pop"
+  },
+  {
+   "t": 26.54,
+   "type": "pop"
+  },
+  {
+   "t": 26.61,
+   "type": "pop"
+  },
+  {
+   "t": 26.68,
+   "type": "pop"
+  },
+  {
+   "t": 26.75,
+   "type": "pop"
+  },
+  {
+   "t": 26.82,
+   "type": "pop"
+  },
+  {
+   "t": 26.89,
+   "type": "pop"
+  },
+  {
+   "t": 26.96,
+   "type": "pop"
+  },
+  {
+   "t": 27.03,
+   "type": "pop"
+  },
+  {
+   "t": 27.1,
+   "type": "pop"
+  },
+  {
+   "t": 27.91,
+   "type": "clack"
+  },
+  {
+   "t": 28.25,
+   "type": "clack"
+  },
+  {
+   "t": 28.59,
+   "type": "clack"
+  },
+  {
+   "t": 28.93,
+   "type": "clack"
+  },
+  {
+   "t": 29.27,
+   "type": "clack"
+  },
+  {
+   "t": 29.61,
+   "type": "clack"
+  },
+  {
+   "t": 29.95,
+   "type": "clack"
+  },
+  {
+   "t": 30.29,
+   "type": "clack"
+  },
+  {
+   "t": 30.63,
+   "type": "clack"
+  },
+  {
+   "t": 27.91,
+   "type": "clack"
+  },
+  {
+   "t": 29.01,
+   "type": "clack"
+  },
+  {
+   "t": 30.11,
+   "type": "clack"
+  },
+  {
+   "t": 32.015,
+   "type": "rise"
+  },
+  {
+   "t": 32.015,
+   "type": "boom"
+  },
+  {
+   "t": 37.04,
+   "type": "sink"
+  },
+  {
+   "t": 38.465,
+   "type": "boom"
+  },
+  {
+   "t": 38.865,
+   "type": "blip"
+  },
+  {
+   "t": 39.115,
+   "type": "blip"
+  },
+  {
+   "t": 39.365,
+   "type": "blip"
+  },
+  {
+   "t": 39.595,
+   "type": "key"
+  },
+  {
+   "t": 39.67,
+   "type": "key"
+  },
+  {
+   "t": 39.745,
+   "type": "key"
+  },
+  {
+   "t": 39.82,
+   "type": "key"
+  },
+  {
+   "t": 39.895,
+   "type": "key"
+  },
+  {
+   "t": 39.97,
+   "type": "key"
+  },
+  {
+   "t": 40.045,
+   "type": "key"
+  },
+  {
+   "t": 40.12,
+   "type": "key"
+  },
+  {
+   "t": 40.195,
+   "type": "key"
+  },
+  {
+   "t": 43.095,
+   "type": "appear"
+  }
+ ]
+}
