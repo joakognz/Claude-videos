@@ -25,7 +25,7 @@ export const Highlight: React.FC<{ text: string; kind: "o" | "g"; t: number; at:
         {fadeLetters > 0
           ? [...text].map((ch, i) => {
             const k = clamp01(fadeLetters * 1.6 - rand(i + 3) * 0.6);
-            return <span key={i} style={{ opacity: 1 - k, filter: `blur(${k * 10}px)`, display: "inline-block", translate: `0px ${-k * 18}px` }}>{ch}</span>;
+            return <span key={i} style={{ opacity: 1 - k, filter: `blur(${k * 10}px)`, display: "inline-block", translate: `0px ${-k * 18}px` }}>{ch === " " ? "\u00A0" : ch}</span>;
           })
           : text}
       </span>
