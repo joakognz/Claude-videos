@@ -68,6 +68,7 @@ Notas de lectura:
 - Tomas: A `8e6035ca` (9,6 s), B `2f6384e0` (28,8 s), C `1dd43732` (11,1 s). Proyecto: `reel-que-es-automatizar/`.
 - La toma B trae unos 3,5 s de voz después de "un empleado que no duerme" que no están en el guion. No se usan.
 - Duración final: 58,6 s (1.758 fotogramas), -14 LUFS. La voz se coloca frase a frase (`scripts/build.py`), y de ahí salen los tiempos de textos y animaciones.
+- La toma C ya dice "Comenta auditoria…" (comprobado contra "automatización" de la misma toma).
 - En pantalla, E11 dice "Así es tu negocio con automatización." aunque la voz dice "Y así es…".
 
 ## Antes de publicar
