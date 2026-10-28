@@ -53,9 +53,12 @@ const WordSpan: React.FC<{ w: Word; t: number }> = ({ w, t }) => {
 
 const Block: React.FC<{ c: Caption; t: number; until: number }> = ({ c, t, until }) => {
   const q = EASE(clamp01((t - until) / OUT));
+  // slow push-in while the caption is on screen (the camera itself never moves)
+  const life = clamp01((t - c.start) / Math.max(1, until - c.start));
   return (
     <div style={{
       position: "absolute", left: 64, right: 64, top: TOP - q * 40, opacity: 1 - q, display: "flex", flexDirection: "column", alignItems: "center",
+      transform: `scale(${1 + 0.045 * life})`, transformOrigin: "50% 0%",
     }}>
       <div style={{
         display: "flex", flexWrap: "wrap", justifyContent: "center", columnGap: "0.22em", rowGap: "0.04em",

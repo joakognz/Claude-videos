@@ -11,7 +11,7 @@ export const ListPanel: React.FC<{ t: number }> = ({ t }) => {
   if (p <= 0) return null;
   return (
     <div style={{
-      position: "absolute", left: 150, width: 780, top: 400 + (1 - p) * 30, opacity: p, padding: "22px 30px",
+      position: "absolute", left: 150, width: 780, top: 400 + (1 - p) * 30 + Math.sin(t * 1.4) * 4, opacity: p, padding: "22px 30px",
       background: "rgba(8,8,9,0.82)", border: "1.5px solid #2C2C2E", borderRadius: 18, boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
       display: "flex", flexDirection: "column", gap: 14,
     }}>
@@ -48,7 +48,7 @@ export const WebSign: React.FC<{ t: number }> = ({ t }) => {
   const bob = Math.sin(t * 1.8) * 5;
   return (
     <div style={{
-      position: "absolute", left: 540 - 150, width: 300, top: 572 + bob + (1 - p) * 40, opacity: p, transform: `scale(${0.85 + 0.15 * p})`,
+      position: "absolute", left: 540 - 150, width: 300, top: 614 + bob + (1 - p) * 40, opacity: p, transform: `scale(${0.85 + 0.15 * p})`,
       display: "flex", flexDirection: "column", alignItems: "center",
     }}>
       <div style={{
@@ -76,7 +76,7 @@ export const Counters: React.FC<{ t: number }> = ({ t }) => {
   const hours = Math.round(10 * clamp01((t - EV.counters[0]) / 0.7));
   const rows = [`-${hours} H / SEMANA`, "0 LLAMADAS PERDIDAS", "TODO CONFIRMADO SOLO"];
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: 410, display: "flex", flexDirection: "column", alignItems: "center", gap: 14, opacity: out }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 504 + Math.sin(t * 1.6) * 4, display: "flex", flexDirection: "column", alignItems: "center", gap: 12, opacity: out }}>
       {rows.map((r, i) => {
         const p = rise(t, EV.counters[i], 0.35);
         return (

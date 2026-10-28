@@ -173,6 +173,12 @@ const Cars: React.FC<{ t: number }> = ({ t }) => {
     { axis: "y", lane: 7.6, speed: -2.2, phase: 40 },
     { axis: "x", lane: -10.4, speed: 1.6, phase: 33 },
     { axis: "y", lane: -11.6, speed: -1.7, phase: 5 },
+    { axis: "x", lane: 5.6, speed: 2.1, phase: 52 },
+    { axis: "x", lane: 6.6, speed: -2.6, phase: 64 },
+    { axis: "y", lane: 6.2, speed: 2.3, phase: 47 },
+    { axis: "y", lane: 7.6, speed: -1.8, phase: 70 },
+    { axis: "x", lane: -9.4, speed: -2.2, phase: 18 },
+    { axis: "y", lane: -10.4, speed: 2.0, phase: 58 },
   ];
   return (
     <g>
@@ -190,7 +196,7 @@ const Cars: React.FC<{ t: number }> = ({ t }) => {
             <polygon points={c.axis === "x" ? quadZ(0.05, x - 1, x + 1, y - 0.42, y + 0.42) : quadZ(0.05, x - 0.42, x + 0.42, y - 1, y + 1)} fill="#151518" />
             <circle cx={head1[0]} cy={head1[1]} r={3.2} fill="#F4F7FF" opacity={0.85} />
             <circle cx={head2[0]} cy={head2[1]} r={3.2} fill="#F4F7FF" opacity={0.85} />
-            <circle cx={(head1[0] + head2[0]) / 2} cy={(head1[1] + head2[1]) / 2} r={16} fill="url(#halo)" opacity={0.7} />
+            <circle cx={(head1[0] + head2[0]) / 2} cy={(head1[1] + head2[1]) / 2} r={30} fill="url(#halo)" opacity={0.9} />
             <circle cx={tail[0]} cy={tail[1]} r={2.4} fill="#8A8A90" opacity={0.6} />
           </g>
         );
@@ -298,10 +304,10 @@ export const Bokeh: React.FC<{ t: number; o: number }> = ({ t, o }) => {
   const dots = Array.from({ length: 14 }, (_, i) => {
     const side = i % 2 === 0 ? -1 : 1;
     const x = side < 0 ? 20 + rnd(i) * 150 : 910 + rnd(i) * 150;
-    const y = 120 + rnd(i * 7.7) * 1700 + Math.sin(t * 0.3 + i) * 20;
+    const y = 120 + rnd(i * 7.7) * 1700 + Math.sin(t * 0.45 + i) * 45;
     const r = 26 + rnd(i * 3.1) * 50;
     const warm = i % 3 === 0 ? o : 0;
-    return { x: x + Math.sin(t * 0.21 + i * 2) * 14, y, r, warm, a: 0.05 + rnd(i * 5.3) * 0.08 };
+    return { x: x + Math.sin(t * 0.35 + i * 2) * 30, y, r, warm, a: 0.06 + rnd(i * 5.3) * 0.09 };
   });
   return (
     <g filter="url(#blur18)">
