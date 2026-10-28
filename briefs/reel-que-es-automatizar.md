@@ -22,7 +22,7 @@
 | E10 | 41-44 s | Este era tu negocio antes. | Este era tu negocio **antes.** (gris) · vuelve el caos |
 | E11 | 44-50 s | Y así es tu negocio con automatización. | Así es tu negocio **con automatización.** · onda naranja |
 | E12 | 50-54 s | Ahora sí marca la diferencia. | Ahora sí marca la **diferencia.** · contadores |
-| E13 | 54-58 s | Comenta automatizar y te enseño cómo quedaría tu negocio. | Comenta **AUTOMATIZAR** · y te enseño cómo quedaría tu negocio. · fundido con @aigencyxlabs |
+| E13 | 54-58 s | Comenta automatizar y te enseño cómo quedaría tu negocio. | Comenta **AUTOMATIZAR** · y te enseño cómo quedaría tu negocio. · fundido con el logo de AIgencyx Labs y @aigencyx.labs |
 
 ## Guion para ElevenLabs: narrador (texto plano)
 
@@ -72,5 +72,5 @@ Notas de lectura:
 
 ## Antes de publicar
 - El negocio, los mensajes y los contadores ("-10 H / SEMANA", "0 LLAMADAS PERDIDAS") son ilustrativos.
-- La burbuja del móvil es genérica (sin logo de WhatsApp). El icono de Instagram solo aparece junto a @aigencyxlabs (marca de agua, barra de comentarios y cierre).
+- La burbuja del móvil es genérica (sin logo de WhatsApp). El icono de Instagram solo aparece junto a @aigencyx.labs (marca de agua, barra de comentarios y cierre).
 - **Portada sugerida:** "¿Qué es una automatización?"

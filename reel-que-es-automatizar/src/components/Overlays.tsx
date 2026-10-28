@@ -1,7 +1,8 @@
 import React from "react";
-import { C, COND, EASE, EV, LOGO_FONT, MONO, S, clamp01, rise, windowed } from "../theme";
+import { C, COND, EASE, EV, MONO, S, clamp01, rise, windowed } from "../theme";
 import { CORE_PT } from "./Shop";
 import { PHONE } from "./Phone";
+import { Logo } from "./Logo";
 
 // ── E6: floating list over the shop, each line lights up as it is said ───
 const ITEMS = ["RESPONDER MENSAJES", "CONFIRMAR CITAS Y PEDIDOS", "ENVIAR RECORDATORIOS", "AVISAR DE CAMBIOS"];
@@ -117,7 +118,7 @@ export const PhoneLine: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-// ── generic Instagram glyph (only next to @aigencyxlabs) ───────────────
+// ── generic Instagram glyph (only next to @aigencyx.labs) ───────────────
 export const IgGlyph: React.FC<{ size: number; color?: string }> = ({ size, color = C.white }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
     <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke={color} strokeWidth="2" />
@@ -132,7 +133,7 @@ export const Watermark: React.FC<{ t: number }> = ({ t }) => {
     <div style={{ position: "absolute", left: 30, top: 930, display: "flex", alignItems: "center", gap: 9, opacity: 0.78 * p }}>
       <IgGlyph size={30} />
       <div style={{ fontFamily: MONO, fontWeight: 500, fontSize: 21, color: C.white, letterSpacing: "0.02em", textShadow: "0 2px 10px rgba(0,0,0,0.9)" }}>
-        @aigencyxlabs
+        @aigencyx.labs
       </div>
     </div>
   );
@@ -152,14 +153,9 @@ export const CommentBar: React.FC<{ t: number }> = ({ t }) => {
     <div style={{
       position: "absolute", left: 60, right: 60, top: 1395 + (1 - p) * 120, opacity: p * out, display: "flex", alignItems: "center", gap: 18,
     }}>
-      <div style={{
-        width: 76, height: 76, borderRadius: 38, padding: 4, background: `conic-gradient(${C.orange}, ${C.orangeHi}, ${C.orange})`, flexShrink: 0,
-      }}>
-        <div style={{
-          width: "100%", height: "100%", borderRadius: "50%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center",
-          fontFamily: LOGO_FONT, fontWeight: 800, fontSize: 30, color: C.orange,
-        }}>
-          A
+      <div style={{ width: 76, height: 76, borderRadius: 38, padding: 3, background: `conic-gradient(${C.orange}, ${C.orangeHi}, ${C.orange})`, flexShrink: 0 }}>
+        <div style={{ borderRadius: "50%", padding: 3, background: "#111" }}>
+          <Logo size={64} />
         </div>
       </div>
       <div style={{
@@ -183,10 +179,13 @@ export const Outro: React.FC<{ t: number }> = ({ t }) => {
   const q = rise(t, S.OUTRO + 0.25, 0.5);
   return (
     <div style={{ position: "absolute", inset: 0, background: `rgba(0,0,0,${0.94 * p})`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 26 }}>
-      <div style={{ opacity: q, transform: `scale(${0.85 + 0.15 * q})` }}>
-        <IgGlyph size={120} color={C.orange} />
+      <div style={{ opacity: q, transform: `scale(${0.85 + 0.15 * q})`, filter: `drop-shadow(0 0 ${50 * q}px rgba(255,107,26,0.45))` }}>
+        <Logo size={260} />
       </div>
-      <div style={{ opacity: q, fontFamily: COND, fontWeight: 800, fontSize: 84, color: C.white, letterSpacing: "0.01em" }}>@aigencyxlabs</div>
+      <div style={{ opacity: rise(t, S.OUTRO + 0.45, 0.5), display: "flex", alignItems: "center", gap: 20, marginTop: 10 }}>
+        <IgGlyph size={70} color={C.orange} />
+        <div style={{ fontFamily: COND, fontWeight: 800, fontSize: 80, color: C.white, letterSpacing: "0.01em" }}>@aigencyx.labs</div>
+      </div>
       <div style={{ opacity: q * windowed(t, S.OUTRO + 0.5, 99, 0.4, 0.1), fontFamily: MONO, fontWeight: 500, fontSize: 24, letterSpacing: "0.3em", color: "rgba(255,255,255,0.6)" }}>
         AUTOMATIZACIÓN PARA NEGOCIOS LOCALES
       </div>
