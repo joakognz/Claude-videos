@@ -71,6 +71,11 @@ Notas de lectura:
 - La toma C ya dice "Comenta auditoria…" (comprobado contra "automatización" de la misma toma).
 - En pantalla, E11 dice "Así es tu negocio con automatización." aunque la voz dice "Y así es…".
 
+## Cambios tras la primera versión
+- **Apertura:** acercamiento de lejos a cerca (0-2,4 s) con el local encendido en naranja y lleno de clientes. Antes de "Llamadas…" se apaga con un parpadeo y pasa a gris. Después, la cámara queda fija.
+- **E1:** "negocio" va resaltado en naranja.
+- **E6:** cada tarea de la lista enciende una pieza del local (ordenador, libreta, teléfono, mostrador). Se apagan con la web (E7-E8) y vuelven a encenderse con el núcleo (E9).
+
 ## Antes de publicar
 - El negocio, los mensajes y los contadores ("-10 H / SEMANA", "0 LLAMADAS PERDIDAS") son ilustrativos.
 - La burbuja del móvil es genérica (sin logo de WhatsApp). El icono de Instagram solo aparece junto a @aigencyx.labs (marca de agua, barra de comentarios y cierre).

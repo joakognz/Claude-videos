@@ -101,6 +101,32 @@ export const rnd = (seed: number) => {
 // ── state of the business over time ─────────────────────────────────────
 // orange: 0 = grey (no automation) · 1 = fully automated (after the wave in E11)
 export const WAVE_DUR = 1.6;
-export const orangeAt = (t: number) => clamp01((t - S.E11 - 0.35) / 0.9);
+// Hook: the reel opens on the business lit up (orange), then it powers down to grey before "Llamadas…".
+export const INTRO_OFF = 2.2;
+export const introAt = (t: number) => {
+  if (t < INTRO_OFF) return 1;
+  const p = (t - INTRO_OFF) / 0.35;
+  if (p >= 1) return 0;
+  const flicker = Math.sin(t * 70) > 0 ? 1 : 0.25;
+  return (1 - p) * flicker;
+};
+export const afterAt = (t: number) => clamp01((t - S.E11 - 0.35) / 0.9);
+export const orangeAt = (t: number) => Math.max(introAt(t), afterAt(t));
+
+// Opening move: far → close over the first seconds, then the camera stays fixed.
+export const CAM_END = 2.4;
+const CAM_EASE = Easing.bezier(0.33, 0, 0.15, 1);
+export const camScale = (t: number) => 0.42 + 0.58 * CAM_EASE(clamp01(t / CAM_END));
+export const CAM_PIVOT: [number, number] = [540, 930];
+
+/**
+ * Single shop elements that light up before the full switch: 0 computer, 1 notebook, 2 landline, 3 counter.
+ * They light with each item of the E6 list, go dark for the web (E7-E8), and light again with the core (E9).
+ */
+export const elemAt = (t: number, k: number) => {
+  const a = windowed(t, EV.list[k] - 0.05, S.E7 - 0.1, 0.3, 0.3);
+  const b = windowed(t, EV.core - 0.15 + k * 0.12, EV.grey, 0.3, 0.2);
+  return Math.max(orangeAt(t), a, b);
+};
 /** Chaos (rings, notes, buzzing): E2 and the E10 flashback. */
 export const chaosAt = (t: number) => Math.max(windowed(t, S.E2, S.E3 + 0.6, 0.4, 0.8), windowed(t, S.E10, S.E11 + 0.2, 0.25, 0.3));

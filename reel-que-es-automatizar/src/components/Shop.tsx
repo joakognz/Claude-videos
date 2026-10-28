@@ -1,5 +1,5 @@
 import React from "react";
-import { C, COND, EV, EASE_OUT, S, chaosAt, clamp01, mix, orangeAt, rise, rnd, windowed } from "../theme";
+import { C, COND, EV, EASE_OUT, S, chaosAt, clamp01, elemAt, introAt, mix, orangeAt, rise, rnd, windowed } from "../theme";
 import { Box, U, boxFaces, groundEllipse, iso, matY, matZ, pts, quadX, quadY, quadZ } from "../iso";
 
 const H = 3.2; // wall height
@@ -392,7 +392,7 @@ const Glass: React.FC<{ o: number; t: number }> = ({ o, t }) => {
 };
 
 // ── people schedule ────────────────────────────────────────────────────
-const custIn = (t: number, a: number) => rise(t, S.E11 + a, 0.5);
+const custIn = (t: number, a: number) => Math.max(rise(t, S.E11 + a, 0.5), introAt(t));
 /** A customer walking in from the street through the door after the wave. */
 const walker = (t: number): [number, number] | null => {
   const a = S.E11 + 1.6;
@@ -440,12 +440,12 @@ export const ShopInterior: React.FC<{ t: number }> = ({ t }) => {
       {/* people behind the counter line */}
       <Person x={-2.3} y={-1.6} o={o} t={t} seed={4} op={custIn(t, 1.0)} />
       <Person x={0.25} y={-1.0} o={o} t={t} seed={1} holdPhone={t < S.E11 ? 1 : 1 - o} buzz={buzz} />
-      <Solid b={COUNTER} o={o} dim={0.05} edge />
-      <polygon points={quadY(COUNTER.y1 + 0.001, COUNTER.x0 + 0.15, COUNTER.x1 - 0.15, 0.25, 0.85)} fill={mix("#3F3F3F", "#E06A00", o)} />
-      <Notebook t={t} o={o} />
+      <Solid b={COUNTER} o={elemAt(t, 3)} dim={0.05} edge />
+      <polygon points={quadY(COUNTER.y1 + 0.001, COUNTER.x0 + 0.15, COUNTER.x1 - 0.15, 0.25, 0.85)} fill={mix("#3F3F3F", "#E06A00", elemAt(t, 3))} />
+      <Notebook t={t} o={elemAt(t, 1)} />
       <Core t={t} o={o} />
-      <Landline t={t} o={o} />
-      <Computer t={t} o={o} />
+      <Landline t={t} o={elemAt(t, 2)} />
+      <Computer t={t} o={elemAt(t, 0)} />
       <RingWaves t={t} />
       {/* customers in front of the counter */}
       <Person x={0.55} y={1.75} o={o} t={t} seed={2} />

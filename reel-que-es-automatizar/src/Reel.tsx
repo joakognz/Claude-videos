@@ -1,8 +1,8 @@
 import React from "react";
 import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
-import { FPS, orangeAt } from "./theme";
-import { Bokeh, CityBack, CityFront, GroundGlow, Wave } from "./components/City";
+import { CAM_PIVOT, FPS, camScale, orangeAt } from "./theme";
+import { Bokeh, CityBack, CityFront, GroundGlow, View, Wave, WindowPatterns } from "./components/City";
 import { ChaosIcons, ShopFront, ShopInterior } from "./components/Shop";
 import { Phone } from "./components/Phone";
 import { Captions } from "./components/Captions";
@@ -18,22 +18,29 @@ const Filters: React.FC = () => (
   </defs>
 );
 
-/** One fixed shot: the camera never moves. Only light, elements and text change. */
+/** One shot: a far → close move in the first seconds, then the camera stays fixed. Only light, elements and text change. */
 export const Reel: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const o = orangeAt(t);
+  const s = camScale(t);
+  const [px, py] = CAM_PIVOT;
+  const view: View = { x0: px - px / s, x1: px + (1080 - px) / s, y0: py - py / s, y1: py + (1920 - py) / s };
   return (
     <AbsoluteFill style={{ background: "#030304" }}>
       <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
         <Filters />
-        <CityBack t={t} />
-        <GroundGlow o={o} />
-        <ShopInterior t={t} />
-        <ShopFront t={t} />
-        <CityFront t={t} />
-        <Wave t={t} />
-        <ChaosIcons t={t} />
+        <WindowPatterns />
+        <rect x={0} y={0} width={1080} height={1920} fill="url(#sky)" />
+        <g transform={`translate(${px} ${py}) scale(${s}) translate(${-px} ${-py})`}>
+          <CityBack t={t} view={view} />
+          <GroundGlow o={o} />
+          <ShopInterior t={t} />
+          <ShopFront t={t} />
+          <CityFront t={t} view={view} />
+          <Wave t={t} />
+          <ChaosIcons t={t} />
+        </g>
         <Bokeh t={t} o={o} />
       </svg>
       {/* top shade keeps the captions legible over the skyline */}

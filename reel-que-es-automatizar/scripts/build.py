@@ -129,7 +129,7 @@ def seq(pid, i0, i1):
 
 
 caps = {
-    "E1": cap(seq("a1", 0, 2), "Tienes un negocio.", {2: "neg"}),
+    "E1": cap(seq("a1", 0, 2), "Tienes un negocio.", {2: "pos"}),
     "E2": cap(seq("a2", 0, 7), "Llamadas, mensajes, pedidos y citas apuntados a mano…"),
     "E3": cap(seq("a3", 0, 6), "Quizá no sabes qué es una automatización.", {6: "pos"}),
     "E4": cap(seq("a4", 0, 2), "Te lo explico.", {2: "pos"}),
@@ -233,7 +233,8 @@ BPM = 104
 beat = 60 / BPM
 bar = 4 * beat
 # brightness: 0 grey (dull pulse) · 0.55 explanation (soft arp, filtered) · 1 after (open, full)
-BRIGHT = [[0, 0], [S["E4"] + 0.4, 0], [S["E5"], 0.55], [S["E8"], 0.45], [S["E9"], 0.6], [S["E10"] - 0.1, 0.6],
+INTRO_OFF = 2.2  # the lit business powers down to grey (src/theme.ts)
+BRIGHT = [[0, 1], [INTRO_OFF, 1], [INTRO_OFF + 0.25, 0], [S["E4"] + 0.4, 0], [S["E5"], 0.55], [S["E8"], 0.45], [S["E9"], 0.6], [S["E10"] - 0.1, 0.6],
           [S["E10"] + 0.25, 0], [S["E11"], 0], [S["E11"] + 1.2, 1], [END, 1]]
 bright = ramp(tt, BRIGHT)
 
@@ -451,6 +452,8 @@ for k, t in enumerate(ev["bubbles"]):
     add_sfx(incoming(), t, -25, pan=0.3, label="bubble")
 add_sfx(ding(), ev["core"], -25, label="core")
 add_sfx(power_down(), ev["grey"], -24, label="grey")
+add_sfx(whoosh(2.3, 120, 2500), 0.0, -24, label="camIn")
+add_sfx(power_down(), INTRO_OFF, -21, label="introOff")
 add_sfx(swell(1.7), ev["wave"] - 0.2, -18, label="wave")
 add_sfx(ding(), ev["confirm"], -20, pan=0.3, label="confirm")
 for t in ev["notifs"]:

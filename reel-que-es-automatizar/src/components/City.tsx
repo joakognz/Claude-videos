@@ -1,21 +1,23 @@
 import React from "react";
-import { C, S, WAVE_DUR, clamp01, mix, rnd } from "../theme";
+import { C, S, WAVE_DUR, clamp01, introAt, mix, rnd } from "../theme";
 import { Box, OX, OY, U, boxFaces, groundEllipse, iso, matX, matY, pts, quadZ } from "../iso";
 
 // ── layout (world units) ────────────────────────────────────────────────
 // Streets: front y∈[4.6,7.6], back y∈[-11.4,-8.4], right x∈[5.4,8.4], left x∈[-12.6,-9.6].
 // The shop sits at the front of the central block, x∈[-3.5,3.5], y∈[-3,3].
-const XS: [number, number][] = [[-40.6, -27.6], [-24.6, -12.6], [-9.6, 5.4], [8.4, 21.4], [24.4, 37.4]];
-const YS: [number, number][] = [[-40.4, -27.4], [-24.4, -11.4], [-8.4, 4.6], [7.6, 20.6], [23.6, 36.6]];
+const XS: [number, number][] = [[-72.6, -59.6], [-56.6, -43.6], [-40.6, -27.6], [-24.6, -12.6], [-9.6, 5.4], [8.4, 21.4], [24.4, 37.4], [40.4, 53.4], [56.4, 69.4]];
+const YS: [number, number][] = [[-72.4, -59.4], [-56.4, -43.4], [-40.4, -27.4], [-24.4, -11.4], [-8.4, 4.6], [7.6, 20.6], [23.6, 36.6], [39.6, 52.6], [55.6, 68.6]];
 export const STREETS = { front: [4.6, 7.6], back: [-11.4, -8.4], right: [5.4, 8.4], left: [-12.6, -9.6] };
 
-const onScreen = (b: Box) => {
-  const [l] = iso(b.x0, b.y1, 0);
-  const [r] = iso(b.x1, b.y0, 0);
-  const [, top] = iso(b.x0, b.y0, b.z1);
-  const [, bot] = iso(b.x1, b.y1, 0);
-  return r > -60 && l < 1140 && bot > -40 && top < 1980;
-};
+/** What the camera sees, in un-zoomed screen coordinates. */
+export type View = { x0: number; x1: number; y0: number; y1: number };
+const bbox = (b: Box): View => ({
+  x0: iso(b.x0, b.y1, 0)[0], x1: iso(b.x1, b.y0, 0)[0], y0: iso(b.x0, b.y0, b.z1)[1], y1: iso(b.x1, b.y1, 0)[1],
+});
+const meets = (a: View, v: View) => a.x1 > v.x0 - 40 && a.x0 < v.x1 + 40 && a.y1 > v.y0 - 40 && a.y0 < v.y1 + 40;
+// widest view (start of the opening move)
+const WIDE: View = { x0: -820, x1: 1900, y0: -1360, y1: 3300 };
+const onScreen = (b: Box) => meets(bbox(b), WIDE);
 
 /** Max height so a box in front of the shop never covers it (its top stays below the shop's floor line). */
 const frontCap = (b: Box) => {
@@ -27,7 +29,7 @@ const frontCap = (b: Box) => {
   return Math.max(0.35, (yTop - 1230) / U);
 };
 
-const buildings: Box[] = (() => {
+const buildings: (Box & { bb: View })[] = (() => {
   const out: Box[] = [];
   let seed = 1;
   XS.forEach(([bx0, bx1], i) => {
@@ -45,7 +47,9 @@ const buildings: Box[] = (() => {
           const far = -(bx0 + by0) / 30; // further back → taller
           let h = 2.5 + rnd(seed * 3.3) * 5 + Math.max(0, far) * 5;
           const box: Box = { x0, x1: x0 + cw - 0.5, y0, y1: y0 + ch - 0.5, z1: h };
-          h = Math.min(h, frontCap(box));
+          const cap = frontCap(box);
+          if (cap < 1.2) continue; // right in front of the shop: leave an open plaza, not a flat slab
+          h = Math.min(h, cap);
           box.z1 = h;
           if (onScreen(box)) out.push(box);
         }
@@ -58,23 +62,23 @@ const buildings: Box[] = (() => {
   out.push({ x0: -9.0, x1: -3.9, y0: -7.8, y1: -3.3, z1: 8.4 });
   out.push({ x0: -3.4, x1: 1.4, y0: -7.8, y1: -3.6, z1: 7.2 });
   out.push({ x0: 1.8, x1: 4.8, y0: -7.8, y1: -3.6, z1: 5.4 });
-  return out.sort((p, q) => p.x0 + p.y0 + p.x1 + p.y1 - (q.x0 + q.y0 + q.x1 + q.y1));
+  return out.sort((p, q) => p.x0 + p.y0 + p.x1 + p.y1 - (q.x0 + q.y0 + q.x1 + q.y1)).map((b) => ({ ...b, bb: bbox(b) }));
 })();
 
 const sidewalks = XS.flatMap(([x0, x1]) => YS.map(([y0, y1]) => ({ x0, x1, y0, y1 })));
 
 // curb lights along the four streets (they turn orange as the wave passes)
 const curbLights: [number, number][] = [];
-for (let x = -38; x <= 36; x += 2.2) {
+for (let x = -70; x <= 68; x += 2.2) {
   curbLights.push([x, 4.75], [x, 7.45], [x, -8.55], [x, -11.25]);
 }
-for (let y = -38; y <= 36; y += 2.2) {
+for (let y = -70; y <= 68; y += 2.2) {
   curbLights.push([5.55, y], [8.25, y], [-12.45, y], [-9.75, y]);
 }
 const visibleLights = curbLights
   .filter(([x, y]) => {
     const [sx, sy] = iso(x, y);
-    return sx > -20 && sx < 1100 && sy > 400 && sy < 1940;
+    return sx > WIDE.x0 && sx < WIDE.x1 && sy > WIDE.y0 && sy < WIDE.y1;
   })
   // not under the shop's front (the lamps there would sit on top of the facade on screen)
   .filter(([x, y]) => !(y > 4 && y < 5 && x > -4 && x < 4));
@@ -89,7 +93,7 @@ export const waveRadius = (t: number) => {
 /** 0 → 1 as the wave front passes a world point. */
 export const litBy = (t: number, x: number, y: number) => clamp01((waveRadius(t) - Math.hypot(x, y) + 1) / 2.5);
 
-const WindowPatterns: React.FC = () => (
+export const WindowPatterns: React.FC = () => (
   <defs>
     <pattern id="winL" patternUnits="userSpaceOnUse" width="0.9" height="1.1">
       <rect x="0.22" y="0.3" width="0.46" height="0.56" fill="#1A1A1C" />
@@ -148,11 +152,11 @@ const Streets: React.FC = () => {
   const by = (STREETS.back[0] + STREETS.back[1]) / 2;
   const rx = (STREETS.right[0] + STREETS.right[1]) / 2;
   const lx = (STREETS.left[0] + STREETS.left[1]) / 2;
-  for (let x = -40; x < 38; x += 2) {
+  for (let x = -72; x < 70; x += 2) {
     dashes.push(<polygon key={`f${x}`} points={quadZ(0, x, x + 0.9, fy - 0.05, fy + 0.05)} fill="#1A1A1D" />);
     dashes.push(<polygon key={`b${x}`} points={quadZ(0, x, x + 0.9, by - 0.05, by + 0.05)} fill="#1A1A1D" />);
   }
-  for (let y = -40; y < 38; y += 2) {
+  for (let y = -72; y < 70; y += 2) {
     dashes.push(<polygon key={`r${y}`} points={quadZ(0, rx - 0.05, rx + 0.05, y, y + 0.9)} fill="#1A1A1D" />);
     dashes.push(<polygon key={`l${y}`} points={quadZ(0, lx - 0.05, lx + 0.05, y, y + 0.9)} fill="#1A1A1D" />);
   }
@@ -222,18 +226,16 @@ const Lamp: React.FC<{ x: number; y: number; t: number; i: number }> = ({ x, y, 
 };
 
 /** Everything behind the shop (ground, streets, buildings behind it). */
-export const CityBack: React.FC<{ t: number }> = ({ t }) => {
-  const behind = buildings.filter((b) => b.x0 + b.x1 + b.y0 + b.y1 < 6);
+export const CityBack: React.FC<{ t: number; view: View }> = ({ t, view }) => {
+  const behind = buildings.filter((b) => b.x0 + b.x1 + b.y0 + b.y1 < 6 && meets(b.bb, view));
   return (
     <g>
-      <WindowPatterns />
-      <rect x={0} y={0} width={1080} height={1920} fill="url(#sky)" />
-      <polygon points={quadZ(0, -60, 60, -60, 60)} fill={C.street} />
+      <polygon points={quadZ(0, -90, 90, -90, 90)} fill={C.street} />
       {sidewalks.map((s, i) => (
         <polygon key={i} points={quadZ(0, s.x0, s.x1, s.y0, s.y1)} fill={C.walk} />
       ))}
       <Streets />
-      <CurbLights t={t} />
+      <CurbLights t={t} view={view} />
       <Cars t={t} />
       {behind.map((b, i) => (
         <Building key={i} b={b} i={i} />
@@ -246,8 +248,8 @@ export const CityBack: React.FC<{ t: number }> = ({ t }) => {
 };
 
 /** Buildings and lamps in front of the shop. */
-export const CityFront: React.FC<{ t: number }> = ({ t }) => {
-  const front = buildings.filter((b) => b.x0 + b.x1 + b.y0 + b.y1 >= 6);
+export const CityFront: React.FC<{ t: number; view: View }> = ({ t, view }) => {
+  const front = buildings.filter((b) => b.x0 + b.x1 + b.y0 + b.y1 >= 6 && meets(b.bb, view));
   return (
     <g>
       {front.map((b, i) => (
@@ -260,11 +262,12 @@ export const CityFront: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const CurbLights: React.FC<{ t: number }> = ({ t }) => (
+const CurbLights: React.FC<{ t: number; view: View }> = ({ t, view }) => (
   <g>
     {visibleLights.map(([x, y], i) => {
       const [sx, sy] = iso(x, y, 0.05);
-      const lit = litBy(t, x, y);
+      if (sx < view.x0 - 20 || sx > view.x1 + 20 || sy < view.y0 - 20 || sy > view.y1 + 20) return null;
+      const lit = Math.max(litBy(t, x, y), introAt(t));
       const tw = 0.75 + 0.25 * Math.sin(t * 2.1 + i * 1.7);
       return (
         <g key={i}>
