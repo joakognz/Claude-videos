@@ -53,7 +53,7 @@ PHRASES = {
     "c1": ("C", [(0.05, 1.82, "Este era tu negocio antes.")], 41.6),
     "c2": ("C", [(2.19, 4.57, "Y así es tu negocio con automatización.")], 45.4),
     "c3": ("C", [(4.92, 6.87, "Ahora sí marca la diferencia.")], 49.6),
-    "c4": ("C", [(7.24, 8.38, "Comenta automatizar"), (8.53, 10.96, "y te enseño cómo quedaría tu negocio.")], 53.0),
+    "c4": ("C", [(7.24, 8.38, "Comenta auditoria"), (8.53, 10.96, "y te enseño cómo quedaría tu negocio.")], 53.0),
 }
 
 V = "aeiouáéíóúü"
