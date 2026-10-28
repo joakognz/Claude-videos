@@ -41,7 +41,6 @@ export const Reel: React.FC = () => {
       <Progress t={t} />
       <CommentCTA t={t} />
       <EndCard t={t} />
-      <AbsoluteFill style={{ background: "#000", opacity: 1 - clamp01(t / 0.35) }} />
       <Audio src={staticFile("audio/mix.wav")} />
     </AbsoluteFill>
   );

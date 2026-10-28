@@ -204,7 +204,7 @@ mL = np.zeros(N)
 mR = np.zeros(N)
 # sections: intro (0-3), groove (3-38.6), cold (38.6-48.5, the other shop), lift (48.5-56.15), outro
 COLD_A, COLD_B = S["E12"], S["E15"]
-groove = smooth_step(tt, 0.0, 3.0) * (1 - smooth_step(tt, COLD_A - 0.2, COLD_A + 0.8)) + smooth_step(tt, COLD_B - 0.5, COLD_B + 1.5) * (1 - smooth_step(tt, S["E17"], S["E17"] + 1.2))
+groove = smooth_step(tt, 0.0, 0.6) * (1 - smooth_step(tt, COLD_A - 0.2, COLD_A + 0.8)) + smooth_step(tt, COLD_B - 0.5, COLD_B + 1.5) * (1 - smooth_step(tt, S["E17"], S["E17"] + 1.2))
 cold = smooth_step(tt, COLD_A - 0.3, COLD_A + 1.2) * (1 - smooth_step(tt, COLD_B - 0.3, COLD_B + 1.2))
 
 # chords: Am - F - C - G (two bars each)
@@ -273,8 +273,9 @@ phase = (tt % beat) / beat
 pump = 0.55 + 0.45 * np.clip(phase / 0.35, 0, 1) ** 0.7
 arp = lp(arp, 3200)
 pad_L, pad_R = lp(pad_L, 2400), lp(pad_R, 2400)
-intro = smooth_step(tt, 0, 2.5)
-drums_on = groove * smooth_step(tt, 2.9, 3.0)
+intro = smooth_step(tt, 0, 0.3)
+DROP = wt("A", 1, 0) - 0.02  # the beat drops on "Dos"
+drums_on = groove * smooth_step(tt, DROP - 0.01, DROP)
 mL += (pad_L * pump * (0.6 + 0.4 * groove) * intro + 0.5 * bass * pump * groove + 0.16 * arp * groove
        + 0.55 * kick * drums_on + 0.1 * clap * drums_on + 0.12 * hat * drums_on)
 mR += (pad_R * pump * (0.6 + 0.4 * groove) * intro + 0.5 * bass * pump * groove + 0.16 * np.roll(arp, int(0.011 * SR)) * groove
@@ -396,6 +397,22 @@ def coin():  # +10 points
     return out
 
 
+def power_hit():  # sub thump + bright transient
+    n = int(0.9 * SR)
+    tl = np.arange(n) / SR
+    freq = 42 + 120 * np.exp(-tl / 0.05)
+    sub = np.sin(2 * np.pi * np.cumsum(freq) / SR) * np.exp(-tl / 0.35)
+    snap = hp(rng.standard_normal(n), 2500) * np.exp(-tl / 0.02) * 0.5
+    return sub + snap
+
+
+def zap():  # neon flicker buzz
+    n = int(0.09 * SR)
+    tl = np.arange(n) / SR
+    x = np.sign(np.sin(2 * np.pi * 100 * tl)) * 0.6 + bp(rng.standard_normal(n), 2000, 9000)
+    return x * env_ar(n, 0.002, 0.03)
+
+
 def glitch():
     n = int(0.22 * SR)
     x = rng.standard_normal(n) * (rng.random(n // 400 + 1).repeat(400)[:n] > 0.5)
@@ -403,7 +420,11 @@ def glitch():
 
 
 # camera moves
-add_sfx(whoosh(1.6, 200, 3000), 0.1, -26, label="whoosh")
+add_sfx(whoosh(1.1, 300, 4000), 0.25, -27, label="whoosh")
+# opening hook: the orange shop powers on (two flickers, then the hit)
+add_sfx(power_hit(), 0.0, -17, label="power")
+add_sfx(zap(), 0.08, -27)
+add_sfx(zap(), 0.24, -24)
 add_sfx(whoosh(0.9, 300, 4500), S["E4"] - 0.1, -27, label="whoosh")
 add_sfx(whoosh(1.2, 4000, 300), S["E12"] + 0.1, -25, label="whoosh")
 add_sfx(whoosh(1.6, 250, 5000), S["E15"] - 0.1, -24, label="whoosh")

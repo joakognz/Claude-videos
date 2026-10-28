@@ -1,7 +1,7 @@
-import React, { useMemo } from "react";
+import React, { createContext, useContext, useMemo } from "react";
 import * as THREE from "three";
 import { CHAIRS, SHOP_D, SHOP_H, SHOP_W, SIGN_Y, V3 } from "../camera";
-import { COND, EV, EASE, S, clamp01, springAt } from "../theme";
+import { COND, EV, EASE, EASE_OUT, S, clamp01, springAt } from "../theme";
 import { fadeTex, floorTex, poleTex, radialTex, signTex } from "./textures";
 
 const W = SHOP_W, D = SHOP_D, H = SHOP_H;
@@ -24,13 +24,25 @@ const Box: React.FC<{ p: V3; s: V3; c: string; r?: number; m?: number; rot?: V3 
   </mesh>
 );
 
+/** Opening hook: the orange shop powers on (two neon flickers, then a flash that settles). */
+export const powerOn = (t: number) => {
+  if (t < 0.08) return 0.12;
+  if (t < 0.16) return 1.3;
+  if (t < 0.24) return 0.18;
+  return 1 + 0.9 * Math.exp(-(t - 0.24) / 0.35);
+};
+const Gain = createContext(1);
+
 /** Neon strip (orange shop only): unlit emissive so the bloom picks it up. */
-const Neon: React.FC<{ p: V3; s: V3; k?: number }> = ({ p, s, k = 2.6 }) => (
-  <mesh position={p}>
-    <boxGeometry args={s} />
-    <meshBasicMaterial color={glow(k)} toneMapped={false} />
-  </mesh>
-);
+const Neon: React.FC<{ p: V3; s: V3; k?: number }> = ({ p, s, k = 2.6 }) => {
+  const g = useContext(Gain);
+  return (
+    <mesh position={p}>
+      <boxGeometry args={s} />
+      <meshBasicMaterial color={glow(k * g)} toneMapped={false} />
+    </mesh>
+  );
+};
 
 /** Faceless standing figure: capsule body + sphere head. */
 export const Standing: React.FC<{ p: V3; c: string; s?: number; ry?: number; scissors?: boolean; bob?: number }> = ({ p, c, s = 1, ry = 0, scissors, bob = 0 }) => (
@@ -145,6 +157,7 @@ const Pole: React.FC<{ lit: boolean; t: number }> = ({ lit, t }) => {
 
 /** Shell: cutaway room (back + left walls full height, front and right in glass), sign on top. */
 const Shell: React.FC<{ look: Look; fontsReady: boolean }> = ({ look, fontsReady }) => {
+  const g = useContext(Gain);
   const sign = useMemo(() => (fontsReady ? signTex(look.lit, COND) : null), [fontsReady, look.lit]);
   const floor = useMemo(() => {
     const f = floorTex(look.lit);
@@ -190,7 +203,7 @@ const Shell: React.FC<{ look: Look; fontsReady: boolean }> = ({ look, fontsReady
         {sign && (
           <mesh position={[0, 0, 0.045]}>
             <planeGeometry args={[W * 0.82, W * 0.82 * (200 / 1024)]} />
-            {look.lit ? <meshBasicMaterial map={sign} color={[2.4, 2.4, 2.4]} toneMapped={false} /> : <meshStandardMaterial map={sign} roughness={0.95} />}
+            {look.lit ? <meshBasicMaterial map={sign} color={[2.4 * g, 2.4 * g, 2.4 * g]} toneMapped={false} /> : <meshStandardMaterial map={sign} roughness={0.95} />}
           </mesh>
         )}
         <Box p={[-W * 0.3, -0.42, -0.04]} s={[0.05, 0.3, 0.05]} c={look.wallOut} />
@@ -302,7 +315,9 @@ export const Shop: React.FC<{ variant: "orange" | "grey"; c: V3; t: number; font
   const path: V3[] = [[1.05, 0.12, 2.3], [1.05, 0.12, 0.6], [1.3, 0.12, -0.2]];
   const wp = walkP < 0.65 ? lerp3(path[0], path[1], EASE(walkP / 0.65)) : lerp3(path[1], path[2], EASE((walkP - 0.65) / 0.35));
   const chairY = 0.12;
+  const g = lit ? powerOn(t) : 1;
   return (
+    <Gain.Provider value={g}>
     <group position={c}>
       <Shell look={look} fontsReady={fontsReady} />
       {CHAIRS.map(([x, z]) => <Chair key={x} p={[x, chairY, z]} look={look} />)}
@@ -341,9 +356,9 @@ export const Shop: React.FC<{ variant: "orange" | "grey"; c: V3; t: number; font
           {pop(3) > 0.01 && <Standing p={[1.15, 0.2, 1.25]} c={look.figure} s={0.82 * pop(3)} ry={-Math.PI / 2} />}
           {pop(4) > 0.01 && <Standing p={[1.85, 0.2, 1.25]} c={look.figure} s={0.82 * pop(4)} ry={-Math.PI / 2} />}
           {/* warm interior light + spill on the street */}
-          <pointLight position={[0, 2.0, 0.2]} intensity={14} distance={7} decay={1.4} color="#ff8a1f" />
-          <pointLight position={[0.6, 0.9, 2.9]} intensity={6} distance={5.5} decay={1.5} color="#ff7a00" />
-          <LightSpill t={t} />
+          <pointLight position={[0, 2.0, 0.2]} intensity={14 * Math.min(g, 1.5)} distance={7} decay={1.4} color="#ff8a1f" />
+          <pointLight position={[0.6, 0.9, 2.9]} intensity={6 * g} distance={5.5} decay={1.5} color="#ff7a00" />
+          <LightSpill t={t} g={g} />
         </>
       ) : (
         <>
@@ -353,25 +368,38 @@ export const Shop: React.FC<{ variant: "orange" | "grey"; c: V3; t: number; font
         </>
       )}
     </group>
+    </Gain.Provider>
   );
 };
 
 /** Orange shop: warm glow on the sidewalk and street, hazy light volume out of the glass, beacon in the wide shots. */
-const LightSpill: React.FC<{ t: number }> = ({ t }) => {
+const LightSpill: React.FC<{ t: number; g: number }> = ({ t, g }) => {
   const rad = radialTex();
   const fade = fadeTex();
-  const beacon = clamp01((t - S.E15 - 0.6) / 1.6) + clamp01(1 - t / 2.4) * 0.8;
+  const beacon = clamp01((t - S.E15 - 0.6) / 1.6) + clamp01(1 - t / 2.2) * 0.9 * Math.min(g, 1.3);
   const pulse = 0.92 + 0.08 * Math.sin(t * 2.4);
   return (
     <group>
       <mesh position={[0.3, 0.09, 3.0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[8.5, 6]} />
-        <meshBasicMaterial map={rad} color="#ff7a00" opacity={0.75 * pulse} transparent depthWrite={false} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial map={rad} color="#ff7a00" opacity={0.75 * pulse * Math.min(g, 1.6)} transparent depthWrite={false} blending={THREE.AdditiveBlending} />
       </mesh>
       <mesh position={[W / 2 + 1.6, 0.09, 0.2]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[3.6, 4.5]} />
-        <meshBasicMaterial map={rad} color="#ff7a00" opacity={0.45} transparent depthWrite={false} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial map={rad} color="#ff7a00" opacity={0.45 * g} transparent depthWrite={false} blending={THREE.AdditiveBlending} />
       </mesh>
+      {/* power-on shockwaves across the street */}
+      {[0.24, 0.5].map((t0) => {
+        const p = clamp01((t - t0) / 1.25);
+        if (t < t0 || p >= 1) return null;
+        const r = 0.6 + 13 * EASE_OUT(p);
+        return (
+          <mesh key={t0} position={[0.3, 0.1, 1.6]} rotation={[-Math.PI / 2, 0, 0]} scale={[r, r, 1]}>
+            <ringGeometry args={[0.9, 1, 64]} />
+            <meshBasicMaterial color={[2.2, 0.9, 0.1]} opacity={0.9 * (1 - p)} transparent depthWrite={false} depthTest={false} blending={THREE.AdditiveBlending} toneMapped={false} />
+          </mesh>
+        );
+      })}
       <mesh position={[0, 1.4, 0]} >
         <boxGeometry args={[W - 0.3, 2.5, D - 0.3]} />
         <meshBasicMaterial color="#ff7a00" opacity={0.035} transparent depthWrite={false} blending={THREE.AdditiveBlending} />

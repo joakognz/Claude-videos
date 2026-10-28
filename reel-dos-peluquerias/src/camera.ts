@@ -17,7 +17,7 @@ export const SIGN_Y = SHOP_H + 0.42;
 type Pose = { target: V3; zoom: number; elev: number; off: number };
 
 const P = {
-  city: { target: [0, 0, -5], zoom: 13, elev: 56, off: 0 },
+  city: { target: [1.4, 0.6, -2.6], zoom: 36, elev: 50, off: 120 },
   both: { target: [0, 0.9, -2.0], zoom: 98, elev: 35.3, off: 250 },
   both2: { target: [0.25, 0.9, -2.1], zoom: 105, elev: 35.3, off: 250 },
   orange: { target: at(ORANGE_C, 0, 1.0, 0.1), zoom: 160, elev: 35.3, off: 190 },
@@ -33,7 +33,7 @@ const P = {
 // [time, pose]; between keys the pose is eased (zoom in log space)
 const KEYS: [number, Pose][] = [
   [0, P.city],
-  [2.9, P.both],
+  [1.7, P.both],
   [S.E4, P.both2],
   [S.E4 + 1.25, P.orange],
   [S.E7, P.orange2],
