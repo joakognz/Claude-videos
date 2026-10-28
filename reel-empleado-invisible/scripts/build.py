@@ -154,6 +154,9 @@ duck = np.interp(t, np.arange(len(sm)) * k / SR, sm)
 DUCK_DB = -8.0
 gain = 10 ** (DUCK_DB * duck / 20)
 gain *= np.clip(t / 0.15, 0, 1)                 # click-free start on the chorus
+# the song dips just before the drop: lift that bar (+5 dB) so it reads as a build-up, not a hole
+lift = np.clip(np.minimum((t - (DROP - 1.9)) / 0.4, (DROP - 0.02 - t) / 0.05), 0, 1)
+gain *= 10 ** (5 * lift / 20)
 gain *= np.clip((DUR - t) / 1.2, 0, 1) ** 1.5   # fade out over the last 1.2 s
 
 # levels: voice at -16 LUFS on its own, music 3 dB under it (before ducking) so the gaps stay full
