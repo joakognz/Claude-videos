@@ -160,7 +160,7 @@ mix = v2 + music * gain[:, None]
 ln = meter.integrated_loudness(mix)
 mix *= 10 ** ((-14 - ln) / 20)
 peak = np.abs(mix).max()
-lim = 10 ** (-1.2 / 20)
+lim = 10 ** (-1.8 / 20)
 if peak > lim:  # soft-knee limiter on the few peaks
     over = np.abs(mix) > lim * 0.9
     mix[over] = np.sign(mix[over]) * (lim * 0.9 + (lim * 0.1) * np.tanh((np.abs(mix[over]) - lim * 0.9) / (lim * 0.1)))
