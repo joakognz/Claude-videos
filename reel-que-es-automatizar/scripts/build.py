@@ -142,7 +142,7 @@ caps = {
     "E10": cap(seq("c1", 0, 4), "Este era tu negocio antes.", {4: "neg"}),
     "E11": cap(seq("c2", 1, 6), "Así es tu negocio con automatización.", {4: "pos", 5: "pos"}),
     "E12": cap(seq("c3", 0, 4), "Ahora sí marca la diferencia.", {4: "pos"}),
-    "E13": cap(seq("c4", 0, 1), "Comenta AUTOMATIZAR", {1: "pos"}, small={"text": "y te enseño cómo quedaría tu negocio.", "start": W("c4", 2)}),
+    "E13": cap(seq("c4", 0, 1), "Comenta AUDITORIA", {1: "pos"}, small={"text": "y te enseño cómo quedaría tu negocio.", "start": W("c4", 2)}),
 }
 # ── visual events tied to the voice ─────────────────────────────────────
 ev = {
@@ -458,7 +458,7 @@ for t in ev["notifs"]:
 for t in ev["counters"]:
     add_sfx(click(), t, -23, label="counter")
 add_sfx(whoosh(0.4, 500, 5000), ev["bar"] - 0.1, -29)
-letters = "AUTOMATIZAR"
+letters = "AUDITORIA"
 for k in range(len(letters)):
     add_sfx(keyclick(), ev["typeStart"] + k * (ev["typeEnd"] - ev["typeStart"]) / len(letters), -28)
 add_sfx(ding(), S["OUTRO"] + 0.2, -26, label="outro")

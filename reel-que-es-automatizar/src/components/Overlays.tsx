@@ -144,7 +144,7 @@ export const CommentBar: React.FC<{ t: number }> = ({ t }) => {
   const p = rise(t, EV.bar, 0.45);
   const out = 1 - clamp01((t - S.OUTRO) / 0.4);
   if (p <= 0 || out <= 0) return null;
-  const word = "AUTOMATIZAR";
+  const word = "AUDITORIA";
   const n = Math.round(word.length * clamp01((t - EV.typeStart) / (EV.typeEnd - EV.typeStart)));
   const typed = word.slice(0, n);
   const caret = Math.floor(t * 2.4) % 2 === 0 || (t > EV.typeStart && t < EV.typeEnd);
@@ -187,7 +187,7 @@ export const Outro: React.FC<{ t: number }> = ({ t }) => {
         <div style={{ fontFamily: COND, fontWeight: 800, fontSize: 80, color: C.white, letterSpacing: "0.01em" }}>@aigencyx.labs</div>
       </div>
       <div style={{ opacity: q * windowed(t, S.OUTRO + 0.5, 99, 0.4, 0.1), fontFamily: MONO, fontWeight: 500, fontSize: 24, letterSpacing: "0.3em", color: "rgba(255,255,255,0.6)" }}>
-        AUTOMATIZACIÓN PARA NEGOCIOS LOCALES
+        AUTOMATIZACIÓN PARA TODO TIPO DE NEGOCIOS
       </div>
     </div>
   );

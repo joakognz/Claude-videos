@@ -22,7 +22,7 @@
 | E10 | 41-44 s | Este era tu negocio antes. | Este era tu negocio **antes.** (gris) · vuelve el caos |
 | E11 | 44-50 s | Y así es tu negocio con automatización. | Así es tu negocio **con automatización.** · onda naranja |
 | E12 | 50-54 s | Ahora sí marca la diferencia. | Ahora sí marca la **diferencia.** · contadores |
-| E13 | 54-58 s | Comenta automatizar y te enseño cómo quedaría tu negocio. | Comenta **AUTOMATIZAR** · y te enseño cómo quedaría tu negocio. · fundido con el logo de AIgencyx Labs y @aigencyx.labs |
+| E13 | 54-58 s | Comenta auditoría y te enseño cómo quedaría tu negocio. | Comenta **AUDITORIA** · y te enseño cómo quedaría tu negocio. · fundido con el logo de AIgencyx Labs y @aigencyx.labs |
 
 ## Guion para ElevenLabs: narrador (texto plano)
 
@@ -54,11 +54,11 @@ La web es un escaparate. La automatización, un empleado que no duerme.
 Este era tu negocio antes.
 Y así es tu negocio con automatización.
 Ahora sí marca la diferencia.
-Comenta automatizar y te enseño cómo quedaría tu negocio.
+Comenta auditoría y te enseño cómo quedaría tu negocio.
 ```
 
 Notas de lectura:
-- "automatizar" va en minúscula en la voz para que no la deletree. En pantalla sale "AUTOMATIZAR".
+- La palabra clave es **AUDITORIA**: en pantalla, sin tilde y en mayúsculas (como en "Dos noches"). En la voz va "auditoría", en minúscula y con tilde, para que la pronuncie bien.
 - Los "..." marcan una pausa corta. En E5, la pausa de "Te escriben..." coincide con el WhatsApp que llega al móvil, y "se contesta solo" con la respuesta automática.
 - En voz se dice "Te escriben" en vez de "WhatsApp" para no nombrar la marca.
 - La lista de E6 es la parte más justa (unos 4 s). Si la toma va lenta, alargo E6 hasta 1 s y recorto el silencio de E7.
