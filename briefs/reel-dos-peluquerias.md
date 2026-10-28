@@ -73,9 +73,9 @@ Notas de lectura:
 - La voz se coloca frase a frase al inicio de cada escena (`scripts/build.py`). Las tomas se usan tal cual, sin estirarlas.
 - E9: quien estaba en la lista de espera es Laura. Su etiqueta "LAURA · 17:30" sustituye a la de Fede, y es la misma Laura de la tarjeta de puntos (E11).
 - E14: además de las cuatro preguntas del guion, siguen llegando burbujas ("¿Hola?", "¿Abrís el sábado?"…) y un contador "SIN RESPONDER".
-- Cierre (E17): logo de AIgencyx Labs, icono de Instagram y @aigencyx.labs. La marca de agua también usa @aigencyx.labs.
+- Cierre (E17): logo de AIgencyx Labs, icono de Instagram y @aigencyx.labs. Sin marca de agua durante el vídeo.
 
 ## Antes de publicar
 - Las dos peluquerías, los nombres (Nico, Lucas, Fede, Laura) y los puntos son ficticios.
-- El icono de Instagram solo aparece junto a @aigencyx.labs (marca de agua, barra de comentarios y cierre). No sale ningún otro logo real.
+- El icono de Instagram solo aparece en la barra de comentarios y en el cierre, junto a @aigencyx.labs. No hay marca de agua. No sale ningún otro logo real.
 - **Portada sugerida:** "Misma calle. Dos peluquerías."

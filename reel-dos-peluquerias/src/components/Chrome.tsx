@@ -1,5 +1,5 @@
 import React from "react";
-import { C, EASE, MONO, S, UI, clamp01, windowed } from "../theme";
+import { C, EASE, MONO, S, clamp01, windowed } from "../theme";
 
 /** Instagram glyph (outline), drawn in currentColor. */
 export const IgGlyph: React.FC<{ size: number; stroke?: number }> = ({ size, stroke = 2 }) => (
@@ -55,31 +55,6 @@ export const Progress: React.FC<{ t: number }> = ({ t }) => {
       <div style={{ marginTop: 10, width: 560, height: 3, background: "#2a2a2a", borderRadius: 2 }}>
         <div style={{ width: `${fill * 100}%`, height: "100%", background: C.orange, borderRadius: 2, boxShadow: "0 0 10px rgba(255,122,0,0.8)" }} />
       </div>
-    </div>
-  );
-};
-
-// watermark side: right, then left while the chair tags are on, then right again; gone for the CTA
-const SIDES: [number, "r" | "l"][] = [[0, "r"], [S.E7 - 0.2, "l"], [S.E12, "r"]];
-const WM_OUT = S.E16 - 0.3;
-
-/** Fixed watermark: Instagram glyph + @aigencyx.labs, mid-height, switching sides now and then. */
-export const Watermark: React.FC<{ t: number }> = ({ t }) => {
-  let side: "r" | "l" = "r";
-  let since = 0;
-  for (const [at, s] of SIDES) if (t >= at) { side = s; since = at; }
-  const swap = since > 0 ? EASE(clamp01((t - since) / 0.45)) : 1;
-  const o = Math.min(clamp01(t / 0.6), clamp01((WM_OUT - t) / 0.3)) * swap;
-  if (o <= 0) return null;
-  return (
-    <div style={{
-      position: "absolute", top: 1010, [side === "r" ? "right" : "left"]: 36, display: "flex", alignItems: "center", gap: 10,
-      color: "rgba(255,255,255,0.78)", fontFamily: UI, fontWeight: 600, fontSize: 25, opacity: o,
-      translate: `${(1 - swap) * (side === "r" ? 24 : -24)}px 0px`, textShadow: "0 2px 10px rgba(0,0,0,0.7)",
-      filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.6))",
-    }}>
-      <IgGlyph size={30} stroke={2} />
-      <span>@aigencyx.labs</span>
     </div>
   );
 };

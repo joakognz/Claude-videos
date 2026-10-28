@@ -5,7 +5,7 @@ import { camAt } from "./camera";
 import { EV, FPS, S, clamp01, windowed } from "./theme";
 import { World3D } from "./world/World3D";
 import { Captions } from "./components/Captions";
-import { Progress, TopShade, Watermark } from "./components/Chrome";
+import { Progress, TopShade } from "./components/Chrome";
 import { Hud } from "./components/Hud";
 import { Phone } from "./components/Phone";
 import { CommentCTA, EndCard, PointsCard } from "./components/Finale";
@@ -39,7 +39,6 @@ export const Reel: React.FC = () => {
       <PointsCard t={t} />
       <Captions t={t} />
       <Progress t={t} />
-      <Watermark t={t} />
       <CommentCTA t={t} />
       <EndCard t={t} />
       <AbsoluteFill style={{ background: "#000", opacity: 1 - clamp01(t / 0.35) }} />
