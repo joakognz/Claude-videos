@@ -51,19 +51,19 @@ export const PointsCard: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const WORD = "PELUQUERÍA";
+const WORD = "AUDITORIA";
 
-/** E16: Instagram-style comment bar typing PELUQUERÍA, under the CTA caption. */
+/** E16: Instagram-style comment bar typing AUDITORIA, under the CTA caption. */
 export const CommentCTA: React.FC<{ t: number }> = ({ t }) => {
   const a = S.E16;
   const o = windowed(t, a - 0.05, S.E17 + 0.2, 0.35, 0.4);
   if (o <= 0) return null;
-  const { comenta, peluqueria, small, tuyo } = TL.cta;
+  const { comenta, keyword, small, tuyo } = TL.cta;
   const n = Math.max(0, Math.min(WORD.length, Math.floor((t - EV.typeStart) / EV.typeStep) + 1));
   const text = t >= EV.typeStart ? WORD.slice(0, n) : "";
   const bar = springAt(t, a + 0.05, 14, 150);
   const w1 = EASE_OUT(clamp01((t - comenta + 0.08) / 0.26));
-  const w2 = EASE_OUT(clamp01((t - peluqueria + 0.08) / 0.26));
+  const w2 = EASE_OUT(clamp01((t - keyword + 0.08) / 0.26));
   const w3 = EASE_OUT(clamp01((t - small + 0.05) / 0.4));
   const sent = n === WORD.length ? EASE_OUT(clamp01((t - (EV.typeStart + WORD.length * EV.typeStep + 0.25)) / 0.3)) : 0;
   return (
@@ -71,7 +71,7 @@ export const CommentCTA: React.FC<{ t: number }> = ({ t }) => {
       <div style={{ position: "absolute", left: 60, right: 60, top: 330, textAlign: "center", fontFamily: COND, fontWeight: 800, fontSize: 118, lineHeight: 1.05, color: C.white, textShadow: "0 4px 30px rgba(0,0,0,0.65)" }}>
         <span style={{ display: "inline-block", opacity: w1, translate: `0px ${(1 - w1) * 34}px` }}>Comenta</span>{" "}
         <span style={{ display: "inline-block", opacity: w2, translate: `0px ${(1 - w2) * 34}px` }}>
-          <Highlight text="PELUQUERÍA" kind="o" t={t} at={peluqueria} size={118} />
+          <Highlight text="AUDITORIA" kind="o" t={t} at={keyword} size={118} />
         </span>
       </div>
       <div style={{
@@ -101,12 +101,12 @@ export const CommentCTA: React.FC<{ t: number }> = ({ t }) => {
           <div style={{ fontSize: 32, fontWeight: 700, color: n > 0 ? "#0095F6" : "rgba(0,149,246,0.4)", scale: String(1 + 0.12 * Math.sin(Math.PI * sent)) }}>Publicar</div>
         </div>
       </div>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 1240, textAlign: "center", fontFamily: COND, fontWeight: 800, fontSize: 110, color: C.orange, opacity: EASE(clamp01((t - peluqueria - 0.3) / 0.3)), translate: `0px ${Math.abs(Math.sin(t * 4)) * 18}px`, textShadow: "0 0 34px rgba(255,122,0,0.6)" }}>↓</div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 1240, textAlign: "center", fontFamily: COND, fontWeight: 800, fontSize: 110, color: C.orange, opacity: EASE(clamp01((t - keyword - 0.3) / 0.3)), translate: `0px ${Math.abs(Math.sin(t * 4)) * 18}px`, textShadow: "0 0 34px rgba(255,122,0,0.6)" }}>↓</div>
     </div>
   );
 };
 
-/** E17: fade to black, agency logo, Instagram icon and @aigencyxlabs. */
+/** E17: fade to black, agency logo, Instagram icon and @aigencyx.labs. */
 export const EndCard: React.FC<{ t: number }> = ({ t }) => {
   const a = S.E17;
   const black = EASE(clamp01((t - a) / 0.5));
@@ -125,7 +125,7 @@ export const EndCard: React.FC<{ t: number }> = ({ t }) => {
       <div style={{
         position: "absolute", left: 0, right: 0, top: 1090, textAlign: "center", fontFamily: UI, fontWeight: 700, fontSize: 64, color: C.white,
         letterSpacing: -0.5, opacity: clamp01(s3 * 1.5), translate: `0px ${(1 - s3) * 30}px`,
-      }}>@aigencyxlabs</div>
+      }}>@aigencyx.labs</div>
     </div>
   );
 };

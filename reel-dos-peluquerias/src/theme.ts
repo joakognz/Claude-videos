@@ -38,7 +38,7 @@ export const TL = timelineJson as unknown as {
   durationInFrames: number;
   scenes: Record<string, number>;
   captions: Record<string, Caption>;
-  cta: { comenta: number; peluqueria: number; small: number; tuyo: number };
+  cta: { comenta: number; keyword: number; small: number; tuyo: number };
   ev: Record<string, number> & { vibrate: number[]; bubbles: number[] };
   sfx: { t: number; type: string }[];
 };

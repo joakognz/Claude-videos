@@ -24,7 +24,7 @@ TEXT = {
           "cada hueco,", "para una sola persona.", "Si alguien cancela...", "la lista de espera se entera al momento.",
           "Y cada cliente suma puntos.", "Con ciento veinte,", "el corte le sale gratis.", "Y vuelve."],
     "C": ["Mientras tanto, la otra...", "Libreta y WhatsApp.", "Mensajes sin contestar y las tijeras en la mano.",
-          "Tu negocio se llama...", "¿Y tú?", "Comenta peluquería y te muestro cómo quedaría el tuyo."],
+          "Tu negocio se llama...", "¿Y tú?", "Comenta auditoría y te muestro cómo quedaría el tuyo."],
 }
 # spelled as spoken
 SPOKEN = {"WhatsApp": "guasap"}

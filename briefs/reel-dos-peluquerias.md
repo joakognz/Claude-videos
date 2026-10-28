@@ -24,8 +24,8 @@
 | E13 | 42-46 s | Libreta y WhatsApp. | **Libreta** y WhatsApp. (gris) |
 | E14 | 46-50 s | Mensajes sin contestar y las tijeras en la mano. Tu negocio se llama… | Tu negocio se llama… (se corta) |
 | E15 | 50-53 s | ¿Y tú? | ¿Y tú? |
-| E16 | 53-56 s | Comenta PELUQUERÍA y te muestro cómo quedaría el tuyo. | Comenta **PELUQUERÍA** · y te muestro cómo quedaría el **tuyo.** |
-| E17 | 56-58 s | (sin voz) | Fundido a negro, icono de Instagram y @aigencyxlabs |
+| E16 | 53-56 s | Comenta auditoría y te muestro cómo quedaría el tuyo. | Comenta **AUDITORIA** · y te muestro cómo quedaría el **tuyo.** |
+| E17 | 56-58 s | (sin voz) | Fundido a negro, icono de Instagram y @aigencyx.labs |
 
 ## Guion para ElevenLabs: narrador (texto plano)
 
@@ -58,11 +58,11 @@ Libreta y WhatsApp.
 Mensajes sin contestar y las tijeras en la mano.
 Tu negocio se llama...
 ¿Y tú?
-Comenta peluquería y te muestro cómo quedaría el tuyo.
+Comenta auditoría y te muestro cómo quedaría el tuyo.
 ```
 
 Notas de lectura:
-- "peluquería" va en minúscula en la voz para que no la deletree. En pantalla sale "PELUQUERÍA".
+- "auditoría" va en minúscula y con tilde en la voz para que se lea como palabra. En pantalla sale "AUDITORIA", sin tilde (es la palabra que deben comentar).
 - "ciento veinte" va en letra para que se lea igual en todas las tomas.
 - Los "..." marcan una pausa en suspenso. En "Tu negocio se llama..." la frase se queda en el aire a propósito.
 - Si "WhatsApp" suena raro, prueba "guasap" en esa toma.
@@ -73,9 +73,9 @@ Notas de lectura:
 - La voz se coloca frase a frase al inicio de cada escena (`scripts/build.py`). Las tomas se usan tal cual, sin estirarlas.
 - E9: quien estaba en la lista de espera es Laura. Su etiqueta "LAURA · 17:30" sustituye a la de Fede, y es la misma Laura de la tarjeta de puntos (E11).
 - E14: además de las cuatro preguntas del guion, siguen llegando burbujas ("¿Hola?", "¿Abrís el sábado?"…) y un contador "SIN RESPONDER".
-- Cierre (E17): logo de AIgencyx Labs, icono de Instagram y @aigencyxlabs.
+- Cierre (E17): logo de AIgencyx Labs, icono de Instagram y @aigencyx.labs. La marca de agua también usa @aigencyx.labs.
 
 ## Antes de publicar
 - Las dos peluquerías, los nombres (Nico, Lucas, Fede, Laura) y los puntos son ficticios.
-- El icono de Instagram solo aparece junto a @aigencyxlabs (marca de agua, barra de comentarios y cierre). No sale ningún otro logo real.
+- El icono de Instagram solo aparece junto a @aigencyx.labs (marca de agua, barra de comentarios y cierre). No sale ningún otro logo real.
 - **Portada sugerida:** "Misma calle. Dos peluquerías."

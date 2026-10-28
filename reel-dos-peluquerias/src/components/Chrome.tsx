@@ -63,7 +63,7 @@ export const Progress: React.FC<{ t: number }> = ({ t }) => {
 const SIDES: [number, "r" | "l"][] = [[0, "r"], [S.E7 - 0.2, "l"], [S.E12, "r"]];
 const WM_OUT = S.E16 - 0.3;
 
-/** Fixed watermark: Instagram glyph + @aigencyxlabs, mid-height, switching sides now and then. */
+/** Fixed watermark: Instagram glyph + @aigencyx.labs, mid-height, switching sides now and then. */
 export const Watermark: React.FC<{ t: number }> = ({ t }) => {
   let side: "r" | "l" = "r";
   let since = 0;
@@ -79,7 +79,7 @@ export const Watermark: React.FC<{ t: number }> = ({ t }) => {
       filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.6))",
     }}>
       <IgGlyph size={30} stroke={2} />
-      <span>@aigencyxlabs</span>
+      <span>@aigencyx.labs</span>
     </div>
   );
 };

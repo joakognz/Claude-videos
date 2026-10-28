@@ -130,7 +130,7 @@ captions = {
                 ("llama…", wt("C", 3, 3), None)], we("C", 3, 3) + 0.05, cut=True),
     "E15": cap([("¿Y tú?", wt("C", 4, 0), None)], S["E16"] - 0.1, big=True),
 }
-cta = {"comenta": wt("C", 5, 0), "peluqueria": wt("C", 5, 1), "small": wt("C", 5, 2), "tuyo": wt("C", 5, 8)}
+cta = {"comenta": wt("C", 5, 0), "keyword": wt("C", 5, 1), "small": wt("C", 5, 2), "tuyo": wt("C", 5, 8)}
 
 # ── on-screen events (tags, phone, bubbles…) ────────────────────────────
 ev = {
@@ -150,7 +150,7 @@ ev = {
     "vibrate": [S["E13"] + 0.5, S["E13"] + 1.5, S["E14"] + 0.4, S["E14"] + 1.4, S["E14"] + 2.4, S["E14"] + 3.4],
     "bubbles": [S["E14"] + 0.15, S["E14"] + 0.85, S["E14"] + 1.45, S["E14"] + 2.0, S["E14"] + 2.5, S["E14"] + 2.95,
                 S["E14"] + 3.35, S["E14"] + 3.7, S["E14"] + 4.0, S["E14"] + 4.3],
-    "typeStart": cta["peluqueria"] - 0.35, "typeStep": 0.075,
+    "typeStart": cta["keyword"] - 0.35, "typeStep": 0.075,
 }
 ev = {k: (round(v, 3) if isinstance(v, float) else [round(x, 3) for x in v]) for k, v in ev.items()}
 
@@ -412,7 +412,7 @@ for k, c in captions.items():
     for ch in c["chunks"]:
         if ch["hl"]:
             add_sfx(click(), ch["t"], -27 if ch["hl"] == "o" else -30, label="hl")
-add_sfx(click(), cta["peluqueria"], -26, label="hl")
+add_sfx(click(), cta["keyword"], -26, label="hl")
 # HUD labels and prices
 add_sfx(pop(1100, 400), 0.9, -28, pan=-0.2, label="hud")
 add_sfx(pop(1200, 420), 1.15, -28, pan=0.2, label="hud")
@@ -454,8 +454,8 @@ for t_ in ev["vibrate"]:
 for k, t_ in enumerate(ev["bubbles"]):
     add_sfx(bubble_dull(), t_, -26 - (k % 3), pan=(-0.25 if k % 2 else 0.25), label="bubble")
 add_sfx(glitch(), captions["E14"]["end"] - 0.02, -24, label="glitch")
-# CTA: typing PELUQUERÍA
-for k in range(10):
+# CTA: typing AUDITORIA
+for k in range(len("AUDITORIA")):
     add_sfx(tap(), ev["typeStart"] + k * ev["typeStep"], -27 + rng.uniform(-2, 1))
 add_sfx(pop(1400, 500), S["E17"] + 0.15, -24, label="end")
 
