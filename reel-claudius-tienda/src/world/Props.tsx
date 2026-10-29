@@ -92,7 +92,7 @@ export const Contract: React.FC<{ t: number; cam: Cam }> = ({ t, cam }) => {
 };
 
 // the pen lands on the sheet's signature line (lower left of the sheet)
-export const HAND_TARGET: V3 = scr(DEAL, -0.27, -0.4, 0.05);
+export const HAND_TARGET: V3 = scr(DEAL, -0.36, -0.52, 0.05);
 const REACH_MAX = 0.8;
 const BAR_AT: V3 = scr([0, 1, 2].map((i) => SHOULDER[i] + (HAND_TARGET[i] - SHOULDER[i]) * 0.86) as V3, 0, 0, 0.4);
 
@@ -120,7 +120,7 @@ export const Deal: React.FC<{ t: number; cam: Cam }> = ({ t, cam }) => {
   const barY = (u: number) => lerp(2.6, 0, u) + settle;
   return (
     <>
-      <Sheet p={scr(DEAL, shake, 0.03 * Math.sin(t * 2.2))} q={q} tex={tex} opacity={o} scale={Math.max(0.01, s) * 1.2} tilt={-0.05} />
+      <Sheet p={scr(DEAL, shake, 0.03 * Math.sin(t * 2.2))} q={q} tex={tex} opacity={o} scale={Math.max(0.01, s) * 1.55} tilt={-0.05} />
       {t > EV.barrier - 0.02 && (
         <>
           <group position={scr(BAR_AT, 0, barY(drop))} quaternion={q}>

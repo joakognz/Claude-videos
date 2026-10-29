@@ -5,7 +5,7 @@ export type V3 = [number, number, number];
 type Pose = { target: V3; zoom: number; elev: number; off: number };
 
 // One continuous dolly-in from far above the city to the working shot, then the camera stays locked.
-const FAR: Pose = { target: [0, 0, 0], zoom: 11, elev: 62, off: 70 };
+const FAR: Pose = { target: [0, 0, 0], zoom: 22, elev: 55, off: 110 };
 export const WORK: Pose = { target: [0, 0.8, 0], zoom: 165, elev: 35.3, off: 256 };
 
 export const poseAt = (t: number): Pose => {

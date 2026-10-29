@@ -57,7 +57,7 @@ export const scr = (p: V3, r: number, u: number, d = 0): V3 => [0, 1, 2].map((i)
 
 // E8: the deal sheet hovers to Claudius' right (on screen), so its arm of light reads across the frame
 const CLAUDIUS_MID: V3 = [CLAUDIUS[0], CLAUDIUS[1] + 0.55, CLAUDIUS[2]];
-export const DEAL: V3 = scr(CLAUDIUS_MID, 1.5, 0.35, 1.3);
+export const DEAL: V3 = scr(CLAUDIUS_MID, 1.65, 0.45, 1.3);
 export const SHOULDER: V3 = scr(CLAUDIUS_MID, 0.3, 0.05, 0.2);
 // E9 lens
 export const LENS: V3 = [0, 4.6, 0];

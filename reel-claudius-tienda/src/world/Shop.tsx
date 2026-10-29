@@ -187,7 +187,7 @@ export const Shop: React.FC<{ t: number; dim: number }> = ({ t, dim }) => {
       <Products t={t} boost={0} />
       <Tags t={t} />
       {/* warm ceiling light */}
-      <pointLight position={[0.3, SHOP_H - 0.3, 0.3]} color="#ffd9b8" intensity={3.2 * (1 - dim * 0.7)} distance={6} decay={1.4} />
+      <pointLight position={[0.3, SHOP_H - 0.3, 0.3]} color="#ffd9b8" intensity={3.2 * (1 - dim * 0.7) * (1 + 0.1 * Math.sin(t * 2.3) + 0.05 * Math.sin(t * 5.1))} distance={6} decay={1.4} />
     </group>
   );
 };

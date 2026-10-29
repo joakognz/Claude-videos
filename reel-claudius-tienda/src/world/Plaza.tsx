@@ -52,7 +52,7 @@ const Buildings: React.FC<{ t: number }> = ({ t }) => {
     });
     return out;
   }, []);
-  const winMat = useMemo(() => new THREE.MeshBasicMaterial({ color: new THREE.Color(C.cream).multiplyScalar(0.42), toneMapped: false }), []);
+  const winMat = useMemo(() => new THREE.MeshBasicMaterial({ color: new THREE.Color(C.cream).multiplyScalar(0.5), toneMapped: false }), []);
   // the time skip (E7): windows flick on and off as if days were passing
   const skip = t - EV.skip;
   useLayoutEffect(() => {
@@ -89,7 +89,7 @@ const Buildings: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-const LAMPS: V3[] = [[3.5, 0, -0.9], [-0.9, 0, 3.5], [-3.6, 0, -3.6], [4.2, 0, 3.0], [3.0, 0, 4.2]];
+const LAMPS: V3[] = [[3.5, 0, -0.9], [-0.9, 0, 3.5], [-3.6, 0, -3.6]];
 const BENCHES: { p: V3; r: number }[] = [{ p: [3.4, 0, 0.4], r: Math.PI / 2 }, { p: [0.4, 0, 3.4], r: 0 }];
 
 const Lamps: React.FC<{ t: number; dim: number }> = ({ t, dim }) => {
@@ -136,6 +136,40 @@ const Lamps: React.FC<{ t: number; dim: number }> = ({ t, dim }) => {
   );
 };
 
+// dust motes drifting in the warm light, so the locked shot never stands still
+const N_MOTES = 90;
+const MOTES = Array.from({ length: N_MOTES }, (_, i) => ({
+  x: (rand(i + 101) - 0.5) * 6, z: (rand(i + 202) - 0.5) * 6, y0: rand(i + 303) * 3, sp: 0.12 + rand(i + 404) * 0.25,
+  ph: rand(i + 505) * 10, sz: 0.035 + rand(i + 606) * 0.05,
+}));
+
+const Motes: React.FC<{ t: number; dim: number }> = ({ t, dim }) => {
+  const ref = useRef<THREE.InstancedMesh>(null);
+  const mat = useMemo(() => new THREE.MeshBasicMaterial({
+    color: new THREE.Color(C.orangeSoft).multiplyScalar(0.9), map: radialTex(), transparent: true, depthWrite: false,
+    blending: THREE.AdditiveBlending, toneMapped: false,
+  }), []);
+  mat.opacity = 0.9 * (1 - 0.5 * dim);
+  useLayoutEffect(() => {
+    const m = ref.current!;
+    MOTES.forEach((d, i) => {
+      const y = (d.y0 + t * d.sp) % 3.2;
+      tmp.position.set(d.x + 0.25 * Math.sin(t * 0.7 + d.ph), y + 0.1, d.z + 0.25 * Math.cos(t * 0.6 + d.ph));
+      tmp.rotation.set(-0.616, Math.PI / 4, 0, "YXZ");
+      const s = d.sz * Math.sin(Math.PI * (y / 3.2)) * (0.7 + 0.3 * Math.sin(t * 3 + d.ph));
+      tmp.scale.set(s * 4, s * 4, 1);
+      tmp.updateMatrix();
+      m.setMatrixAt(i, tmp.matrix);
+    });
+    m.instanceMatrix.needsUpdate = true;
+  });
+  return (
+    <instancedMesh ref={ref} args={[undefined, undefined, N_MOTES]} material={mat} frustumCulled={false}>
+      <planeGeometry args={[1, 1]} />
+    </instancedMesh>
+  );
+};
+
 export const Plaza: React.FC<{ t: number; dim: number }> = ({ t, dim }) => {
   const grid = useMemo(() => {
     const g = new THREE.GridHelper(11, 22, C.cream, C.cream);
@@ -165,6 +199,7 @@ export const Plaza: React.FC<{ t: number; dim: number }> = ({ t, dim }) => {
         <planeGeometry args={[9, 9]} />
       </mesh>
       <Lamps t={t} dim={dim} />
+      <Motes t={t} dim={dim} />
       <Buildings t={t} />
     </>
   );
