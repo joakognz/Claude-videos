@@ -1,0 +1,82 @@
+import React from "react";
+import { C, EASE, EASE_OUT, EV, S, TITLE, TL, UI, beat, clamp01, springAt, windowed } from "../theme";
+import { CAPTION_TOP, Highlight, MICRO_TOP, Micro, Reveal } from "./Captions";
+import { Logo } from "./Logo";
+
+const WORD = "AUDITORIA";
+
+/** E11: "Comenta AUDITORIA", then "Revisa tu gasto en IA", over an Instagram-style comment bar that types the word. */
+export const CommentCTA: React.FC<{ t: number }> = ({ t }) => {
+  const { comenta, keyword, swap, revisa, gasto } = TL.cta;
+  const o = windowed(t, S.E11 - 0.05, S.E12 + 0.15, 0.3, 0.4);
+  if (o <= 0) return null;
+  const n = Math.max(0, Math.min(WORD.length, Math.floor((t - EV.typeStart) / EV.typeStep) + 1));
+  const text = t >= EV.typeStart ? WORD.slice(0, n) : "";
+  const bar = springAt(t, S.E11, 14, 150);
+  const sent = n === WORD.length ? EASE_OUT(clamp01((t - (EV.typeStart + WORD.length * EV.typeStep + 0.25)) / 0.3)) : 0;
+  const first = 1 - EASE(clamp01((t - swap) / 0.25));
+  const titleStyle: React.CSSProperties = {
+    position: "absolute", left: 50, right: 50, top: CAPTION_TOP, textAlign: "center", fontFamily: TITLE, fontWeight: 800, fontSize: 84,
+    lineHeight: 1.12, letterSpacing: -1.5, color: C.white, textShadow: "0 4px 30px rgba(0,0,0,0.7)",
+  };
+  return (
+    <div style={{ position: "absolute", inset: 0, opacity: o }}>
+      {first > 0 && (
+        <div style={{ ...titleStyle, opacity: first, filter: first < 1 ? `blur(${(1 - first) * 12}px)` : undefined, translate: `0px ${-(1 - first) * 30}px` }}>
+          <Reveal t={t} at={comenta}>Comenta</Reveal>{" "}
+          <Reveal t={t} at={keyword}><Highlight text="AUDITORIA" t={t} at={keyword} size={84} /></Reveal>
+        </div>
+      )}
+      {t > swap && (
+        <div style={titleStyle}>
+          <Reveal t={t} at={revisa}>Revisa</Reveal>{" "}
+          <Reveal t={t} at={gasto}><Highlight text="tu gasto en IA" t={t} at={gasto} size={84} /></Reveal>
+        </div>
+      )}
+      <div style={{ position: "absolute", left: 40, right: 40, top: MICRO_TOP + 40, textAlign: "center" }}>
+        <Reveal t={t} at={comenta} dist={14}><Micro>COMENTA LA PALABRA</Micro></Reveal>
+      </div>
+      {/* comment bar, rising from the bottom */}
+      <div style={{
+        position: "absolute", left: 70, right: 70, top: 1395 + (1 - bar) * 260, opacity: clamp01(bar * 1.5),
+        borderRadius: 30, background: "rgba(20,17,15,0.94)", border: "1.5px solid rgba(255,244,236,0.14)", padding: "20px 26px",
+        boxShadow: `0 30px 80px rgba(0,0,0,0.7), 0 0 ${60 + 40 * beat(t)}px rgba(255,107,26,${0.18 + 0.12 * beat(t)})`, fontFamily: UI,
+      }}>
+        <div style={{ fontSize: 22, fontWeight: 700, color: "rgba(255,244,236,0.55)", textAlign: "center", marginBottom: 14 }}>Comentarios</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <div style={{ width: 64, height: 64, borderRadius: 32, padding: 3, background: `linear-gradient(45deg, ${C.orangeSoft}, ${C.orange})`, flexShrink: 0 }}>
+            <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "#2b2420", border: "3px solid #14110F", boxSizing: "border-box" }} />
+          </div>
+          <div style={{
+            flex: 1, height: 74, borderRadius: 37, border: "1.5px solid rgba(255,244,236,0.24)", display: "flex", alignItems: "center",
+            padding: "0 26px", fontSize: 34, fontWeight: 700, color: C.white, letterSpacing: 1,
+          }}>
+            {text ? text : <span style={{ color: "rgba(255,244,236,0.4)", fontWeight: 500, letterSpacing: 0 }}>Añade un comentario…</span>}
+            {Math.floor(t * 2.6) % 2 === 0 && <span style={{ width: 3, height: 40, background: C.orange, marginLeft: text ? 4 : -2, order: text ? 0 : -1 }} />}
+          </div>
+          <div style={{ fontSize: 30, fontWeight: 700, color: n > 0 ? C.orange : "rgba(255,107,26,0.4)", scale: String(1 + 0.12 * Math.sin(Math.PI * sent)) }}>Publicar</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/** E12: fade to #14110F, agency logo and @aigencyx.labs. */
+export const EndCard: React.FC<{ t: number }> = ({ t }) => {
+  const a = S.E12;
+  const black = EASE(clamp01((t - a) / 0.5));
+  if (black <= 0) return null;
+  const s1 = springAt(t, a + 0.3, 13, 150);
+  const s2 = springAt(t, a + 0.55, 13, 150);
+  return (
+    <div style={{ position: "absolute", inset: 0, background: C.ink, opacity: black }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 620, display: "flex", justifyContent: "center", opacity: clamp01(s1 * 1.5), scale: String((0.7 + 0.3 * s1) * (1 + 0.025 * beat(t))) }}>
+        <Logo size={340} />
+      </div>
+      <div style={{
+        position: "absolute", left: 0, right: 0, top: 1030, textAlign: "center", fontFamily: TITLE, fontWeight: 800, fontSize: 68, color: C.orange,
+        letterSpacing: -0.5, opacity: clamp01(s2 * 1.5), translate: `0px ${(1 - s2) * 30}px`, textShadow: "0 0 30px rgba(255,107,26,0.35)",
+      }}>@aigencyx.labs</div>
+    </div>
+  );
+};
