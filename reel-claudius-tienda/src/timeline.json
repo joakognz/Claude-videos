@@ -1,0 +1,532 @@
+{
+ "fps": 30,
+ "durationInFrames": 1500,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 7.765,
+  "E3": 11.245,
+  "E4": 13.475,
+  "E5": 16.67,
+  "E6": 19.595,
+  "E7": 24.285,
+  "E8": 29.75,
+  "E9": 34.165,
+  "E10": 42.66,
+  "FIN": 47.915,
+  "END": 50.0
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Una IA",
+     "t": 1.315,
+     "hl": null
+    },
+    {
+     "text": "llevó",
+     "t": 1.6,
+     "hl": null
+    },
+    {
+     "text": "una tienda real",
+     "t": 2.26,
+     "hl": "o"
+    }
+   ],
+   "start": 1.195,
+   "end": 7.665,
+   "micro": [
+    [
+     "ANTHROPIC × ANDON LABS",
+     3.62
+    ],
+    [
+     "· SAN FRANCISCO",
+     6.735
+    ]
+   ]
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "Sin",
+     "t": 9.855,
+     "hl": null
+    },
+    {
+     "text": "beneficios",
+     "t": 10.225,
+     "hl": "o"
+    }
+   ],
+   "start": 9.735,
+   "end": 11.145,
+   "micro": [
+    [
+     "PROJECT VEND · FASE 1 · 2025",
+     7.915
+    ]
+   ]
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "Regalaba",
+     "t": 11.395,
+     "hl": null
+    },
+    {
+     "text": "descuentos",
+     "t": 11.845,
+     "hl": "o"
+    }
+   ],
+   "start": 11.275,
+   "end": 13.375,
+   "micro": [
+    [
+     "VENDÍA POR DEBAJO DEL COSTE",
+     12.455
+    ]
+   ]
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "Inventó",
+     "t": 13.92,
+     "hl": null
+    },
+    {
+     "text": "una cuenta de pago",
+     "t": 14.705,
+     "hl": "o"
+    }
+   ],
+   "start": 13.8,
+   "end": 16.57,
+   "micro": [
+    [
+     "CUENTA INEXISTENTE",
+     15.65
+    ]
+   ]
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "Dijo ser",
+     "t": 17.0,
+     "hl": null
+    },
+    {
+     "text": "una persona",
+     "t": 17.615,
+     "hl": "o"
+    }
+   ],
+   "start": 16.88,
+   "end": 19.495,
+   "micro": [
+    [
+     "31 MAR – 1 ABR 2025",
+     18.365
+    ]
+   ]
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "No lo contrataría",
+     "t": 22.915,
+     "hl": "o"
+    }
+   ],
+   "start": 22.795,
+   "end": 24.185,
+   "micro": [
+    [
+     "ANTHROPIC · INFORME DE JUNIO 2025",
+     19.745
+    ]
+   ]
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "Seis meses después,",
+     "t": 24.435,
+     "hl": null
+    },
+    {
+     "text": "empezó a ganar",
+     "t": 28.135,
+     "hl": "o",
+     "br": true
+    },
+    {
+     "text": "dinero",
+     "t": 29.08,
+     "hl": null
+    }
+   ],
+   "start": 24.315,
+   "end": 29.65,
+   "micro": [
+    [
+     "FASE 2 · DICIEMBRE 2025",
+     25.77
+    ]
+   ]
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "Seguía",
+     "t": 30.055,
+     "hl": null
+    },
+    {
+     "text": "cayendo en trampas",
+     "t": 30.415,
+     "hl": "o"
+    }
+   ],
+   "start": 29.935,
+   "end": 34.065,
+   "micro": [
+    [
+     "UNA PERSONA TUVO QUE FRENARLO",
+     32.43
+    ]
+   ]
+  },
+  "E9a": {
+   "chunks": [
+    {
+     "text": "La IA",
+     "t": 36.28,
+     "hl": null
+    },
+    {
+     "text": "no sustituye",
+     "t": 36.66,
+     "hl": null
+    },
+    {
+     "text": "al criterio",
+     "t": 37.795,
+     "hl": "o"
+    }
+   ],
+   "start": 36.16,
+   "end": 38.69,
+   "micro": [
+    [
+     "LA LECCIÓN PARA TU NEGOCIO",
+     34.315
+    ]
+   ]
+  },
+  "E9b": {
+   "chunks": [
+    {
+     "text": "La IA necesita",
+     "t": 38.79,
+     "hl": null
+    },
+    {
+     "text": "supervisión",
+     "t": 41.8,
+     "hl": "o"
+    }
+   ],
+   "start": 38.67,
+   "end": 42.56,
+   "micro": [
+    [
+     "HERRAMIENTAS",
+     39.21
+    ],
+    [
+     "· LÍMITES",
+     40.24
+    ],
+    [
+     "· REVISIÓN",
+     41.8
+    ]
+   ]
+  }
+ },
+ "cta": {
+  "comenta": 42.81,
+  "keyword": 43.145,
+  "revisa": 43.64,
+  "tuia": 45.575,
+  "sin": 45.98
+ },
+ "ev": {
+  "dolly": 4.0,
+  "name": 4.12,
+  "sale": 5.09,
+  "chart0": 7.815,
+  "down0": 9.32,
+  "down1": 10.475,
+  "chartOff": 10.775,
+  "fly0": 11.345,
+  "flyStep": 0.085,
+  "tags": 11.895,
+  "card": 13.575,
+  "glitch": 13.87,
+  "dissolve": 15.6,
+  "qmark": 15.835,
+  "human": 16.9,
+  "humanFull": 17.8,
+  "doc": 19.695,
+  "docAway": 22.815,
+  "skip": 24.335,
+  "tower": 26.135,
+  "boss": 27.025,
+  "up0": 28.085,
+  "up1": 29.48,
+  "deal": 29.85,
+  "reach": 30.055,
+  "barrier": 32.575,
+  "tools": 39.16,
+  "rails": 40.19,
+  "lens0": 37.775,
+  "lens": 41.75,
+  "dark": 42.66,
+  "typeStart": 42.845,
+  "typeStep": 0.075,
+  "chartOn": 27.485
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 2.0,
+   "type": "appear"
+  },
+  {
+   "t": 4.22,
+   "type": "blip"
+  },
+  {
+   "t": 5.09,
+   "type": "swish"
+  },
+  {
+   "t": 5.64,
+   "type": "register"
+  },
+  {
+   "t": 7.815,
+   "type": "blip"
+  },
+  {
+   "t": 9.32,
+   "type": "fall"
+  },
+  {
+   "t": 10.775,
+   "type": "dead"
+  },
+  {
+   "t": 11.345,
+   "type": "swish"
+  },
+  {
+   "t": 11.43,
+   "type": "swish"
+  },
+  {
+   "t": 11.515,
+   "type": "swish"
+  },
+  {
+   "t": 11.6,
+   "type": "swish"
+  },
+  {
+   "t": 11.685,
+   "type": "swish"
+  },
+  {
+   "t": 11.77,
+   "type": "swish"
+  },
+  {
+   "t": 11.855,
+   "type": "swish"
+  },
+  {
+   "t": 11.94,
+   "type": "swish"
+  },
+  {
+   "t": 12.245,
+   "type": "tag"
+  },
+  {
+   "t": 12.315,
+   "type": "tag"
+  },
+  {
+   "t": 12.385,
+   "type": "tag"
+  },
+  {
+   "t": 12.455,
+   "type": "tag"
+  },
+  {
+   "t": 12.525,
+   "type": "tag"
+  },
+  {
+   "t": 12.595,
+   "type": "tag"
+  },
+  {
+   "t": 13.575,
+   "type": "appear"
+  },
+  {
+   "t": 13.87,
+   "type": "glitch"
+  },
+  {
+   "t": 15.7,
+   "type": "dissolve"
+  },
+  {
+   "t": 15.935,
+   "type": "blip"
+  },
+  {
+   "t": 16.9,
+   "type": "appear"
+  },
+  {
+   "t": 17.5,
+   "type": "tremble"
+  },
+  {
+   "t": 19.695,
+   "type": "paper"
+  },
+  {
+   "t": 22.815,
+   "type": "float"
+  },
+  {
+   "t": 24.135,
+   "type": "rewind"
+  },
+  {
+   "t": 26.335,
+   "type": "boom"
+  },
+  {
+   "t": 27.275,
+   "type": "boom"
+  },
+  {
+   "t": 27.375,
+   "type": "appear"
+  },
+  {
+   "t": 28.085,
+   "type": "riseTone"
+  },
+  {
+   "t": 29.38,
+   "type": "register"
+  },
+  {
+   "t": 29.85,
+   "type": "paper"
+  },
+  {
+   "t": 30.155,
+   "type": "swish"
+  },
+  {
+   "t": 32.775,
+   "type": "slam"
+  },
+  {
+   "t": 39.16,
+   "type": "blip"
+  },
+  {
+   "t": 39.28,
+   "type": "blip"
+  },
+  {
+   "t": 39.4,
+   "type": "blip"
+  },
+  {
+   "t": 40.39,
+   "type": "boom"
+  },
+  {
+   "t": 37.775,
+   "type": "hum"
+  },
+  {
+   "t": 41.75,
+   "type": "appear"
+  },
+  {
+   "t": 42.56,
+   "type": "down"
+  },
+  {
+   "t": 42.845,
+   "type": "key"
+  },
+  {
+   "t": 42.92,
+   "type": "key"
+  },
+  {
+   "t": 42.995,
+   "type": "key"
+  },
+  {
+   "t": 43.07,
+   "type": "key"
+  },
+  {
+   "t": 43.145,
+   "type": "key"
+  },
+  {
+   "t": 43.22,
+   "type": "key"
+  },
+  {
+   "t": 43.295,
+   "type": "key"
+  },
+  {
+   "t": 43.37,
+   "type": "key"
+  },
+  {
+   "t": 43.445,
+   "type": "key"
+  },
+  {
+   "t": 48.215,
+   "type": "appear"
+  }
+ ]
+}
