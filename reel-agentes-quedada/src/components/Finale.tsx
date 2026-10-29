@@ -14,7 +14,7 @@ export const CommentCTA: React.FC<{ t: number }> = ({ t }) => {
   const text = t >= EV.typeStart ? WORD.slice(0, n) : "";
   const bar = springAt(t, S.E11, 14, 150);
   const sent = n === WORD.length ? EASE_OUT(clamp01((t - (EV.typeStart + WORD.length * EV.typeStep + 0.25)) / 0.3)) : 0;
-  const first = 1 - EASE(clamp01((t - swap) / 0.25));
+  const first = 1 - EASE(clamp01((t - swap + 0.3) / 0.25));
   const titleStyle: React.CSSProperties = {
     position: "absolute", left: 50, right: 50, top: CAPTION_TOP, textAlign: "center", fontFamily: TITLE, fontWeight: 800, fontSize: 84,
     lineHeight: 1.12, letterSpacing: -1.5, color: C.white, textShadow: "0 4px 30px rgba(0,0,0,0.7)",
@@ -70,12 +70,12 @@ export const EndCard: React.FC<{ t: number }> = ({ t }) => {
   const s2 = springAt(t, a + 0.55, 13, 150);
   return (
     <div style={{ position: "absolute", inset: 0, background: C.ink, opacity: black }}>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 620, display: "flex", justifyContent: "center", opacity: clamp01(s1 * 1.5), scale: String((0.7 + 0.3 * s1) * (1 + 0.025 * beat(t))) }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 620, display: "flex", justifyContent: "center", opacity: clamp01(s1 * 1.5), scale: String((0.7 + 0.3 * s1) * (1 + 0.025 * beat(t) + 0.02 * (t - a))), rotate: `${Math.sin((t - a) * 1.2) * 1.5}deg` }}>
         <Logo size={340} />
       </div>
       <div style={{
         position: "absolute", left: 0, right: 0, top: 1030, textAlign: "center", fontFamily: TITLE, fontWeight: 800, fontSize: 68, color: C.orange,
-        letterSpacing: -0.5, opacity: clamp01(s2 * 1.5), translate: `0px ${(1 - s2) * 30}px`, textShadow: "0 0 30px rgba(255,107,26,0.35)",
+        letterSpacing: -0.5, opacity: clamp01(s2 * 1.5), translate: `0px ${(1 - s2) * 30 - (t - a) * 6}px`, textShadow: "0 0 30px rgba(255,107,26,0.35)",
       }}>@aigencyx.labs</div>
     </div>
   );

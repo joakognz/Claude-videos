@@ -25,7 +25,7 @@ export const deskYaw = (k: number) => ang(k);
 
 /** Each orb's light: dim and idle before the drop, lit and on the beat after it, out when the money runs out. */
 export const orbGlow = (k: number, t: number) => {
-  const idle = 0.16 + 0.05 * Math.sin(t * 1.3 + k * 1.9);
+  const idle = 0.17 + 0.08 * Math.sin(t * 1.7 + k * 1.9);
   const on = act(t);
   const lit = 1.05 + 0.55 * beat(t) + 0.12 * Math.sin(t * 5 + k);
   let g = lerp(idle, lit, on);
@@ -51,7 +51,7 @@ export const orbGlow = (k: number, t: number) => {
 export const orbAt = (k: number, t: number): V3 => {
   const h = orbHome(k);
   const on = act(t);
-  const bob = lerp(0.06 * Math.sin(t * 1.1 + k * 1.3), 0.1 * Math.sin(t * 3.2 + k * 1.3), on) + 0.09 * beat(t) * on;
+  const bob = lerp(0.12 * Math.sin(t * 1.4 + k * 1.3), 0.1 * Math.sin(t * 3.2 + k * 1.3), on) + 0.09 * beat(t) * on;
   const lean = 0.42 * EASE(clamp01((t - EV.turn) / 0.8)) * (1 - EASE(clamp01((t - EV.drain1) / 0.8)));
   const sink = 0.5 * EASE(clamp01((t - EV.die - k * 0.12) / 0.6)) * (1 - EASE(clamp01((t - EV.deal - 0.35 - k * 0.18) / 0.5)));
   const pop = (springAt(t, EV.drop + k * 0.03, 9, 260) - 1) * 0.25 * (t > EV.drop ? 1 : 0);
@@ -143,9 +143,9 @@ export const arc = (a: V3, b: V3, p: number, h: number): V3 => [
 
 /** Motes drifting up around the office (local), faster once the music drops. */
 export const MOTES = Array.from({ length: 70 }, (_, i) => ({
-  x: (rand(i + 1) - 0.5) * 12, z: (rand(i + 2) - 0.5) * 12, ph: rand(i + 3), sp: 0.4 + rand(i + 4) * 0.6, s: 0.02 + rand(i + 5) * 0.03,
+  x: (rand(i + 1) - 0.5) * 12, z: (rand(i + 2) - 0.5) * 12, ph: rand(i + 3), sp: 0.4 + rand(i + 4) * 0.6, s: 0.03 + rand(i + 5) * 0.05,
 }));
 /** Time-warp for the motes: slow before the drop, three times faster after it (continuous). */
-export const moteClock = (t: number) => (t < EV.drop ? t * 0.08 : EV.drop * 0.08 + (t - EV.drop) * 0.3);
+export const moteClock = (t: number) => (t < EV.drop ? t * 0.12 : EV.drop * 0.12 + (t - EV.drop) * 0.36);
 
 export const shockwave = (t: number) => EASE_OUT(clamp01((t - EV.drop) / 1.1));

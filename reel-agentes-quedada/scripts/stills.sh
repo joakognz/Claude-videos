@@ -12,4 +12,5 @@ for f in "$@"; do
   i=$((i + 1))
 done
 cols=5; rows=$(( (i + cols - 1) / cols ))
-ffmpeg -v error -y "${in[@]}" -filter_complex "${lab}$(for ((k = 0; k < i; k++)); do printf "[v%d]" $k; done)xstack=inputs=$i:grid=${cols}x${rows}:fill=black" out/stills/sheet.jpg
+for ((k = i; k < cols * rows; k++)); do lab+="color=black:s=270x480:d=1[v$k];"; done
+ffmpeg -v error -y "${in[@]}" -filter_complex "${lab}$(for ((k = 0; k < cols * rows; k++)); do printf "[v%d]" $k; done)xstack=inputs=$((cols * rows)):grid=${cols}x${rows}" -frames:v 1 out/stills/sheet.jpg

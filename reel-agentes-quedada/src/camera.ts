@@ -1,4 +1,7 @@
-import { EV, EASE, clamp01, lerp } from "./theme";
+import { Easing } from "remotion";
+import { EV, clamp01, lerp } from "./theme";
+
+const DOLLY = Easing.bezier(0.33, 0.12, 0.25, 1);
 
 export type V3 = [number, number, number];
 
@@ -9,7 +12,7 @@ const FAR: Pose = { target: [0, 0, 0], zoom: 26, elev: 62, off: 60 };
 export const WORK: Pose = { target: [0, 1.3, 0], zoom: 100, elev: 35.3, off: 210 };
 
 export const poseAt = (t: number): Pose => {
-  const p = EASE(clamp01(t / EV.dolly));
+  const p = DOLLY(clamp01(t / EV.dolly));
   return {
     target: [lerp(FAR.target[0], WORK.target[0], p), lerp(FAR.target[1], WORK.target[1], p), lerp(FAR.target[2], WORK.target[2], p)],
     zoom: Math.exp(lerp(Math.log(FAR.zoom), Math.log(WORK.zoom), p)),

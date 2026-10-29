@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
+import { camAt, project } from "../camera";
 import { C, EV, S, TL, act, clamp01, rand } from "../theme";
 import { radialTex } from "./textures";
 import { shockwave } from "./layout";
@@ -59,9 +60,11 @@ const Tiles: React.FC<{ t: number }> = ({ t }) => {
   useLayoutEffect(() => {
     const m = ref.current!;
     const fadeFar = (d: number) => clamp01(1.25 - d / 13);
+    const cam = camAt(t);
     TILES.forEach((tile, i) => {
       tmpC.copy(BASE).lerp(BASE2, tile.v);
-      const h = tileHeat(tile.d, t) * (0.7 + 0.3 * tile.v);
+      const low = clamp01((project([tile.x, 0, tile.z], cam)[1] - 1420) / 140);
+      const h = tileHeat(tile.d, t) * (0.7 + 0.3 * tile.v) * (1 - 0.7 * low);
       tmpC.lerp(HOT, clamp01(h));
       tmpC.multiplyScalar(0.35 + 0.65 * fadeFar(tile.d));
       m.setColorAt(i, tmpC);
@@ -93,8 +96,9 @@ const Lamps: React.FC<{ t: number }> = ({ t }) => {
   return (
     <>
       {LAMPS.map((l, k) => {
-        const on = clamp01((t - EV.drop - 0.08 - k * 0.05) / 0.12);
-        const b = 0.45 + 0.75 * on;
+        const low = clamp01((project([l.x, 1.9, l.z], camAt(t))[1] - 1380) / 120);
+        const on = clamp01((t - EV.drop - 0.08 - k * 0.05) / 0.12) * (1 - low);
+        const b = (0.45 + 0.75 * on) * (1 - 0.55 * low);
         heads[k].color.set(C.cream).multiplyScalar(b);
         pools[k].opacity = 0.35 + 0.55 * on;
         return (
