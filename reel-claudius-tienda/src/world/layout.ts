@@ -32,8 +32,10 @@ export const PRODUCTS: Product[] = (() => {
 // the ones that fly away in E3 (front-most, well spread) and where they land on the plaza
 export const FLYERS = [12, 14, 16, 22, 24, 26, 3, 9];
 export const flyLand = (i: number): V3 => {
-  const a = -0.7 + (i / (FLYERS.length - 1)) * 1.4;
-  const r = 2.7 + rand(i + 50) * 0.5;
+  // to both sides of the front corner (never straight down the frame, into the bottom safe strip)
+  const side = i % 2 === 0 ? -1 : 1;
+  const a = side * (0.4 + (Math.floor(i / 2) / 4) * 0.45);
+  const r = 2.4 + rand(i + 50) * 0.2;
   return [Math.cos(Math.PI / 4 + a) * r, 0.1, Math.sin(Math.PI / 4 + a) * r];
 };
 // price tags on the front edge of each board, under some products

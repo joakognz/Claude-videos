@@ -220,7 +220,8 @@ export const SkipRing: React.FC<{ t: number }> = ({ t }) => {
   const p = clamp01((t - EV.skip) / 0.9);
   if (p <= 0 || p >= 1) return null;
   mat.opacity = (1 - p) * 0.9;
-  return <GroundRing c={[0, 0.03, 0]} r={0.6 + p * 6} w={0.12} mat={mat} />;
+  // stays clear of the bottom safe strip (front corner of the plaza)
+  return <GroundRing c={[0, 0.03, 0]} r={0.6 + EASE_OUT(p) * 2.0} w={0.12} mat={mat} />;
 };
 
 // ── E9: rails of light (limits) and the supervision lens ─────────────────
