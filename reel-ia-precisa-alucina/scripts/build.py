@@ -157,7 +157,7 @@ captions = {
     "E3": cap([("Y a menudo", wt(4, 6), None), ("no avisa", wt(4, 8), "o")], S["E4"] - 0.1,
               micro=[["NO LO SÉ → ∅", wt(4, 6)]]),
     "E4": cap([("7 de cada 10", wt(5, 0), "o"), ("se inventa", wt(5, 8), None)], S["E5"] - 0.1,
-              micro=[["72,6 % DE LOS", wt(5, 5)], ["NO ACIERTOS", wt(5, 7)]]),
+              micro=[["72,6 % DE LOS", wt(5, 5)], ["\u00a0NO ACIERTOS", wt(5, 7)]]),
     "E5": cap([("Otros", wt(6, 0), None), ("fallan", wt(6, 2), None), ("más", wt(6, 4), "o")], S["E6"] - 0.1,
               micro=[["FUENTE: ARTIFICIAL ANALYSIS", wt(7, 0)]]),
     "E6": cap([("Precisión", wt(8, 0), None), ("≠", wt(8, 1), None), ("fiabilidad", wt(8, 6), "o")], S["E7"] - 0.1,

@@ -49,7 +49,7 @@ export const EndCard: React.FC<{ t: number }> = ({ t }) => {
   const s2 = springAt(t, a + 0.55, 13, 150);
   return (
     <div style={{ position: "absolute", inset: 0, background: C.ink, opacity: black }}>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 620, display: "flex", justifyContent: "center", opacity: clamp01(s1 * 1.5), scale: String(0.7 + 0.3 * s1) }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 620, display: "flex", justifyContent: "center", opacity: clamp01(s1 * 1.5), scale: String((0.7 + 0.3 * s1) * (1 + 0.025 * Math.sin((t - a) * 2.4))) }}>
         <Logo size={340} />
       </div>
       <div style={{
