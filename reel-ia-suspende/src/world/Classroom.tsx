@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import * as THREE from "three";
 import { V3 } from "../camera";
-import { C, EV, TITLE, clamp01, rand } from "../theme";
+import { C, EV, TITLE, clamp01, lerp, rand } from "../theme";
 import {
-  BOARD, CASES, DESKS, FLOOR_Y, FRAME_PAD, FRAME_TOP, GATE, GATE_H, GATE_W, H, NOTE, STUDENT_DESK, WALL_H, caseAt, frameBright,
+  BOARD, CASES, CLOCK, DESKS, MOTES, FLOOR_Y, FRAME_PAD, FRAME_TOP, GATE, GATE_H, GATE_W, H, NOTE, STUDENT_DESK, WALL_H, caseAt, frameBright,
   frameDraw, gateGone, gateOpen, gateSign, noteIn,
 } from "./layout";
 import { Seg, useGlowMat } from "./prims";
@@ -248,6 +248,7 @@ const Desk: React.FC<{ p: V3; student?: boolean; t: number }> = ({ p, student, t
 // ── the lab frame (thin cream wireframe round the room) ───────────────────
 const LabFrame: React.FC<{ t: number }> = ({ t }) => {
   const mat = useGlowMat(C.cream, 1.2);
+  const spark = useGlowMat(C.cream, 2.2);
   const d = frameDraw(t);
   if (d <= 0) return null;
   mat.opacity = frameBright(t);
@@ -263,7 +264,70 @@ const LabFrame: React.FC<{ t: number }> = ({ t }) => {
     edges.push([[p[0], y1, p[2]], [q[0], y1, q[2]]]);
     edges.push([[p[0], y0, p[2]], [p[0], y1, p[2]]]);
   }
-  return <>{edges.map(([p, q], i) => <Seg key={i} a={p} b={q} w={0.03} p={clamp01(d * 1.6 - i * 0.05)} mat={mat} />)}</>;
+  // a spark of light running round the top of the frame
+  const ring: V3[] = c.map((p) => [p[0], y1, p[2]]);
+  const run = ((t - EV.frame) * 0.35) % 1;
+  const k = Math.floor(run * 4);
+  const f = run * 4 - k;
+  const pa = ring[k];
+  const pb = ring[(k + 1) % 4];
+  const sp: V3 = [lerp(pa[0], pb[0], f), y1, lerp(pa[2], pb[2], f)];
+  const sp2: V3 = [lerp(pa[0], pb[0], Math.max(0, f - 0.12)), y1, lerp(pa[2], pb[2], Math.max(0, f - 0.12))];
+  return (
+    <>
+      {edges.map(([p, q], i) => <Seg key={i} a={p} b={q} w={0.03} p={clamp01(d * 1.6 - i * 0.05)} mat={mat} />)}
+      {d >= 1 && f > 0.02 && <Seg a={sp2} b={sp} w={0.07} mat={spark} />}
+    </>
+  );
+};
+
+/** Exam clock on the left wall: the second hand sweeps the whole time. */
+const Clock: React.FC<{ t: number }> = ({ t }) => {
+  const face = useStd("#fff4ec", C.cream, 0.25);
+  const rim = useStd("#5b4d42");
+  const hand = useStd("#14110f");
+  const sec = useGlowMat(C.orange, 1.4);
+  const a = -t * 1.2;
+  const m = -t * 0.1;
+  return (
+    <group position={CLOCK} rotation={[0, Math.PI / 2, 0]}>
+      <mesh material={rim} rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[0.36, 0.36, 0.04, 32]} />
+      </mesh>
+      <mesh material={face} position={[0, 0, 0.025]}>
+        <circleGeometry args={[0.31, 32]} />
+      </mesh>
+      <mesh material={hand} position={[Math.sin(-m) * 0.09, Math.cos(-m) * 0.09, 0.035]} rotation={[0, 0, m]}>
+        <boxGeometry args={[0.03, 0.18, 0.01]} />
+      </mesh>
+      <mesh material={sec} position={[Math.sin(-a) * 0.13, Math.cos(-a) * 0.13, 0.04]} rotation={[0, 0, a]}>
+        <boxGeometry args={[0.015, 0.26, 0.01]} />
+      </mesh>
+    </group>
+  );
+};
+
+const Motes: React.FC<{ t: number }> = ({ t }) => {
+  const ref = React.useRef<THREE.InstancedMesh>(null);
+  const mat = useMemo(() => new THREE.MeshBasicMaterial({ color: new THREE.Color(C.orangeSoft).multiplyScalar(1.3), toneMapped: false, transparent: true, opacity: 0.75 }), []);
+  const tmp = useMemo(() => new THREE.Object3D(), []);
+  React.useLayoutEffect(() => {
+    const m = ref.current!;
+    MOTES.forEach((mo, i) => {
+      const y = ((mo.ph + t * mo.sp) % 1) * 3.4;
+      tmp.position.set(mo.x + Math.sin(t * 0.7 + i) * 0.25, FLOOR_Y + 0.2 + y, mo.z + Math.cos(t * 0.5 + i) * 0.25);
+      const s = mo.s * Math.sin(Math.PI * (y / 3.4));
+      tmp.scale.set(s, s, s);
+      tmp.updateMatrix();
+      m.setMatrixAt(i, tmp.matrix);
+    });
+    m.instanceMatrix.needsUpdate = true;
+  });
+  return (
+    <instancedMesh ref={ref} args={[undefined, undefined, MOTES.length]} material={mat} frustumCulled={false}>
+      <icosahedronGeometry args={[1, 0]} />
+    </instancedMesh>
+  );
 };
 
 // ── E11: real cases ──────────────────────────────────────────────────────
@@ -305,6 +369,8 @@ export const Classroom: React.FC<{ t: number }> = ({ t }) => (
     {DESKS.map((p, i) => <Desk key={i} p={p} t={t} student={p === STUDENT_DESK} />)}
     <LabFrame t={t} />
     <Cases t={t} />
+    <Clock t={t} />
+    <Motes t={t} />
   </>
 );
 

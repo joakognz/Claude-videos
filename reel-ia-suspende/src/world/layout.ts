@@ -1,5 +1,5 @@
 import { V3 } from "../camera";
-import { EASE, EASE_OUT, EV, S, TL, clamp01, lerp, springAt } from "../theme";
+import { EASE, EASE_OUT, EV, S, TL, clamp01, lerp, rand, springAt } from "../theme";
 
 // World coordinates (no local frame here): the classroom is a square in world axes, so it reads as a
 // diamond on screen. Its two back walls run along x = -H (upper left on screen) and z = -H (upper right).
@@ -24,12 +24,18 @@ export const BOARD: V3 = [-H + 0.09, FLOOR_Y + 1.6, 0.3]; // on the left back wa
 
 /** The Student: bob, lean towards the note while it reasons, a little hop when the sheet arrives. */
 export const studentAt = (t: number): { p: V3; lean: number; spin: number } => {
-  const bob = 0.07 * Math.sin(t * 1.6);
+  const bob = 0.14 * Math.sin(t * 1.9);
   const lean = EASE(clamp01((t - EV.turn) / 0.6)) * (1 - EASE(clamp01((t - S.E8) / 0.6)));
   const hop = 0.18 * Math.sin(Math.PI * clamp01((t - EV.give) / 0.5));
   // lean: move a touch towards the note (towards -z) and tilt
-  return { p: [STUDENT[0] - 0.1 * lean, STUDENT[1] + bob + hop, STUDENT[2] - 0.25 * lean], lean, spin: t * 0.6 };
+  return { p: [STUDENT[0] - 0.1 * lean, STUDENT[1] + bob + hop, STUDENT[2] - 0.25 * lean], lean, spin: t * 1.1 };
 };
+
+/** Dust motes drifting up through the room (world). */
+export const MOTES = Array.from({ length: 90 }, (_, i) => ({
+  x: (rand(i + 1) - 0.5) * 2 * H, z: (rand(i + 2) - 0.5) * 2 * H, ph: rand(i + 3), sp: 0.05 + rand(i + 4) * 0.08, s: 0.025 + rand(i + 5) * 0.035,
+}));
+export const CLOCK: V3 = [-H + 0.09, FLOOR_Y + 2.45, -2.0];
 
 /** Glow of the Student: steady, brighter when it reasons, dimmer while it fakes. */
 export const studentGlow = (t: number) => {

@@ -48,7 +48,7 @@ const Sheet: React.FC<{ t: number; cam: Cam }> = ({ t, cam }) => {
     }}>
       <div style={{
         position: "absolute", left: SH.x, top: SH.y, width: SH.w, height: SH.h, borderRadius: 14, background: C.cream,
-        boxShadow: "0 24px 60px rgba(0,0,0,0.6)", rotate: "-1.5deg",
+        boxShadow: "0 24px 60px rgba(0,0,0,0.6)", rotate: `${-1.5 + Math.sin(t * 0.9) * 1.2}deg`, translate: `0px ${Math.sin(t * 1.3) * 7}px`,
       }}>
         <div style={{ position: "absolute", left: 22, top: 18, fontFamily: MONO, fontWeight: 700, fontSize: 19, letterSpacing: 4, color: C.ink }}>QUÍMICA</div>
         <div style={{ position: "absolute", left: 22, top: 44, width: SH.w - 44, height: 2, background: "rgba(20,17,15,0.2)" }} />

@@ -19,7 +19,7 @@ const Crystal: React.FC<{ p: V3; glow: number; opacity: number; spin: number; ti
   shell.opacity = (0.55 + 0.25 * clamp01(glow)) * opacity;
   core.color.set(C.orangeSoft).multiplyScalar(0.5 + glow * 1.4);
   core.opacity = opacity;
-  halo.opacity = clamp01(0.2 + glow * 0.45) * opacity;
+  halo.opacity = clamp01(0.2 + glow * 0.45) * opacity * (0.85 + 0.15 * Math.sin(spin * 3));
   return (
     <group position={p} rotation={[0, 0, tilt]}>
       <mesh material={shell} scale={[0.58, 1.05, 0.58]} rotation={[0, spin, 0]}>
