@@ -1,0 +1,605 @@
+{
+ "fps": 30,
+ "durationInFrames": 1590,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 4.275,
+  "E3": 8.16,
+  "E4": 13.125,
+  "E5": 19.365,
+  "E6": 23.625,
+  "E7": 29.76,
+  "E8": 34.985,
+  "E9": 37.92,
+  "E10": 42.81,
+  "E11": 46.6,
+  "FIN": 50.8,
+  "END": 53.0
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Una IA dice haber",
+     "t": 1.44,
+     "hl": null
+    },
+    {
+     "text": "resuelto un",
+     "t": 1.675,
+     "hl": null,
+     "br": true
+    },
+    {
+     "text": "problema del Milenio",
+     "t": 2.83,
+     "hl": "o",
+     "br": true
+    }
+   ],
+   "start": 1.32,
+   "end": 4.175,
+   "micro": [
+    [
+     "ANUNCIO DE OPENAI · 8 SEP 2026",
+     0.36
+    ]
+   ],
+   "lines": 3,
+   "size": 76
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "Navier-Stokes:",
+     "t": 4.62,
+     "hl": "o"
+    },
+    {
+     "text": "las ecuaciones",
+     "t": 6.055,
+     "hl": null,
+     "br": true
+    },
+    {
+     "text": "de los fluidos",
+     "t": 7.325,
+     "hl": null
+    }
+   ],
+   "start": 4.5,
+   "end": 8.06,
+   "micro": [
+    [
+     "UNO DE LOS SIETE PROBLEMAS DEL MILENIO",
+     5.895
+    ]
+   ]
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "88 horas",
+     "t": 9.04,
+     "hl": "o"
+    },
+    {
+     "text": "10.000 agentes",
+     "t": 10.9,
+     "hl": null,
+     "br": true
+    }
+   ],
+   "start": 8.92,
+   "end": 13.025,
+   "micro": [
+    [
+     "SEGÚN OPENAI",
+     8.31
+    ]
+   ]
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "Un modelo la encontró;",
+     "t": 13.275,
+     "hl": null
+    },
+    {
+     "text": "Astra",
+     "t": 15.92,
+     "hl": "o",
+     "br": true
+    },
+    {
+     "text": "la pasó a Lean",
+     "t": 16.475,
+     "hl": null
+    }
+   ],
+   "start": 13.155,
+   "end": 19.265,
+   "micro": [
+    [
+     "COMPRUEBA CADA PASO",
+     17.78
+    ]
+   ],
+   "size": 76
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "El Clay",
+     "t": 20.26,
+     "hl": null
+    },
+    {
+     "text": "la revisará",
+     "t": 22.115,
+     "hl": null
+    },
+    {
+     "text": "sin prisa",
+     "t": 22.715,
+     "hl": "o",
+     "br": true
+    }
+   ],
+   "start": 20.14,
+   "end": 23.525,
+   "micro": [
+    [
+     "INSTITUTO CLAY",
+     19.775
+    ],
+    [
+     "· UN MILLÓN DE PREMIO",
+     21.095
+    ]
+   ]
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "El código",
+     "t": 26.81,
+     "hl": null
+    },
+    {
+     "text": "no coincide",
+     "t": 27.81,
+     "hl": "o"
+    }
+   ],
+   "start": 26.69,
+   "end": 29.66,
+   "micro": [
+    [
+     "ESTUDIO · OCTUBRE 2026",
+     23.875
+    ],
+    [
+     "· SIN REVISAR",
+     25.29
+    ]
+   ]
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "Verificado",
+     "t": 31.98,
+     "hl": "o"
+    },
+    {
+     "text": "no es lo que",
+     "t": 32.54,
+     "hl": null,
+     "br": true
+    },
+    {
+     "text": "se escribió",
+     "t": 34.09,
+     "hl": null
+    }
+   ],
+   "start": 31.86,
+   "end": 34.885,
+   "micro": [
+    [
+     "NO DICEN QUE ESTÉ MAL",
+     29.91
+    ]
+   ]
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "Una",
+     "t": 35.275,
+     "hl": null
+    },
+    {
+     "text": "afirmación",
+     "t": 35.395,
+     "hl": "o"
+    },
+    {
+     "text": "no un hecho",
+     "t": 36.335,
+     "hl": null,
+     "br": true
+    }
+   ],
+   "start": 35.155,
+   "end": 37.82,
+   "micro": [
+    [
+     "SIN CONFIRMAR",
+     37.0
+    ]
+   ]
+  },
+  "E9": {
+   "chunks": [
+    {
+     "text": "Hecho",
+     "t": 40.38,
+     "hl": "o"
+    },
+    {
+     "text": "no es lo mismo",
+     "t": 40.77,
+     "hl": null,
+     "br": true
+    },
+    {
+     "text": "que",
+     "t": 41.785,
+     "hl": null
+    },
+    {
+     "text": "bien",
+     "t": 42.16,
+     "hl": "o"
+    }
+   ],
+   "start": 40.26,
+   "end": 42.71,
+   "micro": [
+    [
+     "LA LECCIÓN",
+     38.07
+    ]
+   ]
+  },
+  "E10": {
+   "chunks": [
+    {
+     "text": "Comprueba",
+     "t": 42.96,
+     "hl": null
+    },
+    {
+     "text": "lo correcto",
+     "t": 44.16,
+     "hl": "o"
+    }
+   ],
+   "start": 42.84,
+   "end": 46.5,
+   "micro": [
+    [
+     "REVISIÓN HUMANA",
+     45.305
+    ]
+   ]
+  }
+ },
+ "cta": {
+  "comenta": 46.75,
+  "keyword": 47.125,
+  "revisa": 48.105,
+  "tuia": 49.95,
+  "sub": 48.61
+ },
+ "ev": {
+  "dolly": 4.0,
+  "flow": 4.52,
+  "clock0": 8.21,
+  "clock1": 10.25,
+  "swarm": 10.8,
+  "cubeOut": 13.075,
+  "scroll": 14.265,
+  "arch": 15.87,
+  "archEnd": 17.22,
+  "ticks": 17.78,
+  "tickStep": 0.13,
+  "vault": 19.415,
+  "swing": 21.98,
+  "scrolls": 23.675,
+  "shift": 27.76,
+  "leanOn": 31.88,
+  "lensE7": 32.54,
+  "dim": 35.035,
+  "seal": 35.445,
+  "hollow": 36.725,
+  "orb9": 37.97,
+  "badge": 40.33,
+  "slot": 42.11,
+  "scan": 42.86,
+  "fit": 44.11,
+  "fill": 45.255,
+  "dark": 46.6,
+  "typeStart": 46.825,
+  "typeStep": 0.075
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 1.6,
+   "type": "appear"
+  },
+  {
+   "t": 4.52,
+   "type": "swirl"
+  },
+  {
+   "t": 8.21,
+   "type": "swarm"
+  },
+  {
+   "t": 8.21,
+   "type": "tick"
+  },
+  {
+   "t": 8.3,
+   "type": "tick"
+  },
+  {
+   "t": 8.39,
+   "type": "tick"
+  },
+  {
+   "t": 8.48,
+   "type": "tick"
+  },
+  {
+   "t": 8.57,
+   "type": "tick"
+  },
+  {
+   "t": 8.66,
+   "type": "tick"
+  },
+  {
+   "t": 8.75,
+   "type": "tick"
+  },
+  {
+   "t": 8.84,
+   "type": "tick"
+  },
+  {
+   "t": 8.93,
+   "type": "tick"
+  },
+  {
+   "t": 9.02,
+   "type": "tick"
+  },
+  {
+   "t": 9.11,
+   "type": "tick"
+  },
+  {
+   "t": 9.2,
+   "type": "tick"
+  },
+  {
+   "t": 9.29,
+   "type": "tick"
+  },
+  {
+   "t": 9.38,
+   "type": "tick"
+  },
+  {
+   "t": 9.47,
+   "type": "tick"
+  },
+  {
+   "t": 9.56,
+   "type": "tick"
+  },
+  {
+   "t": 9.65,
+   "type": "tick"
+  },
+  {
+   "t": 9.74,
+   "type": "tick"
+  },
+  {
+   "t": 9.83,
+   "type": "tick"
+  },
+  {
+   "t": 9.92,
+   "type": "tick"
+  },
+  {
+   "t": 10.01,
+   "type": "tick"
+  },
+  {
+   "t": 10.1,
+   "type": "tick"
+  },
+  {
+   "t": 13.275,
+   "type": "rise"
+  },
+  {
+   "t": 14.265,
+   "type": "appear"
+  },
+  {
+   "t": 15.87,
+   "type": "paper"
+  },
+  {
+   "t": 17.78,
+   "type": "click"
+  },
+  {
+   "t": 17.91,
+   "type": "click"
+  },
+  {
+   "t": 18.04,
+   "type": "click"
+  },
+  {
+   "t": 18.17,
+   "type": "click"
+  },
+  {
+   "t": 18.3,
+   "type": "click"
+  },
+  {
+   "t": 18.43,
+   "type": "click"
+  },
+  {
+   "t": 18.56,
+   "type": "click"
+  },
+  {
+   "t": 18.69,
+   "type": "click"
+  },
+  {
+   "t": 19.415,
+   "type": "rise"
+  },
+  {
+   "t": 22.58,
+   "type": "pend"
+  },
+  {
+   "t": 23.83,
+   "type": "pend"
+  },
+  {
+   "t": 25.08,
+   "type": "pend"
+  },
+  {
+   "t": 26.33,
+   "type": "pend"
+  },
+  {
+   "t": 23.675,
+   "type": "rise"
+  },
+  {
+   "t": 27.76,
+   "type": "slip"
+  },
+  {
+   "t": 31.88,
+   "type": "glow"
+  },
+  {
+   "t": 32.54,
+   "type": "hum"
+  },
+  {
+   "t": 35.035,
+   "type": "down"
+  },
+  {
+   "t": 35.645,
+   "type": "thud"
+  },
+  {
+   "t": 36.725,
+   "type": "hollow"
+  },
+  {
+   "t": 40.43,
+   "type": "ding"
+  },
+  {
+   "t": 42.11,
+   "type": "empty"
+  },
+  {
+   "t": 42.86,
+   "type": "hum"
+  },
+  {
+   "t": 44.36,
+   "type": "fit"
+  },
+  {
+   "t": 45.555,
+   "type": "fit"
+  },
+  {
+   "t": 45.605,
+   "type": "ding"
+  },
+  {
+   "t": 46.5,
+   "type": "down"
+  },
+  {
+   "t": 46.825,
+   "type": "key"
+  },
+  {
+   "t": 46.9,
+   "type": "key"
+  },
+  {
+   "t": 46.975,
+   "type": "key"
+  },
+  {
+   "t": 47.05,
+   "type": "key"
+  },
+  {
+   "t": 47.125,
+   "type": "key"
+  },
+  {
+   "t": 47.2,
+   "type": "key"
+  },
+  {
+   "t": 47.275,
+   "type": "key"
+  },
+  {
+   "t": 47.35,
+   "type": "key"
+  },
+  {
+   "t": 47.425,
+   "type": "key"
+  },
+  {
+   "t": 51.1,
+   "type": "appear"
+  }
+ ]
+}
