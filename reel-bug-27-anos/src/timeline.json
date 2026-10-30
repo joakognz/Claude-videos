@@ -1,0 +1,628 @@
+{
+ "fps": 30,
+ "durationInFrames": 1410,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 5.345,
+  "E3": 7.79,
+  "E4": 13.37,
+  "E5": 16.795,
+  "E6": 20.305,
+  "E7": 24.66,
+  "E8": 30.705,
+  "E9": 36.58,
+  "E10": 41.37,
+  "E11": 45.04,
+  "END": 47.0
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Un fallo de",
+     "t": 2.53,
+     "hl": null
+    },
+    {
+     "text": "27 años",
+     "t": 2.92,
+     "hl": "o"
+    }
+   ],
+   "start": 2.41,
+   "end": 5.245,
+   "micro": [
+    [
+     "ANTHROPIC · 7 ABR 2026",
+     0.36
+    ]
+   ]
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "Famoso por su",
+     "t": 6.05,
+     "hl": null
+    },
+    {
+     "text": "seguridad",
+     "t": 6.99,
+     "hl": "o"
+    }
+   ],
+   "start": 5.93,
+   "end": 7.69,
+   "micro": [
+    [
+     "SISTEMA OPERATIVO",
+     5.63
+    ]
+   ]
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "El propio proyecto",
+     "t": 7.94,
+     "hl": null
+    },
+    {
+     "text": "lo confirma",
+     "t": 8.685,
+     "hl": "o"
+    }
+   ],
+   "start": 7.82,
+   "end": 13.27,
+   "micro": [
+    [
+     "CÓDIGO PÚBLICO · 20 MAR 2026",
+     10.215
+    ]
+   ]
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "Un paquete",
+     "t": 13.65,
+     "hl": null
+    },
+    {
+     "text": "mal formado",
+     "t": 14.32,
+     "hl": null
+    },
+    {
+     "text": "lo tumbaba",
+     "t": 15.53,
+     "hl": "o"
+    }
+   ],
+   "start": 13.53,
+   "end": 16.695,
+   "micro": [
+    [
+     "RED · TCP",
+     14.105
+    ]
+   ]
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "Una",
+     "t": 18.21,
+     "hl": null
+    },
+    {
+     "text": "caída",
+     "t": 18.36,
+     "hl": "o"
+    },
+    {
+     "text": ", no una entrada",
+     "t": 18.905,
+     "hl": null
+    }
+   ],
+   "start": 18.09,
+   "end": 20.205,
+   "micro": [
+    [
+     "CORRECCIÓN DE FIABILIDAD",
+     18.36
+    ],
+    [
+     "· SIN CVE",
+     19.105
+    ]
+   ]
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "Los años,",
+     "t": 20.455,
+     "hl": null
+    },
+    {
+     "text": "según Anthropic",
+     "t": 22.01,
+     "hl": "o"
+    }
+   ],
+   "start": 20.335,
+   "end": 24.56,
+   "micro": [
+    [
+     "PENDIENTE DE VERIFICAR",
+     23.035
+    ]
+   ]
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "Uno sí.",
+     "t": 28.59,
+     "hl": null
+    },
+    {
+     "text": "El otro",
+     "t": 29.705,
+     "hl": null
+    },
+    {
+     "text": "no",
+     "t": 30.325,
+     "hl": "o"
+    }
+   ],
+   "start": 28.47,
+   "end": 30.605,
+   "micro": [
+    [
+     "LABORATORIO · ABR 2026",
+     24.905
+    ],
+    [
+     "· CASO YA CONOCIDO",
+     26.225
+    ]
+   ]
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "Encuentra",
+     "t": 31.0,
+     "hl": null
+    },
+    {
+     "text": "fallos",
+     "t": 31.8,
+     "hl": null
+    },
+    {
+     "text": "que nadie",
+     "t": 32.19,
+     "hl": null
+    },
+    {
+     "text": "veía",
+     "t": 32.945,
+     "hl": "o"
+    }
+   ],
+   "start": 30.88,
+   "end": 33.5
+  },
+  "E8B": {
+   "chunks": [
+    {
+     "text": "La",
+     "t": 33.6,
+     "hl": null
+    },
+    {
+     "text": "gravedad",
+     "t": 34.165,
+     "hl": "o"
+    },
+    {
+     "text": "la valora",
+     "t": 34.61,
+     "hl": null
+    },
+    {
+     "text": "una persona",
+     "t": 35.375,
+     "hl": null
+    }
+   ],
+   "start": 33.48,
+   "end": 36.48,
+   "micro": [
+    [
+     "DETECTAR ≠ VALORAR",
+     34.04
+    ]
+   ]
+  },
+  "E9": {
+   "chunks": [
+    {
+     "text": "Segunda revisión,",
+     "t": 38.485,
+     "hl": null
+    },
+    {
+     "text": "decisión humana",
+     "t": 40.48,
+     "hl": "o"
+    }
+   ],
+   "start": 38.365,
+   "end": 41.27,
+   "micro": [
+    [
+     "LA LECCIÓN",
+     36.73
+    ]
+   ]
+  },
+  "E10": {
+   "chunks": [
+    {
+     "text": "Revisa",
+     "t": 42.77,
+     "hl": null
+    },
+    {
+     "text": "tu software",
+     "t": 44.1,
+     "hl": "o"
+    }
+   ],
+   "start": 42.65,
+   "end": 45.14,
+   "micro": [
+    [
+     "COMENTA LA PALABRA",
+     41.52
+    ]
+   ]
+  }
+ },
+ "cta": {
+  "comenta": 41.52,
+  "keyword": 41.865
+ },
+ "ev": {
+  "dolly": 4.0,
+  "lupa": 1.6,
+  "layers": 5.495,
+  "sign": 5.495,
+  "logIn": 7.84,
+  "underline1": 9.395,
+  "stamp": 10.215,
+  "underline2": 11.77,
+  "logOut": 13.32,
+  "packet": 13.47,
+  "hit": 15.58,
+  "tagFall": 18.36,
+  "tagEntry": 19.105,
+  "restore": 20.405,
+  "notches": 20.545,
+  "notchStep": 0.025,
+  "doubt": 22.985,
+  "orbA": 24.81,
+  "found": 28.59,
+  "orbB": 28.86,
+  "missed": 30.325,
+  "cracks": 31.75,
+  "crackStep": 0.17,
+  "balance": 33.55,
+  "morph": 36.63,
+  "scan": 37.785,
+  "findings": 38.485,
+  "findStep": 0.3,
+  "review": 39.765,
+  "reviewStep": 0.3,
+  "dark": 41.42,
+  "typeStart": 41.615,
+  "typeStep": 0.08
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 1.6,
+   "type": "appear"
+  },
+  {
+   "t": 5.495,
+   "type": "chime"
+  },
+  {
+   "t": 5.845,
+   "type": "chime"
+  },
+  {
+   "t": 6.195,
+   "type": "chime"
+  },
+  {
+   "t": 5.695,
+   "type": "blip"
+  },
+  {
+   "t": 7.84,
+   "type": "swish"
+  },
+  {
+   "t": 9.395,
+   "type": "blip"
+  },
+  {
+   "t": 10.395,
+   "type": "stamp"
+  },
+  {
+   "t": 11.77,
+   "type": "blip"
+  },
+  {
+   "t": 13.12,
+   "type": "swish"
+  },
+  {
+   "t": 13.47,
+   "type": "buzz"
+  },
+  {
+   "t": 15.58,
+   "type": "power"
+  },
+  {
+   "t": 18.36,
+   "type": "blip"
+  },
+  {
+   "t": 19.105,
+   "type": "pop"
+  },
+  {
+   "t": 20.405,
+   "type": "appear"
+  },
+  {
+   "t": 20.545,
+   "type": "tick"
+  },
+  {
+   "t": 20.57,
+   "type": "tick"
+  },
+  {
+   "t": 20.595,
+   "type": "tick"
+  },
+  {
+   "t": 20.62,
+   "type": "tick"
+  },
+  {
+   "t": 20.645,
+   "type": "tick"
+  },
+  {
+   "t": 20.67,
+   "type": "tick"
+  },
+  {
+   "t": 20.695,
+   "type": "tick"
+  },
+  {
+   "t": 20.72,
+   "type": "tick"
+  },
+  {
+   "t": 20.745,
+   "type": "tick"
+  },
+  {
+   "t": 20.77,
+   "type": "tick"
+  },
+  {
+   "t": 20.795,
+   "type": "tick"
+  },
+  {
+   "t": 20.82,
+   "type": "tick"
+  },
+  {
+   "t": 20.845,
+   "type": "tick"
+  },
+  {
+   "t": 20.87,
+   "type": "tick"
+  },
+  {
+   "t": 20.895,
+   "type": "tick"
+  },
+  {
+   "t": 20.92,
+   "type": "tick"
+  },
+  {
+   "t": 20.945,
+   "type": "tick"
+  },
+  {
+   "t": 20.97,
+   "type": "tick"
+  },
+  {
+   "t": 20.995,
+   "type": "tick"
+  },
+  {
+   "t": 21.02,
+   "type": "tick"
+  },
+  {
+   "t": 21.045,
+   "type": "tick"
+  },
+  {
+   "t": 21.07,
+   "type": "tick"
+  },
+  {
+   "t": 21.095,
+   "type": "tick"
+  },
+  {
+   "t": 21.12,
+   "type": "tick"
+  },
+  {
+   "t": 21.145,
+   "type": "tick"
+  },
+  {
+   "t": 21.17,
+   "type": "tick"
+  },
+  {
+   "t": 21.195,
+   "type": "tick"
+  },
+  {
+   "t": 22.985,
+   "type": "pop"
+  },
+  {
+   "t": 25.01,
+   "type": "scan"
+  },
+  {
+   "t": 28.09,
+   "type": "scan"
+  },
+  {
+   "t": 28.59,
+   "type": "chime"
+  },
+  {
+   "t": 28.86,
+   "type": "scan"
+  },
+  {
+   "t": 30.025,
+   "type": "scan"
+  },
+  {
+   "t": 31.75,
+   "type": "chime"
+  },
+  {
+   "t": 31.92,
+   "type": "chime"
+  },
+  {
+   "t": 32.09,
+   "type": "chime"
+  },
+  {
+   "t": 32.26,
+   "type": "chime"
+  },
+  {
+   "t": 33.55,
+   "type": "scan"
+  },
+  {
+   "t": 36.63,
+   "type": "sink"
+  },
+  {
+   "t": 37.785,
+   "type": "scan"
+  },
+  {
+   "t": 38.485,
+   "type": "blip"
+  },
+  {
+   "t": 38.785,
+   "type": "blip"
+  },
+  {
+   "t": 39.085,
+   "type": "blip"
+  },
+  {
+   "t": 39.765,
+   "type": "pop"
+  },
+  {
+   "t": 40.065,
+   "type": "pop"
+  },
+  {
+   "t": 40.365,
+   "type": "pop"
+  },
+  {
+   "t": 41.615,
+   "type": "key"
+  },
+  {
+   "t": 41.695,
+   "type": "key"
+  },
+  {
+   "t": 41.775,
+   "type": "key"
+  },
+  {
+   "t": 41.855,
+   "type": "key"
+  },
+  {
+   "t": 41.935,
+   "type": "key"
+  },
+  {
+   "t": 42.015,
+   "type": "key"
+  },
+  {
+   "t": 42.095,
+   "type": "key"
+  },
+  {
+   "t": 42.175,
+   "type": "key"
+  },
+  {
+   "t": 42.255,
+   "type": "key"
+  },
+  {
+   "t": 45.34,
+   "type": "appear"
+  }
+ ]
+}
