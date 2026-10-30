@@ -1,0 +1,45 @@
+{
+  "name": "reel-ia-suspende",
+  "version": "1.0.0",
+  "description": "Reel AIgencyx Labs: La IA que suspendió a propósito",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/three": "4.0.539",
+    "@react-three/fiber": "9.4.2",
+    "@react-three/postprocessing": "3.0.4",
+    "postprocessing": "6.38.0",
+    "three": "0.181.2",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.539",
+    "@types/react": "19.2.7",
+    "@types/three": "0.181.0",
+    "@types/web": "0.0.166",
+    "@fontsource/barlow-condensed": "5.2.6",
+    "@fontsource/jetbrains-mono": "5.2.8",
+    "@fontsource/inter": "5.2.8",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}

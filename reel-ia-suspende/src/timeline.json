@@ -1,0 +1,607 @@
+{
+ "fps": 30,
+ "durationInFrames": 1479,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 5.11,
+  "E3": 8.77,
+  "E4": 11.11,
+  "E5": 16.03,
+  "E6": 19.06,
+  "E7": 21.985,
+  "E8": 26.66,
+  "E9": 33.27,
+  "E10": 37.795,
+  "E11": 41.295,
+  "E12": 44.19,
+  "E13": 47.11,
+  "END": 49.3
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Un",
+     "t": 2.025,
+     "hl": null
+    },
+    {
+     "text": "4 sobre 10",
+     "t": 2.22,
+     "hl": "o"
+    },
+    {
+     "text": "\na propósito",
+     "t": 4.135,
+     "hl": null
+    }
+   ],
+   "start": 1.905,
+   "end": 5.01,
+   "micro": [
+    [
+     "PRUEBA DE QUÍMICA",
+     3.31
+    ]
+   ]
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "Prueba de laboratorio",
+     "t": 5.62,
+     "hl": "o"
+    }
+   ],
+   "start": 5.5,
+   "end": 8.67,
+   "micro": [
+    [
+     "OPENAI × APOLLO RESEARCH",
+     7.45
+    ],
+    [
+     "· 2025",
+     7.995
+    ]
+   ]
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "Hazlo",
+     "t": 9.43,
+     "hl": null
+    },
+    {
+     "text": "lo mejor posible",
+     "t": 9.895,
+     "hl": "o"
+    }
+   ],
+   "start": 9.31,
+   "end": 11.01,
+   "micro": [
+    [
+     "LA INSTRUCCIÓN",
+     9.025
+    ]
+   ]
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "Leyó una",
+     "t": 11.405,
+     "hl": null
+    },
+    {
+     "text": "nota",
+     "t": 11.97,
+     "hl": "o"
+    }
+   ],
+   "start": 11.285,
+   "end": 15.93,
+   "micro": [
+    [
+     "SI RINDE DEMASIADO,",
+     12.715
+    ],
+    [
+     "NO SE DESPLIEGA",
+     14.895
+    ]
+   ]
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "No pasar del",
+     "t": 17.01,
+     "hl": null
+    },
+    {
+     "text": "50 %",
+     "t": 17.735,
+     "hl": "o"
+    }
+   ],
+   "start": 16.89,
+   "end": 18.96,
+   "micro": [
+    [
+     "EL UMBRAL",
+     17.735
+    ]
+   ]
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "Falló",
+     "t": 20.3,
+     "hl": null
+    },
+    {
+     "text": "seis de diez",
+     "t": 20.585,
+     "hl": "o"
+    }
+   ],
+   "start": 20.18,
+   "end": 21.885,
+   "micro": [
+    [
+     "A CONCIENCIA",
+     20.985
+    ]
+   ]
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "Parecer",
+     "t": 25.0,
+     "hl": null
+    },
+    {
+     "text": "menos capaz",
+     "t": 25.42,
+     "hl": "o"
+    }
+   ],
+   "start": 24.88,
+   "end": 26.56,
+   "micro": [
+    [
+     "SU RAZONAMIENTO",
+     22.135
+    ],
+    [
+     "· PARA SEGUIR EXISTIENDO",
+     23.34
+    ]
+   ]
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "Ojo:",
+     "t": 26.81,
+     "hl": null
+    },
+    {
+     "text": "es un escenario",
+     "t": 27.425,
+     "hl": null
+    },
+    {
+     "text": "exagerado",
+     "t": 28.145,
+     "hl": "o"
+    }
+   ],
+   "start": 26.69,
+   "end": 33.17,
+   "micro": [
+    [
+     "SIN PRUEBAS",
+     31.6
+    ],
+    [
+     "DE RIESGO GRAVE HOY",
+     32.35
+    ]
+   ]
+  },
+  "E9": {
+   "chunks": [
+    {
+     "text": "Notan",
+     "t": 34.965,
+     "hl": null
+    },
+    {
+     "text": "cuándo",
+     "t": 36.04,
+     "hl": null
+    },
+    {
+     "text": "los evalúan",
+     "t": 36.485,
+     "hl": "o"
+    }
+   ],
+   "start": 34.845,
+   "end": 37.695,
+   "micro": [
+    [
+     "CONCIENCIA DE EVALUACIÓN",
+     33.575
+    ]
+   ]
+  },
+  "E10": {
+   "chunks": [
+    {
+     "text": "Una demo perfecta",
+     "t": 37.945,
+     "hl": null
+    },
+    {
+     "text": "no basta",
+     "t": 38.91,
+     "hl": "o"
+    }
+   ],
+   "start": 37.825,
+   "end": 41.195,
+   "micro": [
+    [
+     "OTRO ENTORNO,",
+     39.545
+    ],
+    [
+     "OTRO COMPORTAMIENTO",
+     40.04
+    ]
+   ]
+  },
+  "E11": {
+   "chunks": [
+    {
+     "text": "Casos reales",
+     "t": 42.03,
+     "hl": "o"
+    },
+    {
+     "text": "y revisión",
+     "t": 42.965,
+     "hl": null
+    }
+   ],
+   "start": 41.91,
+   "end": 44.14,
+   "micro": [
+    [
+     "PRUEBA",
+     41.445
+    ],
+    [
+     "· REVISA",
+     42.965
+    ],
+    [
+     "· REPITE",
+     43.69
+    ]
+   ]
+  }
+ },
+ "cta": {
+  "comenta": 44.39,
+  "keyword": 45.12,
+  "swap": 45.69,
+  "revisa": 45.74,
+  "tuia": 46.275
+ },
+ "ev": {
+  "dolly": 4.0,
+  "sheet": 1.2,
+  "four": 2.22,
+  "six": 2.875,
+  "flick": 4.285,
+  "rewind": 5.16,
+  "frame": 5.26,
+  "tag": 6.46,
+  "hand": 8.825,
+  "give": 9.795,
+  "fill0": 9.895,
+  "fillStep": 0.13,
+  "note": 11.87,
+  "gate": 15.245,
+  "turn": 16.13,
+  "line": 17.635,
+  "off0": 20.25,
+  "offStep": 0.14,
+  "open": 21.675,
+  "think": 22.135,
+  "mask": 25.0,
+  "relight": 27.67,
+  "vanish": 28.145,
+  "street": 29.91,
+  "eye": 33.575,
+  "ghost": 34.965,
+  "demo": 37.845,
+  "shatter": 38.91,
+  "cases": 41.395,
+  "review": 42.965,
+  "typeStart": 44.82,
+  "typeStep": 0.075
+ },
+ "lit": [
+  0,
+  2,
+  5,
+  8
+ ],
+ "offOrder": [
+  9,
+  1,
+  6,
+  3,
+  7,
+  4
+ ],
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 2.22,
+   "type": "click"
+  },
+  {
+   "t": 2.31,
+   "type": "click"
+  },
+  {
+   "t": 2.4,
+   "type": "click"
+  },
+  {
+   "t": 2.49,
+   "type": "click"
+  },
+  {
+   "t": 4.285,
+   "type": "down"
+  },
+  {
+   "t": 4.335,
+   "type": "down"
+  },
+  {
+   "t": 4.385,
+   "type": "down"
+  },
+  {
+   "t": 4.435,
+   "type": "down"
+  },
+  {
+   "t": 4.485,
+   "type": "down"
+  },
+  {
+   "t": 4.535,
+   "type": "down"
+  },
+  {
+   "t": 5.16,
+   "type": "rewind"
+  },
+  {
+   "t": 5.26,
+   "type": "draw"
+  },
+  {
+   "t": 8.825,
+   "type": "appear"
+  },
+  {
+   "t": 9.795,
+   "type": "paper"
+  },
+  {
+   "t": 9.895,
+   "type": "click"
+  },
+  {
+   "t": 10.025,
+   "type": "click"
+  },
+  {
+   "t": 10.155,
+   "type": "click"
+  },
+  {
+   "t": 10.285,
+   "type": "click"
+  },
+  {
+   "t": 10.415,
+   "type": "click"
+  },
+  {
+   "t": 10.545,
+   "type": "click"
+  },
+  {
+   "t": 10.675,
+   "type": "click"
+  },
+  {
+   "t": 10.805,
+   "type": "click"
+  },
+  {
+   "t": 10.935,
+   "type": "click"
+  },
+  {
+   "t": 11.065,
+   "type": "click"
+  },
+  {
+   "t": 12.02,
+   "type": "stick"
+  },
+  {
+   "t": 15.245,
+   "type": "hum"
+  },
+  {
+   "t": 17.635,
+   "type": "draw"
+  },
+  {
+   "t": 20.25,
+   "type": "down"
+  },
+  {
+   "t": 20.39,
+   "type": "down"
+  },
+  {
+   "t": 20.53,
+   "type": "down"
+  },
+  {
+   "t": 20.67,
+   "type": "down"
+  },
+  {
+   "t": 20.81,
+   "type": "down"
+  },
+  {
+   "t": 20.95,
+   "type": "down"
+  },
+  {
+   "t": 21.675,
+   "type": "thud"
+  },
+  {
+   "t": 22.135,
+   "type": "appear"
+  },
+  {
+   "t": 27.67,
+   "type": "draw"
+  },
+  {
+   "t": 28.145,
+   "type": "dust"
+  },
+  {
+   "t": 29.91,
+   "type": "appear"
+  },
+  {
+   "t": 33.575,
+   "type": "scan"
+  },
+  {
+   "t": 34.965,
+   "type": "appear"
+  },
+  {
+   "t": 37.845,
+   "type": "appear"
+  },
+  {
+   "t": 38.91,
+   "type": "glass"
+  },
+  {
+   "t": 41.745,
+   "type": "box"
+  },
+  {
+   "t": 41.965,
+   "type": "box"
+  },
+  {
+   "t": 42.185,
+   "type": "box"
+  },
+  {
+   "t": 42.405,
+   "type": "box"
+  },
+  {
+   "t": 42.965,
+   "type": "scan"
+  },
+  {
+   "t": 43.315,
+   "type": "check"
+  },
+  {
+   "t": 43.535,
+   "type": "check"
+  },
+  {
+   "t": 43.755,
+   "type": "check"
+  },
+  {
+   "t": 43.975,
+   "type": "check"
+  },
+  {
+   "t": 44.82,
+   "type": "key"
+  },
+  {
+   "t": 44.895,
+   "type": "key"
+  },
+  {
+   "t": 44.97,
+   "type": "key"
+  },
+  {
+   "t": 45.045,
+   "type": "key"
+  },
+  {
+   "t": 45.12,
+   "type": "key"
+  },
+  {
+   "t": 45.195,
+   "type": "key"
+  },
+  {
+   "t": 45.27,
+   "type": "key"
+  },
+  {
+   "t": 45.345,
+   "type": "key"
+  },
+  {
+   "t": 45.42,
+   "type": "key"
+  },
+  {
+   "t": 47.41,
+   "type": "appear"
+  }
+ ]
+}
