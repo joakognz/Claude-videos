@@ -100,8 +100,8 @@ captions = {
               micro=[["NO DICEN QUE ESTÉ MAL", wt(12, 0)]]),
     "E8": cap([("Una", wt(14, 1), None), ("afirmación", wt(14, 2), "o"), ("no un hecho", wt(15, 0), None, True)], S["E9"] - 0.1,
               micro=[["SIN CONFIRMAR", wt(15, 3)]]),
-    "E9": cap([("Hecho", wt(17, 6), "o"), ("no es lo mismo", wt(17, 7), None, True), ("que", wt(17, 9), None), ("bien", wt(17, 11), "o")],
-              S["E10"] - 0.1, micro=[["LA LECCIÓN", wt(16, 0)]]),
+    "E9": cap([("Hecho", wt(17, 6), "o"), ("no es lo mismo", wt(17, 7), None, True), ("que", wt(17, 9), None, True), ("bien", wt(17, 11), "o")],
+              S["E10"] - 0.1, micro=[["LA LECCIÓN", wt(16, 0)]], lines=3),
     "E10": cap([("Comprueba", wt(18, 0), None), ("lo correcto", wt(18, 4), "o")], S["E11"] - 0.1,
                micro=[["REVISIÓN HUMANA", wt(19, 2)]]),
 }

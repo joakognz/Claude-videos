@@ -258,7 +258,8 @@
     {
      "text": "que",
      "t": 41.785,
-     "hl": null
+     "hl": null,
+     "br": true
     },
     {
      "text": "bien",
@@ -273,7 +274,8 @@
      "LA LECCIÓN",
      38.07
     ]
-   ]
+   ],
+   "lines": 3
   },
   "E10": {
    "chunks": [
