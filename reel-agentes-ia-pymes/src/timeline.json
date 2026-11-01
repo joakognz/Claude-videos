@@ -1,0 +1,671 @@
+{
+ "fps": 30,
+ "durationInFrames": 1580,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 4.3,
+  "E3": 7.75,
+  "E4": 13.58,
+  "E5": 16.8,
+  "E6": 23.95,
+  "E7": 27.645,
+  "E8": 31.075,
+  "E9": 34.64,
+  "E9B": 36.79,
+  "E10": 42.545,
+  "E11": 46.87,
+  "E12": 50.605,
+  "END": 52.667
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Agentes",
+     "t": 0.57,
+     "hl": null
+    },
+    {
+     "text": "de IA",
+     "t": 0.98,
+     "hl": null
+    },
+    {
+     "text": "en",
+     "t": 2.335,
+     "hl": null
+    },
+    {
+     "text": "tu negocio",
+     "t": 3.47,
+     "hl": "o"
+    }
+   ],
+   "start": 0.45,
+   "end": 4.2,
+   "micro": [
+    [
+     "YA ESTÁN LLEGANDO",
+     1.235
+    ]
+   ]
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "No solo",
+     "t": 4.45,
+     "hl": null
+    },
+    {
+     "text": "responden.",
+     "t": 4.895,
+     "hl": null
+    },
+    {
+     "text": "Ejecutan.",
+     "t": 6.295,
+     "hl": "o"
+    }
+   ],
+   "start": 4.33,
+   "end": 7.65
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "Un asistente",
+     "t": 9.86,
+     "hl": null
+    },
+    {
+     "text": "busca",
+     "t": 10.7,
+     "hl": null
+    },
+    {
+     "text": "sustituto",
+     "t": 11.02,
+     "hl": "o"
+    }
+   ],
+   "start": 9.74,
+   "end": 13.48,
+   "micro": [
+    [
+     "HOMEBASE",
+     8.74
+    ],
+    [
+     "· 20 OCT 2026",
+     8.04
+    ],
+    [
+     "· SEGÚN LA EMPRESA",
+     9.86
+    ]
+   ]
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "Avisa de",
+     "t": 13.775,
+     "hl": null
+    },
+    {
+     "text": "errores",
+     "t": 14.26,
+     "hl": "o"
+    },
+    {
+     "text": "en fichajes",
+     "t": 14.715,
+     "hl": null
+    }
+   ],
+   "start": 13.655,
+   "end": 16.7,
+   "micro": [
+    [
+     "ANTES DE LA NÓMINA",
+     15.56
+    ]
+   ]
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "Una semana",
+     "t": 16.95,
+     "hl": null
+    },
+    {
+     "text": "después",
+     "t": 17.45,
+     "hl": "o"
+    }
+   ],
+   "start": 16.83,
+   "end": 19.94
+  },
+  "E5B": {
+   "chunks": [
+    {
+     "text": "Facturas vencidas:",
+     "t": 20.64,
+     "hl": null
+    },
+    {
+     "text": "prepara",
+     "t": 21.97,
+     "hl": null
+    },
+    {
+     "text": "recordatorios",
+     "t": 22.33,
+     "hl": "o"
+    }
+   ],
+   "start": 20.52,
+   "end": 23.85,
+   "micro": [
+    [
+     "INTUIT",
+     18.145
+    ],
+    [
+     "· 27 OCT 2026",
+     18.565
+    ],
+    [
+     "· SEGÚN LA EMPRESA",
+     19.125
+    ]
+   ]
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "Ojo:",
+     "t": 24.1,
+     "hl": null
+    },
+    {
+     "text": "lo cuentan",
+     "t": 25.19,
+     "hl": null
+    },
+    {
+     "text": "las propias empresas",
+     "t": 25.63,
+     "hl": "o"
+    }
+   ],
+   "start": 23.98,
+   "end": 27.545
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "Varias",
+     "t": 27.795,
+     "hl": null
+    },
+    {
+     "text": "siguen",
+     "t": 28.67,
+     "hl": null
+    },
+    {
+     "text": "en pruebas",
+     "t": 28.895,
+     "hl": "o"
+    }
+   ],
+   "start": 27.675,
+   "end": 30.975
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "La última",
+     "t": 32.34,
+     "hl": null
+    },
+    {
+     "text": "palabra:",
+     "t": 33.34,
+     "hl": null
+    },
+    {
+     "text": "una persona",
+     "t": 33.7,
+     "hl": "o"
+    }
+   ],
+   "start": 32.22,
+   "end": 34.54
+  },
+  "E9": {
+   "chunks": [
+    {
+     "text": "La",
+     "t": 34.79,
+     "hl": null
+    },
+    {
+     "text": "lección",
+     "t": 34.9,
+     "hl": "o"
+    },
+    {
+     "text": "es clara",
+     "t": 35.93,
+     "hl": null
+    }
+   ],
+   "start": 34.67,
+   "end": 36.69
+  },
+  "E9B": {
+   "chunks": [
+    {
+     "text": "Automatiza",
+     "t": 36.94,
+     "hl": null
+    },
+    {
+     "text": "lo",
+     "t": 37.565,
+     "hl": null
+    },
+    {
+     "text": "repetitivo",
+     "t": 37.695,
+     "hl": "o"
+    }
+   ],
+   "start": 36.82,
+   "end": 42.445,
+   "sub": [
+    [
+     "con reglas claras:",
+     38.355
+    ],
+    [
+     "turnos,",
+     40.095
+    ],
+    [
+     "fichajes",
+     40.61
+    ],
+    [
+     "o recordatorios.",
+     41.445
+    ]
+   ]
+  },
+  "E10": {
+   "chunks": [
+    {
+     "text": "Dinero",
+     "t": 43.25,
+     "hl": null
+    },
+    {
+     "text": "o clientes:",
+     "t": 43.675,
+     "hl": null
+    },
+    {
+     "text": "revisión humana",
+     "t": 45.29,
+     "hl": "o"
+    }
+   ],
+   "start": 43.13,
+   "end": 46.77
+  }
+ },
+ "cta": {
+  "comenta": 47.02,
+  "keyword": 47.37,
+  "small": 47.96
+ },
+ "ev": {
+  "dolly": 4.0,
+  "agent": 0.52,
+  "tools": 2.565,
+  "toolsStep": 0.16,
+  "bubble": 4.795,
+  "exec": 6.245,
+  "gap": 8.1,
+  "toStaff": 10.15,
+  "scan": 10.7,
+  "pick": 11.22,
+  "walk0": 11.63,
+  "walk1": 12.64,
+  "cards": 13.68,
+  "sweep0": 13.96,
+  "sweep1": 15.29,
+  "flag": 14.99,
+  "toInv": 17.0,
+  "detect": 20.19,
+  "overdue": 21.13,
+  "fold": 21.97,
+  "draft": 22.53,
+  "ojo": 24.1,
+  "pills": 25.63,
+  "test": 29.005,
+  "limited": 29.955,
+  "human": 31.275,
+  "deliver0": 31.27,
+  "deliver1": 32.52,
+  "approve": 33.82,
+  "send": 34.22,
+  "lesson": 34.9,
+  "rails": 35.98,
+  "items": 37.695,
+  "rules": 38.575,
+  "f1": 40.095,
+  "f2": 40.61,
+  "f3": 41.49,
+  "coins": 43.25,
+  "client": 43.72,
+  "halo": 45.475,
+  "typeStart": 47.02,
+  "typeStep": 0.075
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 0.52,
+   "type": "appear"
+  },
+  {
+   "t": 2.565,
+   "type": "pop"
+  },
+  {
+   "t": 2.725,
+   "type": "pop"
+  },
+  {
+   "t": 2.885,
+   "type": "pop"
+  },
+  {
+   "t": 4.795,
+   "type": "pop"
+  },
+  {
+   "t": 6.245,
+   "type": "swish"
+  },
+  {
+   "t": 6.595,
+   "type": "swish"
+  },
+  {
+   "t": 6.945,
+   "type": "swish"
+  },
+  {
+   "t": 7.295,
+   "type": "swish"
+  },
+  {
+   "t": 6.565,
+   "type": "blip"
+  },
+  {
+   "t": 6.915,
+   "type": "blip"
+  },
+  {
+   "t": 7.265,
+   "type": "blip"
+  },
+  {
+   "t": 8.1,
+   "type": "glitch"
+  },
+  {
+   "t": 10.15,
+   "type": "swish"
+  },
+  {
+   "t": 10.7,
+   "type": "scan"
+  },
+  {
+   "t": 11.22,
+   "type": "ding"
+  },
+  {
+   "t": 11.63,
+   "type": "swish"
+  },
+  {
+   "t": 12.64,
+   "type": "clack"
+  },
+  {
+   "t": 12.69,
+   "type": "appear"
+  },
+  {
+   "t": 13.68,
+   "type": "clack"
+  },
+  {
+   "t": 13.76,
+   "type": "clack"
+  },
+  {
+   "t": 13.84,
+   "type": "clack"
+  },
+  {
+   "t": 13.92,
+   "type": "clack"
+  },
+  {
+   "t": 14.0,
+   "type": "clack"
+  },
+  {
+   "t": 14.08,
+   "type": "clack"
+  },
+  {
+   "t": 13.96,
+   "type": "scan"
+  },
+  {
+   "t": 14.89,
+   "type": "glitch"
+  },
+  {
+   "t": 15.14,
+   "type": "pop"
+  },
+  {
+   "t": 17.0,
+   "type": "swish"
+  },
+  {
+   "t": 20.19,
+   "type": "scan"
+  },
+  {
+   "t": 21.13,
+   "type": "glitch"
+  },
+  {
+   "t": 21.97,
+   "type": "swish"
+  },
+  {
+   "t": 22.32,
+   "type": "pop"
+  },
+  {
+   "t": 24.05,
+   "type": "glitch"
+  },
+  {
+   "t": 25.63,
+   "type": "pop"
+  },
+  {
+   "t": 25.88,
+   "type": "pop"
+  },
+  {
+   "t": 29.005,
+   "type": "glitch"
+  },
+  {
+   "t": 29.955,
+   "type": "pop"
+  },
+  {
+   "t": 31.275,
+   "type": "appear"
+  },
+  {
+   "t": 31.37,
+   "type": "swish"
+  },
+  {
+   "t": 33.82,
+   "type": "stamp"
+  },
+  {
+   "t": 33.87,
+   "type": "ding"
+  },
+  {
+   "t": 34.22,
+   "type": "swish"
+  },
+  {
+   "t": 35.98,
+   "type": "rise"
+  },
+  {
+   "t": 35.98,
+   "type": "boom"
+  },
+  {
+   "t": 37.695,
+   "type": "clack"
+  },
+  {
+   "t": 38.32,
+   "type": "clack"
+  },
+  {
+   "t": 38.945,
+   "type": "clack"
+  },
+  {
+   "t": 39.57,
+   "type": "clack"
+  },
+  {
+   "t": 40.195,
+   "type": "clack"
+  },
+  {
+   "t": 40.82,
+   "type": "clack"
+  },
+  {
+   "t": 41.445,
+   "type": "clack"
+  },
+  {
+   "t": 40.095,
+   "type": "blip"
+  },
+  {
+   "t": 40.61,
+   "type": "blip"
+  },
+  {
+   "t": 41.49,
+   "type": "blip"
+  },
+  {
+   "t": 43.25,
+   "type": "coin"
+  },
+  {
+   "t": 43.34,
+   "type": "coin"
+  },
+  {
+   "t": 43.43,
+   "type": "coin"
+  },
+  {
+   "t": 43.52,
+   "type": "coin"
+  },
+  {
+   "t": 43.72,
+   "type": "appear"
+  },
+  {
+   "t": 45.475,
+   "type": "appear"
+  },
+  {
+   "t": 47.02,
+   "type": "key"
+  },
+  {
+   "t": 47.095,
+   "type": "key"
+  },
+  {
+   "t": 47.17,
+   "type": "key"
+  },
+  {
+   "t": 47.245,
+   "type": "key"
+  },
+  {
+   "t": 47.32,
+   "type": "key"
+  },
+  {
+   "t": 47.395,
+   "type": "key"
+  },
+  {
+   "t": 47.47,
+   "type": "key"
+  },
+  {
+   "t": 47.545,
+   "type": "key"
+  },
+  {
+   "t": 47.62,
+   "type": "key"
+  },
+  {
+   "t": 50.905,
+   "type": "appear"
+  }
+ ]
+}
