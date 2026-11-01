@@ -76,6 +76,12 @@ La toma tiene 18 tramos de voz separados por pausas. Se agrupan exactamente en l
 - Duración: la toma dura 50,2 s, así que el vídeo dura 52,7 s, más de los 45 s previstos (dentro del margen de 30–60 s).
 - Sin marca de agua ni nombre de cuenta durante el vídeo. Solo aparecen en el cierre.
 
+## Control de calidad (qa.py)
+- 1080x1920, 30 fps, 52,67 s, H.264 + AAC 48 kHz estéreo.
+- −14,0 LUFS integrados, pico real −3,2 dBTP.
+- 0 fotogramas con brillo en las franjas no seguras (250 px arriba, 340 px abajo).
+- Quedan 34 ventanas de 0,5 s con muy poco movimiento según el umbral del script (eran 205 antes del ajuste). Caen en tramos oscurecidos del matiz y en momentos en que el agente está quieto, con motas y la luz del suelo aún en marcha.
+
 ## Pipeline
 ```
 python scripts/align.py ../audio/raw/agentes-ia-pymes/cacd7835-*.mp3   # tiempos por palabra → data/words.json
