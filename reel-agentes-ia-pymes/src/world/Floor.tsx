@@ -5,18 +5,18 @@ import { radialTex } from "./textures";
 
 const FLOOR_Y = -0.84;
 const N_DOTS = 1100;
-const N_MOTES = 46;
+const N_MOTES = 120;
 
 // a wide night floor of faint lights (other businesses, far away) so the dolly-in has depth
 const DOTS = Array.from({ length: N_DOTS }, (_, i) => {
   const r = 7 * Math.exp(rand(i + 1) * Math.log(150 / 7));
   const a = rand(i + 2) * Math.PI * 2;
-  return { x: Math.cos(a) * r, z: Math.sin(a) * r, px: 2 + rand(i + 3) * 4, ph: rand(i + 4) * 20, sp: 0.5 + rand(i + 5) * 2, warm: rand(i + 6) > 0.8 };
+  return { x: Math.cos(a) * r, z: Math.sin(a) * r, px: 3 + rand(i + 3) * 6, ph: rand(i + 4) * 20, sp: 1.2 + rand(i + 5) * 2.5, warm: rand(i + 6) > 0.8 };
 });
 
 // dust motes drifting up round the plate (keeps the locked frame alive)
 const MOTES = Array.from({ length: N_MOTES }, (_, i) => ({
-  a: rand(i + 50) * Math.PI * 2, r: 1.5 + rand(i + 51) * 4.2, y0: rand(i + 52) * 4, sp: 0.12 + rand(i + 53) * 0.2, ph: rand(i + 54) * 6, warm: i % 3 === 0,
+  a: rand(i + 50) * Math.PI * 2, r: 1.2 + rand(i + 51) * 5.5, y0: rand(i + 52) * 4, sp: 0.3 + rand(i + 53) * 0.4, ph: rand(i + 54) * 6, warm: i % 3 === 0,
 }));
 
 const tmp = new THREE.Object3D();
@@ -59,9 +59,9 @@ const Motes: React.FC<{ t: number; warm: boolean }> = ({ t, warm }) => {
     const m = ref.current!;
     list.forEach((d, i) => {
       const y = (d.y0 + t * d.sp) % 4;
-      const a = d.a + t * 0.05;
+      const a = d.a + t * 0.12;
       tmp.position.set(Math.cos(a) * d.r + 0.2 * Math.sin(t + d.ph), y, Math.sin(a) * d.r);
-      const s = (warm ? 0.07 : 0.045) * Math.sin(Math.PI * (y / 4));
+      const s = (warm ? 0.085 : 0.06) * Math.sin(Math.PI * (y / 4)) * (0.6 + 0.4 * Math.sin(t * 4 + d.ph));
       tmp.rotation.set(0, 0, 0);
       tmp.scale.set(s, s, s);
       tmp.updateMatrix();

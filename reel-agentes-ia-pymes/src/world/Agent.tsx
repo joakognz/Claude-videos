@@ -33,7 +33,7 @@ export const Agent: React.FC<{ t: number }> = ({ t }) => {
   shell.emissiveIntensity = (1.1 + 0.3 * busy) * pulse;
   heart.opacity = 0.9;
   ring.opacity = 0.85;
-  halo.opacity = 0.55 + 0.15 * Math.sin(t * 3.1) + 0.2 * busy;
+  halo.opacity = 0.5 + 0.25 * Math.sin(t * 3.1) + 0.2 * busy;
   pool.opacity = 0.35 * clamp01(1.6 / Math.max(0.6, p[1]));
   const spin = t * (1.4 + 1.6 * busy) + speed * 0.05;
 

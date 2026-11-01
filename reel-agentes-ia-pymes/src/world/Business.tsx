@@ -7,6 +7,7 @@ import {
   cardAt, envelopeAt, focus, invAt, loopAt, tileAt,
 } from "./layout";
 import { GroundRing, Seg, useGlowMat } from "./prims";
+import { radialTex } from "./textures";
 
 const CREAM = new THREE.Color(C.cream);
 const ORANGE = new THREE.Color(C.orange);
@@ -42,6 +43,10 @@ const Plate: React.FC<{ t: number }> = ({ t }) => {
   const rim = useGlowMat(C.orange, 1.2);
   const grid = useGlowMat(C.cream, 0.5);
   rim.opacity = 0.55 + 0.1 * Math.sin(t * 1.7);
+  // a slow pool of warm light drifting over the plate, so the locked frame never stands still
+  const sweep = useMemo(() => new THREE.MeshBasicMaterial({ map: radialTex(), color: C.orangeSoft, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }), []);
+  sweep.opacity = 0.24 + 0.06 * Math.sin(t * 2.3);
+  const sa = t * 0.9;
   grid.opacity = 0.07;
   const lines: React.ReactNode[] = [];
   for (let i = -4; i <= 4; i++) {
@@ -61,6 +66,9 @@ const Plate: React.FC<{ t: number }> = ({ t }) => {
         <ringGeometry args={[PLATE_R - 0.04, PLATE_R + 0.02, 14]} />
       </mesh>
       {lines}
+      <mesh material={sweep} position={[Math.cos(sa) * 2.4, 0.015, Math.sin(sa) * 1.8]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[4.5, 4.5]} />
+      </mesh>
     </>
   );
 };
