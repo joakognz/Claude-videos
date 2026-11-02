@@ -79,6 +79,12 @@ La toma tiene 21 tramos de voz separados por pausas. Se agrupan exactamente en l
 - Duración: la toma dura 52,8 s, así que el vídeo dura 55,3 s, más de los 45 s previstos (dentro del margen de 30–60 s).
 - Sin marca de agua ni nombre de cuenta durante el vídeo. Solo aparecen en el cierre.
 
+## Control de calidad (qa.py)
+- 1080x1920, 30 fps, 55,33 s, H.264 + AAC 48 kHz estéreo.
+- −14,0 LUFS integrados, pico real −2,4 dBTP.
+- 0 fotogramas con brillo en las franjas no seguras (250 px arriba, 340 px abajo).
+- Quedan 41 ventanas de 0,5 s con muy poco movimiento según el umbral del script. Caen sobre todo en el tramo oscurecido del matiz (escena 9), con los aviones dentro de la caja y las motas en marcha.
+
 ## Pipeline
 ```
 python scripts/align.py ../audio/raw/agentes-openai-hugging-face/e56f7e3d-*.mp3   # tiempos por palabra → data/words.json
