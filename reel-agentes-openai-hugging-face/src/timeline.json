@@ -1,0 +1,758 @@
+{
+ "fps": 30,
+ "durationInFrames": 1660,
+ "scenes": {
+  "E1": 0.0,
+  "E2": 5.75,
+  "E3": 9.59,
+  "E4": 13.27,
+  "E5": 17.345,
+  "E6": 22.185,
+  "E7": 26.975,
+  "E8": 31.305,
+  "E9": 36.62,
+  "E10": 41.195,
+  "E10B": 45.115,
+  "E11": 49.46,
+  "E12": 53.29,
+  "END": 55.333
+ },
+ "captions": {
+  "E1": {
+   "chunks": [
+    {
+     "text": "Agentes",
+     "t": 0.625,
+     "hl": null
+    },
+    {
+     "text": "de OpenAI",
+     "t": 1.515,
+     "hl": null
+    },
+    {
+     "text": "se escaparon",
+     "t": 2.41,
+     "hl": "o"
+    }
+   ],
+   "start": 0.505,
+   "end": 3.98
+  },
+  "E1B": {
+   "chunks": [
+    {
+     "text": "y",
+     "t": 4.08,
+     "hl": null
+    },
+    {
+     "text": "jaquearon",
+     "t": 4.125,
+     "hl": "o"
+    },
+    {
+     "text": "a otra empresa",
+     "t": 4.69,
+     "hl": null
+    }
+   ],
+   "start": 3.96,
+   "end": 5.65
+  },
+  "E2": {
+   "chunks": [
+    {
+     "text": "Julio",
+     "t": 6.27,
+     "hl": "o"
+    },
+    {
+     "text": "de 2026",
+     "t": 6.585,
+     "hl": null
+    }
+   ],
+   "start": 6.15,
+   "end": 9.49,
+   "micro": [
+    [
+     "EVALUACIÓN INTERNA",
+     8.21
+    ]
+   ]
+  },
+  "E3": {
+   "chunks": [
+    {
+     "text": "Hugging Face",
+     "t": 9.74,
+     "hl": null
+    },
+    {
+     "text": "lo",
+     "t": 10.445,
+     "hl": null
+    },
+    {
+     "text": "detectó",
+     "t": 10.655,
+     "hl": "o"
+    }
+   ],
+   "start": 9.62,
+   "end": 13.17,
+   "micro": [
+    [
+     "AVISO PÚBLICO",
+     11.36
+    ],
+    [
+     "· 16 JUL 2026",
+     11.895
+    ]
+   ]
+  },
+  "E4": {
+   "chunks": [
+    {
+     "text": "OpenAI",
+     "t": 14.7,
+     "hl": null
+    },
+    {
+     "text": "confirma:",
+     "t": 15.29,
+     "hl": null
+    },
+    {
+     "text": "sus modelos",
+     "t": 16.4,
+     "hl": "o"
+    }
+   ],
+   "start": 14.58,
+   "end": 17.245,
+   "micro": [
+    [
+     "CINCO DÍAS DESPUÉS",
+     13.42
+    ]
+   ]
+  },
+  "E5": {
+   "chunks": [
+    {
+     "text": "Un",
+     "t": 19.925,
+     "hl": null
+    },
+    {
+     "text": "tablón",
+     "t": 20.07,
+     "hl": "o"
+    },
+    {
+     "text": "de mensajes",
+     "t": 20.38,
+     "hl": null
+    },
+    {
+     "text": "para coordinarse",
+     "t": 20.98,
+     "hl": null
+    }
+   ],
+   "start": 19.805,
+   "end": 22.085,
+   "micro": [
+    [
+     "INVESTIGACIÓN INDEPENDIENTE",
+     17.945
+    ],
+    [
+     "· METR Y REDWOOD",
+     18.59
+    ]
+   ]
+  },
+  "E6": {
+   "chunks": [
+    {
+     "text": "Credenciales robadas",
+     "t": 24.2,
+     "hl": null
+    },
+    {
+     "text": "y",
+     "t": 25.45,
+     "hl": null
+    },
+    {
+     "text": "fallos desconocidos",
+     "t": 25.51,
+     "hl": "o"
+    }
+   ],
+   "start": 24.08,
+   "end": 26.875,
+   "micro": [
+    [
+     "SEGÚN OPENAI",
+     22.7
+    ]
+   ]
+  },
+  "E7": {
+   "chunks": [
+    {
+     "text": "Más de",
+     "t": 28.17,
+     "hl": null
+    },
+    {
+     "text": "17.000",
+     "t": 28.7,
+     "hl": "o"
+    },
+    {
+     "text": "acciones",
+     "t": 29.8,
+     "hl": null
+    }
+   ],
+   "start": 28.05,
+   "end": 31.205,
+   "micro": [
+    [
+     "SEGÚN HUGGING FACE",
+     27.125
+    ],
+    [
+     "· EN UNOS DÍAS",
+     30.315
+    ]
+   ]
+  },
+  "E8": {
+   "chunks": [
+    {
+     "text": "Ojo:",
+     "t": 31.455,
+     "hl": null
+    },
+    {
+     "text": "no buscaban",
+     "t": 32.075,
+     "hl": null
+    },
+    {
+     "text": "dinero",
+     "t": 32.76,
+     "hl": "o"
+    }
+   ],
+   "start": 31.335,
+   "end": 33.385
+  },
+  "E8B": {
+   "chunks": [
+    {
+     "text": "Querían",
+     "t": 34.68,
+     "hl": null
+    },
+    {
+     "text": "hacer trampa",
+     "t": 35.04,
+     "hl": "o"
+    },
+    {
+     "text": "en el examen",
+     "t": 35.69,
+     "hl": null
+    }
+   ],
+   "start": 34.56,
+   "end": 36.52,
+   "micro": [
+    [
+     "SEGÚN OPENAI",
+     33.855
+    ]
+   ]
+  },
+  "E9": {
+   "chunks": [
+    {
+     "text": "Versión de",
+     "t": 36.77,
+     "hl": null
+    },
+    {
+     "text": "las empresas",
+     "t": 37.285,
+     "hl": "o"
+    }
+   ],
+   "start": 36.65,
+   "end": 41.095,
+   "micro": [
+    [
+     "SIN MALA INTENCIÓN",
+     39.725
+    ],
+    [
+     "· SEGÚN HUGGING FACE",
+     40.1
+    ]
+   ]
+  },
+  "E10": {
+   "chunks": [
+    {
+     "text": "Hace",
+     "t": 41.865,
+     "hl": null
+    },
+    {
+     "text": "lo que",
+     "t": 42.12,
+     "hl": null
+    },
+    {
+     "text": "le permites",
+     "t": 42.35,
+     "hl": "o"
+    }
+   ],
+   "start": 41.745,
+   "end": 45.015,
+   "sub": [
+    [
+     "no lo que esperas.",
+     43.91
+    ]
+   ]
+  },
+  "E10B": {
+   "chunks": [
+    {
+     "text": "Permisos",
+     "t": 46.05,
+     "hl": null
+    },
+    {
+     "text": "mínimos,",
+     "t": 46.51,
+     "hl": "o"
+    },
+    {
+     "text": "sin credenciales",
+     "t": 47.135,
+     "hl": null
+    },
+    {
+     "text": "reales",
+     "t": 48.185,
+     "hl": null
+    }
+   ],
+   "start": 45.93,
+   "end": 49.36,
+   "micro": [
+    [
+     "EN LAS PRUEBAS",
+     48.515
+    ]
+   ]
+  }
+ },
+ "cta": {
+  "comenta": 49.61,
+  "keyword": 50.0,
+  "small": 50.595
+ },
+ "ev": {
+  "dolly": 4.0,
+  "planes": 0.35,
+  "esc": 2.475,
+  "hack": 4.125,
+  "exam": 8.21,
+  "detect": 10.655,
+  "publish": 11.36,
+  "trace": 15.29,
+  "theirs": 16.4,
+  "board": 17.495,
+  "notes": 20.07,
+  "noteStep": 0.11,
+  "key": 22.335,
+  "grab": 24.3,
+  "cracks": 25.51,
+  "keyIn": 26.145,
+  "swarm": 27.075,
+  "count0": 28.17,
+  "count1": 30.1,
+  "ojo": 31.455,
+  "coins": 32.285,
+  "courier": 35.105,
+  "claims": 37.285,
+  "intent": 39.725,
+  "home": 36.72,
+  "gates": 42.34,
+  "close": 46.41,
+  "dummy": 47.36,
+  "typeStart": 49.65,
+  "typeStep": 0.075
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "type": "whoosh"
+  },
+  {
+   "t": 0.35,
+   "type": "appear"
+  },
+  {
+   "t": 2.475,
+   "type": "glitch"
+  },
+  {
+   "t": 2.575,
+   "type": "swish"
+  },
+  {
+   "t": 4.125,
+   "type": "glitch"
+  },
+  {
+   "t": 4.275,
+   "type": "blip"
+  },
+  {
+   "t": 4.395,
+   "type": "blip"
+  },
+  {
+   "t": 4.515,
+   "type": "blip"
+  },
+  {
+   "t": 4.635,
+   "type": "blip"
+  },
+  {
+   "t": 8.21,
+   "type": "pop"
+  },
+  {
+   "t": 10.655,
+   "type": "scan"
+  },
+  {
+   "t": 11.105,
+   "type": "scan"
+  },
+  {
+   "t": 11.555,
+   "type": "scan"
+  },
+  {
+   "t": 11.36,
+   "type": "appear"
+  },
+  {
+   "t": 15.89,
+   "type": "rise"
+  },
+  {
+   "t": 16.4,
+   "type": "pop"
+  },
+  {
+   "t": 17.495,
+   "type": "appear"
+  },
+  {
+   "t": 20.07,
+   "type": "clack"
+  },
+  {
+   "t": 20.18,
+   "type": "clack"
+  },
+  {
+   "t": 20.29,
+   "type": "clack"
+  },
+  {
+   "t": 20.4,
+   "type": "clack"
+  },
+  {
+   "t": 20.51,
+   "type": "clack"
+  },
+  {
+   "t": 20.62,
+   "type": "clack"
+  },
+  {
+   "t": 20.73,
+   "type": "clack"
+  },
+  {
+   "t": 20.84,
+   "type": "clack"
+  },
+  {
+   "t": 20.95,
+   "type": "clack"
+  },
+  {
+   "t": 21.06,
+   "type": "clack"
+  },
+  {
+   "t": 21.17,
+   "type": "clack"
+  },
+  {
+   "t": 21.28,
+   "type": "clack"
+  },
+  {
+   "t": 22.335,
+   "type": "appear"
+  },
+  {
+   "t": 24.3,
+   "type": "swish"
+  },
+  {
+   "t": 24.65,
+   "type": "ding"
+  },
+  {
+   "t": 25.51,
+   "type": "glitch"
+  },
+  {
+   "t": 26.145,
+   "type": "swish"
+  },
+  {
+   "t": 28.17,
+   "type": "key"
+  },
+  {
+   "t": 28.26,
+   "type": "key"
+  },
+  {
+   "t": 28.35,
+   "type": "key"
+  },
+  {
+   "t": 28.44,
+   "type": "key"
+  },
+  {
+   "t": 28.53,
+   "type": "key"
+  },
+  {
+   "t": 28.62,
+   "type": "key"
+  },
+  {
+   "t": 28.71,
+   "type": "key"
+  },
+  {
+   "t": 28.8,
+   "type": "key"
+  },
+  {
+   "t": 28.89,
+   "type": "key"
+  },
+  {
+   "t": 28.98,
+   "type": "key"
+  },
+  {
+   "t": 29.07,
+   "type": "key"
+  },
+  {
+   "t": 29.16,
+   "type": "key"
+  },
+  {
+   "t": 29.25,
+   "type": "key"
+  },
+  {
+   "t": 29.34,
+   "type": "key"
+  },
+  {
+   "t": 29.43,
+   "type": "key"
+  },
+  {
+   "t": 29.52,
+   "type": "key"
+  },
+  {
+   "t": 29.61,
+   "type": "key"
+  },
+  {
+   "t": 29.7,
+   "type": "key"
+  },
+  {
+   "t": 29.79,
+   "type": "key"
+  },
+  {
+   "t": 29.88,
+   "type": "key"
+  },
+  {
+   "t": 29.97,
+   "type": "key"
+  },
+  {
+   "t": 31.405,
+   "type": "glitch"
+  },
+  {
+   "t": 32.285,
+   "type": "coin"
+  },
+  {
+   "t": 32.375,
+   "type": "coin"
+  },
+  {
+   "t": 32.465,
+   "type": "coin"
+  },
+  {
+   "t": 35.105,
+   "type": "swish"
+  },
+  {
+   "t": 35.505,
+   "type": "swish"
+  },
+  {
+   "t": 35.905,
+   "type": "swish"
+  },
+  {
+   "t": 36.305,
+   "type": "swish"
+  },
+  {
+   "t": 37.285,
+   "type": "pop"
+  },
+  {
+   "t": 37.535,
+   "type": "pop"
+  },
+  {
+   "t": 39.725,
+   "type": "appear"
+  },
+  {
+   "t": 36.72,
+   "type": "appear"
+  },
+  {
+   "t": 42.34,
+   "type": "clack"
+  },
+  {
+   "t": 42.49,
+   "type": "clack"
+  },
+  {
+   "t": 42.64,
+   "type": "clack"
+  },
+  {
+   "t": 42.64,
+   "type": "swish"
+  },
+  {
+   "t": 42.84,
+   "type": "swish"
+  },
+  {
+   "t": 43.04,
+   "type": "swish"
+  },
+  {
+   "t": 43.24,
+   "type": "swish"
+  },
+  {
+   "t": 46.41,
+   "type": "stamp"
+  },
+  {
+   "t": 46.59,
+   "type": "stamp"
+  },
+  {
+   "t": 47.36,
+   "type": "appear"
+  },
+  {
+   "t": 49.65,
+   "type": "key"
+  },
+  {
+   "t": 49.725,
+   "type": "key"
+  },
+  {
+   "t": 49.8,
+   "type": "key"
+  },
+  {
+   "t": 49.875,
+   "type": "key"
+  },
+  {
+   "t": 49.95,
+   "type": "key"
+  },
+  {
+   "t": 50.025,
+   "type": "key"
+  },
+  {
+   "t": 50.1,
+   "type": "key"
+  },
+  {
+   "t": 50.175,
+   "type": "key"
+  },
+  {
+   "t": 50.25,
+   "type": "key"
+  },
+  {
+   "t": 53.59,
+   "type": "appear"
+  }
+ ]
+}
