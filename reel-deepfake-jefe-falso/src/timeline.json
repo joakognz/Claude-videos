@@ -1,0 +1,1163 @@
+{
+ "fps": 30,
+ "durationInFrames": 1560,
+ "scenes": [
+  {
+   "id": "hook",
+   "t": 0.0
+  },
+  {
+   "id": "noexistia",
+   "t": 4.45
+  },
+  {
+   "id": "policia",
+   "t": 6.48
+  },
+  {
+   "id": "correo",
+   "t": 10.385
+  },
+  {
+   "id": "duda",
+   "t": 15.67
+  },
+  {
+   "id": "lobby",
+   "t": 18.3
+  },
+  {
+   "id": "llamada",
+   "t": 19.8
+  },
+  {
+   "id": "dinero",
+   "t": 26.54
+  },
+  {
+   "id": "tiempo",
+   "t": 29.425
+  },
+  {
+   "id": "anonimo",
+   "t": 33.085
+  },
+  {
+   "id": "leccion1",
+   "t": 36.45
+  },
+  {
+   "id": "leccion2",
+   "t": 39.19
+  },
+  {
+   "id": "cta",
+   "t": 46.2
+  },
+  {
+   "id": "crt",
+   "t": 49.92
+  },
+  {
+   "id": "cierre",
+   "t": 50.2
+  }
+ ],
+ "trans": [
+  {
+   "t": 4.45,
+   "type": "glitch",
+   "to": "noexistia"
+  },
+  {
+   "t": 6.48,
+   "type": "slices",
+   "to": "policia"
+  },
+  {
+   "t": 10.385,
+   "type": "tab",
+   "to": "correo"
+  },
+  {
+   "t": 18.3,
+   "type": "pixel",
+   "to": "lobby"
+  },
+  {
+   "t": 26.54,
+   "type": "zoom",
+   "to": "dinero"
+  },
+  {
+   "t": 29.425,
+   "type": "bar",
+   "to": "tiempo"
+  },
+  {
+   "t": 33.085,
+   "type": "tab",
+   "to": "anonimo"
+  },
+  {
+   "t": 36.45,
+   "type": "pixel",
+   "to": "leccion1"
+  },
+  {
+   "t": 46.2,
+   "type": "slices",
+   "to": "cta"
+  }
+ ],
+ "punch": [
+  0.055,
+  4.47,
+  6.5,
+  10.405,
+  15.69,
+  18.32,
+  21.105,
+  24.335,
+  26.56,
+  29.445,
+  33.105,
+  36.47,
+  39.21,
+  42.24,
+  46.22
+ ],
+ "captions": [
+  {
+   "chunks": [
+    {
+     "text": "SU JEFE",
+     "t": 0.0,
+     "hl": false
+    },
+    {
+     "text": "ORDENÓ",
+     "t": 0.63,
+     "hl": false
+    },
+    {
+     "text": "TRANSFERIR",
+     "t": 0.98,
+     "hl": true
+    }
+   ],
+   "start": 0.0,
+   "end": 1.98
+  },
+  {
+   "chunks": [
+    {
+     "text": "VEINTICINCO",
+     "t": 2.0,
+     "hl": false
+    },
+    {
+     "text": "MILLONES",
+     "t": 2.885,
+     "hl": false
+    }
+   ],
+   "start": 2.0,
+   "end": 3.37
+  },
+  {
+   "chunks": [
+    {
+     "text": "DE DÓLARES",
+     "t": 3.41,
+     "hl": true
+    }
+   ],
+   "start": 3.41,
+   "end": 4.37
+  },
+  {
+   "chunks": [
+    {
+     "text": "SU JEFE",
+     "t": 4.47,
+     "hl": false
+    },
+    {
+     "text": "NO EXISTÍA",
+     "t": 5.06,
+     "hl": true
+    }
+   ],
+   "start": 4.47,
+   "end": 6.4
+  },
+  {
+   "chunks": [
+    {
+     "text": "LA POLICÍA",
+     "t": 6.88,
+     "hl": false
+    },
+    {
+     "text": "HONG KONG",
+     "t": 7.515,
+     "hl": true
+    }
+   ],
+   "start": 6.88,
+   "end": 8.255
+  },
+  {
+   "chunks": [
+    {
+     "text": "FEBRERO",
+     "t": 8.295,
+     "hl": false
+    },
+    {
+     "text": "2024",
+     "t": 8.905,
+     "hl": true
+    }
+   ],
+   "start": 8.295,
+   "end": 10.305
+  },
+  {
+   "chunks": [
+    {
+     "text": "UN EMPLEADO",
+     "t": 10.405,
+     "hl": false
+    },
+    {
+     "text": "DE FINANZAS",
+     "t": 10.865,
+     "hl": true
+    }
+   ],
+   "start": 10.405,
+   "end": 11.865
+  },
+  {
+   "chunks": [
+    {
+     "text": "MULTINACIONAL",
+     "t": 11.905,
+     "hl": true
+    }
+   ],
+   "start": 11.905,
+   "end": 12.555
+  },
+  {
+   "chunks": [
+    {
+     "text": "RECIBIÓ",
+     "t": 12.595,
+     "hl": false
+    },
+    {
+     "text": "UN CORREO",
+     "t": 13.18,
+     "hl": true
+    }
+   ],
+   "start": 12.595,
+   "end": 14.21
+  },
+  {
+   "chunks": [
+    {
+     "text": "OPERACIÓN",
+     "t": 14.25,
+     "hl": false
+    },
+    {
+     "text": "SECRETA",
+     "t": 14.83,
+     "hl": true
+    }
+   ],
+   "start": 14.25,
+   "end": 15.59
+  },
+  {
+   "chunks": [
+    {
+     "text": "DESCONFIÓ",
+     "t": 15.69,
+     "hl": true
+    }
+   ],
+   "start": 15.69,
+   "end": 16.93
+  },
+  {
+   "chunks": [
+    {
+     "text": "ERA UNA",
+     "t": 16.97,
+     "hl": false
+    },
+    {
+     "text": "ESTAFA",
+     "t": 17.525,
+     "hl": true
+    }
+   ],
+   "start": 16.97,
+   "end": 18.22
+  },
+  {
+   "chunks": [
+    {
+     "text": "ENTONCES",
+     "t": 18.32,
+     "hl": false
+    }
+   ],
+   "start": 18.32,
+   "end": 18.91
+  },
+  {
+   "chunks": [
+    {
+     "text": "LO INVITARON",
+     "t": 18.95,
+     "hl": true
+    }
+   ],
+   "start": 18.95,
+   "end": 19.63
+  },
+  {
+   "chunks": [
+    {
+     "text": "VIDEOLLAMADA",
+     "t": 19.67,
+     "hl": true
+    }
+   ],
+   "start": 19.67,
+   "end": 21.065
+  },
+  {
+   "chunks": [
+    {
+     "text": "AHÍ ESTABAN",
+     "t": 21.105,
+     "hl": false
+    }
+   ],
+   "start": 21.105,
+   "end": 21.815
+  },
+  {
+   "chunks": [
+    {
+     "text": "DIRECTOR",
+     "t": 21.855,
+     "hl": false
+    },
+    {
+     "text": "FINANCIERO",
+     "t": 22.255,
+     "hl": true
+    }
+   ],
+   "start": 21.855,
+   "end": 22.79
+  },
+  {
+   "chunks": [
+    {
+     "text": "VARIOS",
+     "t": 22.83,
+     "hl": false
+    },
+    {
+     "text": "COMPAÑEROS",
+     "t": 23.365,
+     "hl": true
+    }
+   ],
+   "start": 22.83,
+   "end": 24.295
+  },
+  {
+   "chunks": [
+    {
+     "text": "TODOS",
+     "t": 24.335,
+     "hl": false
+    },
+    {
+     "text": "FALSOS",
+     "t": 24.64,
+     "hl": true
+    }
+   ],
+   "start": 24.335,
+   "end": 26.46,
+   "sub": [
+    [
+     "SEGÚN LA POLICÍA",
+     25.14
+    ]
+   ]
+  },
+  {
+   "chunks": [
+    {
+     "text": "15",
+     "t": 26.805,
+     "hl": true
+    },
+    {
+     "text": "TRANSFERENCIAS",
+     "t": 27.27,
+     "hl": false
+    }
+   ],
+   "start": 26.805,
+   "end": 28.115
+  },
+  {
+   "chunks": [
+    {
+     "text": "5",
+     "t": 28.155,
+     "hl": true
+    },
+    {
+     "text": "CUENTAS",
+     "t": 28.54,
+     "hl": false
+    }
+   ],
+   "start": 28.155,
+   "end": 29.345
+  },
+  {
+   "chunks": [
+    {
+     "text": "LO DESCUBRIÓ",
+     "t": 29.445,
+     "hl": false
+    }
+   ],
+   "start": 29.445,
+   "end": 29.895
+  },
+  {
+   "chunks": [
+    {
+     "text": "UNA",
+     "t": 29.935,
+     "hl": false
+    },
+    {
+     "text": "SEMANA",
+     "t": 30.28,
+     "hl": true
+    },
+    {
+     "text": "DESPUÉS",
+     "t": 30.615,
+     "hl": false
+    }
+   ],
+   "start": 29.935,
+   "end": 31.265
+  },
+  {
+   "chunks": [
+    {
+     "text": "CONSULTARLO",
+     "t": 31.305,
+     "hl": false
+    },
+    {
+     "text": "SU EMPRESA",
+     "t": 32.135,
+     "hl": true
+    }
+   ],
+   "start": 31.305,
+   "end": 33.005
+  },
+  {
+   "chunks": [
+    {
+     "text": "NO HA DICHO",
+     "t": 33.67,
+     "hl": true
+    }
+   ],
+   "start": 33.67,
+   "end": 34.255
+  },
+  {
+   "chunks": [
+    {
+     "text": "QUIÉN ERA",
+     "t": 34.295,
+     "hl": false
+    }
+   ],
+   "start": 34.295,
+   "end": 34.815
+  },
+  {
+   "chunks": [
+    {
+     "text": "NI QUÉ",
+     "t": 34.855,
+     "hl": false
+    },
+    {
+     "text": "EMPRESA",
+     "t": 35.095,
+     "hl": true
+    }
+   ],
+   "start": 34.855,
+   "end": 36.37
+  },
+  {
+   "chunks": [
+    {
+     "text": "UNA CARA",
+     "t": 36.47,
+     "hl": false
+    },
+    {
+     "text": "O UNA",
+     "t": 37.145,
+     "hl": false
+    },
+    {
+     "text": "VOZ",
+     "t": 37.43,
+     "hl": true
+    }
+   ],
+   "start": 36.47,
+   "end": 37.76
+  },
+  {
+   "chunks": [
+    {
+     "text": "YA NO",
+     "t": 37.8,
+     "hl": false
+    },
+    {
+     "text": "PRUEBAN",
+     "t": 38.11,
+     "hl": false
+    },
+    {
+     "text": "NADA",
+     "t": 38.34,
+     "hl": true
+    }
+   ],
+   "start": 37.8,
+   "end": 39.11
+  },
+  {
+   "chunks": [
+    {
+     "text": "NINGÚN",
+     "t": 39.21,
+     "hl": false
+    },
+    {
+     "text": "PAGO",
+     "t": 39.595,
+     "hl": true
+    },
+    {
+     "text": "DEBERÍA",
+     "t": 39.87,
+     "hl": false
+    }
+   ],
+   "start": 39.21,
+   "end": 40.24
+  },
+  {
+   "chunks": [
+    {
+     "text": "DEPENDER",
+     "t": 40.28,
+     "hl": false
+    },
+    {
+     "text": "DE",
+     "t": 40.73,
+     "hl": false
+    },
+    {
+     "text": "RECONOCER",
+     "t": 40.825,
+     "hl": true
+    }
+   ],
+   "start": 40.28,
+   "end": 41.4
+  },
+  {
+   "chunks": [
+    {
+     "text": "ALGUIEN",
+     "t": 41.44,
+     "hl": true
+    }
+   ],
+   "start": 41.44,
+   "end": 42.14
+  },
+  {
+   "chunks": [
+    {
+     "text": "CONFÍRMALO",
+     "t": 42.24,
+     "hl": true
+    }
+   ],
+   "start": 42.24,
+   "end": 43.06
+  },
+  {
+   "chunks": [
+    {
+     "text": "POR OTRO",
+     "t": 43.1,
+     "hl": false
+    },
+    {
+     "text": "CANAL",
+     "t": 43.625,
+     "hl": true
+    }
+   ],
+   "start": 43.1,
+   "end": 44.025
+  },
+  {
+   "chunks": [
+    {
+     "text": "LLAMANDO",
+     "t": 44.065,
+     "hl": false
+    },
+    {
+     "text": "TÚ",
+     "t": 44.635,
+     "hl": true
+    }
+   ],
+   "start": 44.065,
+   "end": 44.78
+  },
+  {
+   "chunks": [
+    {
+     "text": "AL NÚMERO",
+     "t": 44.82,
+     "hl": false
+    },
+    {
+     "text": "DE SIEMPRE",
+     "t": 45.275,
+     "hl": true
+    }
+   ],
+   "start": 44.82,
+   "end": 46.12
+  },
+  {
+   "chunks": [
+    {
+     "text": "COMENTA",
+     "t": 46.22,
+     "hl": false
+    },
+    {
+     "text": "AUDITORIA",
+     "t": 46.585,
+     "hl": true
+    }
+   ],
+   "start": 46.22,
+   "end": 47.25
+  },
+  {
+   "chunks": [
+    {
+     "text": "AYUDAMOS",
+     "t": 47.475,
+     "hl": false
+    },
+    {
+     "text": "AUTOMATIZAR",
+     "t": 48.275,
+     "hl": true
+    }
+   ],
+   "start": 47.475,
+   "end": 48.88
+  },
+  {
+   "chunks": [
+    {
+     "text": "TU NEGOCIO",
+     "t": 48.92,
+     "hl": true
+    }
+   ],
+   "start": 48.92,
+   "end": 49.82
+  }
+ ],
+ "ev": {
+  "zoomCfo": 0.85,
+  "bigMoney": 2.0,
+  "moreThan": 1.545,
+  "cfoBreak": 4.67,
+  "policeLabel": 6.99,
+  "hk": 7.515,
+  "feb": 8.295,
+  "year": 8.905,
+  "empTile": 10.405,
+  "finanzas": 10.865,
+  "multi": 11.905,
+  "mailIn": 13.13,
+  "secret": 14.25,
+  "strike": 15.84,
+  "doubt": 16.405,
+  "estafa": 17.525,
+  "lobby": 18.32,
+  "cursorIn": 18.67,
+  "click": 19.62,
+  "join": 19.8,
+  "tile0": 21.855,
+  "tile1": 22.83,
+  "tile2": 23.03,
+  "tile3": 23.365,
+  "tile4": 23.545,
+  "reveal": 24.64,
+  "cut": 24.295,
+  "mesh": 24.64,
+  "pixel": 25.34,
+  "shatter": 25.705,
+  "rows": 26.855,
+  "rowStep": 0.075,
+  "accounts": 28.155,
+  "odo0": 26.955,
+  "odo1": 28.69,
+  "cells0": 30.28,
+  "cellStep": 0.26,
+  "alert": 31.305,
+  "company": 32.235,
+  "unk0": 33.105,
+  "unkEmp": 34.295,
+  "unkCo": 34.855,
+  "face": 36.42,
+  "voice": 37.19,
+  "bothFalse": 38.0,
+  "nada": 38.34,
+  "pay": 39.595,
+  "verify": 40.825,
+  "flow": 42.24,
+  "other": 43.21,
+  "phone": 44.065,
+  "check": 45.36,
+  "type0": 46.465,
+  "typeStep": 0.068,
+  "send": 49.47,
+  "crt": 49.92,
+  "close": 50.2,
+  "tone": 51.0,
+  "cw0": 46.22,
+  "cw1": 46.585,
+  "cw2": 47.235,
+  "cw3": 47.29,
+  "cw4": 47.475,
+  "cw5": 48.23,
+  "cw6": 48.275,
+  "cw7": 48.92,
+  "cw8": 49.04
+ },
+ "sfx": [
+  {
+   "t": 0.04,
+   "type": "tone-clean"
+  },
+  {
+   "t": 19.85,
+   "type": "tone-clean"
+  },
+  {
+   "t": 24.66,
+   "type": "tone-broken"
+  },
+  {
+   "t": 51.0,
+   "type": "tone-clean"
+  },
+  {
+   "t": 4.4,
+   "type": "glitch"
+  },
+  {
+   "t": 6.38,
+   "type": "whoosh"
+  },
+  {
+   "t": 10.285,
+   "type": "whoosh"
+  },
+  {
+   "t": 18.2,
+   "type": "whoosh"
+  },
+  {
+   "t": 18.25,
+   "type": "glitch"
+  },
+  {
+   "t": 26.44,
+   "type": "whoosh"
+  },
+  {
+   "t": 29.325,
+   "type": "whoosh"
+  },
+  {
+   "t": 32.985,
+   "type": "whoosh"
+  },
+  {
+   "t": 36.35,
+   "type": "whoosh"
+  },
+  {
+   "t": 36.4,
+   "type": "glitch"
+  },
+  {
+   "t": 46.1,
+   "type": "whoosh"
+  },
+  {
+   "t": 13.13,
+   "type": "notif"
+  },
+  {
+   "t": 15.84,
+   "type": "glitch"
+  },
+  {
+   "t": 17.525,
+   "type": "glitch"
+  },
+  {
+   "t": 19.62,
+   "type": "click"
+  },
+  {
+   "t": 21.855,
+   "type": "ping"
+  },
+  {
+   "t": 22.83,
+   "type": "ping"
+  },
+  {
+   "t": 23.03,
+   "type": "ping"
+  },
+  {
+   "t": 23.365,
+   "type": "ping"
+  },
+  {
+   "t": 23.545,
+   "type": "ping"
+  },
+  {
+   "t": 1.0,
+   "type": "glitch"
+  },
+  {
+   "t": 2.0,
+   "type": "stamp"
+  },
+  {
+   "t": 4.67,
+   "type": "glitch"
+  },
+  {
+   "t": 24.64,
+   "type": "glitch"
+  },
+  {
+   "t": 25.34,
+   "type": "glitch"
+  },
+  {
+   "t": 25.705,
+   "type": "shatter"
+  },
+  {
+   "t": 26.855,
+   "type": "ping"
+  },
+  {
+   "t": 26.93,
+   "type": "ping"
+  },
+  {
+   "t": 27.005,
+   "type": "ping"
+  },
+  {
+   "t": 27.08,
+   "type": "ping"
+  },
+  {
+   "t": 27.155,
+   "type": "ping"
+  },
+  {
+   "t": 27.23,
+   "type": "ping"
+  },
+  {
+   "t": 27.305,
+   "type": "ping"
+  },
+  {
+   "t": 27.38,
+   "type": "ping"
+  },
+  {
+   "t": 27.455,
+   "type": "ping"
+  },
+  {
+   "t": 27.53,
+   "type": "ping"
+  },
+  {
+   "t": 27.605,
+   "type": "ping"
+  },
+  {
+   "t": 27.68,
+   "type": "ping"
+  },
+  {
+   "t": 27.755,
+   "type": "ping"
+  },
+  {
+   "t": 27.83,
+   "type": "ping"
+  },
+  {
+   "t": 27.905,
+   "type": "ping"
+  },
+  {
+   "t": 26.955,
+   "type": "tick"
+  },
+  {
+   "t": 27.045,
+   "type": "tick"
+  },
+  {
+   "t": 27.135,
+   "type": "tick"
+  },
+  {
+   "t": 27.225,
+   "type": "tick"
+  },
+  {
+   "t": 27.315,
+   "type": "tick"
+  },
+  {
+   "t": 27.405,
+   "type": "tick"
+  },
+  {
+   "t": 27.495,
+   "type": "tick"
+  },
+  {
+   "t": 27.585,
+   "type": "tick"
+  },
+  {
+   "t": 27.675,
+   "type": "tick"
+  },
+  {
+   "t": 27.765,
+   "type": "tick"
+  },
+  {
+   "t": 27.855,
+   "type": "tick"
+  },
+  {
+   "t": 27.945,
+   "type": "tick"
+  },
+  {
+   "t": 28.035,
+   "type": "tick"
+  },
+  {
+   "t": 28.125,
+   "type": "tick"
+  },
+  {
+   "t": 28.215,
+   "type": "tick"
+  },
+  {
+   "t": 28.305,
+   "type": "tick"
+  },
+  {
+   "t": 28.395,
+   "type": "tick"
+  },
+  {
+   "t": 28.485,
+   "type": "tick"
+  },
+  {
+   "t": 28.575,
+   "type": "tick"
+  },
+  {
+   "t": 30.28,
+   "type": "clock"
+  },
+  {
+   "t": 30.54,
+   "type": "clock"
+  },
+  {
+   "t": 30.8,
+   "type": "clock"
+  },
+  {
+   "t": 31.06,
+   "type": "clock"
+  },
+  {
+   "t": 31.32,
+   "type": "clock"
+  },
+  {
+   "t": 31.58,
+   "type": "clock"
+  },
+  {
+   "t": 31.84,
+   "type": "clock"
+  },
+  {
+   "t": 31.305,
+   "type": "notif"
+  },
+  {
+   "t": 34.295,
+   "type": "stamp"
+  },
+  {
+   "t": 34.855,
+   "type": "stamp"
+  },
+  {
+   "t": 38.0,
+   "type": "glitch"
+  },
+  {
+   "t": 39.595,
+   "type": "stamp"
+  },
+  {
+   "t": 40.825,
+   "type": "stamp"
+  },
+  {
+   "t": 43.21,
+   "type": "whoosh"
+  },
+  {
+   "t": 44.065,
+   "type": "stamp"
+  },
+  {
+   "t": 45.36,
+   "type": "check"
+  },
+  {
+   "t": 46.465,
+   "type": "key"
+  },
+  {
+   "t": 46.533,
+   "type": "key"
+  },
+  {
+   "t": 46.601,
+   "type": "key"
+  },
+  {
+   "t": 46.669,
+   "type": "key"
+  },
+  {
+   "t": 46.737,
+   "type": "key"
+  },
+  {
+   "t": 46.805,
+   "type": "key"
+  },
+  {
+   "t": 46.873,
+   "type": "key"
+  },
+  {
+   "t": 46.941,
+   "type": "key"
+  },
+  {
+   "t": 47.009,
+   "type": "key"
+  },
+  {
+   "t": 49.47,
+   "type": "click"
+  },
+  {
+   "t": 49.92,
+   "type": "crt"
+  }
+ ],
+ "voiceEnd": 49.57
+}
