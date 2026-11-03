@@ -2,7 +2,7 @@
 
 **Duración:** 42,23 s (1.267 frames) · 1080x1920 · 30 fps · -14 LUFS.
 **Concepto:** el mismo mecanismo que «Globo que no existe»: 7 s de cuenta atrás sin voz, imagen congelada, revelación («no existen»), y del 3D se pasa a la automatización del negocio. Aquí el objeto son dos lápices afilados, uno contra otro, que frenan en seco a un pelo de tocarse.
-**Estilo:** render 3D de estudio sobre negro (la misma iluminación de softboxes que la v3 del globo). Lápiz de arriba lacado en naranja #FF6B1A y lápiz de abajo lacado en negro. Madera de cedro con veta y las marcas finas del sacapuntas. Mina de grafito gris con estrías y punta roma. Después pasa a wireframe naranja. Sin rojo, azul ni verde.
+**Estilo (v2, realismo máximo):** la cuenta atrás es **path tracing en Blender/Cycles** (no WebGL), como un plano de estudio de cámara lenta: dos lápices de madera natural sin pintar, fondo de estudio gris carbón desenfocado, teleobjetivo macro en un slider motorizado. Luz de estudio real (softbox grande delante a la izquierda, dos tiras de contraluz, relleno, cenital), profundidad de campo y motion blur físicos. Madera con veta recta en las caras cepilladas, poros, grietas de secado y un nudo; el cono afilado con la fibra desgarrada y pelitos sueltos (partículas de pelo reales en Cycles), la línea de cola junto a la mina; grafito gris satinado con estrías finas. Después se revela como wireframe naranja (three.js, misma cámara). Sin rojo, azul ni verde fuera del fondo neutro.
 **Voz:** una sola toma de ElevenLabs (Martin Osborne, Deep and Passionate, v4), usada entera. Empieza con voz a los 0,070 s, así que se coloca a los 6,930 s para que el primer fonema caiga justo en el frame 210 (7,000 s).
 
 ## Guion (el MP3 tal cual)
@@ -22,7 +22,7 @@ Las pausas de la toma dan 12 tramos que forman las 8 frases. «citas / pedidos /
 
 | Bloque / escena | Tiempo | Voz | En pantalla | Transición |
 |---|---|---|---|---|
-| A · Cuenta atrás | 0–7,0 s | — | Plano general de los dos lápices (se ven el festón de la laca y la madera) con un acercamiento suave. **Dolly de 1,3 s con motion blur** (frames 40–78) a un macro de teleobjetivo sobre las dos minas. Las puntas se acercan cada vez más deprisa y **desde el frame 184 frenan en seco** (deceleración constante) hasta quedar a 0,12 mm. Congelado en el frame 195. Contador 196 → 001, un número por frame, a la derecha del hueco para no tapar las puntas | — |
+| A · Cuenta atrás | 0–7,0 s | — | **196 fotogramas renderizados en Cycles.** Encuadre como la referencia (puntas, conos y parte del cuerpo) y un empuje continuo de slider (×2,6, con un ligero giro para el paralaje) hasta ver los dos conos enteros. Las puntas se acercan cada vez más deprisa y **desde el frame 184 frenan en seco** hasta quedar a 0,12 mm. Congelado en el frame 195. Contador 196 → 001, un número por frame, a la derecha del hueco | — |
 | 1 | 7,0–11,2 s | Llevas siete segundos esperando… | Imagen congelada. «Llevas **7** segundos esperando / a que se **toquen**» | corte seco |
 | 2 | 11,2–14,5 s | No se van a tocar. Porque no existen. | Aparece una cota naranja que marca el hueco. En «existen» (13,47 s): glitch de 6 frames y los lápices pasan a wireframe naranja con una onda | glitch |
 | 3 | 14,5–19,3 s | No hay madera, ni grafito, ni cámara. Los ha dibujado un ordenador. | La malla se redibuja desde las puntas hacia fuera. Etiquetas MADERA · GRAFITO · CÁMARA tachadas en su palabra. «Los ha dibujado / un **ordenador**» | barrido de rejilla |
@@ -34,8 +34,10 @@ Las pausas de la toma dan 12 tramos que forman las 8 frases. «citas / pedidos /
 | C · Cierre | 40,3–42,2 s | — | Apagón CRT, logo y @aigencyx.labs; en el último segundo, el motivo de apertura para el bucle | CRT |
 
 ## Decisiones
-- **Geometría del lápiz:** superficie hexagonal ∩ cono afilado, como un lápiz real. El festón de la laca sale solo, donde la cuchilla corta el hexágono. Mina de 2 mm, cono de 20 mm, punta roma (perfil hiperbólico, nunca una aguja).
-- **Texturas precalculadas en PNG** (`scripts/make_assets.py`): color y relieve del cedro (fibras, anillos y las marcas concéntricas del sacapuntas), y relieve y rugosidad del grafito (estrías y algún brillo).
+- **Por qué Blender:** el realismo que pedías (fibras, grietas, luz de estudio, desenfoque real) no se consigue con WebGL por software. Instalé Blender 5.2 como módulo de Python (`bpy`, desde PyPI) y renderizo la cuenta atrás en Cycles por CPU (32 muestras + denoiser OIDN, 27 s/fotograma, 89 min en total; el fotograma congelado, que se ve 7 s, va a 128 muestras y sin motion blur, como un still nítido de cámara de alta velocidad). El fondo de estudio se compone aparte (PNG precalculado con un ligero paralaje) para no gastar muestras en un desenfoque.
+- **Texturas precalculadas** (`scripts/make_pencil_textures.py`, 6144² por lápiz): para cada texel se calcula el punto 3D real de la superficie y ahí la madera (anillos alrededor de una médula desplazada → franjas rectas en las caras y arcos en el cono), fibras, poros, grietas, nudo, fibra desgarrada del corte, línea de cola y grafito. Color + mapa de normales + rugosidad/metal/sheen. Sin sombreado procedural en el render.
+- **Proporciones como tu referencia:** cono más corto (14 mm) y mina de 2,4 mm.
+- **Geometría del lápiz:** hexágono de aristas redondeadas ∩ cono afilado; el eje del sacapuntas va ligeramente descentrado y el corte tiene una pequeña ondulación, así que los festones salen desiguales, como en un lápiz real. Punta roma (perfil hiperbólico).
 - **Frenazo:** la velocidad del acercamiento sigue siendo alta en el frame 184. Desde ahí frena con deceleración constante hasta pararse justo en el congelado. Suena un chirrido que baja de tono y un clic seco.
 - **Música:** la «tensión» se mide en escala logarítmica del hueco (los últimos milímetros cuentan más). Sonoridad de -28 a unos -12 LUFS al final; la mezcla a -14 LUFS.
 - **Contador** a la derecha del hueco en vez de debajo, para no tapar las puntas, que son el protagonista.
@@ -50,8 +52,10 @@ Las pausas de la toma dan 12 tramos que forman las 8 frases. «citas / pedidos /
 ## Pipeline
 ```
 python scripts/align.py ../audio/raw/lapices-no-se-tocan/6b325a6c-*.mp3
-python scripts/make_assets.py
-python scripts/build.py
+python scripts/make_assets.py              # grano + fondo de estudio
+python scripts/build.py                    # curvas, cámara compartida, mezcla
+python scripts/make_pencil_textures.py     # texturas de los lápices (6144²)
+<python con bpy> scripts/blender_lapices.py --frames 0-195 --samples 32   # placas Cycles → public/plates
 bash scripts/render.sh 12 4 out/reel-lapices-no-se-tocan.mp4
 python scripts/qa.py out/reel-lapices-no-se-tocan.mp4 out/qa
 ```

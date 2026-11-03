@@ -93,32 +93,29 @@ tension[fr > F_FREEZE] = 0.0
 # hundreds crossed (100 → 099): a tick in the sound
 hundreds = [int(f) for f in range(1, F_FREEZE + 1) if counter[f] // 100 != counter[f - 1] // 100]
 
-# camera: wide shot of both pencils with a slow push, a 1.3 s dolly (frames 40-78, motion-blurred in
-# render.sh) into a long-lens macro of the two graphite tips, then another slow push until the freeze
-ZOOM_A, ZOOM_B = 40, 78
-
-
-def cam_of(f):
-    f = min(f, F_FREEZE)
-    if f < ZOOM_A:
-        return 0.0, 0.05 * f / ZOOM_A
-    if f < ZOOM_B:
-        p = (f - ZOOM_A) / (ZOOM_B - ZOOM_A)
-        return p ** 3 * (p * (6 * p - 15) + 10), 0.05 * (1 - p)
-    return 1.0, 0.07 * (f - ZOOM_B) / (F_FREEZE - ZOOM_B)
-
-
-cam_mix = np.array([cam_of(f)[0] for f in fr])
-cam_push = np.array([cam_of(f)[1] for f in fr])
+# camera: a motion-control slider push, as in a slow-motion studio shot — it moves from the first frame,
+# from a framing of both points and cones (like a product macro) to a tight macro of the two leads,
+# with a slight orbit for parallax, and is still moving when the freeze cuts it. Fixed 14° lens.
+FOV = 14.0
+D0, D1 = 11.0, 4.2            # camera distance (scene units, 1 unit = 2 cm)
+AZ0, AZ1 = 0.5, 0.32          # orbit around the pencils (rad)
+EL0, EL1 = 0.06, 0.04         # elevation (rad)
+GAP_Y = 860                   # the gap sits at this screen height (px)
+cam = []
+for f in range(F_VOICE + 1):
+    u = min(f, F_FREEZE) / F_FREEZE
+    p = 0.4 * u + 0.6 * (0.5 - 0.5 * np.cos(np.pi * u))
+    dist = float(np.exp(np.log(D0) + (np.log(D1) - np.log(D0)) * p))
+    vis = 2 * dist * np.tan(np.radians(FOV / 2))
+    ty = -(960 - GAP_Y) / 1920 * vis           # aim below the gap so the gap lands at GAP_Y
+    cam.append([round(dist, 6), round(EL0 + (EL1 - EL0) * p, 6), round(AZ0 + (AZ1 - AZ0) * p, 6), round(float(ty), 6), FOV])
 
 lapiz = {
     "fps": FPS, "frames": int(F_VOICE + 1), "brake": F_BRAKE, "freeze": F_FREEZE, "voice": F_VOICE,
-    "zoom": [ZOOM_A, ZOOM_B], "blur": {"from": ZOOM_A - 1, "to": ZOOM_B + 2, "samples": 10, "shutter": 0.8},
     "gap0": G0, "gapMin": GMIN, "hundreds": hundreds,
     "counter": counter[: F_VOICE + 1].tolist(),
     "gap": [round(float(x), 6) for x in gap[: F_VOICE + 1]],
-    "camMix": [round(float(x), 5) for x in cam_mix[: F_VOICE + 1]],
-    "camPush": [round(float(x), 5) for x in cam_push[: F_VOICE + 1]],
+    "cam": cam,  # per frame: [dist, elev, az, ty, fov] — shared by Blender (plates) and three.js (wireframe)
     "tension": [round(float(x), 4) for x in tension],
 }
 

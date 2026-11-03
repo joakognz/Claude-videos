@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import { EV, LAPIZ, S, ramp } from "../theme";
 import { Lapices3D } from "../components/Lapices3D";
+import { Placa } from "../components/Placa";
 import { Backdrop, Grain, HudFrame, Vignette } from "../components/Hud";
 import { EtiquetasTachadas } from "../components/MallaTrazada";
 import { GLITCH_FRAMES, wireframeState } from "../components/Wireframe";
@@ -24,13 +25,16 @@ export const BloqueB: React.FC<{ frame: number; t: number }> = ({ frame, t }) =>
   // grain is frozen with the image until «existe»
   const grainFrame = frame < fNo ? LAPIZ.freeze : frame;
   const sy = sweepY(t, EV.sweep, SWEEP_DUR);
+  const st = wireframeState(t, frame);
   return (
     <AbsoluteFill>
       {show3D && (
         <AbsoluteFill style={{ clipPath: t >= EV.sweep ? `inset(${Math.max(0, sy)}px 0 0 0)` : undefined }}>
           <Backdrop />
           <AbsoluteFill style={{ translate: `${glitchShift(frame, fNo, GLITCH_FRAMES)}px 0px` }}>
-            <Lapices3D s={wireframeState(t, frame)} />
+            {/* the held, path-traced frame 195 until «existen» (and on the glitch's "solid" frames) */}
+            {st.solid > 0.5 && <Placa data={LAPIZ} frame={LAPIZ.freeze} />}
+            <Lapices3D s={st} />
           </AbsoluteFill>
           <Vignette />
           <Grain frame={grainFrame} />

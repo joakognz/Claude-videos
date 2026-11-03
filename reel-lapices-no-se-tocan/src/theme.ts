@@ -40,9 +40,10 @@ export const TL = timelineJson as unknown as {
 
 export type LapizData = {
   fps: number; frames: number; brake: number; freeze: number; voice: number;
-  zoom: [number, number]; blur: { from: number; to: number; samples: number; shutter: number };
   gap0: number; gapMin: number; hundreds: number[];
-  counter: number[]; gap: number[]; camMix: number[]; camPush: number[]; tension: number[];
+  counter: number[]; gap: number[];
+  cam: [number, number, number, number, number][]; // per frame: dist, elev, az, ty, fov (shared with the Cycles plates)
+  tension: number[];
 };
 export const LAPIZ = lapizJson as unknown as LapizData;
 

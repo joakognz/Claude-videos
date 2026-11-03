@@ -8,8 +8,8 @@ import * as THREE from "three";
  */
 export const R_IN = 0.17; // hexagon inradius (flat to flat 6.8 mm)
 export const R_CORNER = R_IN / Math.cos(Math.PI / 6);
-export const R_CORE = 0.05; // lead Ø 2 mm
-export const L_CONE = 1.0; // sharpened length (20 mm)
+export const R_CORE = 0.06; // lead Ø 2.4 mm
+export const L_CONE = 0.7; // sharpened length (14 mm)
 export const L_BODY = 7.0;
 const SLOPE = R_CORNER / L_CONE;
 const BLUNT = 0.003; // a pencil point is never a needle: a blunt, rounded end (hyperbolic profile)

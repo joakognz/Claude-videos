@@ -1,19 +1,16 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { C, LapizData, MONO } from "../theme";
-import { Lapices3D } from "./Lapices3D";
-import { Backdrop, Grain, HudFrame, Vignette } from "./Hud";
-import { countdownState } from "./countdown";
+import { Placa } from "./Placa";
+import { Grain, HudFrame, Vignette } from "./Hud";
 
 export type CuentaAtrasProps = {
   data: LapizData; // per-frame curves from scripts/build.py (counter, needle, dimple, camera)
   hudTag?: string;
   label?: string;
   showCounter?: boolean;
-  /** Override the frame (used by the motion-blur subframe composition). */
+  /** Override the frame (e.g. to show a held frame). */
   frameOverride?: number;
-  /** Fractional frame for the 3D only (camera, needle), so subframes blur the motion and nothing else. */
-  subFrame?: number;
 };
 
 /** Three-digit countdown (JetBrains Mono Bold 170 px) with its label, one number per frame, orange for the last ten. */
@@ -39,32 +36,17 @@ export const Contador: React.FC<{ data: LapizData; frame: number; label: string 
  * Block A — 7 s countdown without voice: two sharpened pencils closing in, HUD, counter.
  * Reusable and themeless: every text comes in through props, every curve through `data`.
  */
-export const LapicesCuentaAtras: React.FC<CuentaAtrasProps> = ({ data, hudTag = "CAM 01", label = "CUENTA ATRÁS", showCounter = true, frameOverride, subFrame }) => {
+export const LapicesCuentaAtras: React.FC<CuentaAtrasProps> = ({ data, hudTag = "CAM 01", label = "CUENTA ATRÁS", showCounter = true, frameOverride }) => {
   const current = useCurrentFrame();
   const frame = frameOverride ?? current;
   const fz = Math.min(frame, data.freeze);
   return (
     <AbsoluteFill style={{ backgroundColor: C.black }}>
-      <Backdrop />
-      <Lapices3D s={countdownState(data, subFrame ?? frame)} />
+      <Placa data={data} frame={frame} />
       <Vignette />
       <Grain frame={fz} />
       <HudFrame frame={frame} tcFrames={fz} tag={hudTag} />
       {showCounter && <Contador data={data} frame={frame} label={label} />}
     </AbsoluteFill>
   );
-};
-
-/**
- * Motion-blur source: `samples` subframes per frame across the dolly-in; render.sh averages each group
- * of subframes into one frame (shutter `shutter` of a frame, centred) and lays them over the main render.
- * Only the 3D moves between subframes; counter, HUD and grain are those of the whole frame.
- */
-export const ZoomBlurSubframes: React.FC<{ data: LapizData }> = ({ data }) => {
-  const i = useCurrentFrame();
-  const { from, samples, shutter } = data.blur;
-  const f = from + Math.floor(i / samples);
-  const k = i % samples;
-  const ft = f + ((k + 0.5) / samples - 0.5) * shutter;
-  return <LapicesCuentaAtras data={data} frameOverride={f} subFrame={ft} />;
 };
