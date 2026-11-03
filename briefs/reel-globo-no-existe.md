@@ -21,7 +21,7 @@ Las pausas de la toma dan 11 tramos que forman las 7 frases: la frase 3 se corta
 
 | Bloque / escena | Tiempo | Voz | En pantalla | Transición de entrada |
 |---|---|---|---|---|
-| A · Cuenta atrás | 0–7,0 s (f 0–210) | — | Globo naranja de estudio, aguja de acero, HUD (● REC, código de tiempo, CAM 01) y contador 211 → 001. Plano general con un acercamiento del 8 %. En el frame 64 hay un zoom de 6 frames a un macro de la parte de arriba del globo, como en el gancho original, y desde ahí otro acercamiento del 8 %. Pausas en 138 (f 31) y 045 (f 115) con la aguja vibrando 1 px. Toque en el frame 170, hoyuelo hasta el 195. **Congelado en el frame 195**: solo parpadea el REC | — |
+| A · Cuenta atrás | 0–7,0 s (f 0–210) | — | Globo naranja de estudio, aguja de acero, HUD (● REC, código de tiempo, CAM 01) y contador **196 → 001, un número por frame** (sin pausas ni saltos), que se pone naranja en los últimos 10. Plano general con un acercamiento del 6 %. **Dolly de 1 s (frames 48–78) con motion blur** hasta un plano cercano de la parte de arriba (2,7× más cerca, no macro), y desde ahí otro acercamiento del 6 %. La aguja baja suave y **toca a los 3,0 s (f 90)**. Durante 3,5 s hunde el globo con un hoyuelo cada vez más profundo. **Congelado en el frame 195** en pleno movimiento: solo parpadea el REC | — |
 | 1 | 7,0–10,1 s | Acabas de mirar un globo durante siete segundos. | Sigue la imagen congelada. Rótulo «Acabas de mirar un **globo** / durante **7** segundos», palabra a palabra | corte seco (desaparece el contador) |
 | 2 | 10,1–12,1 s | Un globo que no existe. | En «existe» (11,15 s, f 335): glitch de 6 frames y el globo pasa a malla wireframe naranja, con ondas que se curvan hacia el hoyuelo. Rótulo «Un globo que / **no existe**» | glitch por bloques |
 | 3 | 12,1–17,1 s | No hay goma, ni aire, ni fotografía. Lo ha dibujado un ordenador. | La malla se vuelve a dibujar desde el hoyuelo hacia fuera (puntos y triángulos). Etiquetas GOMA · AIRE · FOTO, cada una tachada en naranja cuando la voz dice su palabra (12,45 / 13,46 / 14,20 s). Órbita lenta de la cámara. Rótulo «Lo ha dibujado / un **ordenador**» | barrido de rejilla |
@@ -34,16 +34,17 @@ Las pausas de la toma dan 11 tramos que forman las 7 frases: la frase 3 se corta
 Orden de las transiciones: glitch → barrido → zoom → barrido → glitch → CRT. Nunca hay dos iguales seguidas.
 
 ## Audio (sintetizado en build.py, original)
-- **Fase 1 (f 0–195):** curva «tension» = (1 − distancia aguja-globo / distancia inicial)^1,6, exportada por frame en `src/timeline-globo.json`. Capas: drone de 49 + 55 Hz; bombo seco desde tension 0,15, que acelera de forma continua de 60 a 140 bpm; colchón de sierras con paso bajo que se abre de 300 Hz a 8 kHz; riser de sierra que sube dos octavas (110 → 440 Hz) desde tension 0,4; ruido en paso alto en el último 25 %. El nivel sigue una curva medida de -28 a -10 LUFS (medido: -27,7 → -11). Tic en cada cambio de centena (más agudo cuanto más tensión) y clic metálico en las pausas 138 y 045.
+- **Fase 1 (f 0–195):** curva «tension» = (recorrido de la punta / recorrido total)^1,6, contando el acercamiento (hasta el toque) y la presión (hasta el congelado) como dos mitades. Se exporta por frame en `src/timeline-globo.json`. Capas: drone de 49 + 55 Hz; bombo seco desde tension 0,15, que acelera de forma continua de 60 a 140 bpm; colchón de sierras con paso bajo que se abre de 300 Hz a 8 kHz; riser de sierra que sube dos octavas (110 → 440 Hz) desde tension 0,4; ruido en paso alto en el último 25 %. El nivel sigue una curva medida de -28 a -10 LUFS (medido: -27,7 → -11). Tic al pasar de 100 a 099 y clic metálico suave en el toque de la aguja (f 90).
 - **Fase 2:** corte total en el frame 195 (mismo sample en todas las capas) y zumbido de 41 Hz a -43 dBFS RMS hasta la voz. Golpe sordo en el primer fonema (7,000 s), glitch de audio de 6 frames en «existe», drone muy bajo bajo la voz, acordes abiertos (pulso «solución») desde la frase 5, música 12 dB más baja cuando habla la voz, tecleo y clic de Enviar sincronizados, sonido de apagón CRT y, en el último segundo, el motivo de apertura (dos notas de cristal sobre el drone, igual que en el frame 0) para que el bucle suene continuo.
 - Mezcla a -14 LUFS con limitador con anticipación (lookahead) y techo de -3 dBFS, para que el AAC no se pase de -1 dBTP.
 
 ## Decisiones tomadas (no especificadas)
-- **Gancho:** la grabación de pantalla es un reel de otra cuenta, con su marca y la interfaz de Instagram. No la incrusto: reconstruyo su idea en 3D propio, como pide el prompt. Del original conservo el corte de plano general a macro de la parte de arriba del globo.
-- Hueco aguja-globo al empezar: 0,5 unidades (≈155 px en el plano general). La aguja es más gruesa en el plano general (≈2,5 px) para que se vea y conserva su grosor real en el macro.
-- Profundidad del hoyuelo: 0,16 unidades. El globo se infla un 6 % entre los frames 10 y 170.
+- **Gancho:** la grabación de pantalla es un reel de otra cuenta, con su marca y la interfaz de Instagram. No la incrusto: reconstruyo su idea en 3D propio, como pide el prompt. Del original conservo el paso del plano general al plano cercano de la parte de arriba del globo.
+- **Revisión 2 (tu feedback):** el zoom era de 6 frames hasta un macro 5,9× más cerca; ahora es un dolly de 30 frames con curva suave hasta un plano 2,7× más cerca, con motion blur real: 10 subframes por frame con obturador de 0,8 frames, promediados en `render.sh`. La aguja toca a los 3,0 s en vez de a los 5,7 s (3,5 s de contacto en lugar de 0,8). El contador baja uno por frame; se quitan las pausas en 138/045 y el parpadeo de las centenas, que podían parecer un fallo.
+- Hueco aguja-globo al empezar: 0,5 unidades (≈155 px en el plano general). La aguja es más gruesa en el plano general para que se vea.
+- Profundidad del hoyuelo en el congelado: 0,24 unidades. El globo se infla un 6 % entre los frames 10 y 170.
 - La fila REC / código de tiempo / CAM 01 está a 260 px (justo dentro de la zona segura). Las esquinas en L están a 60 px del borde.
-- El contador empieza en 211 y desaparece con un corte seco cuando entra la voz.
+- El contador empieza en 196 (para llegar a 001 justo en el congelado bajando de uno en uno) y desaparece con un corte seco cuando entra la voz.
 - La frase 6 dice «trabaje» y el rótulo dice «trabaja solo» (como en el prompt).
 - Debajo del CTA añado «TE AYUDAMOS A AUTOMATIZAR» (4 palabras, mono gris) para que no haya 2,5 s sin cambios después de Enviar.
 - Las texturas de grano son PNG precalculados (`public/assets/grain_*.png`) y se congelan junto con la imagen hasta «existe».
@@ -56,7 +57,7 @@ Ventanas «quietas»: la imagen congelada de la frase 1 (es lo que pide el guion
 
 ## Pendiente de comprobar (tú)
 1. **Cómo pronuncia la voz «AIgencyx»** (14,88–15,69 s del MP3; 21,8–22,6 s del vídeo). No lo he podido verificar de oído: no tengo reconocimiento de voz en este entorno. Dura 0,8 s, lo que encaja con «ei-yen-six» o «ai-yen-six». Escúchalo.
-2. Que el gancho te funcione en el móvil a los 0–2 s (plano general) y que el corte a macro del frame 64 no te resulte brusco.
+2. Que el gancho te funcione en el móvil a los 0–1,6 s (plano general) y que el dolly con blur de 1,6–2,6 s te parezca limpio.
 3. Que la interfaz de Instagram no tape la fila REC / código de tiempo (a 260 px).
 4. El volumen de la subida de la cuenta atrás (llega a unos -10 LUFS a corto plazo, más alto que la voz, para que el corte en el frame 195 se note).
 

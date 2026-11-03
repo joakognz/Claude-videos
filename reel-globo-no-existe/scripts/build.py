@@ -19,7 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "..", "audio", "raw", "globo-no-existe")
 SR = 48000
 FPS = 30
-F_TOUCH, F_FREEZE, F_VOICE = 170, 195, 210
+F_TOUCH, F_FREEZE, F_VOICE = 90, 195, 210
 rng = np.random.default_rng(7)
 
 
@@ -55,80 +55,40 @@ i0 = int(round(VOICE_AT * SR))
 voice[i0:i0 + len(x)] = x[: N - i0]
 
 # ══ 1 · countdown curves (frame domain) ══════════════════════════════════
-# The counter runs 211 → 1 over frames 10-170 in three equal thirds (211→105, 105→45, 45→1),
-# each fast-then-slow; it holds 5 frames on 138 and on 045 while the needle stops and shakes.
-HOLD = 5
-motion_frames = (F_TOUCH - 10) - 2 * HOLD  # 150 frames of actual motion
-
-
-def ease_out(p, k=2.2):
-    return 1 - (1 - p) ** k
-
-
-def counter_of(m):
-    """m: motion progress 0..1 → counter value (float)."""
-    thirds = [(211, 105), (105, 45), (45, 1)]
-    k = min(2, int(m * 3))
-    p = m * 3 - k
-    a, b = thirds[k]
-    return a + (b - a) * ease_out(min(1.0, p))
-
-
-# walk the frames, inserting the two holds when the counter first reaches 138 and 45
-counter, motion, vib = [], [], []
-mstep = 1 / motion_frames
-m, held = 0.0, set()
-for f in range(TOTAL_FRAMES):
-    if f < 10:
-        counter.append(211); motion.append(0.0); vib.append(0)
-        continue
-    if f >= F_TOUCH:
-        counter.append(1); motion.append(1.0); vib.append(0)
-        continue
-    c = int(np.ceil(counter_of(m) - 1e-9))
-    hold_for = next((v for v in (138, 45) if c <= v and v not in held), None)
-    if hold_for is not None:
-        if not any(isinstance(hh, tuple) and hh[0] == hold_for for hh in held):
-            held.add((hold_for, f))
-        start = next(hh[1] for hh in held if isinstance(hh, tuple) and hh[0] == hold_for)
-        if f - start < HOLD:
-            counter.append(hold_for); motion.append(m); vib.append(1)
-            continue
-        held.add(hold_for)
-    m = min(1.0, m + mstep)
-    counter.append(max(1, int(np.ceil(counter_of(m) - 1e-9))))
-    motion.append(m); vib.append(0)
-counter = np.array(counter)
-motion = np.array(motion)
-hold_frames = {v: next(hh[1] for hh in held if isinstance(hh, tuple) and hh[0] == v) for v in (138, 45)}
-
-# needle descent (0 = start height, 1 = touching the top of the balloon): slow, speeding up into the skin
-needle = 0.45 * motion + 0.55 * motion ** 2
-needle[np.arange(TOTAL_FRAMES) >= F_TOUCH] = 1.0
-# dimple 0..1 between touch and freeze, soft (ease-out), then frozen
+# The counter is a plain frame countdown: exactly one number per frame, 196 at frame 0 → 001 on the
+# freeze (frame 195). No holds, no jumps: every frame shows the previous number minus one.
 fr = np.arange(TOTAL_FRAMES)
-dimple = np.clip((fr - F_TOUCH) / (F_FREEZE - F_TOUCH), 0, 1)
-dimple = 1 - (1 - dimple) ** 2.4
-# tension = 1 - distance/initial distance, eased in
-tension_lin = needle.copy()
+counter = np.maximum(1, (F_FREEZE + 1) - np.minimum(fr, F_FREEZE))
+assert np.all(np.diff(counter[: F_FREEZE + 1]) == -1) and counter[F_FREEZE] == 1
+
+# needle: still for 10 frames, a smooth approach that lands softly on the crown at frame 90 (3.0 s),
+# then 3.5 s pressing a dimple that deepens faster and faster until the freeze cuts it mid-motion
+GAP0, DIMPLE = 0.5, 0.24  # world units: tip height above the crown at rest, dimple depth at the freeze
+u = np.clip((fr - 10) / (F_TOUCH - 10), 0, 1)
+needle = u * u * (3 - 2 * u)
+v = np.clip((np.minimum(fr, F_FREEZE) - F_TOUCH) / (F_FREEZE - F_TOUCH), 0, 1)
+dimple = v ** 1.6
+# tension = 1 - remaining travel / initial travel, counting the approach (until the touch) and the press
+# (until the freeze) as two equal halves of the journey, eased in so it builds mostly at the end
+tension_lin = 0.5 * needle + 0.5 * dimple
 tension = tension_lin ** 1.6
 tension[fr > F_FREEZE] = 0.0
-# hundreds crossed (211→199, →99): counter flickers for 4 frames
-hundreds = [int(f) for f in range(1, TOTAL_FRAMES) if counter[f] // 100 != counter[f - 1] // 100 and f <= F_TOUCH]
+# hundreds crossed (100 → 099): a tick in the sound
+hundreds = [int(f) for f in range(1, F_FREEZE + 1) if counter[f] // 100 != counter[f - 1] // 100]
 
-# camera: wide (balloon whole) with a slow 8 % push, a 6-frame zoom into the macro of the
-# balloon's crown at frames 64-70 (counter ≈ 105), then a second slow 8 % push until the freeze
-CUT_A, CUT_B = 64, 70
+# camera: wide shot with a slow 6 % push, a 1-second dolly (frames 48-78, smootherstep, motion-blurred
+# in render.sh) to a close shot of the crown — 2.7x closer, not a macro — then another slow 6 % push
+ZOOM_A, ZOOM_B = 48, 78
 
 
 def cam_of(f):
     f = min(f, F_FREEZE)
-    if f < CUT_A:
-        return 0.0, 0.08 * f / CUT_A
-    if f < CUT_B:
-        p = (f - CUT_A) / (CUT_B - CUT_A)
-        return p ** 2 * (3 - 2 * p), 0.08
-    return 1.0, 0.08 * (f - CUT_B) / (F_FREEZE - CUT_B)
+    if f < ZOOM_A:
+        return 0.0, 0.06 * f / ZOOM_A
+    if f < ZOOM_B:
+        p = (f - ZOOM_A) / (ZOOM_B - ZOOM_A)
+        return p ** 3 * (p * (6 * p - 15) + 10), 0.06 * (1 - p)
+    return 1.0, 0.06 * (f - ZOOM_B) / (F_FREEZE - ZOOM_B)
 
 
 cam_mix = np.array([cam_of(f)[0] for f in fr])
@@ -136,14 +96,14 @@ cam_push = np.array([cam_of(f)[1] for f in fr])
 
 globo = {
     "fps": FPS, "frames": int(F_VOICE + 1), "touch": F_TOUCH, "freeze": F_FREEZE, "voice": F_VOICE,
-    "cut": [CUT_A, CUT_B], "holds": hold_frames, "hundreds": hundreds,
+    "zoom": [ZOOM_A, ZOOM_B], "blur": {"from": ZOOM_A - 1, "to": ZOOM_B + 2, "samples": 10, "shutter": 0.8},
+    "gap0": GAP0, "dimpleDepth": DIMPLE, "hundreds": hundreds,
     "counter": counter[: F_VOICE + 1].tolist(),
-    "needle": [round(float(v), 4) for v in needle[: F_VOICE + 1]],
-    "dimple": [round(float(v), 4) for v in dimple[: F_VOICE + 1]],
-    "vib": vib[: F_VOICE + 1],
-    "camMix": [round(float(v), 4) for v in cam_mix[: F_VOICE + 1]],
-    "camPush": [round(float(v), 4) for v in cam_push[: F_VOICE + 1]],
-    "tension": [round(float(v), 4) for v in tension],
+    "needle": [round(float(x), 5) for x in needle[: F_VOICE + 1]],
+    "dimple": [round(float(x), 5) for x in dimple[: F_VOICE + 1]],
+    "camMix": [round(float(x), 5) for x in cam_mix[: F_VOICE + 1]],
+    "camPush": [round(float(x), 5) for x in cam_push[: F_VOICE + 1]],
+    "tension": [round(float(x), 4) for x in tension],
 }
 
 # ══ 2 · voice-anchored timeline (seconds) ════════════════════════════════
@@ -297,14 +257,15 @@ phase1 = (drone * 0.55 + kick * 0.9 + pad_f * 0.8 + riser + noise)
 lvl_db = -28 + 18 * ten
 # measure the layers' own loudness (0.4 s windows, 0.1 s hop) and correct it towards the target curve
 _m = pyln.Meter(SR, block_size=0.4)
-cent, corr = [], []
-for a in np.arange(0, t_freeze - 0.4 + 1e-6, 0.1):
-    w = phase1[int(a * SR):int((a + 0.4) * SR)]
-    l_ = _m.integrated_loudness(np.stack([w, w], axis=1))
-    cent.append(a + 0.2)
-    corr.append(lvl_db[int((a + 0.2) * SR)] - l_)
-corr_s = np.interp(tt, cent, np.convolve(np.pad(corr, 2, mode="edge"), np.ones(5) / 5, mode="valid"))
-phase1 *= db(corr_s) * pre
+for _pass in range(3):  # measure → correct, three times, so the curve lands on target
+    cent, corr = [], []
+    for a in np.arange(0, t_freeze - 0.4 + 1e-6, 0.1):
+        w = phase1[int(a * SR):int((a + 0.4) * SR)]
+        l_ = _m.integrated_loudness(np.stack([w, w], axis=1))
+        cent.append(a + 0.2)
+        corr.append(lvl_db[int((a + 0.2) * SR)] - l_)
+    corr_s = np.interp(tt, cent, np.convolve(np.pad(corr, 2, mode="edge"), np.ones(5) / 5, mode="valid"))
+    phase1 *= db(corr_s) * pre
 # hard stop on frame 195: every layer cut on the same sample (2 ms anti-click)
 cut_i = int(t_freeze * SR)
 phase1[cut_i - 96:cut_i] *= np.linspace(1, 0, 96)
@@ -377,9 +338,7 @@ def add(kind, t, gain=1.0, **kw):
 add("motif", 0.0, 0.9)
 for f in hundreds:
     add("tick", f / FPS, 0.9, tension=float(tension[f]))
-for v_, f in hold_frames.items():
-    add("metal", f / FPS, 0.55)
-add("tick", F_TOUCH / FPS, 0.7, tension=1.0)
+add("metal", F_TOUCH / FPS, 0.6)  # steel meets latex
 add("hum", t_freeze + 0.005, 1.0)
 add("thud", F_VOICE / FPS, 0.8)
 add("glitch", ev["noExiste"], 0.9)
@@ -441,7 +400,7 @@ def lufs(v, a, b):
 
 rest = music2 + drone_end + voice + sfx * 0.6
 rest_R = music2 + drone_end + voice + np.roll(sfx, 50) * 0.6   # sfx slightly widened
-clim = lufs(phase1, t_freeze - 1.2, t_freeze)
+clim = lufs(phase1, t_freeze - 0.4, t_freeze)  # the curve peaks at -10 right at the freeze
 phase1_cal = phase1 * db(-10 - clim)
 g = 1.0
 for _ in range(5):  # rest gain so the whole reel integrates at -14 with the countdown fixed
@@ -484,7 +443,7 @@ json.dump(globo, open(os.path.join(ROOT, "src", "timeline-globo.json"), "w"))
 m_ = pyln.Meter(SR)
 print(f"voice onset {onset:.3f}s in the MP3 → MP3 placed at {VOICE_AT:.3f}s · total {TOTAL_FRAMES} frames ({TOTAL:.2f}s)")
 print("scenes", {k: round(v, 2) for k, v in scenes.items()})
-print("holds", hold_frames, "hundreds", hundreds)
+print("touch", F_TOUCH, "hundreds", hundreds, "counter", counter[0], "→", counter[F_FREEZE])
 print("ev", ev)
 print("loudness", round(m_.integrated_loudness(st), 2), "LUFS · sample peak", round(20 * np.log10(np.abs(st).max()), 2), "dBFS")
 for a in range(0, 7):

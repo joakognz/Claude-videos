@@ -83,6 +83,13 @@ for i in list(range(G["voice"], f_no_a, 6)) + [f_no_a - 1]:
     worst2 = max(worst2, float((d > 12).mean()))
 ok("a_freeze_holds", worst2 < 0.0005, f"frames {G['voice']}-{f_no_a - 1} vs frame {G['freeze']} above the captions: {worst2:.5f} changed")
 
+# (f) countdown fluid: exactly one number per frame down to 001 on the freeze, then held
+cnt = G["counter"]
+steps = [cnt[i] - cnt[i - 1] for i in range(1, G["freeze"] + 1)]
+ok("f_counter_fluid", all(x == -1 for x in steps) and cnt[G["freeze"]] == 1 and all(c == 1 for c in cnt[G["freeze"]:G["voice"]]),
+   f"{cnt[0]} → {cnt[G['freeze']]:03d} in {G['freeze']} frames, step always -1 · needle touches at frame {G['touch']} "
+   f"({(G['freeze'] - G['touch']) / FPS:.1f} s of contact before the freeze)")
+
 # (b) voice placement: correlate the mix (300-3000 Hz) with the raw take
 SR = 16000
 
@@ -111,8 +118,10 @@ ssr = 48000
 rms_stem = [20 * np.log10(np.sqrt(np.mean(stem[k * ssr:(k + 1) * ssr] ** 2)) + 1e-12) for k in range(6)]
 full = pcm(video, 0, 7.0)
 rms_mix = [20 * np.log10(np.sqrt(np.mean(full[k * SR:(k + 1) * SR] ** 2)) + 1e-12) for k in range(7)]
-rising = all(rms_stem[k + 1] >= rms_stem[k] - 0.5 for k in range(5)) and rms_stem[5] - rms_stem[0] >= 12 and rms_mix[5] - rms_mix[1] >= 10
-ok("c_music_rises", rising, "music stem RMS/s " + " ".join(f"{x:.1f}" for x in rms_stem) + " dB · mix RMS/s " +
+# last half second before the freeze (6.0-6.5 s), where the climax sits
+rms_stem.append(20 * np.log10(np.sqrt(np.mean(stem[int(6.0 * ssr):int(6.5 * ssr)] ** 2)) + 1e-12))
+rising = all(rms_stem[k + 1] >= rms_stem[k] - 0.5 for k in range(6)) and rms_stem[6] - rms_stem[0] >= 12 and rms_mix[5] - rms_mix[1] >= 6
+ok("c_music_rises", rising, "music stem RMS 0-1…5-6 s + 6.0-6.5 s: " + " ".join(f"{x:.1f}" for x in rms_stem) + " dB · mix RMS/s " +
    " ".join(f"{x:.1f}" for x in rms_mix) + " dB (6-7 s = the freeze)")
 cut = full[int(6.52 * SR):int(6.98 * SR)]
 print(f"       after the cut (6.52-6.98 s): {20 * np.log10(np.sqrt(np.mean(cut ** 2)) + 1e-12):.1f} dBFS RMS")

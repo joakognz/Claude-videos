@@ -37,7 +37,7 @@ export const wireframeState = (t: number, frame: number): GloboState => {
   const orbit = ramp(t, S.S3, S.S4 + 0.4, EASE) * 0.32;
   const pull = ramp(t, S.S4 + 0.1, S.S5, EASE);
   const out = ramp(t, S.S5 - 0.05, S.S6 + 0.2, (x) => EASE_OUT(EASE_IN(x) * 0.25 + x * 0.75));
-  const dist = Math.exp(lerp(lerp(Math.log(c0.dist), Math.log(9), pull), Math.log(48), out));
+  const dist = Math.exp(lerp(lerp(Math.log(c0.dist), Math.log(11), pull), Math.log(48), out));
   s.cam = {
     dist,
     elev: lerp(lerp(c0.elev + orbit * 0.15, 0.17, pull), 0.08, out),
@@ -45,7 +45,7 @@ export const wireframeState = (t: number, frame: number): GloboState => {
     ty: lerp(lerp(c0.ty, 0.15, pull), 0, out),
     fov: c0.fov,
   };
-  s.dense = 1 - clamp01((dist - 4.5) / 3);
+  s.dense = 1 - clamp01((dist - 7.5) / 3.5);
   // needle leaves and the skin relaxes as we zoom out
   s.needleOn = 1 - ramp(t, S.S5, S.S5 + 0.7);
   s.deform.dimple *= 1 - ramp(t, S.S5 + 0.2, S.S5 + 1.2);

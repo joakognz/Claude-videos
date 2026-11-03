@@ -40,8 +40,9 @@ export const TL = timelineJson as unknown as {
 
 export type GloboData = {
   fps: number; frames: number; touch: number; freeze: number; voice: number;
-  cut: [number, number]; holds: Record<string, number>; hundreds: number[];
-  counter: number[]; needle: number[]; dimple: number[]; vib: number[]; camMix: number[]; camPush: number[]; tension: number[];
+  zoom: [number, number]; blur: { from: number; to: number; samples: number; shutter: number };
+  gap0: number; dimpleDepth: number; hundreds: number[];
+  counter: number[]; needle: number[]; dimple: number[]; camMix: number[]; camPush: number[]; tension: number[];
 };
 export const GLOBO = globoJson as unknown as GloboData;
 
