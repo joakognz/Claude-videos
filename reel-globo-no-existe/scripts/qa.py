@@ -78,7 +78,7 @@ ok("a_freeze", worst < 0.0005, f"max share of changed pixels (outside REC dot) o
 f_no_a = int(np.floor(TL["ev"]["noExiste"] * FPS + 0.5))
 worst2 = 0.0
 for i in list(range(G["voice"], f_no_a, 6)) + [f_no_a - 1]:
-    d = np.abs(frame_rgb(i) - ref).max(axis=2)[:1180]
+    d = np.abs(frame_rgb(i) - ref).max(axis=2)[:1130]  # the caption block (with its soft scrim) starts at 1140
     d[240:310, 80:130] = 0
     worst2 = max(worst2, float((d > 12).mean()))
 ok("a_freeze_holds", worst2 < 0.0005, f"frames {G['voice']}-{f_no_a - 1} vs frame {G['freeze']} above the captions: {worst2:.5f} changed")
@@ -128,8 +128,8 @@ print(f"       after the cut (6.52-6.98 s): {20 * np.log10(np.sqrt(np.mean(cut *
 
 # (d) safe zones: every caption box is laid out between 250 and 1580 px (layout constants), and no white
 # text pixels show up in the strips once the 3D scenes are gone (the needle and the meshes are not text)
-layout = {"HUD row": (260, 300), "counter": (1270, 1270 + 40 + 200), "tags": (1130, 1206), "captions": (1290, 1290 + 2 * 76),
-          "CTA field": (800, 928), "CTA sub-line": (1390, 1430), "logo": (640, 1000), "handle": (1080, 1160)}
+layout = {"HUD row": (260, 300), "counter": (1270, 1270 + 40 + 200), "tags": (1100, 1176), "captions": (1250, 1250 + 60 + 100),
+          "CTA field": (800, 928), "CTA sub-line": (1430, 1470), "logo": (640, 1000), "handle": (1080, 1160)}
 bad = {k: vv for k, vv in layout.items() if vv[0] < 250 or vv[1] > 1580}
 top, bot = int(250 / 4), int((1920 - 340) / 4)
 f_sweep_end = int((TL["ev"]["sweep"] + 0.5) * FPS) + 1

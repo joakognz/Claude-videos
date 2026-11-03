@@ -26,7 +26,7 @@ export const wireframeState = (t: number, frame: number): GloboState => {
 
   // wavy grid curving into the dimple; calms down in scene 4
   const calm = ramp(t, S.S4, S.S4 + 1.2);
-  s.deform.ripple = 0.006 * (1 - calm) * (glitching ? 2.5 : 1);
+  s.deform.ripple = 0.0025 * (1 - calm) * (glitching ? 2.5 : 1);
   s.deform.ripplePhase = tw * 7;
   s.t = tw;
   s.redraw = redrawAngle(t);
@@ -43,9 +43,9 @@ export const wireframeState = (t: number, frame: number): GloboState => {
     elev: lerp(lerp(c0.elev + orbit * 0.15, 0.17, pull), 0.08, out),
     az: orbit * (1 - pull) + pull * 0.12 * (1 - out),
     ty: lerp(lerp(c0.ty, 0.15, pull), 0, out),
-    fov: c0.fov,
+    fov: lerp(c0.fov, 20, Math.max(pull, out)),
   };
-  s.dense = 1 - clamp01((dist - 7.5) / 3.5);
+  s.dense = 1 - clamp01((dist - 3.2) / 2.2);
   // needle leaves and the skin relaxes as we zoom out
   s.needleOn = 1 - ramp(t, S.S5, S.S5 + 0.7);
   s.deform.dimple *= 1 - ramp(t, S.S5 + 0.2, S.S5 + 1.2);

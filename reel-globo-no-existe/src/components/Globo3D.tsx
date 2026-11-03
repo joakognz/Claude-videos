@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { useThree } from "@react-three/fiber";
 import { ThreeCanvas } from "@remotion/three";
-import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { C, rand } from "../theme";
 import { Deform, TOP_Y, countBelow, deformInto, makeGrid, makeSkin } from "./geometry";
 
@@ -25,7 +24,7 @@ export type GloboState = {
 const ORANGE = new THREE.Color(C.orange);
 const GREY = new THREE.Color(C.grey);
 const NEEDLE_LEN = 7;
-const NEEDLE_R = 0.0036;
+const NEEDLE_R = 0.005;
 
 const Rig: React.FC<{ cam: GloboState["cam"] }> = ({ cam }) => {
   const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
@@ -40,7 +39,28 @@ const Rig: React.FC<{ cam: GloboState["cam"] }> = ({ cam }) => {
   return null;
 };
 
-/** Studio reflections from a procedural room (deterministic, no HDR file) — used only by the steel needle. */
+/**
+ * Photo-studio reflections (deterministic, no HDR file): a black room with a big overhead softbox just
+ * behind the balloon (the bright band on the crown), a tall strip on the left, a small kicker front
+ * right (the wide shot's hot spot) and a faint warm bounce from below.
+ */
+const studioScene = () => {
+  const sc = new THREE.Scene();
+  sc.background = new THREE.Color("#000000");
+  const box = (w: number, h: number, pos: [number, number, number], look: [number, number, number], col: string, k: number) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(col).multiplyScalar(k), side: THREE.DoubleSide }));
+    m.position.set(...pos);
+    m.lookAt(...look);
+    sc.add(m);
+  };
+  box(18, 2.6, [0, 1.7, -9], [0, 1.2, 0], "#fff1e6", 2.4); // backlight: the glowing horizon in the close-up
+  box(1.0, 9, [1.6, 2, 9], [0, 1, 0], "#fff6ee", 1.8); // tall strip behind the camera: the steel's highlight line
+  box(8, 3, [0, 7.5, -1.5], [0, 0, 0], "#fff4ea", 2.4); // overhead
+  box(1.6, 8, [-7.5, 1.5, 1.5], [0, 0, 0], "#ffe6d2", 1.4); // strip, left
+  box(1.8, 1.4, [4.5, 4.2, 6.5], [0, 0, 0], "#ffffff", 1.6); // kicker, front right
+  box(40, 40, [0, -9, 0], [0, 0, 0], "#ff5a14", 0.03);
+  return sc;
+};
 // one texture per WebGL context: the canvas remounts at frame 210, and a texture from the old context renders black
 const envTex = new WeakMap<THREE.WebGLRenderer, THREE.Texture>();
 const useStudioEnv = () => {
@@ -48,11 +68,11 @@ const useStudioEnv = () => {
   return useMemo(() => {
     if (!envTex.has(gl)) {
       const pm = new THREE.PMREMGenerator(gl);
-      envTex.set(gl, pm.fromScene(new RoomEnvironment(), 0.035).texture);
+      envTex.set(gl, pm.fromScene(studioScene(), 0.045).texture);
       pm.dispose();
     }
     gl.toneMapping = THREE.NeutralToneMapping;
-    gl.toneMappingExposure = 1.1;
+    gl.toneMappingExposure = 1.0;
     return envTex.get(gl)!;
   }, [gl]);
 };
@@ -60,14 +80,19 @@ const useStudioEnv = () => {
 const FLOOR_Y = -1.55;
 
 const Balloon: React.FC<{ s: GloboState }> = ({ s }) => {
-  const skin = useMemo(() => makeSkin(96), []);
-  const dense = useMemo(() => makeGrid(56, true), []);
+  const skin = useMemo(() => makeSkin(), []);
+  const dense = useMemo(() => makeGrid(150, true, true), []);
   const sparse = useMemo(() => makeGrid(18, true), []);
+  const env = useStudioEnv();
+  // glossy latex: deep orange body that glows in the shadows (thin rubber lets light through),
+  // a clear varnish-like coat that mirrors the softboxes, and a warm sheen at grazing angles
   const skinMat = useMemo(() => new THREE.MeshPhysicalMaterial({
-    color: "#ff6c12", roughness: 0.22, metalness: 0, clearcoat: 0, envMapIntensity: 0,
-    specularIntensity: 0.45,
+    color: "#ff5f0c", roughness: 0.34, metalness: 0, envMap: env, envMapIntensity: 1.0,
+    clearcoat: 1, clearcoatRoughness: 0.14, specularIntensity: 0.3,
+    sheen: 0.7, sheenColor: new THREE.Color("#ffa060"), sheenRoughness: 0.35,
+    emissive: new THREE.Color("#521000"), emissiveIntensity: 0.45,
     transparent: true,
-  }), []);
+  }), [env]);
   const mirrorMat = useMemo(() => new THREE.MeshStandardMaterial({ color: "#ff6a0e", roughness: 0.5, transparent: true, depthWrite: false }), []);
   const depthMat = useMemo(() => new THREE.MeshBasicMaterial({ colorWrite: false }), []);
   const mk = (bright: boolean) => new THREE.LineBasicMaterial({
@@ -188,21 +213,71 @@ const Balloon: React.FC<{ s: GloboState }> = ({ s }) => {
   );
 };
 
+/** Gradient (tip → up): the balloon's orange glow on the lower steel. */
+const tipGlow = (() => {
+  let tex: THREE.CanvasTexture | null = null;
+  return () => {
+    if (tex) return tex;
+    const c = document.createElement("canvas");
+    c.width = 4;
+    c.height = 256;
+    const g = c.getContext("2d")!;
+    const gr = g.createLinearGradient(0, 256, 0, 0); // canvas bottom = uv.y 0 = the tip
+    gr.addColorStop(0, "rgb(255,120,40)");
+    gr.addColorStop(0.18, "rgb(230,80,15)");
+    gr.addColorStop(0.55, "rgb(70,18,4)");
+    gr.addColorStop(1, "rgb(0,0,0)");
+    g.fillStyle = gr;
+    g.fillRect(0, 0, 4, 256);
+    tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    return tex;
+  };
+})();
+
+const GLOW_H = 0.12; // height of the orange glow above the tip
+
 const Needle: React.FC<{ s: GloboState }> = ({ s }) => {
   const geo = useMemo(() => {
+    // long tapered point, then the shaft
     const pts: THREE.Vector2[] = [new THREE.Vector2(0, 0)];
-    for (let k = 1; k <= 12; k++) pts.push(new THREE.Vector2(NEEDLE_R * (k / 12) ** 0.8, 0.16 * (k / 12)));
-    for (let k = 1; k <= 60; k++) pts.push(new THREE.Vector2(NEEDLE_R, 0.16 + (NEEDLE_LEN * k) / 60));
-    return new THREE.LatheGeometry(pts, 28);
+    for (let k = 1; k <= 30; k++) pts.push(new THREE.Vector2(NEEDLE_R * (k / 30) ** 0.75, 0.13 * (k / 30)));
+    for (let k = 1; k <= 30; k++) pts.push(new THREE.Vector2(NEEDLE_R, 0.13 + (0.6 * k) / 30));
+    for (let k = 1; k <= 30; k++) pts.push(new THREE.Vector2(NEEDLE_R, 0.73 + ((NEEDLE_LEN - 0.73) * k) / 30));
+    const g = new THREE.LatheGeometry(pts, 48);
+    // uv.y = height above the tip, scaled to the glow
+    const pos = g.getAttribute("position");
+    const uv = g.getAttribute("uv");
+    for (let i = 0; i < pos.count; i++) uv.setY(i, Math.min(1, pos.getY(i) / GLOW_H));
+    uv.needsUpdate = true;
+    return g;
   }, []);
   const env = useStudioEnv();
-  const metal = useMemo(() => new THREE.MeshStandardMaterial({ color: "#e9e4df", metalness: 1, roughness: 0.16, envMap: env, envMapIntensity: 1.3, transparent: true }), [env]);
-  const wireM = useMemo(() => new THREE.MeshBasicMaterial({ color: C.orange, wireframe: true, transparent: true, toneMapped: false }), []);
+  const metal = useMemo(() => new THREE.MeshPhysicalMaterial({
+    color: "#e8e4df", metalness: 1, roughness: 0.2, envMap: env, envMapIntensity: 1.6, clearcoat: 0.6, clearcoatRoughness: 0.08,
+    emissive: new THREE.Color("#ffffff"), emissiveMap: tipGlow(), emissiveIntensity: 1, transparent: true,
+  }), [env]);
+  const wireGeo = useMemo(() => {
+    const v: number[] = [];
+    const N = 10;
+    for (let k = 0; k < N; k++) {
+      const a = (k / N) * Math.PI * 2;
+      const x = Math.cos(a) * NEEDLE_R;
+      const z = Math.sin(a) * NEEDLE_R;
+      v.push(0, 0, 0, x, 0.13, z, x, 0.13, z, x, NEEDLE_LEN, z);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.Float32BufferAttribute(v, 3));
+    return g;
+  }, []);
+  const wireM = useMemo(() => new THREE.LineBasicMaterial({ color: C.orange, transparent: true, toneMapped: false }), []);
   if (s.needleOn < 0.001) return null;
   const d = s.deform;
   const contact = TOP_Y * (1 + d.inflate) - d.dimple + d.bob;
-  // thicker in the wide shot so it still reads (2-3 px), true scale in the macro
-  const thick = 1 + 1.4 * Math.min(1, Math.max(0, (s.cam.dist - 3) / 12));
+  // the glow grows as the tip nears the skin
+  metal.emissiveIntensity = 0.12 + 0.45 * Math.max(0, 1 - s.needleGap / 0.15);
+  // ≈30 px wide in the macro; a little thicker in the wide shot so it still reads (≈3 px)
+  const thick = 1 + 0.6 * Math.min(1, Math.max(0, (s.cam.dist - 2.4) / 9));
   metal.opacity = s.needleOn * Math.min(1, s.solid * 1.5);
   wireM.opacity = s.needleOn * s.wire;
   const col = ORANGE.clone().lerp(GREY, s.grey);
@@ -210,7 +285,7 @@ const Needle: React.FC<{ s: GloboState }> = ({ s }) => {
   return (
     <group position={[s.needleShake, contact + s.needleGap, 0]} scale={[thick, 1, thick]}>
       {s.solid > 0.001 && <mesh geometry={geo} material={metal} renderOrder={5} />}
-      {s.wire > 0.001 && <mesh geometry={geo} material={wireM} renderOrder={5} />}
+      {s.wire > 0.001 && <lineSegments geometry={wireGeo} material={wireM} renderOrder={5} />}
     </group>
   );
 };
@@ -249,24 +324,19 @@ const Shapes: React.FC<{ s: GloboState }> = ({ s }) => {
   );
 };
 
-const Scene: React.FC<{ s: GloboState }> = ({ s }) => {
-  // the crown faces the overhead key in the macro: dim the lights there so the orange doesn't burn to white
-  const k = 0.62 + 0.38 * Math.min(1, Math.max(0, (s.cam.dist - 3) / 12));
-  return (
+const Scene: React.FC<{ s: GloboState }> = ({ s }) => (
   <>
     <Rig cam={s.cam} />
-    {/* key: warm, top left · fill: cool and very faint · rim from behind for the crown highlight */}
-    <directionalLight position={[-2.5, 8, -0.4]} intensity={2.1 * k} color="#ffd9b8" />
-    <directionalLight position={[5, 1, 3]} intensity={0.08} color="#e6ebff" />
-    <directionalLight position={[0.5, 4, -6]} intensity={1.6 * k} color="#fff2e6" />
-    <hemisphereLight args={["#ffd2ae", "#1a0a04", 1.1 * (0.6 + 0.4 * k)]} />
-    <directionalLight position={[1.5, 1.2, 8]} intensity={0.55 * k} color="#ffc9a0" />
+    {/* key: warm, top left · rim from behind (crown glow) · faint warm fill from the front */}
+    <directionalLight position={[-3, 6, 2.5]} intensity={2.1} color="#ffd9b8" />
+    <directionalLight position={[0.5, 3.5, -6]} intensity={1.4} color="#fff0e2" />
+    <directionalLight position={[2, 0.5, 8]} intensity={0.25} color="#ffc9a0" />
+    <hemisphereLight args={["#ffcfa8", "#1a0804", 0.35]} />
     <Balloon s={s} />
     <Needle s={s} />
     <Shapes s={s} />
   </>
-  );
-};
+);
 
 export const Globo3D: React.FC<{ s: GloboState }> = ({ s }) => (
   <ThreeCanvas width={1080} height={1920} camera={{ fov: 20, position: [0, 0, 10], near: 0.1, far: 100 }}

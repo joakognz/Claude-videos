@@ -33,7 +33,7 @@ seq 0 $((CHUNKS - 1)) | xargs -P "$PAR" -I{} bash -c 'render_chunk {}'
 if [ ! -f "$PARTS/blur.done" ]; then
   rm -rf "$PARTS/blur" && mkdir -p "$PARTS/blur"
   npx remotion render "$PARTS/bundle" ZoomBlur "$PARTS/blur" --sequence --image-format=png --gl=swangle \
-    --concurrency="$PAR" > "$PARTS/blur.log" 2>&1 && touch "$PARTS/blur.done"
+    --concurrency=2 > "$PARTS/blur.log" 2>&1 && touch "$PARTS/blur.done"
 fi
 
 : > "$PARTS/list.txt"

@@ -20,7 +20,7 @@ const TAGS: { label: string; at: keyof typeof EV }[] = [
 export const EtiquetasTachadas: React.FC<{ t: number }> = ({ t }) => {
   if (t < EV.tagsIn - 0.05 || t >= S.S4) return null;
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: 1130, display: "flex", justifyContent: "center", gap: 34 }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 1100, display: "flex", justifyContent: "center", gap: 34 }}>
       {TAGS.map((tag, i) => {
         const inAt = EV.tagsIn + i * 0.09;
         const sp = springAt(t, inAt, 14, 220);

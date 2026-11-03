@@ -19,7 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "..", "audio", "raw", "globo-no-existe")
 SR = 48000
 FPS = 30
-F_TOUCH, F_FREEZE, F_VOICE = 90, 195, 210
+F_TOUCH, F_FREEZE, F_VOICE = 96, 195, 210
 rng = np.random.default_rng(7)
 
 
@@ -61,9 +61,9 @@ fr = np.arange(TOTAL_FRAMES)
 counter = np.maximum(1, (F_FREEZE + 1) - np.minimum(fr, F_FREEZE))
 assert np.all(np.diff(counter[: F_FREEZE + 1]) == -1) and counter[F_FREEZE] == 1
 
-# needle: still for 10 frames, a smooth approach that lands softly on the crown at frame 90 (3.0 s),
-# then 3.5 s pressing a dimple that deepens faster and faster until the freeze cuts it mid-motion
-GAP0, DIMPLE = 0.5, 0.24  # world units: tip height above the crown at rest, dimple depth at the freeze
+# needle: still for 10 frames, a smooth approach that lands softly on the crown at frame 96 (3.2 s),
+# then 3.3 s pressing a dimple that deepens faster and faster until the freeze cuts it mid-motion
+GAP0, DIMPLE = 0.5, 0.085  # world units: tip height above the crown at rest, dimple depth at the freeze
 u = np.clip((fr - 10) / (F_TOUCH - 10), 0, 1)
 needle = u * u * (3 - 2 * u)
 v = np.clip((np.minimum(fr, F_FREEZE) - F_TOUCH) / (F_FREEZE - F_TOUCH), 0, 1)
@@ -78,17 +78,17 @@ hundreds = [int(f) for f in range(1, F_FREEZE + 1) if counter[f] // 100 != count
 
 # camera: wide shot with a slow 6 % push, a 1-second dolly (frames 48-78, smootherstep, motion-blurred
 # in render.sh) to a close shot of the crown — 2.7x closer, not a macro — then another slow 6 % push
-ZOOM_A, ZOOM_B = 48, 78
+ZOOM_A, ZOOM_B = 40, 78
 
 
 def cam_of(f):
     f = min(f, F_FREEZE)
     if f < ZOOM_A:
-        return 0.0, 0.06 * f / ZOOM_A
+        return 0.0, 0.05 * f / ZOOM_A
     if f < ZOOM_B:
         p = (f - ZOOM_A) / (ZOOM_B - ZOOM_A)
-        return p ** 3 * (p * (6 * p - 15) + 10), 0.06 * (1 - p)
-    return 1.0, 0.06 * (f - ZOOM_B) / (F_FREEZE - ZOOM_B)
+        return p ** 3 * (p * (6 * p - 15) + 10), 0.05 * (1 - p)
+    return 1.0, 0.07 * (f - ZOOM_B) / (F_FREEZE - ZOOM_B)
 
 
 cam_mix = np.array([cam_of(f)[0] for f in fr])
@@ -139,7 +139,7 @@ captions = [
         scenes["S3"] - 0.05),
     cap([[("Lo", wt(3, 0), 0), ("ha", wt(3, 1), 0), ("dibujado", wt(3, 2), 0)], [("un", wt(3, 3), 0), ("ordenador", wt(3, 4), 1)]],
         scenes["S4"] - 0.05),
-    cap([[("Y", wt(4, 0), 0), ("tú", wt(4, 1), 0), ("has", wt(5, 0), 0), ("esperado", wt(5, 1), 1)]], scenes["S5"] - 0.05),
+    cap([[("Y", wt(4, 0), 0), ("tú", wt(4, 1), 0)], [("has", wt(5, 0), 0), ("esperado", wt(5, 1), 1)]], scenes["S5"] - 0.05),
     cap([[("Esto", wt(6, 0), 0), ("es", wt(6, 1), 0)], [("lo", wt(6, 2), 1), ("de", wt(6, 3), 1), ("menos", wt(6, 4), 1)]],
         scenes["S6"] - 0.05),
     cap([[("Tu", wt(8, 2), 0), ("negocio", wt(8, 3), 0)], [("trabaja", wt(8, 4), 1), ("solo", wt(8, 5), 1)]], scenes["S7"] - 0.05),

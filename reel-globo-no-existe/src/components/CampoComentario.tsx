@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { C, EV, MONO, S, UI, clamp01, ramp, springAt } from "../theme";
-import { CAPTION_TOP } from "./Captions";
+import { CAPTION_TOP, Word } from "./Captions";
 
 const WORD = "AUDITORIA";
 
@@ -49,12 +49,16 @@ export const CampoComentario: React.FC<{ t: number }> = ({ t }) => {
         }}>Enviar</div>
       </div>
       {/* rótulo */}
-      <div style={{ position: "absolute", left: 60, right: 60, top: CAPTION_TOP, textAlign: "center", fontFamily: UI, fontWeight: 600, fontSize: 64, lineHeight: 1.18, color: C.white }}>
-        <span style={{ opacity: t >= EV.comenta ? 1 : 0 }}>Comenta </span>
-        <span style={{ opacity: t >= EV.typeStart ? 1 : 0, color: C.orange }}>AUDITORIA</span>
+      <div style={{ position: "absolute", left: 50, right: 50, top: CAPTION_TOP, textAlign: "center", fontFamily: UI }}>
+        <div style={{ fontSize: 46, fontWeight: 600, lineHeight: 1.3, color: C.white, opacity: 0.92 }}>
+          <Word t={t} at={EV.comenta} hl={false} size={46} last>Comenta</Word>
+        </div>
+        <div style={{ fontSize: 92, fontWeight: 700, lineHeight: 1.08, letterSpacing: -2.5 }}>
+          <Word t={t} at={EV.typeStart} hl size={92} last>AUDITORIA</Word>
+        </div>
       </div>
       <div style={{
-        position: "absolute", left: 60, right: 60, top: CAPTION_TOP + 100, textAlign: "center", fontFamily: MONO, fontWeight: 500, fontSize: 30,
+        position: "absolute", left: 60, right: 60, top: CAPTION_TOP + 180, textAlign: "center", fontFamily: MONO, fontWeight: 500, fontSize: 30,
         letterSpacing: 3, color: C.grey, opacity: t >= EV.ayudamos ? 1 : 0,
       }}>TE AYUDAMOS A AUTOMATIZAR</div>
     </AbsoluteFill>
