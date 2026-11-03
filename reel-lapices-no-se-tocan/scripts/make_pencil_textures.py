@@ -28,30 +28,9 @@ W = H = args.size
 OUT = os.path.join(ROOT, "public", "plates_src")
 os.makedirs(OUT, exist_ok=True)
 
-# geometry — keep in sync with scripts/blender_lapices.py and src/components/lapiz.ts
-R_IN, RC, R_CORE, L_CONE, BLUNT = 0.17, 0.014, 0.06, 0.7, 0.003
-A_IN = R_IN - RC
-R_MAX = A_IN / math.cos(math.pi / 6) + RC
-SLOPE = R_MAX / L_CONE
-YT, VEXP = 2.2, 0.6
-
-
-def hex_round(phi):
-    a = np.mod(phi + np.pi / 6, np.pi / 3) - np.pi / 6
-    lo = np.zeros_like(phi)
-    hi = np.full_like(phi, R_MAX * 1.2)
-    th = A_IN * math.tan(math.pi / 6)
-    for _ in range(40):
-        t = (lo + hi) / 2
-        x, y = t * np.cos(a), t * np.abs(np.sin(a))
-        d = np.where(y <= th, x - A_IN, np.hypot(x - A_IN, y - th))
-        lo = np.where(d < RC, t, lo)
-        hi = np.where(d < RC, hi, t)
-    return (lo + hi) / 2
-
-
-def cone_r(y):
-    return SLOPE * np.sqrt(np.maximum(0.0, y * (y + 2 * BLUNT)))
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pencil_geom import Pencil, R_CORE, R_IN, YT, VEXP  # the same surface as the plates and the wireframe
 
 
 def lattice(seed, n=96, sigma=1.6):
@@ -77,18 +56,18 @@ def hexcol(h):
 
 
 PENCILS = [
-    # pith position (scene units), knot (angle on the camera-facing face, height) or None, crack seeds
-    dict(seed=3, pith=(0.95, -1.35), knot=(-0.45, 1.05), ecc=(0.0055, 0.0012)),
-    dict(seed=8, pith=(-1.2, 0.75), knot=None, ecc=(0.0048, -0.0021)),
+    # pith position (scene units), knot (angle on the camera-facing face, height) or None
+    dict(seed=3, pith=(0.95, -1.35), knot=(1.05, 1.25)),   # knot on the face toward the camera
+    dict(seed=8, pith=(-1.2, 0.75), knot=None),
 ]
 
 u = (np.arange(W, dtype=np.float32) + 0.5) / W
 v = (np.arange(H, dtype=np.float32) + 0.5) / H
 PHI = 2 * np.pi * u
 Yrow = YT * v ** (1 / VEXP)
-HEX = hex_round(PHI.astype(np.float64)).astype(np.float32)
 
 for k, P in enumerate(PENCILS):
+    geo = Pencil(k)
     rng = np.random.default_rng(P["seed"])
     lats = [lattice(P["seed"] * 10 + i) for i in range(8)]
     col = np.zeros((H, W, 3), np.uint8)
@@ -97,28 +76,26 @@ for k, P in enumerate(PENCILS):
     # cracks along the grain: angle, start/end height, width, depth, wiggle phase
     cracks = []
     for _ in range(9):
-        ya = rng.uniform(0.2, 1.4) if rng.random() < 0.5 else rng.uniform(0.6, 1.8)
+        ya = rng.uniform(0.45, 1.4) if rng.random() < 0.5 else rng.uniform(0.7, 1.8)
         cracks.append((rng.uniform(0, 2 * np.pi), ya, ya + rng.uniform(0.25, 0.9), rng.uniform(0.0016, 0.0032),
                        rng.uniform(0.6, 1.0), rng.uniform(0, 6.28)))
-    ex, ez = P["ecc"]
-    B = 256
+    B = 128
     for r0 in range(0, H, B):
-        y = np.repeat(Yrow[r0:r0 + B, None], W, axis=1)
-        ph = np.repeat(PHI[None, :], y.shape[0], axis=0)
-        hexr = np.repeat(HEX[None, :], y.shape[0], axis=0)
-        away = np.clip((y - 0.12) / 0.4, 0, 1)
-        cone = cone_r(y) + away * (ex * np.cos(ph) + ez * np.sin(ph))
-        r = np.minimum(hexr, cone)
-        X, Z = np.cos(ph) * r, -np.sin(ph) * r
-        lead = cone_r(y) < R_CORE
-        cut = (~lead) & (cone < hexr - 1e-5)
-        face = (~lead) & (~cut)
+        y = np.repeat(Yrow[r0:r0 + B, None], W, axis=1).astype(np.float64)
+        ph = np.repeat(PHI[None, :], y.shape[0], axis=0).astype(np.float64)
+        r, region = geo.surface(ph, y)
+        X, _, Z = geo.point(ph, y, r)
+        lead = region == 0
+        cut = region == 1
+        face = region == 2
+        yw = geo.y_wood(ph)
+        edge_near = np.clip(1 - (y - yw) / 0.05, 0, 1) * (~lead)       # torn, fresh wood at the chipped edge
         # ── growth rings ──
         d = np.hypot(X - P["pith"][0], Z - P["pith"][1])
         d += 0.011 * noise(lats[0], X, Z, y, (5, 5, 0.7)) + 0.0035 * noise(lats[1], X, Z, y, (24, 24, 2.5))
         if P["knot"] is not None:
             ka, ky = P["knot"]
-            kx, kz = R_IN * math.cos(ka), -R_IN * math.sin(ka)
+            kx, kz = R_IN * math.cos(ka), R_IN * math.sin(ka)
             kd = np.sqrt((X - kx) ** 2 + (Z - kz) ** 2 + ((y - ky) * 0.55) ** 2)
             d += 0.07 * np.exp(-kd / 0.035)
         d = d + 0.006 * np.sin(d * 37.0) + 0.003 * np.sin(d * 113.0)  # uneven ring widths
@@ -149,8 +126,8 @@ for k, P in enumerate(PENCILS):
         c_face = c_face * bright
         speck = noise(lats[7], X, Z, y, (700, 700, 45))
         c_cut = c_cut * (1 + 0.07 * speck + 0.09 * fib2 + 0.05 * fib + 0.06 * drift)[..., None]
-        glue = smooth(-(cone_r(y) - R_CORE * 1.16), -0.004, 0.0)  # thin dark ring next to the lead
-        c_cut = c_cut * (1 - 0.45 * glue[..., None])
+        glue = smooth(-(r - R_CORE * 1.18), -0.004, 0.0) * cut     # dark glue line where the wood meets the lead
+        c_cut = c_cut * (1 - 0.45 * glue[..., None]) * (1 + 0.12 * edge_near[..., None])
         grafito = hexcol("#4b4b51") * (1 + 0.08 * noise(lats[3], X, Z, y, (700, 700, 5)) + 0.05 * drift)[..., None]
         c = np.where(lead[..., None], grafito, np.where(cut[..., None], c_cut, c_face))
         c = c * (1 - 0.5 * pore[..., None] * (~lead)[..., None])
@@ -161,7 +138,7 @@ for k, P in enumerate(PENCILS):
         col[r0:r0 + B] = (np.clip(c, 0, 1) ** (1 / 1.0) * 255 + 0.5).astype(np.uint8)
         # ── relief (world units) ──
         h = np.where(lead, 0.00005 * noise(lats[3], X, Z, y, (1800, 1800, 5)),
-                     np.where(cut, 0.0011 * speck + 0.0006 * fib2 + 0.0004 * fib,
+                     np.where(cut, 0.0005 * speck + 0.0003 * fib2 + 0.0002 * fib,
                               0.00035 * fib + 0.00018 * fib2 + 0.0003 * late))
         h -= 0.0018 * crack + 0.0004 * pore
         hgt[r0:r0 + B] = h
@@ -173,9 +150,11 @@ for k, P in enumerate(PENCILS):
         orm[r0:r0 + B] = (np.stack([rough, metal, sheen], -1) * 255 + 0.5).astype(np.uint8)
         print(f"pencil {k}: rows {r0}-{r0 + B}", end="\r", flush=True)
     # tangent-space normals from the height field, with the real texel sizes (they vary along the pencil)
-    yv = Yrow[:, None]
-    rr = np.minimum(np.repeat(HEX[None, :], H, 0), cone_r(yv) + 1e-4)
-    du = 2 * np.pi * np.maximum(rr, 0.01) / W               # world length of one texel around
+    rr = np.empty((H, W), np.float32)
+    for r0 in range(0, H, 512):
+        yb = np.repeat(Yrow[r0:r0 + 512, None], W, axis=1).astype(np.float64)
+        rr[r0:r0 + 512] = geo.surface(np.repeat(PHI[None, :], yb.shape[0], 0).astype(np.float64), yb, relief=False)[0]
+    du = 2 * np.pi * np.maximum(rr, 0.006) / W               # world length of one texel around
     dv = (YT / VEXP) * (v[:, None] ** (1 / VEXP - 1)) / H   # world length of one texel along
     gx = (np.roll(hgt, -1, 1) - np.roll(hgt, 1, 1)) / (2 * du)
     gy = np.zeros_like(hgt)

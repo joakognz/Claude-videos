@@ -1,8 +1,9 @@
 """Path-traced plates for the countdown (Blender/Cycles, run headless through the `bpy` module).
 
-Two natural-wood hexagonal pencils on a dark studio backdrop, shot with a long macro lens on a
-motion-control slider: planed faces with grain, pores, drying cracks and a knot; sharpened cones with
-torn end grain and loose fibres (hair particles); graphite leads with fine scratches. Soft area lights,
+Two natural-wood hexagonal pencils, hand-whittled with a knife (shared model: scripts/pencil_geom.py —
+flat facets, a jagged chipped edge where the wood stops, an off-centre faceted lead, displaced torn
+fibres), with splinters, curly loose fibres and graphite crumbs as real geometry, on a dark studio
+backdrop, shot with a long macro lens on a motion-control slider. Soft area lights,
 real depth of field, motion blur from the moves. Surface detail comes from pre-computed textures
 (scripts/make_pencil_textures.py); camera, gap and timing from src/timeline-lapiz.json — the same
 numbers drive the three.js wireframe, so the reveal lines up.
@@ -31,47 +32,28 @@ TL = json.load(open(os.path.join(ROOT, "src", "timeline-lapiz.json")))
 TEX = os.path.join(ROOT, "public", "plates_src")
 S = 0.02  # metres per scene unit (1 unit = 2 cm)
 
-# ── pencil geometry (scene units) — keep in sync with make_pencil_textures.py and src/components/lapiz.ts ──
-R_IN, RC, R_CORE, L_CONE, BLUNT = 0.17, 0.014, 0.06, 0.7, 0.003
-A_IN = R_IN - RC
-R_MAX = A_IN / math.cos(math.pi / 6) + RC
-SLOPE = R_MAX / L_CONE
-YT, VEXP = 2.2, 0.6           # texture v = (y / YT) ** VEXP
+# ── pencil geometry: the shared, hand-whittled model (scripts/pencil_geom.py) ─────────────────────
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pencil_geom import Pencil, R_CORE, YT, VEXP  # noqa: E402
+
 L_BODY = 7.0
-NP, NR_TIP, NR_BODY = 600, 900, 24
-Y_TIP_END = 1.0
-ECC = [(0.0055, 0.0012), (0.0048, -0.0021)]  # same as the texture generator
+NP, NR_TIP, NR_BODY = 720, 1100, 24
+Y_TIP_END = 1.15
 
 
-def hex_round(phi):
-    a = np.mod(phi + np.pi / 6, np.pi / 3) - np.pi / 6
-    lo = np.zeros_like(phi)
-    hi = np.full_like(phi, R_MAX * 1.2)
-    th = A_IN * math.tan(math.pi / 6)
-    for _ in range(40):
-        t = (lo + hi) / 2
-        x, y = t * np.cos(a), t * np.abs(np.sin(a))
-        d = np.where(y <= th, x - A_IN, np.hypot(x - A_IN, y - th))
-        lo = np.where(d < RC, t, lo)
-        hi = np.where(d < RC, hi, t)
-    return (lo + hi) / 2
-
-
-def cone_r(y):
-    return SLOPE * np.sqrt(np.maximum(0.0, y * (y + 2 * BLUNT)))
+def to_local(x3, y3, z3):
+    """three.js-axes point (scene units) → the pencil's local Blender coordinates (metres, axis +Z)."""
+    return np.stack([x3, -z3, y3], axis=-1) * S
 
 
 def build_pencil(name, k):
+    geo = Pencil(k)
     phis = np.linspace(0, 2 * np.pi, NP, endpoint=False)
-    ys = np.concatenate([Y_TIP_END * (np.arange(NR_TIP + 1) / NR_TIP) ** 1.6,
+    ys = np.concatenate([Y_TIP_END * (np.arange(NR_TIP + 1) / NR_TIP) ** 1.5,
                          Y_TIP_END + (L_BODY - Y_TIP_END) * np.arange(1, NR_BODY + 1) / NR_BODY])
     P, Y = np.meshgrid(phis, ys)
-    hexr = hex_round(P)
-    ex, ez = ECC[k]
-    away = np.clip((Y - 0.12) / 0.4, 0, 1)
-    cone = cone_r(Y) + away * (ex * np.cos(P) + ez * np.sin(P))
-    r = np.minimum(hexr, cone)
-    verts = np.stack([np.cos(P) * r, -np.sin(P) * r, Y], axis=-1).reshape(-1, 3) * S
+    r, region = geo.surface(P, Y)
+    verts = to_local(*geo.point(P, Y, r)).reshape(-1, 3)
     nr, npc = Y.shape
     rows = np.arange(nr - 1)[:, None] * npc
     cols = np.arange(npc)[None, :]
@@ -86,7 +68,6 @@ def build_pencil(name, k):
     me.polygons.add(len(quads))
     me.polygons.foreach_set("loop_start", (np.arange(len(quads)) * 4).astype(np.int32))
     me.update(calc_edges=True)
-    # UVs per loop (the last column closes the seam at u = 1)
     uq = np.stack([cols, cols + 1, cols + 1, cols], -1) / npc
     uq = np.broadcast_to(uq, (nr - 1, npc, 4))
     yq = np.stack([Y[:-1], Y[:-1], Y[1:], Y[1:]], -1)
@@ -94,22 +75,101 @@ def build_pencil(name, k):
     uv = me.uv_layers.new(name="UVMap")
     uv.data.foreach_set("uv", np.stack([uq, vq], -1).astype(np.float32).ravel())
     me.validate()
-    me.shade_smooth()
     ob = bpy.data.objects.new(name, me)
     bpy.context.scene.collection.objects.link(ob)
-    # fuzz density: the cut wood, strongest along the scalloped edge and round the lead
+    # smooth shading, but keep the knife ridges and the chipped steps crisp
+    me.shade_smooth()
+    me.set_sharp_from_angle(angle=math.radians(24))
+    # fuzz density: the cut wood, strongest along the chipped edge
     w = np.zeros(len(verts))
-    lead_v = (cone_r(Y) < R_CORE).reshape(-1)
-    cut_v = (cone < hexr - 1e-5).reshape(-1) & ~lead_v
-    edge = np.clip(1 - (hexr - cone) / 0.03, 0, 1).reshape(-1)
-    near_lead = np.clip(1 - (cone_r(Y) - R_CORE) / 0.02, 0, 1).reshape(-1)
-    w[cut_v] = np.clip(0.2 + 0.8 * np.maximum(edge, 0.7 * near_lead), 0, 1)[cut_v]
+    yw = geo.y_wood(P)
+    edge = np.clip(1 - (Y - yw) / 0.06, 0, 1)
+    cutm = region == 1
+    w[cutm.reshape(-1)] = np.clip(0.15 + 0.85 * edge, 0, 1)[cutm]
     vg = ob.vertex_groups.new(name="fuzz")
     for val in (0.25, 0.5, 0.75, 1.0):
         idx = np.where((w > val - 0.25) & (w <= val))[0].tolist()
         if idx:
             vg.add(idx, val, "REPLACE")
-    return ob
+    return ob, geo
+
+
+def add_debris(ob, geo, k, mats):
+    """Splinters lifting off the chipped edge, curly loose fibres, and graphite crumbs — real geometry."""
+    rng = np.random.default_rng(100 + k)
+    # splinters: thin curled ribbons rooted on the edge, peeling outwards and towards the tip
+    for n in range(3):
+        ph = rng.uniform(0, 2 * np.pi)
+        y0 = float(geo.y_wood(np.array(ph))) + 0.004
+        r0 = float(geo.surface(np.array(ph), np.array(y0))[0])
+        L, wdt = rng.uniform(0.04, 0.09), rng.uniform(0.008, 0.016)
+        seg = 10
+        verts, faces = [], []
+        for t in range(seg + 1):
+            u = t / seg
+            curl = 0.6 * u * u
+            rr = r0 + L * (0.35 * u + 0.25 * curl)
+            yy = y0 - L * (0.8 * u - 0.3 * curl)
+            dph = (wdt / 2) / max(rr, 0.02) * (1 - 0.7 * u)
+            for sgn in (-1, 1):
+                p = ph + sgn * dph
+                verts.append(tuple(to_local(np.cos(p) * rr, yy, np.sin(p) * rr)))
+            if t:
+                a = 2 * (t - 1)
+                faces.append((a, a + 1, a + 3, a + 2))
+        me = bpy.data.meshes.new(f"astilla_{k}_{n}")
+        me.from_pydata(verts, [], faces)
+        o = bpy.data.objects.new(me.name, me)
+        bpy.context.scene.collection.objects.link(o)
+        o.parent = ob
+        sol = o.modifiers.new("grosor", "SOLIDIFY")
+        sol.thickness = 0.0016 * S
+        o.data.materials.append(mats["madera"])
+        o.data.shade_smooth()
+    # loose fibres: a few long curly strands hanging off the edge
+    for n in range(1):
+        ph = rng.uniform(0, 2 * np.pi)
+        y0 = float(geo.y_wood(np.array(ph))) + rng.uniform(0.0, 0.03)
+        r0 = float(geo.surface(np.array(ph), np.array(y0))[0])
+        cu = bpy.data.curves.new(f"fibra_{k}_{n}", "CURVE")
+        cu.dimensions = "3D"
+        cu.bevel_depth = rng.uniform(0.00045, 0.0006) * S
+        cu.bevel_resolution = 2
+        sp = cu.splines.new("NURBS")
+        npts = 9
+        sp.points.add(npts - 1)
+        L = rng.uniform(0.1, 0.16)
+        phase = rng.uniform(0, 6.28)
+        for t in range(npts):
+            u = t / (npts - 1)
+            rr = r0 + L * 0.45 * u + 0.012 * np.sin(u * 9 + phase)
+            yy = y0 + L * (0.15 * u - 0.55 * u * u)
+            p = ph + 0.25 * np.sin(u * 7 + phase) * u
+            x, yb, zb = to_local(np.cos(p) * rr, yy, np.sin(p) * rr)
+            sp.points[t].co = (x, yb, zb, 1)
+        sp.use_endpoint_u = True
+        sp.order_u = 4
+        o = bpy.data.objects.new(cu.name, cu)
+        bpy.context.scene.collection.objects.link(o)
+        o.parent = ob
+        o.data.materials.append(mats["fibra"])
+    # graphite crumbs sitting on the lead, near the point and the chipped edge
+    for n in range(3):
+        ph = rng.uniform(0, 2 * np.pi)
+        yw = float(geo.y_wood(np.array(ph)))
+        y0 = rng.uniform(0.03, yw - 0.01)
+        r0 = float(geo.surface(np.array(ph), np.array(y0))[0])
+        rad = rng.uniform(0.0018, 0.0035)
+        bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2, radius=rad * S)
+        o = bpy.context.object
+        co = np.array([v.co[:] for v in o.data.vertices])
+        co *= rng.uniform(0.6, 1.25, co.shape)  # lumpy
+        for v, c in zip(o.data.vertices, co):
+            v.co = c
+        o.location = tuple(to_local(np.cos(ph) * (r0 - rad * 0.2), y0, np.sin(ph) * (r0 - rad * 0.2)))
+        o.parent = ob
+        o.data.materials.append(mats["grafito"])
+        o.name = f"miga_{k}_{n}"
 
 
 def srgb(h):
@@ -203,8 +263,8 @@ def add_fuzz(ob, mat_index, seed, count):
     # advanced hair: the length comes from the emission velocity (in metres here) — ~0.4 mm fibres,
     # leaning every which way off the surface
     st.use_advanced_hair = True
-    st.normal_factor = 0.00032
-    st.factor_random = 0.00028
+    st.normal_factor = 0.00022
+    st.factor_random = 0.0002
     st.tangent_factor = 0.00008
     st.length_random = 0.8
     st.material = mat_index
@@ -265,13 +325,18 @@ sc.world = world
 
 t_scene = time.time()
 pencils = []
+debris_mats = {"madera": simple_material("astilla", "#d4ad84", 0.75, sss=0.2),
+               "fibra": simple_material("fibra_suelta", "#8a6a4c", 0.6, sss=0.2),
+               "grafito": simple_material("miga", "#4b4b51", 0.4)}
+debris_mats["grafito"].node_tree.nodes["Principled BSDF"].inputs["Metallic"].default_value = 0.55
 for k, (name, rot, seed) in enumerate((("lapiz_arriba", (0, 0, 0), 3), ("lapiz_abajo", (0, math.pi, math.pi / 6), 8))):
-    ob = build_pencil(name, k)
+    ob, geo = build_pencil(name, k)
     ob.rotation_euler = rot
     ob.data.materials.append(pencil_material(f"lapiz_{k}", k))
     ob.data.materials.append(simple_material(f"fibra_{k}", "#e2c29c", 0.6, sss=0.3))
     if not args.nohair:
-        add_fuzz(ob, 2, seed, 12000)
+        add_fuzz(ob, 2, seed, 6000)
+    add_debris(ob, geo, k, debris_mats)
     pencils.append(ob)
     print(f"{name} built ({len(ob.data.vertices)} verts) at {time.time() - t_scene:.1f}s", flush=True)
 

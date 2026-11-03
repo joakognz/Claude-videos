@@ -36,23 +36,23 @@ const Rig: React.FC<{ cam: LapizState["cam"] }> = ({ cam }) => {
 };
 
 const Wire: React.FC<{ s: LapizState }> = ({ s }) => {
-  const w = useMemo(() => makePencilWire(), []);
-  const geos = useMemo(() => [0, 1].map(() => {
+  const wires = useMemo(() => [makePencilWire(0), makePencilWire(1)], []);
+  const geos = useMemo(() => wires.map((w) => {
     const g = new THREE.BufferGeometry();
     const pos = new THREE.BufferAttribute(new Float32Array(w.cyl.length), 3);
     g.setAttribute("position", pos);
     const head = new THREE.BufferGeometry();
     head.setAttribute("position", pos);
-    return { g, head, pos };
-  }), [w]);
+    return { g, head, pos, w };
+  }), [wires]);
   const lineMat = useMemo(() => new THREE.LineBasicMaterial({ color: C.orange, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false }), []);
   const headMat = useMemo(() => new THREE.LineBasicMaterial({ color: C.orangeSoft, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, toneMapped: false }), []);
   const on = s.wire > 0.001 && s.wireAlpha > 0.001;
   useLayoutEffect(() => {
     if (!on) return;
-    const n = countBelow(w.key, s.redraw);
-    const h0 = Number.isFinite(s.redraw) ? countBelow(w.key, s.redraw - 0.06) : n;
-    geos.forEach(({ g, head, pos }) => {
+    geos.forEach(({ g, head, pos, w }) => {
+      const n = countBelow(w.key, s.redraw);
+      const h0 = Number.isFinite(s.redraw) ? countBelow(w.key, s.redraw - 0.06) : n;
       const arr = pos.array as Float32Array;
       for (let i = 0; i < n * 2; i++) {
         const phi = w.cyl[i * 3];

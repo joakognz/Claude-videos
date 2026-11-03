@@ -34,9 +34,15 @@ Las pausas de la toma dan 12 tramos que forman las 8 frases. «citas / pedidos /
 | C · Cierre | 40,3–42,2 s | — | Apagón CRT, logo y @aigencyx.labs; en el último segundo, el motivo de apertura para el bucle | CRT |
 
 ## Decisiones
+- **v3 · la punta es geometría, no textura** (tu segundo vídeo, usado solo como referencia: es un Short de otra cuenta y no se incluye ni se toca su marca de agua). Modelo compartido en `scripts/pencil_geom.py` — lo usan el render de Blender, las texturas y el wireframe, así que la malla del «no existen» es exactamente la forma renderizada:
+  - madera tallada a cuchillo: 11 planos con distinta inclinación y profundidad → facetas planas con aristas vivas (bordes marcados como "sharp" en Blender);
+  - el borde donde se acaba la madera está astillado: un escalón irregular (mordiscos + dientes) que baja a la mina;
+  - mina con sus propias 7 facetas hasta una punta ligeramente descentrada y roma;
+  - relieve desplazado en la malla: fibra desgarrada en el corte (más levantada junto al borde) y grafito algo granuloso;
+  - piezas sueltas de verdad: 3 astillas que se despegan del borde por lápiz (cinta curvada con grosor), 1 fibra rizada colgando, 3 migas de grafito, y pelusa de fibras (partículas de pelo).
 - **Por qué Blender:** el realismo que pedías (fibras, grietas, luz de estudio, desenfoque real) no se consigue con WebGL por software. Instalé Blender 5.2 como módulo de Python (`bpy`, desde PyPI) y renderizo la cuenta atrás en Cycles por CPU (32 muestras + denoiser OIDN, 27 s/fotograma, 89 min en total; el fotograma congelado, que se ve 7 s, va a 128 muestras y sin motion blur, como un still nítido de cámara de alta velocidad). El fondo de estudio se compone aparte (PNG precalculado con un ligero paralaje) para no gastar muestras en un desenfoque.
 - **Texturas precalculadas** (`scripts/make_pencil_textures.py`, 6144² por lápiz): para cada texel se calcula el punto 3D real de la superficie y ahí la madera (anillos alrededor de una médula desplazada → franjas rectas en las caras y arcos en el cono), fibras, poros, grietas, nudo, fibra desgarrada del corte, línea de cola y grafito. Color + mapa de normales + rugosidad/metal/sheen. Sin sombreado procedural en el render.
-- **Proporciones como tu referencia:** cono más corto (14 mm) y mina de 2,4 mm.
+- **Proporciones como tus referencias:** cono tallado de unos 20 mm, mina de 2,2 mm con 7–8 mm a la vista.
 - **Geometría del lápiz:** hexágono de aristas redondeadas ∩ cono afilado; el eje del sacapuntas va ligeramente descentrado y el corte tiene una pequeña ondulación, así que los festones salen desiguales, como en un lápiz real. Punta roma (perfil hiperbólico).
 - **Frenazo:** la velocidad del acercamiento sigue siendo alta en el frame 184. Desde ahí frena con deceleración constante hasta pararse justo en el congelado. Suena un chirrido que baja de tono y un clic seco.
 - **Música:** la «tensión» se mide en escala logarítmica del hueco (los últimos milímetros cuentan más). Sonoridad de -28 a unos -12 LUFS al final; la mezcla a -14 LUFS.
@@ -54,7 +60,8 @@ Las pausas de la toma dan 12 tramos que forman las 8 frases. «citas / pedidos /
 python scripts/align.py ../audio/raw/lapices-no-se-tocan/6b325a6c-*.mp3
 python scripts/make_assets.py              # grano + fondo de estudio
 python scripts/build.py                    # curvas, cámara compartida, mezcla
-python scripts/make_pencil_textures.py     # texturas de los lápices (6144²)
+python scripts/make_pencil_textures.py     # texturas de los lápices (6144²), sobre la geometría compartida
+python scripts/export_wire.py              # malla del wireframe desde la misma geometría → src/lapiz-wire.json
 <python con bpy> scripts/blender_lapices.py --frames 0-195 --samples 32   # placas Cycles → public/plates
 bash scripts/render.sh 12 4 out/reel-lapices-no-se-tocan.mp4
 python scripts/qa.py out/reel-lapices-no-se-tocan.mp4 out/qa

@@ -1,3 +1,4 @@
+import wireJson from "../lapiz-wire.json";
 import * as THREE from "three";
 
 /**
@@ -99,30 +100,25 @@ export const makePencil = (): PencilGeo => {
 };
 
 /**
- * Wireframe of the same surface: lines along the pencil every 7.5° (hexagon edges included) and
- * rings, dense near the tip. Segments are sorted by height so the mesh can be redrawn from the tip.
+ * Wireframe of the exact path-traced surface (src/lapiz-wire.json, sampled by scripts/export_wire.py from
+ * scripts/pencil_geom.py): lines along the pencil every 5° and rings, dense near the point. Segments are
+ * sorted by height so the mesh can be redrawn from the tip.
  */
-export const makePencilWire = (yMax = 5.5) => {
-  const along: number[] = [];
-  for (let i = 0; i <= 150; i++) along.push(yMax * (i / 150) ** 1.9);
-  const rings: number[] = [];
-  for (let i = 1; i <= 70; i++) rings.push(yMax * (i / 70) ** 2.1);
-  const N = 48;
-  const RN = 96;
+type WireSamples = { phis: number[]; ys: number[]; r: number[] };
+export const makePencilWire = (k: number) => {
+  const W = (wireJson as unknown as { pencils: WireSamples[] }).pencils[k];
+  const np_ = W.phis.length;
+  const R = (i: number, j: number) => W.r[i * np_ + (j % np_)];
   const segs: { p: number[]; q: number[]; key: number }[] = [];
-  for (let k = 0; k < N; k++) {
-    const phi = (k / N) * Math.PI * 2;
-    for (let j = 0; j < along.length - 1; j++) {
-      const r0 = surfR(phi, along[j]);
-      const r1 = surfR(phi, along[j + 1]);
-      segs.push({ p: [phi, along[j], r0], q: [phi, along[j + 1], r1], key: along[j] });
+  for (let j = 0; j < np_; j++) {
+    for (let i = 0; i < W.ys.length - 1; i++) {
+      segs.push({ p: [W.phis[j], W.ys[i], R(i, j)], q: [W.phis[j], W.ys[i + 1], R(i + 1, j)], key: W.ys[i] });
     }
   }
-  for (const y of rings) {
-    for (let k = 0; k < RN; k++) {
-      const p0 = (k / RN) * Math.PI * 2;
-      const p1 = ((k + 1) / RN) * Math.PI * 2;
-      segs.push({ p: [p0, y, surfR(p0, y)], q: [p1, y, surfR(p1, y)], key: y });
+  for (let i = 0; i < W.ys.length; i += i < 180 ? 4 : 2) {
+    for (let j = 0; j < np_; j++) {
+      const p1 = j + 1 < np_ ? W.phis[j + 1] : W.phis[0] + Math.PI * 2;
+      segs.push({ p: [W.phis[j], W.ys[i], R(i, j)], q: [p1, W.ys[i], R(i, j + 1)], key: W.ys[i] });
     }
   }
   segs.sort((a, b) => a.key - b.key);
