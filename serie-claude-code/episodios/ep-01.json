@@ -1,0 +1,390 @@
+{
+  "serie": "Claude Code",
+  "episodio": 1,
+  "total_episodios": 50,
+  "titulo": "Qué es Claude Code",
+  "usuario": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-01/voz.wav",
+    "timestamps": "episodios/ep-01/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "seguir": "Sígueme",
+    "pregunta": "¿Qué tarea de tu negocio quitarías primero?",
+    "comenta": "AUDITORIA"
+  },
+  "proximos": [
+    "¿Qué es VS Code?",
+    "Instalarlo",
+    "Tu primer proyecto"
+  ],
+  "escenas": [
+    {
+      "id": "intro",
+      "segundos": 3,
+      "voz": "Empiezo una serie de Claude Code. Episodio 1.",
+      "texto": "SERIE · EPISODIO 1",
+      "imagen": {
+        "tipo": "serie"
+      }
+    },
+    {
+      "id": "entender",
+      "segundos": 3,
+      "voz": "Antes de tocar nada, hay que entender qué es.",
+      "texto": "PRIMERO, ENTENDER",
+      "imagen": {
+        "tipo": "titular",
+        "antetitulo": "ANTES DE TOCAR NADA",
+        "titulo": "¿Qué es?",
+        "en": "entender",
+        "portal": "lupa"
+      }
+    },
+    {
+      "id": "mapa",
+      "segundos": 4,
+      "voz": "Anthropic es la empresa. Claude es su marca.",
+      "texto": [
+        "EMPRESA",
+        "MARCA"
+      ],
+      "imagen": {
+        "tipo": "mapa",
+        "portal": "code",
+        "raiz": {
+          "id": "anthropic",
+          "titulo": "Anthropic",
+          "etiqueta": "EMPRESA",
+          "en": "Anthropic",
+          "hijos": [
+            {
+              "id": "claude",
+              "titulo": "Claude",
+              "etiqueta": "MARCA",
+              "en": "Claude es su marca",
+              "hijos": [
+                {
+                  "id": "design",
+                  "titulo": "Claude Design",
+                  "en": "Claude Design"
+                },
+                {
+                  "id": "cowork",
+                  "titulo": "Claude Cowork",
+                  "en": "Claude Cowork"
+                },
+                {
+                  "id": "code",
+                  "titulo": "Claude Code",
+                  "en": "Claude Code",
+                  "destacado": true
+                }
+              ],
+              "etiquetaHijos": {
+                "texto": "PRODUCTOS",
+                "en": "varios productos"
+              },
+              "base": {
+                "id": "modelos",
+                "titulo": "MODELOS",
+                "en": "Debajo de todos",
+                "items": [
+                  {
+                    "texto": "Fable",
+                    "en": "Fable"
+                  },
+                  {
+                    "texto": "Opus",
+                    "en": "Opus"
+                  },
+                  {
+                    "texto": "Sonnet",
+                    "en": "Sonnet"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "productos",
+      "segundos": 4,
+      "voz": "Dentro hay varios productos: Claude Design, Claude Cowork y Claude Code.",
+      "texto": "PRODUCTOS",
+      "imagen": {
+        "tipo": "continuar"
+      }
+    },
+    {
+      "id": "modelos",
+      "segundos": 4,
+      "voz": "Debajo de todos, los modelos: Fable, Opus y Sonnet.",
+      "texto": "MODELOS",
+      "imagen": {
+        "tipo": "continuar"
+      },
+      "etiquetas": [
+        {
+          "texto": "DEBAJO DE TODOS",
+          "apunta": "modelos",
+          "en": "Debajo",
+          "lado": "abajo"
+        }
+      ]
+    },
+    {
+      "id": "herramienta",
+      "segundos": 4,
+      "voz": "Y Claude Code es una herramienta que escribe código por ti.",
+      "texto": "HERRAMIENTA",
+      "imagen": {
+        "tipo": "titular",
+        "antetitulo": "HERRAMIENTA",
+        "antetituloEn": "herramienta",
+        "titulo": "Claude Code",
+        "en": "Claude Code",
+        "subtitulo": "escribe código por ti",
+        "panel": {
+          "en": "escribe código"
+        },
+        "portal": "panel"
+      },
+      "etiquetas": [
+        {
+          "texto": "CÓDIGO GENERADO",
+          "apunta": "panel",
+          "en": "por ti",
+          "lado": "abajo"
+        }
+      ]
+    },
+    {
+      "id": "antes",
+      "segundos": 4,
+      "voz": "Antes, un desarrollador lo escribía todo a mano: web, scripts, Python.",
+      "texto": "ANTES",
+      "imagen": {
+        "tipo": "antesAhora",
+        "portal": "carpeta",
+        "antes": {
+          "titulo": "ANTES",
+          "frase": "todo a mano",
+          "en": "Antes",
+          "fraseEn": "a mano",
+          "items": [
+            {
+              "texto": "Web",
+              "en": "web"
+            },
+            {
+              "texto": "Scripts",
+              "en": "scripts"
+            },
+            {
+              "texto": "Python",
+              "en": "Python"
+            }
+          ]
+        },
+        "ahora": {
+          "titulo": "AHORA",
+          "frase": "qué quieres",
+          "en": "Ahora",
+          "fraseEn": "qué quieres",
+          "carpeta": "tus carpetas",
+          "carpetaEn": "carpetas"
+        }
+      }
+    },
+    {
+      "id": "ahora",
+      "segundos": 4,
+      "voz": "Ahora le dices qué quieres y lo escribe en tus carpetas.",
+      "texto": "AHORA",
+      "imagen": {
+        "tipo": "continuar"
+      }
+    },
+    {
+      "id": "paso1",
+      "segundos": 7,
+      "paso": 1,
+      "voz": "Paso 1. Elige dónde abrirlo: terminal, VS Code, JetBrains o la app de escritorio. Es la misma herramienta, solo cambia dónde la abres.",
+      "texto": [
+        "ELIGE DÓNDE",
+        "MISMA HERRAMIENTA"
+      ],
+      "imagen": {
+        "tipo": "opciones",
+        "portal": "nucleo",
+        "items": [
+          {
+            "id": "terminal",
+            "texto": "Terminal",
+            "icono": "terminal",
+            "en": "terminal"
+          },
+          {
+            "id": "vscode",
+            "texto": "VS Code",
+            "icono": "editor",
+            "en": "VS Code"
+          },
+          {
+            "id": "jetbrains",
+            "texto": "JetBrains",
+            "icono": "editor",
+            "en": "JetBrains"
+          },
+          {
+            "id": "app",
+            "texto": "App de escritorio",
+            "icono": "app",
+            "en": "app de escritorio"
+          }
+        ],
+        "nucleo": {
+          "texto": "Claude Code",
+          "en": "misma herramienta"
+        }
+      },
+      "etiquetas": [
+        {
+          "texto": "LA MISMA HERRAMIENTA",
+          "apunta": "nucleo",
+          "en": "misma herramienta",
+          "lado": "abajo"
+        }
+      ]
+    },
+    {
+      "id": "paso2",
+      "segundos": 3,
+      "paso": 2,
+      "voz": "Paso 2. Pídele lo que quieres, con tus palabras.",
+      "texto": "PÍDELE",
+      "imagen": {
+        "tipo": "terminal",
+        "titulo": "Claude Code",
+        "portal": "salida",
+        "prompt": {
+          "texto": "Lo que quieres, con tus palabras",
+          "en": "Pídele",
+          "hasta": "palabras"
+        }
+      },
+      "etiquetas": [
+        {
+          "texto": "TU PETICIÓN",
+          "apunta": "prompt",
+          "en": "lo que quieres",
+          "lado": "abajo"
+        }
+      ]
+    },
+    {
+      "id": "paso3",
+      "segundos": 3,
+      "paso": 3,
+      "voz": "Paso 3. Revisa lo que hace y corrígelo.",
+      "texto": [
+        "REVISA",
+        "CORRIGE"
+      ],
+      "imagen": {
+        "tipo": "revision",
+        "titulo": "revisión",
+        "portal": "corregida",
+        "lineas": 9,
+        "revisa": "Revisa",
+        "linea": 5,
+        "corrige": "corrígelo"
+      },
+      "etiquetas": [
+        {
+          "texto": "REVISA",
+          "apunta": "codigo",
+          "en": "Revisa",
+          "lado": "arriba"
+        },
+        {
+          "texto": "CORRIGE",
+          "apunta": "corregida",
+          "en": "corrígelo",
+          "lado": "abajo"
+        }
+      ]
+    },
+    {
+      "id": "ciclo",
+      "segundos": 3,
+      "voz": "Pedir, revisar, corregir. Ese es el ciclo.",
+      "texto": "EL CICLO",
+      "imagen": {
+        "tipo": "ciclo",
+        "portal": "centro",
+        "centro": {
+          "texto": "EL CICLO",
+          "en": "Ese es el ciclo"
+        },
+        "items": [
+          {
+            "texto": "Pedir",
+            "en": "Pedir"
+          },
+          {
+            "texto": "Revisar",
+            "en": "revisar"
+          },
+          {
+            "texto": "Corregir",
+            "en": "corregir"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proximos",
+      "segundos": 5,
+      "voz": "En los próximos episodios: qué es VS Code, instalarlo y tu primer proyecto.",
+      "texto": "PRÓXIMOS EPISODIOS",
+      "imagen": {
+        "tipo": "lista",
+        "portal": "item-2",
+        "titulo": "PRÓXIMOS EPISODIOS",
+        "en": "próximos",
+        "items": [
+          {
+            "texto": "¿Qué es VS Code?",
+            "en": "qué es VS Code"
+          },
+          {
+            "texto": "Instalarlo",
+            "en": "instalarlo"
+          },
+          {
+            "texto": "Tu primer proyecto",
+            "en": "tu primer proyecto"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cta",
+      "segundos": 6,
+      "voz": "Sígueme para no perderte ninguno. ¿Qué tarea de tu negocio quitarías primero? Comenta auditoría.",
+      "texto": "COMENTA",
+      "imagen": {
+        "tipo": "cta"
+      }
+    }
+  ]
+}
