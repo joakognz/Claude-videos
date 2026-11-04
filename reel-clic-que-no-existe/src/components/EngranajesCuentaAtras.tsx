@@ -100,7 +100,7 @@ export const EngranajesCuentaAtras: React.FC<CuentaAtrasProps> = ({
     <AbsoluteFill style={{ backgroundColor: C.black }}>
       <Placa data={data} frame={frame} />
       {/* the heartbeat squeezes the frame edges a touch */}
-      <Vignette strength={0.5 + 0.22 * pulse} />
+      <Vignette strength={0.55 + 0.2 * pulse} />
       <Grain frame={fz} />
       <HudFrame frame={frame} tcFrames={fz} tag={hudTag} />
       {showCounter && <Contador data={data} frame={frame} label={label} doneLabel={doneLabel} />}

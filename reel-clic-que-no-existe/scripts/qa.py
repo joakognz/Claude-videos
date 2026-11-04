@@ -67,25 +67,51 @@ def frame_rgb(i):
     return np.frombuffer(b, np.uint8).reshape(1920, 1080, 3).astype(np.int16)
 
 
-# (a) freeze: 195..209 identical except the REC dot (left of the HUD row, y≈260-290)
-ref = frame_rgb(G["freeze"])
+# (a) freeze: 195..209 hold the same plate. The only things meant to move are the REC dot, the ring of light of the
+# tiiick opening from where the teeth touch (0.9 s) and the counter's flash + «ENCAJADO». The reference is a clean held
+# frame after the ring has gone (freeze + 30), so the flash itself isn't counted as the image.
+RING_END = G["freeze"] + 28
+
+
+def contact_px():
+    c = np.array(G["cam"][G["freeze"]], float)
+    pos, tgt, fov = c[:3], c[3:6], np.radians(c[6])
+    fwd = (tgt - pos) / np.linalg.norm(tgt - pos)
+    right = np.cross(fwd, [0, 0, 1.0]); right /= np.linalg.norm(right)
+    up = np.cross(right, fwd)
+    v = np.array([0, -0.0028, 0]) - pos
+    f = 1 / np.tan(fov / 2)
+    nx = (v @ right) / (v @ fwd) * f / (1080 / 1920)
+    ny = (v @ up) / (v @ fwd) * f
+    return (nx + 1) / 2 * 1080, (1 - ny) / 2 * 1920
+
+
+CX, CY = contact_px()
+yy, xx = np.mgrid[0:1920, 0:1080]
+RING = (xx - CX) ** 2 + (yy - CY) ** 2 < 300 ** 2
+f_clean = G["freeze"] + 30
+ref = frame_rgb(f_clean)
 worst = 0.0
-for i in range(G["freeze"] + 1, G["voice"]):
+for i in range(G["freeze"], G["voice"]):
     d = np.abs(frame_rgb(i) - ref).max(axis=2)
     d[240:310, 80:130] = 0  # REC dot
+    d[RING] = 0  # the tiiick's ring of light
+    d[1220:1580, 480:] = 0  # the counter (flash, «ENCAJADO»; cut dry on frame 210 by design)
+    d = d[:1130]  # the first caption (and its scrim) comes in with the voice
     worst = max(worst, float((d > 12).mean()))
-ok("a_freeze", worst < 0.0005, f"max share of changed pixels (outside REC dot) over frames {G['freeze']}-{G['voice'] - 1}: {worst:.5f}")
+ok("a_freeze", worst < 0.0005, f"frames {G['freeze']}-{G['voice'] - 1} vs clean held frame {f_clean} (outside REC, ring at "
+   f"({CX:.0f},{CY:.0f}) r 300, counter, captions): {worst:.5f} changed")
 # and the frozen image itself must not change once the voice is in, except for the overlays that are meant to:
 # the click ring on «[·] clic?» and the scan on «mentira». Checked in the windows between them, above the captions.
 f_ring = int(np.floor(TL["ev"]["clicEcho"] * FPS + 0.5))
 f_ring_end = int(np.ceil((TL["ev"]["clicEcho"] + 0.95) * FPS))
 f_scan = int(np.floor((TL["ev"]["scan"] - 0.08) * FPS))
 worst2 = 0.0
-for i in list(range(G["voice"], f_ring, 6)) + [f_ring - 1] + list(range(f_ring_end, f_scan, 8)) + [f_scan - 1]:
+for i in list(range(RING_END, f_ring, 6)) + [f_ring - 1] + list(range(f_ring_end, f_scan, 8)) + [f_scan - 1]:
     d = np.abs(frame_rgb(i) - ref).max(axis=2)[:1130]  # the caption block (with its soft scrim) starts at 1140
     d[240:310, 80:130] = 0  # REC dot
     worst2 = max(worst2, float((d > 12).mean()))
-ok("a_freeze_holds", worst2 < 0.0005, f"frames {G['voice']}-{f_ring - 1} and {f_ring_end}-{f_scan - 1} vs frame {G['freeze']} above the captions: "
+ok("a_freeze_holds", worst2 < 0.0005, f"frames {RING_END}-{f_ring - 1} and {f_ring_end}-{f_scan - 1} vs frame {f_clean} above the captions: "
    f"{worst2:.5f} changed")
 
 # (f) countdown fluid: exactly one number per frame down to 001 on the freeze, then held
