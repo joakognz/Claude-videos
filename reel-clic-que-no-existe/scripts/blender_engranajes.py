@@ -219,8 +219,13 @@ def gear_assembly(tag, z, thick, bore_r, holes, hub_r, hub_len, screw_ang, chip_
     hub = curve_solid(f"cubo{tag}", circle(hub_r, 160), [bore], thick / 2 - 0.2 * MM, thick / 2 + hub_len, bev)
     # radial threaded hole for the set screw, through the hub wall
     zc = thick / 2 + hub_len * 0.55
-    sh = cyl_cutter(0.75 * MM, 0, hub_r * 1.5, loc=(0, 0, zc), rot=(-math.pi / 2, 0, screw_ang - math.pi / 2))
+    # the hole starts past the keyway: a cutter grazing the keyway walls makes the exact solver keep it instead of
+    # subtracting it (it left a 2.8 mm rod sticking out of B's hub); then check the cut really is a hole
+    sh = cyl_cutter(0.75 * MM, bore_r + kd + 0.25 * MM, hub_r + 0.6 * MM, loc=(0, 0, zc), rot=(-math.pi / 2, 0, screw_ang - math.pi / 2))
     hub = boolean(hub, [sh])
+    hco = np.array([v.co[:] for v in hub.data.vertices])
+    stray = (np.hypot(hco[:, 0], hco[:, 1]) > hub_r + 0.02 * MM).sum()
+    assert stray == 0, f"set-screw hole of {tag}: {stray} vertices outside the hub"
     if not wire:
         cutters = []
         if chip_ang is not None:  # a chipped tooth: a bite out of the front tip corner
