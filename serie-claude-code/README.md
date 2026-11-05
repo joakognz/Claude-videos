@@ -70,7 +70,43 @@ El modelo de reconocimiento (490 MB) está en
 Solo hace falta si no tienes los timestamps de ElevenLabs: los tiempos salen del audio, pero el **texto de los
 subtítulos es siempre el del guion**. Se alinea palabra a palabra, así que «Clod», de la ASR, sale como «Claude».
 
-## El JSON de un episodio
+## Plantilla «Master» (desde el EP.2)
+
+El EP.2 estrena la plantilla definitiva de la serie (composición `Master`, `src/master/`). El JSON del episodio
+lleva `"composicion": "Master"` y `render-lote.mjs` elige la composición por ese campo (el EP.1 sigue con «Episodio»).
+
+```
+src/master/
+├── Master.tsx            capas: bloques con transición, subtítulos, insignia, marca de agua, sonido
+├── calcular.ts           calculateMetadata: duración = audio, cortes entre bloques, música con ducking, efectos
+├── nucleo.ts             estilo (#0B0D12 / #D97757), línea de tiempo desde los timestamps, spring(), cámara continua
+├── transicion.tsx        transición de @remotion/transitions entre bloques (avance con zoom y desenfoque)
+├── tipos.ts              esquema del JSON
+├── componentes/          ← reutilizables
+│   ├── Escena.tsx        lienzo + cámara (las tomas se anclan a palabras de la voz)
+│   ├── Subtitulos.tsx    arriba, palabra a palabra, la activa en recuadro de acento, máx. 2 líneas
+│   ├── Sello.tsx         Sello (cae con golpe) y Etiqueta (entrada spring, salida antes del corte)
+│   ├── Flecha.tsx        flecha curva con trazo animado
+│   ├── Paquete.tsx       paquete de archivos que viaja por una curva
+│   ├── Rejilla.tsx       rejilla de 50 episodios (intro, próximo, CTA)
+│   ├── Logo.tsx · Caida.tsx · Piezas.tsx · Insignia.tsx · Sonido.tsx
+└── bloques/              un bloque temático por fichero: intro, conseguir, ide, analogia, pushpull, proximo, cta
+```
+
+- `escenas[]`: `id` + `voz` (texto exacto del guion). La duración de cada escena sale de sus palabras en el audio.
+- `bloques[]`: `{ tipo, desde }`. Cada bloque empieza en la escena `desde`; la transición queda centrada en la pausa.
+- `logos`: rutas de los logos adjuntos en `public/logos/` (nunca se redibujan; GitHub va sobre ficha blanca y
+  Microsoft sobre tarjeta clara porque no se leen sobre el fondo oscuro).
+- `cta`: `tipo` (auditoria | drive), `pregunta`, `palabra_clave`, `texto`, `sello`, `remate`, `seguir`.
+- `proximo[]`: lo que se anuncia del episodio siguiente, cada punto anclado a una palabra de la voz (`en`).
+
+```bash
+python scripts/preparar.py episodios/ep-02.json --mp3 ../audio/raw/serie-claude-code/ep-02_montaje.mp3 --modelo <parakeet>
+node scripts/render-lote.mjs episodios/ep-02.json          # → out/claude-code-ep-02.mp4
+python scripts/qa_master.py episodios/ep-02.json out/claude-code-ep-02.mp4
+```
+
+## El JSON de un episodio (EP.1, composición «Episodio»)
 
 | Campo | Qué es |
 |---|---|
