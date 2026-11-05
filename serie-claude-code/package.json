@@ -1,7 +1,7 @@
 {
   "name": "serie-claude-code",
   "version": "1.0.0",
-  "description": "Serie de tutoriales \u00abClaude Code\u00bb (AIgencyx Labs): un reel 1080x1920 por episodio a partir de un JSON",
+  "description": "Serie de tutoriales «Claude Code» (AIgencyx Labs): un reel 1080x1920 por episodio a partir de un JSON",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
@@ -16,6 +16,7 @@
     "@remotion/media": "4.0.539",
     "@remotion/media-utils": "4.0.539",
     "@remotion/renderer": "4.0.539",
+    "@remotion/transitions": "^4.0.539",
     "mediabunny": "1.62.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",

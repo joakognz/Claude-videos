@@ -1,0 +1,82 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 2,
+  "total": 50,
+  "titulo": "Visual Studio Code, GitHub, PUSH y PULL",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-02/voz.wav",
+    "timestamps": "episodios/ep-02/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "auditoria",
+    "pregunta": "Si eres dueño de un negocio",
+    "palabra_clave": "AUDITORIA",
+    "texto": "Comenta AUDITORIA y te preparamos una auditoría gratuita para ver qué procesos podemos optimizar.",
+    "sello": { "texto": "AUDITORÍA GRATUITA", "en": "gratuita" },
+    "remate": { "texto": "¿Qué procesos podemos optimizar?", "en": "qué procesos" },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 3,
+  "proximo": [
+    { "titulo": "Tipos de proyecto", "en": "tipos", "detalle": [{ "texto": "Aprender a clasificarlos", "en": "clasificarlos" }, { "texto": "Con qué te vas a encontrar en cada caso", "en": "encontrar" }] },
+    { "titulo": "Extensión de Claude Code", "en": "instalar", "logos": [{ "id": "claude_code", "en": "Claude" }, { "id": "vscode", "en": "Visual" }] },
+    { "titulo": "Las mejores extensiones", "en": "mejores", "detalle": [{ "texto": "Para trabajar más rápido", "en": "trabajar" }] }
+  ],
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png"
+  },
+  "clips": {
+    "web": {
+      "src": "episodios/ep-02/clips/web-vscode.mp4",
+      "ancho": 1640,
+      "alto": 2360,
+      "recorteArriba": 70
+    }
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio 2 de 50. Máster de Claude Code." },
+    { "id": "hoy", "voz": "Hoy te explicamos qué es Visual Studio Code y cómo se organiza tu forma de trabajar con él." },
+    { "id": "conseguir", "voz": "Primero, dónde conseguirlo." },
+    { "id": "buscador", "voz": "Busca Visual Studio Code en tu navegador. Entra en la web oficial y descárgalo." },
+    { "id": "gratis", "voz": "Es gratis y de código abierto." },
+    { "id": "ide", "voz": "¿Y qué es? Un programa que te deja ver lo que estás programando. Su nombre técnico es IDE: entorno de desarrollo integrado." },
+    { "id": "escribir", "voz": "Lo abres y escribes texto en lenguaje de programación." },
+    { "id": "word", "voz": "Piénsalo como Word. Word es un procesador de texto. Lo abres y escribes en lenguaje humano." },
+    { "id": "microsoft", "voz": "Visual Studio Code hace lo mismo, pero con código. Y los dos son de Microsoft." },
+    { "id": "guardar", "voz": "Ahora, ¿dónde se guarda todo?" },
+    { "id": "nubes", "voz": "Lo de Word, en Drive. Lo de Visual Studio Code, en GitHub." },
+    { "id": "versiones", "voz": "Los dos guardan tus archivos y sus versiones. Y te dejan compartirlos." },
+    { "id": "compra", "voz": "GitHub lo compró Microsoft cuando ya existía. Más adelante lo vemos a fondo." },
+    { "id": "acciones", "voz": "Y ahora, lo importante. Dos acciones." },
+    { "id": "push", "voz": "Subir tus archivos de Visual Studio Code a GitHub se llama PUSH." },
+    { "id": "pull", "voz": "Sacar un proyecto de GitHub se llama PULL." },
+    { "id": "bucle", "voz": "PUSH, para subir. PULL, para sacar." },
+    { "id": "esquema", "voz": "Eso es tu arquitectura de trabajo: escribes en Visual Studio Code, guardas en GitHub y lo recuperas cuando quieras." },
+    { "id": "proximo", "voz": "Y hasta aquí el episodio 2. En el próximo veremos los distintos tipos de proyecto que existen, para que aprendas a clasificarlos y sepas con qué te vas a encontrar en cada caso. Además, te voy a enseñar a instalar la extensión de Claude Code en Visual Studio Code y las mejores extensiones que puedes añadir para trabajar más rápido." },
+    { "id": "auditoria", "voz": "Si eres dueño de un negocio comenta AUDITORIA y te preparamos una auditoría gratuita para ver qué procesos podemos optimizar." },
+    { "id": "seguir", "voz": "Sígueme para no perderte ningún episodio." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "conseguir", "desde": "hoy" },
+    { "tipo": "ide", "desde": "ide" },
+    { "tipo": "analogia", "desde": "word" },
+    { "tipo": "pushpull", "desde": "acciones" },
+    { "tipo": "proximo", "desde": "proximo" },
+    { "tipo": "cta", "desde": "auditoria" }
+  ]
+}

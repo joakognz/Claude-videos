@@ -7,6 +7,10 @@ import {
   useCurrentFrame,
 } from "remotion";
 import ep01 from "../episodios/ep-01.json";
+import ep02 from "../episodios/ep-02.json";
+import { Master } from "./master/Master";
+import { calcularMaster } from "./master/calcular";
+import type { EpisodioMaster } from "./master/tipos";
 import { Episodio } from "./Episodio";
 import { ClipPantalla } from "./componentes/ClipPantalla";
 import type { ClipProps } from "./componentes/ClipPantalla";
@@ -60,6 +64,17 @@ export const RemotionRoot: React.FC = () => (
       height={1920}
       defaultProps={ep01 as unknown as Ep}
       calculateMetadata={calcular}
+    />
+    {/* Plantilla de la serie desde el EP.2: intro con partículas, bloques con transición y CTA (episodios/ep-02.json) */}
+    <Composition
+      id="Master"
+      component={Master}
+      durationInFrames={FPS * 60}
+      fps={FPS}
+      width={1080}
+      height={1920}
+      defaultProps={ep02 as unknown as EpisodioMaster}
+      calculateMetadata={calcularMaster}
     />
     <Composition
       id="ClipPantalla"

@@ -57,10 +57,12 @@ for (const f of ficheros) {
   const nombre = `claude-code-ep-${String(ep.episodio).padStart(2, "0")}`;
   const t0 = Date.now();
   try {
-    const composition = await selectComposition({ serveUrl, id: "Episodio", inputProps: ep, puppeteerInstance: browser, logLevel: "warn" });
-    const plan = composition.props.plan;
+    // EP.1 usa la composición «Episodio»; desde el EP.2, «Master» ("composicion" en el JSON)
+    const id = ep.composicion ?? "Episodio";
+    const composition = await selectComposition({ serveUrl, id, inputProps: ep, puppeteerInstance: browser, logLevel: "warn" });
+    const plan = composition.props.plan ?? composition.props.calc;
     fs.writeFileSync(path.join(SALIDA, `${nombre}.plan.json`), JSON.stringify(plan, null, 1));
-    plan.avisos.forEach((a) => console.warn(`  ⚠ ${a}`));
+    (plan.avisos ?? []).forEach((a) => console.warn(`  ⚠ ${a}`));
     console.log(`${nombre}: ${composition.durationInFrames} fotogramas (${(composition.durationInFrames / composition.fps).toFixed(2)} s)`);
     let ultimo = -1;
     await renderMedia({

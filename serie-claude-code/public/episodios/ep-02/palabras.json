@@ -1,0 +1,1746 @@
+{
+ "fuente": "parakeet-tdt-0.6b-v3",
+ "duracion": 107.511,
+ "palabras": [
+  {
+   "texto": "Episodio",
+   "inicio": 0.0,
+   "fin": 0.72,
+   "escena": "intro"
+  },
+  {
+   "texto": "2",
+   "inicio": 0.72,
+   "fin": 1.04,
+   "escena": "intro"
+  },
+  {
+   "texto": "de",
+   "inicio": 1.04,
+   "fin": 1.2,
+   "escena": "intro"
+  },
+  {
+   "texto": "50.",
+   "inicio": 1.2,
+   "fin": 1.83,
+   "escena": "intro"
+  },
+  {
+   "texto": "Máster",
+   "inicio": 2.03,
+   "fin": 2.56,
+   "escena": "intro"
+  },
+  {
+   "texto": "de",
+   "inicio": 2.56,
+   "fin": 2.776,
+   "escena": "intro"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 2.776,
+   "fin": 3.28,
+   "escena": "intro"
+  },
+  {
+   "texto": "Code.",
+   "inicio": 3.28,
+   "fin": 3.63,
+   "escena": "intro"
+  },
+  {
+   "texto": "Hoy",
+   "inicio": 3.88,
+   "fin": 4.08,
+   "escena": "hoy"
+  },
+  {
+   "texto": "te",
+   "inicio": 4.08,
+   "fin": 4.16,
+   "escena": "hoy"
+  },
+  {
+   "texto": "explicamos",
+   "inicio": 4.16,
+   "fin": 4.8,
+   "escena": "hoy"
+  },
+  {
+   "texto": "qué",
+   "inicio": 4.8,
+   "fin": 5.04,
+   "escena": "hoy"
+  },
+  {
+   "texto": "es",
+   "inicio": 5.04,
+   "fin": 5.2,
+   "escena": "hoy"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 5.2,
+   "fin": 5.68,
+   "escena": "hoy"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 5.68,
+   "fin": 6.16,
+   "escena": "hoy"
+  },
+  {
+   "texto": "Code",
+   "inicio": 6.16,
+   "fin": 6.56,
+   "escena": "hoy"
+  },
+  {
+   "texto": "y",
+   "inicio": 6.56,
+   "fin": 6.72,
+   "escena": "hoy"
+  },
+  {
+   "texto": "cómo",
+   "inicio": 6.72,
+   "fin": 7.04,
+   "escena": "hoy"
+  },
+  {
+   "texto": "se",
+   "inicio": 7.04,
+   "fin": 7.2,
+   "escena": "hoy"
+  },
+  {
+   "texto": "organiza",
+   "inicio": 7.2,
+   "fin": 7.76,
+   "escena": "hoy"
+  },
+  {
+   "texto": "tu",
+   "inicio": 7.76,
+   "fin": 7.92,
+   "escena": "hoy"
+  },
+  {
+   "texto": "forma",
+   "inicio": 7.92,
+   "fin": 8.16,
+   "escena": "hoy"
+  },
+  {
+   "texto": "de",
+   "inicio": 8.16,
+   "fin": 8.32,
+   "escena": "hoy"
+  },
+  {
+   "texto": "trabajar",
+   "inicio": 8.32,
+   "fin": 8.72,
+   "escena": "hoy"
+  },
+  {
+   "texto": "con",
+   "inicio": 8.72,
+   "fin": 8.96,
+   "escena": "hoy"
+  },
+  {
+   "texto": "él.",
+   "inicio": 8.96,
+   "fin": 9.23,
+   "escena": "hoy"
+  },
+  {
+   "texto": "Primero,",
+   "inicio": 9.5,
+   "fin": 10.06,
+   "escena": "conseguir"
+  },
+  {
+   "texto": "dónde",
+   "inicio": 10.06,
+   "fin": 10.48,
+   "escena": "conseguir"
+  },
+  {
+   "texto": "conseguirlo.",
+   "inicio": 10.48,
+   "fin": 11.21,
+   "escena": "conseguir"
+  },
+  {
+   "texto": "Busca",
+   "inicio": 11.46,
+   "fin": 11.84,
+   "escena": "buscador"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 11.84,
+   "fin": 12.32,
+   "escena": "buscador"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 12.32,
+   "fin": 12.72,
+   "escena": "buscador"
+  },
+  {
+   "texto": "Code",
+   "inicio": 12.72,
+   "fin": 13.04,
+   "escena": "buscador"
+  },
+  {
+   "texto": "en",
+   "inicio": 13.04,
+   "fin": 13.2,
+   "escena": "buscador"
+  },
+  {
+   "texto": "tu",
+   "inicio": 13.2,
+   "fin": 13.28,
+   "escena": "buscador"
+  },
+  {
+   "texto": "navegador.",
+   "inicio": 13.28,
+   "fin": 13.89,
+   "escena": "buscador"
+  },
+  {
+   "texto": "Entra",
+   "inicio": 14.07,
+   "fin": 14.45,
+   "escena": "buscador"
+  },
+  {
+   "texto": "en",
+   "inicio": 14.45,
+   "fin": 14.53,
+   "escena": "buscador"
+  },
+  {
+   "texto": "la",
+   "inicio": 14.53,
+   "fin": 14.61,
+   "escena": "buscador"
+  },
+  {
+   "texto": "web",
+   "inicio": 14.61,
+   "fin": 14.93,
+   "escena": "buscador"
+  },
+  {
+   "texto": "oficial",
+   "inicio": 14.93,
+   "fin": 15.33,
+   "escena": "buscador"
+  },
+  {
+   "texto": "y",
+   "inicio": 15.33,
+   "fin": 15.49,
+   "escena": "buscador"
+  },
+  {
+   "texto": "descárgalo.",
+   "inicio": 15.49,
+   "fin": 16.17,
+   "escena": "buscador"
+  },
+  {
+   "texto": "Es",
+   "inicio": 16.47,
+   "fin": 16.69,
+   "escena": "gratis"
+  },
+  {
+   "texto": "gratis",
+   "inicio": 16.69,
+   "fin": 17.17,
+   "escena": "gratis"
+  },
+  {
+   "texto": "y",
+   "inicio": 17.17,
+   "fin": 17.33,
+   "escena": "gratis"
+  },
+  {
+   "texto": "de",
+   "inicio": 17.33,
+   "fin": 17.49,
+   "escena": "gratis"
+  },
+  {
+   "texto": "código",
+   "inicio": 17.49,
+   "fin": 17.89,
+   "escena": "gratis"
+  },
+  {
+   "texto": "abierto.",
+   "inicio": 17.89,
+   "fin": 18.33,
+   "escena": "gratis"
+  },
+  {
+   "texto": "¿Y",
+   "inicio": 18.69,
+   "fin": 18.93,
+   "escena": "ide"
+  },
+  {
+   "texto": "qué",
+   "inicio": 18.93,
+   "fin": 19.41,
+   "escena": "ide"
+  },
+  {
+   "texto": "es?",
+   "inicio": 19.41,
+   "fin": 19.69,
+   "escena": "ide"
+  },
+  {
+   "texto": "Un",
+   "inicio": 19.93,
+   "fin": 20.05,
+   "escena": "ide"
+  },
+  {
+   "texto": "programa",
+   "inicio": 20.05,
+   "fin": 20.45,
+   "escena": "ide"
+  },
+  {
+   "texto": "que",
+   "inicio": 20.45,
+   "fin": 20.61,
+   "escena": "ide"
+  },
+  {
+   "texto": "te",
+   "inicio": 20.61,
+   "fin": 20.77,
+   "escena": "ide"
+  },
+  {
+   "texto": "deja",
+   "inicio": 20.77,
+   "fin": 21.17,
+   "escena": "ide"
+  },
+  {
+   "texto": "ver",
+   "inicio": 21.17,
+   "fin": 21.33,
+   "escena": "ide"
+  },
+  {
+   "texto": "lo",
+   "inicio": 21.33,
+   "fin": 21.49,
+   "escena": "ide"
+  },
+  {
+   "texto": "que",
+   "inicio": 21.49,
+   "fin": 21.73,
+   "escena": "ide"
+  },
+  {
+   "texto": "estás",
+   "inicio": 21.73,
+   "fin": 22.05,
+   "escena": "ide"
+  },
+  {
+   "texto": "programando.",
+   "inicio": 22.05,
+   "fin": 22.69,
+   "escena": "ide"
+  },
+  {
+   "texto": "Su",
+   "inicio": 22.69,
+   "fin": 22.93,
+   "escena": "ide"
+  },
+  {
+   "texto": "nombre",
+   "inicio": 22.93,
+   "fin": 23.25,
+   "escena": "ide"
+  },
+  {
+   "texto": "técnico",
+   "inicio": 23.25,
+   "fin": 23.73,
+   "escena": "ide"
+  },
+  {
+   "texto": "es",
+   "inicio": 23.73,
+   "fin": 23.97,
+   "escena": "ide"
+  },
+  {
+   "texto": "IDE:",
+   "inicio": 23.97,
+   "fin": 24.84,
+   "escena": "ide"
+  },
+  {
+   "texto": "entorno",
+   "inicio": 25.17,
+   "fin": 25.73,
+   "escena": "ide"
+  },
+  {
+   "texto": "de",
+   "inicio": 25.73,
+   "fin": 25.89,
+   "escena": "ide"
+  },
+  {
+   "texto": "desarrollo",
+   "inicio": 25.89,
+   "fin": 26.45,
+   "escena": "ide"
+  },
+  {
+   "texto": "integrado.",
+   "inicio": 26.45,
+   "fin": 26.94,
+   "escena": "ide"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 27.19,
+   "fin": 27.41,
+   "escena": "escribir"
+  },
+  {
+   "texto": "abres",
+   "inicio": 27.41,
+   "fin": 27.81,
+   "escena": "escribir"
+  },
+  {
+   "texto": "y",
+   "inicio": 27.81,
+   "fin": 27.97,
+   "escena": "escribir"
+  },
+  {
+   "texto": "escribes",
+   "inicio": 27.97,
+   "fin": 28.53,
+   "escena": "escribir"
+  },
+  {
+   "texto": "texto",
+   "inicio": 28.53,
+   "fin": 28.85,
+   "escena": "escribir"
+  },
+  {
+   "texto": "en",
+   "inicio": 28.85,
+   "fin": 29.01,
+   "escena": "escribir"
+  },
+  {
+   "texto": "lenguaje",
+   "inicio": 29.01,
+   "fin": 29.49,
+   "escena": "escribir"
+  },
+  {
+   "texto": "de",
+   "inicio": 29.49,
+   "fin": 29.65,
+   "escena": "escribir"
+  },
+  {
+   "texto": "programación.",
+   "inicio": 29.65,
+   "fin": 30.29,
+   "escena": "escribir"
+  },
+  {
+   "texto": "Piénsalo",
+   "inicio": 30.29,
+   "fin": 31.01,
+   "escena": "word"
+  },
+  {
+   "texto": "como",
+   "inicio": 31.01,
+   "fin": 31.25,
+   "escena": "word"
+  },
+  {
+   "texto": "Word.",
+   "inicio": 31.25,
+   "fin": 31.68,
+   "escena": "word"
+  },
+  {
+   "texto": "Word",
+   "inicio": 31.88,
+   "fin": 32.37,
+   "escena": "word"
+  },
+  {
+   "texto": "es",
+   "inicio": 32.37,
+   "fin": 32.53,
+   "escena": "word"
+  },
+  {
+   "texto": "un",
+   "inicio": 32.53,
+   "fin": 32.69,
+   "escena": "word"
+  },
+  {
+   "texto": "procesador",
+   "inicio": 32.69,
+   "fin": 33.25,
+   "escena": "word"
+  },
+  {
+   "texto": "de",
+   "inicio": 33.25,
+   "fin": 33.41,
+   "escena": "word"
+  },
+  {
+   "texto": "texto.",
+   "inicio": 33.41,
+   "fin": 33.73,
+   "escena": "word"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 33.9,
+   "fin": 34.05,
+   "escena": "word"
+  },
+  {
+   "texto": "abres",
+   "inicio": 34.05,
+   "fin": 34.53,
+   "escena": "word"
+  },
+  {
+   "texto": "y",
+   "inicio": 34.53,
+   "fin": 34.69,
+   "escena": "word"
+  },
+  {
+   "texto": "escribes",
+   "inicio": 34.69,
+   "fin": 35.25,
+   "escena": "word"
+  },
+  {
+   "texto": "en",
+   "inicio": 35.25,
+   "fin": 35.41,
+   "escena": "word"
+  },
+  {
+   "texto": "lenguaje",
+   "inicio": 35.41,
+   "fin": 35.81,
+   "escena": "word"
+  },
+  {
+   "texto": "humano.",
+   "inicio": 35.81,
+   "fin": 36.18,
+   "escena": "word"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 36.36,
+   "fin": 36.77,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 36.77,
+   "fin": 37.25,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "Code",
+   "inicio": 37.25,
+   "fin": 37.65,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "hace",
+   "inicio": 37.65,
+   "fin": 37.89,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "lo",
+   "inicio": 37.89,
+   "fin": 38.05,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "mismo,",
+   "inicio": 38.05,
+   "fin": 38.44,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "pero",
+   "inicio": 38.44,
+   "fin": 38.69,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "con",
+   "inicio": 38.69,
+   "fin": 38.93,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "código.",
+   "inicio": 38.93,
+   "fin": 39.44,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "Y",
+   "inicio": 39.61,
+   "fin": 39.73,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "los",
+   "inicio": 39.73,
+   "fin": 39.97,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "dos",
+   "inicio": 39.97,
+   "fin": 40.29,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "son",
+   "inicio": 40.29,
+   "fin": 40.53,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "de",
+   "inicio": 40.53,
+   "fin": 40.69,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "Microsoft.",
+   "inicio": 40.69,
+   "fin": 41.44,
+   "escena": "microsoft"
+  },
+  {
+   "texto": "Ahora,",
+   "inicio": 41.72,
+   "fin": 42.13,
+   "escena": "guardar"
+  },
+  {
+   "texto": "¿dónde",
+   "inicio": 42.13,
+   "fin": 42.61,
+   "escena": "guardar"
+  },
+  {
+   "texto": "se",
+   "inicio": 42.61,
+   "fin": 42.77,
+   "escena": "guardar"
+  },
+  {
+   "texto": "guarda",
+   "inicio": 42.77,
+   "fin": 43.17,
+   "escena": "guardar"
+  },
+  {
+   "texto": "todo?",
+   "inicio": 43.17,
+   "fin": 43.45,
+   "escena": "guardar"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 43.67,
+   "fin": 43.73,
+   "escena": "nubes"
+  },
+  {
+   "texto": "de",
+   "inicio": 43.73,
+   "fin": 43.89,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Word,",
+   "inicio": 43.89,
+   "fin": 44.37,
+   "escena": "nubes"
+  },
+  {
+   "texto": "en",
+   "inicio": 44.37,
+   "fin": 44.61,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Drive.",
+   "inicio": 44.61,
+   "fin": 45.17,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 45.17,
+   "fin": 45.33,
+   "escena": "nubes"
+  },
+  {
+   "texto": "de",
+   "inicio": 45.33,
+   "fin": 45.49,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 45.49,
+   "fin": 45.89,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 45.89,
+   "fin": 46.29,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Code,",
+   "inicio": 46.29,
+   "fin": 46.68,
+   "escena": "nubes"
+  },
+  {
+   "texto": "en",
+   "inicio": 46.68,
+   "fin": 46.85,
+   "escena": "nubes"
+  },
+  {
+   "texto": "GitHub.",
+   "inicio": 46.85,
+   "fin": 47.48,
+   "escena": "nubes"
+  },
+  {
+   "texto": "Los",
+   "inicio": 47.65,
+   "fin": 47.81,
+   "escena": "versiones"
+  },
+  {
+   "texto": "dos",
+   "inicio": 47.81,
+   "fin": 48.05,
+   "escena": "versiones"
+  },
+  {
+   "texto": "guardan",
+   "inicio": 48.05,
+   "fin": 48.53,
+   "escena": "versiones"
+  },
+  {
+   "texto": "tus",
+   "inicio": 48.53,
+   "fin": 48.69,
+   "escena": "versiones"
+  },
+  {
+   "texto": "archivos",
+   "inicio": 48.69,
+   "fin": 49.25,
+   "escena": "versiones"
+  },
+  {
+   "texto": "y",
+   "inicio": 49.25,
+   "fin": 49.41,
+   "escena": "versiones"
+  },
+  {
+   "texto": "sus",
+   "inicio": 49.41,
+   "fin": 49.65,
+   "escena": "versiones"
+  },
+  {
+   "texto": "versiones.",
+   "inicio": 49.65,
+   "fin": 50.29,
+   "escena": "versiones"
+  },
+  {
+   "texto": "Y",
+   "inicio": 50.29,
+   "fin": 50.45,
+   "escena": "versiones"
+  },
+  {
+   "texto": "te",
+   "inicio": 50.45,
+   "fin": 50.61,
+   "escena": "versiones"
+  },
+  {
+   "texto": "dejan",
+   "inicio": 50.61,
+   "fin": 51.01,
+   "escena": "versiones"
+  },
+  {
+   "texto": "compartirlos.",
+   "inicio": 51.01,
+   "fin": 51.81,
+   "escena": "versiones"
+  },
+  {
+   "texto": "GitHub",
+   "inicio": 51.81,
+   "fin": 52.45,
+   "escena": "compra"
+  },
+  {
+   "texto": "lo",
+   "inicio": 52.45,
+   "fin": 52.61,
+   "escena": "compra"
+  },
+  {
+   "texto": "compró",
+   "inicio": 52.61,
+   "fin": 53.01,
+   "escena": "compra"
+  },
+  {
+   "texto": "Microsoft",
+   "inicio": 53.01,
+   "fin": 53.57,
+   "escena": "compra"
+  },
+  {
+   "texto": "cuando",
+   "inicio": 53.57,
+   "fin": 53.81,
+   "escena": "compra"
+  },
+  {
+   "texto": "ya",
+   "inicio": 53.81,
+   "fin": 54.05,
+   "escena": "compra"
+  },
+  {
+   "texto": "existía.",
+   "inicio": 54.05,
+   "fin": 54.62,
+   "escena": "compra"
+  },
+  {
+   "texto": "Más",
+   "inicio": 54.78,
+   "fin": 55.01,
+   "escena": "compra"
+  },
+  {
+   "texto": "adelante",
+   "inicio": 55.01,
+   "fin": 55.41,
+   "escena": "compra"
+  },
+  {
+   "texto": "lo",
+   "inicio": 55.41,
+   "fin": 55.57,
+   "escena": "compra"
+  },
+  {
+   "texto": "vemos",
+   "inicio": 55.57,
+   "fin": 55.89,
+   "escena": "compra"
+  },
+  {
+   "texto": "a",
+   "inicio": 55.89,
+   "fin": 56.05,
+   "escena": "compra"
+  },
+  {
+   "texto": "fondo.",
+   "inicio": 56.05,
+   "fin": 56.35,
+   "escena": "compra"
+  },
+  {
+   "texto": "Y",
+   "inicio": 56.58,
+   "fin": 56.84,
+   "escena": "acciones"
+  },
+  {
+   "texto": "ahora,",
+   "inicio": 56.84,
+   "fin": 57.24,
+   "escena": "acciones"
+  },
+  {
+   "texto": "lo",
+   "inicio": 57.24,
+   "fin": 57.56,
+   "escena": "acciones"
+  },
+  {
+   "texto": "importante.",
+   "inicio": 57.56,
+   "fin": 58.23,
+   "escena": "acciones"
+  },
+  {
+   "texto": "Dos",
+   "inicio": 58.38,
+   "fin": 58.76,
+   "escena": "acciones"
+  },
+  {
+   "texto": "acciones.",
+   "inicio": 58.76,
+   "fin": 59.4,
+   "escena": "acciones"
+  },
+  {
+   "texto": "Subir",
+   "inicio": 59.6,
+   "fin": 59.96,
+   "escena": "push"
+  },
+  {
+   "texto": "tus",
+   "inicio": 59.96,
+   "fin": 60.12,
+   "escena": "push"
+  },
+  {
+   "texto": "archivos",
+   "inicio": 60.12,
+   "fin": 60.6,
+   "escena": "push"
+  },
+  {
+   "texto": "de",
+   "inicio": 60.6,
+   "fin": 60.68,
+   "escena": "push"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 60.68,
+   "fin": 61.08,
+   "escena": "push"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 61.08,
+   "fin": 61.48,
+   "escena": "push"
+  },
+  {
+   "texto": "Code",
+   "inicio": 61.48,
+   "fin": 61.8,
+   "escena": "push"
+  },
+  {
+   "texto": "a",
+   "inicio": 61.8,
+   "fin": 61.88,
+   "escena": "push"
+  },
+  {
+   "texto": "GitHub",
+   "inicio": 61.88,
+   "fin": 62.52,
+   "escena": "push"
+  },
+  {
+   "texto": "se",
+   "inicio": 62.52,
+   "fin": 62.6,
+   "escena": "push"
+  },
+  {
+   "texto": "llama",
+   "inicio": 62.6,
+   "fin": 63.0,
+   "escena": "push"
+  },
+  {
+   "texto": "PUSH.",
+   "inicio": 63.0,
+   "fin": 63.5,
+   "escena": "push"
+  },
+  {
+   "texto": "Sacar",
+   "inicio": 63.72,
+   "fin": 64.12,
+   "escena": "pull"
+  },
+  {
+   "texto": "un",
+   "inicio": 64.12,
+   "fin": 64.2,
+   "escena": "pull"
+  },
+  {
+   "texto": "proyecto",
+   "inicio": 64.2,
+   "fin": 64.6,
+   "escena": "pull"
+  },
+  {
+   "texto": "de",
+   "inicio": 64.6,
+   "fin": 64.68,
+   "escena": "pull"
+  },
+  {
+   "texto": "GitHub",
+   "inicio": 64.68,
+   "fin": 65.4,
+   "escena": "pull"
+  },
+  {
+   "texto": "se",
+   "inicio": 65.4,
+   "fin": 65.56,
+   "escena": "pull"
+  },
+  {
+   "texto": "llama",
+   "inicio": 65.56,
+   "fin": 65.96,
+   "escena": "pull"
+  },
+  {
+   "texto": "PULL.",
+   "inicio": 65.96,
+   "fin": 66.36,
+   "escena": "pull"
+  },
+  {
+   "texto": "PUSH,",
+   "inicio": 66.61,
+   "fin": 67.08,
+   "escena": "bucle"
+  },
+  {
+   "texto": "para",
+   "inicio": 67.08,
+   "fin": 67.32,
+   "escena": "bucle"
+  },
+  {
+   "texto": "subir.",
+   "inicio": 67.32,
+   "fin": 67.76,
+   "escena": "bucle"
+  },
+  {
+   "texto": "PULL,",
+   "inicio": 67.95,
+   "fin": 68.42,
+   "escena": "bucle"
+  },
+  {
+   "texto": "para",
+   "inicio": 68.42,
+   "fin": 68.68,
+   "escena": "bucle"
+  },
+  {
+   "texto": "sacar.",
+   "inicio": 68.68,
+   "fin": 69.11,
+   "escena": "bucle"
+  },
+  {
+   "texto": "Eso",
+   "inicio": 69.3,
+   "fin": 69.56,
+   "escena": "esquema"
+  },
+  {
+   "texto": "es",
+   "inicio": 69.56,
+   "fin": 69.72,
+   "escena": "esquema"
+  },
+  {
+   "texto": "tu",
+   "inicio": 69.72,
+   "fin": 69.96,
+   "escena": "esquema"
+  },
+  {
+   "texto": "arquitectura",
+   "inicio": 69.96,
+   "fin": 70.6,
+   "escena": "esquema"
+  },
+  {
+   "texto": "de",
+   "inicio": 70.6,
+   "fin": 70.76,
+   "escena": "esquema"
+  },
+  {
+   "texto": "trabajo:",
+   "inicio": 70.76,
+   "fin": 71.17,
+   "escena": "esquema"
+  },
+  {
+   "texto": "escribes",
+   "inicio": 71.32,
+   "fin": 71.88,
+   "escena": "esquema"
+  },
+  {
+   "texto": "en",
+   "inicio": 71.88,
+   "fin": 72.04,
+   "escena": "esquema"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 72.04,
+   "fin": 72.44,
+   "escena": "esquema"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 72.44,
+   "fin": 72.84,
+   "escena": "esquema"
+  },
+  {
+   "texto": "Code,",
+   "inicio": 72.84,
+   "fin": 73.24,
+   "escena": "esquema"
+  },
+  {
+   "texto": "guardas",
+   "inicio": 73.24,
+   "fin": 73.72,
+   "escena": "esquema"
+  },
+  {
+   "texto": "en",
+   "inicio": 73.72,
+   "fin": 73.8,
+   "escena": "esquema"
+  },
+  {
+   "texto": "GitHub",
+   "inicio": 73.8,
+   "fin": 74.44,
+   "escena": "esquema"
+  },
+  {
+   "texto": "y",
+   "inicio": 74.44,
+   "fin": 74.52,
+   "escena": "esquema"
+  },
+  {
+   "texto": "lo",
+   "inicio": 74.52,
+   "fin": 74.68,
+   "escena": "esquema"
+  },
+  {
+   "texto": "recuperas",
+   "inicio": 74.68,
+   "fin": 75.32,
+   "escena": "esquema"
+  },
+  {
+   "texto": "cuando",
+   "inicio": 75.32,
+   "fin": 75.56,
+   "escena": "esquema"
+  },
+  {
+   "texto": "quieras.",
+   "inicio": 75.56,
+   "fin": 76.08,
+   "escena": "esquema"
+  },
+  {
+   "texto": "Y",
+   "inicio": 76.3,
+   "fin": 76.54,
+   "escena": "proximo"
+  },
+  {
+   "texto": "hasta",
+   "inicio": 76.54,
+   "fin": 76.86,
+   "escena": "proximo"
+  },
+  {
+   "texto": "aquí",
+   "inicio": 76.86,
+   "fin": 77.1,
+   "escena": "proximo"
+  },
+  {
+   "texto": "el",
+   "inicio": 77.1,
+   "fin": 77.26,
+   "escena": "proximo"
+  },
+  {
+   "texto": "episodio",
+   "inicio": 77.26,
+   "fin": 77.74,
+   "escena": "proximo"
+  },
+  {
+   "texto": "2.",
+   "inicio": 77.74,
+   "fin": 78.11,
+   "escena": "proximo"
+  },
+  {
+   "texto": "En",
+   "inicio": 78.39,
+   "fin": 78.46,
+   "escena": "proximo"
+  },
+  {
+   "texto": "el",
+   "inicio": 78.46,
+   "fin": 78.62,
+   "escena": "proximo"
+  },
+  {
+   "texto": "próximo",
+   "inicio": 78.62,
+   "fin": 79.18,
+   "escena": "proximo"
+  },
+  {
+   "texto": "veremos",
+   "inicio": 79.18,
+   "fin": 79.66,
+   "escena": "proximo"
+  },
+  {
+   "texto": "los",
+   "inicio": 79.66,
+   "fin": 79.82,
+   "escena": "proximo"
+  },
+  {
+   "texto": "distintos",
+   "inicio": 79.82,
+   "fin": 80.3,
+   "escena": "proximo"
+  },
+  {
+   "texto": "tipos",
+   "inicio": 80.3,
+   "fin": 80.62,
+   "escena": "proximo"
+  },
+  {
+   "texto": "de",
+   "inicio": 80.62,
+   "fin": 80.78,
+   "escena": "proximo"
+  },
+  {
+   "texto": "proyecto",
+   "inicio": 80.78,
+   "fin": 81.26,
+   "escena": "proximo"
+  },
+  {
+   "texto": "que",
+   "inicio": 81.26,
+   "fin": 81.42,
+   "escena": "proximo"
+  },
+  {
+   "texto": "existen,",
+   "inicio": 81.42,
+   "fin": 81.98,
+   "escena": "proximo"
+  },
+  {
+   "texto": "para",
+   "inicio": 81.98,
+   "fin": 82.14,
+   "escena": "proximo"
+  },
+  {
+   "texto": "que",
+   "inicio": 82.14,
+   "fin": 82.3,
+   "escena": "proximo"
+  },
+  {
+   "texto": "aprendas",
+   "inicio": 82.3,
+   "fin": 82.78,
+   "escena": "proximo"
+  },
+  {
+   "texto": "a",
+   "inicio": 82.78,
+   "fin": 82.86,
+   "escena": "proximo"
+  },
+  {
+   "texto": "clasificarlos",
+   "inicio": 82.86,
+   "fin": 83.74,
+   "escena": "proximo"
+  },
+  {
+   "texto": "y",
+   "inicio": 83.74,
+   "fin": 83.9,
+   "escena": "proximo"
+  },
+  {
+   "texto": "sepas",
+   "inicio": 83.9,
+   "fin": 84.38,
+   "escena": "proximo"
+  },
+  {
+   "texto": "con",
+   "inicio": 84.38,
+   "fin": 84.62,
+   "escena": "proximo"
+  },
+  {
+   "texto": "qué",
+   "inicio": 84.62,
+   "fin": 84.78,
+   "escena": "proximo"
+  },
+  {
+   "texto": "te",
+   "inicio": 84.78,
+   "fin": 84.94,
+   "escena": "proximo"
+  },
+  {
+   "texto": "vas",
+   "inicio": 84.94,
+   "fin": 85.18,
+   "escena": "proximo"
+  },
+  {
+   "texto": "a",
+   "inicio": 85.18,
+   "fin": 85.26,
+   "escena": "proximo"
+  },
+  {
+   "texto": "encontrar",
+   "inicio": 85.26,
+   "fin": 85.74,
+   "escena": "proximo"
+  },
+  {
+   "texto": "en",
+   "inicio": 85.74,
+   "fin": 85.82,
+   "escena": "proximo"
+  },
+  {
+   "texto": "cada",
+   "inicio": 85.82,
+   "fin": 86.14,
+   "escena": "proximo"
+  },
+  {
+   "texto": "caso.",
+   "inicio": 86.14,
+   "fin": 86.44,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Además,",
+   "inicio": 86.75,
+   "fin": 87.18,
+   "escena": "proximo"
+  },
+  {
+   "texto": "te",
+   "inicio": 87.18,
+   "fin": 87.34,
+   "escena": "proximo"
+  },
+  {
+   "texto": "voy",
+   "inicio": 87.34,
+   "fin": 87.5,
+   "escena": "proximo"
+  },
+  {
+   "texto": "a",
+   "inicio": 87.5,
+   "fin": 87.58,
+   "escena": "proximo"
+  },
+  {
+   "texto": "enseñar",
+   "inicio": 87.58,
+   "fin": 87.98,
+   "escena": "proximo"
+  },
+  {
+   "texto": "a",
+   "inicio": 87.98,
+   "fin": 88.14,
+   "escena": "proximo"
+  },
+  {
+   "texto": "instalar",
+   "inicio": 88.14,
+   "fin": 88.46,
+   "escena": "proximo"
+  },
+  {
+   "texto": "la",
+   "inicio": 88.46,
+   "fin": 88.62,
+   "escena": "proximo"
+  },
+  {
+   "texto": "extensión",
+   "inicio": 88.62,
+   "fin": 89.02,
+   "escena": "proximo"
+  },
+  {
+   "texto": "de",
+   "inicio": 89.02,
+   "fin": 89.18,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 89.18,
+   "fin": 89.74,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Code",
+   "inicio": 89.74,
+   "fin": 90.14,
+   "escena": "proximo"
+  },
+  {
+   "texto": "en",
+   "inicio": 90.14,
+   "fin": 90.3,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Visual",
+   "inicio": 90.3,
+   "fin": 90.7,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Studio",
+   "inicio": 90.7,
+   "fin": 91.18,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Code",
+   "inicio": 91.18,
+   "fin": 91.58,
+   "escena": "proximo"
+  },
+  {
+   "texto": "y",
+   "inicio": 91.58,
+   "fin": 91.74,
+   "escena": "proximo"
+  },
+  {
+   "texto": "las",
+   "inicio": 91.74,
+   "fin": 91.98,
+   "escena": "proximo"
+  },
+  {
+   "texto": "mejores",
+   "inicio": 91.98,
+   "fin": 92.38,
+   "escena": "proximo"
+  },
+  {
+   "texto": "extensiones",
+   "inicio": 92.38,
+   "fin": 92.94,
+   "escena": "proximo"
+  },
+  {
+   "texto": "que",
+   "inicio": 92.94,
+   "fin": 93.1,
+   "escena": "proximo"
+  },
+  {
+   "texto": "puedes",
+   "inicio": 93.1,
+   "fin": 93.42,
+   "escena": "proximo"
+  },
+  {
+   "texto": "añadir",
+   "inicio": 93.42,
+   "fin": 94.06,
+   "escena": "proximo"
+  },
+  {
+   "texto": "para",
+   "inicio": 94.06,
+   "fin": 94.22,
+   "escena": "proximo"
+  },
+  {
+   "texto": "trabajar",
+   "inicio": 94.22,
+   "fin": 94.7,
+   "escena": "proximo"
+  },
+  {
+   "texto": "más",
+   "inicio": 94.7,
+   "fin": 94.94,
+   "escena": "proximo"
+  },
+  {
+   "texto": "rápido.",
+   "inicio": 94.94,
+   "fin": 95.42,
+   "escena": "proximo"
+  },
+  {
+   "texto": "Si",
+   "inicio": 95.71,
+   "fin": 96.0,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "eres",
+   "inicio": 96.0,
+   "fin": 96.35,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "dueño",
+   "inicio": 96.35,
+   "fin": 96.67,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "de",
+   "inicio": 96.67,
+   "fin": 96.83,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "un",
+   "inicio": 96.83,
+   "fin": 96.91,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "negocio",
+   "inicio": 96.91,
+   "fin": 97.47,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "comenta",
+   "inicio": 97.47,
+   "fin": 98.11,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "AUDITORIA",
+   "inicio": 98.11,
+   "fin": 98.91,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "y",
+   "inicio": 98.91,
+   "fin": 99.07,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "te",
+   "inicio": 99.07,
+   "fin": 99.23,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "preparamos",
+   "inicio": 99.23,
+   "fin": 99.79,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "una",
+   "inicio": 99.79,
+   "fin": 99.95,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "auditoría",
+   "inicio": 99.95,
+   "fin": 100.59,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "gratuita",
+   "inicio": 100.59,
+   "fin": 101.15,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "para",
+   "inicio": 101.15,
+   "fin": 101.39,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "ver",
+   "inicio": 101.39,
+   "fin": 101.63,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "qué",
+   "inicio": 101.63,
+   "fin": 101.87,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "procesos",
+   "inicio": 101.87,
+   "fin": 102.43,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "podemos",
+   "inicio": 102.43,
+   "fin": 102.83,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "optimizar.",
+   "inicio": 102.83,
+   "fin": 103.46,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "Sígueme",
+   "inicio": 103.68,
+   "fin": 104.27,
+   "escena": "seguir"
+  },
+  {
+   "texto": "para",
+   "inicio": 104.27,
+   "fin": 104.51,
+   "escena": "seguir"
+  },
+  {
+   "texto": "no",
+   "inicio": 104.51,
+   "fin": 104.75,
+   "escena": "seguir"
+  },
+  {
+   "texto": "perderte",
+   "inicio": 104.75,
+   "fin": 105.39,
+   "escena": "seguir"
+  },
+  {
+   "texto": "ningún",
+   "inicio": 105.39,
+   "fin": 105.79,
+   "escena": "seguir"
+  },
+  {
+   "texto": "episodio.",
+   "inicio": 105.79,
+   "fin": 106.38,
+   "escena": "seguir"
+  }
+ ]
+}
