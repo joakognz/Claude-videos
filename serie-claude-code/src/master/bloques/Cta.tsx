@@ -65,7 +65,8 @@ export const Cta: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
   const pulsado = t > T.pulsa;
   const hund = Math.sin(clamp01((t - T.pulsa + 0.08) / 0.2) * Math.PI) * 0.08;
   const siguiendo = ramp(t, T.pulsa + 0.05, T.pulsa + 0.25);
-  const fuera1 = T.seguirIni + 0.3;
+  // lo de arriba (pregunta, comentario, sello, remate) termina de salir justo cuando entra el perfil
+  const fuera1 = T.seguirIni;
   // dos líneas para la pregunta: se corta a la mitad de palabras
   const mitad = Math.ceil(T.pregunta.length / 2);
   const remMitad = Math.ceil(T.remate.length / 2);
@@ -148,15 +149,15 @@ export const Cta: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
 
       {/* seguir: tarjeta del perfil */}
       {(() => {
-        const v = vis(t, T.seguirIni - 0.3, Infinity, 0.85);
+        const v = vis(t, T.seguirIni - 0.05, Infinity, 0.85);
         if (!v.on) return null;
         return (
           <div style={{ position: "absolute", left: 90, top: 1960, width: 900, height: 640, borderRadius: 44, background: C.panel, border: `3px solid ${C.borde}`, boxShadow: "0 40px 100px rgba(0,0,0,0.55)", opacity: v.opacity, transform: `scale(${v.scale})` }} />
         );
       })()}
-      <Logo src={ep.logos.claude_code_texto} x={540} y={1800} w={440} t={t} at={T.seguirIni - 0.25} sombra={false} />
+      <Logo src={ep.logos.claude_code_texto} x={540} y={1800} w={440} t={t} at={T.seguirIni + 0.1} sombra={false} />
       {(() => {
-        const v = vis(t, T.seguirIni - 0.15, Infinity, 0.6);
+        const v = vis(t, T.seguirIni + 0.05, Infinity, 0.6);
         if (!v.on) return null;
         return (
           <div style={{ position: "absolute", left: 540 - 85, top: 2050 - 85, width: 170, height: 170, borderRadius: "50%", background: C.fondo, border: `5px solid ${C.acento}`, display: "flex", alignItems: "center", justifyContent: "center", opacity: v.opacity, transform: `scale(${v.scale})` }}>

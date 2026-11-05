@@ -35,7 +35,11 @@ for i, p in enumerate(pal):
     w = ancho(p["texto"])
     if a + w > ANCHO:
         if len(cur) == 2:
+            ult = cur[1][-1] if cur[1] else None
+            colg = cur[1].pop() if ult and len(cur[1]) > 1 and len(re.sub(r"[^\wñáéíóúü]", "", ult["texto"].lower())) <= 3 and not re.search(r"[.,;:?!]$", ult["texto"]) else None
             bloques.append(cur); cur, a = [[]], 0.0
+            if colg:
+                cur[0].append(colg); a = ancho(colg["texto"])
         else:
             cur.append([]); a = 0.0
     cur[-1].append(p); a += w
@@ -50,12 +54,13 @@ print("Subtítulos")
 linea(f"{len(bloques)} bloques, máximo {max(len([l for l in b if l]) for b in bloques)} líneas", all(len([l for l in b if l]) <= 2 for b in bloques))
 anchos = [sum(ancho(p['texto']) for p in l) for b in bloques for l in b if l]
 linea(f"línea más ancha ≈ {max(anchos):.0f} px de {ANCHO}", max(anchos) <= ANCHO)
-fuera = 0
+fuera, prev_fin = 0, -1e9
 for k, b in enumerate(bloques):
     todas = [p for l in b for p in l]
-    ini = todas[0]["inicio"] - 0.12
+    ini = max(todas[0]["inicio"] - 0.12, prev_fin)
     sig = bloques[k + 1][0][0]["inicio"] - 0.12 if k + 1 < len(bloques) else 1e9
-    fin = min(sig, todas[-1]["fin"] + 0.7)
+    fin = max(todas[-1]["inicio"] + 0.1, min(sig, todas[-1]["fin"] + 0.7))
+    prev_fin = fin
     fuera += sum(1 for p in todas if not (ini <= p["inicio"] < fin))
 linea(f"{len(pal)} palabras: cada una se resalta en su instante de la voz ({fuera} fuera de su bloque)", fuera == 0)
 

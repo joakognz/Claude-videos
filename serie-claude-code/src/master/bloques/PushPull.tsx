@@ -129,7 +129,7 @@ export const PushPull: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
       {/* etiquetas */}
       <Sello texto="PUSH = SUBIR" x={540} y={Y_PUSH} t={t} at={T.push} out={hasta + 0.4} size={58} rot={-3} resalte={resPush} />
       <Sello texto="PULL = SACAR" x={540} y={Y_PULL} t={t} at={T.pull} out={hasta + 0.4} size={58} rot={3} resalte={resPull} />
-      <Etiqueta texto="ESCRIBES" x={XV} y={FY + 205} t={t} at={T.escribes} out={T.recuperas - 0.05} size={32} variante="acento" />
+      <Etiqueta texto="ESCRIBES" x={XV} y={FY + 205} t={t} at={T.escribes} out={T.guardas + 0.15} size={32} variante="acento" />
       <Etiqueta texto="GUARDAS" x={XG} y={FY + 205} t={t} at={T.guardas} out={hasta + 0.4} size={32} variante="acento" />
       <Etiqueta texto="RECUPERAS" x={XV} y={FY + 205} t={t} at={T.recuperas} out={hasta + 0.4} size={32} variante="acento" />
     </Escena>

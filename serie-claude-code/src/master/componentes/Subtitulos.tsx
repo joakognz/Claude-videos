@@ -1,6 +1,6 @@
 /** Subtítulos arriba (regla 5): palabra a palabra, la que suena en un recuadro de acento; máximo 2 líneas. */
 import React from "react";
-import { C, TOP, UI, clamp01, sp } from "../nucleo";
+import { C, TOP, UI, clamp01, norm, sp } from "../nucleo";
 import type { Palabra } from "../nucleo";
 
 const SIZE = 66;
@@ -22,8 +22,16 @@ export const trocear = (pal: Palabra[]): Bloque[] => {
   pal.forEach((p, i) => {
     const a = anchoPalabra(p.texto);
     if (ancho + a > ANCHO) {
-      if (cur.length === 2) cerrar();
-      else {
+      if (cur.length === 2) {
+        // no dejar colgada al final del bloque una palabra corta sin puntuación («a», «y», «en»): pasa al siguiente
+        const ult = cur[1][cur[1].length - 1];
+        const colgada = ult && cur[1].length > 1 && norm(ult.texto).length <= 3 && !/[.,;:?!]$/.test(ult.texto) ? cur[1].pop()! : null;
+        cerrar();
+        if (colgada) {
+          cur[0].push(colgada);
+          ancho = anchoPalabra(colgada.texto);
+        }
+      } else {
         cur.push([]);
         ancho = 0;
       }
@@ -37,13 +45,18 @@ export const trocear = (pal: Palabra[]): Bloque[] => {
     if (escena || /[.?!:]$/.test(p.texto) || (/[,;]$/.test(p.texto) && n >= 4 && pausa)) cerrar();
   });
   cerrar();
-  return out.map((b, k) => {
+  // cada bloque entra 0,12 s antes de su primera palabra, pero nunca antes de que haya sonado la última del anterior
+  const res: Bloque[] = [];
+  out.forEach((b, k) => {
     const todas = b.lineas.flat();
     const sig = out[k + 1]?.lineas[0][0];
-    const ini = todas[0].inicio - 0.12;
-    const fin = Math.min(sig ? sig.inicio - 0.12 : Infinity, todas[todas.length - 1].fin + 0.7);
-    return { lineas: b.lineas, ini, fin };
+    const previo = res[k - 1];
+    const ini = Math.max(todas[0].inicio - 0.12, previo ? previo.fin : -Infinity);
+    const ultima = todas[todas.length - 1];
+    const fin = Math.max(ultima.inicio + 0.1, Math.min(sig ? sig.inicio - 0.12 : Infinity, ultima.fin + 0.7));
+    res.push({ lineas: b.lineas, ini, fin });
   });
+  return res;
 };
 
 export const Subtitulos: React.FC<{ bloques: Bloque[]; t: number; ocultarAntesDe?: number }> = ({ bloques, t, ocultarAntesDe = 0 }) => {
