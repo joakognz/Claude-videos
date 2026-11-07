@@ -22,9 +22,19 @@ const TIT = {
   serie: { x: 540, y: 1230 },
 };
 
+/** El número del episodio, dicho en cifras o en letras («tres»). */
+const NUMEROS = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez"];
+const enLetras = (L: Linea, id: string, n: number) => {
+  try {
+    return L.en(id, String(n));
+  } catch {
+    return L.en(id, NUMEROS[n] ?? String(n));
+  }
+};
+
 const tiempos = (L: Linea, ep: EpisodioMaster) => {
   const id = ep.escenas[0].id;
-  const enciende = L.en(id, String(ep.episodio));
+  const enciende = enLetras(L, id, ep.episodio);
   const titulo = L.en(id, ep.serie.split(" ")[0]);
   const deshace = Math.max(enciende + 0.65, titulo - 0.55);
   return { enciende, titulo, deshace };
@@ -106,6 +116,7 @@ export const Intro: React.FC<BloqueProps> = ({ t, ep, L }) => {
       <TextoPixel src={ep.logos.claude_code_texto} t={t} at={titulo + 0.05} />
       <Logo src={ep.logos.claude_code} x={TIT.mascota.x} y={TIT.mascota.y} w={TIT.mascota.w} t={t} at={titulo + 0.14} sombra={false} />
       <Serie texto={ep.serie} t={t} at={titulo + 0.2} />
+      {ep.parte && <Etiqueta texto={`PARTE ${ep.parte} DE ${ep.partes}`} x={540} y={TIT.serie.y + 110} t={t} at={titulo + 0.55} size={52} variante="acento" fuente="titulo" />}
     </Escena>
   );
 };

@@ -54,7 +54,7 @@ function limitar(mp4) {
 let fallos = 0;
 for (const f of ficheros) {
   const ep = JSON.parse(fs.readFileSync(f, "utf8"));
-  const nombre = `claude-code-ep-${String(ep.episodio).padStart(2, "0")}`;
+  const nombre = `claude-code-ep-${String(ep.episodio).padStart(2, "0")}${ep.parte ? `-p${ep.parte}` : ""}`;
   const t0 = Date.now();
   try {
     // EP.1 usa la composición «Episodio»; desde el EP.2, «Master» ("composicion" en el JSON)

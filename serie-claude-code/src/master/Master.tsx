@@ -3,6 +3,7 @@ import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import React, { useMemo } from "react";
 import { AbsoluteFill, Easing, useCurrentFrame } from "remotion";
 import { BLOQUES } from "./bloques";
+import { BarraProgreso } from "./componentes/BarraProgreso";
 import { Insignia, MarcaAgua } from "./componentes/Insignia";
 import { Sonido } from "./componentes/Sonido";
 import { Subtitulos, VeloSuperior, trocear } from "./componentes/Subtitulos";
@@ -50,8 +51,9 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
         })}
       </TransitionSeries>
       <VeloSuperior />
+      <BarraProgreso t={t} duracion={calc.duracion} />
       <Subtitulos bloques={subs} t={t} />
-      <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} />
+      <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} parte={ep.parte} partes={ep.partes} />
       <MarcaAgua handle={ep.handle} />
       <AbsoluteFill style={{ background: C.fondo, opacity: Math.max(0, (t - (calc.duracion - 0.5)) / 0.5) }} />
       <Sonido ep={ep} calc={calc} />

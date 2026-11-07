@@ -1,0 +1,81 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 3,
+  "parte": 1,
+  "partes": 2,
+  "total": 50,
+  "titulo": "¿Qué es un proyecto?",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-03-p1/voz.wav",
+    "timestamps": "episodios/ep-03-p1/palabras.json"
+  },
+  "musica": { "audio": "audio/musica.wav", "db": -20, "duckingDb": -8 },
+  "cta": {
+    "tipo": "auditoria_drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "recurso": "logos/drive.png",
+    "seguir": "Sígueme"
+  },
+  "avance": {
+    "tipo": "parte",
+    "frase": "En la parte dos, instalamos Claude Code en Visual Studio Code y te enseño las extensiones que necesitas.",
+    "titulo": "Instalar y extensiones",
+    "cierre": "Sígueme para no perdértela."
+  },
+  "siguiente_episodio": 3,
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png",
+    "aws": "logos/aws.png",
+    "youtube": "logos/youtube.png",
+    "whatsapp": "logos/whatsapp.png",
+    "nodejs": "logos/nodejs.png"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio tres de cincuenta, parte uno. Máster de Claude Code." },
+    { "id": "hoy", "voz": "Hoy vemos qué es un proyecto, la base de todo lo que vamos a construir." },
+    { "id": "pregunta", "voz": "Empezamos por lo fundamental: ¿qué es un proyecto?" },
+    { "id": "simple", "voz": "Te va a sorprender lo simple que es. Un proyecto es, literalmente, una carpeta con archivos dentro. Nada más." },
+    { "id": "ejemplos", "voz": "Una web. Un canal de YouTube. Un agente de WhatsApp. Cada uno, su carpeta." },
+    { "id": "dos", "voz": "Y todos se definen con dos preguntas." },
+    { "id": "primera", "voz": "Primera: ¿de qué está hecho?" },
+    { "id": "hecho", "voz": "Frontend: la cara visible, lo que ve el cliente. Backend: el motor que no se ve, pero que lo mueve todo. Y la base de datos: la memoria, donde se guarda lo importante." },
+    { "id": "segunda", "voz": "Segunda: ¿dónde vive?" },
+    { "id": "vive", "voz": "En tu ordenador, si es algo personal. En un hosting web, para que cualquiera lo vea online. En un VPS: un ordenador encendido las veinticuatro horas que trabaja solo, mientras tú duermes. O en la nube grande, como AWS, para los proyectos gordos." },
+    { "id": "siete", "voz": "Con esas dos preguntas salen siete tipos de proyecto, de menos a más complejo:" },
+    { "id": "t1", "voz": "Uno: un kit. Lo abres con Claude Code y listo. Vive en tu ordenador." },
+    { "id": "t2", "voz": "Dos: una landing. Solo la cara, en un hosting." },
+    { "id": "t3", "voz": "Tres: una web con login y formularios. Cara, motor y memoria." },
+    { "id": "t4", "voz": "Cuatro: un paquete de automatizaciones. Solo motor, sin pantalla, currando solo en un VPS." },
+    { "id": "t5", "voz": "Cinco: un agente de IA. Motor y memoria, también en un VPS." },
+    { "id": "t6", "voz": "Seis: una mini-app. Cara, motor y memoria, con pantalla." },
+    { "id": "t7", "voz": "Y siete: un ERP, es decir, un sistema de Planificación de Recursos Empresariales completo. Las tres partes, a lo grande." },
+    { "id": "regla", "voz": "La regla es simple: más partes y más infraestructura significa más complejidad y más coste." },
+    { "id": "resumen", "voz": "Resumen rápido. Un proyecto es una carpeta. Se define por qué lleva y dónde vive." },
+    { "id": "cta", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "avance", "voz": "En la parte dos, instalamos Claude Code en Visual Studio Code y te enseño las extensiones que necesitas." },
+    { "id": "seguir", "voz": "Sígueme para no perdértela." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "hoy", "desde": "hoy" },
+    { "tipo": "carpeta", "desde": "pregunta" },
+    { "tipo": "hecho", "desde": "primera" },
+    { "tipo": "vive", "desde": "segunda" },
+    { "tipo": "tabla", "desde": "siete" },
+    { "tipo": "resumen", "desde": "resumen" },
+    { "tipo": "ctadrive", "desde": "cta" },
+    { "tipo": "avance", "desde": "avance" },
+    { "tipo": "seguir", "desde": "seguir" }
+  ]
+}
