@@ -59,7 +59,7 @@ for k, b in enumerate(bloques):
     todas = [p for l in b for p in l]
     ini = max(todas[0]["inicio"] - 0.12, prev_fin)
     sig = bloques[k + 1][0][0]["inicio"] - 0.12 if k + 1 < len(bloques) else 1e9
-    fin = max(todas[-1]["inicio"] + 0.1, min(sig, todas[-1]["fin"] + 0.7))
+    fin = max(todas[-1]["inicio"] + 0.06, min(sig, todas[-1]["fin"] + 0.7))
     prev_fin = fin
     fuera += sum(1 for p in todas if not (ini <= p["inicio"] < fin))
 linea(f"{len(pal)} palabras: cada una se resalta en su instante de la voz ({fuera} fuera de su bloque)", fuera == 0)

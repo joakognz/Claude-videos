@@ -53,7 +53,7 @@ export const trocear = (pal: Palabra[]): Bloque[] => {
     const previo = res[k - 1];
     const ini = Math.max(todas[0].inicio - 0.12, previo ? previo.fin : -Infinity);
     const ultima = todas[todas.length - 1];
-    const fin = Math.max(ultima.inicio + 0.1, Math.min(sig ? sig.inicio - 0.12 : Infinity, ultima.fin + 0.7));
+    const fin = Math.max(ultima.inicio + 0.06, Math.min(sig ? sig.inicio - 0.12 : Infinity, ultima.fin + 0.7));
     res.push({ lineas: b.lineas, ini, fin });
   });
   return res;
