@@ -1,6 +1,6 @@
 import type { Evento, Linea, Palabra } from "./nucleo";
 
-export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "aws" | "youtube" | "whatsapp" | "nodejs";
+export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "aws" | "youtube" | "whatsapp" | "nodejs" | "hostinger" | "liveserver";
 
 export type EpisodioMaster = {
   composicion: "Master";
@@ -32,9 +32,12 @@ export type EpisodioMaster = {
   siguiente_episodio: number;
   proximo?: { titulo: string; en: string; detalle?: { texto: string; en: string }[]; logos?: { id: LogoId; en: string }[] }[];
   logos: Record<LogoId, string>;
+  /** pasos de un tutorial: sello «PASO N» al empezar la escena y tick al decir `fin.en` */
+  pasos?: { n: number; escena: string; fin: { escena: string; en: string } }[];
   clips?: Record<string, { src: string; ancho: number; alto: number; recorteArriba?: number }>;
   escenas: { id: string; voz: string }[];
-  bloques: { tipo: string; desde: string }[];
+  /** bloques temáticos; `n` y `titulo` para los sellos «BLOQUE N» */
+  bloques: { tipo: string; desde: string; n?: number; titulo?: string }[];
   estilo?: Record<string, string>;
   /** lo calcula calculateMetadata */
   calc?: Calculo;

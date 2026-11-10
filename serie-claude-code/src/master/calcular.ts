@@ -3,6 +3,7 @@ import type { CalculateMetadataFunction } from "remotion";
 import { staticFile } from "remotion";
 import { duracionAudio, leerTimestamps } from "../datos";
 import { BLOQUES } from "./bloques";
+import { eventosPasos } from "./componentes/PasosHud";
 import { envolventeMusica } from "./componentes/Sonido";
 import { FPS, crearLinea } from "./nucleo";
 import type { Evento, Palabra } from "./nucleo";
@@ -32,6 +33,7 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
     eventos.push(...B.eventos(L, props));
     if (i > 0) eventos.push({ t: cortes[i] - 0.3, sfx: "whoosh", vol: 0.28 });
   });
+  eventos.push(...eventosPasos(L, props));
   const mus = props.musica;
   const frames = Math.ceil(duracion * FPS);
   return {
@@ -47,6 +49,6 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
         eventos: eventos.filter((e) => e.t >= 0 && e.t < duracion).sort((a, b) => a.t - b.t),
       },
     },
-    defaultOutName: `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,
+    defaultOutName: `claude-code-ep-${String(props.episodio).padStart(2, "0")}${props.parte ? `-p${props.parte}` : ""}`,
   };
 };

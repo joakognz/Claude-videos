@@ -34,7 +34,7 @@ export const Seguir: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
     <Escena t={t} tomas={tomas}>
       {/* frase de cierre, palabra a palabra con la voz */}
       <div style={{ position: "absolute", left: 540, top: 745, width: 0, height: 0 }}>
-        <div style={{ position: "absolute", transform: "translate(-50%, -50%)", textAlign: "center", fontFamily: TITULO, fontWeight: 800, fontSize: 92, lineHeight: 1.12, color: C.texto, whiteSpace: "nowrap" }}>
+        <div style={{ position: "absolute", transform: "translate(-50%, -50%)", textAlign: "center", fontFamily: TITULO, fontWeight: 800, fontSize: Math.min(92, Math.floor(1650 / Math.max(frase.slice(0, 2).join(" ").length, frase.slice(2).join(" ").length))), lineHeight: 1.12, color: C.texto, whiteSpace: "nowrap" }}>
           {[frase.slice(0, 2), frase.slice(2)].map((ln, i) => (
             <div key={i}>
               {ln.map((w, k) => {

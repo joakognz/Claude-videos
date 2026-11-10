@@ -17,6 +17,10 @@ import { Resumen, eventosResumen } from "./Resumen";
 import { Seguir, eventosSeguir } from "./Seguir";
 import { Tabla, eventosTabla } from "./Tabla";
 import { Vive, eventosVive } from "./Vive";
+import { BloqueSello, Hoy2, Recuerdo, TomaWeb, eventosBloqueSello, eventosHoy2, eventosRecuerdo, eventosTomaWeb } from "./P2Inicio";
+import { VsCodeInstalar, eventosVsCode } from "./P2VsCode";
+import { Ext, Hostinger, Live, Node, eventosExt, eventosHostinger, eventosLive, eventosNode } from "./P2Extensiones";
+import { Resumen2, eventosResumen2 } from "./P2Cierre";
 
 export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster) => Evento[] };
 
@@ -38,4 +42,14 @@ export const BLOQUES: Record<string, DefBloque> = {
   ctadrive: { Componente: CtaDrive, eventos: eventosCtaDrive },
   avance: { Componente: Avance, eventos: eventosAvance },
   seguir: { Componente: Seguir, eventos: eventosSeguir },
+  hoy2: { Componente: Hoy2, eventos: eventosHoy2 },
+  recuerdo: { Componente: Recuerdo, eventos: eventosRecuerdo },
+  bloque: { Componente: BloqueSello, eventos: eventosBloqueSello },
+  toma: { Componente: TomaWeb, eventos: eventosTomaWeb },
+  vscode: { Componente: VsCodeInstalar, eventos: eventosVsCode },
+  ext: { Componente: Ext, eventos: eventosExt },
+  hostinger: { Componente: Hostinger, eventos: eventosHostinger },
+  node: { Componente: Node, eventos: eventosNode },
+  live: { Componente: Live, eventos: eventosLive },
+  resumen2: { Componente: Resumen2, eventos: eventosResumen2 },
 };

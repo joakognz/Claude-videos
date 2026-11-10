@@ -1,0 +1,236 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 3,
+  "parte": 2,
+  "partes": 2,
+  "total": 50,
+  "titulo": "Instalar y extensiones",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-03-p2/voz.wav",
+    "timestamps": "episodios/ep-03-p2/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "auditoria_drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "recurso": "logos/drive.png",
+    "seguir": "Sígueme"
+  },
+  "avance": {
+    "tipo": "episodio",
+    "episodio": 4,
+    "frase": "Y en el siguiente episodio, cosas muy gordas.",
+    "titulo": "Tu meta, las 4 etapas y los costes",
+    "cierre": "Sígueme para no perderte el siguiente."
+  },
+  "siguiente_episodio": 4,
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png",
+    "aws": "logos/aws.png",
+    "youtube": "logos/youtube.png",
+    "whatsapp": "logos/whatsapp.png",
+    "nodejs": "logos/nodejs.png",
+    "hostinger": "logos/hostinger.png",
+    "liveserver": "logos/liveserver.png"
+  },
+  "clips": {
+    "web": {
+      "src": "episodios/ep-03-p2/clips/web-vscode.mp4",
+      "ancho": 1000,
+      "alto": 982
+    }
+  },
+  "escenas": [
+    {
+      "id": "intro",
+      "voz": "Episodio tres de cincuenta, parte dos. Máster de Claude Code."
+    },
+    {
+      "id": "hoy",
+      "voz": "Hoy instalamos Claude Code en Visual Studio Code y vemos las extensiones que necesitas para trabajar más rápido y con menos esfuerzo."
+    },
+    {
+      "id": "recuerdo",
+      "voz": "Recuerda lo que vimos. Un proyecto es una carpeta con archivos dentro. Nada más."
+    },
+    {
+      "id": "instalar",
+      "voz": "Y ahora sí, a instalar."
+    },
+    {
+      "id": "paso1",
+      "voz": "Primero, Visual Studio Code, desde su web oficial, como te enseñé en el episodio dos."
+    },
+    {
+      "id": "paso2",
+      "voz": "Ábrelo, pulsa Open Folder y elige la carpeta de tu proyecto. Ya está. Ese es tu proyecto abierto."
+    },
+    {
+      "id": "paso3",
+      "voz": "Ahora, Claude Code. Ve a extensiones, búscalo e instala la de Anthropic. Funciona con tu suscripción Pro o Max de Claude."
+    },
+    {
+      "id": "paso4",
+      "voz": "Cuando termine, verás el icono de Claude en la barra lateral. Ábrelo, inicia una sesión y escríbele: hola."
+    },
+    {
+      "id": "bueno",
+      "voz": "Y aquí viene lo bueno. Claude mira tu carpeta y te pregunta qué necesitas. Así de fácil."
+    },
+    {
+      "id": "extensiones",
+      "voz": "Y ahora, las extensiones que te hacen ir más rápido."
+    },
+    {
+      "id": "una",
+      "voz": "Una: Claude Code. Esa ya la tienes. Vas una por delante."
+    },
+    {
+      "id": "hostinger",
+      "voz": "Dos: Hostinger Connector. Conecta Visual Studio Code con tu hosting, y así despliegas y gestionas tus webs sin salir del editor."
+    },
+    {
+      "id": "conectar",
+      "voz": "Para conectarlo, entra en tu cuenta de Hostinger y usa el conector con un clic. O, si prefieres, con un token de API."
+    },
+    {
+      "id": "node",
+      "voz": "Necesitas Node.js. Pero no te compliques, no lo instalas tú. Le dices a Claude: instálame Node.js. Y lo hace."
+    },
+    {
+      "id": "live",
+      "voz": "Tres: Live Server. Te abre tu web en local y se actualiza cada vez que guardas. Cambias algo y lo ves al instante."
+    },
+    {
+      "id": "abrir",
+      "voz": "Y para abrirla, también se lo pides a Claude: ábreme la web para que pueda verla."
+    },
+    {
+      "id": "resumen",
+      "voz": "Resumen rápido. Con Claude Code dentro de Visual Studio Code y estas tres extensiones, ya puedes empezar."
+    },
+    {
+      "id": "cta",
+      "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."
+    },
+    {
+      "id": "avance",
+      "voz": "Y en el siguiente episodio, cosas muy gordas. Te enseño lo que serás capaz de montar cuando termines este máster. Veremos las cuatro etapas por las que pasa cualquier proyecto, sea del tamaño que sea. Y por encima de todo, hablamos de lo que de verdad te interesa: cuánto cuesta y cómo gastar menos."
+    },
+    {
+      "id": "seguir",
+      "voz": "Sígueme para no perderte el siguiente."
+    }
+  ],
+  "bloques": [
+    {
+      "tipo": "intro",
+      "desde": "intro"
+    },
+    {
+      "tipo": "hoy2",
+      "desde": "hoy"
+    },
+    {
+      "tipo": "recuerdo",
+      "desde": "recuerdo"
+    },
+    {
+      "tipo": "bloque",
+      "desde": "instalar",
+      "n": 1,
+      "titulo": "Instalar"
+    },
+    {
+      "tipo": "toma",
+      "desde": "paso1"
+    },
+    {
+      "tipo": "vscode",
+      "desde": "paso2"
+    },
+    {
+      "tipo": "ext",
+      "desde": "extensiones",
+      "n": 2,
+      "titulo": "Extensiones"
+    },
+    {
+      "tipo": "hostinger",
+      "desde": "hostinger"
+    },
+    {
+      "tipo": "node",
+      "desde": "node"
+    },
+    {
+      "tipo": "live",
+      "desde": "live"
+    },
+    {
+      "tipo": "resumen2",
+      "desde": "resumen"
+    },
+    {
+      "tipo": "ctadrive",
+      "desde": "cta"
+    },
+    {
+      "tipo": "avance",
+      "desde": "avance"
+    },
+    {
+      "tipo": "seguir",
+      "desde": "seguir"
+    }
+  ],
+  "pasos": [
+    {
+      "n": 1,
+      "escena": "paso1",
+      "fin": {
+        "escena": "paso1",
+        "en": "dos"
+      }
+    },
+    {
+      "n": 2,
+      "escena": "paso2",
+      "fin": {
+        "escena": "paso2",
+        "en": "Ya está"
+      }
+    },
+    {
+      "n": 3,
+      "escena": "paso3",
+      "fin": {
+        "escena": "paso3",
+        "en": "Funciona"
+      }
+    },
+    {
+      "n": 4,
+      "escena": "paso4",
+      "fin": {
+        "escena": "bueno",
+        "en": "fácil"
+      }
+    }
+  ]
+}

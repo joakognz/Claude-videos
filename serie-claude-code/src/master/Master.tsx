@@ -5,6 +5,7 @@ import { AbsoluteFill, Easing, useCurrentFrame } from "remotion";
 import { BLOQUES } from "./bloques";
 import { BarraProgreso } from "./componentes/BarraProgreso";
 import { Insignia, MarcaAgua } from "./componentes/Insignia";
+import { PasosHud, tiemposPasos } from "./componentes/PasosHud";
 import { Sonido } from "./componentes/Sonido";
 import { Subtitulos, VeloSuperior, trocear } from "./componentes/Subtitulos";
 import { C, FPS, crearLinea } from "./nucleo";
@@ -18,6 +19,7 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
   const calc = ep.calc!;
   const L = useMemo(() => crearLinea(calc.palabras, calc.duracion), [calc]);
   const subs = useMemo(() => trocear(calc.palabras), [calc]);
+  const pasos = useMemo(() => tiemposPasos(L, ep), [L, ep]);
   const t = frame / FPS;
   const cortesF = calc.cortes.map((c) => Math.round(c * FPS));
   const n = ep.bloques.length;
@@ -52,6 +54,7 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
       </TransitionSeries>
       <VeloSuperior />
       <BarraProgreso t={t} duracion={calc.duracion} />
+      <PasosHud t={t} pasos={pasos} />
       <Subtitulos bloques={subs} t={t} />
       <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} parte={ep.parte} partes={ep.partes} />
       <MarcaAgua handle={ep.handle} />

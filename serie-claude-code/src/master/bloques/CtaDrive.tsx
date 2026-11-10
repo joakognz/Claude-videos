@@ -52,7 +52,7 @@ export const CtaDrive: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
   const n = Math.round(clamp01((t - T.clave) / Math.max(0.3, T.finClave - T.clave)) * clave.length);
   const envia = sp(t, T.finClave + 0.1, { damping: 15, stiffness: 160 });
   const pulso = Math.sin(clamp01((t - T.enlace) / 0.8) * Math.PI) * 0.06;
-  const ver = vis(t, T.audit - 0.15, out, 0.4);
+  const ver = vis(t, cambio + 0.05, out, 0.4);
   const chk = ramp(t, T.audit + 0.1, T.audit + 0.55);
   return (
     <Escena t={t} tomas={tomas}>
@@ -106,8 +106,8 @@ export const CtaDrive: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
           <div style={{ position: "absolute", left: 540 - 175, top: 1000 - 175, width: 350, height: 350, borderRadius: "50%", background: `color-mix(in srgb, ${C.acento} ${Math.round(chk * 100)}%, ${C.panel2})`, border: `6px solid ${C.acento}`, opacity: ver.opacity, transform: `scale(${ver.scale})`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 ${80 * chk}px ${C.acento}88` }}>
             <IconCheck s={210} color={C.oscuro} p={chk} />
           </div>
-          <div style={{ position: "absolute", left: 540, top: 1290, width: 0, height: 0, opacity: ver.opacity }}>
-            <div style={{ position: "absolute", transform: `translate(-50%, -50%) scale(${ver.scale})`, fontFamily: TITULO, fontWeight: 800, fontSize: 104, color: C.texto, letterSpacing: -2 }}>AUDITORÍA</div>
+          <div style={{ position: "absolute", left: 540, top: 1290, width: 0, height: 0, opacity: ver.opacity * ramp(t, T.audit - 0.15, T.audit + 0.1) }}>
+            <div style={{ position: "absolute", transform: `translate(-50%, -50%) scale(${ver.scale * (0.85 + 0.15 * sp(t, T.audit - 0.15))})`, fontFamily: TITULO, fontWeight: 800, fontSize: 104, color: C.texto, letterSpacing: -2 }}>AUDITORÍA</div>
           </div>
           {(() => {
             const v = vis(t, T.optimizar - 0.1, out, 0.6);

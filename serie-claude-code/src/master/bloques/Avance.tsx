@@ -8,6 +8,7 @@ import { Etiqueta } from "../componentes/Sello";
 import { C, EASE_OUT, TITULO, ramp, vis } from "../nucleo";
 import type { Evento, Linea, Toma } from "../nucleo";
 import type { BloqueProps, EpisodioMaster } from "../tipos";
+import { AvanceEpisodio, eventosAvanceEpisodio } from "./P2Cierre";
 
 const ID = "avance";
 const tiempos = (L: Linea) => ({
@@ -21,7 +22,9 @@ const tiempos = (L: Linea) => ({
   fin: L.fin(ID),
 });
 
-export const Avance: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
+export const Avance: React.FC<BloqueProps> = (props) => (props.ep.avance?.tipo === "episodio" ? <AvanceEpisodio {...props} /> : <AvanceParte {...props} />);
+
+const AvanceParte: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
   const T = tiempos(L);
   const out = hasta + 0.3;
   const sig = (ep.parte ?? 0) + 1;
@@ -81,7 +84,8 @@ export const Avance: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
   );
 };
 
-export const eventosAvance = (L: Linea, _ep: EpisodioMaster): Evento[] => {
+export const eventosAvance = (L: Linea, ep: EpisodioMaster): Evento[] => {
+  if (ep.avance?.tipo === "episodio") return eventosAvanceEpisodio(L);
   const T = tiempos(L);
   return [
     { t: T.parte, sfx: "pop", vol: 0.35 },
