@@ -213,13 +213,13 @@
    "escena": "recuerdo"
   },
   {
-   "texto": "vimos.",
+   "texto": "vimos:",
    "inicio": 13.36,
    "fin": 13.72,
    "escena": "recuerdo"
   },
   {
-   "texto": "Un",
+   "texto": "un",
    "inicio": 13.97,
    "fin": 14.16,
    "escena": "recuerdo"
@@ -471,13 +471,13 @@
    "escena": "paso2"
   },
   {
-   "texto": "está.",
+   "texto": "está:",
    "inicio": 29.03,
    "fin": 29.41,
    "escena": "paso2"
   },
   {
-   "texto": "Ese",
+   "texto": "ese",
    "inicio": 29.65,
    "fin": 29.99,
    "escena": "paso2"
@@ -729,13 +729,13 @@
    "escena": "paso4"
   },
   {
-   "texto": "escríbele:",
+   "texto": "escríbele",
    "inicio": 44.67,
    "fin": 45.39,
    "escena": "paso4"
   },
   {
-   "texto": "hola.",
+   "texto": "\"hola\".",
    "inicio": 45.57,
    "fin": 45.95,
    "escena": "paso4"
@@ -765,7 +765,7 @@
    "escena": "bueno"
   },
   {
-   "texto": "bueno.",
+   "texto": "bueno:",
    "inicio": 47.07,
    "fin": 47.39,
    "escena": "bueno"
@@ -1263,7 +1263,7 @@
    "escena": "node"
   },
   {
-   "texto": "compliques,",
+   "texto": "compliques:",
    "inicio": 77.11,
    "fin": 77.91,
    "escena": "node"
@@ -1317,13 +1317,13 @@
    "escena": "node"
   },
   {
-   "texto": "instálame",
+   "texto": "\"instálame",
    "inicio": 80.23,
    "fin": 81.03,
    "escena": "node"
   },
   {
-   "texto": "Node.js.",
+   "texto": "Node.js\".",
    "inicio": 81.03,
    "fin": 82.47,
    "escena": "node"
@@ -1539,7 +1539,7 @@
    "escena": "abrir"
   },
   {
-   "texto": "ábreme",
+   "texto": "\"ábreme",
    "inicio": 93.2,
    "fin": 93.71,
    "escena": "abrir"
@@ -1575,7 +1575,7 @@
    "escena": "abrir"
   },
   {
-   "texto": "verla.",
+   "texto": "verla\".",
    "inicio": 94.67,
    "fin": 95.02,
    "escena": "abrir"
@@ -2061,7 +2061,7 @@
    "escena": "avance"
   },
   {
-   "texto": "Y",
+   "texto": "Y,",
    "inicio": 123.24,
    "fin": 123.31,
    "escena": "avance"
@@ -2145,7 +2145,7 @@
    "escena": "avance"
   },
   {
-   "texto": "cuesta",
+   "texto": "cuesta,",
    "inicio": 127.07,
    "fin": 127.55,
    "escena": "avance"

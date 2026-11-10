@@ -1,0 +1,35 @@
+Episodio tres de cincuenta, parte dos. Máster de Claude Code.
+
+Hoy instalamos Claude Code en Visual Studio Code y vemos las extensiones que necesitas para trabajar más rápido y con menos esfuerzo.
+
+Recuerda lo que vimos: un proyecto es una carpeta con archivos dentro. Nada más. Y ahora sí, a instalar.
+
+Primero, Visual Studio Code, desde su web oficial, como te enseñé en el episodio dos.
+
+Ábrelo, pulsa Open Folder y elige la carpeta de tu proyecto. Ya está: ese es tu proyecto abierto.
+
+Ahora, Claude Code. Ve a extensiones, búscalo e instala la de Anthropic. Funciona con tu suscripción Pro o Max de Claude.
+
+Cuando termine, verás el icono de Claude en la barra lateral. Ábrelo, inicia una sesión y escríbele "hola".
+
+Y aquí viene lo bueno: Claude mira tu carpeta y te pregunta qué necesitas. Así de fácil.
+
+Y ahora, las extensiones que te hacen ir más rápido.
+
+Una: Claude Code. Esa ya la tienes. Vas una por delante.
+
+Dos: Hostinger Connector. Conecta Visual Studio Code con tu hosting, y así despliegas y gestionas tus webs sin salir del editor. Para conectarlo, entra en tu cuenta de Hostinger y usa el conector con un clic. O, si prefieres, con un token de API.
+
+Necesitas Node.js. Pero no te compliques: no lo instalas tú. Le dices a Claude: "instálame Node.js". Y lo hace.
+
+Tres: Live Server. Te abre tu web en local y se actualiza cada vez que guardas. Cambias algo y lo ves al instante. Y para abrirla, también se lo pides a Claude: "ábreme la web para que pueda verla".
+
+Resumen rápido. Con Claude Code dentro de Visual Studio Code y estas tres extensiones, ya puedes empezar.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+Y en el siguiente episodio, cosas muy gordas.
+
+Te enseño lo que serás capaz de montar cuando termines este máster. Veremos las cuatro etapas por las que pasa cualquier proyecto, sea del tamaño que sea. Y, por encima de todo, hablamos de lo que de verdad te interesa: cuánto cuesta, y cómo gastar menos.
+
+Sígueme para no perderte el siguiente.
