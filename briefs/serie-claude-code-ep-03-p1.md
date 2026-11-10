@@ -1,7 +1,7 @@
 # Serie «Máster de Claude Code» · EP.3 parte 1 «¿Qué es un proyecto?»
 
 **Duración:** 2:06,3 (3.789 fotogramas), la de la voz · 1080x1920 · 30 fps · -13,9 LUFS, pico real -1,6 dBTP.
-**Entrega:** `entregas/serie-claude-code-ep-03-parte-1.mp4` · pruebas a 540x960 en `entregas/ep03-p1-pruebas/`.
+**Entrega:** `entregas/serie-claude-code-ep-03-parte-1.mp4` (re-render en Full HD con JPEG 100 %, CRF 15, preset slow) · pruebas a 540x960 en `entregas/ep03-p1-pruebas/`.
 
 ## Render
 ```bash

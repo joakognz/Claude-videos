@@ -1,6 +1,8 @@
 # Serie «Máster de Claude Code» · EP.3 parte 2 «Instalar y extensiones»
 
-**Duración:** la de la voz, 131,2 s · 1080x1920 · 30 fps.
+**Duración:** 2:11,3 (3.938 fotogramas), la de la voz · 1080x1920 · 30 fps · -13,8 LUFS, pico real -1,8 dBTP.
+**Entrega:** `entregas/serie-claude-code-ep-03-parte-2.mp4` · pruebas a 540x960 en `entregas/ep03-p2-pruebas/`.
+**Render:** JPEG 100 %, H.264 CRF 15, preset slow (ver `scripts/render-lote.mjs`).
 **Proyecto:** `serie-claude-code/`, composición `Master`, JSON `episodios/ep-03-p2.json`.
 
 ## Render
