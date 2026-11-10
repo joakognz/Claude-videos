@@ -5,7 +5,7 @@
  *   node scripts/render-lote.mjs                          → todos los episodios/ep-*.json
  *   node scripts/render-lote.mjs episodios/ep-01.json …   → solo esos
  *
- * Opciones (variables de entorno): CONCURRENCIA (por defecto, núcleos), CRF (18), SALIDA (out/),
+ * Opciones (variables de entorno): CONCURRENCIA (por defecto, núcleos), CRF (15), JPEG (100), PRESET (slow), SALIDA (out/),
  * REMOTION_CHROME (ruta a Chrome si no se usa el de Remotion).
  * Por cada episodio deja out/claude-code-ep-NN.mp4 y out/claude-code-ep-NN.plan.json (para scripts/qa.py).
  * Al final pasa el audio por un limitador maestro (-2 dBFS) con ffmpeg: solo actúa en los picos donde un golpe de
@@ -24,7 +24,9 @@ const SALIDA = path.resolve(ROOT, process.env.SALIDA ?? "out");
 const CHROME_LOCAL = "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell";
 const browserExecutable = process.env.REMOTION_CHROME ?? (fs.existsSync(CHROME_LOCAL) ? CHROME_LOCAL : undefined);
 const concurrency = Number(process.env.CONCURRENCIA ?? os.cpus().length);
-const crf = Number(process.env.CRF ?? 18);
+const crf = Number(process.env.CRF ?? 15);
+const jpegQuality = Number(process.env.JPEG ?? 100);
+const x264Preset = process.env.PRESET ?? "slow";
 
 const args = process.argv.slice(2);
 const ficheros = (args.length ? args : fs.readdirSync(path.join(ROOT, "episodios")).filter((f) => /^ep-\d+\.json$/.test(f)).sort().map((f) => `episodios/${f}`))
@@ -67,7 +69,7 @@ for (const f of ficheros) {
     let ultimo = -1;
     await renderMedia({
       serveUrl, composition, inputProps: composition.props, codec: "h264", crf, pixelFormat: "yuv420p", audioCodec: "aac", audioBitrate: "320k",
-      imageFormat: "jpeg", jpegQuality: 92, concurrency, puppeteerInstance: browser, outputLocation: path.join(SALIDA, `${nombre}.mp4`), overwrite: true,
+      imageFormat: "jpeg", jpegQuality, x264Preset, concurrency, puppeteerInstance: browser, outputLocation: path.join(SALIDA, `${nombre}.mp4`), overwrite: true,
       logLevel: "warn",
       onProgress: ({ progress }) => {
         const p = Math.floor(progress * 20);
