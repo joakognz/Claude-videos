@@ -54,7 +54,8 @@ export const trocear = (pal: Palabra[]): Bloque[] => {
     const previo = res[k - 1];
     const ini = Math.max(todas[0].inicio - 0.12, previo ? previo.fin : -Infinity);
     const ultima = todas[todas.length - 1];
-    const fin = Math.max(ultima.inicio + 0.1, Math.min(sig ? sig.inicio - 0.12 : Infinity, ultima.fin + 0.7));
+    // nunca más allá de la primera palabra del bloque siguiente (si la voz las encadena muy seguidas)
+    const fin = Math.min(Math.max(ultima.inicio + 0.1, Math.min(sig ? sig.inicio - 0.12 : Infinity, ultima.fin + 0.7)), sig ? sig.inicio : Infinity);
     res.push({ lineas: b.lineas, ini, fin });
   });
   return res;

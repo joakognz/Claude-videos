@@ -87,6 +87,10 @@ export const Meta: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
     { t: T.marcha - 0.05, x: 540, y: 1180, z: 0.95, d: 0.9 },
   ];
   const traza = ramp(t, T.ini - 0.1, T.meta - 0.05);
+  // mientras la cámara visita una tarjeta, las vecinas (que asoman cortadas por el encuadre) se atenúan
+  const visitas = [T.c1, T.c2, T.c3, T.marcha + 0.25].map((x) => x - 0.3);
+  const enVisita = ramp(t, visitas[0], visitas[0] + 0.4) * (1 - ramp(t, visitas[3], visitas[3] + 0.4));
+  const tenue = (k: number) => enVisita * (1 - ramp(t, visitas[k], visitas[k] + 0.4) * (1 - ramp(t, visitas[k + 1], visitas[k + 1] + 0.4)));
   const hecha = [T.listos + 0.2, T.mire + 0.2, T.marcha + 0.2];
   return (
     <Escena t={t} tomas={tomas}>
@@ -116,7 +120,7 @@ export const Meta: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
       <Etiqueta texto="3 PROYECTOS REALES" x={540} y={BANDERA.y + 230} t={t} at={T.proyectos - 0.05} out={T.c1 + 0.2} size={40} variante="borde" />
 
       {/* 1 · web de WordPress */}
-      <Tarjeta x={XS[0]} y={FILA} w={CW} h={CH} t={t} at={T.tres + 0.05} numero={1} activa={ramp(t, T.c1 - 0.1, T.c1 + 0.3) * (1 - 0.6 * ramp(t, T.c2 - 0.3, T.c2)) + 0.6 * ramp(t, hecha[0], hecha[0] + 0.3) * ramp(t, T.c2 - 0.3, T.c2)} out={hasta}>
+      <Tarjeta x={XS[0]} y={FILA} w={CW} h={CH} t={t} at={T.tres + 0.05} numero={1} tenue={tenue(0)} activa={ramp(t, T.c1 - 0.1, T.c1 + 0.3) * (1 - 0.6 * ramp(t, T.c2 - 0.3, T.c2)) + 0.6 * ramp(t, hecha[0], hecha[0] + 0.3) * ramp(t, T.c2 - 0.3, T.c2)} out={hasta}>
         <Logo src={ep.logos.wordpress} x={CW / 2} y={86} w={112} t={t} at={T.c1 + 0.1} ficha="circulo" pulsos={[T.wp]} />
         <Titulo texto="WEB DE WORDPRESS" t={t} at={T.c1 + 0.2} />
         <Fila y={240} icono={<Globo s={36} />} texto="PUBLICADA" t={t} at={T.publicada} ok={T.publicada + 0.3} />
@@ -125,7 +129,7 @@ export const Meta: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
       </Tarjeta>
 
       {/* 2 · automatización */}
-      <Tarjeta x={XS[1]} y={FILA} w={CW} h={CH} t={t} at={T.tres + 0.18} numero={2} activa={ramp(t, T.c2 - 0.1, T.c2 + 0.3) * (1 - 0.6 * ramp(t, T.c3 - 0.3, T.c3)) + 0.6 * ramp(t, hecha[1], hecha[1] + 0.3) * ramp(t, T.c3 - 0.3, T.c3)} out={hasta}>
+      <Tarjeta x={XS[1]} y={FILA} w={CW} h={CH} t={t} at={T.tres + 0.18} numero={2} tenue={tenue(1)} activa={ramp(t, T.c2 - 0.1, T.c2 + 0.3) * (1 - 0.6 * ramp(t, T.c3 - 0.3, T.c3)) + 0.6 * ramp(t, hecha[1], hecha[1] + 0.3) * ramp(t, T.c3 - 0.3, T.c3)} out={hasta}>
         {(() => {
           const v = vis(t, T.c2 + 0.1, Infinity, 0.4);
           if (!v.on) return null;
@@ -152,7 +156,7 @@ export const Meta: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
       </Tarjeta>
 
       {/* 3 · mini-app */}
-      <Tarjeta x={XS[2]} y={FILA} w={CW} h={CH} t={t} at={T.tres + 0.31} numero={3} activa={ramp(t, T.c3 - 0.1, T.c3 + 0.3) * (1 - 0.4 * ramp(t, T.marcha + 0.3, T.marcha + 0.7)) + 0.4 * ramp(t, hecha[2], hecha[2] + 0.3)} out={hasta}>
+      <Tarjeta x={XS[2]} y={FILA} w={CW} h={CH} t={t} at={T.tres + 0.31} numero={3} tenue={tenue(2)} activa={ramp(t, T.c3 - 0.1, T.c3 + 0.3) * (1 - 0.4 * ramp(t, T.marcha + 0.3, T.marcha + 0.7)) + 0.4 * ramp(t, hecha[2], hecha[2] + 0.3)} out={hasta}>
         {(() => {
           const v = vis(t, T.c3 + 0.1, Infinity, 0.4);
           if (!v.on) return null;
