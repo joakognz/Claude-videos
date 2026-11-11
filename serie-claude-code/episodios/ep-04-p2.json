@@ -1,0 +1,92 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 4,
+  "total": 50,
+  "parte": { "n": 2, "de": 2 },
+  "titulo": "Cuánto cuesta y cómo gastar menos",
+  "salida": "ep4_parte2",
+  "handle": "@aigencyx.labs",
+  "barra_progreso": true,
+  "voz": {
+    "audio": "episodios/ep-04-p2/voz.wav",
+    "timestamps": "episodios/ep-04-p2/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "intro": {
+    "iconos": [
+      { "icono": "moneda", "texto": "COSTES", "en": "cuánto cuesta" },
+      { "icono": "hosting", "texto": "HOSTING", "en": "cuesta" },
+      { "icono": "reglas", "texto": "3 REGLAS", "en": "gastar" }
+    ]
+  },
+  "precios": { "texto": "PRECIOS ORIENTATIVOS · COMPRUÉBALOS" },
+  "cta": {
+    "tipo": "auditoria_drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "carpeta": { "texto": "ESQUEMAS", "en": "esquemas" },
+    "check": { "titulo": "SI TIENES UN NEGOCIO", "texto": "OPTIMIZAR TUS PROCESOS", "en": "negocio" },
+    "seguir": "Sígueme"
+  },
+  "avance": {
+    "tipo": "episodio",
+    "episodio": 5,
+    "en": "siguiente episodio",
+    "frase": "Y en el siguiente episodio, vamos al corazón de Claude Code: veremos con detalle los archivos claude.md y el comando /init, y el ciclo de trabajo importante que ejecutaremos en cada proyecto.",
+    "titulo": "El corazón de Claude Code",
+    "titulo_en": "corazón",
+    "icono": "corazon",
+    "puntos": [
+      { "texto": "Archivos claude.md", "en": "claude.md" },
+      { "texto": "El comando /init", "en": "/init," },
+      { "texto": "El ciclo de trabajo", "en": "ciclo" }
+    ]
+  },
+  "cierre": "Sígueme para no perderte el siguiente.",
+  "siguiente_episodio": 5,
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "nodejs": "logos/nodejs.png",
+    "hostinger": "logos/hostinger.png",
+    "wordpress": "logos/wordpress.png",
+    "drive": "logos/drive.png"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio 4 de 50, parte 2. Máster de Claude Code." },
+    { "id": "hoy", "voz": "Hoy hablamos de lo que de verdad te interesa: cuánto cuesta y cómo gastar menos." },
+    { "id": "calma", "voz": "Y te lo cuento por encima, para que no te asustes ni te lleves sorpresas." },
+    { "id": "gratis", "voz": "La buena noticia: casi todo el entorno es gratis. Visual Studio Code, gratis. Node.js, gratis. Y las extensiones, gratis de instalar." },
+    { "id": "pagas", "voz": "Entonces, ¿qué pagas? Dos cosas: el uso de Claude, y el hosting o el VPS donde publiques." },
+    { "id": "formas", "voz": "Claude se paga de dos formas: con una suscripción mensual, o por lo que gastes. Para empezar, el plan Pro suele ser suficiente." },
+    { "id": "hosting", "voz": "Y el hosting depende del proyecto. ¿Una web? Un plan de hosting básico. ¿Una automatización o una app? Un VPS, que cuesta algo más." },
+    { "id": "ojo", "voz": "Ojo: los precios cambian, así que mira siempre el precio actual antes de empezar." },
+    { "id": "reglas", "voz": "Y ahora, tres reglas para no gastar de más." },
+    { "id": "regla1", "voz": "1: empieza con lo mínimo. El plan Pro y un hosting básico bastan para aprender. No contrates el plan grande «por si acaso»." },
+    { "id": "regla2", "voz": "2: usa el modelo adecuado a cada tarea. Para lo sencillo, uno más ligero hace el trabajo y gasta menos. Los más potentes, guárdalos para lo complicado." },
+    { "id": "regla3", "voz": "3: vigila tu gasto la primera semana. Así sabes tu ritmo real y ajustas antes de que se dispare." },
+    { "id": "resumen", "voz": "Resumen rápido. Casi todo es gratis, pagas Claude y el hosting, y tres reglas te evitan sorpresas." },
+    { "id": "cta", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "avance", "voz": "Y en el siguiente episodio, vamos al corazón de Claude Code: veremos con detalle los archivos claude.md y el comando /init, y el ciclo de trabajo importante que ejecutaremos en cada proyecto." },
+    { "id": "seguir", "voz": "Sígueme para no perderte el siguiente." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "moneda", "desde": "calma" },
+    { "tipo": "gratis", "desde": "gratis" },
+    { "tipo": "pagas", "desde": "pagas" },
+    { "tipo": "reglas", "desde": "reglas" },
+    { "tipo": "resumenCostes", "desde": "resumen" },
+    { "tipo": "ctaDrive", "desde": "cta" },
+    { "tipo": "avance", "desde": "avance" },
+    { "tipo": "seguir", "desde": "seguir" }
+  ]
+}

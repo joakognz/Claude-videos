@@ -310,6 +310,40 @@ export const Enviar: React.FC<Base> = ({ c = C.oscuro, ...b }) => (
   </Svg>
 );
 
+/** Extensiones: piezas que encajan, una se está añadiendo. */
+export const Extensiones: React.FC<Base & { p?: number }> = ({ c = C.texto, p = 1, ...b }) => (
+  <Svg {...b}>
+    <rect x={6} y={6} width={16} height={16} rx={3.5} fill={c} />
+    <rect x={6} y={26} width={16} height={16} rx={3.5} fill={c} />
+    <rect x={26} y={26} width={16} height={16} rx={3.5} fill={c} />
+    <rect x={26 + 6 * (1 - clamp01(p))} y={6 - 6 * (1 - clamp01(p))} width={16} height={16} rx={3.5} fill={C.acento} transform={`rotate(${(1 - clamp01(p)) * 20} 34 14)`} />
+  </Svg>
+);
+
+/** Reglas: lista de tres con casillas marcadas. */
+export const Reglas: React.FC<Base & { p?: number }> = ({ c = C.texto, trazo = 3, p = 1, ...b }) => (
+  <Svg {...b}>
+    {[0, 1, 2].map((i) => (
+      <g key={i}>
+        <rect x={5} y={6 + i * 13} width={10} height={10} rx={2.5} fill={clamp01(p * 3 - i) > 0.5 ? C.acento : "none"} stroke={C.acento} strokeWidth={2.2} />
+        <path d={`M20 ${11 + i * 13} L43 ${11 + i * 13}`} {...st(c, trazo)} />
+      </g>
+    ))}
+  </Svg>
+);
+
+/** Etiqueta de precio sin cifra (con interrogante): «los precios cambian». */
+export const EtiquetaPrecio: React.FC<Base & { giro?: number }> = ({ c = C.acento, giro = 0, ...b }) => (
+  <Svg {...b}>
+    <g transform={`rotate(${giro} 24 24)`}>
+      <path d="M26 5 L43 5 L43 22 L22 43 L5 26 Z" fill={c} stroke={C.oscuro} strokeWidth={1.5} strokeLinejoin="round" />
+      <circle cx={36} cy={12} r={3} fill={C.oscuro} />
+      <path d="M19.5 22 A4.5 4.5 0 1 1 25 26.5 L24 30" fill="none" stroke={C.oscuro} strokeWidth={3} strokeLinecap="round" />
+      <circle cx={23.4} cy={34.5} r={1.9} fill={C.oscuro} />
+    </g>
+  </Svg>
+);
+
 /** Icono por nombre (para los JSON). */
 export const ICONOS: Record<string, React.FC<Base & { t?: number }>> = {
   meta: Bandera,

@@ -129,6 +129,10 @@ Bloques nuevos (`src/master/bloques/`), todos anclados a palabras de la voz:
 | `avance` | tarjeta con candado que se abre: sello «PARTE N» (o «EP.N» con su casilla en la rejilla), icono, título y puntos |
 | `seguir` | perfil, rejilla, frase de `cierre` y botón Seguir → Siguiendo ✓ |
 
+Parte 2 (costes): `moneda` (moneda que gira y se calma), `gratis` (baldosas con «0 €»), `pagas` (lo que se paga, con la
+etiqueta fija de `precios`), `reglas` (3 REGLAS y REGLA 1/2/3: medidor, modelos, curva de gasto), `resumenCostes`.
+`avance` con `"tipo": "episodio"` añade la rejilla con la casilla siguiente, `en` (palabra del sello) y `titulo_en`.
+
 Componentes reutilizables nuevos: `Escalera` (y `EscaleraMini`), `Tarjeta`, `Chip`, `Frase` (texto grande palabra a
 palabra con la voz), `BarraProgreso`, `Iconos` (pictogramas genéricos; los logos de marca siguen siendo los adjuntos).
 

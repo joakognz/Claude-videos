@@ -6,7 +6,12 @@ import { Avance, eventosAvance } from "./Avance";
 import { CtaDrive, eventosCtaDrive } from "./CtaDrive";
 import { EscaleraBloque, eventosEscalera } from "./EscaleraBloque";
 import { Etapa, eventosEtapa } from "./Etapa";
+import { Gratis, eventosGratis } from "./Gratis";
 import { Meta, eventosMeta } from "./Meta";
+import { MonedaBloque, eventosMoneda } from "./MonedaBloque";
+import { Pagas, eventosPagas } from "./Pagas";
+import { ReglasBloque, eventosReglas } from "./Reglas";
+import { ResumenCostes, eventosResumenCostes } from "./ResumenCostes";
 import { Resumen, eventosResumen } from "./Resumen";
 import { Seguir, eventosSeguir } from "./Seguir";
 import { Sistema, eventosSistema } from "./Sistema";
@@ -37,4 +42,10 @@ export const BLOQUES: Record<string, DefBloque> = {
   ctaDrive: { Componente: CtaDrive, eventos: eventosCtaDrive },
   avance: { Componente: Avance, eventos: eventosAvance },
   seguir: { Componente: Seguir, eventos: eventosSeguir },
+  // EP.4 parte 2 (costes)
+  moneda: { Componente: MonedaBloque, eventos: eventosMoneda },
+  gratis: { Componente: Gratis, eventos: eventosGratis },
+  pagas: { Componente: Pagas, eventos: eventosPagas },
+  reglas: { Componente: ReglasBloque, eventos: eventosReglas },
+  resumenCostes: { Componente: ResumenCostes, eventos: eventosResumenCostes },
 };

@@ -84,7 +84,9 @@ literales = [m for src in fuentes for m in re.findall(r'"([^"\n]*)"|`([^`]*)`|>(
 textos = [x for tupla in literales for x in tupla if x.strip()]
 fases = [x for x in textos if re.search(r"\bfases?\b", x, re.I)]
 linea("la palabra «fases» no aparece" + (f" (aparece: {fases[:3]})" if fases else ""), not fases)
-precio = [x for x in textos if re.search(r"\d\s*€|€\s*\d|\d+([.,]\d+)?\s*(eur|euros|\$|usd)\b|\$\s*\d", x, re.I)]
+# «0 €» = gratis (lo pide el brief para lo que no se paga): no cuenta como cifra de precio
+textos_p = [re.sub(r"(?<![\d.,])0\s?€", "", x) for x in textos]
+precio = [x for x in textos_p if re.search(r"\d\s*€|€\s*\d|\d+([.,]\d+)?\s*(eur|euros|\$|usd)\b|\$\s*\d", x, re.I)]
 linea("ninguna cifra de precio" + (f" (aparece: {precio[:3]})" if precio else ""), not precio)
 
 # sonoridad

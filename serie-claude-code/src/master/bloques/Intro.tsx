@@ -8,7 +8,7 @@ import { Img, staticFile } from "remotion";
 import { Escena } from "../componentes/Escena";
 import { Logo } from "../componentes/Logo";
 import { GEO_REJILLA, Rejilla, olaEntrada, posCasilla } from "../componentes/Rejilla";
-import { Bandera, Moneda } from "../componentes/Iconos";
+import { Bandera, Moneda, Reglas, Servidor } from "../componentes/Iconos";
 import { Etiqueta } from "../componentes/Sello";
 import { C, EASE, EASE_OUT, TITULO, UI, clamp01, rand, ramp, sp, vis } from "../nucleo";
 import type { Evento, Linea, Toma } from "../nucleo";
@@ -129,7 +129,17 @@ const IconoIntro: React.FC<{ ic: { icono: string; texto: string; pequeno?: boole
   return (
     <div style={{ position: "absolute", left: x, top: y, width: 0, height: 0, opacity: v.opacity * (ic.pequeno ? 0.7 : 1) }}>
       <div style={{ position: "absolute", left: -L / 2, top: -L / 2, width: L, height: L, borderRadius: 46 * k, background: `linear-gradient(160deg, ${C.panel2}, ${C.panel})`, border: `3px solid ${ic.pequeno ? C.borde : C.acento}`, boxShadow: `0 24px 60px rgba(0,0,0,0.5), 0 0 ${40 * brillo}px ${C.acento}88`, display: "flex", alignItems: "center", justifyContent: "center", transform: `translateY(${v.y}px) scale(${v.scale}) rotate(${(1 - v.s) * -10}deg)` }}>
-        {ic.icono === "meta" ? <Bandera s={150 * k} t={t} /> : ic.icono === "moneda" ? <Moneda s={150 * k} giro={4 * Math.PI * (1 - Math.exp(-Math.max(0, t - at) * 1.6))} /> : <Escalones s={150 * k} t={t} at={at} />}
+        {ic.icono === "meta" ? (
+          <Bandera s={150 * k} t={t} />
+        ) : ic.icono === "moneda" ? (
+          <Moneda s={150 * k} giro={4 * Math.PI * (1 - Math.exp(-Math.max(0, t - at) * (ic.pequeno ? 1.6 : 3.2)))} />
+        ) : ic.icono === "hosting" ? (
+          <Servidor s={140 * k} t={t} />
+        ) : ic.icono === "reglas" ? (
+          <Reglas s={140 * k} p={ramp(t, at + 0.1, at + 0.7)} />
+        ) : (
+          <Escalones s={150 * k} t={t} at={at} />
+        )}
       </div>
       <div style={{ position: "absolute", left: 0, top: L / 2 + 44, transform: `translate(-50%, -50%) translateY(${v.y}px)`, whiteSpace: "nowrap", fontFamily: UI, fontWeight: 700, fontSize: 34 * (ic.pequeno ? 0.85 : 1), letterSpacing: 1.5, color: ic.pequeno ? C.gris : C.texto, opacity: clamp01((t - at - 0.15) / 0.25) }}>
         {ic.texto}

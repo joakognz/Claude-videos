@@ -1,6 +1,6 @@
 import type { Evento, Linea, Palabra } from "./nucleo";
 
-export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "wordpress";
+export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "wordpress" | "nodejs" | "hostinger";
 
 /** Un bloque del JSON: tipo, escena en la que empieza y parámetros propios (p. ej. "etapa"). */
 export type DefBloqueJson = { tipo: string; desde: string; etapa?: number };
@@ -20,7 +20,16 @@ export type EpisodioMaster = {
   /** iconos que entran en la intro (escena 2) cuando la voz los nombra */
   intro?: { iconos: { icono: string; texto: string; en: string; pequeno?: boolean }[] };
   /** avance de la parte o el episodio siguiente (bloque «avance») */
-  avance?: { tipo: "parte" | "episodio"; parte?: number; episodio?: number; frase: string; titulo: string; icono?: string; puntos?: { texto: string; en: string }[] };
+  avance?: {
+    tipo: "parte" | "episodio"; parte?: number; episodio?: number; frase: string; titulo: string; icono?: string;
+    puntos?: { texto: string; en: string }[];
+    /** palabra (o frase) de la voz con la que cae el sello; por defecto, el número */
+    en?: string;
+    /** palabra con la que aparece el título; por defecto, un poco antes del primer punto */
+    titulo_en?: string;
+  };
+  /** etiqueta fija mientras la voz habla de precios (bloque «pagas») */
+  precios?: { texto: string };
   /** frase de cierre junto al botón de seguir (bloque «seguir») */
   cierre?: string;
   handle: string;

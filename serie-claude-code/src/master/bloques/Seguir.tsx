@@ -30,6 +30,17 @@ export const Seguir: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
   const hund = Math.sin(clamp01((t - T.pulsa + 0.08) / 0.2) * Math.PI) * 0.08;
   const siguiendo = ramp(t, T.pulsa + 0.05, T.pulsa + 0.25);
   const top = CARD.y - CARD.h / 2;
+  // último reel del episodio: su casilla ya está completa y late la del siguiente
+  const completo = !ep.parte || ep.parte.n === ep.parte.de;
+  // frase de cierre: en dos líneas si no cabe en una
+  const lineas = (() => {
+    const txt = ep.cierre ?? "";
+    if (txt.length <= 30) return [txt];
+    const w = txt.split(" ");
+    const k = Math.ceil(w.length / 2);
+    return [w.slice(0, k).join(" "), w.slice(k).join(" ")];
+  })();
+  const larga = lineas.length > 1;
   return (
     <Escena t={t} tomas={tomas}>
       {(() => {
@@ -55,7 +66,7 @@ export const Seguir: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
         const g = { cx: 540, cy: top + 595, celda: 26, hueco: 7, cols: 25, filas: 2 };
         return (
           <div style={{ position: "absolute", left: 0, top: 0, opacity: v.opacity }}>
-            <Rejilla g={g} total={ep.total} estado={(n) => ({ opacity: 1, escala: 1, encendida: n < ep.episodio ? 1 : n === ep.episodio ? 0.5 + 0.5 * Math.max(0, Math.sin(t * 4)) : 0, latido: 0, contorno: 0, check: 0 })} />
+            <Rejilla g={g} total={ep.total} estado={(n) => ({ opacity: 1, escala: 1, encendida: n < ep.episodio || (completo && n === ep.episodio) ? 1 : n === ep.episodio ? 0.5 + 0.5 * Math.max(0, Math.sin(t * 4)) : 0, latido: 0, contorno: completo && n === ep.siguiente_episodio ? 0.5 + 0.5 * Math.max(0, Math.sin(t * 4)) : 0, check: 0 })} />
           </div>
         );
       })()}
@@ -64,8 +75,12 @@ export const Seguir: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
         const v = vis(t, desde + 0.2, Infinity, 0.8);
         if (!v.on) return null;
         return (
-          <div style={{ position: "absolute", left: 540, top: top + 700, width: 0, height: 0, opacity: v.opacity }}>
-            <div style={{ position: "absolute", transform: `translate(-50%, -50%) scale(${v.scale})`, whiteSpace: "nowrap", fontFamily: TITULO, fontWeight: 800, fontSize: 52, color: C.texto }}>{ep.cierre}</div>
+          <div style={{ position: "absolute", left: 540, top: top + (larga ? 698 : 700), width: 0, height: 0, opacity: v.opacity }}>
+            <div style={{ position: "absolute", transform: `translate(-50%, -50%) scale(${v.scale})`, whiteSpace: "nowrap", textAlign: "center", fontFamily: TITULO, fontWeight: 800, fontSize: larga ? 48 : 52, lineHeight: 1.1, color: C.texto }}>
+              {lineas.map((ln, i) => (
+                <div key={i}>{ln}</div>
+              ))}
+            </div>
           </div>
         );
       })()}
@@ -74,7 +89,7 @@ export const Seguir: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
         const v = vis(t, desde + 0.25, Infinity, 0.7);
         if (!v.on) return null;
         return (
-          <div style={{ position: "absolute", left: 540 - 220, top: top + 815 - 60, width: 440, height: 120, borderRadius: 999, opacity: v.opacity, transform: `scale(${v.scale * (1 - hund)})`, background: siguiendo > 0.5 ? C.panel2 : C.acento, border: `4px solid ${C.acento}`, display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: UI, fontWeight: 700, fontSize: 52, color: siguiendo > 0.5 ? C.texto : C.oscuro, boxShadow: pulsado ? "none" : `0 0 ${30 + 20 * Math.sin(t * 6)}px ${C.acento}88` }}>
+          <div style={{ position: "absolute", left: 540 - 220, top: top + (larga ? 835 : 815) - 60, width: 440, height: 120, borderRadius: 999, opacity: v.opacity, transform: `scale(${v.scale * (1 - hund)})`, background: siguiendo > 0.5 ? C.panel2 : C.acento, border: `4px solid ${C.acento}`, display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: UI, fontWeight: 700, fontSize: 52, color: siguiendo > 0.5 ? C.texto : C.oscuro, boxShadow: pulsado ? "none" : `0 0 ${30 + 20 * Math.sin(t * 6)}px ${C.acento}88` }}>
             {siguiendo > 0.5 ? (
               <>
                 Siguiendo
@@ -87,13 +102,13 @@ export const Seguir: React.FC<BloqueProps> = ({ t, ep, L, desde, escenas }) => {
         );
       })()}
       {t > T.pulsa - 0.55 && t < T.pulsa + 0.7 && (
-        <div style={{ position: "absolute", left: 640 + (1 - ramp(t, T.pulsa - 0.55, T.pulsa - 0.05)) * 140, top: top + 805 + (1 - ramp(t, T.pulsa - 0.55, T.pulsa - 0.05)) * 110, opacity: ramp(t, T.pulsa - 0.55, T.pulsa - 0.35) * (1 - ramp(t, T.pulsa + 0.35, T.pulsa + 0.7)), transform: `scale(${1 - 0.15 * Math.sin(clamp01((t - T.pulsa) / 0.2) * Math.PI)})` }}>
+        <div style={{ position: "absolute", left: 640 + (1 - ramp(t, T.pulsa - 0.55, T.pulsa - 0.05)) * 140, top: top + (larga ? 825 : 805) + (1 - ramp(t, T.pulsa - 0.55, T.pulsa - 0.05)) * 110, opacity: ramp(t, T.pulsa - 0.55, T.pulsa - 0.35) * (1 - ramp(t, T.pulsa + 0.35, T.pulsa + 0.7)), transform: `scale(${1 - 0.15 * Math.sin(clamp01((t - T.pulsa) / 0.2) * Math.PI)})` }}>
           <Cursor s={80} />
         </div>
       )}
       {/* destello al seguir */}
       {t > T.pulsa && t < T.pulsa + 0.8 && (
-        <div style={{ position: "absolute", left: 540 - 260 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), top: top + 815 - 70 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), width: 520 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), height: 140 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), borderRadius: 999, border: `4px solid ${C.acento}`, opacity: 1 - ramp(t, T.pulsa, T.pulsa + 0.8) }} />
+        <div style={{ position: "absolute", left: 540 - 260 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), top: top + (larga ? 835 : 815) - 70 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), width: 520 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), height: 140 * (1 + ramp(t, T.pulsa, T.pulsa + 0.8)), borderRadius: 999, border: `4px solid ${C.acento}`, opacity: 1 - ramp(t, T.pulsa, T.pulsa + 0.8) }} />
       )}
     </Escena>
   );

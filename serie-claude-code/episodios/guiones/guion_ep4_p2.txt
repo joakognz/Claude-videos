@@ -1,0 +1,31 @@
+Episodio cuatro de cincuenta, parte dos. Máster de Claude Code.
+
+Hoy hablamos de lo que de verdad te interesa: cuánto cuesta y cómo gastar menos.
+
+Y te lo cuento por encima, para que no te asustes ni te lleves sorpresas.
+
+La buena noticia: casi todo el entorno es gratis. Visual Studio Code, gratis. Node.js, gratis. Y las extensiones, gratis de instalar.
+
+Entonces, ¿qué pagas? Dos cosas: el uso de Claude, y el hosting o el VPS donde publiques.
+
+Claude se paga de dos formas: con una suscripción mensual, o por lo que gastes. Para empezar, el plan Pro suele ser suficiente.
+
+Y el hosting depende del proyecto. ¿Una web? Un plan de hosting básico. ¿Una automatización o una app? Un VPS, que cuesta algo más.
+
+Ojo: los precios cambian, así que mira siempre el precio actual antes de empezar.
+
+Y ahora, tres reglas para no gastar de más.
+
+Una: empieza con lo mínimo. El plan Pro y un hosting básico bastan para aprender. No contrates el plan grande "por si acaso".
+
+Dos: usa el modelo adecuado a cada tarea. Para lo sencillo, uno más ligero hace el trabajo y gasta menos. Los más potentes, guárdalos para lo complicado.
+
+Tres: vigila tu gasto la primera semana. Así sabes tu ritmo real y ajustas antes de que se dispare.
+
+Resumen rápido. Casi todo es gratis, pagas Claude y el hosting, y tres reglas te evitan sorpresas.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+Y en el siguiente episodio, vamos al corazón de Claude Code: veremos con detalle los archivos claude.md y el comando /init, y el ciclo de trabajo importante que ejecutaremos en cada proyecto.
+
+Sígueme para no perderte el siguiente.

@@ -1,9 +1,9 @@
-# Serie «Máster de Claude Code» · EP.4 «Lo que construirás y las 4 etapas» (parte 1 de 2)
+# Serie «Máster de Claude Code» · EP.4 · parte 1 «Lo que construirás y las 4 etapas» y parte 2 «Cuánto cuesta»
 
 **Duración:** 2:34,5 (4.635 fotogramas): voz de 153,0 s + 1,5 s de cola para que el botón «Seguir» termine ·
 1080x1920 · 30 fps · -13,8 LUFS, pico real -1,8 dBTP.
 **Proyecto:** `serie-claude-code/`, composición `Master` con `"parte"` en el JSON (ver «Episodios en partes» en su README).
-**Entrega:** `entregas/ep4_parte1.mp4`. La parte 2 («Cuánto cuesta») queda pendiente de guion, voz y logos.
+**Entrega:** `entregas/ep4_parte1.mp4` y `entregas/ep4_parte2.mp4` (parte 2 al final de esta ficha).
 
 ## Estructura
 ```
@@ -74,3 +74,47 @@ La voz dice el guion sin cambios.
 - -13,8 LUFS integrados, pico real -1,8 dBTP.
 - Revisión visual (un fotograma cada 2,5 s): logos correctos en cada escena y ningún texto cortado (las tarjetas
   vecinas que asoman por el encuadre se atenúan).
+
+---
+
+# Parte 2 · «Cuánto cuesta y cómo gastar menos»
+
+**Duración:** 1:52,4 (3.373 fotogramas): voz de 110,9 s + 1,5 s de cola · 1080x1920 · 30 fps · -13,9 LUFS, pico real
+-1,7 dBTP. **JSON:** `episodios/ep-04-p2.json` · **guion:** `episodios/guiones/guion_ep4_p2.txt` · **entrega:**
+`entregas/ep4_parte2.mp4`. Hecha de una, sin pruebas intermedias (lo pediste así).
+
+```bash
+python scripts/preparar.py episodios/ep-04-p2.json --mp3 ../audio/raw/serie-claude-code/ep-04_p2_montaje.mp3 --modelo <parakeet>
+node scripts/render-lote.mjs episodios/ep-04-p2.json          # → out/ep4_parte2.mp4
+python scripts/qa_master.py episodios/ep-04-p2.json out/ep4_parte2.mp4
+```
+
+**Voz:** una toma de ElevenLabs (Manu Gordillo, v4) que dice el guion sin cambios; 295/300 palabras ancladas
+(«/init» se pronuncia «barra init»).
+
+## Escenas (tiempos sacados del audio)
+| Bloque | Tiempo | En pantalla |
+|---|---|---|
+| intro | 0–9,6 | la intro de la serie con PARTE 2 DE 2 e insignia EP.4 · 2/2; iconos COSTES (moneda grande), HOSTING y 3 REGLAS |
+| moneda | 9,6–13,7 | moneda grande que gira y se calma, anillos que respiran · POR ENCIMA · check al decir «sorpresas» |
+| gratis | 13,7–24,4 | LA BUENA NOTICIA · «Casi todo el entorno es gratis.» · VS Code, Node.js y extensiones, cada uno con su «0 €» |
+| pagas | 24,4–52,5 | ¿Qué pagas? DOS COSAS: Claude y Hostinger · DOS FORMAS: interruptores SUSCRIPCIÓN MENSUAL / POR USO, PLAN PRO para empezar · DEPENDE DEL PROYECTO: una web → HOSTING BÁSICO, automatización o app → VPS (una moneda más, CUESTA ALGO MÁS) · etiqueta fija PRECIOS ORIENTATIVOS · COMPRUÉBALOS, que en «Ojo» pasa al centro: LOS PRECIOS CAMBIAN, MIRA EL PRECIO ACTUAL |
+| reglas | 52,5–80,3 | sello 3 REGLAS · REGLA 1: medidor que se llena justo hasta LO MÍNIMO, PLAN PRO + HOSTING BÁSICO bastan, PLAN GRANDE «POR SI ACASO» tachado · REGLA 2: LIGERO → LO SENCILLO (gasta menos), POTENTE → LO COMPLICADO · REGLA 3: contador de gasto y curva de la primera semana; al ajustar no llega a SE DISPARA |
+| resumen | 80,3–87,0 | CASI TODO GRATIS ✓ · PAGAS CLAUDE + HOSTING ✓ · 3 REGLAS, cada una con su tick |
+| CTA | 87,0–96,7 | como en la parte 1: carpeta de Drive, AUDITORIA, enlace y tarjeta de auditoría |
+| avance | 96,7–108,6 | tarjeta con candado · sello EP.5 · la casilla 5 se enciende en la rejilla · mascota con latido · EL CORAZÓN DE CLAUDE CODE · Archivos claude.md · El comando /init · El ciclo de trabajo |
+| seguir | 108,6–112,4 | perfil con la rejilla 4/50 completa y la 5 latiendo · «Sígueme para no perderte el siguiente.» · Seguir → Siguiendo ✓ |
+
+## Decisiones
+- **El guion manda sobre el brief:** el avance anuncia lo que dice la voz («el corazón de Claude Code»: claude.md,
+  /init y el ciclo de trabajo), no «Tu primer Hola Mundo»; el cierre es «Sígueme para no perderte el siguiente.».
+- **Sin cifras de precio:** solo conceptos, monedas y medidores sin números. La única cifra es el «0 €» de lo gratis,
+  que pedía el brief (el QA lo admite como «gratis» y rechaza cualquier otra).
+- **Logos:** Node.js (letras gris oscuro) y Hostinger, sobre tarjeta clara; los demás, como en la parte 1. Los modelos
+  ligero y potente no llevan nombre (la voz no los nombra): engranaje pequeño y grande.
+
+## Checklist (`scripts/qa_master.py`, todo en verde)
+- 1080x1920 a 30 fps, 112,45 s = duración de la voz montada.
+- Sincronía voz-texto: 300 palabras, cada una en su instante; 52 bloques, máximo 2 líneas, línea más ancha 956 de 960 px.
+- Cambio visible como mucho cada 0,83 s. Ninguna cifra de precio; «fases» ausente. -13,9 LUFS, pico real -1,7 dBTP.
+- Revisión visual (un fotograma cada 2,5 s): logos correctos y ningún texto cortado. La parte 1 sigue igual que su entrega.
