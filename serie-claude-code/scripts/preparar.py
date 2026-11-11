@@ -15,6 +15,7 @@ Salidas (rutas que lee el JSON del episodio)
 
 Uso
   python scripts/preparar.py episodios/ep-01.json --mp3 ../audio/raw/serie-claude-code/ep-01_*.mp3
+  Episodios en varias partes ("parte": {"n": 1, "de": 2} en el JSON) → public/episodios/ep-NN-pN/
 """
 import argparse, difflib, json, os, re, shutil, subprocess, sys, unicodedata
 import numpy as np
@@ -169,7 +170,7 @@ def main():
     args = ap.parse_args()
 
     ep = json.load(open(args.episodio))
-    tag = f"ep-{ep['episodio']:02d}"
+    tag = f"ep-{ep['episodio']:02d}" + (f"-p{ep['parte']['n']}" if ep.get("parte") else "")
     out_dir = os.path.join(ROOT, "public", "episodios", tag)
     os.makedirs(out_dir, exist_ok=True)
     shutil.copyfile(args.mp3, os.path.join(out_dir, "voz.mp3"))

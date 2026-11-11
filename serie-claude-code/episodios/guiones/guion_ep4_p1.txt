@@ -1,0 +1,59 @@
+Episodio cuatro de cincuenta, parte uno. Máster de Claude Code.
+
+Hoy te enseño lo que serás capaz de montar al terminar, y las cuatro etapas por las que pasa cualquier proyecto.
+
+Empezamos por la meta. Qué vas a poder construir cuando acabes.
+
+Tres proyectos reales.
+
+Uno: una web de WordPress, publicada, segura y con los accesos listos.
+
+Dos: una automatización que corre sola en un VPS, sin pantalla y sin que nadie la mire.
+
+Tres: una mini-app a medida, con pantalla, desplegada y en marcha.
+
+Y antes de todo eso, montas tu sistema de trabajo: pedir, revisar, corregir.
+
+Tu tarea: elige cuál de los tres te llama más.
+
+Ahora, las cuatro etapas por las que pasa cualquier proyecto, sea del tamaño que sea.
+
+Etapa cero: la idea.
+
+Antes de tocar código, defines qué hace tu proyecto y para quién, en una frase. Si no sabes decirlo simple, no sabes construirlo.
+
+Y separa lo imprescindible de lo «ya veremos». El error número uno es querer todo desde el primer día.
+
+Etapa uno: desarrollo.
+
+Preparas la carpeta, la abres en Visual Studio Code y le das contexto a Claude. Y construyes por trozos: una funcionalidad, la pruebas, y la siguiente. Nunca «hazme la app entera».
+
+Revisa lo que propone antes de aceptar, y guarda avances por si algo se rompe.
+
+Etapa dos: staging. Es una copia de prueba publicada, con contraseña si hace falta.
+
+Aquí lo pruebas como si fueras el usuario. ¿Van los botones? ¿Hace lo que debe?
+
+Intenta romperlo a propósito: datos raros, campos vacíos. Y que lo pruebe otra persona, porque ve los fallos que tú no ves.
+
+Y pídele a Claude que arregle lo que encuentres.
+
+La regla de oro: los problemas se encuentran aquí, no los encuentra tu cliente.
+
+Etapa tres: producción.
+
+Lo publicas donde toque, según el tipo de proyecto: hosting, VPS...
+
+Compruebas que funciona ya publicado, porque a veces va en tu ordenador y falla online.
+
+Dejas los accesos listos si es para un cliente, y lo básico de seguridad: contraseñas y SSL.
+
+Y ojo: producción no es el final. Después toca mantener, arreglar y mejorar. Un proyecto vivo sigue evolucionando.
+
+Resumen rápido. Una meta clara y cuatro etapas: idea, desarrollo, staging y producción.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En la parte dos, hablamos de lo que de verdad te interesa: cuánto cuesta, y cómo gastar menos.
+
+Sígueme para no perdértela.

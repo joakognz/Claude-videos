@@ -27,7 +27,7 @@ const concurrency = Number(process.env.CONCURRENCIA ?? os.cpus().length);
 const crf = Number(process.env.CRF ?? 18);
 
 const args = process.argv.slice(2);
-const ficheros = (args.length ? args : fs.readdirSync(path.join(ROOT, "episodios")).filter((f) => /^ep-\d+\.json$/.test(f)).sort().map((f) => `episodios/${f}`))
+const ficheros = (args.length ? args : fs.readdirSync(path.join(ROOT, "episodios")).filter((f) => /^ep-\d+(-p\d+)?\.json$/.test(f)).sort().map((f) => `episodios/${f}`))
   .map((f) => path.resolve(ROOT, f));
 if (!ficheros.length) {
   console.error("No hay episodios que renderizar");
@@ -54,7 +54,7 @@ function limitar(mp4) {
 let fallos = 0;
 for (const f of ficheros) {
   const ep = JSON.parse(fs.readFileSync(f, "utf8"));
-  const nombre = `claude-code-ep-${String(ep.episodio).padStart(2, "0")}`;
+  const nombre = ep.salida ?? `claude-code-ep-${String(ep.episodio).padStart(2, "0")}`;
   const t0 = Date.now();
   try {
     // EP.1 usa la composición «Episodio»; desde el EP.2, «Master» ("composicion" en el JSON)

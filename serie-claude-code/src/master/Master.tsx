@@ -3,6 +3,9 @@ import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import React, { useMemo } from "react";
 import { AbsoluteFill, Easing, useCurrentFrame } from "remotion";
 import { BLOQUES } from "./bloques";
+import { instanteHecho } from "./bloques/Etapa";
+import { BarraProgreso } from "./componentes/BarraProgreso";
+import { EscaleraMini } from "./componentes/Escalera";
 import { Insignia, MarcaAgua } from "./componentes/Insignia";
 import { Sonido } from "./componentes/Sonido";
 import { Subtitulos, VeloSuperior, trocear } from "./componentes/Subtitulos";
@@ -26,6 +29,12 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
     return ep.escenas.slice(a, b).map((e) => e.id);
   };
   const finIntro = (cortesF[1] ?? Math.round(3.7 * FPS)) / FPS;
+  // con partes, la intro dura dos escenas: la insignia entra al terminar el título
+  const insigniaAt = ep.parte ? L.fin(ep.escenas[0].id) - 0.25 : finIntro - 0.5;
+  const etapas = ep.bloques
+    .map((b, i) => ({ b, i }))
+    .filter(({ b }) => b.tipo === "etapa")
+    .map(({ b, i }) => ({ n: b.etapa ?? 0, desde: calc.cortes[i], hasta: calc.cortes[i + 1] ?? calc.duracion, hecho: instanteHecho(L, ep, escenasDe(i)[escenasDe(i).length - 1]) }));
   const ultimo = calc.frames;
   return (
     <AbsoluteFill style={{ background: C.fondo }}>
@@ -39,7 +48,7 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
           const t0 = ini / FPS;
           const items = [
             <TransitionSeries.Sequence key={`s${i}`} durationInFrames={fin - ini}>
-              <Contenido B={B.Componente} t0={t0} ep={ep} L={L} desde={cortesF[i] / FPS} hasta={i === n - 1 ? calc.duracion : cortesF[i + 1] / FPS} escenas={escenasDe(i)} />
+              <Contenido B={B.Componente} t0={t0} ep={ep} L={L} desde={cortesF[i] / FPS} hasta={i === n - 1 ? calc.duracion : cortesF[i + 1] / FPS} escenas={escenasDe(i)} bloque={b} />
             </TransitionSeries.Sequence>,
           ];
           if (i < n - 1)
@@ -51,8 +60,10 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
       </TransitionSeries>
       <VeloSuperior />
       <Subtitulos bloques={subs} t={t} />
-      <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} />
+      <Insignia t={t} at={insigniaAt} episodio={ep.episodio} total={ep.total} parte={ep.parte} />
       <MarcaAgua handle={ep.handle} />
+      {etapas.length > 0 && <EscaleraMini t={t} etapas={etapas} />}
+      {ep.barra_progreso && <BarraProgreso t={t} duracion={calc.duracion} />}
       <AbsoluteFill style={{ background: C.fondo, opacity: Math.max(0, (t - (calc.duracion - 0.5)) / 0.5) }} />
       <Sonido ep={ep} calc={calc} />
     </AbsoluteFill>
@@ -68,7 +79,8 @@ const Contenido: React.FC<{
   desde: number;
   hasta: number;
   escenas: string[];
-}> = ({ B, t0, ep, L, desde, hasta, escenas }) => {
+  bloque: import("./tipos").DefBloqueJson;
+}> = ({ B, t0, ep, L, desde, hasta, escenas, bloque }) => {
   const f = useCurrentFrame();
-  return <B t={t0 + f / FPS} t0={t0} ep={ep} L={L} desde={desde} hasta={hasta} escenas={escenas} />;
+  return <B t={t0 + f / FPS} t0={t0} ep={ep} L={L} desde={desde} hasta={hasta} escenas={escenas} bloque={bloque} />;
 };

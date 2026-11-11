@@ -2,7 +2,7 @@
 import React from "react";
 import { C, MONO, TOP, UI, vis } from "../nucleo";
 
-export const Insignia: React.FC<{ t: number; at: number; episodio: number; total: number }> = ({ t, at, episodio, total }) => {
+export const Insignia: React.FC<{ t: number; at: number; episodio: number; total: number; parte?: { n: number; de: number } }> = ({ t, at, episodio, total, parte }) => {
   const v = vis(t, at, Infinity, 0.5);
   if (!v.on) return null;
   return (
@@ -10,7 +10,7 @@ export const Insignia: React.FC<{ t: number; at: number; episodio: number; total
       <div style={{ width: 22, height: 22, borderRadius: 6, background: C.acento, boxShadow: `0 0 14px ${C.acento}` }} />
       <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 38, color: C.texto, letterSpacing: 1 }}>
         EP.{episodio}
-        <span style={{ color: C.gris }}>/{total}</span>
+        <span style={{ color: C.gris }}>{parte ? ` · ${parte.n}/${parte.de}` : `/${total}`}</span>
       </div>
     </div>
   );

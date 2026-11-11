@@ -46,7 +46,8 @@ for i, p in enumerate(pal):
     sig = pal[i + 1] if i + 1 < len(pal) else None
     n = sum(len(l) for l in cur)
     pausa = sig["inicio"] - p["fin"] > 0.28 if sig else True
-    if (sig and sig["escena"] != p["escena"]) or re.search(r"[.?!:]$", p["texto"]) or (re.search(r"[,;]$", p["texto"]) and n >= 4 and pausa):
+    fin_frase = re.search(r"[.?!]$", p["texto"]) or (re.search(r":$", p["texto"]) and n >= 3)
+    if (sig and sig["escena"] != p["escena"]) or fin_frase or (re.search(r"[,;]$", p["texto"]) and n >= 4 and pausa):
         bloques.append(cur); cur, a = [[]], 0.0
 if cur[0]:
     bloques.append(cur)
@@ -72,6 +73,19 @@ cambios = np.nonzero(d > 0.6)[0] / 6.0
 huecos = np.diff(np.concatenate([[0], cambios, [dur_v]]))
 print("Ritmo visual")
 linea(f"hueco más largo sin cambio visible: {huecos.max():.2f} s (umbral 3 s)", huecos.max() <= 3.0)
+
+# textos en pantalla: el JSON del episodio y los literales de los bloques que usa (y sus componentes)
+print("Textos")
+import glob
+fuentes = [json.dumps(ep, ensure_ascii=False)]
+for f in glob.glob(os.path.join(ROOT, "src", "master", "**", "*.tsx"), recursive=True):
+    fuentes.append(open(f, encoding="utf-8").read())
+literales = [m for src in fuentes for m in re.findall(r'"([^"\n]*)"|`([^`]*)`|>([^<>{}\n]+)<', src)]
+textos = [x for tupla in literales for x in tupla if x.strip()]
+fases = [x for x in textos if re.search(r"\bfases?\b", x, re.I)]
+linea("la palabra «fases» no aparece" + (f" (aparece: {fases[:3]})" if fases else ""), not fases)
+precio = [x for x in textos if re.search(r"\d\s*€|€\s*\d|\d+([.,]\d+)?\s*(eur|euros|\$|usd)\b|\$\s*\d", x, re.I)]
+linea("ninguna cifra de precio" + (f" (aparece: {precio[:3]})" if precio else ""), not precio)
 
 # sonoridad
 r = subprocess.run(["ffmpeg", "-v", "info", "-i", mp4, "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True).stderr

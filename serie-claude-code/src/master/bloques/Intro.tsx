@@ -8,8 +8,9 @@ import { Img, staticFile } from "remotion";
 import { Escena } from "../componentes/Escena";
 import { Logo } from "../componentes/Logo";
 import { GEO_REJILLA, Rejilla, olaEntrada, posCasilla } from "../componentes/Rejilla";
+import { Bandera, Moneda } from "../componentes/Iconos";
 import { Etiqueta } from "../componentes/Sello";
-import { C, EASE, EASE_OUT, TITULO, clamp01, rand, ramp, sp, vis } from "../nucleo";
+import { C, EASE, EASE_OUT, TITULO, UI, clamp01, rand, ramp, sp, vis } from "../nucleo";
 import type { Evento, Linea, Toma } from "../nucleo";
 import type { BloqueProps, EpisodioMaster } from "../tipos";
 
@@ -64,6 +65,9 @@ export const Intro: React.FC<BloqueProps> = ({ t, ep, L }) => {
     { t: enciende - 0.25, x: 540 + (actual.x - 540) * 0.12, y: 1060 + (actual.y - 1060) * 0.3, z: 1.07, d: 0.8 },
     { t: deshace - 0.05, x: 540, y: 1090, z: 1.02, d: 0.9 },
   ];
+  const iconos = ep.intro?.iconos ?? [];
+  const hoy = ep.escenas[1]?.id;
+  if (iconos.length && hoy) tomas.push({ t: L.ini(hoy) - 0.3, x: 540, y: 1290, z: 0.93, d: 1.1 });
   const DUR = 0.62;
   return (
     <Escena t={t} tomas={tomas}>
@@ -106,9 +110,44 @@ export const Intro: React.FC<BloqueProps> = ({ t, ep, L }) => {
       <TextoPixel src={ep.logos.claude_code_texto} t={t} at={titulo + 0.05} />
       <Logo src={ep.logos.claude_code} x={TIT.mascota.x} y={TIT.mascota.y} w={TIT.mascota.w} t={t} at={titulo + 0.14} sombra={false} />
       <Serie texto={ep.serie} t={t} at={titulo + 0.2} />
+      {ep.parte && <Etiqueta texto={`PARTE ${ep.parte.n} DE ${ep.parte.de}`} x={TIT.serie.x} y={TIT.serie.y + 96} t={t} at={titulo + 0.55} size={38} variante="borde" />}
+      {/* lo que trae el episodio: un icono por cosa, cuando la voz la nombra */}
+      {iconos.map((ic, i) => (
+        <IconoIntro key={i} ic={ic} x={540 + (i - (iconos.length - 1) / 2) * 310} y={1600} t={t} at={L.en(hoy!, ic.en) - 0.05} />
+      ))}
     </Escena>
   );
 };
+
+/** Icono de la intro: baldosa con el pictograma y su rótulo. Los «pequeños» (lo que viene en otra parte) van atenuados. */
+const IconoIntro: React.FC<{ ic: { icono: string; texto: string; pequeno?: boolean }; x: number; y: number; t: number; at: number }> = ({ ic, x, y, t, at }) => {
+  const v = vis(t, at, Infinity, 0.3);
+  if (!v.on) return null;
+  const k = ic.pequeno ? 0.72 : 1;
+  const L = 230 * k;
+  const brillo = Math.sin(clamp01((t - at) / 0.5) * Math.PI);
+  return (
+    <div style={{ position: "absolute", left: x, top: y, width: 0, height: 0, opacity: v.opacity * (ic.pequeno ? 0.7 : 1) }}>
+      <div style={{ position: "absolute", left: -L / 2, top: -L / 2, width: L, height: L, borderRadius: 46 * k, background: `linear-gradient(160deg, ${C.panel2}, ${C.panel})`, border: `3px solid ${ic.pequeno ? C.borde : C.acento}`, boxShadow: `0 24px 60px rgba(0,0,0,0.5), 0 0 ${40 * brillo}px ${C.acento}88`, display: "flex", alignItems: "center", justifyContent: "center", transform: `translateY(${v.y}px) scale(${v.scale}) rotate(${(1 - v.s) * -10}deg)` }}>
+        {ic.icono === "meta" ? <Bandera s={150 * k} t={t} /> : ic.icono === "moneda" ? <Moneda s={150 * k} giro={4 * Math.PI * (1 - Math.exp(-Math.max(0, t - at) * 1.6))} /> : <Escalones s={150 * k} t={t} at={at} />}
+      </div>
+      <div style={{ position: "absolute", left: 0, top: L / 2 + 44, transform: `translate(-50%, -50%) translateY(${v.y}px)`, whiteSpace: "nowrap", fontFamily: UI, fontWeight: 700, fontSize: 34 * (ic.pequeno ? 0.85 : 1), letterSpacing: 1.5, color: ic.pequeno ? C.gris : C.texto, opacity: clamp01((t - at - 0.15) / 0.25) }}>
+        {ic.texto}
+      </div>
+    </div>
+  );
+};
+
+/** Cuatro escalones que se levantan uno a uno. */
+const Escalones: React.FC<{ s: number; t: number; at: number }> = ({ s, t, at }) => (
+  <svg width={s} height={s} viewBox="0 0 48 48">
+    {[0, 1, 2, 3].map((k) => {
+      const e = sp(t, at + 0.08 + k * 0.1, { damping: 12, stiffness: 200 });
+      const h = (k + 1) * 9 * e;
+      return <rect key={k} x={4 + k * 10.5} y={44 - h} width={9} height={h} rx={1.8} fill={k === 0 ? C.acento : "none"} stroke={C.acento} strokeWidth={2.4} />;
+    })}
+  </svg>
+);
 
 /** El rótulo pixelado de Claude Code se monta por franjas, como si lo compusieran las partículas. */
 const TextoPixel: React.FC<{ src: string; t: number; at: number }> = ({ src, t, at }) => {
@@ -147,5 +186,7 @@ export const eventosIntro = (L: Linea, ep: EpisodioMaster): Evento[] => {
     { t: enciende, sfx: "tick", vol: 0.55 },
     { t: deshace, sfx: "whoosh", vol: 0.4 },
     { t: titulo + 0.05, sfx: "golpe", vol: 0.45 },
+    ...(ep.parte ? [{ t: titulo + 0.55, sfx: "pop" as const, vol: 0.35 }] : []),
+    ...(ep.intro?.iconos ?? []).map((ic) => ({ t: L.en(ep.escenas[1].id, ic.en) - 0.05, sfx: "pop" as const, vol: 0.4 })),
   ];
 };

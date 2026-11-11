@@ -29,7 +29,10 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
   props.bloques.forEach((b, i) => {
     const B = BLOQUES[b.tipo];
     if (!B) throw new Error(`Tipo de bloque desconocido: ${b.tipo}`);
-    eventos.push(...B.eventos(L, props));
+    const a = props.escenas.findIndex((e) => e.id === b.desde);
+    const sig = props.bloques[i + 1];
+    const z = sig ? props.escenas.findIndex((e) => e.id === sig.desde) : props.escenas.length;
+    eventos.push(...B.eventos(L, props, b, props.escenas.slice(a, z).map((e) => e.id)));
     if (i > 0) eventos.push({ t: cortes[i] - 0.3, sfx: "whoosh", vol: 0.28 });
   });
   const mus = props.musica;
@@ -47,6 +50,6 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
         eventos: eventos.filter((e) => e.t >= 0 && e.t < duracion).sort((a, b) => a.t - b.t),
       },
     },
-    defaultOutName: `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,
+    defaultOutName: props.salida ?? `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,
   };
 };

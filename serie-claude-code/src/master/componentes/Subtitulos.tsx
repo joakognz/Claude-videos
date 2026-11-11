@@ -42,7 +42,8 @@ export const trocear = (pal: Palabra[]): Bloque[] => {
     const n = cur.flat().length;
     const pausa = sig ? sig.inicio - p.fin > 0.28 : true;
     const escena = sig && sig.escena !== p.escena;
-    if (escena || /[.?!:]$/.test(p.texto) || (/[,;]$/.test(p.texto) && n >= 4 && pausa)) cerrar();
+    const finFrase = /[.?!]$/.test(p.texto) || (/:$/.test(p.texto) && n >= 3);
+    if (escena || finFrase || (/[,;]$/.test(p.texto) && n >= 4 && pausa)) cerrar();
   });
   cerrar();
   // cada bloque entra 0,12 s antes de su primera palabra, pero nunca antes de que haya sonado la última del anterior

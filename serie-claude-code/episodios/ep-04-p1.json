@@ -1,0 +1,105 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 4,
+  "total": 50,
+  "parte": { "n": 1, "de": 2 },
+  "titulo": "Lo que construirás y las 4 etapas",
+  "salida": "ep4_parte1",
+  "handle": "@aigencyx.labs",
+  "barra_progreso": true,
+  "voz": {
+    "audio": "episodios/ep-04-p1/voz.wav",
+    "timestamps": "episodios/ep-04-p1/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "intro": {
+    "iconos": [
+      { "icono": "meta", "texto": "META", "en": "montar" },
+      { "icono": "etapas", "texto": "4 ETAPAS", "en": "cuatro etapas" },
+      { "icono": "moneda", "texto": "PARTE 2", "en": "cualquier proyecto", "pequeno": true }
+    ]
+  },
+  "cta": {
+    "tipo": "auditoria_drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "carpeta": { "texto": "ESQUEMAS", "en": "esquemas" },
+    "check": { "titulo": "SI TIENES UN NEGOCIO", "texto": "OPTIMIZAR TUS PROCESOS", "en": "negocio" },
+    "seguir": "Sígueme"
+  },
+  "avance": {
+    "tipo": "parte",
+    "parte": 2,
+    "frase": "En la parte 2, hablamos de lo que de verdad te interesa: cuánto cuesta, y cómo gastar menos.",
+    "titulo": "Costes",
+    "icono": "moneda",
+    "puntos": [
+      { "texto": "Cuánto cuesta", "en": "cuánto cuesta" },
+      { "texto": "Cómo gastar menos", "en": "cómo gastar" }
+    ]
+  },
+  "cierre": "Sígueme para no perdértela.",
+  "siguiente_episodio": 5,
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "wordpress": "logos/wordpress.png",
+    "drive": "logos/drive.png"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio 4 de 50, parte 1. Máster de Claude Code." },
+    { "id": "hoy", "voz": "Hoy te enseño lo que serás capaz de montar al terminar, y las cuatro etapas por las que pasa cualquier proyecto." },
+    { "id": "meta", "voz": "Empezamos por la meta. Qué vas a poder construir cuando acabes." },
+    { "id": "tres", "voz": "Tres proyectos reales." },
+    { "id": "web", "voz": "1: una web de WordPress, publicada, segura y con los accesos listos." },
+    { "id": "automatizacion", "voz": "2: una automatización que corre sola en un VPS, sin pantalla y sin que nadie la mire." },
+    { "id": "app", "voz": "3: una mini-app a medida, con pantalla, desplegada y en marcha." },
+    { "id": "sistema", "voz": "Y antes de todo eso, montas tu sistema de trabajo: pedir, revisar, corregir." },
+    { "id": "tarea", "voz": "Tu tarea: elige cuál de los tres te llama más." },
+    { "id": "escalera", "voz": "Ahora, las cuatro etapas por las que pasa cualquier proyecto, sea del tamaño que sea." },
+    { "id": "idea", "voz": "Etapa 0: la idea." },
+    { "id": "frase", "voz": "Antes de tocar código, defines qué hace tu proyecto y para quién, en una frase. Si no sabes decirlo simple, no sabes construirlo." },
+    { "id": "minimo", "voz": "Y separa lo imprescindible de lo «ya veremos». El error número uno es querer todo desde el primer día." },
+    { "id": "desarrollo", "voz": "Etapa 1: desarrollo." },
+    { "id": "carpeta", "voz": "Preparas la carpeta, la abres en Visual Studio Code y le das contexto a Claude." },
+    { "id": "trozos", "voz": "Y construyes por trozos: una funcionalidad, la pruebas, y la siguiente. Nunca «hazme la app entera»." },
+    { "id": "guardar", "voz": "Revisa lo que propone antes de aceptar, y guarda avances por si algo se rompe." },
+    { "id": "staging", "voz": "Etapa 2: staging." },
+    { "id": "copia", "voz": "Es una copia de prueba publicada, con contraseña si hace falta." },
+    { "id": "usuario", "voz": "Aquí lo pruebas como si fueras el usuario. ¿Van los botones? ¿Hace lo que debe?" },
+    { "id": "romper", "voz": "Intenta romperlo a propósito: datos raros, campos vacíos. Y que lo pruebe otra persona, porque ve los fallos que tú no ves." },
+    { "id": "arreglar", "voz": "Y pídele a Claude que arregle lo que encuentres." },
+    { "id": "regla", "voz": "La regla de oro: los problemas se encuentran aquí, no los encuentra tu cliente." },
+    { "id": "produccion", "voz": "Etapa 3: producción." },
+    { "id": "publicar", "voz": "Lo publicas donde toque, según el tipo de proyecto: hosting, VPS..." },
+    { "id": "online", "voz": "Compruebas que funciona ya publicado, porque a veces va en tu ordenador y falla online." },
+    { "id": "accesos", "voz": "Dejas los accesos listos si es para un cliente, y lo básico de seguridad: contraseñas y SSL." },
+    { "id": "final", "voz": "Y ojo: producción no es el final. Después toca mantener, arreglar y mejorar. Un proyecto vivo sigue evolucionando." },
+    { "id": "resumen", "voz": "Resumen rápido. Una meta clara y cuatro etapas: idea, desarrollo, staging y producción." },
+    { "id": "cta", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "avance", "voz": "En la parte 2, hablamos de lo que de verdad te interesa: cuánto cuesta, y cómo gastar menos." },
+    { "id": "seguir", "voz": "Sígueme para no perdértela." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "meta", "desde": "meta" },
+    { "tipo": "sistema", "desde": "sistema" },
+    { "tipo": "escalera", "desde": "escalera" },
+    { "tipo": "etapa", "desde": "idea", "etapa": 0 },
+    { "tipo": "etapa", "desde": "desarrollo", "etapa": 1 },
+    { "tipo": "etapa", "desde": "staging", "etapa": 2 },
+    { "tipo": "etapa", "desde": "produccion", "etapa": 3 },
+    { "tipo": "resumen", "desde": "resumen" },
+    { "tipo": "ctaDrive", "desde": "cta" },
+    { "tipo": "avance", "desde": "avance" },
+    { "tipo": "seguir", "desde": "seguir" }
+  ]
+}

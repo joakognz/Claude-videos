@@ -106,6 +106,40 @@ node scripts/render-lote.mjs episodios/ep-02.json          # → out/claude-code
 python scripts/qa_master.py episodios/ep-02.json out/claude-code-ep-02.mp4
 ```
 
+## Episodios en partes (desde el EP.4)
+
+Un episodio largo se parte en reels: un JSON por parte (`episodios/ep-04-p1.json`, `ep-04-p2.json`), con
+`"parte": { "n": 1, "de": 2 }`. Con eso:
+
+- `preparar.py` deja la voz y los timestamps en `public/episodios/ep-NN-pN/`;
+- la insignia pasa a «EP.4 · 1/2» y entra al terminar el título; la intro añade «PARTE 1 DE 2» y los iconos de
+  `intro.iconos` (cada uno cuando la voz dice su `en`; `pequeno` = lo que viene en otra parte, atenuado);
+- `"salida": "ep4_parte1"` da nombre al mp4; `"barra_progreso": true` añade la barra fina de arriba.
+
+Bloques nuevos (`src/master/bloques/`), todos anclados a palabras de la voz:
+
+| tipo | qué hace |
+|---|---|
+| `meta` | camino hasta la bandera y tres tarjetas de proyecto que la cámara visita |
+| `sistema` | base «tu sistema de trabajo», ciclo pedir → revisar → corregir y tarjeta de tarea «ELIGE UNO» |
+| `escalera` | los cuatro peldaños se levantan (0 IDEA · 1 DESARROLLO · 2 STAGING · 3 PRODUCCIÓN) |
+| `etapa` (+ `"etapa": N`) | la cámara sube al peldaño N, sello «ETAPA N» con golpe, entra en el peldaño y se desarrolla la etapa (`EtapaIdea`, `EtapaDesarrollo`, `EtapaStaging`, `EtapaProduccion`); tick al terminar. Mientras duran las etapas, una escalera mini fija arriba marca la actual y las hechas |
+| `resumen` | escalera completa con ticks, la bandera arriba y la cámara subiendo al nombrar cada etapa |
+| `ctaDrive` | `cta.tipo: "auditoria_drive"`: carpeta de Drive con documentos, comentario con la palabra clave, enlace y tarjeta de auditoría |
+| `avance` | tarjeta con candado que se abre: sello «PARTE N» (o «EP.N» con su casilla en la rejilla), icono, título y puntos |
+| `seguir` | perfil, rejilla, frase de `cierre` y botón Seguir → Siguiendo ✓ |
+
+Componentes reutilizables nuevos: `Escalera` (y `EscaleraMini`), `Tarjeta`, `Chip`, `Frase` (texto grande palabra a
+palabra con la voz), `BarraProgreso`, `Iconos` (pictogramas genéricos; los logos de marca siguen siendo los adjuntos).
+
+```bash
+python scripts/preparar.py episodios/ep-04-p1.json --mp3 ../audio/raw/serie-claude-code/ep-04_p1_montaje.mp3 --modelo <parakeet>
+node scripts/prueba.mjs episodios/ep-04-p1.json --tramos intro:0-10.8      # pruebas a 540x960 → out/pruebas/
+node scripts/prueba.mjs episodios/ep-04-p1.json --fotos 12,48.5            # fotogramas sueltos
+node scripts/render-lote.mjs episodios/ep-04-p1.json                       # → out/ep4_parte1.mp4
+python scripts/qa_master.py episodios/ep-04-p1.json out/ep4_parte1.mp4
+```
+
 ## El JSON de un episodio (EP.1, composición «Episodio»)
 
 | Campo | Qué es |
