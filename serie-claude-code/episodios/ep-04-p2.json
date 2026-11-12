@@ -24,6 +24,11 @@
       { "icono": "reglas", "texto": "3 REGLAS", "en": "gastar" }
     ]
   },
+  "portada": {
+    "titulo": ["¿CUÁNTO", "CUESTA?"],
+    "subtitulo": "y cómo gastar menos",
+    "chips": ["3 REGLAS", "QUÉ ES GRATIS", "QUÉ PAGAS"]
+  },
   "precios": { "texto": "PRECIOS ORIENTATIVOS · COMPRUÉBALOS" },
   "cta": {
     "tipo": "auditoria_drive",

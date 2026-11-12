@@ -118,3 +118,9 @@ python scripts/qa_master.py episodios/ep-04-p2.json out/ep4_parte2.mp4
 - Sincronía voz-texto: 300 palabras, cada una en su instante; 52 bloques, máximo 2 líneas, línea más ancha 956 de 960 px.
 - Cambio visible como mucho cada 0,83 s. Ninguna cifra de precio; «fases» ausente. -13,9 LUFS, pico real -1,7 dBTP.
 - Revisión visual (un fotograma cada 2,5 s): logos correctos y ningún texto cortado. La parte 1 sigue igual que su entrega.
+
+## Portada (parte 2)
+`entregas/ep4_parte2_portada.png` (1080x1920): MÁSTER DE CLAUDE CODE · EP.4 · PARTE 2/2 · moneda grande · «¿CUÁNTO
+CUESTA?» · «y cómo gastar menos» · 3 REGLAS / QUÉ ES GRATIS / QUÉ PAGAS. Lo importante va dentro del recorte 3:4 central
+(y 240–1680), que es lo que enseña la cuadrícula del perfil; la rejilla de la serie y el usuario quedan debajo.
+Se genera desde el campo `"portada"` del JSON: `node scripts/portada.mjs episodios/ep-04-p2.json` (composición `Portada`).

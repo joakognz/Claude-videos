@@ -8,6 +8,8 @@ import {
 } from "remotion";
 import ep01 from "../episodios/ep-01.json";
 import ep02 from "../episodios/ep-02.json";
+import ep04p2 from "../episodios/ep-04-p2.json";
+import { Portada } from "./portada/Portada";
 import { Master } from "./master/Master";
 import { calcularMaster } from "./master/calcular";
 import type { EpisodioMaster } from "./master/tipos";
@@ -75,6 +77,16 @@ export const RemotionRoot: React.FC = () => (
       height={1920}
       defaultProps={ep02 as unknown as EpisodioMaster}
       calculateMetadata={calcularMaster}
+    />
+    {/* Portada del reel (imagen fija 1080x1920) desde el campo "portada" del JSON: scripts/portada.mjs */}
+    <Composition
+      id="Portada"
+      component={Portada}
+      durationInFrames={1}
+      fps={FPS}
+      width={1080}
+      height={1920}
+      defaultProps={ep04p2 as unknown as EpisodioMaster}
     />
     <Composition
       id="ClipPantalla"

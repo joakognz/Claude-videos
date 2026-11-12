@@ -144,6 +144,17 @@ node scripts/render-lote.mjs episodios/ep-04-p1.json                       # →
 python scripts/qa_master.py episodios/ep-04-p1.json out/ep4_parte1.mp4
 ```
 
+## Portadas
+
+Composición `Portada` (imagen fija 1080x1920) a partir del campo `"portada"` del JSON:
+`{ "titulo": ["¿CUÁNTO", "CUESTA?"], "subtitulo": "...", "chips": ["3 REGLAS", ...] }` (la última línea del título va en
+acento). Todo lo importante cae dentro del recorte 3:4 de la cuadrícula del perfil (y 240–1680).
+
+```bash
+node scripts/portada.mjs                          # todas las que tengan "portada" → out/<salida>_portada.png
+node scripts/portada.mjs episodios/ep-04-p2.json
+```
+
 ## El JSON de un episodio (EP.1, composición «Episodio»)
 
 | Campo | Qué es |

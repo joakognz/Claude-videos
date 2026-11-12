@@ -28,6 +28,8 @@ export type EpisodioMaster = {
     /** palabra con la que aparece el título; por defecto, un poco antes del primer punto */
     titulo_en?: string;
   };
+  /** portada del reel (composición «Portada»): título en líneas (la última en acento), subtítulo y chips */
+  portada?: { titulo: string[]; subtitulo?: string; chips?: string[] };
   /** etiqueta fija mientras la voz habla de precios (bloque «pagas») */
   precios?: { texto: string };
   /** frase de cierre junto al botón de seguir (bloque «seguir») */
