@@ -90,7 +90,7 @@ const PanelRonda: React.FC<{ r: Ronda; n: number; cy: number; t: number; T: Retu
   const ent = sp(t, T.ini - 0.1, { damping: 15, stiffness: 150 });
   if (t < T.ini - 0.2) return null;
   const marca = ramp(t, T.marca, T.marca + 0.25);
-  const sale = ramp(t, fin - 0.2, fin + 0.35);
+  const sale = Number.isFinite(fin) ? ramp(t, fin - 0.2, fin + 0.35) : 0;
   if (sale >= 1) return null;
   return (
     <div style={{ opacity: 1 - sale }}>
