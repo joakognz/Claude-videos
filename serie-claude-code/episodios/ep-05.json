@@ -1,0 +1,104 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 5,
+  "total": 50,
+  "titulo": "El archivo CLAUDE.md y /init",
+  "handle": "@aigencyx.labs",
+  "progreso": true,
+  "voz": {
+    "audio": "episodios/ep-05/voz.wav",
+    "timestamps": "episodios/ep-05/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": {
+      "texto": "AUDITORÍA DE PROCESOS",
+      "en": "auditoría"
+    },
+    "remate": {
+      "texto": "Optimiza tus procesos",
+      "en": "optimizar"
+    },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 6,
+  "avance": {
+    "titulo": "PROMPTING MAESTRO",
+    "subtitulo": "Pídelo bien a la primera"
+  },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png",
+    "git": "logos/git.png",
+    "npm": "logos/npm.png",
+    "nodejs": "logos/nodejs.png",
+    "codex": "logos/codex.png",
+    "gemini": "logos/gemini.png",
+    "astro": "logos/astro.png",
+    "nextjs": "logos/nextjs.png",
+    "vite": "logos/vite.png",
+    "tailwind": "logos/tailwind.png",
+    "vercel": "logos/vercel.png",
+    "netlify": "logos/netlify.png",
+    "cloudflare_pages": "logos/cloudflare-pages.png",
+    "n8n": "logos/n8n.png",
+    "php": "logos/php.png"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio 5 de 50. Máster de Claude Code." },
+    { "id": "hoy", "voz": "Hoy preparamos el proyecto antes de empezar. Y todo gira en torno a un archivo: CLAUDE.md." },
+    { "id": "empleado", "voz": "Imagina que Claude es un empleado nuevo que llega cada mañana sin recordar nada de ayer. Brillante, pero con la memoria en blanco." },
+    { "id": "nota", "voz": "CLAUDE.md es la nota que le dejas en la mesa." },
+    { "id": "lee", "voz": "La lee al empezar cada conversación: qué es el proyecto, para quién es, qué estilo quieres, qué debe evitar y cómo quieres que trabaje." },
+    { "id": "sinnota", "voz": "Sin nota, repites todo cada vez. Con ella, Claude arranca sabiendo cómo juegas." },
+    { "id": "init", "voz": "¿Y se escribe a mano? No. Existe un comando: /init." },
+    { "id": "paso1", "voz": "Paso uno. Crea una carpeta para el proyecto. En el ejemplo, la landing de una clínica estética." },
+    { "id": "paso2", "voz": "Paso dos. Ábrela en Visual Studio Code y abre el panel de Claude Code." },
+    { "id": "paso3", "voz": "Paso tres. Escribe /init. Claude analiza el proyecto y genera el CLAUDE.md. Tú lo revisas y lo ajustas." },
+    { "id": "trampa", "voz": "Pero ojo, que aquí hay trampa: en una carpeta vacía no hay nada que analizar." },
+    { "id": "minimo", "voz": "Te hace uno mínimo y te avisa: primero monta la base, con framework, dependencias y git init, y vuelve a lanzar /init." },
+    { "id": "importar", "voz": "Y si venías de otro agente, como Codex o Gemini, puede importar sus configuraciones. No empiezas de cero." },
+    { "id": "entrevista", "voz": "Entonces, ¿cómo sacamos uno bueno sin escribir código? Dejando que Claude te entreviste. Le pides que te haga todas las preguntas necesarias." },
+    { "id": "rondas", "voz": "Y te pregunta por rondas." },
+    { "id": "tecnologia", "voz": "Primero, la tecnología: Astro, Next.js, Vite o HTML y CSS puro." },
+    { "id": "publicar", "voz": "Después, dónde publicarlo: Vercel, Netlify, Cloudflare Pages o hosting tradicional por FTP." },
+    { "id": "contactos", "voz": "Y qué pasa con los contactos del formulario: un webhook a n8n o un script en PHP." },
+    { "id": "abiertas", "voz": "Luego, preguntas abiertas: cliente y oferta, marca y contenido, formulario, parte técnica y plazos." },
+    { "id": "prueba", "voz": "Como esto es una prueba, le dices: «invéntate los datos y crea el archivo»." },
+    { "id": "resultado", "voz": "Y en segundos, lo tienes: 132 líneas. Clínica Aurora Estética, en Valencia. Astro con Tailwind. Despliegue por FTP. Consentimiento de protección de datos. Y sin rastreo." },
+    { "id": "resumen", "voz": "Recuerda: carpeta, init, entrevista, revisar." },
+    { "id": "auditoria", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "proximo", "voz": "Y en el siguiente episodio, el prompting maestro: cómo pedirle las cosas a Claude para que salgan bien a la primera." },
+    { "id": "seguir", "voz": "Sígueme para no perdértelo." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "memoria", "desde": "hoy" },
+    { "tipo": "contenido", "desde": "lee" },
+    { "tipo": "init", "desde": "init" },
+    { "tipo": "pasos", "desde": "paso1" },
+    { "tipo": "vacia", "desde": "trampa" },
+    { "tipo": "entrevista", "desde": "entrevista" },
+    { "tipo": "rondas", "desde": "tecnologia" },
+    { "tipo": "abiertas", "desde": "abiertas" },
+    { "tipo": "resultado", "desde": "resultado" },
+    { "tipo": "resumen", "desde": "resumen" },
+    { "tipo": "ctaDrive", "desde": "auditoria" },
+    { "tipo": "avance", "desde": "proximo" }
+  ]
+}

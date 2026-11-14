@@ -1,6 +1,7 @@
 import type { Evento, Linea, Palabra } from "./nucleo";
 
-export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft";
+/** Clave de un logo en "logos" del JSON (claude, claude_code, vscode, git, npm, astro…). */
+export type LogoId = string;
 
 export type EpisodioMaster = {
   composicion: "Master";
@@ -25,6 +26,10 @@ export type EpisodioMaster = {
     seguir?: string;
   };
   siguiente_episodio: number;
+  /** avance del episodio siguiente (EP.5 en adelante) */
+  avance?: { titulo: string; subtitulo: string };
+  /** barra de progreso del vídeo bajo la insignia */
+  progreso?: boolean;
   proximo?: { titulo: string; en: string; detalle?: { texto: string; en: string }[]; logos?: { id: LogoId; en: string }[] }[];
   logos: Record<LogoId, string>;
   clips?: Record<string, { src: string; ancho: number; alto: number; recorteArriba?: number }>;

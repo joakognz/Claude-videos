@@ -106,6 +106,24 @@ node scripts/render-lote.mjs episodios/ep-02.json          # → out/claude-code
 python scripts/qa_master.py episodios/ep-02.json out/claude-code-ep-02.mp4
 ```
 
+### Bloques del EP.5 (`src/master/bloques/ep05/`, piezas en `src/master/ep05/`)
+
+`memoria`, `contenido`, `init`, `pasos`, `vacia`, `entrevista`, `rondas`, `abiertas`, `resultado`, `resumen`,
+`ctaDrive` (CTA con Drive y palabra clave) y `avance` (rejilla → tarjeta del episodio siguiente → Seguir). Las
+pantallas de Visual Studio Code y Claude Code están en `ep05/ui.tsx` (ventana, explorador, chat, menú de comandos,
+preguntas, editor); los iconos planos y las fichas de logos, en `ep05/kit.tsx`.
+
+- `avance`: `{ titulo, subtitulo }` del episodio siguiente.
+- `progreso: true`: barra de progreso del vídeo encima de la insignia.
+- `scripts/logos_ep05.py`: logos del EP.5 desde `fuentes/logos-ep05/` (fondo blanco fuera, recorte).
+
+```bash
+python scripts/logos_ep05.py
+python scripts/preparar.py episodios/ep-05.json --mp3 ../audio/raw/serie-claude-code/ep-05_*.mp3 --modelo <parakeet>
+node scripts/render-lote.mjs episodios/ep-05.json          # → out/claude-code-ep-05.mp4
+python scripts/qa_master.py episodios/ep-05.json out/claude-code-ep-05.mp4
+```
+
 ## El JSON de un episodio (EP.1, composición «Episodio»)
 
 | Campo | Qué es |
