@@ -53,3 +53,12 @@ Una sola toma de ElevenLabs (Manu Gordillo, v4), entera y sin cortes. Timestamps
   barra de progreso del vídeo arriba (`"progreso": true`).
 - **Orden final:** el de la voz (CTA → avance del EP.6 → Sígueme).
 - **Música:** la de la serie, a -20 dB con ducking de -8 dB bajo la voz.
+
+## Checklist (`scripts/qa_master.py`, todo en verde)
+- 1080x1920 a 30 fps, 153,92 s = duración de la voz con su cola.
+- Sincronía voz-texto: 387 palabras, cada una resaltada en su instante; 74 bloques de subtítulos, máximo 2 líneas,
+  línea más ancha 956 de 960 px.
+- Cambio visible como mucho cada 1,0 s (regla: 2–3 s).
+- -13,8 LUFS integrados, pico real -1,7 dBTP.
+- Revisión visual (fotogramas sueltos de cada bloque): logos correctos, ningún texto cortado ni tapado por los
+  subtítulos.
