@@ -31,6 +31,11 @@ Los episodios en partes llevan `"parte": {"n", "de"}` (insignia «EP.9/50 · 1/2
 (`ep-09-parte1`: nombre de la carpeta de la voz y del mp4). Los tiempos por palabra salen del reconocedor local:
 se anclaron 370 de 373 palabras en la parte 1 y 334 de 340 en la parte 2. La voz no se ha subido a ningún servicio.
 El «Parte uno / Parte dos» va en su propia escena para que la intro no pase de 4 s.
+En la parte 1 se retrasaron 30 ms dos palabras cortas («un» a los 91,7 s y «tu» a los 95,2 s) en `palabras.json`, porque
+empezaban un fotograma antes de que entrara su bloque de subtítulos. Si se vuelve a pasar `preparar.py`, repite el ajuste.
+
+**Control de calidad (`qa_master.py`):** las dos partes en verde: duración igual a la voz, subtítulos de 2 líneas como
+máximo y sincronizados, ningún hueco de más de 1,2 s sin cambio visible, -13,8 LUFS y pico de -1,7 dBTP.
 
 ## Escenas · parte 1 (bloques `ep9_*` en `src/master/bloques/ep09/`)
 | Bloque | Tiempo | En pantalla |
