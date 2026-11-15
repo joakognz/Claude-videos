@@ -44,6 +44,12 @@ En el JSON del episodio van en `"logos"` (`id` → ruta en `public/`) y en Remot
 | logo_cloudflare_pages | `cloudflare_pages.png` | tarjeta clara | rayo naranja; «Pages» es negro |
 | logo_n8n | `n8n.png` | tarjeta clara | los nodos rosas se ven; «n8n» es azul marino |
 | logo_php | `php.png` | tal cual | óvalo morado |
+| logo_astro | `astro.png` | tal cual | tarjeta azul noche con «astro» y la frase «I Build Fast Static Sites» (rectangular, con su fondo) |
+| logo_aws | `aws.png` | tarjeta clara | la sonrisa naranja se ve; «aws» es azul marino |
+| logo_nodejs | `nodejs.png` | tarjeta clara | hexágono verde; «node» es gris oscuro |
+| logo_live_server | `live_server.png` | tarjeta clara | ondas moradas; el texto «Live Server» es negro |
+| logo_youtube | `youtube.png` | tal cual | rectángulo rojo con el triángulo blanco |
+| logo_wordpress | `wordpress.png` | ficha blanca | negro con la W y el aro calados (transparentes) |
 
 ## Los que aún faltan
 
@@ -51,5 +57,7 @@ Pídelos cuando un episodio los necesite y guárdalos aquí: el original en `_or
 `python scripts/logo_sin_fondo.py _originales/x.png x.png` (mira los modos en el propio script). Rehaz el muestrario
 con `python scripts/muestrario_logos.py public/logos public/logos/_muestrario.png` y comprueba que nada se ha comido.
 
-nodejs, aws, hostinger, youtube, live_server, astro y **aigencyx** (para el cierre con marca; mientras no esté, el
-usuario @aigencyx.labs va en texto).
+hostinger y **aigencyx** (para el cierre con marca; mientras no esté, el usuario @aigencyx.labs va en texto).
+
+Repetidos que llegaron en mejor resolución (Claude, Drive, Visual Studio Code y Word, a 3840 px): mismo diseño que
+los de aquí, así que no se han sustituido. Si alguna vez hace falta un zoom muy grande, pídelos de nuevo.

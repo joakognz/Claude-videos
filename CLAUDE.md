@@ -71,9 +71,9 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 - **Movimiento:** como mucho 3 s sin un cambio visible. Solo `spring`, `interpolate` y `Easing`: nada de CSS
   transitions ni `setTimeout`.
 - **Logos:** solo los archivos del usuario (`serie-claude-code/public/logos/`, ver `_LEEME_LOGOS.md` y
-  `_muestrario.png`). Hay 29: Claude, Claude Code (mascota y rótulo), Anthropic, Visual Studio Code, Word, Microsoft,
+  `_muestrario.png`). Hay 35: Claude, Claude Code (mascota y rótulo), Anthropic, Visual Studio Code, Word, Microsoft,
   Drive, GitHub (gato, círculo y rótulo), Copilot, git, npm, WhatsApp, Gemini, Codex, Next.js, Vite, Tailwind, Vercel,
-  Netlify, Cloudflare Pages, n8n y PHP. Faltan nodejs, aws, hostinger, youtube, live_server, astro y aigencyx.
+  Netlify, Cloudflare Pages, n8n, PHP, Astro, AWS, Node.js, Live Server, YouTube y WordPress. Faltan hostinger y aigencyx.
   Nunca se redibujan ni se inventan. Si falta uno, se pide con su nombre `logo_xxx` y se espera. Los nuevos se
   guardan en `_originales/` y se les quita el fondo con `scripts/logo_sin_fondo.py`. Los logos oscuros van sobre
   tarjeta clara (`ficha="tarjeta"`).
