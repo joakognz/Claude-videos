@@ -17,3 +17,12 @@ Decisiones:
 - Avance: EP.8 · Errores típicos y cómo solucionarlos.
 
 Pendiente: comprobar que el teaser del EP06 anuncia "cambios y correcciones".
+
+Imágenes del usuario (15/11/2026) — obligatorio usar solo estos archivos, sin redibujar ni recolorear:
+- Logo de AIgencyx Labs: exportado a PNG (1600x1600) desde su diseño "AIgencyx Labs – Perfil", con su misma
+  tipografía (Sora) y colores. public/logos/aigencyx.png = versión "Naranja grande" (la que mejor se lee en pequeño).
+  También: aigencyx_naranja.png, aigencyx_oscuro.png, aigencyx_claro.png. Script: scripts/exportar_logo.cjs.
+- Cinco iconos (marcador, reloj, esc, mano, matraz): recortados de su hoja (1700x1020) con fondo transparente,
+  con borde crema (_pegatina) y sin borde. public/iconos/. Script: scripts/recortar_iconos.py.
+  Tamaño original ~250-290 px: no pasar de 300 px en pantalla. Si llegan originales más grandes o en SVG, se sustituyen.
+- Vista previa: produccion/ep07/4_assets_extra/vista_previa_assets_ep7.png

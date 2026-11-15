@@ -8,10 +8,25 @@ LOGOS E IMÁGENES DEL EPISODIO (obligatorio usar SOLO estos archivos; nada redib
 | logo_claude_code_texto  | logos/claude-code-pixel.png                    | YA ESTÁ (del EP02)     |
 | logo_vscode             | logos/vscode.png                               | YA ESTÁ (del EP02)     |
 | logo_drive              | logos/drive.png                                | YA ESTÁ (del EP02)     |
-| logo_aigencyx           | logos/aigencyx.png                             | FALTA → pásamelo (PNG con fondo transparente) |
+| logo_aigencyx           | logos/aigencyx.png                             | YA ESTÁ (de tu diseño; versión "Naranja grande") |
 | esquema_ep7             | episodios/ep-07/imagenes/esquema_ep7.png       | YA ESTÁ (de tu PDF)    |
-Los iconos (bandera, reloj, tecla Esc…) no son marcas: los dibuja Remotion en coral plano.
-Si prefieres alguno como imagen tuya, pásalo y lo cambio.
+| icono_marcador          | iconos/marcador_pegatina.png  (+ marcador.png) | YA ESTÁ (de tu hoja de iconos) |
+| icono_reloj             | iconos/reloj_pegatina.png     (+ reloj.png)    | YA ESTÁ (de tu hoja de iconos) |
+| icono_esc               | iconos/esc_pegatina.png       (+ esc.png)      | YA ESTÁ (de tu hoja de iconos) |
+| icono_mano              | iconos/mano_pegatina.png      (+ mano.png)     | YA ESTÁ (de tu hoja de iconos) |
+| icono_matraz            | iconos/matraz_pegatina.png    (+ matraz.png)   | YA ESTÁ (de tu hoja de iconos) |
+Otras versiones del logo guardadas: logos/aigencyx_naranja.png, aigencyx_oscuro.png, aigencyx_claro.png.
+Los iconos van recortados de tu hoja, con fondo transparente y sin retocar: con borde crema (_pegatina) y sin borde.
+
+FORMAS QUE AÚN DIBUJA REMOTION EN CORAL PLANO (no son marcas). Si las quieres en tu estilo, pásamelas:
+1. bocadillo de diálogo ("¿Y si lo estropeo?")
+2. calendario ("otro día")
+3. burbuja de chat (la conversación)
+4. botón aceptar ✓ y botón rechazar ✕
+5. escudo o candado ("nada sin tu visto bueno")
+6. interruptor (modo bypass permissions)
+7. lista de tareas ("tu tarea")
+8. flecha de rebobinar
 
 TOMAS A GRABAR (en tu pantalla, VS Code con la extensión de Claude Code)
 Antes de grabar:

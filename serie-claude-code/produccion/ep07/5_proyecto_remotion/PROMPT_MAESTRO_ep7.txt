@@ -29,25 +29,32 @@ Si la voz nombra una marca que no está en esta lista: PARA y pregúntame.
 | logo_claude_code_texto  | logos/claude-code-pixel.png                    | cierre (tarjeta de perfil)                                       |
 | logo_vscode             | logos/vscode.png                               | barra de la ventana en las recreaciones de las tomas (pasos 3-5) |
 | logo_drive              | logos/drive.png                                | CTA, junto al esquema ("los esquemas de este episodio")          |
-| logo_aigencyx           | logos/aigencyx.png  ← PENDIENTE, me lo pasa    | avatar de la tarjeta de perfil (Seguir)                          |
+| logo_aigencyx           | logos/aigencyx.png                             | avatar de la tarjeta de perfil (Seguir), recortado en círculo como en Instagram, sin anillo coral |
+| icono_marcador          | iconos/marcador_pegatina.png                   | cada checkpoint / punto de guardado (paso 2, línea de tiempo, casilla 2 del ciclo, paso 5) |
+| icono_reloj             | iconos/reloj_pegatina.png                      | "volver atrás en el tiempo" (gancho) y "máquina del tiempo" (paso 5) |
+| icono_esc               | iconos/esc_pegatina.png                        | "pulsa la tecla Escape dos veces" (paso 5)                       |
+| icono_mano              | iconos/mano_pegatina.png                       | "lo que hayas tocado tú a mano" (paso 5)                         |
+| icono_matraz            | iconos/matraz_pegatina.png                     | "permiso para experimentar" (por qué importa)                    |
 | esquema_ep7             | episodios/ep-07/imagenes/esquema_ep7.png       | CTA: el esquema del episodio entra en tarjeta, inclinado, al decir "esquemas" |
 
+Los cinco iconos son ilustraciones mías: valen las mismas prohibiciones que para los logos. No los redibujes ni los
+recolorees a coral: se usan con sus colores. Sobre fondo oscuro, la versión *_pegatina.png (borde crema); sobre una
+tarjeta clara, la versión sin borde (iconos/marcador.png, reloj.png, esc.png, mano.png, matraz.png).
+Miden unos 250-290 px: no los muestres a más de 300 px de ancho ni les hagas zoom de cámara por encima de eso.
+Se animan ENTEROS (entrada con spring, giro, balanceo, golpe, caída): no se puede mover una parte suelta del dibujo.
 Fondo oscuro: si un logo no se lee sobre #0B0D12, va sobre ficha blanca redondeada (como GitHub en el EP02), sin tocar el logo.
 Antes del render de prueba, entrégame una lista "logo → segundo en que aparece" sacada de los timestamps.
 
-Iconos planos coral que debes dibujar tú (NO son marcas; son formas genéricas):
+Formas planas en coral que debes dibujar tú (SOLO estas; no son marcas ni sustituyen a ninguna imagen de la tabla):
 - bocadillo con "¿Y si lo estropeo?" y una grieta (el miedo)
-- bandera de punto de guardado (checkpoint) clavada en una línea de tiempo
+- línea de tiempo horizontal (sobre ella se colocan los icono_marcador)
 - contador "100"
 - calendario que pasa una hoja ("otro día")
 - burbuja de chat (la conversación)
 - líneas de código con marca "–" (quita) y "+" (añade)
 - botones ✓ aceptar / ✕ rechazar
 - escudo con candado (tu visto bueno) e interruptor "bypass" con señal de aviso
-- tecla "Esc" (se pulsa dos veces)
-- flecha circular hacia atrás / reloj que gira al revés (máquina del tiempo)
-- mano (cambios hechos a mano)
-- matraz (experimentar)
+- flecha circular de rebobinado, que gira alrededor de icono_reloj
 - lista de tareas con dos casillas
 Tomas (referencia para animar): toma_01…toma_04 (toma_02 es opcional).
 Audio: voz_ep7.mp3, ts_ep7.json (timestamps por palabra), musica.mp3 (opcional).
@@ -64,36 +71,36 @@ INTRO (máx. 4 s)
 Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-6 iluminados, el 7 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.7".
 
 ESCENAS (tiempos orientativos; mandan los timestamps)
-Metáfora que guía todo el episodio: una LÍNEA DE TIEMPO horizontal con banderas (los checkpoints). Aparece en el paso 2, crece con cada petición y en el paso 5 la cámara viaja hacia atrás por ella.
+Metáfora que guía todo el episodio: una LÍNEA DE TIEMPO horizontal con marcadores (icono_marcador = cada checkpoint). Aparece en el paso 2, crece con cada petición y en el paso 5 la cámara viaja hacia atrás por ella.
 
 | Tiempo | Voz (ancla) | Qué se ve | Logos / tomas |
 |---|---|---|---|
 | 0:00–0:03 | "Episodio siete de cincuenta…" | Intro de la cuadrícula → título | logo_claude, logo_claude_code |
 | 0:03–0:10 | "¿Y si lo estropeo?" | Bocadillo "¿Y si lo estropeo?" que tiembla; aparece una grieta sobre una ventana de código. Etiqueta EL MIEDO | — |
-| 0:10–0:15 | "guarda tu trabajo solo… volver atrás en el tiempo" | La grieta se cierra al revés (rebobinado). Etiqueta LA SOLUCIÓN. Reloj que gira hacia atrás | logo_claude_code en "Claude Code" |
+| 0:10–0:15 | "guarda tu trabajo solo… volver atrás en el tiempo" | La grieta se cierra al revés (rebobinado). Etiqueta LA SOLUCIÓN. icono_reloj entra con spring y la flecha de rebobinado gira a su alrededor | logo_claude_code en "Claude Code", icono_reloj |
 | 0:15–0:17 | "cinco pasos" | Las 5 casillas del ciclo aparecen en fila, vacías y numeradas 1-5 (el mapa del episodio) | — |
 | 0:17–0:21 | "Paso uno. Pides algo" | Sello PASO 1. Caja de chat; se teclea la petición de toma_01. Casilla 1: PIDES ALGO | toma_01 (solo el texto de la petición) |
-| 0:21–0:30 | "punto de guardado… checkpoint… se hace solo" | Sello PASO 2. Nace la línea de tiempo; una bandera se clava sola ANTES de que la petición se envíe. Etiqueta CHECKPOINT = PUNTO DE GUARDADO | — |
-| 0:30–0:35 | "Cada petición… punto de guardado nuevo" | Tres peticiones seguidas → tres banderas nuevas en la línea | — |
+| 0:21–0:30 | "punto de guardado… checkpoint… se hace solo" | Sello PASO 2. Nace la línea de tiempo; un icono_marcador cae y se clava solo ANTES de que la petición se envíe. Etiqueta CHECKPOINT = PUNTO DE GUARDADO | logo_claude_code, icono_marcador |
+| 0:30–0:35 | "Cada petición… punto de guardado nuevo" | Tres peticiones seguidas → tres icono_marcador nuevos en la línea | icono_marcador |
 | 0:35–0:39 | "los cien más recientes de la sesión" | Contador que sube hasta "100" con golpe. Etiqueta LOS 100 MÁS RECIENTES · POR SESIÓN | — |
-| 0:39–0:41 | "junto a la conversación… incluso otro día" | La bandera se engancha a una burbuja de chat; el calendario pasa una hoja. Etiqueta OTRO DÍA, TAMBIÉN | — |
+| 0:39–0:41 | "junto a la conversación… incluso otro día" | El icono_marcador se engancha a una burbuja de chat; el calendario pasa una hoja. Etiqueta OTRO DÍA, TAMBIÉN | icono_marcador |
 | 0:41–0:48 | "Paso tres… En rojo, lo que quita. En verde, lo que añade" | Sello PASO 3. Recreación del cambio de toma_01: la línea que se quita se marca en rojo con "–" en "rojo", la que se añade en verde con "+" en "verde". Etiquetas QUITA / AÑADE | toma_01 |
 | 0:48–0:55 | "Paso cuatro. Tú decides… aceptas o rechazas" | Sello PASO 4. Botones ✓ / ✕. El cursor pulsa rechazar (como en toma_01) y se teclea la nueva petición | toma_01 |
 | 0:55–0:59 | "Nada se cambia sin tu visto bueno" | Escudo con candado que se cierra. Sello NADA SIN TU VISTO BUENO | — |
 | 0:59–1:06 | "excepción… bypass permissions… ya no te pregunta" | Etiqueta EXCEPCIÓN. Interruptor "Bypass permissions" que se activa; el escudo se apaga y los cambios entran sin preguntar. Etiqueta SE SALTA LOS PERMISOS | toma_02 (opcional) |
-| 1:06–1:13 | "Paso cinco. ¿Algo ha fallado?… Escape dos veces" | Sello PASO 5. Un cambio sale mal (la ventana se agrieta otra vez). Cuadro de texto vacío; la tecla Esc cae dos veces con golpe ("ESC ×2") | logo_vscode en la barra de la ventana |
+| 1:06–1:13 | "Paso cinco. ¿Algo ha fallado?… Escape dos veces" | Sello PASO 5. Un cambio sale mal (la ventana se agrieta otra vez). Cuadro de texto vacío; icono_esc entra y se hunde dos veces con golpe (escala 1 → 0,9 → 1, dos veces) y etiqueta "×2" | logo_vscode en la barra de la ventana, icono_esc |
 | 1:13–1:18 | "o escribe barra rewind… rebobinar" | Se escribe "/" y aparece el menú con "Rewind" (toma_04); se teclea "/rewind". Etiqueta REWIND = REBOBINAR | toma_04 |
-| 1:18–1:27 | "Se abre un menú… Eliges el punto… confirmas" | Recreación de toma_03: menú "Rewind to..." con la lista de mensajes; el cursor elige uno anterior; "Fork and rewind" → Continue → "Code rewind successful". A la vez, en la línea de tiempo, la cámara retrocede hasta esa bandera | toma_03 |
+| 1:18–1:27 | "Se abre un menú… Eliges el punto… confirmas" | Recreación de toma_03: menú "Rewind to..." con la lista de mensajes; el cursor elige uno anterior; "Fork and rewind" → Continue → "Code rewind successful". A la vez, en la línea de tiempo, la cámara retrocede hasta ese icono_marcador | toma_03, icono_marcador |
 | 1:27–1:30 | "recuperas el código y la conversación" | La ventana de código y la burbuja de chat vuelven a su estado; la grieta desaparece. Etiquetas CÓDIGO ✓ y CONVERSACIÓN ✓ | — |
-| 1:30–1:32 | "máquina del tiempo para tu proyecto" | Reloj que gira al revés sobre la línea de tiempo. Sello MÁQUINA DEL TIEMPO | — |
-| 1:32–1:35 | "no lo que hayas tocado tú a mano" | Icono de mano editando un archivo; ese archivo NO vuelve atrás. Etiqueta OJO: TUS CAMBIOS A MANO NO SE DESHACEN | — |
-| 1:35–1:47 | "¿Por qué importa tanto?… quien tiene miedo de tocar" | Etiqueta POR QUÉ IMPORTA. Matraz: PRUEBAS → TE EQUIVOCAS → VUELVES ATRÁS (tres iconos que se encienden al nombrarlos). Cierra con dos caminos: uno avanza, el otro se queda quieto | — |
+| 1:30–1:32 | "máquina del tiempo para tu proyecto" | icono_reloj grande sobre la línea de tiempo, con la flecha de rebobinado girando a su alrededor. Sello MÁQUINA DEL TIEMPO | icono_reloj |
+| 1:32–1:35 | "no lo que hayas tocado tú a mano" | icono_mano se posa sobre un archivo; ese archivo NO vuelve atrás. Etiqueta OJO: TUS CAMBIOS A MANO NO SE DESHACEN | icono_mano |
+| 1:35–1:47 | "¿Por qué importa tanto?… quien tiene miedo de tocar" | Etiqueta POR QUÉ IMPORTA. icono_matraz entra balanceándose en "experimentar"; debajo, PRUEBAS → TE EQUIVOCAS → VUELVES ATRÁS (tres palabras que se encienden al nombrarlas; en la tercera, icono_reloj pequeño). Cierra con dos caminos: uno avanza, el otro se queda quieto | icono_matraz, icono_reloj |
 | 1:47–1:54 | "Tu tarea…" | Etiqueta TU TAREA. Lista con dos casillas que se marcan al nombrarlas: "Rechaza un cambio y pide otro" · "Prueba /rewind" | — |
 | 1:54–1:59 | "En resumen: pides, Claude guarda, te propone, tú decides… rebobinas" | El ciclo de 5 casillas completo; un punto de luz lo recorre y enciende cada casilla al decirla: PIDES · GUARDA · PROPONE · DECIDES · REBOBINAS | — |
 | 1:59–2:10 | CTA | Pregunta palabra a palabra; al decir "esquemas" entra esquema_ep7 en tarjeta inclinada con logo_drive al lado; AUDITORIA se teclea y se envía; AUDITORÍA PARA TU NEGOCIO | esquema_ep7, logo_drive |
 | 2:10–2:15 | "En el siguiente episodio… Sígueme" | La cuadrícula marca el EP.7 hecho y el EP.8 palpita → tarjeta de avance "EP.8 · ERRORES TÍPICOS / Y cómo solucionarlos" → logo_claude_code_texto, perfil @aigencyx.labs con logo_aigencyx de avatar, botón Seguir → Siguiendo ✓ | logo_claude_code_texto, logo_aigencyx |
 
-Casillas del ciclo (mismo texto que el esquema del episodio): 1 PIDES ALGO · 2 CHECKPOINT · 3 CLAUDE PROPONE · 4 TÚ DECIDES · 5 ¿ALGO FALLA? → /rewind. La casilla 5 va en coral más intenso.
+Casillas del ciclo (mismo texto que el esquema del episodio): 1 PIDES ALGO · 2 CHECKPOINT (con icono_marcador) · 3 CLAUDE PROPONE (con logo_claude) · 4 TÚ DECIDES · 5 ¿ALGO FALLA? → /rewind (con icono_reloj). La casilla 5 va en coral más intenso.
 
 ANIMACIÓN
 - Tiempos derivados de los timestamps por palabra, nunca a ojo.
