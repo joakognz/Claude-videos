@@ -1,0 +1,63 @@
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 9 (parte 1 de 2) de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Si hay dudas que BLOQUEAN el trabajo (un archivo que falta, un logo que no tienes), pregúntalas todas juntas en una sola lista numerada.
+4. No hace falta que me pidas confirmación para empezar: si no hay dudas bloqueantes, empieza directamente. Si las hay, espera solo esas respuestas y sigue.
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":9,"parte":"1/2","total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"Sora (títulos), Inter (subtítulos), JetBrains Mono (código)","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep9_parte1.mp3","timestamps":"ts_ep9_parte1.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.9 · 2/2 · LAS POTENTES","subtitulo":"Subagentes, MCP y Claude Code desde el móvil"},"cierre":"Sígueme para no perdértela." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos: logo_claude, logo_claude_code, logo_claude_code_texto, logo_vscode, logo_whatsapp, logo_drive, logo_aigencyx
+Imágenes: panaderia.jpg (ilustración de la fachada de la panadería: es el negocio del ejemplo), boceto_web.jpg (opcional: foto de un boceto a mano de la portada)
+Iconos planos coral que debes dibujar tú (no son marcas): ficha de empleado con clip, plano de obra con cuadrícula, ladrillo, lápiz de comentario, banderas de punto de guardado sobre un camino, flecha de rebobinar, ojo tachado (a ciegas).
+Tomas (referencia para animar): toma_01_claude_md, toma_02_imagen, toma_03_modo_plan, toma_04_rebobinar
+Audio: voz_ep9_parte1.mp3, ts_ep9_parte1.json (timestamps por palabra), musica.mp3 (opcional).
+
+IMÁGENES Y LOGOS (OBLIGATORIO)
+Cada escena donde se nombre una marca, herramienta o concepto con imagen debe mostrar el logo o la imagen que adjunto, en el momento exacto en que se dice. Usa muchos, de forma visible y con animación (entrada con spring, escalonados). No dibujes ni inventes logos ni imágenes de marcas: solo mis archivos. Si necesitas uno que no te he pasado, pídemelo y espera.
+
+ORIGINALIDAD
+Este reel NO debe parecerse al vídeo del curso: composición, escenas, metáforas y animaciones propias. Solo se mantiene la idea y los datos.
+Hilo visual de toda la parte 1: LA OBRA DE LA WEB DE LA PANADERÍA. En el centro hay una maqueta de la web (portada en blanco con cuadrícula de plano). Cada paso le añade una capa: la ficha de reglas se clava arriba (paso 1), la imagen pegada da forma a la portada (paso 2), el plano se aprueba y aparece el botón de WhatsApp (paso 3) y un camino con banderas de guardado corre por debajo (paso 4). En el resumen, las cuatro capas encajan y la web queda terminada.
+Además, cuando la voz dice "episodio cinco / seis / siete", aparece la rejilla de 50 casillas en pequeño y se enciende la casilla de ese episodio.
+Orden propio: memoria → imagen → plan → checkpoints, como un flujo de trabajo (el curso las repasa en otro orden, como lista). Ejemplo propio: una panadería (el curso usa otro negocio).
+
+TOMAS = MATERIAL DE REFERENCIA PARA ANIMAR
+Las tomas son grabaciones reales de mi pantalla. NO las muestres tal cual: recrea cada una como animación fiel, en el estilo de la serie, con la misma interfaz: mismos menús, paneles, texto y orden de clics. El texto se teclea animado y el cursor se mueve y hace clic como en la toma. No inventes pasos ni pantallas que no salgan en la toma. Sustituye por datos ficticios cualquier correo, token, ruta o nombre real. Proyecto ficticio: web-panaderia.
+
+INTRO (máx. 4 s)
+Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-8 iluminados, el 9 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.9 · 1/2".
+
+ESCENAS (tiempos orientativos; mandan los timestamps)
+| Minuto | Qué se ve | Logos / tomas |
+|---|---|---|
+| 0:00-0:04 | Intro. | logo_claude, logo_claude_code |
+| 0:04-0:17 | "pedir y cruzar los dedos": pantalla partida. Izquierda, una mano con los dedos cruzados y un ojo tachado (A CIEGAS). Derecha, una mesa de trabajo ordenada (EXPERTO). "cuatro funciones": cuatro fichas boca abajo caen en fila. "las más votadas por la comunidad": cada ficha recibe una estrella y un contador de votos que sube (sin cifras reales: solo barras). "cada día": un calendario pasa hojas. | logo_claude_code en la ficha EXPERTO |
+| 0:17-0:21 | "la web de una panadería": entra panaderia.jpg y de su escaparate sale la maqueta de la web en blanco sobre cuadrícula de plano, con el título "web-panaderia". | panaderia.jpg |
+| 0:21-0:41 | Sello "PASO 1" + "DALE MEMORIA". Se recrea toma_01: se abre CLAUDE.md y se teclean tres reglas (Panadería · Colores tostados · Trato cercano), cada una con su chip de color. "la ficha que le das a alguien nuevo": el archivo se convierte en una ficha con clip y se clava en la maqueta. "en cada sesión": tres pestañas de sesión se abren una tras otra y en todas aparece la ficha. "dejas de repetirte": un bocadillo que repite "es una panadería..." se tacha. "episodio cinco": rejilla mini con la casilla 5 encendida. | logo_vscode, logo_claude_code en la barra del editor · toma_01_claude_md |
+| 0:41-1:02 | Sello "PASO 2" + "ENSÉÑASELO". Se recrea toma_02: una imagen vuela al cuadro de Claude (boceto_web.jpg o, si no está, un boceto ficticio). Tres miniaturas se reparten al decirlas: UNA WEB QUE TE GUSTE · UN BOCETO A MANO · UN ERROR. Se teclea "hazme una portada como esta". "No necesitas saber cómo se llama cada cosa": etiquetas técnicas (header, hero, grid) se desvanecen. "la construye": el boceto se transforma en la portada de la maqueta, con los colores tostados. "episodio seis": rejilla mini, casilla 6. | logo_claude en el cuadro de Claude · toma_02_imagen · boceto_web.jpg |
+| 1:02-1:30 | Sello "PASO 3" + "MODO PLAN" con una estrella "N.º 1". Se recrea toma_03: el cursor pulsa el selector de modo abajo en el cuadro de Claude y elige "Plan". "Claude no toca nada": la maqueta se cubre con un candado suave. "qué páginas crea y en qué orden": el plan se despliega como documento con una lista numerada (Inicio · Nuestros panes · Encargos · Dónde estamos). "lo apruebas o lo corriges": dos botones, APROBAR y CORREGIR. Se añade el comentario "añade un botón para hacer encargos por WhatsApp" y aparece el logo de WhatsApp en la lista. "revisar el plano antes de poner el primer ladrillo": el documento se convierte en un plano de obra, un ladrillo espera arriba y no cae hasta el clic en APROBAR. Al aprobar, la maqueta gana el botón verde "Encargar por WhatsApp". "cuando todavía es fácil": sello CAMBIA ANTES DE CONSTRUIR. | logo_vscode, logo_whatsapp · toma_03_modo_plan |
+| 1:30-1:50 | Sello "PASO 4" + "CHECKPOINTS". "Antes de cada mensaje tuyo": bajo la maqueta corre un camino y en cada mensaje enviado se clava una bandera. "puntos de guardado de un videojuego": barra de nivel con banderas y el texto "PARTIDA GUARDADA". "Si algo se rompe": la portada se agrieta y se descoloca. Se recrea toma_04: el cursor pasa sobre un mensaje, aparece el botón de rebobinar, clic, "Rewind code to here". "vuelve a ese punto": la maqueta se recompone hacia atrás (rebobinado visible) hasta la última bandera. "No pierdes nada": sello NADA SE PIERDE. "episodio siete": rejilla mini, casilla 7. | logo_vscode · toma_04_rebobinar |
+| 1:50-1:56 | RESUMEN: las cuatro fichas del gancho se dan la vuelta en orden con la voz: MEMORIA · IMAGEN · PLAN · PUNTO DE GUARDADO. "ya no trabajas a ciegas": el ojo tachado del gancho se abre. La web de la panadería queda terminada. | panaderia.jpg |
+| 1:56-2:07 | CTA: la pregunta palabra a palabra; "AUDITORIA" se teclea en un cuadro de comentario y se envía; aparece la carpeta de esquemas. "si tienes un negocio": tarjeta AUDITORÍA PARA TU NEGOCIO · OPTIMIZA TUS PROCESOS. | logo_drive, logo_aigencyx |
+| 2:07-2:17 | AVANCE: la cuadrícula de 50 con la casilla 9 a medio llenar (1/2). Tarjeta "EP.9 · 2/2 · LAS POTENTES". Al decir "ayudantes", "conexiones" y "desde el móvil", tres iconos: ayudantes, enchufe y móvil. "Sígueme para no perdértela": botón Seguir → Siguiendo ✓ con @aigencyx.labs. | logo_claude_code, logo_aigencyx |
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "PASO 1" a "PASO 4" donde corresponda.
+- Como mucho 3 s sin un cambio visible.
+- Música a -20 dB con ducking bajo la voz (si hay música).
+- Marca de agua con el handle, badge "EP.9/50 · 1/2" y barra de progreso.
+
+ENTREGA
+Haz directamente el render final a 1080x1920. NO hagas render de prueba y NO esperes mi aprobación: entrega el vídeo terminado.

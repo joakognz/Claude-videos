@@ -1,0 +1,27 @@
+TOMAS DEL EP.9 · NIVEL EXPERTO
+
+Por defecto NO hace falta grabarlas: se recrean como animación con datos ficticios, tomando la interfaz
+de Visual Studio Code con Claude Code como referencia (como en el EP.8). Del vídeo del curso solo se mira la
+interfaz; ningún fotograma suyo entra en el reel.
+Si prefieres que salga tu pantalla real, grábalas así (sin voz ni cámara, ratón despacio, 1 s de pausa antes
+de cada clic) en una carpeta de prueba llamada web-panaderia abierta en Visual Studio Code con el panel de
+Claude Code a la vista.
+
+PARTE 1
+toma_01_claude_md.mp4 (10 s): abre CLAUDE.md y escribe: «Web de una panadería. Colores tostados. Trato cercano.»
+toma_02_imagen.mp4 (15 s): copia una captura o la foto de un boceto y pégala en el cuadro de Claude. Escribe
+  «hazme una portada como esta» y no lo envíes todavía.
+toma_03_modo_plan.mp4 (25 s): pulsa el modo, abajo en el cuadro de Claude, y elige «Plan». Envía «crea la web
+  de la panadería». Cuando se abra el plan, añade un comentario: «añade un botón para hacer encargos por
+  WhatsApp». Apruébalo.
+toma_04_rebobinar.mp4 (15 s): pasa el ratón por encima de uno de tus mensajes, pulsa el botón de rebobinar y
+  elige «Rewind code to here».
+
+PARTE 2
+toma_05_subagentes.mp4 (20 s): pide «revisa los textos de la web y busca fallos con dos ayudantes a la vez».
+  Que se vea el contador de agentes abajo en el cuadro y, si puedes, ábrelo para ver el mapa de agentes.
+toma_06_mcp.mp4 (10 s): escribe /mcp y para dos segundos en la lista de conexiones (no enseñes claves).
+toma_07_remote_control.mp4 (20 s): escribe /remote-control y envíalo: sale «Remote Control is active». Después,
+  graba la pantalla del móvil: abre la app de Claude, entra en la sesión y escribe un mensaje corto.
+toma_08_trucos.mp4 (20 s): pulsa el historial de sesiones (arriba en el panel) y abre una anterior; escribe «/»
+  para que salga el menú de comandos; pulsa el micrófono, di una frase y páralo.

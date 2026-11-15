@@ -1,0 +1,62 @@
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 9 (parte 2 de 2) de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Si hay dudas que BLOQUEAN el trabajo (un archivo que falta, un logo que no tienes), pregúntalas todas juntas en una sola lista numerada.
+4. No hace falta que me pidas confirmación para empezar: si no hay dudas bloqueantes, empieza directamente. Si las hay, espera solo esas respuestas y sigue.
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":9,"parte":"2/2","total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"Sora (títulos), Inter (subtítulos), JetBrains Mono (código)","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep9_parte2.mp3","timestamps":"ts_ep9_parte2.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.10 · EL MAPA COMPLETO","subtitulo":"Todo Claude Code de un vistazo"},"cierre":"Sígueme para no perdértelo." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos: logo_claude, logo_claude_code, logo_claude_code_texto, logo_vscode, logo_anthropic, logo_mcp, logo_airtable, logo_hostinger, logo_drive, logo_aigencyx
+Imágenes: panaderia.jpg (la misma panadería de la parte 1)
+Iconos planos coral que debes dibujar tú (no son marcas): encargado con portapapeles, ayudantes (personitas con casco), burbujas de trabajo separadas, enchufe y regleta, móvil, portátil, nube con señal, reloj de historial, tecla "/", micrófono con ondas.
+Tomas (referencia para animar): toma_05_subagentes, toma_06_mcp, toma_07_remote_control, toma_08_trucos
+Audio: voz_ep9_parte2.mp3, ts_ep9_parte2.json (timestamps por palabra), musica.mp3 (opcional).
+
+IMÁGENES Y LOGOS (OBLIGATORIO)
+Cada escena donde se nombre una marca, herramienta o concepto con imagen debe mostrar el logo o la imagen que adjunto, en el momento exacto en que se dice. Usa muchos, de forma visible y con animación (entrada con spring, escalonados). No dibujes ni inventes logos ni imágenes de marcas: solo mis archivos. Si necesitas uno que no te he pasado, pídemelo y espera.
+
+ORIGINALIDAD
+Este reel NO debe parecerse al vídeo del curso: composición, escenas, metáforas y animaciones propias. Solo se mantiene la idea y los datos.
+Hilo visual de toda la parte 2: EL OBRADOR DE LA PANADERÍA. Claude es el encargado del obrador. Los subagentes son ayudantes con su propia mesa (paso 1), el MCP es la regleta donde se enchufan las herramientas del negocio (paso 2), el móvil es una ventana al obrador desde la calle (paso 3) y los trucos son tres herramientas pequeñas que se cuelgan en la pared (paso 4). Ejemplo propio: Airtable con los encargos de la panadería (el curso usa otro ejemplo).
+
+TOMAS = MATERIAL DE REFERENCIA PARA ANIMAR
+Las tomas son grabaciones reales de mi pantalla. NO las muestres tal cual: recrea cada una como animación fiel, en el estilo de la serie, con la misma interfaz: mismos menús, paneles, texto y orden de clics. El texto se teclea animado y el cursor se mueve y hace clic como en la toma. No inventes pasos ni pantallas que no salgan en la toma. Sustituye por datos ficticios cualquier correo, token, ruta o nombre real. Proyecto ficticio: web-panaderia.
+
+INTRO (máx. 4 s)
+Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-8 iluminados, el 9 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.9 · 2/2".
+
+ESCENAS (tiempos orientativos; mandan los timestamps)
+| Minuto | Qué se ve | Logos / tomas |
+|---|---|---|
+| 0:00-0:04 | Intro. | logo_claude, logo_claude_code |
+| 0:04-0:13 | Gancho: tres preguntas que caen una a una al decirlas, cada una con su icono: ¿REPARTIR EL TRABAJO? (ayudantes) · ¿USAR TUS HERRAMIENTAS? (enchufe) · ¿HACERTE CASO DESDE EL MÓVIL? (móvil). "Puede": las tres se marcan con ✓ coral a la vez. "las funciones potentes": título LAS POTENTES con un rayo. | logo_claude_code |
+| 0:13-0:16 | "la web de la panadería": panaderia.jpg con la web terminada de la parte 1 en su escaparate; la cámara entra por la puerta al obrador. | panaderia.jpg |
+| 0:16-0:38 | Sello "PASO 1" + "SUBAGENTES". "lanzar ayudantes": del encargado (logo_claude en el delantal) salen dos ayudantes, cada uno a su mesa. "en su propio espacio": cada mesa queda dentro de su burbuja; dentro de las burbujas se mueven papeles, fuera todo sigue limpio. "le entrega el resultado": cada ayudante devuelve una tarjeta resumen al encargado. "no se llena de ruido": la conversación principal, a un lado, se mantiene corta mientras las burbujas trabajan. "uno revisa los textos, otro busca fallos": etiquetas TEXTOS y FALLOS sobre cada ayudante. Se recrea toma_05: abajo en el cuadro de Claude aparece el contador "2 agents". "solo hablas con el encargado": el cursor escribe solo al encargado. | logo_vscode, logo_claude · toma_05_subagentes |
+| 0:38-1:03 | Sello "PASO 2" + "MCP". Entra logo_mcp. "estándar abierto que creó Anthropic": logo_anthropic junto a logo_mcp con la etiqueta ESTÁNDAR ABIERTO. "enchufe universal": una regleta con logo_claude_code en un extremo; las clavijas se van enchufando. "conectas Airtable": logo_airtable se enchufa y se despliega una tabla ficticia de encargos (Pan de masa madre · Barra rústica · Roscón) con su número de encargos. "pon en la portada los panes más encargados": se teclea la petición y los tres panes vuelan de la tabla a la portada de la web. "Hostinger también tiene su conexión": logo_hostinger se enchufa con las etiquetas DOMINIO y HOSTING. Se recrea toma_06 (la lista de /mcp con las dos conexiones, sin claves). "trabaja con los datos de tu negocio": sello DE CÓDIGO A NEGOCIO. | logo_mcp, logo_anthropic, logo_claude_code, logo_airtable, logo_hostinger · toma_06_mcp |
+| 1:03-1:24 | Sello "PASO 3" + "REMOTE CONTROL". Se recrea toma_07: en el cuadro de Claude se teclea /remote-control y aparece la línea "Remote Control is active · Continue here, on your phone, or at claude.ai/code" con la pastilla "Remote Control". "desde la app de Claude en el móvil o desde el navegador": a la derecha entra un móvil con la app de Claude y la misma conversación; abajo, una ventana de navegador con claude.ai/code. Un hilo de luz une portátil, móvil y navegador. "mientras estás fuera": el móvil sale a la calle (fondo con la fachada de la panadería), se envía "cambia el horario de la portada" y en el portátil, que se queda en el obrador, la web cambia. "el ordenador tiene que seguir encendido": el portátil con un piloto verde y el sello DÉJALO ENCENDIDO. | logo_vscode, logo_claude · toma_07_remote_control · panaderia.jpg |
+| 1:24-1:42 | Sello "PASO 4" + "TRES TRUCOS". Tres herramientas se cuelgan en la pared, una por truco: 1) reloj de historial: se recrea el historial de sesiones de toma_08 y se abre la sesión de ayer, que continúa donde estaba. 2) tecla "/": se teclea "/" y se despliega el menú de comandos con /init resaltado (y un guiño a la casilla del EP.5). 3) micrófono: se pulsa, salen ondas y el texto se escribe solo en el cuadro. | logo_vscode · toma_08_trucos |
+| 1:42-1:50 | RESUMEN: tres tarjetas en fila que se encienden con la voz: SUBAGENTES · REPARTEN · MCP · CONECTA · REMOTE CONTROL · DESDE EL MÓVIL. | logo_mcp, logo_claude |
+| 1:50-2:00 | CTA: la pregunta palabra a palabra; "AUDITORIA" se teclea en un cuadro de comentario y se envía; aparece la carpeta de esquemas. "si tienes un negocio": tarjeta AUDITORÍA PARA TU NEGOCIO · OPTIMIZA TUS PROCESOS. | logo_drive, logo_aigencyx |
+| 2:00-2:07 | AVANCE: la cuadrícula de 50 marca el EP.9 hecho y el EP.10 palpita. Tarjeta "EP.10 · EL MAPA COMPLETO" / "Todo Claude Code de un vistazo". "Sígueme para no perdértelo": botón Seguir → Siguiendo ✓ con @aigencyx.labs. | logo_claude_code, logo_aigencyx |
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "PASO 1" a "PASO 4" donde corresponda.
+- Los comandos (/remote-control, /init, /mcp) y claude.ai/code van en tipografía monoespaciada. En los subtítulos, "M C P" se escribe "MCP" y "barra remote control" se escribe "/remote-control".
+- Como mucho 3 s sin un cambio visible.
+- Música a -20 dB con ducking bajo la voz (si hay música).
+- Marca de agua con el handle, badge "EP.9/50 · 2/2" y barra de progreso.
+
+ENTREGA
+Haz directamente el render final a 1080x1920. NO hagas render de prueba y NO esperes mi aprobación: entrega el vídeo terminado.

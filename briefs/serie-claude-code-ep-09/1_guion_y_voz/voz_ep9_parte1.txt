@@ -1,0 +1,19 @@
+Episodio nueve de cincuenta. Máster de Claude Code. Parte uno.
+
+Hay dos formas de usar Claude Code: pedir y cruzar los dedos, o trabajar como un experto. La diferencia está en cuatro funciones. Son las más votadas por la comunidad, y las vas a usar cada día.
+
+Te las enseño con un encargo: la web de una panadería.
+
+Paso uno. Dale memoria. En el archivo CLAUDE punto M D escribes las reglas una sola vez: es para una panadería, colores tostados y trato cercano. Es como la ficha que le das a alguien nuevo el primer día. Claude la lee en cada sesión, y tú dejas de repetirte. Lo vimos en el episodio cinco.
+
+Paso dos. Enséñale lo que quieres. Pega en el cuadro de Claude una captura: una web que te guste, un boceto hecho a mano o un error que te salga. Y escribe: "hazme una portada como esta". No necesitas saber cómo se llama cada cosa. Claude mira la imagen y la construye. Salió en el episodio seis.
+
+Paso tres. El modo Plan, el más votado de todos. Abajo, en el cuadro de Claude, cambia el modo a Plan. Ahora Claude no toca nada: primero te enseña qué va a hacer. Qué páginas crea y en qué orden. Tú lo apruebas o lo corriges. Por ejemplo: "añade un botón para hacer encargos por WhatsApp". Es como revisar el plano antes de poner el primer ladrillo. Si algo no te cuadra, lo cambias cuando todavía es fácil.
+
+Paso cuatro. Los checkpoints. Antes de cada mensaje tuyo, Claude Code guarda cómo estaba el código. Son como los puntos de guardado de un videojuego. Si algo se rompe, pasa el ratón por encima de tu mensaje, pulsa rebobinar, y el código vuelve a ese punto. No pierdes nada. Te lo enseñé en el episodio siete.
+
+En resumen: memoria, imagen, plan y punto de guardado. Con estas cuatro, ya no trabajas a ciegas.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En la segunda parte, las funciones potentes: ayudantes que trabajan por ti, conexiones con tus herramientas y Claude Code desde el móvil. Sígueme para no perdértela.

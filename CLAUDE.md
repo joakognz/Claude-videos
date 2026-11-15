@@ -21,8 +21,9 @@ Este archivo cuenta lo que vive en el repositorio.
 | 02 VS Code, GitHub, PUSH y PULL | 0.2 | `episodios/ep-02.json` (composición «Master») · `entregas/serie-claude-code-ep-02.mp4` |
 | 03–07 | 0.3–1.4 | no están en este repositorio (hechos en la carpeta del usuario) |
 | 08 Errores típicos y troubleshooting | 1.5 | `episodios/ep-08.json` · `entregas/serie-claude-code-ep-08.mp4` · `briefs/serie-claude-code-ep-08/` |
+| 09 Nivel experto (2 partes) | 1.6 | guion listo, a la espera de la voz y los logos · `briefs/serie-claude-code-ep-09/` |
 
-Hoja de ruta: EP09 Nivel experto (1.6, probable 2 partes) · EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
+Hoja de ruta: EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
 EP12 Computer Use (1.9) · EP13 Cierre del módulo 1: pregunta a la audiencia (web / automatizaciones / a medida).
 
 ### Cómo se hace un episodio aquí
