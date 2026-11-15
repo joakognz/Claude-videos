@@ -1,0 +1,23 @@
+Episodio siete de cincuenta. Máster de Claude Code.
+
+¿Y si lo estropeo? Es el mayor miedo cuando empiezas con Claude Code. Hoy te lo quito, porque Claude Code guarda tu trabajo solo y te deja volver atrás en el tiempo. Te lo enseño en cinco pasos.
+
+Paso uno. Pides algo. Una instrucción normal, con tus palabras.
+
+Paso dos. Antes de tocar nada, Claude Code crea un punto de guardado. Se llama checkpoint, y se hace solo. Cada petición que haces es un punto de guardado nuevo. Guarda los cien más recientes de la sesión, y los conserva junto a la conversación. Así que puedes volver atrás incluso otro día.
+
+Paso tres. Claude te propone el cambio, marcado en colores. En rojo, lo que quita. En verde, lo que añade.
+
+Paso cuatro. Tú decides. Lo revisas, y lo aceptas o lo rechazas. Si lo rechazas, le pides otro cambio. Nada se cambia sin tu visto bueno. Con una excepción: si activas el modo que se salta los permisos, el llamado bypass permissions, Claude ya no te pregunta.
+
+Paso cinco. ¿Algo ha fallado? Vuelves atrás. Con el cuadro de texto vacío, pulsa la tecla Escape dos veces, o escribe barra rewind, que en inglés significa rebobinar. Se abre un menú con tus mensajes anteriores. Eliges el punto al que quieres volver, confirmas, y recuperas el código y la conversación tal como estaban. Es una máquina del tiempo para tu proyecto. Eso sí: deshace lo que cambió Claude, no lo que hayas tocado tú a mano.
+
+¿Por qué importa tanto? Porque te da permiso para experimentar. Pruebas, te equivocas, y vuelves atrás sin perder nada. Esa seguridad separa a quien avanza de quien tiene miedo de tocar.
+
+Tu tarea: rechaza un cambio a propósito y pide otro. Y prueba barra rewind para volver a un punto anterior.
+
+En resumen: pides, Claude guarda, te propone, tú decides, y si algo falla, rebobinas.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En el siguiente episodio, los errores típicos y cómo solucionarlos. Sígueme para no perdértelo.

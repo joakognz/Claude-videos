@@ -1,0 +1,19 @@
+EP07 · Cambios y correcciones (lección 1.4) · notas
+
+Material usado: esquema propio "esquema_revision_cambios.pdf" + fotogramas del vídeo de la lección
+(no se transcribió el audio del curso ni se subió a ningún servicio).
+
+Datos comprobados en la documentación oficial de checkpointing de Claude Code (15/11/2026):
+- Cada petición crea un checkpoint; se guardan los 100 más recientes de la sesión.
+- Se guardan con la conversación: se puede usar /rewind al retomar la sesión otro día
+  (los archivos de respaldo se borran por defecto a los 30 días aprox.).
+- Esc dos veces abre el menú solo con el cuadro de texto vacío (si hay texto, lo borra).
+- No se deshacen los cambios hechos a mano ni por comandos de terminal (bash).
+
+Decisiones:
+- Una sola parte, 360 palabras (~2:15-2:25).
+- "BYPASS PERMISSIONS PLAN" del esquema se cuenta como "el modo que se salta los permisos, el llamado bypass permissions".
+- Se añade el aviso "no deshace lo que hayas tocado tú a mano" (sale en el diálogo real del rewind).
+- Avance: EP.8 · Errores típicos y cómo solucionarlos.
+
+Pendiente: comprobar que el teaser del EP06 anuncia "cambios y correcciones".

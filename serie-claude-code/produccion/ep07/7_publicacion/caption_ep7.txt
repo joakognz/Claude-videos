@@ -1,0 +1,11 @@
+¿Te da miedo que Claude Code te estropee el proyecto? 😅
+
+Episodio 7 del Máster de Claude Code: cómo revisar cada cambio antes de aceptarlo y volver atrás si algo sale mal.
+
+· Checkpoints: Claude Code guarda tu trabajo solo antes de cada petición
+· Ves el cambio en colores y tú decides: aceptar o rechazar
+· /rewind: tu máquina del tiempo ⏪
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+#claudecode #inteligenciaartificial #automatizacion #desarrolloweb #pymes #productividad

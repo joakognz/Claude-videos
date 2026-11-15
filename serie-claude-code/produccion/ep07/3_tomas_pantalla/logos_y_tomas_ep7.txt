@@ -1,0 +1,52 @@
+EP07 · CAMBIOS Y CORRECCIONES · LOGOS Y TOMAS
+
+LOGOS DEL EPISODIO
+| Logo                    | Dónde sale                          | Estado |
+|-------------------------|-------------------------------------|--------|
+| logo_claude             | intro                               | TIENES |
+| logo_claude_code        | intro, "Claude Code guarda…"        | TIENES |
+| logo_claude_code_texto  | cierre (Seguir)                     | TIENES |
+| logo_vscode             | paso 5 (ventana del rewind)         | TIENES |
+| logo_drive              | CTA (esquemas)                      | TIENES |
+No falta ninguno. El resto son iconos planos que dibuja Remotion (no son marcas).
+
+TOMAS A GRABAR (en tu pantalla, VS Code con la extensión de Claude Code)
+Antes de grabar:
+- Usa un proyecto de prueba con datos ficticios, por ejemplo una carpeta "mi-proyecto" con un index.html sencillo.
+  Si no tienes uno, pídele a Claude: "Crea un index.html con el título Mi negocio".
+- Graba solo la ventana de VS Code, sin cámara. Sube el zoom de VS Code (Cmd y +) para que se lea en el móvil.
+- En el selector de modo (debajo del cuadro de texto de Claude), deja el modo que PREGUNTA antes de editar.
+  No uses "editar automáticamente" ni "Bypass permissions", o no saldrá el cambio para aceptar o rechazar.
+- Nombres: toma_01.mp4, toma_02.mp4… en 3_tomas_pantalla.
+
+toma_01 · Ver el cambio, rechazarlo y pedir otro (pasos 3 y 4) · unos 30-40 s
+1. Escribe en el chat: Cambia el título de la portada por Bienvenido a mi negocio   → Enter.
+2. Cuando Claude te enseñe el cambio en colores (rojo lo que quita, verde lo que añade),
+   deja el ratón quieto 2-3 segundos encima de esas líneas.
+3. Pulsa la opción de RECHAZAR (la que dice "No").
+4. Escribe: Mejor ponlo todo en mayúsculas   → Enter.
+5. Cuando enseñe el nuevo cambio, pulsa ACEPTAR (la que dice "Yes").
+
+toma_02 · OPCIONAL · Selector de modos (excepción del paso 4) · unos 5 s
+1. Abre el selector de modo que hay debajo del cuadro de texto.
+2. Si aparece "Bypass permissions", pon el ratón encima 2 segundos SIN activarlo y cierra el menú.
+   Si no aparece, no la grabes: lo animo con un icono.
+
+toma_03 · Volver atrás con Esc dos veces (paso 5) · unos 20-30 s
+(Hazla justo después de la toma_01, en la misma conversación.)
+1. Con el cuadro de texto VACÍO, pulsa Esc dos veces.
+2. Sale el menú "Rewind to..." ("Select a message to restore code and fork the conversation from that point")
+   con la lista de tus mensajes. Pasa el ratón por la lista.
+3. Haz clic en tu primer mensaje ("Cambia el título de la portada…").
+4. Sale "Fork and rewind" con las líneas que se quitan y se añaden, la lista de archivos
+   y el aviso "Rewinding does not affect files edited manually or via bash". Pulsa "1 Continue".
+5. Espera a que salga "Code rewind successful".
+6. Abre index.html y deja ver 2 segundos que el título ha vuelto al original.
+
+toma_04 · Volver atrás escribiendo /rewind (paso 5) · unos 8 s
+1. En el cuadro de texto vacío escribe solo "/".
+2. Sale el menú (Attach file…, Mention file from this project…, Clear conversation, Rewind…).
+   Pasa el ratón por "Rewind" y haz clic.
+3. Cuando se abra "Rewind to...", ciérralo con Esc.
+
+Recuerda: el vídeo del curso nunca se pasa a Remotion. Solo tus tomas.

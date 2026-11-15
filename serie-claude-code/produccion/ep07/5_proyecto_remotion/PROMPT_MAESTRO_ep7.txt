@@ -1,0 +1,91 @@
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 7 de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+Tema del episodio: "Cambios y correcciones · Trabajar sin miedo a romper nada". Checkpoints (puntos de guardado automáticos), ver el cambio antes de aceptarlo, y volver atrás con /rewind.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Hazme TODAS tus dudas en una sola lista numerada (estilo, tiempos, logos, tomas).
+4. No generes código ni renders hasta que yo responda "adelante".
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":7,"total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"sans moderna","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep7.mp3","timestamps":"ts_ep7.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.8 · ERRORES TÍPICOS","subtitulo":"Y cómo solucionarlos"},"cierre":"Sígueme para no perdértelo." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos: logo_claude, logo_claude_code (pixelado), logo_claude_code_texto, logo_vscode, logo_drive.
+Iconos planos coral que debes dibujar tú:
+- bocadillo con "¿Y si lo estropeo?" y una grieta (el miedo)
+- bandera de punto de guardado (checkpoint) clavada en una línea de tiempo
+- contador "100"
+- calendario que pasa una hoja ("otro día")
+- burbuja de chat (la conversación)
+- líneas de código con marca "–" (quita) y "+" (añade)
+- botones ✓ aceptar / ✕ rechazar
+- escudo con candado (tu visto bueno) e interruptor "bypass" con señal de aviso
+- tecla "Esc" (se pulsa dos veces)
+- flecha circular hacia atrás / reloj que gira al revés (máquina del tiempo)
+- mano (cambios hechos a mano)
+- matraz (experimentar)
+- lista de tareas con dos casillas
+Tomas (referencia para animar): toma_01…toma_04 (toma_02 es opcional).
+Audio: voz_ep7.mp3, ts_ep7.json (timestamps por palabra), musica.mp3 (opcional).
+
+TOMAS = MATERIAL DE REFERENCIA PARA ANIMAR
+Las tomas son grabaciones reales de mi pantalla. NO las muestres tal cual: recrea cada una como animación fiel, en el estilo de la serie, con la misma interfaz: mismos menús, paneles, texto y orden de clics. El texto se teclea animado y el cursor se mueve y hace clic como en la toma. No inventes pasos ni pantallas que no salgan en la toma. Sustituye por datos ficticios cualquier correo, token, ruta o nombre real.
+- toma_01: pedir un cambio, ver el cambio en colores, rechazarlo y pedir otro (pasos 3 y 4).
+- toma_02 (opcional): el selector de modos con la opción "Bypass permissions" (excepción del paso 4). Si no llega, anímalo solo con el icono del interruptor.
+- toma_03: Esc dos veces → menú "Rewind to..." → elegir un mensaje → "Fork and rewind" → Continue → "Code rewind successful" (paso 5).
+- toma_04: escribir "/" en el chat → opción "Rewind" en el menú (paso 5, "o escribe barra rewind").
+En los diálogos del rewind, las rutas de archivo se sustituyen por rutas ficticias cortas (por ejemplo, mi-proyecto/index.html).
+
+INTRO (máx. 4 s)
+Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-6 iluminados, el 7 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.7".
+
+ESCENAS (tiempos orientativos; mandan los timestamps)
+Metáfora que guía todo el episodio: una LÍNEA DE TIEMPO horizontal con banderas (los checkpoints). Aparece en el paso 2, crece con cada petición y en el paso 5 la cámara viaja hacia atrás por ella.
+
+| Tiempo | Voz (ancla) | Qué se ve | Logos / tomas |
+|---|---|---|---|
+| 0:00–0:03 | "Episodio siete de cincuenta…" | Intro de la cuadrícula → título | logo_claude, logo_claude_code |
+| 0:03–0:10 | "¿Y si lo estropeo?" | Bocadillo "¿Y si lo estropeo?" que tiembla; aparece una grieta sobre una ventana de código. Etiqueta EL MIEDO | — |
+| 0:10–0:15 | "guarda tu trabajo solo… volver atrás en el tiempo" | La grieta se cierra al revés (rebobinado). Etiqueta LA SOLUCIÓN. Reloj que gira hacia atrás | logo_claude_code en "Claude Code" |
+| 0:15–0:17 | "cinco pasos" | Las 5 casillas del ciclo aparecen en fila, vacías y numeradas 1-5 (el mapa del episodio) | — |
+| 0:17–0:21 | "Paso uno. Pides algo" | Sello PASO 1. Caja de chat; se teclea la petición de toma_01. Casilla 1: PIDES ALGO | toma_01 (solo el texto de la petición) |
+| 0:21–0:30 | "punto de guardado… checkpoint… se hace solo" | Sello PASO 2. Nace la línea de tiempo; una bandera se clava sola ANTES de que la petición se envíe. Etiqueta CHECKPOINT = PUNTO DE GUARDADO | — |
+| 0:30–0:35 | "Cada petición… punto de guardado nuevo" | Tres peticiones seguidas → tres banderas nuevas en la línea | — |
+| 0:35–0:39 | "los cien más recientes de la sesión" | Contador que sube hasta "100" con golpe. Etiqueta LOS 100 MÁS RECIENTES · POR SESIÓN | — |
+| 0:39–0:41 | "junto a la conversación… incluso otro día" | La bandera se engancha a una burbuja de chat; el calendario pasa una hoja. Etiqueta OTRO DÍA, TAMBIÉN | — |
+| 0:41–0:48 | "Paso tres… En rojo, lo que quita. En verde, lo que añade" | Sello PASO 3. Recreación del cambio de toma_01: la línea que se quita se marca en rojo con "–" en "rojo", la que se añade en verde con "+" en "verde". Etiquetas QUITA / AÑADE | toma_01 |
+| 0:48–0:55 | "Paso cuatro. Tú decides… aceptas o rechazas" | Sello PASO 4. Botones ✓ / ✕. El cursor pulsa rechazar (como en toma_01) y se teclea la nueva petición | toma_01 |
+| 0:55–0:59 | "Nada se cambia sin tu visto bueno" | Escudo con candado que se cierra. Sello NADA SIN TU VISTO BUENO | — |
+| 0:59–1:06 | "excepción… bypass permissions… ya no te pregunta" | Etiqueta EXCEPCIÓN. Interruptor "Bypass permissions" que se activa; el escudo se apaga y los cambios entran sin preguntar. Etiqueta SE SALTA LOS PERMISOS | toma_02 (opcional) |
+| 1:06–1:13 | "Paso cinco. ¿Algo ha fallado?… Escape dos veces" | Sello PASO 5. Un cambio sale mal (la ventana se agrieta otra vez). Cuadro de texto vacío; la tecla Esc cae dos veces con golpe ("ESC ×2") | logo_vscode en la barra de la ventana |
+| 1:13–1:18 | "o escribe barra rewind… rebobinar" | Se escribe "/" y aparece el menú con "Rewind" (toma_04); se teclea "/rewind". Etiqueta REWIND = REBOBINAR | toma_04 |
+| 1:18–1:27 | "Se abre un menú… Eliges el punto… confirmas" | Recreación de toma_03: menú "Rewind to..." con la lista de mensajes; el cursor elige uno anterior; "Fork and rewind" → Continue → "Code rewind successful". A la vez, en la línea de tiempo, la cámara retrocede hasta esa bandera | toma_03 |
+| 1:27–1:30 | "recuperas el código y la conversación" | La ventana de código y la burbuja de chat vuelven a su estado; la grieta desaparece. Etiquetas CÓDIGO ✓ y CONVERSACIÓN ✓ | — |
+| 1:30–1:32 | "máquina del tiempo para tu proyecto" | Reloj que gira al revés sobre la línea de tiempo. Sello MÁQUINA DEL TIEMPO | — |
+| 1:32–1:35 | "no lo que hayas tocado tú a mano" | Icono de mano editando un archivo; ese archivo NO vuelve atrás. Etiqueta OJO: TUS CAMBIOS A MANO NO SE DESHACEN | — |
+| 1:35–1:47 | "¿Por qué importa tanto?… quien tiene miedo de tocar" | Etiqueta POR QUÉ IMPORTA. Matraz: PRUEBAS → TE EQUIVOCAS → VUELVES ATRÁS (tres iconos que se encienden al nombrarlos). Cierra con dos caminos: uno avanza, el otro se queda quieto | — |
+| 1:47–1:54 | "Tu tarea…" | Etiqueta TU TAREA. Lista con dos casillas que se marcan al nombrarlas: "Rechaza un cambio y pide otro" · "Prueba /rewind" | — |
+| 1:54–1:59 | "En resumen: pides, Claude guarda, te propone, tú decides… rebobinas" | El ciclo de 5 casillas completo; un punto de luz lo recorre y enciende cada casilla al decirla: PIDES · GUARDA · PROPONE · DECIDES · REBOBINAS | — |
+| 1:59–2:10 | CTA | Pregunta palabra a palabra; AUDITORIA se teclea y se envía; ESQUEMAS DEL EPISODIO con logo_drive; AUDITORÍA PARA TU NEGOCIO | logo_drive |
+| 2:10–2:15 | "En el siguiente episodio… Sígueme" | La cuadrícula marca el EP.7 hecho y el EP.8 palpita → tarjeta de avance "EP.8 · ERRORES TÍPICOS / Y cómo solucionarlos" → logo_claude_code_texto, perfil @aigencyx.labs, botón Seguir → Siguiendo ✓ | logo_claude_code_texto |
+
+Casillas del ciclo (mismo texto que el esquema del episodio): 1 PIDES ALGO · 2 CHECKPOINT · 3 CLAUDE PROPONE · 4 TÚ DECIDES · 5 ¿ALGO FALLA? → /rewind. La casilla 5 va en coral más intenso.
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "PASO 1" a "PASO 5" donde corresponda (golpe al caer, tick al completarse).
+- Rojo y verde SOLO en las líneas del cambio (paso 3) y en los contadores del diálogo "Fork and rewind", como en la interfaz real. El resto, paleta de la serie.
+- Música a -20 dB con ducking bajo la voz (si hay música).
+- Marca de agua con el handle, badge "EP.7/50" y barra de progreso.
+
+ENTREGA
+1. Render de prueba a 540x960. 2. Espera mi visto bueno. 3. Render final a 1080x1920.
