@@ -64,14 +64,14 @@ const Codigo: React.FC<{ children: React.ReactNode; color?: string }> = ({ child
 
 export const Pasos34: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
   const T = tiempos(L);
-  const fueraA = T.visto - 0.25;
+  const fueraA = T.visto + 0.15; // la otra propuesta se queda en pantalla mientras suena «nada se cambia sin tu…»
   const tomas: Toma[] = [
     { t: desde - 1, x: 540, y: 1130, z: 0.96 },
     { t: T.colores - 0.3, x: 540, y: 1050, z: 1.1, d: 0.9 },
     { t: T.p4 - 0.25, x: 540, y: 1130, z: 1.0, d: 0.9 },
     { t: T.si - 0.3, x: 580, y: 1190, z: 1.03, d: 0.9 },
     { t: T.pides - 0.25, x: 540, y: 1150, z: 1.0, d: 0.8 },
-    { t: T.visto - 0.7, x: 540, y: SY + 110, z: 1.05, d: 0.8 },
+    { t: T.visto - 0.25, x: 540, y: SY + 110, z: 1.05, d: 0.7 },
     { t: T.con - 0.3, x: 540, y: SY + 300, z: 0.97, d: 1.0 },
   ];
   // estado del cambio: propuesta 1 → rechazada → propuesta 2
@@ -145,20 +145,20 @@ export const Pasos34: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
 
         {/* nada sin tu visto bueno */}
         {(() => {
-          const v = vis(t, T.visto - 0.45, hasta + 0.4, 0.5);
+          const v = vis(t, T.visto - 0.1, hasta + 0.4, 0.5);
           if (!v.on) return null;
           const color = sinEscudo > 0.5 ? C.tenue : C.acento;
           return (
-            <div style={{ position: "absolute", left: 540 - 140, top: SY - 150, width: 280, height: 300, opacity: v.opacity * (1 - 0.35 * sinEscudo), transform: `translateY(${v.y}px) scale(${v.scale * (1 + 0.08 * pulso(t, T.visto + 0.25, 0.35))})` }}>
+            <div style={{ position: "absolute", left: 540 - 140, top: SY - 150, width: 280, height: 300, opacity: v.opacity * (1 - 0.35 * sinEscudo), transform: `translateY(${v.y}px) scale(${v.scale * (1 + 0.08 * pulso(t, T.visto + 0.45, 0.35))})` }}>
               <svg width={280} height={300} viewBox="0 0 24 25.7">
                 <path d="M12 1.6 L21 5 V11.6 C21 17.4 17.2 21.9 12 24 C6.8 21.9 3 17.4 3 11.6 V5 Z" fill={`rgba(217,119,87,${0.14 * (1 - sinEscudo)})`} stroke={color} strokeWidth={1.5} strokeLinejoin="round" />
-                <path d="M7.6 12.4 L10.9 15.7 L16.8 9.2" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={14} strokeDashoffset={14 * (1 - ramp(t, T.visto + 0.05, T.visto + 0.35) * (1 - sinEscudo))} />
+                <path d="M7.6 12.4 L10.9 15.7 L16.8 9.2" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={14} strokeDashoffset={14 * (1 - ramp(t, T.visto + 0.25, T.visto + 0.55) * (1 - sinEscudo))} />
                 <path d="M5 21 L19 4.5" fill="none" stroke={C.gris} strokeWidth={1.7} strokeLinecap="round" strokeDasharray={22} strokeDashoffset={22 * (1 - sinEscudo)} />
               </svg>
             </div>
           );
         })()}
-        <Sello texto="NADA SIN TU VISTO BUENO" x={540} y={SY + 240} t={t} at={T.visto + 0.4} out={hasta + 0.4} size={50} rot={-3} resalte={0} />
+        <Sello texto="NADA SIN TU VISTO BUENO" x={540} y={SY + 240} t={t} at={T.visto + 0.55} out={hasta + 0.4} size={50} rot={-3} resalte={0} />
         {/* excepción */}
         <Etiqueta texto="EXCEPCIÓN" x={540} y={SY + 395} t={t} at={T.excepcion - 0.05} out={hasta + 0.4} size={44} variante="acento" fuente="titulo" />
         <Caja x={110} y={SY + 460} w={860} h={170} t={t} at={T.activas - 0.15} out={hasta + 0.4} style={{ borderRadius: 38, background: C.panel, border: `4px solid ${activo > 0.5 ? C.acento : C.borde}`, display: "flex", alignItems: "center", padding: "0 40px", boxShadow: `0 0 ${40 * pulso(t, T.bypass, 0.6)}px ${C.acento}` }}>
@@ -211,8 +211,8 @@ export const eventosPasos34 = (L: Linea): Evento[] => {
     { t: T.clic, sfx: "tick", vol: 0.55 },
     { t: T.pides - 0.25, sfx: "tecleo", vol: 0.3, dur: Math.max(0.4, T.otro + 0.12 - T.pides + 0.25) },
     { t: T.nueva, sfx: "envio", vol: 0.4 },
-    { t: T.visto - 0.65, sfx: "whoosh", vol: 0.3 },
-    { t: T.visto + 0.48, sfx: "golpe", vol: 0.55 },
+    { t: T.visto - 0.2, sfx: "whoosh", vol: 0.3 },
+    { t: T.visto + 0.63, sfx: "golpe", vol: 0.55 },
     { t: T.excepcion, sfx: "pop", vol: 0.4 },
     { t: T.activas + 0.25, sfx: "tick", vol: 0.55 },
     { t: T.claude2, sfx: "whoosh", vol: 0.25 },

@@ -36,14 +36,14 @@ export const Tarea: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
     { t: desde - 1, x: 540, y: 1120, z: 0.98 },
     { t: T.rechaza - 0.3, x: 540, y: 1080, z: 1.05, d: 0.9 },
     { t: T.prueba - 0.3, x: 540, y: 1200, z: 1.05, d: 0.9 },
-    { t: T.en - 0.35, x: 540, y: CY - 10, z: 0.98, d: 1.0 },
+    { t: T.en - 0.15, x: 540, y: CY - 10, z: 0.98, d: 0.9 },
     { t: T.falla - 0.2, x: 520, y: CY, z: 1.03, d: 1.0 },
     { t: T.fin - 0.1, x: 540, y: CY - 10, z: 0.97, d: 1.0 },
   ];
-  const fueraA = T.en - 0.15;
+  const fueraA = T.en + 0.12;
   const filas = [
     { y: 990, at: T.rechaza - 0.1, hecho: T.otro + 0.3, texto: ["Rechaza un cambio a propósito", "y pide otro"] },
-    { y: 1220, at: T.prueba - 0.1, hecho: T.anterior + 0.35, texto: ["Prueba /rewind y vuelve", "a un punto anterior"] },
+    { y: 1220, at: T.prueba - 0.1, hecho: T.anterior + 0.05, texto: ["Prueba /rewind y vuelve", "a un punto anterior"] },
   ];
   const largo = 2 * Math.PI * R;
   // el anillo avanza hasta cada paso cuando la voz lo dice (y al final cierra el ciclo)
@@ -90,7 +90,7 @@ export const Tarea: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
           </svg>
         );
       })()}
-      <Etiqueta texto="EN RESUMEN" x={CX} y={CY - 40} t={t} at={T.en} out={hasta + 0.4} size={50} variante="gris" fuente="titulo" />
+      <Etiqueta texto="EN RESUMEN" x={CX} y={CY - 40} t={t} at={T.en + 0.1} out={hasta + 0.4} size={50} variante="gris" fuente="titulo" />
       <Etiqueta texto="EL CICLO" x={CX} y={CY + 40} t={t} at={T.en + 0.15} out={hasta + 0.4} size={84} variante="texto" fuente="titulo" />
       {ANG.map((a, i) => {
         const x = CX + R * Math.cos(a);
@@ -135,7 +135,7 @@ export const eventosTarea = (L: Linea): Evento[] => {
     { t: T.rechaza - 0.1, sfx: "pop", vol: 0.35 },
     { t: T.otro + 0.35, sfx: "tick", vol: 0.55 },
     { t: T.prueba - 0.1, sfx: "pop", vol: 0.35 },
-    { t: T.anterior + 0.4, sfx: "tick", vol: 0.55 },
+    { t: T.anterior + 0.1, sfx: "tick", vol: 0.55 },
     { t: T.en - 0.3, sfx: "whoosh", vol: 0.3 },
     ...T.nodos.map((a) => ({ t: a - 0.08, sfx: "tick" as const, vol: 0.5 })),
     { t: T.nodos[4] + 0.05, sfx: "golpe", vol: 0.5 },
