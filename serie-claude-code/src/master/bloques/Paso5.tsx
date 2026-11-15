@@ -86,8 +86,8 @@ export const Paso5: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
     { t: T.clic1 + 0.15, x: 540, y: BY + 380, z: 1.0, d: 0.8 },
     { t: T.clic2 + 0.3, x: 540, y: BY + 400, z: 1.12, d: 0.9 },
     { t: T.es - 0.35, x: 540, y: CY + 40, z: 1.0, d: 1.0 },
-    { t: T.eso - 0.35, x: 540, y: DY, z: 0.98, d: 1.0 },
-    { t: T.no - 0.2, x: 540, y: DY + 14, z: 1.02, d: 1.0 },
+    { t: T.eso - 0.35, x: 540, y: DY - 20, z: 0.97, d: 1.0 },
+    { t: T.no - 0.2, x: 540, y: DY - 10, z: 1.0, d: 1.0 },
   ];
   const fueraA = T.se - 0.15;
   // estación A

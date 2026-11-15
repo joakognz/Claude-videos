@@ -42,7 +42,7 @@ export const ramp = (t: number, a: number, b: number, easing: (n: number) => num
 
 /** spring() de Remotion a partir del segundo `at`. */
 export const sp = (t: number, at: number, cfg: { damping?: number; stiffness?: number; mass?: number } = {}) =>
-  t <= at ? 0 : spring({ frame: (t - at) * FPS, fps: FPS, config: { damping: 14, stiffness: 160, mass: 1, ...cfg } });
+  t <= at ? 0 : at === -Infinity ? 1 : spring({ frame: (t - at) * FPS, fps: FPS, config: { damping: 14, stiffness: 160, mass: 1, ...cfg } });
 
 /**
  * Visibilidad de un elemento: entra con spring en `a` y sale (0,35 s, con curva) para terminar en `b`.

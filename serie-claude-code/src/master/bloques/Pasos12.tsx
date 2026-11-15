@@ -59,7 +59,7 @@ export const Pasos12: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
     { t: T.checkpoint - 0.3, x: 540, y: 1160, z: 0.99, d: 0.9 },
     { t: T.cada - 0.25, x: 560, y: 1150, z: 0.97, d: 0.9 },
     { t: T.guarda - 0.35, x: 540, y: Y0 - 170, z: 1.05, d: 1.0 },
-    { t: T.conserva - 0.3, x: 540, y: Y0 - 22, z: 0.97, d: 1.0 },
+    { t: T.conserva - 0.3, x: 540, y: Y0 - 40, z: 0.95, d: 1.0 },
   ];
   const fueraA = T.guarda - 0.15;
   // chat: mensajes apilados hacia arriba
@@ -164,9 +164,9 @@ export const Pasos12: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
             </div>
           );
         })()}
-        <Etiqueta texto="LOS 100 MÁS RECIENTES" x={540} y={Y0 + 50} t={t} at={T.recientes - 0.1} out={hasta + 0.4} size={50} variante="borde" fuente="titulo" />
+        <Etiqueta texto="LOS 100 MÁS RECIENTES" x={540} y={Y0 + 40} t={t} at={T.recientes - 0.1} out={hasta + 0.4} size={50} variante="borde" fuente="titulo" />
         {/* junto a la conversación */}
-        <Caja x={110} y={Y0 + 150} w={860} h={150} t={t} at={T.conserva - 0.05} out={hasta + 0.4} style={{ borderRadius: 34, background: C.panel, border: `3px solid ${C.borde}`, display: "flex", alignItems: "center", gap: 30, padding: "0 36px" }}>
+        <Caja x={110} y={Y0 + 125} w={860} h={150} t={t} at={T.conserva - 0.05} out={hasta + 0.4} style={{ borderRadius: 34, background: C.panel, border: `3px solid ${C.borde}`, display: "flex", alignItems: "center", gap: 30, padding: "0 36px" }}>
           <svg width={96} height={96} viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
             <path d="M4 4.5 h16 a1.5 1.5 0 0 1 1.5 1.5 v9.5 a1.5 1.5 0 0 1 -1.5 1.5 h-9 l-4.5 3.5 v-3.5 h-2.5 a1.5 1.5 0 0 1 -1.5 -1.5 v-9.5 a1.5 1.5 0 0 1 1.5 -1.5 z" fill="none" stroke={C.acento} strokeWidth={1.9} strokeLinejoin="round" />
             <path d="M7 9 h10 M7 12.5 h6" stroke={C.acento} strokeWidth={1.7} strokeLinecap="round" />
@@ -177,9 +177,9 @@ export const Pasos12: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
             <span style={{ color: C.acento }}>la conversación</span>
           </div>
         </Caja>
-        {ep.iconos?.marcador && <Imagen src={ep.iconos.marcador} x={880} y={Y0 + 215} w={74} t={t} at={T.conversacion} out={hasta + 0.4} rot={8} />}
+        {ep.iconos?.marcador && <Imagen src={ep.iconos.marcador} x={880} y={Y0 + 190} w={74} t={t} at={T.conversacion} out={hasta + 0.4} rot={8} />}
         {/* otro día */}
-        <Caja x={110} y={Y0 + 330} w={860} h={150} t={t} at={T.asi - 0.05} out={hasta + 0.4} style={{ borderRadius: 34, background: C.panel, border: `3px solid ${C.borde}`, display: "flex", alignItems: "center", gap: 30, padding: "0 36px" }}>
+        <Caja x={110} y={Y0 + 300} w={860} h={150} t={t} at={T.asi - 0.05} out={hasta + 0.4} style={{ borderRadius: 34, background: C.panel, border: `3px solid ${C.borde}`, display: "flex", alignItems: "center", gap: 30, padding: "0 36px" }}>
           <div style={{ width: 96, height: 96, borderRadius: 18, border: `4px solid ${C.acento}`, overflow: "hidden", flexShrink: 0, boxSizing: "border-box", background: C.panel2 }}>
             <div style={{ height: 24, background: C.acento }} />
             <div style={{ position: "relative", height: 64, overflow: "hidden" }}>
