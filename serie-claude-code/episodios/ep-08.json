@@ -37,7 +37,7 @@
     "anthropic": "logos/anthropic.png"
   },
   "imagenes": {
-    "floristeria": "episodios/ep-08/floristeria.jpg"
+    "floristeria": "imagenes/floristeria.jpg"
   },
   "escenas": [
     { "id": "intro", "voz": "Episodio 8 de 50. Máster de Claude Code." },

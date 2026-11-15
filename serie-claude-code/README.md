@@ -111,6 +111,15 @@ prefijo del episodio (`ep8_gancho`, `ep8_tienda`…). Así los episodios anterio
   con Claude Code (`Pantallas.tsx`). El JSON añade `imagenes` (ilustraciones adjuntas que no son logos) y `avance`
   (tarjeta del próximo episodio cuando va al final, tras el CTA).
 
+### Recursos compartidos (para cualquier episodio)
+
+- `public/logos/`: logos de marcas que aporta el usuario. En `_LEEME_LOGOS.md` está cada archivo, cómo se usa y los
+  que faltan por subir. Nunca se redibujan.
+- `public/iconos/`: iconos y dibujos planos propios en SVG (`linea/`, `linea-coral/`, `dibujos/`), con su muestrario
+  en `_muestrario.png`. Se generan con `python scripts/iconos.py`.
+- `public/imagenes/`: ilustraciones y fotos de ejemplo del usuario (p. ej. `floristeria.jpg`).
+- El resumen de todo (estado de la serie, reglas y comandos) está en `CLAUDE.md`, en la raíz del repositorio.
+
 Para revisar sin renderizar el vídeo entero: `node scripts/fotogramas.mjs episodios/ep-08.json 12.5 40 98` deja
 fotogramas sueltos en `out/fotogramas/ep-08/` (a media resolución; `ESCALA=1` para la completa).
 - `proximo[]`: lo que se anuncia del episodio siguiente, cada punto anclado a una palabra de la voz (`en`).

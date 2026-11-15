@@ -55,6 +55,7 @@ Ningún fotograma del curso entra en el reel.
 - `status.claude.com` y `platform.claude.com` son las direcciones que aparecen en la lección. Desde este entorno no se pudo abrir status.claude.com (la red lo bloquea), así que no he podido comprobarla.
 
 ## Decisiones
+- **Imagen:** la ilustración de la floristería está en `serie-claude-code/public/imagenes/floristeria.jpg`, para reutilizarla.
 - **Logos:** solo los adjuntos. Anthropic va tal cual (la ficha clara con su logo). `logo_aigencyx` no está en este repositorio, así que el usuario @aigencyx.labs va en texto, como en el EP.2.
 - **Estilo:** el de la plantilla Master (fondo #0B0D12, acento #D97757). El cartel lleva el trazo negro grueso de tu ilustración para que encaje con la floristería.
 - **Música y efectos:** la música original del proyecto, a -20 dB y bajando otros -8 dB mientras habla la voz. Hay golpes en los sellos, tecleo al escribir y un tic en cada clic.
