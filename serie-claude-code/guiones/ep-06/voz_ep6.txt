@@ -1,0 +1,29 @@
+Episodio seis de cincuenta. Máster de Claude Code.
+
+Hoy, el prompting maestro: cómo pedirle las cosas a Claude para que salgan bien a la primera. Un prompt es, sencillamente, lo que le escribes a Claude.
+
+Y todo parte de una regla: la calidad de lo que recibes depende de la calidad de lo que pides. Claude es muy capaz, pero no lee tu mente. Cuanto mejor le explicas lo que quieres, mejor sale y menos vueltas das.
+
+Mira la diferencia. Mismo Claude, distinta petición.
+
+Petición floja: «hazme una web». Resultado: algo genérico que no te sirve.
+
+Petición buena: «hazme una web de una página para un fontanero de Madrid, con un botón grande de WhatsApp, colores azules y una sección de precios». Resultado: algo que puedes usar a la primera.
+
+¿Qué ha cambiado? Tres claves.
+
+Clave uno. Da contexto. Dile para quién es, de qué va y qué estilo quieres.
+
+Clave dos. Acota la tarea. Dile exactamente qué quieres que toque… y qué no.
+
+Clave tres. Señala ejemplos. Si tienes una referencia o una captura, pásasela. Un ejemplo vale más que mil explicaciones.
+
+Y ahora, el truco que casi nadie usa. Si no sabes explicar lo que quieres, díselo a Claude y pídele que te entreviste. Escríbele: «Antes de empezar, hazme todas las preguntas que necesites». Así saca de ti el detalle que no sabías poner en palabras. Es lo que hicimos en el episodio cinco para crear el CLAUDE punto M D. Y puedes ir más allá: háblalo antes con tu agente de inteligencia artificial.
+
+Pero ojo. Claude Code es un crack escribiendo código, pero no es experto en todo. No es experto en crear prompts para que tus agentes vendan mejor, ni en comunicación, ni en branding, ni en embudos de venta. Ahí entras tú… o tu agente. Tenlo en cuenta.
+
+Recuerda: contexto, tarea acotada y ejemplos. Y si te atascas, que te entreviste.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En el siguiente episodio, cambios y correcciones: qué hacer cuando no sale a la primera. Sígueme para no perdértelo.

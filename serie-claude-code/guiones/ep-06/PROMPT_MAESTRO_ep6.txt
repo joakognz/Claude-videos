@@ -1,0 +1,52 @@
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 6 de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Hazme TODAS tus dudas en una sola lista numerada (estilo, tiempos, logos, tomas).
+4. No generes código ni renders hasta que yo responda "adelante".
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":6,"total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"sans moderna","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep6.mp3","timestamps":"ts_ep6.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.7 · CAMBIOS Y CORRECCIONES","subtitulo":"Cuando no sale a la primera"},"cierre":"Sígueme para no perdértelo." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos: logo_claude (claude.png), logo_claude_code (claude-code-mascota.png), logo_claude_code_texto (claude-code-pixel.png), logo_vscode (vscode.png), logo_whatsapp (whatsapp.png), logo_drive (drive.png).
+Iconos planos coral que debes dibujar tú: diana con flecha (a la primera), bola de cristal tachada (no lee tu mente), flechas en círculo (vueltas), llave inglesa (fontanero), chincheta de mapa (Madrid), paleta (colores), etiqueta de precio (precios), marco de recorte (acotar), captura con clip (ejemplo), bocadillos con interrogantes (entrevista), agente de IA (robot sencillo con bocadillo), megáfono (comunicación), sello de marca (branding), embudo (embudos de venta), silueta de persona (tú), carpeta de esquemas.
+Tomas (referencia para animar): toma_01 y toma_02 son OPCIONALES (ver lista de tomas). Si no llegan, la interfaz del panel de Claude Code en Visual Studio Code se recrea igual que en el EP.5.
+Audio: voz_ep6.mp3, ts_ep6.json (timestamps por palabra), musica.mp3 (opcional).
+
+TOMAS = MATERIAL DE REFERENCIA PARA ANIMAR
+Las tomas son grabaciones reales de mi pantalla. NO las muestres tal cual: recrea cada una como animación fiel, en el estilo de la serie, con la misma interfaz: mismos menús, paneles, texto y orden de clics. El texto se teclea animado y el cursor se mueve y hace clic como en la toma. No inventes pasos ni pantallas que no salgan en la toma. Sustituye por datos ficticios cualquier correo, token, ruta o nombre real.
+
+INTRO (máx. 4 s)
+Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-5 iluminados, el 6 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.6".
+
+ESCENAS (tiempos orientativos a 152 palabras por minuto; mandan los timestamps)
+| Tiempo | Qué se ve | Logos / tomas |
+| 0:00–0:03 | Intro (arriba). | logo_claude, logo_claude_code |
+| 0:03–0:14 | HOY · PROMPTING MAESTRO · "Bien a la primera" con la diana y la flecha que da en el centro. En "Un prompt es…": panel de Claude Code con la caja de texto y la etiqueta PROMPT = LO QUE LE ESCRIBES. | logo_vscode, logo_claude_code |
+| 0:14–0:30 | LA REGLA: cita grande "La calidad de lo que recibes depende de la calidad de lo que pides" (petición → Claude → resultado, el grosor de la flecha de entrada manda en la de salida). "No lee tu mente": bola de cristal tachada. "Mejor sale y menos vueltas": las flechas en círculo bajan de 3 a 1. | logo_claude |
+| 0:30–0:51 | MISMO CLAUDE, DISTINTA PETICIÓN. Pantalla dividida. Izquierda, sello PETICIÓN FLOJA: se teclea «hazme una web» → sale un boceto gris y genérico → X NO TE SIRVE. Derecha, sello PETICIÓN BUENA: se teclea la petición larga y cada pieza se subraya cuando la voz la dice (una página · fontanero de Madrid · botón grande de WhatsApp · colores azules · sección de precios); a la vez se monta un móvil con esa web (llave inglesa, botón grande con logo_whatsapp, paleta azul, bloque de precios sin cifras) → ✓ USABLE A LA PRIMERA. | logo_whatsapp; toma_01 si llega |
+| 0:51–1:12 | TRES CLAVES. Sello CLAVE 1 · DA CONTEXTO: tres fichas PARA QUIÉN · DE QUÉ VA · QUÉ ESTILO. Sello CLAVE 2 · ACOTA LA TAREA: árbol de archivos con un marco coral sobre lo que SÍ toca y un candado sobre lo que NO. Sello CLAVE 3 · SEÑALA EJEMPLOS: una captura con clip vuela hasta el panel · "1 EJEMPLO > 1.000 EXPLICACIONES". | logo_claude_code |
+| 1:12–1:41 | EL TRUCO QUE CASI NADIE USA. Persona con interrogante → PÍDELE QUE TE ENTREVISTE → se teclea «Antes de empezar, hazme todas las preguntas que necesites.» en el panel → bocadillos de preguntas numeradas que salen de Claude → en "episodio cinco": miniatura del EP.5 con CLAUDE.md (guiño, sin repetir sus pantallas) → icono de agente de IA con flecha hacia Claude Code: ANTES, HÁBLALO CON TU AGENTE. | logo_claude_code; toma_02 si llega |
+| 1:41–2:00 | OJO. logo_claude_code + ✓ CRACK ESCRIBIENDO CÓDIGO (líneas de código que se escriben solas, barras abstractas) → caen cuatro fichas con X: PROMPTS QUE VENDAN · COMUNICACIÓN · BRANDING · EMBUDOS DE VENTA → AHÍ ENTRAS TÚ… O TU AGENTE (silueta + agente) → TENLO EN CUENTA. | logo_claude_code |
+| 2:00–2:05 | RECUERDA: CONTEXTO · TAREA ACOTADA · EJEMPLOS. Si te atascas → ENTREVISTA. | — |
+| 2:05–2:16 | CTA: "¿Quieres los esquemas de este episodio?" → carpeta de esquemas en Drive → AUDITORIA se escribe letra a letra y se envía → "Te paso el enlace con todo" → ¿TIENES UN NEGOCIO? → AUDITORÍA DE PROCESOS. | logo_drive |
+| 2:16–2:24 | Avance: la rejilla marca el EP.6 hecho, el 7 se enciende y la cámara entra → tarjeta EP.7 · CAMBIOS Y CORRECCIONES · Cuando no sale a la primera → perfil @aigencyx.labs, Seguir → Siguiendo ✓. | logo_claude_code_texto |
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757. Lo que la voz dice en letras se escribe en su forma escrita: "6", "50", "CLAUDE.md". El resto, tal cual lo dice la voz.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "CLAVE 1" / "CLAVE 2" / "CLAVE 3" con golpe y tick al completarse.
+- Música a -20 dB con ducking bajo la voz (si hay música).
+- Marca de agua con el handle, badge "EP.6/50" y barra de progreso.
+- Sin cifras ni datos inventados: la web del fontanero es un boceto (sin teléfono, sin precios, sin nombre de empresa).
+
+ENTREGA
+1. Render de prueba a 540x960. 2. Espera mi visto bueno. 3. Render final a 1080x1920.
