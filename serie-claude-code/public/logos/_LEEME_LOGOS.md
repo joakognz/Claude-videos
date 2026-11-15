@@ -20,12 +20,14 @@ En el JSON del episodio van en `"logos"` (`id` → ruta en `public/`), y en Remo
 | logo_github_gato | `github.png` | 512x500, transparente | octocat negro: **siempre sobre ficha blanca** (`ficha="circulo"`), porque sobre el fondo oscuro no se ve |
 | logo_microsoft | `microsoft.png` | 766x476, transparente | texto gris: **sobre tarjeta clara** (`ficha="tarjeta"`) |
 | logo_anthropic | `anthropic.png` | 980x980, transparente | ficha clara 3D con la cabeza y «ANTHROPIC»: ya trae su fondo, va tal cual |
+| logo_whatsapp | `whatsapp.png` | 1400x1400, fondo blanco | bocadillo verde con borde blanco: el fondo blanco viene en el archivo; se usa pequeño dentro de botones claros (web de la panadería, plan del EP.9) |
+| logo_hostinger | `hostinger.png` | 600x336, transparente | morado: sobre ficha clara (en el EP.9, la clavija de la regleta) |
+| logo_airtable | `airtable.png` | 512x256, transparente | texto gris oscuro: **sobre fondo claro** (clavija de la regleta y cabecera de la tabla de encargos) |
+| logo_mcp | `mcp.png` | 600x600, transparente | círculo negro con el símbolo blanco: **sobre ficha blanca** (`ficha="circulo"`), porque sobre el fondo oscuro no se ve |
+| logo_aigencyx | `aigencyx.png` | 800x800, fondo #14110F | variante «Oscuro» del lienzo del usuario «AIgencyx Labs – Perfil», pasada a PNG sin cambios. Avatar redondo del botón Seguir |
 
 ## Los que el usuario tiene en su carpeta pero aún no están aquí
 
 Hay que pedirlos cuando un episodio los necesite (y guardarlos aquí con el nombre en minúsculas y sin `logo_`):
-whatsapp, nodejs, github (con texto: el que había traía el fondo de cuadros incrustado), aws, hostinger, youtube,
-live_server, aigencyx, git, npm, github_copilot, astro, nextjs, vite, tailwind, vercel, netlify, cloudflare_pages,
-n8n, php, openai_codex, gemini.
-
-`logo_aigencyx` hace falta para el cierre con marca. Mientras no esté, el usuario @aigencyx.labs va en texto.
+nodejs, github (con texto: el que había traía el fondo de cuadros incrustado), aws, youtube, live_server, git, npm,
+github_copilot, astro, nextjs, vite, tailwind, vercel, netlify, cloudflare_pages, n8n, php, openai_codex, gemini.

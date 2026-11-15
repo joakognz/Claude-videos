@@ -1,0 +1,145 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 9,
+  "total": 50,
+  "titulo": "Nivel experto",
+  "parte": {
+    "n": 2,
+    "de": 2
+  },
+  "etiqueta": "ep-09-parte2",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-09-parte2/voz.wav",
+    "timestamps": "episodios/ep-09-parte2/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "auditoria",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": {
+      "texto": "AUDITORÍA PARA TU NEGOCIO",
+      "en": "negocio,"
+    },
+    "remate": {
+      "texto": "Optimiza tus procesos",
+      "en": "optimizar"
+    },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 10,
+  "avance": {
+    "titulo": "EL MAPA COMPLETO",
+    "subtitulo": "Todo Claude Code de un vistazo"
+  },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png",
+    "anthropic": "logos/anthropic.png",
+    "whatsapp": "logos/whatsapp.png",
+    "hostinger": "logos/hostinger.png",
+    "airtable": "logos/airtable.png",
+    "mcp": "logos/mcp.png",
+    "aigencyx": "logos/aigencyx.png"
+  },
+  "imagenes": {
+    "panaderia": "imagenes/panaderia.jpg"
+  },
+  "escenas": [
+    {
+      "id": "intro",
+      "voz": "Episodio 9 de 50. Máster de Claude Code."
+    },
+    {
+      "id": "parte",
+      "voz": "Parte 2."
+    },
+    {
+      "id": "gancho",
+      "voz": "¿Y si Claude Code pudiera repartir el trabajo, usar tus herramientas y hacerte caso desde el móvil? Puede. Son las funciones potentes, y hoy las ves todas."
+    },
+    {
+      "id": "seguimos",
+      "voz": "Seguimos con la web de la panadería."
+    },
+    {
+      "id": "subagentes",
+      "voz": "Paso 1. Los subagentes. Claude puede lanzar ayudantes que hacen una tarea aparte. Cada uno trabaja en su propio espacio y, al terminar, le entrega el resultado. Así tu conversación principal no se llena de ruido. Es como un encargado que reparte el trabajo: uno revisa los textos de la web, otro busca fallos. Y tú solo hablas con el encargado."
+    },
+    {
+      "id": "mcp",
+      "voz": "Paso 2. MCP: conecta tus herramientas. Es un estándar abierto que creó Anthropic, como un enchufe universal entre Claude Code y tus otros programas. Por ejemplo, conectas Airtable, donde apuntas los encargos, y le pides: «pon en la portada los panes más encargados esta semana». Hostinger también tiene su conexión, para gestionar tu dominio y tu hosting. Ya no solo escribe código: trabaja con los datos de tu negocio."
+    },
+    {
+      "id": "remote",
+      "voz": "Paso 3. Remote Control: Claude Code desde el móvil. En el cuadro de Claude escribe /remote-control. A partir de ahí, sigues la misma conversación desde la app de Claude en el móvil o desde el navegador. Pides un cambio mientras estás fuera, y lo hace tu ordenador. Eso sí: el ordenador tiene que seguir encendido."
+    },
+    {
+      "id": "trucos",
+      "voz": "Paso 4. Tres trucos para ir cogiendo soltura. Uno: retoma conversaciones. En el historial de sesiones eliges la de ayer y sigues donde lo dejaste. Dos: escribe una barra y aparecen los comandos rápidos, como /init, que ya conoces. Tres: pulsa el micrófono y díctale en vez de escribir."
+    },
+    {
+      "id": "resumen",
+      "voz": "En resumen: los subagentes reparten el trabajo, MCP conecta tus herramientas y Remote Control te deja seguir desde el móvil."
+    },
+    {
+      "id": "auditoria",
+      "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."
+    },
+    {
+      "id": "avance",
+      "voz": "En el siguiente episodio, el mapa completo de Claude Code. Sígueme para no perdértelo."
+    }
+  ],
+  "bloques": [
+    {
+      "tipo": "intro",
+      "desde": "intro"
+    },
+    {
+      "tipo": "ep9_gancho2",
+      "desde": "parte"
+    },
+    {
+      "tipo": "ep9_subagentes",
+      "desde": "subagentes"
+    },
+    {
+      "tipo": "ep9_mcp",
+      "desde": "mcp"
+    },
+    {
+      "tipo": "ep9_remote",
+      "desde": "remote"
+    },
+    {
+      "tipo": "ep9_trucos",
+      "desde": "trucos"
+    },
+    {
+      "tipo": "ep9_resumen2",
+      "desde": "resumen"
+    },
+    {
+      "tipo": "ep8_cta",
+      "desde": "auditoria"
+    },
+    {
+      "tipo": "ep9_avance",
+      "desde": "avance"
+    }
+  ]
+}

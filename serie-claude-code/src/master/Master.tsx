@@ -51,7 +51,7 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
       </TransitionSeries>
       <VeloSuperior />
       <Subtitulos bloques={subs} t={t} />
-      <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} />
+      <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} parte={ep.parte} />
       <MarcaAgua handle={ep.handle} />
       <AbsoluteFill style={{ background: C.fondo, opacity: Math.max(0, (t - (calc.duracion - 0.5)) / 0.5) }} />
       <Sonido ep={ep} calc={calc} />

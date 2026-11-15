@@ -169,7 +169,8 @@ def main():
     args = ap.parse_args()
 
     ep = json.load(open(args.episodio))
-    tag = f"ep-{ep['episodio']:02d}"
+    # episodios en dos partes: "etiqueta" en el JSON (ep-09-parte1); si no, ep-NN
+    tag = ep.get("etiqueta") or f"ep-{ep['episodio']:02d}"
     out_dir = os.path.join(ROOT, "public", "episodios", tag)
     os.makedirs(out_dir, exist_ok=True)
     shutil.copyfile(args.mp3, os.path.join(out_dir, "voz.mp3"))

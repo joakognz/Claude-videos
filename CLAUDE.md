@@ -21,7 +21,7 @@ Este archivo cuenta lo que vive en el repositorio.
 | 02 VS Code, GitHub, PUSH y PULL | 0.2 | `episodios/ep-02.json` (composición «Master») · `entregas/serie-claude-code-ep-02.mp4` |
 | 03–07 | 0.3–1.4 | no están en este repositorio (hechos en la carpeta del usuario) |
 | 08 Errores típicos y troubleshooting | 1.5 | `episodios/ep-08.json` · `entregas/serie-claude-code-ep-08.mp4` · `briefs/serie-claude-code-ep-08/` |
-| 09 Nivel experto (2 partes) | 1.6 | guion listo, a la espera de la voz y los logos · `briefs/serie-claude-code-ep-09/` |
+| 09 Nivel experto (2 partes) | 1.6 | `episodios/ep-09-parte1.json` y `ep-09-parte2.json` · `entregas/serie-claude-code-ep-09-parte1.mp4` y `-parte2.mp4` · `briefs/serie-claude-code-ep-09/` |
 
 Hoja de ruta: EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
 EP12 Computer Use (1.9) · EP13 Cierre del módulo 1: pregunta a la audiencia (web / automatizaciones / a medida).
@@ -62,6 +62,11 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
   y `Editor`. Del EP.8: `Cartel` (cartel colgante que gira de cara), `Dibujos` y `Pantallas`. Las pantallas son
   recreaciones con datos ficticios de la consola de Claude, los límites de uso, la página de estado y Visual Studio
   Code con el panel de Claude Code.
+  Del EP.9 (`componentes/ep09/`): `ChatClaude` (el panel de Claude Code configurable: mensajes, selector de modo,
+  menú «/», historial, rebobinar, agentes, Remote Control, micrófono), `WebPanaderia` (la web del boceto del usuario,
+  con estados: alambre, rota, WhatsApp, destacados, novedad), `Movil`, `Carta`, `MiniRejilla`, `Bandera` e iconos.
+- Episodios en partes: `"parte": {"n": 1, "de": 2}` y `"etiqueta": "ep-09-parte1"` en el JSON (nombre de la voz y
+  del mp4, insignia «EP.9/50 · 1/2»). El «Parte uno» va en una escena propia para que la intro no pase de 4 s.
 
 ### Reglas fijas
 - **Estilo:** fondo #0B0D12, acento coral #D97757, texto blanco. Tipos: Sora (títulos), Inter (subtítulos) y

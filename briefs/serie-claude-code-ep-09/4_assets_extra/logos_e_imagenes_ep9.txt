@@ -1,21 +1,19 @@
 LOGOS E IMÁGENES DEL EP.9 (parte 1 y parte 2)
 
-Nombre de archivo al pasarlos: el de la columna NECESITA (por ejemplo logo_airtable.png), en PNG con fondo transparente si puede ser.
-
 | NECESITA | ESTADO | Parte | Dónde sale |
 |---|---|---|---|
-| logo_claude | TIENES | 1 y 2 | intro, cuadro de Claude, app de Claude en el móvil (Remote Control) |
-| logo_claude_code | TIENES | 1 y 2 | intro, panel de Claude Code, botón Seguir |
-| logo_claude_code_texto | TIENES | 1 y 2 | intro y cierre |
-| logo_vscode | TIENES | 1 y 2 | el editor donde se cambia a modo Plan, se rebobina, se escribe /remote-control y se dicta |
-| logo_anthropic | TIENES | 2 | «un estándar abierto que creó Anthropic» (MCP) |
+| logo_claude | TIENES | 1 y 2 | intro, sesiones que leen la ficha, plan, encargado y ayudantes (subagentes), app del móvil, navegador |
+| logo_claude_code | TIENES | 1 y 2 | intro, panel de Claude Code, la mascota que recorre las banderas de guardado, regleta del MCP |
+| logo_claude_code_texto | TIENES | 1 y 2 | intro |
+| logo_vscode | TIENES | 1 y 2 | barra de título de todas las pantallas de Visual Studio Code |
+| logo_anthropic | TIENES | 2 | «un estándar abierto que creó Anthropic» |
 | logo_drive | TIENES | 1 y 2 | CTA (esquemas) |
-| logo_whatsapp | TIENES en tu carpeta, falta en el repositorio | 1 | el botón «Encargar por WhatsApp» que se añade al plan |
-| logo_hostinger | TIENES en tu carpeta, falta en el repositorio | 2 | MCP: «Hostinger también tiene su conexión» |
-| logo_aigencyx | TIENES en tu carpeta, falta en el repositorio | 1 y 2 | cierre con marca (si no llega, @aigencyx.labs va en texto, como en el EP.8) |
-| logo_mcp | FALTA | 2 | el «enchufe universal»: el logo de Model Context Protocol |
-| logo_airtable | FALTA | 2 | MCP: «conectas Airtable, donde apuntas los encargos» |
-| panaderia.jpg | FALTA | 1 y 2 | ilustración de la fachada de la panadería, en el mismo estilo que floristeria.jpg. Es el negocio del ejemplo en las dos partes |
-| boceto_web.jpg | FALTA (opcional) | 1 | foto de un boceto de la portada hecho a mano en papel. Se «pega» en el cuadro de Claude en el paso dos. Si no lo pasas, dibujo un boceto ficticio |
-| pantallas de Visual Studio Code y de la app de Claude | SE RECREAN | 1 y 2 | animadas con datos ficticios (ver tomas_ep9.txt) |
-| iconos (ficha, plano, ladrillo, banderas de guardado, encargado y ayudantes, enchufe, móvil, micrófono, barra /) | No hace falta | 1 y 2 | son dibujos propios, no marcas: los hace Remotion |
+| logo_whatsapp | TIENES (recibido) | 1 y 2 | el botón «Encargar por WhatsApp» que se añade en el plan y queda en la web |
+| logo_hostinger | TIENES (recibido) | 2 | clavija de la regleta del MCP: DOMINIO y HOSTING |
+| logo_airtable | TIENES (recibido) | 2 | clavija de la regleta y cabecera de la tabla de encargos |
+| logo_mcp | TIENES (recibido) | 2 | paso 2 y resumen, sobre ficha blanca |
+| logo_aigencyx | TIENES (de tu lienzo «AIgencyx Labs – Perfil», variante Oscuro) | 1 y 2 | avatar del perfil en el botón Seguir |
+| panaderia.jpg | TIENES (recibida) | 1 y 2 | el encargo, la web de la panadería y el regreso en la parte 2 |
+| boceto de la web | TIENES (tu lienzo «Boceto web – Panadería») | 1 y 2 | la web de la panadería está recreada a partir de tu boceto: colores, tipografías Fraunces y DM Sans, textos y dibujos de los panes |
+| boceto a mano en papel | DIBUJADO (no era una marca) | 1 | el boceto que se pega en el cuadro de Claude en el paso 2 |
+| pantallas de Visual Studio Code, app de Claude y claude.ai/code | RECREADAS | 1 y 2 | con datos ficticios (proyecto web-panaderia) |

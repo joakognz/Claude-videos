@@ -1,0 +1,31 @@
+PARTE 1
+
+Hay dos formas de usar Claude Code: pedir y cruzar los dedos, o trabajar como un experto 🧠
+
+Las 4 funciones más votadas por la comunidad, con la web de una panadería:
+1. CLAUDE.md → le das memoria una sola vez
+2. Una captura → si no sabes explicarlo, enséñaselo
+3. Modo Plan → revisas el plano antes del primer ladrillo
+4. Checkpoints → si algo se rompe, rebobinas
+
+Episodio 9 de 50 del Máster de Claude Code · Parte 1 de 2 🚀
+
+Comenta AUDITORIA y te paso los esquemas de este episodio. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+#claudecode #inteligenciaartificial #automatizacion #desarrolloweb #pymes
+
+
+PARTE 2
+
+¿Y si Claude Code pudiera repartir el trabajo, usar tus herramientas y hacerte caso desde el móvil? Puede ⚡
+
+→ Subagentes: ayudantes que trabajan aparte y te devuelven el resultado
+→ MCP: el enchufe universal para conectar Airtable, Hostinger y más
+→ Remote Control: sigues la conversación desde el móvil (el ordenador, encendido)
+→ Y 3 trucos: retomar sesiones, comandos con / y dictar por voz
+
+Episodio 9 de 50 del Máster de Claude Code · Parte 2 de 2 🚀
+
+Comenta AUDITORIA y te paso los esquemas de este episodio. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+#claudecode #inteligenciaartificial #automatizacion #desarrolloweb #pymes

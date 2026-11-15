@@ -79,7 +79,7 @@ export const Intro: React.FC<BloqueProps> = ({ t, ep, L }) => {
           return { opacity: o.opacity * (1 - fuera), escala: 0.4 + 0.6 * o.s, encendida: Math.max(previo, Math.min(1, hoy)), latido: late + golpe, contorno: 0, check: 0 };
         }}
       />
-      <Etiqueta texto={`EPISODIO ${ep.episodio} DE ${ep.total}`} x={540} y={G.cy + 300} t={t} at={enciende + 0.05} out={deshace + 0.1} size={34} variante="gris" />
+      <Etiqueta texto={`EPISODIO ${ep.episodio} DE ${ep.total}${ep.parte ? ` · PARTE ${ep.parte.n} DE ${ep.parte.de}` : ""}`} x={540} y={G.cy + 300} t={t} at={enciende + 0.05} out={deshace + 0.1} size={34} variante="gris" />
       {/* partículas */}
       {t > deshace &&
         PARTICULAS.map((p, i) => {

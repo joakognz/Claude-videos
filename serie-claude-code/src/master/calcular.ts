@@ -47,6 +47,6 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
         eventos: eventos.filter((e) => e.t >= 0 && e.t < duracion).sort((a, b) => a.t - b.t),
       },
     },
-    defaultOutName: `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,
+    defaultOutName: `claude-code-${props.etiqueta ?? `ep-${String(props.episodio).padStart(2, "0")}`}`,
   };
 };

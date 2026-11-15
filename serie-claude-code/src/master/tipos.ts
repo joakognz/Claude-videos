@@ -1,6 +1,8 @@
 import type { Evento, Linea, Palabra } from "./nucleo";
 
-export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "anthropic";
+export type LogoId =
+  | "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "anthropic"
+  | "whatsapp" | "hostinger" | "airtable" | "mcp" | "aigencyx";
 
 export type EpisodioMaster = {
   composicion: "Master";
@@ -8,6 +10,10 @@ export type EpisodioMaster = {
   episodio: number;
   total: number;
   titulo?: string;
+  /** episodios en varias partes (EP.9): parte n de «de» */
+  parte?: { n: number; de: number };
+  /** nombre de los archivos del episodio cuando va en partes (ep-09-parte1); si no, ep-NN */
+  etiqueta?: string;
   handle: string;
   voz: { audio: string; timestamps?: string; palabras?: Palabra[] };
   musica?: { audio: string; db?: number; duckingDb?: number };

@@ -1,0 +1,149 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 9,
+  "total": 50,
+  "titulo": "Nivel experto",
+  "parte": {
+    "n": 1,
+    "de": 2
+  },
+  "etiqueta": "ep-09-parte1",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-09-parte1/voz.wav",
+    "timestamps": "episodios/ep-09-parte1/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "auditoria",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": {
+      "texto": "AUDITORÍA PARA TU NEGOCIO",
+      "en": "negocio,"
+    },
+    "remate": {
+      "texto": "Optimiza tus procesos",
+      "en": "optimizar"
+    },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 9,
+  "avance": {
+    "titulo": "LAS POTENTES",
+    "subtitulo": "Subagentes, MCP y Remote Control"
+  },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png",
+    "anthropic": "logos/anthropic.png",
+    "whatsapp": "logos/whatsapp.png",
+    "hostinger": "logos/hostinger.png",
+    "airtable": "logos/airtable.png",
+    "mcp": "logos/mcp.png",
+    "aigencyx": "logos/aigencyx.png"
+  },
+  "imagenes": {
+    "panaderia": "imagenes/panaderia.jpg"
+  },
+  "escenas": [
+    {
+      "id": "intro",
+      "voz": "Episodio 9 de 50. Máster de Claude Code."
+    },
+    {
+      "id": "parte",
+      "voz": "Parte 1."
+    },
+    {
+      "id": "gancho",
+      "voz": "Hay dos formas de usar Claude Code: pedir y cruzar los dedos, o trabajar como un experto. La diferencia está en cuatro funciones. Son las más votadas por la comunidad, y las vas a usar cada día."
+    },
+    {
+      "id": "encargo",
+      "voz": "Te las enseño con un encargo: la web de una panadería."
+    },
+    {
+      "id": "memoria",
+      "voz": "Paso 1. Dale memoria. En el archivo CLAUDE.md escribes las reglas una sola vez: es para una panadería, colores tostados y trato cercano. Es como la ficha que le das a alguien nuevo el primer día. Claude la lee en cada sesión, y tú dejas de repetirte. Lo vimos en el episodio 5."
+    },
+    {
+      "id": "imagen",
+      "voz": "Paso 2. Enséñale lo que quieres. Pega en el cuadro de Claude una captura: una web que te guste, un boceto hecho a mano o un error que te salga. Y escribe: «hazme una portada como esta». No necesitas saber cómo se llama cada cosa. Claude mira la imagen y la construye. Salió en el episodio 6."
+    },
+    {
+      "id": "plan",
+      "voz": "Paso 3. El modo Plan, el más votado de todos. Abajo, en el cuadro de Claude, cambia el modo a Plan. Ahora Claude no toca nada: primero te enseña qué va a hacer. Qué páginas crea y en qué orden. Tú lo apruebas o lo corriges."
+    },
+    {
+      "id": "plan_ejemplo",
+      "voz": "Por ejemplo: «añade un botón para hacer encargos por WhatsApp». Es como revisar el plano antes de poner el primer ladrillo. Si algo no te cuadra, lo cambias cuando todavía es fácil."
+    },
+    {
+      "id": "guardado",
+      "voz": "Paso 4. Los checkpoints. Antes de cada mensaje tuyo, Claude Code guarda cómo estaba el código. Son como los puntos de guardado de un videojuego. Si algo se rompe, pasa el ratón por encima de tu mensaje, pulsa rebobinar, y el código vuelve a ese punto. No pierdes nada. Te lo enseñé en el episodio 7."
+    },
+    {
+      "id": "resumen",
+      "voz": "En resumen: memoria, imagen, plan y punto de guardado. Con estas cuatro, ya no trabajas a ciegas."
+    },
+    {
+      "id": "auditoria",
+      "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."
+    },
+    {
+      "id": "avance",
+      "voz": "En la segunda parte, las funciones potentes: ayudantes que trabajan por ti, conexiones con tus herramientas y Claude Code desde el móvil. Sígueme para no perdértela."
+    }
+  ],
+  "bloques": [
+    {
+      "tipo": "intro",
+      "desde": "intro"
+    },
+    {
+      "tipo": "ep9_gancho",
+      "desde": "parte"
+    },
+    {
+      "tipo": "ep9_memoria",
+      "desde": "memoria"
+    },
+    {
+      "tipo": "ep9_imagen",
+      "desde": "imagen"
+    },
+    {
+      "tipo": "ep9_plan",
+      "desde": "plan"
+    },
+    {
+      "tipo": "ep9_guardado",
+      "desde": "guardado"
+    },
+    {
+      "tipo": "ep9_resumen1",
+      "desde": "resumen"
+    },
+    {
+      "tipo": "ep8_cta",
+      "desde": "auditoria"
+    },
+    {
+      "tipo": "ep9_avance",
+      "desde": "avance"
+    }
+  ]
+}
