@@ -1,6 +1,6 @@
 import type { Evento, Linea, Palabra } from "./nucleo";
 
-export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft";
+export type LogoId = "claude" | "claude_code" | "claude_code_texto" | "vscode" | "word" | "drive" | "github" | "microsoft" | "anthropic";
 
 export type EpisodioMaster = {
   composicion: "Master";
@@ -27,6 +27,10 @@ export type EpisodioMaster = {
   siguiente_episodio: number;
   proximo?: { titulo: string; en: string; detalle?: { texto: string; en: string }[]; logos?: { id: LogoId; en: string }[] }[];
   logos: Record<LogoId, string>;
+  /** imágenes adjuntas que no son logos (ilustraciones, fotos de ejemplo) */
+  imagenes?: Record<string, string>;
+  /** tarjeta del próximo episodio cuando el avance va al final (EP.8 en adelante) */
+  avance?: { titulo: string; subtitulo?: string };
   clips?: Record<string, { src: string; ancho: number; alto: number; recorteArriba?: number }>;
   escenas: { id: string; voz: string }[];
   bloques: { tipo: string; desde: string }[];

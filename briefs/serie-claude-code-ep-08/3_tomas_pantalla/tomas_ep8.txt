@@ -1,3 +1,9 @@
+ESTADO: no hace falta grabarlas. Para el reel montado en serie-claude-code/ (EP.8) las cuatro tomas se han
+recreado como animación tomando como referencia las pantallas del vídeo de la lección (solo la interfaz: menús,
+paneles y orden de clics), con datos ficticios: saldo 0,00 US$, gasto 50 de 50 US$, «Nivel 2» sin cifras, incidencia
+del 12 Oct 2026 y el proyecto web-floristeria. Si prefieres que salga tu pantalla real, grábalas como se indica
+abajo y se sustituyen.
+
 TOMAS DEL EP.8 · ERRORES TÍPICOS Y TROUBLESHOOTING
 Grábalas en tu pantalla (vertical u horizontal, da igual) y guárdalas con estos nombres.
 No hace falta voz ni cámara. Mueve el ratón despacio y haz una pausa de 1 segundo antes de cada clic.

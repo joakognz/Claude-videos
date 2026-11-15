@@ -98,6 +98,21 @@ src/master/
 - `logos`: rutas de los logos adjuntos en `public/logos/` (nunca se redibujan; GitHub va sobre ficha blanca y
   Microsoft sobre tarjeta clara porque no se leen sobre el fondo oscuro).
 - `cta`: `tipo` (auditoria | drive), `pregunta`, `palabra_clave`, `texto`, `sello`, `remate`, `seguir`.
+
+### Bloques propios de un episodio (EP.8 en adelante)
+
+Cuando un episodio necesita escenas que no encajan en los bloques comunes, sus bloques van en
+`src/master/bloques/epNN/` y sus piezas en `src/master/componentes/epNN/`, registrados en `bloques/index.ts` con el
+prefijo del episodio (`ep8_gancho`, `ep8_tienda`…). Así los episodios anteriores no cambian.
+
+- **EP.8** (`episodios/ep-08.json`): `ep8_gancho`, `ep8_tienda`, `ep8_cuenta`, `ep8_esperar`, `ep8_status`, `ep8_lia`,
+  `ep8_resumen`, `ep8_cta`, `ep8_avance`. Piezas: el cartel colgante que gira (`Cartel.tsx`), dibujos planos
+  (`Dibujos.tsx`) y pantallas recreadas con datos ficticios: consola, límites, página de estado y Visual Studio Code
+  con Claude Code (`Pantallas.tsx`). El JSON añade `imagenes` (ilustraciones adjuntas que no son logos) y `avance`
+  (tarjeta del próximo episodio cuando va al final, tras el CTA).
+
+Para revisar sin renderizar el vídeo entero: `node scripts/fotogramas.mjs episodios/ep-08.json 12.5 40 98` deja
+fotogramas sueltos en `out/fotogramas/ep-08/` (a media resolución; `ESCALA=1` para la completa).
 - `proximo[]`: lo que se anuncia del episodio siguiente, cada punto anclado a una palabra de la voz (`en`).
 
 ```bash

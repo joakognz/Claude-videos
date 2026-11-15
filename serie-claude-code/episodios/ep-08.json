@@ -1,0 +1,73 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 8,
+  "total": 50,
+  "titulo": "Errores típicos y troubleshooting",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-08/voz.wav",
+    "timestamps": "episodios/ep-08/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "auditoria",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": { "texto": "AUDITORÍA PARA TU NEGOCIO", "en": "negocio," },
+    "remate": { "texto": "Optimiza tus procesos", "en": "optimizar" },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 9,
+  "avance": { "titulo": "NIVEL EXPERTO", "subtitulo": "Da el salto con Claude Code" },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "word": "logos/word.png",
+    "drive": "logos/drive.png",
+    "github": "logos/github.png",
+    "microsoft": "logos/microsoft.png",
+    "anthropic": "logos/anthropic.png"
+  },
+  "imagenes": {
+    "floristeria": "episodios/ep-08/floristeria.jpg"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio 8 de 50. Máster de Claude Code." },
+    { "id": "gancho", "voz": "Estás trabajando con Claude Code y, de repente, sale un mensaje con un número. Respira: no has roto nada. Los errores van a pasar, y saber leerlos es lo que evita que lo dejes a medias." },
+    { "id": "tienda", "voz": "Piensa en cada número como el cartel que cuelga en la puerta de una tienda. No te riñe: te dice qué pasa y qué tienes que hacer." },
+    { "id": "paso1", "voz": "Paso 1. Mira si el error trae un número. Si lo trae, casi nunca es tu proyecto. Es la conexión o tu cuenta." },
+    { "id": "paso2", "voz": "Paso 2. Los que se arreglan desde tu cuenta." },
+    { "id": "e401", "voz": "401: tu llave ya no abre. Tu clave o tu sesión ha caducado, o está mal. Vuelve a conectarte o inicia sesión de nuevo." },
+    { "id": "e400", "voz": "400, con un aviso de saldo: es la tarjeta rechazada en el datáfono. Se acabó el crédito o el límite de gasto que pusiste. Entra en platform.claude.com, revisa tu cuenta y recarga." },
+    { "id": "paso3", "voz": "Paso 3. Los que se arreglan esperando." },
+    { "id": "e429", "voz": "429: espere su turno. Has ido demasiado rápido y has llegado al límite de uso. Espera un poco y sigue. Ese límite depende del plan que tengas contratado." },
+    { "id": "e529", "voz": "529: aforo completo. Los servidores de Anthropic están saturados. No es culpa tuya: espera y vuelve a intentarlo." },
+    { "id": "e500", "voz": "500: cerrado por avería. Es un fallo interno de Anthropic. Reintenta." },
+    { "id": "status", "voz": "Con estos dos últimos, entra en status.claude.com. Si ves una incidencia, el problema es suyo, no tuyo." },
+    { "id": "paso4", "voz": "Paso 4. A veces no hay número, pero Claude se lía: se atasca, repite o se va por las ramas." },
+    { "id": "escape", "voz": "Pulsa la tecla Escape en Visual Studio Code y se para. Luego pídeselo de otra manera y dale más contexto. Por ejemplo, en vez de «arregla la web», dile: «en la web de la floristería, el botón de comprar no hace nada al pulsarlo»." },
+    { "id": "resumen", "voz": "En resumen: si ves un número, respira, es la conexión o la cuenta. Si no hay número, reformula lo que le pides." },
+    { "id": "auditoria", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "avance", "voz": "En el siguiente episodio, damos el salto al nivel experto. Sígueme para no perdértelo." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "ep8_gancho", "desde": "gancho" },
+    { "tipo": "ep8_tienda", "desde": "tienda" },
+    { "tipo": "ep8_cuenta", "desde": "paso2" },
+    { "tipo": "ep8_esperar", "desde": "paso3" },
+    { "tipo": "ep8_status", "desde": "status" },
+    { "tipo": "ep8_lia", "desde": "paso4" },
+    { "tipo": "ep8_resumen", "desde": "resumen" },
+    { "tipo": "ep8_cta", "desde": "auditoria" },
+    { "tipo": "ep8_avance", "desde": "avance" }
+  ]
+}
