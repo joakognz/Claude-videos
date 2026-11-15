@@ -124,6 +124,26 @@ node scripts/render-lote.mjs episodios/ep-05.json          # → out/claude-code
 python scripts/qa_master.py episodios/ep-05.json out/claude-code-ep-05.mp4
 ```
 
+### Bloques del EP.6 (`src/master/bloques/ep06/`, piezas en `src/master/ep06/kit6.tsx`)
+
+`hoy`, `regla`, `peticiones` (petición floja vs. buena con dos móviles), `claves` (las tres claves), `truco`
+(entrevista, guiño al EP.5 y agente de IA), `ojo`, `resumen6` y `avance6` (el `avance` del EP.5 con el título en dos
+líneas). Reutiliza `ctaDrive` y las pantallas de `ep05/ui.tsx`. En `kit6.tsx`: iconos planos nuevos (llave,
+megáfono, embudo, agente, bola de cristal, captura, candado…), el móvil con la web de ejemplo (`Telefono`) y
+`TextoVoz`, que escribe en una caja las palabras de la voz en el instante en que suenan.
+
+- `scripts/fotogramas.mjs`: fotogramas sueltos de un episodio (un solo bundle) para revisarlo sin renderizar el vídeo.
+- `public/episodios/ep-06/palabras.json` lleva cuatro inicios de palabra corregidos a mano con la energía del audio
+  (campo `nota`): si se vuelve a lanzar `preparar.py`, hay que repetirlos.
+
+```bash
+python scripts/preparar.py episodios/ep-06.json --mp3 ../audio/raw/serie-claude-code/ep-06_*.mp3 --modelo <parakeet>
+ffmpeg -i public/episodios/ep-06/voz.wav -af apad=pad_dur=1.2 -c:a pcm_s24le cola.wav && mv cola.wav public/episodios/ep-06/voz.wav
+node scripts/fotogramas.mjs episodios/ep-06.json 10 30 45   # → out/fotogramas/
+node scripts/render-lote.mjs episodios/ep-06.json          # → out/claude-code-ep-06.mp4
+python scripts/qa_master.py episodios/ep-06.json out/claude-code-ep-06.mp4
+```
+
 ## El JSON de un episodio (EP.1, composición «Episodio»)
 
 | Campo | Qué es |

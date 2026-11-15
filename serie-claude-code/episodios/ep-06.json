@@ -1,0 +1,182 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 6,
+  "total": 50,
+  "titulo": "Prompting maestro",
+  "handle": "@aigencyx.labs",
+  "progreso": true,
+  "voz": {
+    "audio": "episodios/ep-06/voz.wav",
+    "timestamps": "episodios/ep-06/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": {
+      "texto": "AUDITORÍA DE PROCESOS",
+      "en": "auditoría"
+    },
+    "remate": {
+      "texto": "Optimiza tus procesos",
+      "en": "optimizar"
+    },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 7,
+  "avance": {
+    "titulo": "CAMBIOS Y CORRECCIONES",
+    "subtitulo": "Cuando no sale a la primera"
+  },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "drive": "logos/drive.png",
+    "whatsapp": "logos/whatsapp.png"
+  },
+  "escenas": [
+    {
+      "id": "intro",
+      "voz": "Episodio 6 de 50. Máster de Claude Code."
+    },
+    {
+      "id": "hoy",
+      "voz": "Hoy, el prompting maestro: cómo pedirle las cosas a Claude para que salgan bien a la primera."
+    },
+    {
+      "id": "prompt",
+      "voz": "Un prompt es, sencillamente, lo que le escribes a Claude."
+    },
+    {
+      "id": "regla",
+      "voz": "Y todo parte de una regla: la calidad de lo que recibes depende de la calidad de lo que pides."
+    },
+    {
+      "id": "mente",
+      "voz": "Claude es muy capaz, pero no lee tu mente. Cuanto mejor le explicas lo que quieres, mejor sale y menos vueltas das."
+    },
+    {
+      "id": "diferencia",
+      "voz": "Mira la diferencia. Mismo Claude, distinta petición."
+    },
+    {
+      "id": "floja",
+      "voz": "Petición floja: «hazme una web». Resultado: algo genérico que no te sirve."
+    },
+    {
+      "id": "buena",
+      "voz": "Petición buena: «hazme una web de una página para un fontanero de Madrid, con un botón grande de WhatsApp, colores azules y una sección de precios». Resultado: algo que puedes usar a la primera."
+    },
+    {
+      "id": "claves",
+      "voz": "¿Qué ha cambiado? Tres claves."
+    },
+    {
+      "id": "clave1",
+      "voz": "Clave uno. Da contexto. Dile para quién es, de qué va y qué estilo quieres."
+    },
+    {
+      "id": "clave2",
+      "voz": "Clave dos. Acota la tarea. Dile exactamente qué quieres que toque… y qué no."
+    },
+    {
+      "id": "clave3",
+      "voz": "Clave tres. Señala ejemplos. Si tienes una referencia o una captura, pásasela. Un ejemplo vale más que mil explicaciones."
+    },
+    {
+      "id": "truco",
+      "voz": "Y ahora, el truco que casi nadie usa. Si no sabes explicar lo que quieres, díselo a Claude y pídele que te entreviste."
+    },
+    {
+      "id": "escribele",
+      "voz": "Escríbele: «Antes de empezar, hazme todas las preguntas que necesites». Así saca de ti el detalle que no sabías poner en palabras."
+    },
+    {
+      "id": "ep5",
+      "voz": "Es lo que hicimos en el episodio 5 para crear el CLAUDE.md."
+    },
+    {
+      "id": "agente",
+      "voz": "Y puedes ir más allá: háblalo antes con tu agente de inteligencia artificial."
+    },
+    {
+      "id": "ojo",
+      "voz": "Pero ojo. Claude Code es un crack escribiendo código, pero no es experto en todo."
+    },
+    {
+      "id": "noexperto",
+      "voz": "No es experto en crear prompts para que tus agentes vendan mejor, ni en comunicación, ni en branding, ni en embudos de venta."
+    },
+    {
+      "id": "tu",
+      "voz": "Ahí entras tú… o tu agente. Tenlo en cuenta."
+    },
+    {
+      "id": "resumen",
+      "voz": "Recuerda: contexto, tarea acotada y ejemplos. Y si te atascas, que te entreviste."
+    },
+    {
+      "id": "auditoria",
+      "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."
+    },
+    {
+      "id": "proximo",
+      "voz": "En el siguiente episodio, cambios y correcciones: qué hacer cuando no sale a la primera."
+    },
+    {
+      "id": "seguir",
+      "voz": "Sígueme para no perdértelo."
+    }
+  ],
+  "bloques": [
+    {
+      "tipo": "intro",
+      "desde": "intro"
+    },
+    {
+      "tipo": "hoy",
+      "desde": "hoy"
+    },
+    {
+      "tipo": "regla",
+      "desde": "regla"
+    },
+    {
+      "tipo": "peticiones",
+      "desde": "diferencia"
+    },
+    {
+      "tipo": "claves",
+      "desde": "claves"
+    },
+    {
+      "tipo": "truco",
+      "desde": "truco"
+    },
+    {
+      "tipo": "ojo",
+      "desde": "ojo"
+    },
+    {
+      "tipo": "resumen6",
+      "desde": "resumen"
+    },
+    {
+      "tipo": "ctaDrive",
+      "desde": "auditoria"
+    },
+    {
+      "tipo": "avance6",
+      "desde": "proximo"
+    }
+  ]
+}

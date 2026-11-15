@@ -20,6 +20,14 @@ import { Resultado, eventosResultado } from "./ep05/Resultado";
 import { Resumen, eventosResumen } from "./ep05/Resumen";
 import { Rondas, eventosRondas } from "./ep05/Rondas";
 import { Vacia, eventosVacia } from "./ep05/Vacia";
+import { Hoy, eventosHoy } from "./ep06/Hoy";
+import { Peticiones, eventosPeticiones } from "./ep06/Peticiones";
+import { Regla, eventosRegla } from "./ep06/Regla";
+import { Claves, eventosClaves } from "./ep06/Claves";
+import { Truco, eventosTruco } from "./ep06/Truco";
+import { Ojo, eventosOjo } from "./ep06/Ojo";
+import { Resumen6, eventosResumen6 } from "./ep06/Resumen6";
+import { Avance6, eventosAvance6 } from "./ep06/Avance6";
 
 export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster) => Evento[] };
 
@@ -45,4 +53,13 @@ export const BLOQUES: Record<string, DefBloque> = {
   resumen: { Componente: Resumen, eventos: eventosResumen },
   ctaDrive: { Componente: CtaDrive, eventos: eventosCtaDrive },
   avance: { Componente: Avance, eventos: eventosAvance },
+  // EP.6
+  hoy: { Componente: Hoy, eventos: eventosHoy },
+  regla: { Componente: Regla, eventos: eventosRegla },
+  peticiones: { Componente: Peticiones, eventos: eventosPeticiones },
+  claves: { Componente: Claves, eventos: eventosClaves },
+  truco: { Componente: Truco, eventos: eventosTruco },
+  ojo: { Componente: Ojo, eventos: eventosOjo },
+  resumen6: { Componente: Resumen6, eventos: eventosResumen6 },
+  avance6: { Componente: Avance6, eventos: eventosAvance6 },
 };
