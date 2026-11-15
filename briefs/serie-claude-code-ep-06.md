@@ -56,5 +56,11 @@ tres inicios de escena («Es», «¿Quieres», «Sígueme») se colocaron a mano
 - **Estilo:** plantilla Master (fondo #0B0D12, acento #D97757). Insignia EP.6/50, marca de agua y barra de progreso.
 - **Música:** la de la serie, a -20 dB con ducking de -8 dB bajo la voz.
 
-## Checklist (`scripts/qa_master.py`)
-(se completa con el resultado del render)
+## Checklist (`scripts/qa_master.py`, todo en verde)
+- 1080x1920 a 30 fps, 132,14 s = duración de la voz con su cola.
+- Sincronía voz-texto: 360 palabras, cada una resaltada en su instante; 69 bloques de subtítulos, máximo 2 líneas,
+  línea más ancha 956 de 960 px.
+- Cambio visible como mucho cada 0,67 s (regla: 2–3 s).
+- -13,9 LUFS integrados, pico real -1,8 dBTP.
+- Revisión visual (fotogramas sueltos de cada bloque y de cada transición): logos correctos, ningún texto cortado ni
+  tapado por los subtítulos.
