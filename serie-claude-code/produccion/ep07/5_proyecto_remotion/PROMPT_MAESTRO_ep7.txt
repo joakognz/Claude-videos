@@ -90,8 +90,8 @@ Metáfora que guía todo el episodio: una LÍNEA DE TIEMPO horizontal con bander
 | 1:35–1:47 | "¿Por qué importa tanto?… quien tiene miedo de tocar" | Etiqueta POR QUÉ IMPORTA. Matraz: PRUEBAS → TE EQUIVOCAS → VUELVES ATRÁS (tres iconos que se encienden al nombrarlos). Cierra con dos caminos: uno avanza, el otro se queda quieto | — |
 | 1:47–1:54 | "Tu tarea…" | Etiqueta TU TAREA. Lista con dos casillas que se marcan al nombrarlas: "Rechaza un cambio y pide otro" · "Prueba /rewind" | — |
 | 1:54–1:59 | "En resumen: pides, Claude guarda, te propone, tú decides… rebobinas" | El ciclo de 5 casillas completo; un punto de luz lo recorre y enciende cada casilla al decirla: PIDES · GUARDA · PROPONE · DECIDES · REBOBINAS | — |
-| 1:59–2:10 | CTA | Pregunta palabra a palabra; AUDITORIA se teclea y se envía; ESQUEMAS DEL EPISODIO con logo_drive; AUDITORÍA PARA TU NEGOCIO | logo_drive |
-| 2:10–2:15 | "En el siguiente episodio… Sígueme" | La cuadrícula marca el EP.7 hecho y el EP.8 palpita → tarjeta de avance "EP.8 · ERRORES TÍPICOS / Y cómo solucionarlos" → logo_claude_code_texto, perfil @aigencyx.labs, botón Seguir → Siguiendo ✓ | logo_claude_code_texto |
+| 1:59–2:10 | CTA | Pregunta palabra a palabra; al decir "esquemas" entra esquema_ep7 en tarjeta inclinada con logo_drive al lado; AUDITORIA se teclea y se envía; AUDITORÍA PARA TU NEGOCIO | esquema_ep7, logo_drive |
+| 2:10–2:15 | "En el siguiente episodio… Sígueme" | La cuadrícula marca el EP.7 hecho y el EP.8 palpita → tarjeta de avance "EP.8 · ERRORES TÍPICOS / Y cómo solucionarlos" → logo_claude_code_texto, perfil @aigencyx.labs con logo_aigencyx de avatar, botón Seguir → Siguiendo ✓ | logo_claude_code_texto, logo_aigencyx |
 
 Casillas del ciclo (mismo texto que el esquema del episodio): 1 PIDES ALGO · 2 CHECKPOINT · 3 CLAUDE PROPONE · 4 TÚ DECIDES · 5 ¿ALGO FALLA? → /rewind. La casilla 5 va en coral más intenso.
 
