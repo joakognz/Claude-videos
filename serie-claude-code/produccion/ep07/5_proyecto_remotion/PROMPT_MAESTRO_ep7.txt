@@ -15,9 +15,27 @@ CONFIG
  "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
  "avance":{"titulo":"EP.8 · ERRORES TÍPICOS","subtitulo":"Y cómo solucionarlos"},"cierre":"Sígueme para no perdértelo." }
 
-ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
-Logos: logo_claude, logo_claude_code (pixelado), logo_claude_code_texto, logo_vscode, logo_drive.
-Iconos planos coral que debes dibujar tú:
+ASSETS — REGLA OBLIGATORIA
+Logos e imágenes: SOLO estos archivos, cargados con <Img src={staticFile(...)}> desde su ruta exacta.
+PROHIBIDO: redibujar un logo (SVG, CSS o texto), recrearlo "parecido", usar emojis o iconos de librerías en su lugar,
+descargarlo de internet, recolorearlo, deformarlo o recortarlo. Escalado proporcional y nada más.
+Si un archivo no existe o no carga: PARA y pregúntame. No pongas nada provisional.
+Si la voz nombra una marca que no está en esta lista: PARA y pregúntame.
+
+| Id                      | Archivo (dentro de public/)                    | Cuándo sale                                                      |
+|-------------------------|------------------------------------------------|------------------------------------------------------------------|
+| logo_claude             | logos/claude.png                               | intro + cada vez que la voz dice "Claude" solo (pasos 3, 4 y 5)  |
+| logo_claude_code        | logos/claude-code-mascota.png                  | intro + "Claude Code" (gancho y paso 2)                          |
+| logo_claude_code_texto  | logos/claude-code-pixel.png                    | cierre (tarjeta de perfil)                                       |
+| logo_vscode             | logos/vscode.png                               | barra de la ventana en las recreaciones de las tomas (pasos 3-5) |
+| logo_drive              | logos/drive.png                                | CTA, junto al esquema ("los esquemas de este episodio")          |
+| logo_aigencyx           | logos/aigencyx.png  ← PENDIENTE, me lo pasa    | avatar de la tarjeta de perfil (Seguir)                          |
+| esquema_ep7             | episodios/ep-07/imagenes/esquema_ep7.png       | CTA: el esquema del episodio entra en tarjeta, inclinado, al decir "esquemas" |
+
+Fondo oscuro: si un logo no se lee sobre #0B0D12, va sobre ficha blanca redondeada (como GitHub en el EP02), sin tocar el logo.
+Antes del render de prueba, entrégame una lista "logo → segundo en que aparece" sacada de los timestamps.
+
+Iconos planos coral que debes dibujar tú (NO son marcas; son formas genéricas):
 - bocadillo con "¿Y si lo estropeo?" y una grieta (el miedo)
 - bandera de punto de guardado (checkpoint) clavada en una línea de tiempo
 - contador "100"

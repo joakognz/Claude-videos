@@ -1,14 +1,17 @@
 EP07 · CAMBIOS Y CORRECCIONES · LOGOS Y TOMAS
 
-LOGOS DEL EPISODIO
-| Logo                    | Dónde sale                          | Estado |
-|-------------------------|-------------------------------------|--------|
-| logo_claude             | intro                               | TIENES |
-| logo_claude_code        | intro, "Claude Code guarda…"        | TIENES |
-| logo_claude_code_texto  | cierre (Seguir)                     | TIENES |
-| logo_vscode             | paso 5 (ventana del rewind)         | TIENES |
-| logo_drive              | CTA (esquemas)                      | TIENES |
-No falta ninguno. El resto son iconos planos que dibuja Remotion (no son marcas).
+LOGOS E IMÁGENES DEL EPISODIO (obligatorio usar SOLO estos archivos; nada redibujado)
+| Id                      | Archivo en el repo (serie-claude-code/public/) | Estado                 |
+|-------------------------|------------------------------------------------|------------------------|
+| logo_claude             | logos/claude.png                               | YA ESTÁ (del EP02)     |
+| logo_claude_code        | logos/claude-code-mascota.png                  | YA ESTÁ (del EP02)     |
+| logo_claude_code_texto  | logos/claude-code-pixel.png                    | YA ESTÁ (del EP02)     |
+| logo_vscode             | logos/vscode.png                               | YA ESTÁ (del EP02)     |
+| logo_drive              | logos/drive.png                                | YA ESTÁ (del EP02)     |
+| logo_aigencyx           | logos/aigencyx.png                             | FALTA → pásamelo (PNG con fondo transparente) |
+| esquema_ep7             | episodios/ep-07/imagenes/esquema_ep7.png       | YA ESTÁ (de tu PDF)    |
+Los iconos (bandera, reloj, tecla Esc…) no son marcas: los dibuja Remotion en coral plano.
+Si prefieres alguno como imagen tuya, pásalo y lo cambio.
 
 TOMAS A GRABAR (en tu pantalla, VS Code con la extensión de Claude Code)
 Antes de grabar:
