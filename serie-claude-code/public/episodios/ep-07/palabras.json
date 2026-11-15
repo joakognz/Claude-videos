@@ -1,0 +1,2166 @@
+{
+ "fuente": "provisional",
+ "duracion": 147.054,
+ "palabras": [
+  {
+   "texto": "Episodio",
+   "inicio": 0.25,
+   "fin": 0.751,
+   "escena": "intro"
+  },
+  {
+   "texto": "siete",
+   "inicio": 0.751,
+   "fin": 1.096,
+   "escena": "intro"
+  },
+  {
+   "texto": "de",
+   "inicio": 1.096,
+   "fin": 1.285,
+   "escena": "intro"
+  },
+  {
+   "texto": "cincuenta.",
+   "inicio": 1.285,
+   "fin": 1.838,
+   "escena": "intro"
+  },
+  {
+   "texto": "Máster",
+   "inicio": 2.258,
+   "fin": 2.655,
+   "escena": "intro"
+  },
+  {
+   "texto": "de",
+   "inicio": 2.655,
+   "fin": 2.844,
+   "escena": "intro"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 2.844,
+   "fin": 3.241,
+   "escena": "intro"
+  },
+  {
+   "texto": "Code.",
+   "inicio": 3.241,
+   "fin": 3.534,
+   "escena": "intro"
+  },
+  {
+   "texto": "¿Y",
+   "inicio": 4.174,
+   "fin": 4.311,
+   "escena": "miedo"
+  },
+  {
+   "texto": "si",
+   "inicio": 4.311,
+   "fin": 4.5,
+   "escena": "miedo"
+  },
+  {
+   "texto": "lo",
+   "inicio": 4.5,
+   "fin": 4.689,
+   "escena": "miedo"
+  },
+  {
+   "texto": "estropeo?",
+   "inicio": 4.689,
+   "fin": 5.19,
+   "escena": "miedo"
+  },
+  {
+   "texto": "Es",
+   "inicio": 5.61,
+   "fin": 5.799,
+   "escena": "miedo"
+  },
+  {
+   "texto": "el",
+   "inicio": 5.799,
+   "fin": 5.988,
+   "escena": "miedo"
+  },
+  {
+   "texto": "mayor",
+   "inicio": 5.988,
+   "fin": 6.333,
+   "escena": "miedo"
+  },
+  {
+   "texto": "miedo",
+   "inicio": 6.333,
+   "fin": 6.678,
+   "escena": "miedo"
+  },
+  {
+   "texto": "cuando",
+   "inicio": 6.678,
+   "fin": 7.075,
+   "escena": "miedo"
+  },
+  {
+   "texto": "empiezas",
+   "inicio": 7.075,
+   "fin": 7.576,
+   "escena": "miedo"
+  },
+  {
+   "texto": "con",
+   "inicio": 7.576,
+   "fin": 7.817,
+   "escena": "miedo"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 7.817,
+   "fin": 8.214,
+   "escena": "miedo"
+  },
+  {
+   "texto": "Code.",
+   "inicio": 8.214,
+   "fin": 8.507,
+   "escena": "miedo"
+  },
+  {
+   "texto": "Hoy",
+   "inicio": 9.147,
+   "fin": 9.388,
+   "escena": "solucion"
+  },
+  {
+   "texto": "te",
+   "inicio": 9.388,
+   "fin": 9.577,
+   "escena": "solucion"
+  },
+  {
+   "texto": "lo",
+   "inicio": 9.577,
+   "fin": 9.766,
+   "escena": "solucion"
+  },
+  {
+   "texto": "quito,",
+   "inicio": 9.766,
+   "fin": 10.111,
+   "escena": "solucion"
+  },
+  {
+   "texto": "porque",
+   "inicio": 10.311,
+   "fin": 10.708,
+   "escena": "solucion"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 10.708,
+   "fin": 11.105,
+   "escena": "solucion"
+  },
+  {
+   "texto": "Code",
+   "inicio": 11.105,
+   "fin": 11.398,
+   "escena": "solucion"
+  },
+  {
+   "texto": "guarda",
+   "inicio": 11.398,
+   "fin": 11.795,
+   "escena": "solucion"
+  },
+  {
+   "texto": "tu",
+   "inicio": 11.795,
+   "fin": 11.984,
+   "escena": "solucion"
+  },
+  {
+   "texto": "trabajo",
+   "inicio": 11.984,
+   "fin": 12.433,
+   "escena": "solucion"
+  },
+  {
+   "texto": "solo",
+   "inicio": 12.433,
+   "fin": 12.726,
+   "escena": "solucion"
+  },
+  {
+   "texto": "y",
+   "inicio": 12.726,
+   "fin": 12.863,
+   "escena": "solucion"
+  },
+  {
+   "texto": "te",
+   "inicio": 12.863,
+   "fin": 13.052,
+   "escena": "solucion"
+  },
+  {
+   "texto": "deja",
+   "inicio": 13.052,
+   "fin": 13.345,
+   "escena": "solucion"
+  },
+  {
+   "texto": "volver",
+   "inicio": 13.345,
+   "fin": 13.742,
+   "escena": "solucion"
+  },
+  {
+   "texto": "atrás",
+   "inicio": 13.742,
+   "fin": 14.087,
+   "escena": "solucion"
+  },
+  {
+   "texto": "en",
+   "inicio": 14.087,
+   "fin": 14.276,
+   "escena": "solucion"
+  },
+  {
+   "texto": "el",
+   "inicio": 14.276,
+   "fin": 14.465,
+   "escena": "solucion"
+  },
+  {
+   "texto": "tiempo.",
+   "inicio": 14.465,
+   "fin": 14.862,
+   "escena": "solucion"
+  },
+  {
+   "texto": "Te",
+   "inicio": 15.502,
+   "fin": 15.691,
+   "escena": "cinco"
+  },
+  {
+   "texto": "lo",
+   "inicio": 15.691,
+   "fin": 15.88,
+   "escena": "cinco"
+  },
+  {
+   "texto": "enseño",
+   "inicio": 15.88,
+   "fin": 16.277,
+   "escena": "cinco"
+  },
+  {
+   "texto": "en",
+   "inicio": 16.277,
+   "fin": 16.466,
+   "escena": "cinco"
+  },
+  {
+   "texto": "cinco",
+   "inicio": 16.466,
+   "fin": 16.811,
+   "escena": "cinco"
+  },
+  {
+   "texto": "pasos.",
+   "inicio": 16.811,
+   "fin": 17.156,
+   "escena": "cinco"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 17.796,
+   "fin": 18.089,
+   "escena": "paso1"
+  },
+  {
+   "texto": "uno.",
+   "inicio": 18.089,
+   "fin": 18.33,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Pides",
+   "inicio": 18.75,
+   "fin": 19.095,
+   "escena": "paso1"
+  },
+  {
+   "texto": "algo.",
+   "inicio": 19.095,
+   "fin": 19.388,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Una",
+   "inicio": 19.808,
+   "fin": 20.049,
+   "escena": "paso1"
+  },
+  {
+   "texto": "instrucción",
+   "inicio": 20.049,
+   "fin": 20.706,
+   "escena": "paso1"
+  },
+  {
+   "texto": "normal,",
+   "inicio": 20.706,
+   "fin": 21.103,
+   "escena": "paso1"
+  },
+  {
+   "texto": "con",
+   "inicio": 21.303,
+   "fin": 21.544,
+   "escena": "paso1"
+  },
+  {
+   "texto": "tus",
+   "inicio": 21.544,
+   "fin": 21.785,
+   "escena": "paso1"
+  },
+  {
+   "texto": "palabras.",
+   "inicio": 21.785,
+   "fin": 22.286,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 22.926,
+   "fin": 23.219,
+   "escena": "paso2"
+  },
+  {
+   "texto": "dos.",
+   "inicio": 23.219,
+   "fin": 23.46,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Antes",
+   "inicio": 23.88,
+   "fin": 24.225,
+   "escena": "paso2"
+  },
+  {
+   "texto": "de",
+   "inicio": 24.225,
+   "fin": 24.414,
+   "escena": "paso2"
+  },
+  {
+   "texto": "tocar",
+   "inicio": 24.414,
+   "fin": 24.759,
+   "escena": "paso2"
+  },
+  {
+   "texto": "nada,",
+   "inicio": 24.759,
+   "fin": 25.052,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 25.252,
+   "fin": 25.649,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Code",
+   "inicio": 25.649,
+   "fin": 25.942,
+   "escena": "paso2"
+  },
+  {
+   "texto": "crea",
+   "inicio": 25.942,
+   "fin": 26.235,
+   "escena": "paso2"
+  },
+  {
+   "texto": "un",
+   "inicio": 26.235,
+   "fin": 26.424,
+   "escena": "paso2"
+  },
+  {
+   "texto": "punto",
+   "inicio": 26.424,
+   "fin": 26.769,
+   "escena": "paso2"
+  },
+  {
+   "texto": "de",
+   "inicio": 26.769,
+   "fin": 26.958,
+   "escena": "paso2"
+  },
+  {
+   "texto": "guardado.",
+   "inicio": 26.958,
+   "fin": 27.459,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Se",
+   "inicio": 27.879,
+   "fin": 28.068,
+   "escena": "paso2"
+  },
+  {
+   "texto": "llama",
+   "inicio": 28.068,
+   "fin": 28.413,
+   "escena": "paso2"
+  },
+  {
+   "texto": "checkpoint,",
+   "inicio": 28.413,
+   "fin": 29.018,
+   "escena": "paso2"
+  },
+  {
+   "texto": "y",
+   "inicio": 29.218,
+   "fin": 29.355,
+   "escena": "paso2"
+  },
+  {
+   "texto": "se",
+   "inicio": 29.355,
+   "fin": 29.544,
+   "escena": "paso2"
+  },
+  {
+   "texto": "hace",
+   "inicio": 29.544,
+   "fin": 29.837,
+   "escena": "paso2"
+  },
+  {
+   "texto": "solo.",
+   "inicio": 29.837,
+   "fin": 30.13,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Cada",
+   "inicio": 30.77,
+   "fin": 31.063,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "petición",
+   "inicio": 31.063,
+   "fin": 31.564,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "que",
+   "inicio": 31.564,
+   "fin": 31.805,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "haces",
+   "inicio": 31.805,
+   "fin": 32.15,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "es",
+   "inicio": 32.15,
+   "fin": 32.339,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "un",
+   "inicio": 32.339,
+   "fin": 32.528,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "punto",
+   "inicio": 32.528,
+   "fin": 32.873,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "de",
+   "inicio": 32.873,
+   "fin": 33.062,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "guardado",
+   "inicio": 33.062,
+   "fin": 33.563,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "nuevo.",
+   "inicio": 33.563,
+   "fin": 33.908,
+   "escena": "paso2b"
+  },
+  {
+   "texto": "Guarda",
+   "inicio": 34.548,
+   "fin": 34.945,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "los",
+   "inicio": 34.945,
+   "fin": 35.186,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "cien",
+   "inicio": 35.186,
+   "fin": 35.479,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "más",
+   "inicio": 35.479,
+   "fin": 35.72,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "recientes",
+   "inicio": 35.72,
+   "fin": 36.273,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "de",
+   "inicio": 36.273,
+   "fin": 36.462,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "la",
+   "inicio": 36.462,
+   "fin": 36.651,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "sesión,",
+   "inicio": 36.651,
+   "fin": 37.048,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "y",
+   "inicio": 37.248,
+   "fin": 37.385,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "los",
+   "inicio": 37.385,
+   "fin": 37.626,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "conserva",
+   "inicio": 37.626,
+   "fin": 38.127,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "junto",
+   "inicio": 38.127,
+   "fin": 38.472,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "a",
+   "inicio": 38.472,
+   "fin": 38.609,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "la",
+   "inicio": 38.609,
+   "fin": 38.798,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "conversación.",
+   "inicio": 38.798,
+   "fin": 39.507,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "Así",
+   "inicio": 39.927,
+   "fin": 40.168,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "que",
+   "inicio": 40.168,
+   "fin": 40.409,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "puedes",
+   "inicio": 40.409,
+   "fin": 40.806,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "volver",
+   "inicio": 40.806,
+   "fin": 41.203,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "atrás",
+   "inicio": 41.203,
+   "fin": 41.548,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "incluso",
+   "inicio": 41.548,
+   "fin": 41.997,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "otro",
+   "inicio": 41.997,
+   "fin": 42.29,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "día.",
+   "inicio": 42.29,
+   "fin": 42.531,
+   "escena": "paso2c"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 43.171,
+   "fin": 43.464,
+   "escena": "paso3"
+  },
+  {
+   "texto": "tres.",
+   "inicio": 43.464,
+   "fin": 43.757,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 44.177,
+   "fin": 44.574,
+   "escena": "paso3"
+  },
+  {
+   "texto": "te",
+   "inicio": 44.574,
+   "fin": 44.763,
+   "escena": "paso3"
+  },
+  {
+   "texto": "propone",
+   "inicio": 44.763,
+   "fin": 45.212,
+   "escena": "paso3"
+  },
+  {
+   "texto": "el",
+   "inicio": 45.212,
+   "fin": 45.401,
+   "escena": "paso3"
+  },
+  {
+   "texto": "cambio,",
+   "inicio": 45.401,
+   "fin": 45.798,
+   "escena": "paso3"
+  },
+  {
+   "texto": "marcado",
+   "inicio": 45.998,
+   "fin": 46.447,
+   "escena": "paso3"
+  },
+  {
+   "texto": "en",
+   "inicio": 46.447,
+   "fin": 46.636,
+   "escena": "paso3"
+  },
+  {
+   "texto": "colores.",
+   "inicio": 46.636,
+   "fin": 47.085,
+   "escena": "paso3"
+  },
+  {
+   "texto": "En",
+   "inicio": 47.505,
+   "fin": 47.694,
+   "escena": "paso3"
+  },
+  {
+   "texto": "rojo,",
+   "inicio": 47.694,
+   "fin": 47.987,
+   "escena": "paso3"
+  },
+  {
+   "texto": "lo",
+   "inicio": 48.187,
+   "fin": 48.376,
+   "escena": "paso3"
+  },
+  {
+   "texto": "que",
+   "inicio": 48.376,
+   "fin": 48.617,
+   "escena": "paso3"
+  },
+  {
+   "texto": "quita.",
+   "inicio": 48.617,
+   "fin": 48.962,
+   "escena": "paso3"
+  },
+  {
+   "texto": "En",
+   "inicio": 49.382,
+   "fin": 49.571,
+   "escena": "paso3"
+  },
+  {
+   "texto": "verde,",
+   "inicio": 49.571,
+   "fin": 49.916,
+   "escena": "paso3"
+  },
+  {
+   "texto": "lo",
+   "inicio": 50.116,
+   "fin": 50.305,
+   "escena": "paso3"
+  },
+  {
+   "texto": "que",
+   "inicio": 50.305,
+   "fin": 50.546,
+   "escena": "paso3"
+  },
+  {
+   "texto": "añade.",
+   "inicio": 50.546,
+   "fin": 50.891,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 51.531,
+   "fin": 51.824,
+   "escena": "paso4"
+  },
+  {
+   "texto": "cuatro.",
+   "inicio": 51.824,
+   "fin": 52.221,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Tú",
+   "inicio": 52.641,
+   "fin": 52.83,
+   "escena": "paso4"
+  },
+  {
+   "texto": "decides.",
+   "inicio": 52.83,
+   "fin": 53.279,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 53.699,
+   "fin": 53.888,
+   "escena": "paso4"
+  },
+  {
+   "texto": "revisas,",
+   "inicio": 53.888,
+   "fin": 54.337,
+   "escena": "paso4"
+  },
+  {
+   "texto": "y",
+   "inicio": 54.537,
+   "fin": 54.674,
+   "escena": "paso4"
+  },
+  {
+   "texto": "lo",
+   "inicio": 54.674,
+   "fin": 54.863,
+   "escena": "paso4"
+  },
+  {
+   "texto": "aceptas",
+   "inicio": 54.863,
+   "fin": 55.312,
+   "escena": "paso4"
+  },
+  {
+   "texto": "o",
+   "inicio": 55.312,
+   "fin": 55.449,
+   "escena": "paso4"
+  },
+  {
+   "texto": "lo",
+   "inicio": 55.449,
+   "fin": 55.638,
+   "escena": "paso4"
+  },
+  {
+   "texto": "rechazas.",
+   "inicio": 55.638,
+   "fin": 56.139,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Si",
+   "inicio": 56.559,
+   "fin": 56.748,
+   "escena": "paso4"
+  },
+  {
+   "texto": "lo",
+   "inicio": 56.748,
+   "fin": 56.937,
+   "escena": "paso4"
+  },
+  {
+   "texto": "rechazas,",
+   "inicio": 56.937,
+   "fin": 57.438,
+   "escena": "paso4"
+  },
+  {
+   "texto": "le",
+   "inicio": 57.638,
+   "fin": 57.827,
+   "escena": "paso4"
+  },
+  {
+   "texto": "pides",
+   "inicio": 57.827,
+   "fin": 58.172,
+   "escena": "paso4"
+  },
+  {
+   "texto": "otro",
+   "inicio": 58.172,
+   "fin": 58.465,
+   "escena": "paso4"
+  },
+  {
+   "texto": "cambio.",
+   "inicio": 58.465,
+   "fin": 58.862,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Nada",
+   "inicio": 59.502,
+   "fin": 59.795,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "se",
+   "inicio": 59.795,
+   "fin": 59.984,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "cambia",
+   "inicio": 59.984,
+   "fin": 60.381,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "sin",
+   "inicio": 60.381,
+   "fin": 60.622,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "tu",
+   "inicio": 60.622,
+   "fin": 60.811,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "visto",
+   "inicio": 60.811,
+   "fin": 61.156,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "bueno.",
+   "inicio": 61.156,
+   "fin": 61.501,
+   "escena": "paso4b"
+  },
+  {
+   "texto": "Con",
+   "inicio": 62.141,
+   "fin": 62.382,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "una",
+   "inicio": 62.382,
+   "fin": 62.623,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "excepción:",
+   "inicio": 62.623,
+   "fin": 63.176,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "si",
+   "inicio": 63.596,
+   "fin": 63.785,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "activas",
+   "inicio": 63.785,
+   "fin": 64.234,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "el",
+   "inicio": 64.234,
+   "fin": 64.423,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "modo",
+   "inicio": 64.423,
+   "fin": 64.716,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "que",
+   "inicio": 64.716,
+   "fin": 64.957,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "se",
+   "inicio": 64.957,
+   "fin": 65.146,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "salta",
+   "inicio": 65.146,
+   "fin": 65.491,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "los",
+   "inicio": 65.491,
+   "fin": 65.732,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "permisos,",
+   "inicio": 65.732,
+   "fin": 66.233,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "el",
+   "inicio": 66.433,
+   "fin": 66.622,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "llamado",
+   "inicio": 66.622,
+   "fin": 67.071,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "bypass",
+   "inicio": 67.071,
+   "fin": 67.468,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "permissions,",
+   "inicio": 67.468,
+   "fin": 68.125,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 68.325,
+   "fin": 68.722,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "ya",
+   "inicio": 68.722,
+   "fin": 68.911,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "no",
+   "inicio": 68.911,
+   "fin": 69.1,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "te",
+   "inicio": 69.1,
+   "fin": 69.289,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "pregunta.",
+   "inicio": 69.289,
+   "fin": 69.79,
+   "escena": "paso4c"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 70.43,
+   "fin": 70.723,
+   "escena": "paso5"
+  },
+  {
+   "texto": "cinco.",
+   "inicio": 70.723,
+   "fin": 71.068,
+   "escena": "paso5"
+  },
+  {
+   "texto": "¿Algo",
+   "inicio": 71.488,
+   "fin": 71.781,
+   "escena": "paso5"
+  },
+  {
+   "texto": "ha",
+   "inicio": 71.781,
+   "fin": 71.97,
+   "escena": "paso5"
+  },
+  {
+   "texto": "fallado?",
+   "inicio": 71.97,
+   "fin": 72.419,
+   "escena": "paso5"
+  },
+  {
+   "texto": "Vuelves",
+   "inicio": 72.839,
+   "fin": 73.288,
+   "escena": "paso5"
+  },
+  {
+   "texto": "atrás.",
+   "inicio": 73.288,
+   "fin": 73.633,
+   "escena": "paso5"
+  },
+  {
+   "texto": "Con",
+   "inicio": 74.273,
+   "fin": 74.514,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "el",
+   "inicio": 74.514,
+   "fin": 74.703,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "cuadro",
+   "inicio": 74.703,
+   "fin": 75.1,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "de",
+   "inicio": 75.1,
+   "fin": 75.289,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "texto",
+   "inicio": 75.289,
+   "fin": 75.634,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "vacío,",
+   "inicio": 75.634,
+   "fin": 75.979,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "pulsa",
+   "inicio": 76.179,
+   "fin": 76.524,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "la",
+   "inicio": 76.524,
+   "fin": 76.713,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "tecla",
+   "inicio": 76.713,
+   "fin": 77.058,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "Escape",
+   "inicio": 77.058,
+   "fin": 77.455,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "dos",
+   "inicio": 77.455,
+   "fin": 77.696,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "veces,",
+   "inicio": 77.696,
+   "fin": 78.041,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "o",
+   "inicio": 78.241,
+   "fin": 78.378,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "escribe",
+   "inicio": 78.378,
+   "fin": 78.827,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "barra",
+   "inicio": 78.827,
+   "fin": 79.172,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "rewind,",
+   "inicio": 79.172,
+   "fin": 79.569,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "que",
+   "inicio": 79.769,
+   "fin": 80.01,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "en",
+   "inicio": 80.01,
+   "fin": 80.199,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "inglés",
+   "inicio": 80.199,
+   "fin": 80.596,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "significa",
+   "inicio": 80.596,
+   "fin": 81.149,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "rebobinar.",
+   "inicio": 81.149,
+   "fin": 81.702,
+   "escena": "paso5b"
+  },
+  {
+   "texto": "Se",
+   "inicio": 82.342,
+   "fin": 82.531,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "abre",
+   "inicio": 82.531,
+   "fin": 82.824,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "un",
+   "inicio": 82.824,
+   "fin": 83.013,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "menú",
+   "inicio": 83.013,
+   "fin": 83.306,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "con",
+   "inicio": 83.306,
+   "fin": 83.547,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "tus",
+   "inicio": 83.547,
+   "fin": 83.788,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "mensajes",
+   "inicio": 83.788,
+   "fin": 84.289,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "anteriores.",
+   "inicio": 84.289,
+   "fin": 84.894,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "Eliges",
+   "inicio": 85.314,
+   "fin": 85.711,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "el",
+   "inicio": 85.711,
+   "fin": 85.9,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "punto",
+   "inicio": 85.9,
+   "fin": 86.245,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "al",
+   "inicio": 86.245,
+   "fin": 86.434,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "que",
+   "inicio": 86.434,
+   "fin": 86.675,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "quieres",
+   "inicio": 86.675,
+   "fin": 87.124,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "volver,",
+   "inicio": 87.124,
+   "fin": 87.521,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "confirmas,",
+   "inicio": 87.721,
+   "fin": 88.274,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "y",
+   "inicio": 88.474,
+   "fin": 88.611,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "recuperas",
+   "inicio": 88.611,
+   "fin": 89.164,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "el",
+   "inicio": 89.164,
+   "fin": 89.353,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "código",
+   "inicio": 89.353,
+   "fin": 89.75,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "y",
+   "inicio": 89.75,
+   "fin": 89.887,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "la",
+   "inicio": 89.887,
+   "fin": 90.076,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "conversación",
+   "inicio": 90.076,
+   "fin": 90.785,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "tal",
+   "inicio": 90.785,
+   "fin": 91.026,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "como",
+   "inicio": 91.026,
+   "fin": 91.319,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "estaban.",
+   "inicio": 91.319,
+   "fin": 91.768,
+   "escena": "paso5c"
+  },
+  {
+   "texto": "Es",
+   "inicio": 92.408,
+   "fin": 92.597,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "una",
+   "inicio": 92.597,
+   "fin": 92.838,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "máquina",
+   "inicio": 92.838,
+   "fin": 93.287,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "del",
+   "inicio": 93.287,
+   "fin": 93.528,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "tiempo",
+   "inicio": 93.528,
+   "fin": 93.925,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "para",
+   "inicio": 93.925,
+   "fin": 94.218,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "tu",
+   "inicio": 94.218,
+   "fin": 94.407,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "proyecto.",
+   "inicio": 94.407,
+   "fin": 94.908,
+   "escena": "paso5d"
+  },
+  {
+   "texto": "Eso",
+   "inicio": 95.548,
+   "fin": 95.789,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "sí:",
+   "inicio": 95.789,
+   "fin": 95.978,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "deshace",
+   "inicio": 96.398,
+   "fin": 96.847,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "lo",
+   "inicio": 96.847,
+   "fin": 97.036,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "que",
+   "inicio": 97.036,
+   "fin": 97.277,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "cambió",
+   "inicio": 97.277,
+   "fin": 97.674,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "Claude,",
+   "inicio": 97.674,
+   "fin": 98.071,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "no",
+   "inicio": 98.271,
+   "fin": 98.46,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "lo",
+   "inicio": 98.46,
+   "fin": 98.649,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "que",
+   "inicio": 98.649,
+   "fin": 98.89,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "hayas",
+   "inicio": 98.89,
+   "fin": 99.235,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "tocado",
+   "inicio": 99.235,
+   "fin": 99.632,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "tú",
+   "inicio": 99.632,
+   "fin": 99.821,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "a",
+   "inicio": 99.821,
+   "fin": 99.958,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "mano.",
+   "inicio": 99.958,
+   "fin": 100.251,
+   "escena": "paso5e"
+  },
+  {
+   "texto": "¿Por",
+   "inicio": 100.891,
+   "fin": 101.132,
+   "escena": "porque"
+  },
+  {
+   "texto": "qué",
+   "inicio": 101.132,
+   "fin": 101.373,
+   "escena": "porque"
+  },
+  {
+   "texto": "importa",
+   "inicio": 101.373,
+   "fin": 101.822,
+   "escena": "porque"
+  },
+  {
+   "texto": "tanto?",
+   "inicio": 101.822,
+   "fin": 102.167,
+   "escena": "porque"
+  },
+  {
+   "texto": "Porque",
+   "inicio": 102.587,
+   "fin": 102.984,
+   "escena": "porque"
+  },
+  {
+   "texto": "te",
+   "inicio": 102.984,
+   "fin": 103.173,
+   "escena": "porque"
+  },
+  {
+   "texto": "da",
+   "inicio": 103.173,
+   "fin": 103.362,
+   "escena": "porque"
+  },
+  {
+   "texto": "permiso",
+   "inicio": 103.362,
+   "fin": 103.811,
+   "escena": "porque"
+  },
+  {
+   "texto": "para",
+   "inicio": 103.811,
+   "fin": 104.104,
+   "escena": "porque"
+  },
+  {
+   "texto": "experimentar.",
+   "inicio": 104.104,
+   "fin": 104.813,
+   "escena": "porque"
+  },
+  {
+   "texto": "Pruebas,",
+   "inicio": 105.233,
+   "fin": 105.682,
+   "escena": "porque"
+  },
+  {
+   "texto": "te",
+   "inicio": 105.882,
+   "fin": 106.071,
+   "escena": "porque"
+  },
+  {
+   "texto": "equivocas,",
+   "inicio": 106.071,
+   "fin": 106.624,
+   "escena": "porque"
+  },
+  {
+   "texto": "y",
+   "inicio": 106.824,
+   "fin": 106.961,
+   "escena": "porque"
+  },
+  {
+   "texto": "vuelves",
+   "inicio": 106.961,
+   "fin": 107.41,
+   "escena": "porque"
+  },
+  {
+   "texto": "atrás",
+   "inicio": 107.41,
+   "fin": 107.755,
+   "escena": "porque"
+  },
+  {
+   "texto": "sin",
+   "inicio": 107.755,
+   "fin": 107.996,
+   "escena": "porque"
+  },
+  {
+   "texto": "perder",
+   "inicio": 107.996,
+   "fin": 108.393,
+   "escena": "porque"
+  },
+  {
+   "texto": "nada.",
+   "inicio": 108.393,
+   "fin": 108.686,
+   "escena": "porque"
+  },
+  {
+   "texto": "Esa",
+   "inicio": 109.326,
+   "fin": 109.567,
+   "escena": "porque2"
+  },
+  {
+   "texto": "seguridad",
+   "inicio": 109.567,
+   "fin": 110.12,
+   "escena": "porque2"
+  },
+  {
+   "texto": "separa",
+   "inicio": 110.12,
+   "fin": 110.517,
+   "escena": "porque2"
+  },
+  {
+   "texto": "a",
+   "inicio": 110.517,
+   "fin": 110.654,
+   "escena": "porque2"
+  },
+  {
+   "texto": "quien",
+   "inicio": 110.654,
+   "fin": 110.999,
+   "escena": "porque2"
+  },
+  {
+   "texto": "avanza",
+   "inicio": 110.999,
+   "fin": 111.396,
+   "escena": "porque2"
+  },
+  {
+   "texto": "de",
+   "inicio": 111.396,
+   "fin": 111.585,
+   "escena": "porque2"
+  },
+  {
+   "texto": "quien",
+   "inicio": 111.585,
+   "fin": 111.93,
+   "escena": "porque2"
+  },
+  {
+   "texto": "tiene",
+   "inicio": 111.93,
+   "fin": 112.275,
+   "escena": "porque2"
+  },
+  {
+   "texto": "miedo",
+   "inicio": 112.275,
+   "fin": 112.62,
+   "escena": "porque2"
+  },
+  {
+   "texto": "de",
+   "inicio": 112.62,
+   "fin": 112.809,
+   "escena": "porque2"
+  },
+  {
+   "texto": "tocar.",
+   "inicio": 112.809,
+   "fin": 113.154,
+   "escena": "porque2"
+  },
+  {
+   "texto": "Tu",
+   "inicio": 113.794,
+   "fin": 113.983,
+   "escena": "tarea"
+  },
+  {
+   "texto": "tarea:",
+   "inicio": 113.983,
+   "fin": 114.328,
+   "escena": "tarea"
+  },
+  {
+   "texto": "rechaza",
+   "inicio": 114.748,
+   "fin": 115.197,
+   "escena": "tarea"
+  },
+  {
+   "texto": "un",
+   "inicio": 115.197,
+   "fin": 115.386,
+   "escena": "tarea"
+  },
+  {
+   "texto": "cambio",
+   "inicio": 115.386,
+   "fin": 115.783,
+   "escena": "tarea"
+  },
+  {
+   "texto": "a",
+   "inicio": 115.783,
+   "fin": 115.92,
+   "escena": "tarea"
+  },
+  {
+   "texto": "propósito",
+   "inicio": 115.92,
+   "fin": 116.473,
+   "escena": "tarea"
+  },
+  {
+   "texto": "y",
+   "inicio": 116.473,
+   "fin": 116.61,
+   "escena": "tarea"
+  },
+  {
+   "texto": "pide",
+   "inicio": 116.61,
+   "fin": 116.903,
+   "escena": "tarea"
+  },
+  {
+   "texto": "otro.",
+   "inicio": 116.903,
+   "fin": 117.196,
+   "escena": "tarea"
+  },
+  {
+   "texto": "Y",
+   "inicio": 117.616,
+   "fin": 117.753,
+   "escena": "tarea"
+  },
+  {
+   "texto": "prueba",
+   "inicio": 117.753,
+   "fin": 118.15,
+   "escena": "tarea"
+  },
+  {
+   "texto": "barra",
+   "inicio": 118.15,
+   "fin": 118.495,
+   "escena": "tarea"
+  },
+  {
+   "texto": "rewind",
+   "inicio": 118.495,
+   "fin": 118.892,
+   "escena": "tarea"
+  },
+  {
+   "texto": "para",
+   "inicio": 118.892,
+   "fin": 119.185,
+   "escena": "tarea"
+  },
+  {
+   "texto": "volver",
+   "inicio": 119.185,
+   "fin": 119.582,
+   "escena": "tarea"
+  },
+  {
+   "texto": "a",
+   "inicio": 119.582,
+   "fin": 119.719,
+   "escena": "tarea"
+  },
+  {
+   "texto": "un",
+   "inicio": 119.719,
+   "fin": 119.908,
+   "escena": "tarea"
+  },
+  {
+   "texto": "punto",
+   "inicio": 119.908,
+   "fin": 120.253,
+   "escena": "tarea"
+  },
+  {
+   "texto": "anterior.",
+   "inicio": 120.253,
+   "fin": 120.754,
+   "escena": "tarea"
+  },
+  {
+   "texto": "En",
+   "inicio": 121.394,
+   "fin": 121.583,
+   "escena": "resumen"
+  },
+  {
+   "texto": "resumen:",
+   "inicio": 121.583,
+   "fin": 122.032,
+   "escena": "resumen"
+  },
+  {
+   "texto": "pides,",
+   "inicio": 122.452,
+   "fin": 122.797,
+   "escena": "resumen"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 122.997,
+   "fin": 123.394,
+   "escena": "resumen"
+  },
+  {
+   "texto": "guarda,",
+   "inicio": 123.394,
+   "fin": 123.791,
+   "escena": "resumen"
+  },
+  {
+   "texto": "te",
+   "inicio": 123.991,
+   "fin": 124.18,
+   "escena": "resumen"
+  },
+  {
+   "texto": "propone,",
+   "inicio": 124.18,
+   "fin": 124.629,
+   "escena": "resumen"
+  },
+  {
+   "texto": "tú",
+   "inicio": 124.829,
+   "fin": 125.018,
+   "escena": "resumen"
+  },
+  {
+   "texto": "decides,",
+   "inicio": 125.018,
+   "fin": 125.467,
+   "escena": "resumen"
+  },
+  {
+   "texto": "y",
+   "inicio": 125.667,
+   "fin": 125.804,
+   "escena": "resumen"
+  },
+  {
+   "texto": "si",
+   "inicio": 125.804,
+   "fin": 125.993,
+   "escena": "resumen"
+  },
+  {
+   "texto": "algo",
+   "inicio": 125.993,
+   "fin": 126.286,
+   "escena": "resumen"
+  },
+  {
+   "texto": "falla,",
+   "inicio": 126.286,
+   "fin": 126.631,
+   "escena": "resumen"
+  },
+  {
+   "texto": "rebobinas.",
+   "inicio": 126.831,
+   "fin": 127.384,
+   "escena": "resumen"
+  },
+  {
+   "texto": "¿Quieres",
+   "inicio": 128.024,
+   "fin": 128.473,
+   "escena": "cta"
+  },
+  {
+   "texto": "los",
+   "inicio": 128.473,
+   "fin": 128.714,
+   "escena": "cta"
+  },
+  {
+   "texto": "esquemas",
+   "inicio": 128.714,
+   "fin": 129.215,
+   "escena": "cta"
+  },
+  {
+   "texto": "de",
+   "inicio": 129.215,
+   "fin": 129.404,
+   "escena": "cta"
+  },
+  {
+   "texto": "este",
+   "inicio": 129.404,
+   "fin": 129.697,
+   "escena": "cta"
+  },
+  {
+   "texto": "episodio?",
+   "inicio": 129.697,
+   "fin": 130.198,
+   "escena": "cta"
+  },
+  {
+   "texto": "Comenta",
+   "inicio": 130.618,
+   "fin": 131.067,
+   "escena": "cta"
+  },
+  {
+   "texto": "AUDITORIA",
+   "inicio": 131.067,
+   "fin": 131.62,
+   "escena": "cta"
+  },
+  {
+   "texto": "y",
+   "inicio": 131.62,
+   "fin": 131.757,
+   "escena": "cta"
+  },
+  {
+   "texto": "te",
+   "inicio": 131.757,
+   "fin": 131.946,
+   "escena": "cta"
+  },
+  {
+   "texto": "paso",
+   "inicio": 131.946,
+   "fin": 132.239,
+   "escena": "cta"
+  },
+  {
+   "texto": "el",
+   "inicio": 132.239,
+   "fin": 132.428,
+   "escena": "cta"
+  },
+  {
+   "texto": "enlace",
+   "inicio": 132.428,
+   "fin": 132.825,
+   "escena": "cta"
+  },
+  {
+   "texto": "con",
+   "inicio": 132.825,
+   "fin": 133.066,
+   "escena": "cta"
+  },
+  {
+   "texto": "todo.",
+   "inicio": 133.066,
+   "fin": 133.359,
+   "escena": "cta"
+  },
+  {
+   "texto": "Y",
+   "inicio": 133.999,
+   "fin": 134.136,
+   "escena": "cta2"
+  },
+  {
+   "texto": "si",
+   "inicio": 134.136,
+   "fin": 134.325,
+   "escena": "cta2"
+  },
+  {
+   "texto": "tienes",
+   "inicio": 134.325,
+   "fin": 134.722,
+   "escena": "cta2"
+  },
+  {
+   "texto": "un",
+   "inicio": 134.722,
+   "fin": 134.911,
+   "escena": "cta2"
+  },
+  {
+   "texto": "negocio,",
+   "inicio": 134.911,
+   "fin": 135.36,
+   "escena": "cta2"
+  },
+  {
+   "texto": "te",
+   "inicio": 135.56,
+   "fin": 135.749,
+   "escena": "cta2"
+  },
+  {
+   "texto": "preparamos",
+   "inicio": 135.749,
+   "fin": 136.354,
+   "escena": "cta2"
+  },
+  {
+   "texto": "una",
+   "inicio": 136.354,
+   "fin": 136.595,
+   "escena": "cta2"
+  },
+  {
+   "texto": "auditoría",
+   "inicio": 136.595,
+   "fin": 137.148,
+   "escena": "cta2"
+  },
+  {
+   "texto": "para",
+   "inicio": 137.148,
+   "fin": 137.441,
+   "escena": "cta2"
+  },
+  {
+   "texto": "optimizar",
+   "inicio": 137.441,
+   "fin": 137.994,
+   "escena": "cta2"
+  },
+  {
+   "texto": "tus",
+   "inicio": 137.994,
+   "fin": 138.235,
+   "escena": "cta2"
+  },
+  {
+   "texto": "procesos.",
+   "inicio": 138.235,
+   "fin": 138.736,
+   "escena": "cta2"
+  },
+  {
+   "texto": "En",
+   "inicio": 139.376,
+   "fin": 139.565,
+   "escena": "avance"
+  },
+  {
+   "texto": "el",
+   "inicio": 139.565,
+   "fin": 139.754,
+   "escena": "avance"
+  },
+  {
+   "texto": "siguiente",
+   "inicio": 139.754,
+   "fin": 140.307,
+   "escena": "avance"
+  },
+  {
+   "texto": "episodio,",
+   "inicio": 140.307,
+   "fin": 140.808,
+   "escena": "avance"
+  },
+  {
+   "texto": "los",
+   "inicio": 141.008,
+   "fin": 141.249,
+   "escena": "avance"
+  },
+  {
+   "texto": "errores",
+   "inicio": 141.249,
+   "fin": 141.698,
+   "escena": "avance"
+  },
+  {
+   "texto": "típicos",
+   "inicio": 141.698,
+   "fin": 142.147,
+   "escena": "avance"
+  },
+  {
+   "texto": "y",
+   "inicio": 142.147,
+   "fin": 142.284,
+   "escena": "avance"
+  },
+  {
+   "texto": "cómo",
+   "inicio": 142.284,
+   "fin": 142.577,
+   "escena": "avance"
+  },
+  {
+   "texto": "solucionarlos.",
+   "inicio": 142.577,
+   "fin": 143.338,
+   "escena": "avance"
+  },
+  {
+   "texto": "Sígueme",
+   "inicio": 143.978,
+   "fin": 144.427,
+   "escena": "seguir"
+  },
+  {
+   "texto": "para",
+   "inicio": 144.427,
+   "fin": 144.72,
+   "escena": "seguir"
+  },
+  {
+   "texto": "no",
+   "inicio": 144.72,
+   "fin": 144.909,
+   "escena": "seguir"
+  },
+  {
+   "texto": "perdértelo.",
+   "inicio": 144.909,
+   "fin": 145.514,
+   "escena": "seguir"
+  }
+ ]
+}

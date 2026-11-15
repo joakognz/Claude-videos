@@ -13,7 +13,7 @@ for esc in ep["escenas"]:
     t += 0.22
 dur = round(t + 0.9, 3)
 json.dump({"fuente": "provisional", "duracion": dur, "palabras": pal}, open(f"{out}/palabras.json", "w"), ensure_ascii=False, indent=1)
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", str(dur), "-c:a", "pcm_s24le", f"{out}/voz.wav"], check=True)
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=8000:cl=mono", "-t", str(dur), "-c:a", "pcm_s16le", f"{out}/voz.wav"], check=True)
 print(len(pal), "palabras", dur, "s")
 for e in ep["escenas"]:
     ws = [p for p in pal if p["escena"] == e["id"]]
