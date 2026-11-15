@@ -10,6 +10,11 @@ Iconos planos propios de la serie, que se pueden usar en cualquier episodio. **N
 - `dibujos/`: ilustraciones planas con relleno (candado, llave, tarjeta, datafono, maquina-turnos, ticket, servidor,
   reloj-arena, carpeta, llave-inglesa, tecla-esc, persona, cartel, aviso-error, insignia-check, insignia-cruz).
 
+- `usuario/`: iconos dibujados que aportó el usuario (estilo trazo grueso con relleno de color): `cronometro`,
+  `mano`, `marcador`, `matraz` y `tecla-esc`. Cada uno tiene dos versiones: la normal, con contorno oscuro (mejor sobre
+  claro o sobre tarjeta), y `_pegatina`, con borde crema, pensada para el fondo oscuro de la serie. La hoja original
+  está en `usuario/_hoja_original.png` y el muestrario, en `usuario/_muestrario.png`.
+
 En Remotion: `<Img src={staticFile("iconos/linea-coral/lupa.svg")} style={{ width: 80 }} />`.
 
 **Versiones animadas** (para mover piezas con la voz): `src/master/componentes/ep08/Dibujos.tsx` (cerradura con la

@@ -4,28 +4,52 @@
 ni se sustituyen por una versión propia. Si un episodio necesita un logo que no está, se pide al usuario con el nombre
 `logo_xxx` y se espera.
 
-En el JSON del episodio van en `"logos"` (`id` → ruta en `public/`), y en Remotion se usan con
+Se ven todos en `_muestrario.png`, cada uno sobre el fondo oscuro de la serie y sobre claro. Los originales, tal como
+llegaron, están en `_originales/`. A los de esta carpeta solo se les ha quitado el fondo blanco liso y se han recortado
+(`scripts/logo_sin_fondo.py`): ninguno se ha redibujado.
+
+En el JSON del episodio van en `"logos"` (`id` → ruta en `public/`) y en Remotion se usan con
 `<Logo src={ep.logos.xxx} … />` (`src/master/componentes/Logo.tsx`).
+**Logos oscuros** (negro o marrón sobre transparente): sobre el fondo #0B0D12 no se ven, así que van con
+`ficha="tarjeta"` (tarjeta clara) o `ficha="circulo"` (ficha blanca).
 
-## Los que hay en el repositorio
-
-| Nombre (`logo_xxx`) | Archivo | Tamaño | Notas de uso |
+| Nombre (`logo_xxx`) | Archivo | Sobre el fondo oscuro | Notas |
 |---|---|---|---|
-| logo_claude | `claude.png` | 999x1000, transparente | asterisco coral de Claude. Intro, consola, página de estado |
-| logo_claude_code | `claude-code-mascota.png` | 447x280, transparente | la mascota pixelada (cangrejo). Se le quitó solo el fondo blanco liso del borde; los ojos siguen blancos |
-| logo_claude_code_texto | `claude-code-pixel.png` | 659x354, transparente | rótulo «CLAUDE CODE» pixelado. Intro y cierre |
-| logo_vscode | `vscode.png` | 1000x995, transparente | Visual Studio Code |
-| logo_word | `word.png` | 1000x930, transparente | Microsoft Word |
-| logo_drive | `drive.png` | 1000x893, transparente | Google Drive (CTA: esquemas) |
-| logo_github_gato | `github.png` | 512x500, transparente | octocat negro: **siempre sobre ficha blanca** (`ficha="circulo"`), porque sobre el fondo oscuro no se ve |
-| logo_microsoft | `microsoft.png` | 766x476, transparente | texto gris: **sobre tarjeta clara** (`ficha="tarjeta"`) |
-| logo_anthropic | `anthropic.png` | 980x980, transparente | ficha clara 3D con la cabeza y «ANTHROPIC»: ya trae su fondo, va tal cual |
+| logo_anthropic | `anthropic.png` | tal cual | ficha clara 3D con la cabeza y «ANTHROPIC» (ya trae su fondo) |
+| logo_claude | `claude.png` | tal cual | asterisco coral |
+| logo_claude_code | `claude-code-mascota.png` | tal cual | la mascota pixelada (cangrejo) |
+| logo_claude_code_texto | `claude-code-pixel.png` | tal cual | rótulo «CLAUDE CODE» pixelado |
+| logo_vscode | `vscode.png` | tal cual | Visual Studio Code |
+| logo_word | `word.png` | tal cual | Microsoft Word |
+| logo_microsoft | `microsoft.png` | tarjeta clara | el texto es gris |
+| logo_drive | `drive.png` | tal cual | Google Drive (CTA: esquemas) |
+| logo_github_gato | `github.png` | ficha blanca | octocat negro sin círculo |
+| logo_github_circulo | `github_circulo.png` | tal cual | octocat blanco dentro del círculo negro |
+| logo_github | `github_texto.png` | tarjeta clara | rótulo «GitHub» negro (se le quitaron los cuadros incrustados) |
+| logo_github_copilot | `github_copilot.png` | tal cual | la cabeza de Copilot (blanca con contorno negro) |
+| logo_github_copilot_texto | `github_copilot_texto.png` | tarjeta clara | rótulo «Copilot» negro |
+| logo_git | `git.png` | tarjeta clara | rombo naranja con «git» en marrón oscuro |
+| logo_npm | `npm.png` | tal cual | rojo con letras blancas |
+| logo_whatsapp | `whatsapp.png` | tal cual | burbuja verde con aro blanco |
+| logo_gemini | `gemini.png` | tal cual | rótulo «Gemini» en degradado |
+| logo_gemini_icono | `gemini_icono.png` | tal cual | tarjeta oscura con las estrellas 3D (rectangular, con su fondo) |
+| logo_openai_codex | `openai_codex.png` | tal cual | la nube azul con `>_` |
+| logo_openai_codex_app | `openai_codex_app.png` | tal cual | tarjeta «Codex App · OpenAI» con su fondo (cuadrada) |
+| logo_nextjs | `nextjs.png` | tal cual | círculo negro con la N blanca (borde suave en lo oscuro) |
+| logo_nextjs_texto | `nextjs_texto.png` | tarjeta clara | rótulo «NEXT.JS» negro |
+| logo_vite | `vite.png` | tarjeta clara | el rayo se ve; el texto «VITE» es negro |
+| logo_tailwind | `tailwind.png` | tal cual | ficha clara 3D con las ondas y «tailwindcss» |
+| logo_vercel | `vercel.png` | tarjeta clara | triángulo y texto negros |
+| logo_netlify | `netlify.png` | tarjeta clara | los destellos se ven; el texto es verde oscuro |
+| logo_cloudflare_pages | `cloudflare_pages.png` | tarjeta clara | rayo naranja; «Pages» es negro |
+| logo_n8n | `n8n.png` | tarjeta clara | los nodos rosas se ven; «n8n» es azul marino |
+| logo_php | `php.png` | tal cual | óvalo morado |
 
-## Los que el usuario tiene en su carpeta pero aún no están aquí
+## Los que aún faltan
 
-Hay que pedirlos cuando un episodio los necesite (y guardarlos aquí con el nombre en minúsculas y sin `logo_`):
-whatsapp, nodejs, github (con texto: el que había traía el fondo de cuadros incrustado), aws, hostinger, youtube,
-live_server, aigencyx, git, npm, github_copilot, astro, nextjs, vite, tailwind, vercel, netlify, cloudflare_pages,
-n8n, php, openai_codex, gemini.
+Pídelos cuando un episodio los necesite y guárdalos aquí: el original en `_originales/` y la versión sin fondo con
+`python scripts/logo_sin_fondo.py _originales/x.png x.png` (mira los modos en el propio script). Rehaz el muestrario
+con `python scripts/muestrario_logos.py public/logos public/logos/_muestrario.png` y comprueba que nada se ha comido.
 
-`logo_aigencyx` hace falta para el cierre con marca. Mientras no esté, el usuario @aigencyx.labs va en texto.
+nodejs, aws, hostinger, youtube, live_server, astro y **aigencyx** (para el cierre con marca; mientras no esté, el
+usuario @aigencyx.labs va en texto).
