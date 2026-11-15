@@ -24,7 +24,9 @@ const TIT = {
 
 const tiempos = (L: Linea, ep: EpisodioMaster) => {
   const id = ep.escenas[0].id;
-  const enciende = L.en(id, String(ep.episodio));
+  // el número puede ir en cifra («2») o en letra («siete»): es la palabra que sigue a «Episodio»
+  const deIntro = L.palabras.filter((p) => p.escena === id);
+  const enciende = deIntro.some((p) => p.texto.replace(/\D/g, "") === String(ep.episodio)) ? L.en(id, String(ep.episodio)) : (deIntro[1] ?? deIntro[0]).inicio;
   const titulo = L.en(id, ep.serie.split(" ")[0]);
   const deshace = Math.max(enciende + 0.65, titulo - 0.55);
   return { enciende, titulo, deshace };

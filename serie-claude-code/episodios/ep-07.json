@@ -1,0 +1,83 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 7,
+  "total": 50,
+  "titulo": "Cambios y correcciones: trabajar sin miedo a romper nada",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-07/voz.wav",
+    "timestamps": "episodios/ep-07/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "drive",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": { "texto": "AUDITORÍA PARA TU NEGOCIO", "en": "auditoría" },
+    "remate": { "texto": "Optimiza tus procesos", "en": "optimizar" },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 8,
+  "avance": { "titulo": "ERRORES TÍPICOS", "subtitulo": "Y cómo solucionarlos" },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "drive": "logos/drive.png",
+    "aigencyx": "logos/aigencyx.png"
+  },
+  "iconos": {
+    "marcador": "iconos/marcador_pegatina.png",
+    "reloj": "iconos/reloj_pegatina.png",
+    "esc": "iconos/esc_pegatina.png",
+    "mano": "iconos/mano_pegatina.png",
+    "matraz": "iconos/matraz_pegatina.png"
+  },
+  "imagenes": {
+    "esquema": "episodios/ep-07/imagenes/esquema_ep7.png"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio siete de cincuenta. Máster de Claude Code." },
+    { "id": "miedo", "voz": "¿Y si lo estropeo? Es el mayor miedo cuando empiezas con Claude Code." },
+    { "id": "solucion", "voz": "Hoy te lo quito, porque Claude Code guarda tu trabajo solo y te deja volver atrás en el tiempo." },
+    { "id": "cinco", "voz": "Te lo enseño en cinco pasos." },
+    { "id": "paso1", "voz": "Paso uno. Pides algo. Una instrucción normal, con tus palabras." },
+    { "id": "paso2", "voz": "Paso dos. Antes de tocar nada, Claude Code crea un punto de guardado. Se llama checkpoint, y se hace solo." },
+    { "id": "paso2b", "voz": "Cada petición que haces es un punto de guardado nuevo." },
+    { "id": "paso2c", "voz": "Guarda los cien más recientes de la sesión, y los conserva junto a la conversación. Así que puedes volver atrás incluso otro día." },
+    { "id": "paso3", "voz": "Paso tres. Claude te propone el cambio, marcado en colores. En rojo, lo que quita. En verde, lo que añade." },
+    { "id": "paso4", "voz": "Paso cuatro. Tú decides. Lo revisas, y lo aceptas o lo rechazas. Si lo rechazas, le pides otro cambio." },
+    { "id": "paso4b", "voz": "Nada se cambia sin tu visto bueno." },
+    { "id": "paso4c", "voz": "Con una excepción: si activas el modo que se salta los permisos, el llamado bypass permissions, Claude ya no te pregunta." },
+    { "id": "paso5", "voz": "Paso cinco. ¿Algo ha fallado? Vuelves atrás." },
+    { "id": "paso5b", "voz": "Con el cuadro de texto vacío, pulsa la tecla Escape dos veces, o escribe barra rewind, que en inglés significa rebobinar." },
+    { "id": "paso5c", "voz": "Se abre un menú con tus mensajes anteriores. Eliges el punto al que quieres volver, confirmas, y recuperas el código y la conversación tal como estaban." },
+    { "id": "paso5d", "voz": "Es una máquina del tiempo para tu proyecto." },
+    { "id": "paso5e", "voz": "Eso sí: deshace lo que cambió Claude, no lo que hayas tocado tú a mano." },
+    { "id": "porque", "voz": "¿Por qué importa tanto? Porque te da permiso para experimentar. Pruebas, te equivocas, y vuelves atrás sin perder nada." },
+    { "id": "porque2", "voz": "Esa seguridad separa a quien avanza de quien tiene miedo de tocar." },
+    { "id": "tarea", "voz": "Tu tarea: rechaza un cambio a propósito y pide otro. Y prueba barra rewind para volver a un punto anterior." },
+    { "id": "resumen", "voz": "En resumen: pides, Claude guarda, te propone, tú decides, y si algo falla, rebobinas." },
+    { "id": "cta", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo." },
+    { "id": "cta2", "voz": "Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "avance", "voz": "En el siguiente episodio, los errores típicos y cómo solucionarlos." },
+    { "id": "seguir", "voz": "Sígueme para no perdértelo." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "miedo", "desde": "miedo" },
+    { "tipo": "pasos12", "desde": "paso1" },
+    { "tipo": "pasos34", "desde": "paso3" },
+    { "tipo": "paso5", "desde": "paso5" },
+    { "tipo": "porque", "desde": "porque" },
+    { "tipo": "tarea", "desde": "tarea" },
+    { "tipo": "cierre", "desde": "cta" }
+  ]
+}

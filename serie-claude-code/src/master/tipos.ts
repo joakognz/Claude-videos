@@ -26,7 +26,13 @@ export type EpisodioMaster = {
   };
   siguiente_episodio: number;
   proximo?: { titulo: string; en: string; detalle?: { texto: string; en: string }[]; logos?: { id: LogoId; en: string }[] }[];
-  logos: Record<LogoId, string>;
+  logos: Record<LogoId, string> & { aigencyx?: string };
+  /** ilustraciones del usuario (nunca redibujadas): id → ruta en public/ */
+  iconos?: Record<string, string>;
+  /** otras imágenes del usuario (p. ej. el esquema del episodio) */
+  imagenes?: Record<string, string>;
+  /** tarjeta del episodio siguiente en el bloque «cierre» */
+  avance?: { titulo: string; subtitulo?: string };
   clips?: Record<string, { src: string; ancho: number; alto: number; recorteArriba?: number }>;
   escenas: { id: string; voz: string }[];
   bloques: { tipo: string; desde: string }[];
