@@ -1,0 +1,70 @@
+ESTADO: BORRADOR. Falta logo_anthropic.png. Cuando llegue, quita esta línea y la marca [PENDIENTE] de ASSETS.
+
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 8 de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Si hay dudas que BLOQUEAN el trabajo (un archivo que falta, un logo que no tienes), pregúntalas todas juntas en una sola lista numerada.
+4. No hace falta que me pidas confirmación para empezar: si no hay dudas bloqueantes, empieza directamente. Si las hay, espera solo esas respuestas y sigue.
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":8,"total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"sans moderna","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep8.mp3","timestamps":"ts_ep8.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.9 · NIVEL EXPERTO","subtitulo":"Da el salto con Claude Code"},"cierre":"Sígueme para no perdértelo." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos: logo_claude, logo_claude_code, logo_vscode, logo_anthropic [PENDIENTE], logo_drive, logo_aigencyx
+Imagen opcional: foto_floristeria.jpg (si no está, la web de ejemplo se monta con bloques e iconos planos, sin fotos)
+Iconos planos coral que debes dibujar tú (no son marcas): puerta de tienda con cartel colgante, llave y cerradura, tarjeta y datáfono, máquina de turnos con número, grupo de personas (aforo), llave inglesa con chispa, servidor, lupa, carpeta de proyecto, tecla "Esc", flecha que da vueltas en círculo, flecha que se desvía (ramas), reloj de arena.
+Tomas (referencia para animar): toma_01_consola_saldo, toma_02_limites_uso, toma_03_status, toma_04_escape_vscode
+Audio: voz_ep8.mp3, ts_ep8.json (timestamps por palabra), musica.mp3 (opcional).
+
+IMÁGENES Y LOGOS (OBLIGATORIO)
+Cada escena donde se nombre una marca, herramienta o concepto con imagen debe mostrar el logo o la imagen que adjunto, en el momento exacto en que se dice. Usa muchos, de forma visible y con animación (entrada con spring, escalonados). No dibujes ni inventes logos ni imágenes de marcas: solo mis archivos. Si necesitas uno que no te he pasado, pídemelo y espera.
+
+ORIGINALIDAD
+Este reel NO debe parecerse al vídeo del curso: composición, escenas, metáforas y animaciones propias. Solo se mantiene la idea y los datos.
+Hilo visual de todo el reel: LA PUERTA DE UNA TIENDA CON UN CARTEL COLGANTE. Cada código de error es un cartel que gira sobre su cuerda (giro 3D en Y con spring y un pequeño balanceo al pararse). Por delante, el número grande en monoespaciada; debajo, en pequeño, el nombre técnico; y al final, la solución como sello. Al terminar, el cartel gira por última vez y muestra "ABIERTO".
+
+TOMAS = MATERIAL DE REFERENCIA PARA ANIMAR
+Las tomas son grabaciones reales de mi pantalla. NO las muestres tal cual: recrea cada una como animación fiel, en el estilo de la serie, con la misma interfaz: mismos menús, paneles, texto y orden de clics. El texto se teclea animado y el cursor se mueve y hace clic como en la toma. No inventes pasos ni pantallas que no salgan en la toma. Sustituye por datos ficticios cualquier correo, token, ruta o nombre real. En la consola, los importes, el nombre de la organización, la tarjeta y la dirección se cambian por datos ficticios o se tapan con bloques grises.
+
+INTRO (máx. 4 s)
+Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-7 iluminados, el 8 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.8".
+
+ESCENAS (tiempos orientativos; mandan los timestamps)
+| Minuto | Qué se ve | Logos / tomas |
+|---|---|---|
+| 0:00-0:04 | Intro (arriba). | logo_claude, logo_claude_code |
+| 0:04-0:10 | "trabajando con Claude Code": editor oscuro con el panel de Claude Code escribiendo código. "de repente, sale un mensaje con un número": entra desde arriba un aviso de error en coral con un número borroso ("API Error · ???") y la pantalla da una sacudida corta. | logo_vscode y logo_claude_code en la barra del editor |
+| 0:10-0:17 | "Respira": el aviso se aleja y un círculo coral se expande y contrae una vez (como una respiración). Sello "NO HAS ROTO NADA". "Los errores van a pasar": tres avisos apilados caen en abanico. "saber leerlos": una lupa pasa por encima y los avisos se vuelven legibles. | — |
+| 0:17-0:27 | METÁFORA: la cámara se aleja y el aviso pasa a ser un cartel que cuelga de la puerta de una tienda (ilustración plana: puerta, cristal, cuerda). "No te riñe": el cartel se balancea con suavidad. "qué pasa y qué tienes que hacer": dos etiquetas salen a los lados del cartel: QUÉ PASA · QUÉ HACER. | — |
+| 0:27-0:37 | Sello "PASO 1". "Mira si el error trae un número": el cartel gira y muestra "???", con la pregunta "¿TRAE NÚMERO?". Se abren dos caminos: SÍ (coral) y NO (gris, con la etiqueta "PASO 4"). "casi nunca es tu proyecto": icono de carpeta de proyecto con un ✓ blanco (está bien). "Es la conexión o tu cuenta": dos etiquetas, CONEXIÓN y CUENTA, al final del camino SÍ. | — |
+| 0:37-0:40 | Sello "PASO 2" + título "SE ARREGLA DESDE TU CUENTA". | logo_claude pequeño junto al título |
+| 0:40-0:50 | 401: el cartel gira y muestra "401", debajo "authentication_error". "tu llave ya no abre": una llave entra en una cerradura, gira a medias y rebota. "caducado, o está mal": etiqueta CLAVE O SESIÓN CADUCADA. "Vuelve a conectarte o inicia sesión de nuevo": sello "RECONECTA" y un botón "Iniciar sesión" que el cursor pulsa → ✓. | logo_claude en el botón de inicio de sesión |
+| 0:50-1:04 | 400 · SALDO: el cartel muestra "400 · SALDO". "tarjeta rechazada en el datáfono": datáfono plano con pantalla "DENEGADA" y una tarjeta que se retira. "crédito o el límite de gasto": dos etiquetas, CRÉDITO y LÍMITE DE GASTO. "Entra en platform punto claude punto com": barra de direcciones donde se teclea platform.claude.com y se recrea toma_01 (panel → Facturación con el saldo y el botón de comprar créditos → Límites de gasto). "recarga": sello "REVISA Y RECARGA". | logo_claude · toma_01_consola_saldo |
+| 1:04-1:07 | Sello "PASO 3" + título "SE ARREGLA ESPERANDO" con un reloj de arena que gira. | — |
+| 1:07-1:18 | 429: el cartel muestra "429 · ESPERE SU TURNO", debajo "rate_limit_error". Máquina de turnos que escupe papeles muy deprisa hasta que se bloquea. "límite de uso": etiqueta LÍMITE DE USO. "Espera un poco y sigue": barra de espera que se llena y el papel vuelve a salir. "depende del plan": recreación breve de toma_02 (la pantalla de límites de uso con su nivel). | toma_02_limites_uso |
+| 1:18-1:26 | 529: el cartel muestra "529 · AFORO COMPLETO", debajo "overloaded_error". "servidores de Anthropic están saturados": un servidor con un contador de aforo en coral y una fila de personitas esperando fuera. "No es culpa tuya": sello "NO ES CULPA TUYA". "espera y vuelve a intentarlo": icono de reintentar que gira una vez. | logo_anthropic en el servidor |
+| 1:26-1:30 | 500: el cartel muestra "500 · CERRADO POR AVERÍA", debajo "api_error". Llave inglesa con chispa sobre el servidor. Sello "REINTENTA". | logo_anthropic en el servidor |
+| 1:30-1:38 | "status punto claude punto com": se teclea status.claude.com y se recrea toma_03 (barras de disponibilidad; el cursor pasa por una barra y aparece el aviso de incidencia). "Si ves una incidencia, el problema es suyo, no tuyo": etiqueta ES SUYO, NO TUYO. | toma_03_status · logo_claude |
+| 1:38-2:03 | Sello "PASO 4". "no hay número, pero Claude se lía": el cartel gira y está en blanco. Tres iconos al nombrarlos: SE ATASCA (barra de progreso parada), REPITE (flecha en círculo), SE VA POR LAS RAMAS (flecha que se desvía). "Pulsa la tecla Escape en Visual Studio Code y se para": tecla "Esc" grande que baja con golpe y se recrea toma_04 hasta que sale "Interrupted". "pídeselo de otra manera y dale más contexto": sellos REFORMULA y MÁS CONTEXTO. Ejemplo: en el cuadro de Claude Code, "arregla la web" se tacha y se teclea "en la web de la floristería, el botón de comprar no hace nada al pulsarlo". Al lado, una web de floristería sencilla con su botón "Comprar" resaltado. | logo_vscode, logo_claude_code · toma_04_escape_vscode · foto_floristeria (opcional) |
+| 2:03-2:12 | RESUMEN: pantalla partida en dos tarjetas. Izquierda: "¿VES UN NÚMERO?" → RESPIRA · CONEXIÓN O CUENTA. Derecha: "¿SIN NÚMERO?" → REFORMULA. Al terminar, el cartel de la puerta gira por última vez y muestra "ABIERTO". | — |
+| 2:12-2:23 | CTA: la pregunta palabra a palabra; "AUDITORIA" se teclea en un cuadro de comentario y se envía; aparece la carpeta de esquemas. "si tienes un negocio": tarjeta AUDITORÍA PARA TU NEGOCIO · OPTIMIZA TUS PROCESOS. | logo_drive, logo_aigencyx |
+| 2:23-2:30 | AVANCE: la cuadrícula de 50 marca el EP.8 hecho y el EP.9 palpita. Tarjeta "EP.9 · NIVEL EXPERTO" / "Da el salto con Claude Code". "Sígueme para no perdértelo": botón Seguir → Siguiendo ✓ con @aigencyx.labs. | logo_claude_code, logo_aigencyx |
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "PASO 1" a "PASO 4" donde corresponda.
+- Los números de error, los nombres técnicos (authentication_error, rate_limit_error, overloaded_error, api_error) y las direcciones web van en tipografía monoespaciada.
+- Música a -20 dB con ducking bajo la voz (si hay música).
+- Marca de agua con el handle, badge "EP.8/50" y barra de progreso.
+
+ENTREGA
+Haz directamente el render final a 1080x1920. NO hagas render de prueba y NO esperes mi aprobación: entrega el vídeo terminado.

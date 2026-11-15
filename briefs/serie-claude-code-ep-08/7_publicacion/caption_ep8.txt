@@ -1,0 +1,15 @@
+Te sale un error con un número en Claude Code y piensas que lo has roto todo 😅
+
+Tranquilidad: casi nunca es tu proyecto. Cada número te dice qué pasa y qué hacer:
+401 → tu sesión ha caducado: vuelve a iniciarla
+400 de saldo → se acabó el crédito o el límite de gasto
+429 → has ido muy rápido: espera un poco
+529 y 500 → es cosa de Anthropic: espera y reintenta
+
+¿Y si no hay número y Claude se lía? Esc, reformula y dale más contexto.
+
+Episodio 8 de 50 del Máster de Claude Code 🚀
+
+Comenta AUDITORIA y te paso los esquemas de este episodio. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+#claudecode #inteligenciaartificial #automatizacion #desarrolloweb #pymes

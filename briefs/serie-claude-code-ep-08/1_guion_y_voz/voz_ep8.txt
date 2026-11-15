@@ -1,0 +1,25 @@
+Episodio ocho de cincuenta. Máster de Claude Code.
+
+Estás trabajando con Claude Code y, de repente, sale un mensaje con un número. Respira: no has roto nada. Los errores van a pasar, y saber leerlos es lo que evita que lo dejes a medias.
+
+Piensa en cada número como el cartel que cuelga en la puerta de una tienda. No te riñe: te dice qué pasa y qué tienes que hacer.
+
+Paso uno. Mira si el error trae un número. Si lo trae, casi nunca es tu proyecto. Es la conexión o tu cuenta.
+
+Paso dos. Los que se arreglan desde tu cuenta.
+Cuatrocientos uno: tu llave ya no abre. Tu clave o tu sesión ha caducado, o está mal. Vuelve a conectarte o inicia sesión de nuevo.
+Cuatrocientos, con un aviso de saldo: es la tarjeta rechazada en el datáfono. Se acabó el crédito o el límite de gasto que pusiste. Entra en platform punto claude punto com, revisa tu cuenta y recarga.
+
+Paso tres. Los que se arreglan esperando.
+Cuatrocientos veintinueve: espere su turno. Has ido demasiado rápido y has llegado al límite de uso. Espera un poco y sigue. Ese límite depende del plan que tengas contratado.
+Quinientos veintinueve: aforo completo. Los servidores de Anthropic están saturados. No es culpa tuya: espera y vuelve a intentarlo.
+Quinientos: cerrado por avería. Es un fallo interno de Anthropic. Reintenta.
+Con estos dos últimos, entra en status punto claude punto com. Si ves una incidencia, el problema es suyo, no tuyo.
+
+Paso cuatro. A veces no hay número, pero Claude se lía: se atasca, repite o se va por las ramas. Pulsa la tecla Escape en Visual Studio Code y se para. Luego pídeselo de otra manera y dale más contexto. Por ejemplo, en vez de "arregla la web", dile: "en la web de la floristería, el botón de comprar no hace nada al pulsarlo".
+
+En resumen: si ves un número, respira, es la conexión o la cuenta. Si no hay número, reformula lo que le pides.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En el siguiente episodio, damos el salto al nivel experto. Sígueme para no perdértelo.

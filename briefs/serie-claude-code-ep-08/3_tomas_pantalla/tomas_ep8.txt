@@ -1,0 +1,28 @@
+TOMAS DEL EP.8 · ERRORES TÍPICOS Y TROUBLESHOOTING
+Grábalas en tu pantalla (vertical u horizontal, da igual) y guárdalas con estos nombres.
+No hace falta voz ni cámara. Mueve el ratón despacio y haz una pausa de 1 segundo antes de cada clic.
+En la animación se cambian los datos reales por ficticios, pero aun así no te pares sobre tu tarjeta ni tu dirección.
+
+toma_01_consola_saldo.mp4 (unos 20 s)
+1. Navegador. Escribe en la barra: platform.claude.com y entra (con tu sesión ya iniciada).
+2. En el Panel de control, para un segundo encima de la tarjeta "Créditos de la organización" (se ve el botón "Añadir fondos").
+3. En el menú de la izquierda, entra en la configuración de la organización y pulsa "Facturación": se ve "Saldo de créditos" y el botón "Comprar créditos". No lo pulses.
+4. En el mismo menú, pulsa "Límites de gasto" y para dos segundos.
+
+toma_02_limites_uso.mp4 (unos 10 s)
+1. Dentro de la configuración de la organización, pulsa "Límites de velocidad".
+2. Para encima del bloque de tu nivel ("Nivel ...").
+3. Baja despacio por la tabla de "Cuotas" (solicitudes y tokens por minuto de cada modelo).
+
+toma_03_status.mp4 (unos 15 s)
+1. Escribe en la barra: status.claude.com y entra.
+2. Baja despacio por las barras de claude.ai, Claude Console, Claude API y Claude Code.
+3. Pasa el ratón por encima de una rayita naranja o roja hasta que salga la ventanita con la incidencia de ese día.
+4. Baja hasta "Past Incidents" y para dos segundos.
+
+toma_04_escape_vscode.mp4 (unos 25 s)
+Prepara antes una carpeta de prueba llamada web-floristeria abierta en Visual Studio Code, con el panel de Claude Code a la vista.
+1. En el cuadro de Claude Code escribe: arregla la web   y envíalo.
+2. Mientras Claude está pensando, pulsa la tecla Esc: tiene que salir "Interrupted".
+3. Escribe despacio: En la web de la floristería, el botón de comprar no hace nada al pulsarlo. Revisa por qué.
+4. Envíalo y deja que empiece a responder 3 o 4 segundos. Corta ahí.

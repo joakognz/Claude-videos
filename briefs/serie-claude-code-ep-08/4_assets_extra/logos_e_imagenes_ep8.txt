@@ -1,0 +1,15 @@
+LOGOS E IMÁGENES DEL EP.8
+
+| NECESITA | ESTADO | Dónde sale |
+|---|---|---|
+| logo_claude | TIENES | intro, 401 (iniciar sesión), consola, status |
+| logo_claude_code | TIENES | intro, editor, paso 4, avance |
+| logo_vscode | TIENES | editor del gancho, tecla Escape (paso 4) |
+| logo_anthropic | FALTA | 529 y 500 (servidores de Anthropic) |
+| logo_drive | TIENES | CTA (esquemas) |
+| logo_aigencyx | TIENES | CTA y botón Seguir |
+| foto_floristeria.jpg (opcional) | FALTA | web de ejemplo del paso 4 |
+| capturas de consola, status y Visual Studio Code | FALTA | salen de las tomas 01 a 04 (ver 3_tomas_pantalla) |
+| iconos planos (puerta y cartel, llave, datáfono, turnos, aforo, avería, tecla Esc...) | No hace falta | los dibuja Remotion: no son marcas |
+
+Pide primero: logo_anthropic.png (fondo transparente). Sin él, el prompt no es final.
