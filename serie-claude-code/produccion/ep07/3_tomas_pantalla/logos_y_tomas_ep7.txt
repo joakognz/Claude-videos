@@ -28,6 +28,10 @@ FORMAS QUE AÚN DIBUJA REMOTION EN CORAL PLANO (no son marcas). Si las quieres e
 7. lista de tareas ("tu tarea")
 8. flecha de rebobinar
 
+TOMAS: YA NO HACEN FALTA para este episodio. El montaje recrea la interfaz (chat, cambio en colores,
+menú «Rewind to…» y «Fork and rewind») a partir de la lección, con datos ficticios. Lo de abajo queda como guía
+por si algún día quieres sustituir una recreación por una grabación tuya.
+
 TOMAS A GRABAR (en tu pantalla, VS Code con la extensión de Claude Code)
 Antes de grabar:
 - Usa un proyecto de prueba con datos ficticios, por ejemplo una carpeta "mi-proyecto" con un index.html sencillo.

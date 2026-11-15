@@ -26,3 +26,16 @@ Imágenes del usuario (15/11/2026) — obligatorio usar solo estos archivos, sin
   con borde crema (_pegatina) y sin borde. public/iconos/. Script: scripts/recortar_iconos.py.
   Tamaño original ~250-290 px: no pasar de 300 px en pantalla. Si llegan originales más grandes o en SVG, se sustituyen.
 - Vista previa: produccion/ep07/4_assets_extra/vista_previa_assets_ep7.png
+
+Montaje (15/11/2026) — decidido sin preguntas, por encargo:
+- Montado con la plantilla Master: bloques intro, miedo, pasos12, pasos34, paso5, porque, tarea, cierre.
+- Sin tomas de pantalla: la interfaz (chat, cambio en colores, menú «Rewind to…», «Fork and rewind») se recrea a
+  partir de lo que se ve en la lección, con datos ficticios (mi-proyecto/index.html, «Mi negocio»).
+- Sin render de prueba: se revisan fotogramas sueltos de cada escena y se entrega el final.
+- Formas genéricas (bocadillo, escudo, calendario, interruptor, casillas) dibujadas en coral plano.
+- VOZ: PENDIENTE. ElevenLabs (conector) sin créditos: quedaban 8 de 10.000 y la locución pide 2.062.
+  Voz de la serie en la cuenta: «Manu Arias - Español Viral» (antes «Manu Gordillo»), modelo v4.
+  Cuando llegue el mp3:
+    ffmpeg -i voz_ep7.mp3 -af apad=pad_dur=1.2 audio/raw/serie-claude-code/ep-07_montaje.mp3   # cola para el botón Seguir
+    python scripts/preparar.py episodios/ep-07.json --mp3 ../audio/raw/serie-claude-code/ep-07_montaje.mp3 --modelo <parakeet>
+    node scripts/render-lote.mjs episodios/ep-07.json && python scripts/qa_master.py episodios/ep-07.json out/claude-code-ep-07.mp4

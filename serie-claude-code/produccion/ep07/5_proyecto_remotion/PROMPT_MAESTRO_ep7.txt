@@ -3,10 +3,9 @@ Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel
 Tema del episodio: "Cambios y correcciones · Trabajar sin miedo a romper nada". Checkpoints (puntos de guardado automáticos), ver el cambio antes de aceptarlo, y volver atrás con /rewind.
 
 PASO 0 — ANTES DE GENERAR NADA
-1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+1. Comprueba que existen todos los archivos del manifiesto. Si falta un logo o una imagen de marca, PARA y dímelo.
 2. Calcula la duración real del audio. Si supera 180 s, avísame.
-3. Hazme TODAS tus dudas en una sola lista numerada (estilo, tiempos, logos, tomas).
-4. No generes código ni renders hasta que yo responda "adelante".
+3. Para todo lo demás (estilo, tiempos, formas genéricas, tomas que no hayan llegado) decide tú y sigue: sin preguntas.
 
 CONFIG
 { "serie":"Máster de Claude Code","episodio":7,"total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
@@ -113,4 +112,5 @@ ANIMACIÓN
 - Marca de agua con el handle, badge "EP.7/50" y barra de progreso.
 
 ENTREGA
-1. Render de prueba a 540x960. 2. Espera mi visto bueno. 3. Render final a 1080x1920.
+Directa: render final a 1080x1920, sin render de prueba. Antes de entregar, revisa tú fotogramas sueltos de cada
+escena (logos correctos, ningún texto cortado ni tapado) y pasa la checklist (duración = voz, subtítulos, sonoridad).

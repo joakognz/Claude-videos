@@ -100,6 +100,21 @@ src/master/
 - `cta`: `tipo` (auditoria | drive), `pregunta`, `palabra_clave`, `texto`, `sello`, `remate`, `seguir`.
 - `proximo[]`: lo que se anuncia del episodio siguiente, cada punto anclado a una palabra de la voz (`en`).
 
+### EP.7 en adelante: imágenes del usuario y bloques de pasos
+
+- `logos.aigencyx`, `iconos` e `imagenes` en el JSON: rutas de ficheros del usuario en `public/` (logo de la marca,
+  ilustraciones, esquema del episodio). **Nunca se redibujan ni se recolorean**: se cargan con `<Img>` y se animan
+  enteros (`componentes/Interfaz.tsx › Imagen`). Los iconos miden 250–290 px: no pasan de 300 px en pantalla.
+- `componentes/Interfaz.tsx`: `Imagen`, `Ventana` (barra con el logo real de la app), `CajaTexto` + `tecleo`,
+  `Paso` (sello «PASO N»), `PasosHud` (indicador fijo de los cinco pasos), `Rebobinado`, `Check`, `Aspa`, `Caja`.
+- Bloques del EP.7 (`bloques/`): `miedo`, `pasos12`, `pasos34`, `paso5` (menú «Rewind to…» recreado), `porque`,
+  `tarea` y `cierre` (CTA con el esquema + avance del episodio siguiente con `avance` + perfil con `logos.aigencyx`).
+- `scripts/fotogramas.mjs`: fotogramas sueltos para revisar escenas sin renderizar el vídeo
+  (`node scripts/fotogramas.mjs episodios/ep-07.json out/fotos paso3+0.8 61.5`).
+- `scripts/tiempos_provisionales.py`: tiempos de relleno (y un wav en silencio) para desarrollar antes de tener la voz.
+- `scripts/exportar_logo.cjs` y `scripts/recortar_iconos.py`: cómo se sacaron el logo (del diseño del usuario) y los
+  iconos (de su hoja) sin retocarlos.
+
 ```bash
 python scripts/preparar.py episodios/ep-02.json --mp3 ../audio/raw/serie-claude-code/ep-02_montaje.mp3 --modelo <parakeet>
 node scripts/render-lote.mjs episodios/ep-02.json          # → out/claude-code-ep-02.mp4
