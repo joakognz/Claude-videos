@@ -79,4 +79,15 @@ I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", r)[-1])
 tp = float(re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r)[-1])
 print("Audio")
 linea(f"{I:.1f} LUFS integrados · pico real {tp:.1f} dBTP", -15 <= I <= -13 and tp <= -1.0)
+
+# efectos de la librería del usuario (EP.11 en adelante): reales, rotados y por debajo de la voz
+if ep.get("efectos"):
+    cues = json.load(open(os.path.join(ROOT, "public", ep["efectos"]["cues"]), encoding="utf-8"))["cues"]
+    faltan = [c["archivo"] for c in cues if not os.path.isfile(os.path.join(ROOT, "public", "sfx", c["archivo"]))]
+    linea(f"{len(cues)} efectos de joakognz/sonidos-videos ({len(set(c['archivo'] for c in cues))} archivos), todos en public/sfx/",
+          len(cues) > 0 and not faltan)
+    rep = [i for i in range(len(cues)) if cues[i]["archivo"] in [c["archivo"] for c in cues[max(0, i - 2):i]]]
+    linea(f"ningún archivo repite uno de los dos anteriores ({len(rep)} repetidos)", not rep)
+    alto = [c for c in cues if c.get("db_voz", -99) > -9]
+    linea(f"efectos 9 dB o más por debajo de la voz ({len(alto)} por encima)", not alto)
 print("\nTODO EN VERDE" if ok else "\nHAY PUNTOS EN ROJO")

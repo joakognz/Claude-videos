@@ -5,7 +5,7 @@ import { duracionAudio, leerTimestamps } from "../datos";
 import { BLOQUES } from "./bloques";
 import { envolventeMusica } from "./componentes/Sonido";
 import { FPS, crearLinea } from "./nucleo";
-import type { Evento, Palabra } from "./nucleo";
+import type { Cue, Evento, Palabra } from "./nucleo";
 import type { EpisodioMaster } from "./tipos";
 
 export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async ({ props }) => {
@@ -32,6 +32,13 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
     eventos.push(...B.eventos(L, props));
     if (i > 0) eventos.push({ t: cortes[i] - 0.3, sfx: "whoosh", vol: 0.28 });
   });
+  // efectos de la librería (scripts/sonidos.mjs): sustituyen a los sintéticos
+  let cues: Cue[] | undefined;
+  if (props.efectos?.cues) {
+    const r = await fetch(staticFile(props.efectos.cues));
+    if (!r.ok) throw new Error(`Falta ${props.efectos.cues}: ejecuta node scripts/sonidos.mjs con este episodio`);
+    cues = ((await r.json()).cues as Cue[]).filter((c) => c.inicio >= 0 && c.inicio < duracion);
+  }
   const mus = props.musica;
   const frames = Math.ceil(duracion * FPS);
   return {
@@ -43,8 +50,9 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
         frames,
         palabras,
         cortes,
-        musica: mus ? envolventeMusica(palabras, duracion, mus.db ?? -20, mus.duckingDb ?? -8) : [],
+        musica: mus ? envolventeMusica(palabras, duracion, mus.db ?? -20, mus.duckingDb ?? -8, cues?.filter((c) => c.fuerte).map((c) => c.en)) : [],
         eventos: eventos.filter((e) => e.t >= 0 && e.t < duracion).sort((a, b) => a.t - b.t),
+        ...(cues ? { cues } : {}),
       },
     },
     defaultOutName: `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,

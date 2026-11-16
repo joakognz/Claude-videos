@@ -1,4 +1,4 @@
-import type { Evento, Linea, Palabra } from "./nucleo";
+import type { Cue, Evento, Linea, Palabra } from "./nucleo";
 
 /** Logos de public/logos/ (ver public/logos/_LEEME_LOGOS.md). Cada episodio declara en su JSON los que usa. */
 export type LogoId =
@@ -17,6 +17,8 @@ export type EpisodioMaster = {
   handle: string;
   voz: { audio: string; timestamps?: string; palabras?: Palabra[] };
   musica?: { audio: string; db?: number; duckingDb?: number };
+  /** efectos de la librería del usuario (EP.11 en adelante): cues.json que genera scripts/sonidos.mjs */
+  efectos?: { cues: string };
   cta: {
     tipo: "auditoria" | "drive";
     pregunta: string;
@@ -53,6 +55,8 @@ export type Calculo = {
   cortes: number[];
   musica: number[];
   eventos: Evento[];
+  /** si el episodio usa la librería: los sonidos reales (sustituyen a los sintéticos de `eventos`) */
+  cues?: Cue[];
 };
 
 /** Lo que recibe cada bloque. t es el tiempo global del reel (segundos). */

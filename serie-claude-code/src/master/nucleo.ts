@@ -179,5 +179,17 @@ export const largoCurva = (cv: Curva) => {
 };
 
 // ── sonido ───────────────────────────────────────────────────────────────────────────────────────────────────────
-export type Sfx = "golpe" | "tick" | "whoosh" | "pop" | "tecleo" | "envio";
-export type Evento = { t: number; sfx: Sfx; vol: number; dur?: number };
+/**
+ * Tipos de evento. Los seis primeros tienen sonido sintético (EP.1–EP.8, public/audio/sfx/); desde el EP.11 todos
+ * suenan con la librería del usuario (scripts/sonidos.mjs), cada tipo con su carpeta del repo.
+ */
+export type Sfx =
+  | "golpe" | "tick" | "whoosh" | "pop" | "tecleo" | "envio"
+  | "zoom" | "ventana" | "check" | "glitch" | "foto" | "error" | "revelacion";
+/**
+ * t: inicio del sonido sintético. en: instante del evento (donde debe caer el pico); si falta, se deduce de t.
+ * Los bloques nuevos deberían dar `en` (y para el tecleo, `dur`).
+ */
+export type Evento = { t: number; sfx: Sfx; vol: number; dur?: number; en?: number };
+/** Un sonido de la librería colocado en el reel (public/episodios/ep-NN/cues.json). */
+export type Cue = { en: number; inicio: number; archivo: string; desde: number; dur: number; vol: number; tipo: Sfx; fuerte: boolean; fundido: number };

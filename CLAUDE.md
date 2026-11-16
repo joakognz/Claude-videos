@@ -21,6 +21,7 @@ Este archivo cuenta lo que vive en el repositorio.
 | 02 VS Code, GitHub, PUSH y PULL | 0.2 | `episodios/ep-02.json` (composición «Master») · `entregas/serie-claude-code-ep-02.mp4` |
 | 03–07 | 0.3–1.4 | no están en este repositorio (hechos en la carpeta del usuario) |
 | 08 Errores típicos y troubleshooting | 1.5 | `episodios/ep-08.json` · `entregas/serie-claude-code-ep-08.mp4` · `briefs/serie-claude-code-ep-08/` |
+| 11 Variantes infinitas | 1.8 | en preparación: primer episodio con los efectos de la librería del usuario |
 
 Hoja de ruta: EP09 Nivel experto (1.6, probable 2 partes) · EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
 EP12 Computer Use (1.9) · EP13 Cierre del módulo 1: pregunta a la audiencia (web / automatizaciones / a medida).
@@ -38,6 +39,7 @@ pip install numpy scipy pyloudnorm sherpa-onnx soundfile   # una vez por sesión
 #    y "bloques" (tipo + escena de inicio). Copia el MP3 a ../audio/raw/serie-claude-code/ep-NN.mp3
 #    Añade 1 s de silencio al final (ffmpeg -af apad=pad_dur=1.0) para que el botón «Seguir» termine.
 python scripts/preparar.py episodios/ep-NN.json --mp3 ../audio/raw/serie-claude-code/ep-NN_montaje.mp3 --modelo <carpeta del modelo>
+node scripts/sonidos.mjs episodios/ep-NN.json                # efectos de la librería del usuario (desde el EP.11; ver abajo)
 node scripts/fotogramas.mjs episodios/ep-NN.json 5 20 40 …   # revisar fotogramas sueltos (rápido)
 node scripts/render-lote.mjs episodios/ep-NN.json            # render final → out/claude-code-ep-NN.mp4 (unos 4 min)
 python scripts/qa_master.py episodios/ep-NN.json out/claude-code-ep-NN.mp4   # todo en verde
@@ -67,7 +69,19 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
   JetBrains Mono (código). 1080x1920 a 30 fps.
 - **Composición:** intro con la cuadrícula de 50 casillas (máx. 4 s). Subtítulos arriba, palabra a palabra, con la
   activa en caja coral (máx. 2 líneas). Insignia EP.N/50 arriba a la izquierda y @aigencyx.labs arriba a la derecha.
-- **Música:** -20 dB y -8 dB más bajo la voz. Sonoridad final de -14 LUFS, pico por debajo de -1 dBTP.
+- **Música:** -20 dB y -8 dB más bajo la voz (y -4 dB más un instante bajo los efectos fuertes). Sonoridad final de
+  -14 LUFS, pico por debajo de -1 dBTP.
+- **Efectos de sonido (desde el EP.11):** solo de la librería privada `joakognz/sonidos-videos` (skill `sonidos-videos`),
+  nunca sintetizados. Clónala junto a este repositorio (`git clone --depth 1 https://github.com/joakognz/sonidos-videos`
+  en la carpeta que contiene `Claude-videos`) o pasa `--repo`. El JSON del episodio lleva
+  `"efectos": { "cues": "episodios/ep-NN/cues.json" }`; `scripts/sonidos.mjs` saca los eventos de la línea de tiempo y
+  `scripts/sfx_libreria.py` elige cada archivo con `CATALOGO.md` (carpeta por tipo de evento, pico en el evento, sin
+  repetir uno de los dos anteriores, sin woosh tras woosh, 10–17 dB por debajo de la voz). Deja la lista momento →
+  archivo y los cinco momentos que hay que escuchar en `out/claude-code-ep-NN.sonidos.txt`. **`public/sfx/` está en
+  `.gitignore`: este repositorio es público y la librería no.** Real SFX no está instalada aquí; sus reglas se aplican
+  con estos scripts. Los bloques nuevos dan a cada evento `en` (instante del pico) y un tipo: `whoosh`, `zoom`, `pop`,
+  `golpe`, `tick`, `ventana`, `check`, `envio`, `tecleo` (con `dur`), `glitch`, `foto`, `error` o `revelacion`.
+  Los EP.1–8 siguen con sus efectos sintéticos antiguos (`public/audio/sfx/`).
 - **Movimiento:** como mucho 3 s sin un cambio visible. Solo `spring`, `interpolate` y `Easing`: nada de CSS
   transitions ni `setTimeout`.
 - **Logos:** solo los archivos del usuario (`serie-claude-code/public/logos/`, ver `_LEEME_LOGOS.md` y
