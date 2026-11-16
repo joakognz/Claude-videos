@@ -1,0 +1,64 @@
+{
+  "composicion": "Master",
+  "serie": "Máster de Claude Code",
+  "episodio": 11,
+  "total": 50,
+  "titulo": "Variantes infinitas",
+  "handle": "@aigencyx.labs",
+  "voz": {
+    "audio": "episodios/ep-11/voz.wav",
+    "timestamps": "episodios/ep-11/palabras.json"
+  },
+  "musica": {
+    "audio": "audio/musica.wav",
+    "db": -20,
+    "duckingDb": -8
+  },
+  "cta": {
+    "tipo": "auditoria",
+    "pregunta": "¿Quieres los esquemas de este episodio?",
+    "palabra_clave": "AUDITORIA",
+    "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+    "sello": { "texto": "AUDITORÍA PARA TU NEGOCIO", "en": "negocio," },
+    "remate": { "texto": "Optimiza tus procesos", "en": "optimizar" },
+    "seguir": "Sígueme"
+  },
+  "siguiente_episodio": 12,
+  "avance": { "titulo": "COMPUTER USE", "subtitulo": "Claude usa tu ordenador por ti", "en": "Claude", "enSub": "ordenador" },
+  "logos": {
+    "claude": "logos/claude.png",
+    "claude_code": "logos/claude-code-mascota.png",
+    "claude_code_texto": "logos/claude-code-pixel.png",
+    "vscode": "logos/vscode.png",
+    "drive": "logos/drive.png",
+    "git": "logos/git.png",
+    "github": "logos/github.png",
+    "github_circulo": "logos/github_circulo.png"
+  },
+  "escenas": [
+    { "id": "intro", "voz": "Episodio 11 de 50. Máster de Claude Code." },
+    { "id": "gancho", "voz": "Imagina que pides la web de tu negocio y, en vez de una, te llegan cinco. Todas distintas. Con Claude Code, probar ideas ya casi no cuesta: puedes pedir todas las variantes que quieras." },
+    { "id": "masa", "voz": "Piénsalo como el obrador de una panadería. Con la misma masa sacas una barra, una chapata o un bollo. La masa es tu proyecto. Las formas son las variantes." },
+    { "id": "paso1", "voz": "Paso 1. Pide varias versiones a la vez. Por ejemplo: «hazme tres portadas distintas para la web de la panadería: una clásica, una moderna y una minimalista»." },
+    { "id": "paso2", "voz": "Paso 2. Pide que cada versión vaya en su propia carpeta, para no pisar la anterior. Así las abres una al lado de otra y las comparas." },
+    { "id": "paso3", "voz": "Paso 3. Mezcla lo mejor de cada una. Dile: «quédate con el menú de la versión dos y los colores de la tres»." },
+    { "id": "paso4", "voz": "Paso 4. Cuando tengas la ganadora, guárdala con git y súbela a GitHub. Si mañana quieres otra idea, partes de ahí." },
+    { "id": "otros", "voz": "Y lo mejor: esa misma base te sirve para otros negocios. Cambia la panadería por una peluquería o por un taller, y Claude Code adapta los textos y los colores. Variantes infinitas." },
+    { "id": "resumen", "voz": "En resumen: pide varias, compáralas, mezcla lo mejor y guarda la ganadora." },
+    { "id": "auditoria", "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos." },
+    { "id": "avance", "voz": "En el siguiente episodio, Claude usa tu ordenador por ti con Computer Use. Sígueme para no perdértelo." }
+  ],
+  "bloques": [
+    { "tipo": "intro", "desde": "intro" },
+    { "tipo": "ep11_gancho", "desde": "gancho" },
+    { "tipo": "ep11_masa", "desde": "masa" },
+    { "tipo": "ep11_pedir", "desde": "paso1" },
+    { "tipo": "ep11_separar", "desde": "paso2" },
+    { "tipo": "ep11_mezclar", "desde": "paso3" },
+    { "tipo": "ep11_guardar", "desde": "paso4" },
+    { "tipo": "ep11_otros", "desde": "otros" },
+    { "tipo": "ep11_resumen", "desde": "resumen" },
+    { "tipo": "ep11_cta", "desde": "auditoria" },
+    { "tipo": "ep11_avance", "desde": "avance" }
+  ]
+}

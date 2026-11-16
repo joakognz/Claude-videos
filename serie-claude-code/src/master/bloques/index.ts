@@ -17,6 +17,10 @@ import { Lia, eventosLia } from "./ep08/Lia";
 import { Resumen, eventosResumen } from "./ep08/Resumen";
 import { Status, eventosStatus } from "./ep08/Status";
 import { Tienda, eventosTienda } from "./ep08/Tienda";
+import { Gancho11, eventosGancho11 } from "./ep11/Gancho";
+import { Masa11, eventosMasa11 } from "./ep11/Masa";
+import { Otros, Resumen11, eventosOtros, eventosResumen11 } from "./ep11/Otros";
+import { Guardar, Mezclar, Pedir, Separar, eventosGuardar, eventosMezclar, eventosPedir, eventosSeparar } from "./ep11/Pasos";
 
 export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster) => Evento[] };
 
@@ -39,4 +43,15 @@ export const BLOQUES: Record<string, DefBloque> = {
   ep8_resumen: { Componente: Resumen, eventos: eventosResumen },
   ep8_cta: { Componente: Cta8, eventos: eventosCta8 },
   ep8_avance: { Componente: Avance, eventos: eventosAvance },
+  // EP.11 · variantes infinitas (el CTA y el avance son los del EP.8)
+  ep11_gancho: { Componente: Gancho11, eventos: eventosGancho11 },
+  ep11_masa: { Componente: Masa11, eventos: eventosMasa11 },
+  ep11_pedir: { Componente: Pedir, eventos: eventosPedir },
+  ep11_separar: { Componente: Separar, eventos: eventosSeparar },
+  ep11_mezclar: { Componente: Mezclar, eventos: eventosMezclar },
+  ep11_guardar: { Componente: Guardar, eventos: eventosGuardar },
+  ep11_otros: { Componente: Otros, eventos: eventosOtros },
+  ep11_resumen: { Componente: Resumen11, eventos: eventosResumen11 },
+  ep11_cta: { Componente: Cta8, eventos: eventosCta8 },
+  ep11_avance: { Componente: Avance, eventos: eventosAvance },
 };

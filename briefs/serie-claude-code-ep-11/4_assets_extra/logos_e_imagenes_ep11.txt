@@ -1,0 +1,13 @@
+EP.11 · Variantes infinitas · logos e imágenes
+
+NECESITA                                   ESTADO
+logo_claude (intro)                        TIENES
+logo_claude_code (mascota)                 TIENES
+logo_vscode                                TIENES
+logo_git                                   TIENES
+logo_github_circulo                        TIENES
+logo_drive (CTA de esquemas)               TIENES
+Ilustración de la panadería                OPCIONAL: ahora son dibujos planos propios (panes, mesa, webs ficticias).
+                                           Si quieres una como la de la floristería, pásala como imagen_panaderia.
+Efectos de sonido                          LOS DE SIEMPRE: sintéticos de la serie (golpe, clic, woosh, pop, tecleo,
+                                           envío), por tu decisión. No uso la librería de GitHub en este episodio.

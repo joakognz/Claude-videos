@@ -1,6 +1,6 @@
 /**
  * EP.8 · Avance y despedida (escena avance): la rejilla marca el episodio de hoy como hecho y el siguiente late →
- * tarjeta «EP.N+1 · NIVEL EXPERTO» → perfil con el botón Seguir, que se pulsa al decir «Sígueme».
+ * tarjeta «EP.N+1 · TÍTULO» (anclas en avance.en y avance.enSub del JSON; por defecto, las del EP.8) → perfil con el botón Seguir, que se pulsa al decir «Sígueme».
  */
 import React from "react";
 import { Img, staticFile } from "remotion";
@@ -9,22 +9,22 @@ import { Rejilla } from "../../componentes/Rejilla";
 import { Etiqueta } from "../../componentes/Sello";
 import { C, TITULO, UI, clamp01, ramp, sp, vis } from "../../nucleo";
 import type { Evento, Linea, Toma } from "../../nucleo";
-import type { BloqueProps } from "../../tipos";
+import type { BloqueProps, EpisodioMaster } from "../../tipos";
 
 const E = "avance";
 const G = { cx: 540, cy: 800, celda: 54, hueco: 12, cols: 10, filas: 5 };
 
-const tiempos = (L: Linea) => ({
+/** Anclas del título y del subtítulo: las del JSON (avance.en, avance.enSub) o las del EP.8. */
+const tiempos = (L: Linea, ep: EpisodioMaster) => ({
   siguiente: L.en(E, "siguiente"),
   episodio: L.en(E, "episodio,"),
-  salto: L.en(E, "salto"),
-  nivel: L.en(E, "nivel"),
-  experto: L.en(E, "experto."),
+  nivel: L.en(E, ep.avance?.en ?? "nivel"),
+  experto: L.en(E, ep.avance?.enSub ?? "experto."),
   sigueme: L.en(E, "Sígueme"),
 });
 
 export const Avance: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
-  const T = tiempos(L);
+  const T = tiempos(L, ep);
   const sig = ep.siguiente_episodio;
   const tomas: Toma[] = [
     { t: desde - 1, x: 540, y: 1000, z: 1.02 },
@@ -84,8 +84,8 @@ export const Avance: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
   );
 };
 
-export const eventosAvance = (L: Linea): Evento[] => {
-  const T = tiempos(L);
+export const eventosAvance = (L: Linea, ep: EpisodioMaster): Evento[] => {
+  const T = tiempos(L, ep);
   return [
     { t: T.siguiente, sfx: "tick", vol: 0.5 },
     { t: T.episodio, sfx: "pop", vol: 0.4 },

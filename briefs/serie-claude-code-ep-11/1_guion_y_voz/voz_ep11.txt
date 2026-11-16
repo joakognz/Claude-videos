@@ -1,0 +1,21 @@
+Episodio once de cincuenta. Máster de Claude Code.
+
+Imagina que pides la web de tu negocio y, en vez de una, te llegan cinco. Todas distintas. Con Claude Code, probar ideas ya casi no cuesta: puedes pedir todas las variantes que quieras.
+
+Piénsalo como el obrador de una panadería. Con la misma masa sacas una barra, una chapata o un bollo. La masa es tu proyecto. Las formas son las variantes.
+
+Paso uno. Pide varias versiones a la vez. Por ejemplo: «hazme tres portadas distintas para la web de la panadería: una clásica, una moderna y una minimalista».
+
+Paso dos. Pide que cada versión vaya en su propia carpeta, para no pisar la anterior. Así las abres una al lado de otra y las comparas.
+
+Paso tres. Mezcla lo mejor de cada una. Dile: «quédate con el menú de la versión dos y los colores de la tres».
+
+Paso cuatro. Cuando tengas la ganadora, guárdala con git y súbela a GitHub. Si mañana quieres otra idea, partes de ahí.
+
+Y lo mejor: esa misma base te sirve para otros negocios. Cambia la panadería por una peluquería o por un taller, y Claude Code adapta los textos y los colores. Variantes infinitas.
+
+En resumen: pide varias, compáralas, mezcla lo mejor y guarda la ganadora.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En el siguiente episodio, Claude usa tu ordenador por ti con Computer Use. Sígueme para no perdértelo.

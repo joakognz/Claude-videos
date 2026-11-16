@@ -38,7 +38,7 @@ export type EpisodioMaster = {
   /** imágenes adjuntas que no son logos (ilustraciones, fotos de ejemplo) */
   imagenes?: Record<string, string>;
   /** tarjeta del próximo episodio cuando el avance va al final (EP.8 en adelante) */
-  avance?: { titulo: string; subtitulo?: string };
+  avance?: { titulo: string; subtitulo?: string; /** palabra de la voz con la que entra el título */ en?: string; /** ídem, subtítulo */ enSub?: string };
   clips?: Record<string, { src: string; ancho: number; alto: number; recorteArriba?: number }>;
   escenas: { id: string; voz: string }[];
   bloques: { tipo: string; desde: string }[];
