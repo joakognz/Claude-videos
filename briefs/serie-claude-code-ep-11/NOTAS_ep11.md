@@ -1,6 +1,9 @@
 # Serie «Máster de Claude Code» · EP.11 «Variantes infinitas» (lección 1.8) · REEL DE PRUEBA
 
-**Estado:** escenas montadas en `serie-claude-code/` (composición `Master`, `episodios/ep-11.json`). Falta la voz.
+**Estado:** reel de prueba renderizado: `entregas/serie-claude-code-ep-11-prueba.mp4` (1:34, -13,8 LUFS, pico -1,8 dBTP,
+checklist en verde). Voz: `audio/raw/serie-claude-code/ep-11.mp3` (ElevenLabs v4, stability 50, similarity 75) y
+`ep-11_montaje.mp3` con 1 s de cola. 254 de 258 palabras ancladas por el reconocedor local; se corrigieron a mano el
+final de «ganadora» y el inicio de «¿Quieres» (la pausa real va de 76,88 a 77,22 s) y el inicio de «un» (66,07 s).
 **Guion provisional:** no hay material de la lección 1.8 en el repositorio, así que el guion de esta prueba está escrito
 con lo que se sabe de Claude Code (pedir varias versiones, una carpeta por versión, mezclar, guardar con git y
 GitHub, reutilizar la base para otros negocios). Cuando llegue el material se ajusta.
@@ -24,6 +27,11 @@ GitHub, reutilizar la base para otros negocios). Cuando llegue el material se aj
 | resumen | PIDE VARIAS → COMPÁRALAS → MEZCLA LO MEJOR → GUARDA LA GANADORA |
 | cta | el del EP.8 (AUDITORIA, esquemas con el logo de Drive) |
 | avance | la cuadrícula marca el EP.11 → EP.12 · COMPUTER USE · «Claude usa tu ordenador por ti» → Seguir |
+
+## Vídeo de la lección
+El vídeo de la 1.8 que pasó el usuario es el profesor hablando a cámara sobre la página del curso, sin diapositivas ni
+pantallas. De los fotogramas no se saca el contenido, y la regla es no transcribir el audio del curso, así que el guion
+sigue siendo provisional hasta tener el documento o el texto de la lección.
 
 ## Decisiones
 - **Negocio de ejemplo:** una panadería (en el EP.8 era una floristería). Nombres ficticios: La Espiga, Tijera Fina,
