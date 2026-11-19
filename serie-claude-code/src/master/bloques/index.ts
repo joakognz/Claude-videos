@@ -17,6 +17,7 @@ import { Lia, eventosLia } from "./ep08/Lia";
 import { Resumen, eventosResumen } from "./ep08/Resumen";
 import { Status, eventosStatus } from "./ep08/Status";
 import { Tienda, eventosTienda } from "./ep08/Tienda";
+import { Intro12, eventosIntro12 } from "./ep12/Intro12";
 
 export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster) => Evento[] };
 
@@ -39,4 +40,6 @@ export const BLOQUES: Record<string, DefBloque> = {
   ep8_resumen: { Componente: Resumen, eventos: eventosResumen },
   ep8_cta: { Componente: Cta8, eventos: eventosCta8 },
   ep8_avance: { Componente: Avance, eventos: eventosAvance },
+  // EP.12 · Computer Use (intro nueva: el navegador trabaja solo)
+  ep12_intro: { Componente: Intro12, eventos: eventosIntro12 },
 };

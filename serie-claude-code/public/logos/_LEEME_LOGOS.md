@@ -50,6 +50,10 @@ En el JSON del episodio van en `"logos"` (`id` → ruta en `public/`) y en Remot
 | logo_live_server | `live_server.png` | tarjeta clara | ondas moradas; el texto «Live Server» es negro |
 | logo_youtube | `youtube.png` | tal cual | rectángulo rojo con el triángulo blanco |
 | logo_wordpress | `wordpress.png` | ficha blanca | negro con la W y el aro calados (transparentes) |
+| logo_chrome | `chrome.png` | tal cual | Google Chrome (llegó ya sin fondo; solo recortado y a 1024 px) |
+| logo_aigencyx | `aigencyx.png` | tal cual | AIgencyx Labs, versión oscura (círculo con aro naranja) |
+| logo_aigencyx_naranja | `aigencyx_naranja.png` | tal cual | AIgencyx Labs, versión naranja |
+| logo_aigencyx_claro | `aigencyx_claro.png` | tal cual | AIgencyx Labs, versión clara |
 
 ## Los que aún faltan
 
@@ -57,7 +61,9 @@ Pídelos cuando un episodio los necesite y guárdalos aquí: el original en `_or
 `python scripts/logo_sin_fondo.py _originales/x.png x.png` (mira los modos en el propio script). Rehaz el muestrario
 con `python scripts/muestrario_logos.py public/logos public/logos/_muestrario.png` y comprueba que nada se ha comido.
 
-hostinger y **aigencyx** (para el cierre con marca; mientras no esté, el usuario @aigencyx.labs va en texto).
+hostinger.
+
+Los tres de **AIgencyx** se han recortado en círculo de una captura de pantalla del usuario (`_originales/aigencyx_captura.png`), así que miden unos 296 px: valen hasta ese tamaño en pantalla. Si hace falta más grande, pide la exportación en PNG.
 
 Repetidos que llegaron en mejor resolución (Claude, Drive, Visual Studio Code y Word, a 3840 px): mismo diseño que
 los de aquí, así que no se han sustituido. Si alguna vez hace falta un zoom muy grande, pídelos de nuevo.

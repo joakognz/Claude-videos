@@ -21,6 +21,7 @@ Este archivo cuenta lo que vive en el repositorio.
 | 02 VS Code, GitHub, PUSH y PULL | 0.2 | `episodios/ep-02.json` (composición «Master») · `entregas/serie-claude-code-ep-02.mp4` |
 | 03–07 | 0.3–1.4 | no están en este repositorio (hechos en la carpeta del usuario) |
 | 08 Errores típicos y troubleshooting | 1.5 | `episodios/ep-08.json` · `entregas/serie-claude-code-ep-08.mp4` · `briefs/serie-claude-code-ep-08/` |
+| 12 Computer Use | 1.9 | en curso: intro nueva hecha (`bloques/ep12/Intro12.tsx`, prueba sin voz); falta guion y voz |
 
 Hoja de ruta: EP09 Nivel experto (1.6, probable 2 partes) · EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
 EP12 Computer Use (1.9) · EP13 Cierre del módulo 1: pregunta a la audiencia (web / automatizaciones / a medida).
@@ -65,15 +66,17 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 ### Reglas fijas
 - **Estilo:** fondo #0B0D12, acento coral #D97757, texto blanco. Tipos: Sora (títulos), Inter (subtítulos) y
   JetBrains Mono (código). 1080x1920 a 30 fps.
-- **Composición:** intro con la cuadrícula de 50 casillas (máx. 4 s). Subtítulos arriba, palabra a palabra, con la
+- **Composición:** intro con la cuadrícula de 50 casillas (máx. 4 s). El EP.12 estrena otra: abre con el gancho (el
+  navegador trabaja solo) y el título sale como una página en ese navegador (`ep12_intro`). Subtítulos arriba, palabra a palabra, con la
   activa en caja coral (máx. 2 líneas). Insignia EP.N/50 arriba a la izquierda y @aigencyx.labs arriba a la derecha.
 - **Música:** -20 dB y -8 dB más bajo la voz. Sonoridad final de -14 LUFS, pico por debajo de -1 dBTP.
 - **Movimiento:** como mucho 3 s sin un cambio visible. Solo `spring`, `interpolate` y `Easing`: nada de CSS
   transitions ni `setTimeout`.
 - **Logos:** solo los archivos del usuario (`serie-claude-code/public/logos/`, ver `_LEEME_LOGOS.md` y
-  `_muestrario.png`). Hay 35: Claude, Claude Code (mascota y rótulo), Anthropic, Visual Studio Code, Word, Microsoft,
+  `_muestrario.png`). Hay 39: Claude, Claude Code (mascota y rótulo), Anthropic, Visual Studio Code, Word, Microsoft,
   Drive, GitHub (gato, círculo y rótulo), Copilot, git, npm, WhatsApp, Gemini, Codex, Next.js, Vite, Tailwind, Vercel,
-  Netlify, Cloudflare Pages, n8n, PHP, Astro, AWS, Node.js, Live Server, YouTube y WordPress. Faltan hostinger y aigencyx.
+  Netlify, Cloudflare Pages, n8n, PHP, Astro, AWS, Node.js, Live Server, YouTube, WordPress, Chrome y AIgencyx (oscuro,
+  naranja y claro). Falta hostinger.
   Nunca se redibujan ni se inventan. Si falta uno, se pide con su nombre `logo_xxx` y se espera. Los nuevos se
   guardan en `_originales/` y se les quita el fondo con `scripts/logo_sin_fondo.py`. Los logos oscuros van sobre
   tarjeta clara (`ficha="tarjeta"`).

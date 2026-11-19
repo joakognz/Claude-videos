@@ -4,3 +4,4 @@ dist
 .env
 out
 __pycache__/
+public/episodios/*/prueba/
