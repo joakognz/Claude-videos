@@ -13,14 +13,17 @@ export const PAGINA = { x: VENTANA.x - VENTANA.w / 2, y: VENTANA.y - VENTANA.h /
 /** Ventana de navegador. `brillo` (0-1) enciende el borde coral: la ventana la está manejando Claude. */
 export const Ventana: React.FC<{
   t: number; url: string; letras: number; carga?: number; brillo?: number; children?: React.ReactNode;
-}> = ({ t, url, letras, carga = 1, brillo = 0, children }) => {
+  /** posición y alto (por defecto, los de la intro); el ancho es siempre VENTANA.w */
+  y?: number; h?: number; fondo?: string; opacity?: number; escala?: number;
+}> = ({ t, url, letras, carga = 1, brillo = 0, children, y = VENTANA.y, h = VENTANA.h, fondo = "#15171D", opacity = 1, escala = 1 }) => {
   const escribiendo = letras < url.length;
-  const { w, h, barra } = VENTANA;
+  const { w, barra } = VENTANA;
   return (
     <div
       style={{
-        position: "absolute", left: VENTANA.x - w / 2, top: VENTANA.y - h / 2, width: w, height: h, borderRadius: 28, overflow: "hidden",
-        background: "#15171D", border: `3px solid ${brillo > 0.02 ? `color-mix(in srgb, ${C.acento} ${Math.round(brillo * 100)}%, ${C.borde})` : C.borde}`,
+        position: "absolute", left: VENTANA.x - w / 2, top: y - h / 2, width: w, height: h, borderRadius: 28, overflow: "hidden",
+        opacity, transform: `scale(${escala})`,
+        background: fondo, border: `3px solid ${brillo > 0.02 ? `color-mix(in srgb, ${C.acento} ${Math.round(brillo * 100)}%, ${C.borde})` : C.borde}`,
         boxShadow: `0 40px 100px rgba(0,0,0,0.65), 0 0 ${70 * brillo}px rgba(217,119,87,${0.55 * brillo})`,
         display: "flex", flexDirection: "column",
       }}

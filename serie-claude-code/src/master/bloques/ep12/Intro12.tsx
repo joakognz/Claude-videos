@@ -9,7 +9,8 @@ import React from "react";
 import { Img, staticFile } from "remotion";
 import { Escena } from "../../componentes/Escena";
 import { Logo } from "../../componentes/Logo";
-import { Cursor, Toque } from "../../componentes/Piezas";
+import { Toque } from "../../componentes/Piezas";
+import { Elemento3D } from "../../componentes/ep12/Piezas12";
 import { Rejilla, olaEntrada } from "../../componentes/Rejilla";
 import type { RejillaGeo } from "../../componentes/Rejilla";
 import { Etiqueta } from "../../componentes/Sello";
@@ -23,8 +24,8 @@ const I = "intro";
 const URL_PROYECTO = "console.cloud.google.com/projectcreate";
 const BUSQUEDA = "máster de claude code";
 const PROYECTO = "pedidos-floristeria";
-/** Tu ratón (quieto) y tu mano levantada, en coordenadas del lienzo. */
-const RATON = { x: PAGINA.x + 800, y: PAGINA.y + 530 };
+/** Tu ratón (quieto, en 3D) y tu mano levantada, en coordenadas del lienzo. */
+const RATON3D = { x: 884, y: 1446, w: 360 };
 const MANO = { x: 190, y: 1474, w: 190 };
 /** Rejilla de 50 casillas dentro de la portada (coordenadas de la página): grande con «Episodio 12 de 50» y en
  * pequeño, arriba, cuando entra el título. */
@@ -73,9 +74,6 @@ export const Intro12: React.FC<BloqueProps> = ({ t, ep, L }) => {
   // mano levantada: entra y saluda un poco
   const vm = vis(t, T.tocando, fueraHook, 0.3);
   const saludo = Math.sin((t - T.tocando) * 7) * 7 * Math.exp(-Math.max(0, t - T.tocando) * 1.2);
-  // ratón quieto
-  const vr = vis(t, 0.1, fueraHook, 0.8);
-  const anillo = vis(t, T.raton, fueraHook, 0.6);
   return (
     <Escena t={t} tomas={tomas}>
       <Ventana t={t} url={portada ? BUSQUEDA : URL_PROYECTO} letras={letrasUrl} carga={portada ? carga : 1} brillo={brillo}>
@@ -87,21 +85,9 @@ export const Intro12: React.FC<BloqueProps> = ({ t, ep, L }) => {
       </Ventana>
       {/* Claude pulsa «Crear» (no es tu ratón: es un toque) */}
       <Toque x={PAGINA.x + BOTON_CREAR.x + BOTON_CREAR.w / 2} y={PAGINA.y + BOTON_CREAR.y + BOTON_CREAR.h / 2} t={t} at={T.trabaja} r={50} />
-      {/* tu ratón, quieto */}
-      {vr.on && (
-        <div style={{ opacity: vr.opacity }}>
-          {anillo.on && (
-            <div
-              style={{
-                position: "absolute", left: RATON.x - 58, top: RATON.y - 52, width: 116, height: 116, borderRadius: "50%", border: `5px dashed ${C.acento}`,
-                opacity: anillo.opacity, transform: `scale(${anillo.scale}) rotate(${t * 20}deg)`,
-              }}
-            />
-          )}
-          <Cursor x={RATON.x - 14} y={RATON.y - 26} pulsa={0} size={70} />
-        </div>
-      )}
-      <Etiqueta texto="TU RATÓN, QUIETO" x={RATON.x - 90} y={VENTANA.y + VENTANA.h / 2 + 50} t={t} at={T.raton + 0.08} out={fueraHook} size={30} variante="borde" />
+      {/* tu ratón, quieto (mini animación 3D: el ratón con la pausa) */}
+      <Elemento3D e="raton" x={RATON3D.x} y={RATON3D.y} w={RATON3D.w} t={t} at={0.1} out={fueraHook} hasta={1.45} tenue={1} />
+      <Etiqueta texto="TU RATÓN, QUIETO" x={600} y={VENTANA.y + VENTANA.h / 2 + 62} t={t} at={T.raton + 0.08} out={fueraHook} size={30} variante="borde" />
       {/* tu mano, levantada */}
       {vm.on && (
         <div style={{ position: "absolute", left: MANO.x, top: MANO.y, width: 0, height: 0 }}>

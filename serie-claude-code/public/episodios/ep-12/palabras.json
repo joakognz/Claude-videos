@@ -1,0 +1,2040 @@
+{
+ "fuente": "parakeet-tdt-0.6b-v3",
+ "duracion": 121.346,
+ "palabras": [
+  {
+   "texto": "No",
+   "inicio": 0.0,
+   "fin": 0.32,
+   "escena": "gancho"
+  },
+  {
+   "texto": "estoy",
+   "inicio": 0.32,
+   "fin": 0.64,
+   "escena": "gancho"
+  },
+  {
+   "texto": "tocando",
+   "inicio": 0.64,
+   "fin": 1.04,
+   "escena": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 1.04,
+   "fin": 1.12,
+   "escena": "gancho"
+  },
+  {
+   "texto": "ratón.",
+   "inicio": 1.12,
+   "fin": 1.66,
+   "escena": "gancho"
+  },
+  {
+   "texto": "Y",
+   "inicio": 1.88,
+   "fin": 1.94,
+   "escena": "gancho"
+  },
+  {
+   "texto": "el",
+   "inicio": 1.92,
+   "fin": 2.08,
+   "escena": "gancho"
+  },
+  {
+   "texto": "navegador",
+   "inicio": 2.08,
+   "fin": 2.8,
+   "escena": "gancho"
+  },
+  {
+   "texto": "trabaja",
+   "inicio": 2.8,
+   "fin": 3.36,
+   "escena": "gancho"
+  },
+  {
+   "texto": "solo.",
+   "inicio": 3.36,
+   "fin": 3.8,
+   "escena": "gancho"
+  },
+  {
+   "texto": "Episodio",
+   "inicio": 4.1,
+   "fin": 4.72,
+   "escena": "intro"
+  },
+  {
+   "texto": "12",
+   "inicio": 4.72,
+   "fin": 5.2,
+   "escena": "intro"
+  },
+  {
+   "texto": "de",
+   "inicio": 5.2,
+   "fin": 5.36,
+   "escena": "intro"
+  },
+  {
+   "texto": "50.",
+   "inicio": 5.36,
+   "fin": 5.98,
+   "escena": "intro"
+  },
+  {
+   "texto": "Máster",
+   "inicio": 6.15,
+   "fin": 6.64,
+   "escena": "intro"
+  },
+  {
+   "texto": "de",
+   "inicio": 6.64,
+   "fin": 6.7,
+   "escena": "intro"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 6.688,
+   "fin": 6.8,
+   "escena": "intro"
+  },
+  {
+   "texto": "Code.",
+   "inicio": 6.8,
+   "fin": 7.66,
+   "escena": "intro"
+  },
+  {
+   "texto": "Esto",
+   "inicio": 7.89,
+   "fin": 8.32,
+   "escena": "que"
+  },
+  {
+   "texto": "es",
+   "inicio": 8.32,
+   "fin": 8.64,
+   "escena": "que"
+  },
+  {
+   "texto": "Computer",
+   "inicio": 8.64,
+   "fin": 9.28,
+   "escena": "que"
+  },
+  {
+   "texto": "Use.",
+   "inicio": 9.28,
+   "fin": 9.513,
+   "escena": "que"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 9.513,
+   "fin": 9.74,
+   "escena": "que"
+  },
+  {
+   "texto": "Code",
+   "inicio": 9.92,
+   "fin": 10.8,
+   "escena": "que"
+  },
+  {
+   "texto": "no",
+   "inicio": 10.8,
+   "fin": 10.96,
+   "escena": "que"
+  },
+  {
+   "texto": "solo",
+   "inicio": 10.96,
+   "fin": 11.28,
+   "escena": "que"
+  },
+  {
+   "texto": "escribe",
+   "inicio": 11.28,
+   "fin": 11.76,
+   "escena": "que"
+  },
+  {
+   "texto": "código:",
+   "inicio": 11.76,
+   "fin": 12.15,
+   "escena": "que"
+  },
+  {
+   "texto": "también",
+   "inicio": 12.36,
+   "fin": 12.8,
+   "escena": "que"
+  },
+  {
+   "texto": "sabe",
+   "inicio": 12.8,
+   "fin": 13.12,
+   "escena": "que"
+  },
+  {
+   "texto": "usar",
+   "inicio": 13.12,
+   "fin": 13.44,
+   "escena": "que"
+  },
+  {
+   "texto": "los",
+   "inicio": 13.44,
+   "fin": 13.6,
+   "escena": "que"
+  },
+  {
+   "texto": "programas",
+   "inicio": 13.6,
+   "fin": 14.0,
+   "escena": "que"
+  },
+  {
+   "texto": "de",
+   "inicio": 14.0,
+   "fin": 14.16,
+   "escena": "que"
+  },
+  {
+   "texto": "tu",
+   "inicio": 14.16,
+   "fin": 14.32,
+   "escena": "que"
+  },
+  {
+   "texto": "ordenador.",
+   "inicio": 14.32,
+   "fin": 14.91,
+   "escena": "que"
+  },
+  {
+   "texto": "Abre",
+   "inicio": 15.11,
+   "fin": 15.52,
+   "escena": "que"
+  },
+  {
+   "texto": "páginas,",
+   "inicio": 15.52,
+   "fin": 16.08,
+   "escena": "que"
+  },
+  {
+   "texto": "rellena",
+   "inicio": 16.08,
+   "fin": 16.72,
+   "escena": "que"
+  },
+  {
+   "texto": "campos",
+   "inicio": 16.72,
+   "fin": 17.12,
+   "escena": "que"
+  },
+  {
+   "texto": "y",
+   "inicio": 17.12,
+   "fin": 17.36,
+   "escena": "que"
+  },
+  {
+   "texto": "pulsa",
+   "inicio": 17.36,
+   "fin": 17.76,
+   "escena": "que"
+  },
+  {
+   "texto": "botones",
+   "inicio": 17.76,
+   "fin": 18.16,
+   "escena": "que"
+  },
+  {
+   "texto": "por",
+   "inicio": 18.16,
+   "fin": 18.4,
+   "escena": "que"
+  },
+  {
+   "texto": "ti.",
+   "inicio": 18.4,
+   "fin": 18.63,
+   "escena": "que"
+  },
+  {
+   "texto": "Es",
+   "inicio": 18.8,
+   "fin": 19.01,
+   "escena": "que"
+  },
+  {
+   "texto": "como",
+   "inicio": 19.01,
+   "fin": 19.25,
+   "escena": "que"
+  },
+  {
+   "texto": "tener",
+   "inicio": 19.25,
+   "fin": 19.49,
+   "escena": "que"
+  },
+  {
+   "texto": "un",
+   "inicio": 19.49,
+   "fin": 19.57,
+   "escena": "que"
+  },
+  {
+   "texto": "ayudante",
+   "inicio": 19.57,
+   "fin": 20.13,
+   "escena": "que"
+  },
+  {
+   "texto": "sentado",
+   "inicio": 20.13,
+   "fin": 20.53,
+   "escena": "que"
+  },
+  {
+   "texto": "a",
+   "inicio": 20.53,
+   "fin": 20.61,
+   "escena": "que"
+  },
+  {
+   "texto": "tu",
+   "inicio": 20.61,
+   "fin": 20.77,
+   "escena": "que"
+  },
+  {
+   "texto": "lado,",
+   "inicio": 20.77,
+   "fin": 21.09,
+   "escena": "que"
+  },
+  {
+   "texto": "que",
+   "inicio": 21.09,
+   "fin": 21.25,
+   "escena": "que"
+  },
+  {
+   "texto": "hace",
+   "inicio": 21.25,
+   "fin": 21.57,
+   "escena": "que"
+  },
+  {
+   "texto": "justo",
+   "inicio": 21.57,
+   "fin": 21.89,
+   "escena": "que"
+  },
+  {
+   "texto": "lo",
+   "inicio": 21.89,
+   "fin": 22.05,
+   "escena": "que"
+  },
+  {
+   "texto": "que",
+   "inicio": 22.05,
+   "fin": 22.21,
+   "escena": "que"
+  },
+  {
+   "texto": "le",
+   "inicio": 22.21,
+   "fin": 22.37,
+   "escena": "que"
+  },
+  {
+   "texto": "pides.",
+   "inicio": 22.37,
+   "fin": 22.81,
+   "escena": "que"
+  },
+  {
+   "texto": "Un",
+   "inicio": 23.06,
+   "fin": 23.17,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "ejemplo.",
+   "inicio": 23.17,
+   "fin": 23.7,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "La",
+   "inicio": 23.91,
+   "fin": 23.97,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "floristería",
+   "inicio": 23.97,
+   "fin": 24.77,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "quiere",
+   "inicio": 24.77,
+   "fin": 25.09,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "una",
+   "inicio": 25.09,
+   "fin": 25.33,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "automatización",
+   "inicio": 25.33,
+   "fin": 26.05,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "que",
+   "inicio": 26.05,
+   "fin": 26.29,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "lea",
+   "inicio": 26.29,
+   "fin": 26.61,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "los",
+   "inicio": 26.61,
+   "fin": 26.77,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "pedidos",
+   "inicio": 26.77,
+   "fin": 27.17,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "que",
+   "inicio": 27.17,
+   "fin": 27.25,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "le",
+   "inicio": 27.25,
+   "fin": 27.41,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "llegan",
+   "inicio": 27.41,
+   "fin": 27.81,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "por",
+   "inicio": 27.81,
+   "fin": 27.97,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "correo.",
+   "inicio": 27.97,
+   "fin": 28.34,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Para",
+   "inicio": 28.56,
+   "fin": 28.77,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "eso",
+   "inicio": 28.77,
+   "fin": 29.09,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "hay",
+   "inicio": 29.09,
+   "fin": 29.33,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "que",
+   "inicio": 29.33,
+   "fin": 29.49,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "crear",
+   "inicio": 29.49,
+   "fin": 29.73,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "un",
+   "inicio": 29.73,
+   "fin": 29.89,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "proyecto",
+   "inicio": 29.89,
+   "fin": 30.21,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "en",
+   "inicio": 30.21,
+   "fin": 30.37,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Google",
+   "inicio": 30.37,
+   "fin": 30.77,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Cloud",
+   "inicio": 30.77,
+   "fin": 31.17,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "y",
+   "inicio": 31.17,
+   "fin": 31.33,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "conectarlo",
+   "inicio": 31.33,
+   "fin": 31.89,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "con",
+   "inicio": 31.89,
+   "fin": 32.05,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Gmail.",
+   "inicio": 32.05,
+   "fin": 32.64,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Son",
+   "inicio": 32.93,
+   "fin": 33.25,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "muchos",
+   "inicio": 33.25,
+   "fin": 33.65,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "clics,",
+   "inicio": 33.65,
+   "fin": 34.21,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "en",
+   "inicio": 34.21,
+   "fin": 34.45,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "pantallas",
+   "inicio": 34.45,
+   "fin": 35.09,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "que",
+   "inicio": 35.09,
+   "fin": 35.25,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "no",
+   "inicio": 35.25,
+   "fin": 35.41,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "conoces.",
+   "inicio": 35.41,
+   "fin": 36.09,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Así",
+   "inicio": 36.26,
+   "fin": 36.53,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "que",
+   "inicio": 36.53,
+   "fin": 36.77,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "se",
+   "inicio": 36.77,
+   "fin": 37.01,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "los",
+   "inicio": 37.01,
+   "fin": 37.17,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "dejamos",
+   "inicio": 37.17,
+   "fin": 37.57,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "a",
+   "inicio": 37.57,
+   "fin": 37.73,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Claude.",
+   "inicio": 37.73,
+   "fin": 38.08,
+   "escena": "ejemplo"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 38.37,
+   "fin": 38.73,
+   "escena": "paso1"
+  },
+  {
+   "texto": "1.",
+   "inicio": 38.73,
+   "fin": 39.05,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Prepara",
+   "inicio": 39.32,
+   "fin": 39.85,
+   "escena": "paso1"
+  },
+  {
+   "texto": "el",
+   "inicio": 39.85,
+   "fin": 39.93,
+   "escena": "paso1"
+  },
+  {
+   "texto": "terreno.",
+   "inicio": 39.93,
+   "fin": 40.49,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Abre",
+   "inicio": 40.49,
+   "fin": 40.89,
+   "escena": "paso1"
+  },
+  {
+   "texto": "tú",
+   "inicio": 40.89,
+   "fin": 41.13,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Google",
+   "inicio": 41.13,
+   "fin": 41.53,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Cloud",
+   "inicio": 41.53,
+   "fin": 41.93,
+   "escena": "paso1"
+  },
+  {
+   "texto": "en",
+   "inicio": 41.93,
+   "fin": 42.01,
+   "escena": "paso1"
+  },
+  {
+   "texto": "el",
+   "inicio": 42.01,
+   "fin": 42.09,
+   "escena": "paso1"
+  },
+  {
+   "texto": "navegador,",
+   "inicio": 42.09,
+   "fin": 42.65,
+   "escena": "paso1"
+  },
+  {
+   "texto": "con",
+   "inicio": 42.65,
+   "fin": 42.81,
+   "escena": "paso1"
+  },
+  {
+   "texto": "tu",
+   "inicio": 42.81,
+   "fin": 42.97,
+   "escena": "paso1"
+  },
+  {
+   "texto": "cuenta",
+   "inicio": 42.97,
+   "fin": 43.29,
+   "escena": "paso1"
+  },
+  {
+   "texto": "ya",
+   "inicio": 43.29,
+   "fin": 43.53,
+   "escena": "paso1"
+  },
+  {
+   "texto": "iniciada.",
+   "inicio": 43.53,
+   "fin": 44.17,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 44.17,
+   "fin": 44.81,
+   "escena": "paso1"
+  },
+  {
+   "texto": "trabaja",
+   "inicio": 44.81,
+   "fin": 45.29,
+   "escena": "paso1"
+  },
+  {
+   "texto": "sobre",
+   "inicio": 45.29,
+   "fin": 45.53,
+   "escena": "paso1"
+  },
+  {
+   "texto": "lo",
+   "inicio": 45.53,
+   "fin": 45.77,
+   "escena": "paso1"
+  },
+  {
+   "texto": "que",
+   "inicio": 45.77,
+   "fin": 45.93,
+   "escena": "paso1"
+  },
+  {
+   "texto": "tú",
+   "inicio": 45.93,
+   "fin": 46.17,
+   "escena": "paso1"
+  },
+  {
+   "texto": "le",
+   "inicio": 46.17,
+   "fin": 46.33,
+   "escena": "paso1"
+  },
+  {
+   "texto": "dejas",
+   "inicio": 46.33,
+   "fin": 46.73,
+   "escena": "paso1"
+  },
+  {
+   "texto": "abierto.",
+   "inicio": 46.73,
+   "fin": 47.21,
+   "escena": "paso1"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 47.54,
+   "fin": 47.85,
+   "escena": "paso2"
+  },
+  {
+   "texto": "2.",
+   "inicio": 47.85,
+   "fin": 48.26,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Explícale",
+   "inicio": 48.43,
+   "fin": 49.21,
+   "escena": "paso2"
+  },
+  {
+   "texto": "qué",
+   "inicio": 49.21,
+   "fin": 49.45,
+   "escena": "paso2"
+  },
+  {
+   "texto": "quieres",
+   "inicio": 49.45,
+   "fin": 49.85,
+   "escena": "paso2"
+  },
+  {
+   "texto": "construir",
+   "inicio": 49.85,
+   "fin": 50.33,
+   "escena": "paso2"
+  },
+  {
+   "texto": "y",
+   "inicio": 50.33,
+   "fin": 50.49,
+   "escena": "paso2"
+  },
+  {
+   "texto": "dale",
+   "inicio": 50.49,
+   "fin": 50.89,
+   "escena": "paso2"
+  },
+  {
+   "texto": "permiso",
+   "inicio": 50.89,
+   "fin": 51.29,
+   "escena": "paso2"
+  },
+  {
+   "texto": "para",
+   "inicio": 51.29,
+   "fin": 51.45,
+   "escena": "paso2"
+  },
+  {
+   "texto": "tomar",
+   "inicio": 51.45,
+   "fin": 51.77,
+   "escena": "paso2"
+  },
+  {
+   "texto": "el",
+   "inicio": 51.77,
+   "fin": 51.93,
+   "escena": "paso2"
+  },
+  {
+   "texto": "control",
+   "inicio": 51.93,
+   "fin": 52.33,
+   "escena": "paso2"
+  },
+  {
+   "texto": "de",
+   "inicio": 52.33,
+   "fin": 52.49,
+   "escena": "paso2"
+  },
+  {
+   "texto": "esa",
+   "inicio": 52.49,
+   "fin": 52.73,
+   "escena": "paso2"
+  },
+  {
+   "texto": "ventana.",
+   "inicio": 52.73,
+   "fin": 53.22,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Solo",
+   "inicio": 53.45,
+   "fin": 53.85,
+   "escena": "paso2"
+  },
+  {
+   "texto": "de",
+   "inicio": 53.85,
+   "fin": 54.09,
+   "escena": "paso2"
+  },
+  {
+   "texto": "esa.",
+   "inicio": 54.09,
+   "fin": 54.46,
+   "escena": "paso2"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 54.81,
+   "fin": 55.25,
+   "escena": "paso3"
+  },
+  {
+   "texto": "3.",
+   "inicio": 55.25,
+   "fin": 55.66,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Antes",
+   "inicio": 55.84,
+   "fin": 56.05,
+   "escena": "paso3"
+  },
+  {
+   "texto": "de",
+   "inicio": 56.05,
+   "fin": 56.21,
+   "escena": "paso3"
+  },
+  {
+   "texto": "tocar",
+   "inicio": 56.21,
+   "fin": 56.61,
+   "escena": "paso3"
+  },
+  {
+   "texto": "nada,",
+   "inicio": 56.61,
+   "fin": 56.93,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 56.93,
+   "fin": 57.41,
+   "escena": "paso3"
+  },
+  {
+   "texto": "te",
+   "inicio": 57.41,
+   "fin": 57.57,
+   "escena": "paso3"
+  },
+  {
+   "texto": "enseña",
+   "inicio": 57.57,
+   "fin": 58.05,
+   "escena": "paso3"
+  },
+  {
+   "texto": "el",
+   "inicio": 58.05,
+   "fin": 58.13,
+   "escena": "paso3"
+  },
+  {
+   "texto": "plan:",
+   "inicio": 58.13,
+   "fin": 58.39,
+   "escena": "paso3"
+  },
+  {
+   "texto": "crear",
+   "inicio": 58.62,
+   "fin": 59.01,
+   "escena": "paso3"
+  },
+  {
+   "texto": "el",
+   "inicio": 59.01,
+   "fin": 59.09,
+   "escena": "paso3"
+  },
+  {
+   "texto": "proyecto,",
+   "inicio": 59.09,
+   "fin": 59.73,
+   "escena": "paso3"
+  },
+  {
+   "texto": "activar",
+   "inicio": 59.73,
+   "fin": 60.21,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Gmail",
+   "inicio": 60.21,
+   "fin": 60.85,
+   "escena": "paso3"
+  },
+  {
+   "texto": "y",
+   "inicio": 60.85,
+   "fin": 61.01,
+   "escena": "paso3"
+  },
+  {
+   "texto": "preparar",
+   "inicio": 61.01,
+   "fin": 61.41,
+   "escena": "paso3"
+  },
+  {
+   "texto": "las",
+   "inicio": 61.41,
+   "fin": 61.57,
+   "escena": "paso3"
+  },
+  {
+   "texto": "credenciales,",
+   "inicio": 61.57,
+   "fin": 62.45,
+   "escena": "paso3"
+  },
+  {
+   "texto": "que",
+   "inicio": 62.45,
+   "fin": 62.61,
+   "escena": "paso3"
+  },
+  {
+   "texto": "son",
+   "inicio": 62.61,
+   "fin": 62.77,
+   "escena": "paso3"
+  },
+  {
+   "texto": "las",
+   "inicio": 62.77,
+   "fin": 62.93,
+   "escena": "paso3"
+  },
+  {
+   "texto": "llaves",
+   "inicio": 62.93,
+   "fin": 63.41,
+   "escena": "paso3"
+  },
+  {
+   "texto": "de",
+   "inicio": 63.41,
+   "fin": 63.49,
+   "escena": "paso3"
+  },
+  {
+   "texto": "tu",
+   "inicio": 63.49,
+   "fin": 63.73,
+   "escena": "paso3"
+  },
+  {
+   "texto": "automatización.",
+   "inicio": 63.73,
+   "fin": 64.61,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Y",
+   "inicio": 64.61,
+   "fin": 64.77,
+   "escena": "paso3"
+  },
+  {
+   "texto": "si",
+   "inicio": 64.77,
+   "fin": 64.93,
+   "escena": "paso3"
+  },
+  {
+   "texto": "le",
+   "inicio": 64.93,
+   "fin": 65.09,
+   "escena": "paso3"
+  },
+  {
+   "texto": "falta",
+   "inicio": 65.09,
+   "fin": 65.41,
+   "escena": "paso3"
+  },
+  {
+   "texto": "un",
+   "inicio": 65.41,
+   "fin": 65.49,
+   "escena": "paso3"
+  },
+  {
+   "texto": "dato,",
+   "inicio": 65.49,
+   "fin": 65.89,
+   "escena": "paso3"
+  },
+  {
+   "texto": "te",
+   "inicio": 65.89,
+   "fin": 66.05,
+   "escena": "paso3"
+  },
+  {
+   "texto": "pregunta.",
+   "inicio": 66.05,
+   "fin": 66.6,
+   "escena": "paso3"
+  },
+  {
+   "texto": "Paso",
+   "inicio": 66.9,
+   "fin": 67.37,
+   "escena": "paso4"
+  },
+  {
+   "texto": "4.",
+   "inicio": 67.37,
+   "fin": 67.71,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Déjale",
+   "inicio": 67.9,
+   "fin": 68.57,
+   "escena": "paso4"
+  },
+  {
+   "texto": "trabajar.",
+   "inicio": 68.57,
+   "fin": 69.1,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Lo",
+   "inicio": 69.27,
+   "fin": 69.45,
+   "escena": "paso4"
+  },
+  {
+   "texto": "hace",
+   "inicio": 69.45,
+   "fin": 69.69,
+   "escena": "paso4"
+  },
+  {
+   "texto": "por",
+   "inicio": 69.69,
+   "fin": 69.85,
+   "escena": "paso4"
+  },
+  {
+   "texto": "detrás,",
+   "inicio": 69.85,
+   "fin": 70.41,
+   "escena": "paso4"
+  },
+  {
+   "texto": "sin",
+   "inicio": 70.41,
+   "fin": 70.65,
+   "escena": "paso4"
+  },
+  {
+   "texto": "mover",
+   "inicio": 70.65,
+   "fin": 71.05,
+   "escena": "paso4"
+  },
+  {
+   "texto": "tu",
+   "inicio": 71.05,
+   "fin": 71.21,
+   "escena": "paso4"
+  },
+  {
+   "texto": "ratón.",
+   "inicio": 71.21,
+   "fin": 71.65,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Crea",
+   "inicio": 71.84,
+   "fin": 72.17,
+   "escena": "paso4"
+  },
+  {
+   "texto": "el",
+   "inicio": 72.17,
+   "fin": 72.33,
+   "escena": "paso4"
+  },
+  {
+   "texto": "proyecto,",
+   "inicio": 72.33,
+   "fin": 72.89,
+   "escena": "paso4"
+  },
+  {
+   "texto": "busca",
+   "inicio": 72.89,
+   "fin": 73.37,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Gmail",
+   "inicio": 73.37,
+   "fin": 73.93,
+   "escena": "paso4"
+  },
+  {
+   "texto": "y",
+   "inicio": 73.93,
+   "fin": 74.09,
+   "escena": "paso4"
+  },
+  {
+   "texto": "pulsa",
+   "inicio": 74.09,
+   "fin": 74.65,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Habilitar.",
+   "inicio": 74.65,
+   "fin": 75.34,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Tú",
+   "inicio": 75.52,
+   "fin": 75.61,
+   "escena": "paso4"
+  },
+  {
+   "texto": "lo",
+   "inicio": 75.61,
+   "fin": 75.77,
+   "escena": "paso4"
+  },
+  {
+   "texto": "ves",
+   "inicio": 75.77,
+   "fin": 76.09,
+   "escena": "paso4"
+  },
+  {
+   "texto": "todo",
+   "inicio": 76.09,
+   "fin": 76.33,
+   "escena": "paso4"
+  },
+  {
+   "texto": "en",
+   "inicio": 76.33,
+   "fin": 76.49,
+   "escena": "paso4"
+  },
+  {
+   "texto": "directo.",
+   "inicio": 76.49,
+   "fin": 77.05,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Y",
+   "inicio": 77.05,
+   "fin": 77.21,
+   "escena": "paso4"
+  },
+  {
+   "texto": "si",
+   "inicio": 77.21,
+   "fin": 77.37,
+   "escena": "paso4"
+  },
+  {
+   "texto": "algo",
+   "inicio": 77.37,
+   "fin": 77.69,
+   "escena": "paso4"
+  },
+  {
+   "texto": "no",
+   "inicio": 77.69,
+   "fin": 77.85,
+   "escena": "paso4"
+  },
+  {
+   "texto": "te",
+   "inicio": 77.85,
+   "fin": 78.01,
+   "escena": "paso4"
+  },
+  {
+   "texto": "cuadra,",
+   "inicio": 78.01,
+   "fin": 78.49,
+   "escena": "paso4"
+  },
+  {
+   "texto": "pulsa",
+   "inicio": 78.49,
+   "fin": 78.97,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Escape",
+   "inicio": 78.97,
+   "fin": 79.53,
+   "escena": "paso4"
+  },
+  {
+   "texto": "y",
+   "inicio": 79.53,
+   "fin": 79.69,
+   "escena": "paso4"
+  },
+  {
+   "texto": "se",
+   "inicio": 79.69,
+   "fin": 79.85,
+   "escena": "paso4"
+  },
+  {
+   "texto": "para.",
+   "inicio": 79.85,
+   "fin": 80.16,
+   "escena": "paso4"
+  },
+  {
+   "texto": "Pero",
+   "inicio": 80.34,
+   "fin": 80.55,
+   "escena": "clave"
+  },
+  {
+   "texto": "ojo,",
+   "inicio": 80.55,
+   "fin": 80.95,
+   "escena": "clave"
+  },
+  {
+   "texto": "que",
+   "inicio": 80.95,
+   "fin": 81.11,
+   "escena": "clave"
+  },
+  {
+   "texto": "aquí",
+   "inicio": 81.11,
+   "fin": 81.35,
+   "escena": "clave"
+  },
+  {
+   "texto": "hay",
+   "inicio": 81.35,
+   "fin": 81.59,
+   "escena": "clave"
+  },
+  {
+   "texto": "una",
+   "inicio": 81.59,
+   "fin": 81.75,
+   "escena": "clave"
+  },
+  {
+   "texto": "línea",
+   "inicio": 81.75,
+   "fin": 82.15,
+   "escena": "clave"
+  },
+  {
+   "texto": "roja:",
+   "inicio": 82.15,
+   "fin": 82.55,
+   "escena": "clave"
+  },
+  {
+   "texto": "cuando",
+   "inicio": 82.73,
+   "fin": 82.95,
+   "escena": "clave"
+  },
+  {
+   "texto": "Google",
+   "inicio": 82.95,
+   "fin": 83.35,
+   "escena": "clave"
+  },
+  {
+   "texto": "te",
+   "inicio": 83.35,
+   "fin": 83.51,
+   "escena": "clave"
+  },
+  {
+   "texto": "pide",
+   "inicio": 83.51,
+   "fin": 83.83,
+   "escena": "clave"
+  },
+  {
+   "texto": "la",
+   "inicio": 83.83,
+   "fin": 83.91,
+   "escena": "clave"
+  },
+  {
+   "texto": "contraseña,",
+   "inicio": 83.91,
+   "fin": 84.79,
+   "escena": "clave"
+  },
+  {
+   "texto": "ese",
+   "inicio": 84.79,
+   "fin": 85.03,
+   "escena": "clave"
+  },
+  {
+   "texto": "paso",
+   "inicio": 85.03,
+   "fin": 85.51,
+   "escena": "clave"
+  },
+  {
+   "texto": "es",
+   "inicio": 85.51,
+   "fin": 85.75,
+   "escena": "clave"
+  },
+  {
+   "texto": "tuyo.",
+   "inicio": 85.75,
+   "fin": 86.16,
+   "escena": "clave"
+  },
+  {
+   "texto": "Escríbela",
+   "inicio": 86.39,
+   "fin": 87.11,
+   "escena": "clave"
+  },
+  {
+   "texto": "tú",
+   "inicio": 87.11,
+   "fin": 87.43,
+   "escena": "clave"
+  },
+  {
+   "texto": "en",
+   "inicio": 87.43,
+   "fin": 87.51,
+   "escena": "clave"
+  },
+  {
+   "texto": "la",
+   "inicio": 87.51,
+   "fin": 87.67,
+   "escena": "clave"
+  },
+  {
+   "texto": "página,",
+   "inicio": 87.67,
+   "fin": 88.23,
+   "escena": "clave"
+  },
+  {
+   "texto": "nunca",
+   "inicio": 88.23,
+   "fin": 88.55,
+   "escena": "clave"
+  },
+  {
+   "texto": "en",
+   "inicio": 88.55,
+   "fin": 88.71,
+   "escena": "clave"
+  },
+  {
+   "texto": "el",
+   "inicio": 88.71,
+   "fin": 88.87,
+   "escena": "clave"
+  },
+  {
+   "texto": "chat.",
+   "inicio": 88.87,
+   "fin": 89.22,
+   "escena": "clave"
+  },
+  {
+   "texto": "Le",
+   "inicio": 89.36,
+   "fin": 89.51,
+   "escena": "clave"
+  },
+  {
+   "texto": "dices",
+   "inicio": 89.51,
+   "fin": 90.07,
+   "escena": "clave"
+  },
+  {
+   "texto": "«ya",
+   "inicio": 90.07,
+   "fin": 90.31,
+   "escena": "clave"
+  },
+  {
+   "texto": "lo",
+   "inicio": 90.31,
+   "fin": 90.47,
+   "escena": "clave"
+  },
+  {
+   "texto": "tienes»,",
+   "inicio": 90.47,
+   "fin": 90.95,
+   "escena": "clave"
+  },
+  {
+   "texto": "y",
+   "inicio": 90.95,
+   "fin": 91.11,
+   "escena": "clave"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 91.11,
+   "fin": 91.67,
+   "escena": "clave"
+  },
+  {
+   "texto": "sigue.",
+   "inicio": 91.67,
+   "fin": 92.09,
+   "escena": "clave"
+  },
+  {
+   "texto": "¿El",
+   "inicio": 92.33,
+   "fin": 92.55,
+   "escena": "resultado"
+  },
+  {
+   "texto": "resultado?",
+   "inicio": 92.55,
+   "fin": 93.12,
+   "escena": "resultado"
+  },
+  {
+   "texto": "El",
+   "inicio": 93.32,
+   "fin": 93.51,
+   "escena": "resultado"
+  },
+  {
+   "texto": "proyecto",
+   "inicio": 93.51,
+   "fin": 93.99,
+   "escena": "resultado"
+  },
+  {
+   "texto": "creado",
+   "inicio": 93.99,
+   "fin": 94.39,
+   "escena": "resultado"
+  },
+  {
+   "texto": "y",
+   "inicio": 94.39,
+   "fin": 94.63,
+   "escena": "resultado"
+  },
+  {
+   "texto": "Gmail",
+   "inicio": 94.63,
+   "fin": 95.19,
+   "escena": "resultado"
+  },
+  {
+   "texto": "activado,",
+   "inicio": 95.19,
+   "fin": 95.75,
+   "escena": "resultado"
+  },
+  {
+   "texto": "sin",
+   "inicio": 95.75,
+   "fin": 95.91,
+   "escena": "resultado"
+  },
+  {
+   "texto": "que",
+   "inicio": 95.91,
+   "fin": 96.07,
+   "escena": "resultado"
+  },
+  {
+   "texto": "hayas",
+   "inicio": 96.07,
+   "fin": 96.39,
+   "escena": "resultado"
+  },
+  {
+   "texto": "buscado",
+   "inicio": 96.39,
+   "fin": 96.87,
+   "escena": "resultado"
+  },
+  {
+   "texto": "ni",
+   "inicio": 96.87,
+   "fin": 97.11,
+   "escena": "resultado"
+  },
+  {
+   "texto": "un",
+   "inicio": 97.11,
+   "fin": 97.27,
+   "escena": "resultado"
+  },
+  {
+   "texto": "solo",
+   "inicio": 97.27,
+   "fin": 97.59,
+   "escena": "resultado"
+  },
+  {
+   "texto": "botón.",
+   "inicio": 97.59,
+   "fin": 98.05,
+   "escena": "resultado"
+  },
+  {
+   "texto": "En",
+   "inicio": 98.24,
+   "fin": 98.39,
+   "escena": "resumen"
+  },
+  {
+   "texto": "resumen:",
+   "inicio": 98.39,
+   "fin": 98.96,
+   "escena": "resumen"
+  },
+  {
+   "texto": "tú",
+   "inicio": 99.14,
+   "fin": 99.35,
+   "escena": "resumen"
+  },
+  {
+   "texto": "preparas",
+   "inicio": 99.35,
+   "fin": 99.83,
+   "escena": "resumen"
+  },
+  {
+   "texto": "y",
+   "inicio": 99.83,
+   "fin": 99.99,
+   "escena": "resumen"
+  },
+  {
+   "texto": "das",
+   "inicio": 99.99,
+   "fin": 100.31,
+   "escena": "resumen"
+  },
+  {
+   "texto": "permiso,",
+   "inicio": 100.31,
+   "fin": 100.79,
+   "escena": "resumen"
+  },
+  {
+   "texto": "Claude",
+   "inicio": 100.79,
+   "fin": 101.35,
+   "escena": "resumen"
+  },
+  {
+   "texto": "hace",
+   "inicio": 101.35,
+   "fin": 101.59,
+   "escena": "resumen"
+  },
+  {
+   "texto": "los",
+   "inicio": 101.59,
+   "fin": 101.75,
+   "escena": "resumen"
+  },
+  {
+   "texto": "clics,",
+   "inicio": 101.75,
+   "fin": 102.23,
+   "escena": "resumen"
+  },
+  {
+   "texto": "y",
+   "inicio": 102.23,
+   "fin": 102.39,
+   "escena": "resumen"
+  },
+  {
+   "texto": "las",
+   "inicio": 102.39,
+   "fin": 102.63,
+   "escena": "resumen"
+  },
+  {
+   "texto": "llaves,",
+   "inicio": 102.63,
+   "fin": 103.19,
+   "escena": "resumen"
+  },
+  {
+   "texto": "siempre",
+   "inicio": 103.19,
+   "fin": 103.59,
+   "escena": "resumen"
+  },
+  {
+   "texto": "en",
+   "inicio": 103.59,
+   "fin": 103.75,
+   "escena": "resumen"
+  },
+  {
+   "texto": "tu",
+   "inicio": 103.75,
+   "fin": 103.91,
+   "escena": "resumen"
+  },
+  {
+   "texto": "mano.",
+   "inicio": 103.91,
+   "fin": 104.25,
+   "escena": "resumen"
+  },
+  {
+   "texto": "¿Quieres",
+   "inicio": 104.39,
+   "fin": 104.87,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "los",
+   "inicio": 104.87,
+   "fin": 105.03,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "esquemas",
+   "inicio": 105.03,
+   "fin": 105.59,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "de",
+   "inicio": 105.59,
+   "fin": 105.67,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "este",
+   "inicio": 105.67,
+   "fin": 105.91,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "episodio?",
+   "inicio": 105.91,
+   "fin": 106.45,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "Comenta",
+   "inicio": 106.62,
+   "fin": 107.19,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "AUDITORIA",
+   "inicio": 107.19,
+   "fin": 107.99,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "y",
+   "inicio": 107.99,
+   "fin": 108.15,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "te",
+   "inicio": 108.15,
+   "fin": 108.31,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "paso",
+   "inicio": 108.31,
+   "fin": 108.55,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "el",
+   "inicio": 108.55,
+   "fin": 108.71,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "enlace",
+   "inicio": 108.71,
+   "fin": 109.19,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "con",
+   "inicio": 109.19,
+   "fin": 109.35,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "todo.",
+   "inicio": 109.35,
+   "fin": 109.64,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "Y",
+   "inicio": 109.8,
+   "fin": 109.91,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "si",
+   "inicio": 109.91,
+   "fin": 109.99,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "tienes",
+   "inicio": 109.99,
+   "fin": 110.31,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "un",
+   "inicio": 110.31,
+   "fin": 110.47,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "negocio,",
+   "inicio": 110.47,
+   "fin": 110.95,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "te",
+   "inicio": 110.95,
+   "fin": 111.11,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "preparamos",
+   "inicio": 111.11,
+   "fin": 111.67,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "una",
+   "inicio": 111.67,
+   "fin": 111.83,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "auditoría",
+   "inicio": 111.83,
+   "fin": 112.47,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "para",
+   "inicio": 112.47,
+   "fin": 112.63,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "optimizar",
+   "inicio": 112.63,
+   "fin": 113.27,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "tus",
+   "inicio": 113.27,
+   "fin": 113.43,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "procesos.",
+   "inicio": 113.43,
+   "fin": 114.07,
+   "escena": "auditoria"
+  },
+  {
+   "texto": "Y",
+   "inicio": 114.07,
+   "fin": 114.31,
+   "escena": "avance"
+  },
+  {
+   "texto": "en",
+   "inicio": 114.31,
+   "fin": 114.39,
+   "escena": "avance"
+  },
+  {
+   "texto": "el",
+   "inicio": 114.39,
+   "fin": 114.55,
+   "escena": "avance"
+  },
+  {
+   "texto": "siguiente",
+   "inicio": 114.55,
+   "fin": 114.95,
+   "escena": "avance"
+  },
+  {
+   "texto": "episodio,",
+   "inicio": 114.95,
+   "fin": 115.51,
+   "escena": "avance"
+  },
+  {
+   "texto": "cerramos",
+   "inicio": 115.51,
+   "fin": 116.15,
+   "escena": "avance"
+  },
+  {
+   "texto": "el",
+   "inicio": 116.15,
+   "fin": 116.23,
+   "escena": "avance"
+  },
+  {
+   "texto": "módulo",
+   "inicio": 116.23,
+   "fin": 116.71,
+   "escena": "avance"
+  },
+  {
+   "texto": "1,",
+   "inicio": 116.71,
+   "fin": 117.11,
+   "escena": "avance"
+  },
+  {
+   "texto": "y",
+   "inicio": 117.11,
+   "fin": 117.27,
+   "escena": "avance"
+  },
+  {
+   "texto": "tú",
+   "inicio": 117.27,
+   "fin": 117.43,
+   "escena": "avance"
+  },
+  {
+   "texto": "eliges",
+   "inicio": 117.43,
+   "fin": 117.91,
+   "escena": "avance"
+  },
+  {
+   "texto": "lo",
+   "inicio": 117.91,
+   "fin": 118.07,
+   "escena": "avance"
+  },
+  {
+   "texto": "que",
+   "inicio": 118.07,
+   "fin": 118.15,
+   "escena": "avance"
+  },
+  {
+   "texto": "viene.",
+   "inicio": 118.15,
+   "fin": 118.54,
+   "escena": "avance"
+  },
+  {
+   "texto": "Sígueme",
+   "inicio": 118.69,
+   "fin": 119.28,
+   "escena": "avance"
+  },
+  {
+   "texto": "para",
+   "inicio": 119.28,
+   "fin": 119.44,
+   "escena": "avance"
+  },
+  {
+   "texto": "no",
+   "inicio": 119.44,
+   "fin": 119.6,
+   "escena": "avance"
+  },
+  {
+   "texto": "perdértelo.",
+   "inicio": 119.6,
+   "fin": 120.26,
+   "escena": "avance"
+  }
+ ]
+}
