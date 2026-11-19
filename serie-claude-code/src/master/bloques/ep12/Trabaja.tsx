@@ -35,7 +35,7 @@ const tiempos = (L: Linea) => ({
   gmail: L.en(E, "Gmail"),
   pulsa: L.en(E, "pulsa"),
   habilitar: L.en(E, "Habilitar."),
-  tu: L.en(E, "Tú"),
+  tu: L.en(E, "Tú lo ves"),
   directo: L.en(E, "directo."),
   cuadra: L.en(E, "cuadra,"),
   escape: L.en(E, "Escape"),
@@ -47,7 +47,7 @@ export const Trabaja: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
   const tomas: Toma[] = [
     { t: desde - 1, x: 540, y: 1100, z: 1.0 },
     { t: T.crea - 0.3, x: 540, y: Y + 20, z: 1.04, d: 0.8 },
-    { t: T.pulsa - 0.3, x: 470, y: Y + 60, z: 1.09, d: 0.7 },
+    { t: T.pulsa - 0.3, x: 540, y: Y + 50, z: 1.06, d: 0.7 },
     { t: T.tu - 0.2, x: 540, y: Y + 40, z: 1.0, d: 0.9 },
   ];
   // la ventana: consola → formulario → búsqueda → Gmail
@@ -65,7 +65,7 @@ export const Trabaja: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
   return (
     <Escena t={t} tomas={tomas}>
       <Sello texto="PASO 4" x={540} y={740} t={t} at={T.paso} out={T.detras - 0.3} size={64} />
-      <Etiqueta texto="DÉJALE TRABAJAR" x={540} y={760} t={t} at={T.detras - 0.25} out={T.crea - 0.2} size={34} variante="borde" />
+      <Etiqueta texto="DÉJALE TRABAJAR" x={540} y={722} t={t} at={T.detras - 0.25} out={T.crea - 0.2} size={34} variante="borde" />
       {vV.on && (
         <div style={{ position: "absolute", left: 0, top: 0, opacity: vV.opacity, transform: `translateY(${vV.y}px)` }}>
           <Ventana t={t} url={url} letras={letras} carga={carga} brillo={brillo} y={Y} h={H} fondo={fase === 1 ? "#15171D" : "#F8F9FA"} escala={vV.scale}>
@@ -100,7 +100,7 @@ export const Trabaja: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
       {/* Claude pulsa «Crear» y «Habilitar» */}
       <Toque x={PAG.x + BOTON_CREAR.x + BOTON_CREAR.w / 2} y={PAG.y + BOTON_CREAR.y + BOTON_CREAR.h / 2} t={t} at={T.proyecto - 0.15} r={46} />
       <Toque x={PAG.x + BOTON_HABILITAR.x} y={PAG.y + BOTON_HABILITAR.y} t={t} at={T.pulsa + 0.25} r={50} />
-      <Elemento3D e="cursor" x={PAG.x + BOTON_HABILITAR.x + 190} y={PAG.y + BOTON_HABILITAR.y + 170} w={250} t={t} at={T.pulsa - 0.1} out={T.directo} bucle={[0, 2]} tenue={0.9} />
+      <Elemento3D e="cursor" x={PAG.x + BOTON_HABILITAR.x + 14} y={PAG.y + BOTON_HABILITAR.y + 36} w={230} t={t} at={T.pulsa - 0.1} out={T.directo} bucle={[0, 2]} tenue={0.9} />
       {/* tu ratón, quieto */}
       <Elemento3D e="raton" x={890} y={Y + H / 2 + 40} w={330} t={t} at={T.sin - 0.15} out={T.pulsa - 0.2} hasta={1.45} />
       <Etiqueta texto="SIN MOVER TU RATÓN" x={480} y={Y + H / 2 + 60} t={t} at={T.sin + 0.1} out={T.pulsa - 0.2} size={32} variante="borde" />

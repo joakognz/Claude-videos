@@ -36,13 +36,13 @@ export const PaginaCloud: React.FC<{ t: number; logo: string; sesion: number }> 
   return (
     <div style={{ position: "absolute", inset: 0, background: CLARO.fondo }}>
       <Cabecera logo={logo} avatar={t > sesion ? Math.sin(clamp01((t - sesion) / 0.5) * Math.PI) : 0} />
-      <div style={{ padding: "34px 40px", display: "flex", flexDirection: "column", gap: 24 }}>
-        <div style={{ fontFamily: UI, fontWeight: 700, fontSize: 40, color: CLARO.texto }}>Te damos la bienvenida</div>
+      <div style={{ padding: "24px 40px", display: "flex", flexDirection: "column", gap: 16 }}>
+        <div style={{ fontFamily: UI, fontWeight: 700, fontSize: 38, color: CLARO.texto }}>Te damos la bienvenida</div>
         {[
           ["Crear un proyecto", "Empieza aquí tu automatización"],
           ["APIs y servicios", "Conecta Gmail y otros servicios"],
         ].map(([a, b]) => (
-          <div key={a} style={{ padding: "22px 26px", borderRadius: 16, background: "#FFFFFF", border: `2px solid ${CLARO.borde}` }}>
+          <div key={a} style={{ padding: "14px 24px", borderRadius: 16, background: "#FFFFFF", border: `2px solid ${CLARO.borde}` }}>
             <div style={{ fontFamily: UI, fontWeight: 700, fontSize: 30, color: CLARO.azul }}>{a}</div>
             <div style={{ fontFamily: UI, fontWeight: 600, fontSize: 24, color: CLARO.gris, marginTop: 6 }}>{b}</div>
           </div>
@@ -51,7 +51,7 @@ export const PaginaCloud: React.FC<{ t: number; logo: string; sesion: number }> 
       {t > sesion && (
         <div
           style={{
-            position: "absolute", left: 40, right: 40, bottom: 30, height: 74, borderRadius: 14, background: "#E6F4EA", border: `2px solid #A8DAB5`,
+            position: "absolute", left: 40, right: 40, bottom: 22, height: 70, borderRadius: 14, background: "#E6F4EA", border: `2px solid #A8DAB5`,
             display: "flex", alignItems: "center", gap: 16, padding: "0 22px", opacity: clamp01(s * 1.6), transform: `translateY(${(1 - s) * 30}px)`,
             fontFamily: UI, fontWeight: 700, fontSize: 26, color: CLARO.texto, whiteSpace: "nowrap",
           }}

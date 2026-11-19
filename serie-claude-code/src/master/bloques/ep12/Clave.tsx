@@ -63,21 +63,21 @@ export const Clave: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
         <div style={{ padding: "12px 30px", borderRadius: 999, background: C.fondo, border: `4px solid ${ROJO}`, fontFamily: TITULO, fontWeight: 800, fontSize: 40, color: ROJO, letterSpacing: 1 }}>LÍNEA ROJA</div>
       </Caja>
       {/* Google pide la contraseña */}
-      <Caja x={540} y={YV} t={t} at={T.cuando} desde={0.85}>
+      <Caja x={540} y={YV} t={t} at={T.cuando} out={T.nunca + 0.15} desde={0.85}>
         <PaginaVerificar t={t} w={840} foco={T.contrasena} puntos={puntos} />
       </Caja>
-      <Caja x={880} y={YV - 300} t={t} at={T.ese - 0.1}>
+      <Caja x={880} y={YV - 300} t={t} at={T.ese - 0.1} out={T.nunca}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 22px 10px 10px", borderRadius: 999, background: C.panel, border: `3px solid ${C.acento}`, boxShadow: "0 18px 40px rgba(0,0,0,0.5)" }}>
           <Img src={staticFile(ep.logos.claude)} style={{ width: 52 }} />
           <Insignia s={52} tipo="pausa" />
           <span style={{ fontFamily: TITULO, fontWeight: 800, fontSize: 30, color: C.texto }}>ESPERA</span>
         </div>
       </Caja>
-      <Caja x={150} y={YV + 260} t={t} at={T.tuyo - 0.15} rot={-10} desde={0.3}>
+      <Caja x={150} y={YV + 260} t={t} at={T.tuyo - 0.15} out={T.nunca} rot={-10} desde={0.3}>
         <Img src={staticFile(ep.imagenes!.mano)} style={{ width: 190, display: "block", filter: "drop-shadow(0 18px 30px rgba(0,0,0,0.6))" }} />
       </Caja>
       <Etiqueta texto="TU TURNO" x={540} y={YV + 360} t={t} at={T.tuyo} out={T.nunca - 0.3} size={38} variante="acento" fuente="titulo" />
-      <Etiqueta texto="EN LA PÁGINA, SÍ" x={540} y={YV + 360} t={t} at={T.pagina} out={T.nunca + 0.4} size={34} variante="borde" />
+      <Etiqueta texto="EN LA PÁGINA, SÍ" x={540} y={YV + 360} t={t} at={T.pagina} out={T.nunca + 0.1} size={34} variante="borde" />
 
       {/* en el chat, nunca */}
       <Sello texto="NUNCA EN EL CHAT" x={540} y={YP - HP / 2 - 70} t={t} at={T.chat - 0.1} out={T.ya} size={52} />

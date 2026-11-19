@@ -14,12 +14,10 @@ imagen floristeria.jpg                     TIENES
 icono mano (pegatina)                      TIENES
 icono tecla-esc (pegatina)                 TIENES
 iconos llave y candado (SVG propios)       TIENES
-E1 ventana «Claude al mando» 3D            FALTA el archivo con fondo transparente
-E2 ratón quieto 3D                         FALTA el archivo con fondo transparente
-E3 cursor con clic 3D (bucle)              FALTA el archivo con fondo transparente
-E4 cuadrícula episodio 12 3D               FALTA el archivo con fondo transparente
+E1 ventana «Claude al mando» 3D            TIENES (public/elementos3d/ventana.webm)
+E2 ratón quieto 3D                         TIENES (public/elementos3d/raton.webm)
+E3 cursor con clic 3D (bucle)              TIENES (public/elementos3d/cursor.webm)
+E4 cuadrícula episodio 12 3D               TIENES (public/elementos3d/cuadricula.webm)
 
-Los elementos 3D llegaron en un vídeo de muestra (muestra_elementos_3d_ep12.mp4) con fondo oscuro, sin
-transparencia. Hace falta cada uno por separado, con fondo transparente, en uno de estos formatos:
-  .webm (VP9 con canal alfa)  ·  .mov (ProRes 4444)  ·  secuencia de PNG
-Nombres: elem3d_ventana, elem3d_raton, elem3d_cursor, elem3d_cuadricula.
+Los elementos 3D llegaron en un vídeo de muestra (muestra_elementos_3d_ep12.mp4) con el fondo pegado. Se les ha
+quitado el fondo con scripts/elementos3d.py, sin redibujar nada (ver NOTAS_ep12.md).

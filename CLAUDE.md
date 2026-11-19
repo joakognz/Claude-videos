@@ -21,7 +21,7 @@ Este archivo cuenta lo que vive en el repositorio.
 | 02 VS Code, GitHub, PUSH y PULL | 0.2 | `episodios/ep-02.json` (composición «Master») · `entregas/serie-claude-code-ep-02.mp4` |
 | 03–07 | 0.3–1.4 | no están en este repositorio (hechos en la carpeta del usuario) |
 | 08 Errores típicos y troubleshooting | 1.5 | `episodios/ep-08.json` · `entregas/serie-claude-code-ep-08.mp4` · `briefs/serie-claude-code-ep-08/` |
-| 12 Computer Use | 1.9 | en curso: intro nueva (`bloques/ep12/Intro12.tsx`) y guion en `briefs/serie-claude-code-ep-12/`; faltan la voz y los elementos 3D con fondo transparente |
+| 12 Computer Use | 1.9 | `episodios/ep-12.json` · `entregas/serie-claude-code-ep-12.mp4` · `briefs/serie-claude-code-ep-12/` |
 
 Hoja de ruta: EP09 Nivel experto (1.6, probable 2 partes) · EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
 EP12 Computer Use (1.9) · EP13 Cierre del módulo 1: pregunta a la audiencia (web / automatizaciones / a medida).
@@ -61,7 +61,9 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 - Piezas reutilizables: `Sello` (PASO N), `Etiqueta`, `Logo`, `Flecha`, `Rejilla` (las 50 casillas), `Cursor`, `Toque`
   y `Editor`. Del EP.8: `Cartel` (cartel colgante que gira de cara), `Dibujos` y `Pantallas`. Las pantallas son
   recreaciones con datos ficticios de la consola de Claude, los límites de uso, la página de estado y Visual Studio
-  Code con el panel de Claude Code.
+  Code con el panel de Claude Code. Del EP.12: `Elemento3D` (las mini animaciones 3D del usuario, en
+  `public/elementos3d/`, sacadas de su vídeo de muestra con `scripts/elementos3d.py`), `Ventana` (navegador) y las
+  pantallas de Google Cloud, la API de Gmail, la verificación de la cuenta y el panel de Claude Code.
 
 ### Reglas fijas
 - **Estilo:** fondo #0B0D12, acento coral #D97757, texto blanco. Tipos: Sora (títulos), Inter (subtítulos) y
@@ -98,5 +100,7 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 - Al teclear una URL al ritmo de la voz, termina en ~1 s y carga la página: si no, se ve una pantalla vacía.
 - Cuando la cámara se acerca, comprueba que no corte los bordes de una ventana: con zoom z, el ancho visible es 1080/z.
 - Las caras de texto del cartel ajustan la letra a la longitud. Si añades textos largos, compruébalos en un fotograma.
+- `L.en` ignora tildes y signos: «Tú» encuentra antes el «tu» de «tu ratón». Busca una frase («Tú lo ves»).
+- Los clips con transparencia hacen el render más lento y pesado: renderiza con `CONCURRENCIA=3`.
 - `preparar.py` ancla el texto del guion a la voz. Si ancla muchas menos palabras de las que tiene el guion, la voz
   no coincide con el guion: revisa el texto de las escenas.

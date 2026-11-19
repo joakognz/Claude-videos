@@ -58,10 +58,10 @@ export const Final: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
     <Escena t={t} tomas={tomas}>
       {/* ── resultado ── */}
       <Rotulo texto="¿EL RESULTADO?" x={540} y={760} t={t} at={T.resultado - 0.05} size={80} out={T.resumen} />
-      <Caja x={540} y={YR - 140} t={t} at={T.proyecto - 0.1}>
+      <Caja x={540} y={YR - 140} t={t} at={T.proyecto - 0.1} out={T.resumen + 0.1}>
         <Fila t={t} check={T.creado} titulo="Proyecto creado" detalle="pedidos-floristeria" logo={<div style={{ padding: "12px 16px", borderRadius: 16, background: "#F6F7F9" }}><Img src={staticFile(ep.logos.google_cloud)} style={{ width: 170, display: "block" }} /></div>} />
       </Caja>
-      <Caja x={540} y={YR + 110} t={t} at={T.gmail - 0.1}>
+      <Caja x={540} y={YR + 110} t={t} at={T.gmail - 0.1} out={T.resumen + 0.1}>
         <Fila t={t} check={T.activado} titulo="Gmail activado" detalle="Gmail API · Habilitada" logo={<Img src={staticFile(ep.logos.gmail)} style={{ width: 110 }} />} />
       </Caja>
       <Elemento3D e="ventana" x={890} y={YR + 400} w={300} t={t} at={T.resultado + 0.2} out={T.resumen} desde={1.0} tenue={0.9} />

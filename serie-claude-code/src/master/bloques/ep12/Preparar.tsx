@@ -59,7 +59,7 @@ export const Preparar: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
   const letras = ramp(t, T.abre + 0.05, T.google - 0.05, (x) => x) * URL.length;
   const carga = ramp(t, T.google - 0.05, T.google + 0.35, EASE_OUT);
   const brillo = ramp(t, T.trabaja, T.trabaja + 0.4) * (0.75 + 0.25 * Math.sin(t * 5.5));
-  const vV = vis(t, T.abre - 0.1, Infinity, 0.85);
+  const vV = vis(t, T.abre - 0.1, T.paso2 + 0.4, 0.85);
   // paso 2: la petición se escribe con la voz y se envía al final
   const tramos = [
     [T.explicale + 0.1, T.dale - 0.1],
@@ -99,7 +99,7 @@ export const Preparar: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
         <PanelClaude t={t} w={920} h={640} logoVs={ep.logos.vscode} logoCc={ep.logos.claude_code} mensajes={mensajes} entrada={entrada} foco={t < envia} />
       </Caja>
       <Logo src={ep.logos.vscode} x={950} y={YP - 320} w={100} t={t} at={T.explicale} out={T.esa - 0.2} />
-      <Etiqueta texto="DALE PERMISO" x={540} y={YP + 380} t={t} at={T.permiso} size={32} variante="acento" />
+      <Etiqueta texto="DALE PERMISO" x={540} y={YP + 350} t={t} at={T.permiso} out={T.esa - 0.4} size={32} variante="acento" />
       {/* tres ventanas abiertas: solo esa */}
       {[
         { x: 230, titulo: "Correo personal", ok: false },
@@ -125,7 +125,7 @@ export const Preparar: React.FC<BloqueProps> = ({ t, ep, L, desde }) => {
           </div>
         );
       })}
-      <Etiqueta texto="SOLO ESA" x={540} y={1840} t={t} at={T.esa2 - 0.15} size={36} variante="acento" fuente="titulo" />
+      <Etiqueta texto="SOLO ESA" x={540} y={1530} t={t} at={T.esa2 - 0.15} size={36} variante="acento" fuente="titulo" />
     </Escena>
   );
 };

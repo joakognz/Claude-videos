@@ -2,9 +2,9 @@ No estoy tocando el ratón. Y el navegador trabaja solo.
 
 Episodio doce de cincuenta. Máster de Claude Code.
 
-Esto es Computer Use. Claude Code no solo escribe código: también sabe usar los programas de tu ordenador. Abre páginas, rellena campos y pulsa botones por ti. Es como tener un ayudante sentado a tu lado, que hace lo que le pides.
+Esto es Computer Use. Claude Code no solo escribe código: también sabe usar los programas de tu ordenador. Abre páginas, rellena campos y pulsa botones por ti. Es como tener un ayudante sentado a tu lado, que hace justo lo que le pides.
 
-Un ejemplo. La floristería quiere una automatización que lea los pedidos que le llegan por correo. Para eso hay que crear un proyecto en Google Cloud y conectarlo con Gmail. Son muchos clics, en pantallas que no conoces. Se los dejamos a Claude.
+Un ejemplo. La floristería quiere una automatización que lea los pedidos que le llegan por correo. Para eso hay que crear un proyecto en Google Cloud y conectarlo con Gmail. Son muchos clics, en pantallas que no conoces. Así que se los dejamos a Claude.
 
 Paso uno. Prepara el terreno. Abre tú Google Cloud en el navegador, con tu cuenta ya iniciada. Claude trabaja sobre lo que tú le dejas abierto.
 
@@ -14,12 +14,14 @@ Paso tres. Antes de tocar nada, Claude te enseña el plan: crear el proyecto, ac
 
 Paso cuatro. Déjale trabajar. Lo hace por detrás, sin mover tu ratón. Crea el proyecto, busca Gmail y pulsa Habilitar. Tú lo ves todo en directo. Y si algo no te cuadra, pulsa Escape y se para.
 
-Pero ojo: cuando Google te pide la contraseña, ese paso es tuyo. Escríbela tú en la página, nunca en el chat. Le dices "ya lo tienes", y Claude sigue.
+Pero ojo, que aquí hay una línea roja: cuando Google te pide la contraseña, ese paso es tuyo. Escríbela tú en la página, nunca en el chat. Le dices "ya lo tienes", y Claude sigue.
 
-Resultado: el proyecto creado y Gmail activado, sin que hayas buscado ni un solo botón.
+¿El resultado? El proyecto creado y Gmail activado, sin que hayas buscado ni un solo botón.
 
 En resumen: tú preparas y das permiso, Claude hace los clics, y las llaves, siempre en tu mano.
 
 ¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
 
-En el siguiente episodio, cerramos el módulo uno y tú eliges lo que viene. Sígueme para no perdértelo.
+Y en el siguiente episodio, cerramos el módulo uno, y tú eliges lo que viene.
+
+Sígueme para no perdértelo.
