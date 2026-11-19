@@ -6,7 +6,7 @@ export type LogoId =
   | "github_circulo" | "github_texto" | "github_copilot" | "github_copilot_texto" | "git" | "npm" | "whatsapp"
   | "gemini" | "gemini_icono" | "openai_codex" | "openai_codex_app" | "nextjs" | "nextjs_texto" | "vite" | "tailwind"
   | "vercel" | "netlify" | "cloudflare_pages" | "n8n" | "php" | "astro" | "aws" | "nodejs" | "live_server" | "youtube"
-  | "wordpress" | "chrome" | "aigencyx" | "aigencyx_naranja" | "aigencyx_claro";
+  | "wordpress" | "chrome" | "google_cloud" | "gmail" | "aigencyx" | "aigencyx_naranja" | "aigencyx_claro";
 
 export type EpisodioMaster = {
   composicion: "Master";

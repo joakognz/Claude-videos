@@ -51,6 +51,8 @@ En el JSON del episodio van en `"logos"` (`id` → ruta en `public/`) y en Remot
 | logo_youtube | `youtube.png` | tal cual | rectángulo rojo con el triángulo blanco |
 | logo_wordpress | `wordpress.png` | ficha blanca | negro con la W y el aro calados (transparentes) |
 | logo_chrome | `chrome.png` | tal cual | Google Chrome (llegó ya sin fondo; solo recortado y a 1024 px) |
+| logo_google_cloud | `google_cloud.png` | tarjeta clara | la nube de colores con «Google Cloud» en gris |
+| logo_gmail | `gmail.png` | tal cual | la M de colores (llegó sin fondo; recortado y a 1024 px) |
 | logo_aigencyx | `aigencyx.png` | tal cual | AIgencyx Labs, versión oscura (círculo con aro naranja) |
 | logo_aigencyx_naranja | `aigencyx_naranja.png` | tal cual | AIgencyx Labs, versión naranja |
 | logo_aigencyx_claro | `aigencyx_claro.png` | tal cual | AIgencyx Labs, versión clara |
