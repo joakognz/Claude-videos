@@ -1,7 +1,7 @@
 # Serie «Máster de Claude Code» · EP.12 «Computer Use» (lección 1.9)
 
 **Estado:** montado en `serie-claude-code/` (composición `Master`, `episodios/ep-12.json`).
-**Entrega:** `entregas/serie-claude-code-ep-12.mp4`. 1080x1920 a 30 fps.
+**Entrega:** `entregas/serie-claude-code-ep-12.mp4`. **Duración:** 2:01 (2:00 de voz y 1 s de cola). 1080x1920 a 30 fps, -13,8 LUFS, pico -1,7 dBTP. La comprobación (`qa_master.py`) sale toda en verde.
 
 ## Archivos
 - `1_guion_y_voz/voz_ep12.txt`: el texto que se grabó. La toma de ElevenLabs (v4, stability 50, similarity 75) está en
@@ -20,6 +20,7 @@ CONCURRENCIA=3 node scripts/render-lote.mjs episodios/ep-12.json   # → out/cla
 python scripts/qa_master.py episodios/ep-12.json out/claude-code-ep-12.mp4
 ```
 Se anclaron 337 de las 339 palabras del guion a la voz. La voz no se ha subido a ningún servicio.
+**Ajuste a mano:** en `public/episodios/ep-12/palabras.json`, la palabra «de» de «las llaves de tu automatización» empieza 30 ms antes (63,41 → 63,38 s) para que «tu» se resalte a tiempo. Si se vuelve a pasar `preparar.py`, hay que repetirlo.
 
 ## La intro nueva (solo en este episodio)
 Empieza por el gancho: un navegador rellena solo «Nuevo proyecto» (`pedidos-floristeria`) con la etiqueta CLAUDE AL
