@@ -1,0 +1,21 @@
+Cerramos el módulo 1 del Máster de Claude Code… y ahora decides tú 👇
+
+Si acabas de llegar, este es el mejor episodio para empezar. En un par de minutos, todo lo que ya sabes hacer:
+→ Claude Code dentro de Visual Studio Code, con tu proyecto en su carpeta y guardado en GitHub
+→ CLAUDE.md para que Claude conozca tu negocio antes de empezar
+→ Pedir bien: contexto, una tarea concreta y ejemplos
+→ Corregir sin miedo: rebobinar y leer los errores
+→ Y las funciones de experto: plan, subagentes, MCP, variantes y Computer Use
+
+Ahora toca usarlo en algo real. ¿Por dónde empezamos el módulo 2?
+1 → WEB: la web de tu negocio, de la idea a publicada
+2 → AUTOMATIZAR: que las tareas repetitivas se hagan solas
+3 → MEDIDA: una herramienta hecha solo para tu negocio
+
+Comenta WEB, AUTOMATIZAR o MEDIDA. La más votada abre el módulo 2 🗳️
+
+Episodio 13 de 50 del Máster de Claude Code.
+
+Comenta AUDITORIA y te paso los esquemas de este episodio. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+#claudecode #inteligenciaartificial #automatizacion #desarrolloweb #pymes

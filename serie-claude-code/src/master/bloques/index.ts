@@ -26,6 +26,12 @@ import { Plan, eventosPlan } from "./ep12/Plan";
 import { Preparar, eventosPreparar } from "./ep12/Preparar";
 import { Que, eventosQue } from "./ep12/Que";
 import { Trabaja, eventosTrabaja } from "./ep12/Trabaja";
+import { Avance13, eventosAvance13 } from "./ep13/Avance13";
+import { Caminos13, eventosCaminos13 } from "./ep13/Caminos13";
+import { Gancho13, eventosGancho13 } from "./ep13/Gancho13";
+import { Auto13, Medida13, Web13, eventosAuto13, eventosMedida13, eventosWeb13 } from "./ep13/Opciones13";
+import { Repaso13, eventosRepaso13 } from "./ep13/Repaso13";
+import { Voto13, eventosVoto13 } from "./ep13/Voto13";
 
 export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster) => Evento[] };
 
@@ -58,4 +64,13 @@ export const BLOQUES: Record<string, DefBloque> = {
   ep12_clave: { Componente: Clave, eventos: eventosClave },
   ep12_final: { Componente: Final, eventos: eventosFinal },
   ep12_avance: { Componente: Avance12, eventos: eventosAvance12 },
+  // EP.13 · cierre del módulo 1 y votación
+  ep13_gancho: { Componente: Gancho13, eventos: eventosGancho13 },
+  ep13_repaso: { Componente: Repaso13, eventos: eventosRepaso13 },
+  ep13_caminos: { Componente: Caminos13, eventos: eventosCaminos13 },
+  ep13_web: { Componente: Web13, eventos: eventosWeb13 },
+  ep13_auto: { Componente: Auto13, eventos: eventosAuto13 },
+  ep13_medida: { Componente: Medida13, eventos: eventosMedida13 },
+  ep13_voto: { Componente: Voto13, eventos: eventosVoto13 },
+  ep13_avance: { Componente: Avance13, eventos: eventosAvance13 },
 };

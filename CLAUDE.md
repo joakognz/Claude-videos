@@ -33,10 +33,11 @@ Este archivo cuenta lo que vive en el repositorio.
 | 10 El mapa completo | 1.7 | no está en GitHub |
 | 11 Variantes infinitas | 1.8 | rama `claude/funny-faraday-ckjnww` (reel de prueba) |
 | 12 Computer Use | 1.9 | `episodios/ep-12.json` · `entregas/serie-claude-code-ep-12.mp4` · `briefs/serie-claude-code-ep-12/` |
+| 13 Cierre del módulo 1 y votación | — | `episodios/ep-13.json` · `entregas/serie-claude-code-ep-13.mp4` · `briefs/serie-claude-code-ep-13/` |
 
 Cada episodio se hizo en su propia rama: para leer uno, `git fetch origin <rama>` y
-`git show origin/<rama>:briefs/serie-claude-code-ep-NN/...`. Siguiente: EP13 Cierre del módulo 1, pregunta a la
-audiencia (web / automatizaciones / a medida).
+`git show origin/<rama>:briefs/serie-claude-code-ep-NN/...`. Siguiente: EP14, primer episodio del módulo 2. Su tema es
+la opción más votada en los comentarios del EP13 (WEB, AUTOMATIZAR o MEDIDA): pregúntaselo al usuario.
 
 ### Cómo se hace un episodio aquí
 Material: la voz en MP3 (de ElevenLabs, la genera el usuario), el documento o esquema de la lección y, si hay, el
@@ -75,7 +76,10 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
   recreaciones con datos ficticios de la consola de Claude, los límites de uso, la página de estado y Visual Studio
   Code con el panel de Claude Code. Del EP.12: `Elemento3D` (las mini animaciones 3D del usuario, en
   `public/elementos3d/`, sacadas de su vídeo de muestra con `scripts/elementos3d.py`), `Ventana` (navegador) y las
-  pantallas de Google Cloud, la API de Gmail, la verificación de la cuenta y el panel de Claude Code.
+  pantallas de Google Cloud, la API de Gmail, la verificación de la cuenta y el panel de Claude Code. Del EP.13
+  (`componentes/ep13/Piezas13.tsx`): `Carta` (carta 9:16 que se da la vuelta y enseña una ilustración),
+  `CajaHerramientas` (se abre, recibe piezas que caen dentro y se cierra), `FilaModulo`, `EditorFlujo` (editor de
+  automatizaciones recreado, con nodos, conexiones y un pedido que viaja) y `Comentario` (caja de comentario de Instagram).
 
 ### Reglas fijas
 - **Estilo:** fondo #0B0D12, acento coral #D97757, texto blanco. Tipos: Sora (títulos), Inter (subtítulos) y

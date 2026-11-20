@@ -1,0 +1,162 @@
+{
+ "composicion": "Master",
+ "serie": "Máster de Claude Code",
+ "episodio": 13,
+ "total": 50,
+ "titulo": "Cierre del módulo 1",
+ "handle": "@aigencyx.labs",
+ "voz": {
+  "audio": "episodios/ep-13/voz.wav",
+  "timestamps": "episodios/ep-13/palabras.json"
+ },
+ "musica": {
+  "audio": "audio/musica.wav",
+  "db": -20,
+  "duckingDb": -8
+ },
+ "cta": {
+  "tipo": "auditoria",
+  "pregunta": "¿Quieres los esquemas de este episodio?",
+  "palabra_clave": "AUDITORIA",
+  "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+  "sello": {
+   "texto": "AUDITORÍA PARA TU NEGOCIO",
+   "en": "negocio,"
+  },
+  "remate": {
+   "texto": "Optimiza tus procesos",
+   "en": "optimizar"
+  },
+  "seguir": "Sígueme"
+ },
+ "siguiente_episodio": 14,
+ "avance": {
+  "titulo": "MÓDULO 2",
+  "subtitulo": "La opción ganadora"
+ },
+ "logos": {
+  "claude": "logos/claude.png",
+  "claude_code": "logos/claude-code-mascota.png",
+  "claude_code_texto": "logos/claude-code-pixel.png",
+  "vscode": "logos/vscode.png",
+  "github": "logos/github_texto.png",
+  "github_circulo": "logos/github_circulo.png",
+  "mcp": "logos/mcp.png",
+  "nextjs": "logos/nextjs.png",
+  "astro": "logos/astro.png",
+  "wordpress": "logos/wordpress.png",
+  "vercel": "logos/vercel.png",
+  "netlify": "logos/netlify.png",
+  "hostinger": "logos/hostinger.png",
+  "whatsapp": "logos/whatsapp.png",
+  "google_sheets": "logos/google_sheets.png",
+  "google_sheets_icono": "logos/google_sheets_icono.png",
+  "gmail": "logos/gmail.png",
+  "n8n": "logos/n8n.png",
+  "make": "logos/make.png",
+  "make_icono": "logos/make_icono.png",
+  "nodejs": "logos/nodejs.png",
+  "aws": "logos/aws.png",
+  "drive": "logos/drive.png",
+  "aigencyx": "logos/aigencyx.png"
+ },
+ "imagenes": {
+  "web": "imagenes/ilustracion_web.png",
+  "automatizacion": "imagenes/ilustracion_automatizacion.png",
+  "a_medida": "imagenes/ilustracion_a_medida.png",
+  "floristeria": "imagenes/floristeria.jpg",
+  "cronometro": "iconos/usuario/cronometro_pegatina.png"
+ },
+ "escenas": [
+  {
+   "id": "intro",
+   "voz": "Episodio 13 de 50. Máster de Claude Code."
+  },
+  {
+   "id": "gancho",
+   "voz": "Hoy cerramos el módulo 1. Si acabas de llegar, este es el mejor episodio para empezar: todo el módulo en un par de minutos. Y al final, decides tú lo que viene."
+  },
+  {
+   "id": "repaso",
+   "voz": "Vamos con el repaso. Ya sabes qué es Claude Code y dónde trabaja: dentro de Visual Studio Code, con cada proyecto en su carpeta y guardado en GitHub. Sabes prepararlo con CLAUDE.md, para que Claude conozca tu negocio antes de empezar. Sabes pedir bien: contexto, una tarea concreta y ejemplos. Sabes corregir sin miedo: si algo sale mal, rebobinas. Y si aparece un error, sabes leerlo."
+  },
+  {
+   "id": "experto",
+   "voz": "Y ya trabajas como un experto: Claude planifica, reparte el trabajo, conecta tus herramientas, te propone variantes y hasta usa tu ordenador."
+  },
+  {
+   "id": "giro",
+   "voz": "Eso son las herramientas. Ahora toca usarlas en algo real. Tienes 3 caminos."
+  },
+  {
+   "id": "web",
+   "voz": "Opción 1: una web. La de tu negocio, desde la idea hasta publicada en internet."
+  },
+  {
+   "id": "auto",
+   "voz": "Opción 2: automatizar. Que las tareas repetitivas se hagan solas. Por ejemplo: entra un pedido por WhatsApp, se apunta en una hoja de cálculo y al cliente le llega la confirmación por correo."
+  },
+  {
+   "id": "medida",
+   "voz": "Opción 3: a medida. Una herramienta hecha solo para tu negocio: un panel de pedidos, una agenda de citas o un gestor de clientes. Que se adapte a ti, y no tú a ella."
+  },
+  {
+   "id": "resumen",
+   "voz": "En resumen: ya tienes las herramientas. Ahora, a construir."
+  },
+  {
+   "id": "voto",
+   "voz": "¿Por dónde empezamos? Comenta web, automatizar o medida. La más votada abre el módulo 2."
+  },
+  {
+   "id": "auditoria",
+   "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."
+  },
+  {
+   "id": "avance",
+   "voz": "En el siguiente episodio, empieza el módulo 2 con la opción ganadora. Sígueme para no perdértelo."
+  }
+ ],
+ "bloques": [
+  {
+   "tipo": "intro",
+   "desde": "intro"
+  },
+  {
+   "tipo": "ep13_gancho",
+   "desde": "gancho"
+  },
+  {
+   "tipo": "ep13_repaso",
+   "desde": "repaso"
+  },
+  {
+   "tipo": "ep13_caminos",
+   "desde": "giro"
+  },
+  {
+   "tipo": "ep13_web",
+   "desde": "web"
+  },
+  {
+   "tipo": "ep13_auto",
+   "desde": "auto"
+  },
+  {
+   "tipo": "ep13_medida",
+   "desde": "medida"
+  },
+  {
+   "tipo": "ep13_voto",
+   "desde": "resumen"
+  },
+  {
+   "tipo": "ep8_cta",
+   "desde": "auditoria"
+  },
+  {
+   "tipo": "ep13_avance",
+   "desde": "avance"
+  }
+ ]
+}
