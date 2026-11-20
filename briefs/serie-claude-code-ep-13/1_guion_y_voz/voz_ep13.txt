@@ -1,0 +1,25 @@
+Episodio trece de cincuenta. Máster de Claude Code.
+
+Hoy cerramos el módulo uno. Si acabas de llegar, este es el mejor episodio para empezar: todo el módulo en un par de minutos. Y al final, decides tú lo que viene.
+
+Vamos con el repaso.
+Ya sabes qué es Claude Code y dónde trabaja: dentro de Visual Studio Code, con cada proyecto en su carpeta y guardado en GitHub.
+Sabes prepararlo con CLAUDE punto M D, para que Claude conozca tu negocio antes de empezar.
+Sabes pedir bien: contexto, una tarea concreta y ejemplos.
+Sabes corregir sin miedo: si algo sale mal, rebobinas. Y si aparece un error, sabes leerlo.
+Y ya trabajas como un experto: Claude planifica, reparte el trabajo, conecta tus herramientas, te propone variantes y hasta usa tu ordenador.
+
+Eso son las herramientas. Ahora toca usarlas en algo real. Tienes tres caminos.
+
+Opción uno: una web. La de tu negocio, desde la idea hasta publicada en internet.
+
+Opción dos: automatizar. Que las tareas repetitivas se hagan solas. Por ejemplo: entra un pedido por WhatsApp, se apunta en una hoja de cálculo y al cliente le llega la confirmación por correo.
+
+Opción tres: a medida. Una herramienta hecha solo para tu negocio: un panel de pedidos, una agenda de citas o un gestor de clientes. Que se adapte a ti, y no tú a ella.
+
+En resumen: ya tienes las herramientas. Ahora, a construir.
+¿Por dónde empezamos? Comenta web, automatizar o medida. La más votada abre el módulo dos.
+
+¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.
+
+En el siguiente episodio, empieza el módulo dos con la opción ganadora. Sígueme para no perdértelo.

@@ -1,0 +1,27 @@
+EP.13 · Cierre del módulo 1 · logos e imágenes
+Todo sale de la biblioteca común: serie-claude-code/public/logos/ y serie-claude-code/public/imagenes/
+
+NECESITA                                   | DÓNDE SALE                                      | ESTADO
+-------------------------------------------|-------------------------------------------------|-------
+logo_claude, logo_claude_code              | intro                                           | TIENES
+logo_vscode, logo_github                   | repaso: «Visual Studio Code… GitHub»            | TIENES
+logo_claude (archivo CLAUDE.md)            | repaso: «CLAUDE punto M D»                      | TIENES
+logo_mcp                                   | repaso: «conecta tus herramientas»              | TIENES
+logo_nextjs, logo_astro, logo_wordpress    | opción 1: web                                   | TIENES
+logo_vercel, logo_netlify, logo_hostinger  | opción 1: «publicada en internet»               | TIENES
+logo_whatsapp                              | opción 2: «entra un pedido por WhatsApp»        | TIENES
+logo_google_sheets (o _icono)              | opción 2: «se apunta en una hoja de cálculo»    | TIENES
+logo_gmail                                 | opción 2: «confirmación por correo»             | TIENES
+logo_n8n, logo_make (o _icono)             | opción 2: «se hagan solas» (las herramientas)   | TIENES
+logo_nodejs, logo_aws                      | opción 3: a medida                              | TIENES
+logo_drive                                 | CTA: esquemas                                   | TIENES
+logo_aigencyx                              | sello del módulo 1 y avatar del botón Seguir    | TIENES
+imagenes/ilustracion_web.png               | opción 1                                        | TIENES
+imagenes/ilustracion_automatizacion.png    | opción 2                                        | TIENES
+imagenes/ilustracion_a_medida.png          | opción 3                                        | TIENES
+imagenes/floristeria.jpg                   | gancho: el negocio de ejemplo                   | TIENES
+imagenes/referencias/n8n_flujo.webp        | solo modelo para recrear el editor de flujos    | TIENES
+iconos/usuario/cronometro_pegatina.png     | gancho: «en un par de minutos»                  | TIENES
+
+Pendiente del usuario (no es un logo): subir a la carpeta de esquemas de Drive el esquema del módulo 1, porque el
+CTA promete «los esquemas de este episodio».

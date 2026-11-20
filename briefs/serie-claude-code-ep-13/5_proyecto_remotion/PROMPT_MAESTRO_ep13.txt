@@ -1,0 +1,59 @@
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 13 de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Si hay dudas que BLOQUEAN el trabajo (un archivo que falta, un logo que no tienes), pregúntalas todas juntas en una sola lista numerada.
+4. No hace falta que me pidas confirmación para empezar: si no hay dudas bloqueantes, empieza directamente. Si las hay, espera solo esas respuestas y sigue.
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":13,"total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"Sora / Inter / JetBrains Mono","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep13.mp3","timestamps":"ts_ep13.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.14 · MÓDULO 2","subtitulo":"La opción ganadora: tú eliges"},"cierre":"Sígueme para no perdértelo." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos (public/logos/): logo_claude, logo_claude_code, logo_vscode, logo_github, logo_mcp, logo_nextjs, logo_astro, logo_wordpress, logo_vercel, logo_netlify, logo_hostinger, logo_whatsapp, logo_google_sheets (+ _icono), logo_gmail, logo_n8n, logo_make (+ _icono), logo_nodejs, logo_aws, logo_drive, logo_aigencyx. Los oscuros (google_sheets, make, n8n, vercel, netlify, nodejs, aws) van en tarjeta clara; mcp en ficha blanca.
+Imágenes (public/imagenes/): ilustracion_web.png, ilustracion_automatizacion.png, ilustracion_a_medida.png, floristeria.jpg. referencias/n8n_flujo.webp es SOLO modelo: el editor de flujos se recrea con datos ficticios.
+Iconos: iconos/usuario/cronometro_pegatina.png; iconos de línea coral de public/iconos/ (carpeta, check, enviar, comentario, llave-inglesa…).
+Iconos planos coral que debes dibujar tú: rebobinar, plan (lista con casillas), subagentes (tres figuras), varias webs en abanico, cursor que hace clic.
+Tomas: ninguna. Audio: voz_ep13.mp3, ts_ep13.json (timestamps por palabra), musica.mp3 (opcional).
+
+IMÁGENES Y LOGOS (OBLIGATORIO)
+Cada escena donde se nombre una marca, herramienta o concepto con imagen debe mostrar el logo o la imagen que adjunto, en el momento exacto en que se dice. Usa muchos, de forma visible y con animación (entrada con spring, escalonados). No dibujes ni inventes logos ni imágenes de marcas: solo mis archivos. Si necesitas uno que no te he pasado, pídemelo y espera.
+
+ORIGINALIDAD
+Episodio propio de la serie (no hay lección del curso): repaso del módulo 1 y votación. Metáfora: el módulo 1 llena la caja de herramientas; el módulo 2 la usa para construir algo real en la floristería.
+
+INTRO (máx. 4 s)
+Cuadrícula 10x5 de 50 cuadrados redondeados. Episodios 1-12 iluminados, el 13 palpita y se enciende. La cuadrícula se disuelve en partículas que forman el título: logo_claude a la izquierda, logo_claude_code a la derecha, "MÁSTER DE CLAUDE CODE" en el centro y badge "EP.13".
+
+ESCENAS (tiempos orientativos; mandan los timestamps)
+0–4    intro (arriba).
+4–14   gancho. «cerramos el módulo uno»: las 13 primeras casillas se separan de la cuadrícula y se funden en un sello «MÓDULO 1 ✓» con logo_aigencyx. «Si acabas de llegar»: cronometro_pegatina con «2 MIN». «decides tú»: tres cartas boca abajo (el dorso de las tres ilustraciones) con un «?».
+14–50  repaso, una línea = una pieza que cae en una caja de herramientas abierta, y la casilla de su episodio se ilumina:
+       «Visual Studio Code» logo_vscode → «carpeta» icono carpeta → «GitHub» logo_github (EP.2–3) ·
+       «CLAUDE punto M D» archivo CLAUDE.md con logo_claude (EP.5) ·
+       «contexto, una tarea concreta y ejemplos» tres fichas que se apilan (EP.6) ·
+       «rebobinas» icono rebobinar, «sabes leerlo» un aviso de error con lupa (EP.7–8) ·
+       «planifica / reparte el trabajo / conecta tus herramientas / variantes / usa tu ordenador» cinco mini-piezas al ritmo de la voz: lista de plan, tres figuras, logo_mcp, cinco webs en abanico, cursor que hace clic (EP.9–12).
+50–56  giro. «Eso son las herramientas»: la caja se cierra con un golpe. «tres caminos»: las tres cartas se levantan.
+56–64  opción 1, WEB: la carta gira y muestra ilustracion_web; alrededor, logo_nextjs, logo_astro, logo_wordpress; en «publicada en internet», logo_vercel, logo_netlify, logo_hostinger.
+64–80  opción 2, AUTOMATIZAR: ilustracion_automatizacion; en «se hagan solas», logo_n8n y logo_make. Con el ejemplo se dibuja un flujo recreado (estilo editor de n8n, datos ficticios de la floristería): nodo WhatsApp «Nuevo pedido» → nodo Google Sheets «Añadir fila» → nodo Gmail «Enviar confirmación», cada uno con su logo en el momento en que se dice; un punto de luz recorre el flujo y termina en ✓.
+80–92  opción 3, A MEDIDA: ilustracion_a_medida; etiquetas que aparecen con la voz: PANEL DE PEDIDOS · AGENDA DE CITAS · GESTOR DE CLIENTES; logo_nodejs y logo_aws pequeños. «Que se adapte a ti»: la llave inglesa de la ilustración gira.
+92–104 resumen + votación: las tres cartas en fila con su palabra (WEB · AUTOMATIZAR · MEDIDA). «Comenta»: caja de comentario de Instagram (recreada) en la que se teclea una de las palabras y se envía. «La más votada abre el módulo dos»: barras de votación SIN cifras que suben y una corona «?» sobre las tres.
+104–114 CTA: el del EP.8 (se teclea AUDITORIA y se envía → tarjeta de esquemas con logo_drive → AUDITORÍA PARA TU NEGOCIO → Optimiza tus procesos).
+114–120 avance: la cuadrícula marca el módulo 1 (1–13) completo y la casilla 14 late con un «?» → «EP.14 · MÓDULO 2 · TÚ ELIGES» → @aigencyx.labs con logo_aigencyx de avatar y Seguir → Siguiendo ✓.
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "OPCIÓN 1/2/3" (mismo estilo que los "PASO N") y "MÓDULO 1 ✓".
+- Música (si la hay) a -20 dB con ducking bajo la voz.
+- Marca de agua con el handle, badge "EP.13/50" y barra de progreso.
+
+ENTREGA
+Haz directamente el render final a 1080x1920, con voz y música (si la hay). NO hagas render de prueba y NO esperes mi aprobación: entrega el vídeo terminado.
