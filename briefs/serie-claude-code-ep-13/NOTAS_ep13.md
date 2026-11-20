@@ -1,7 +1,7 @@
 # Serie «Máster de Claude Code» · EP.13 «Cierre del módulo 1» (sin lección del curso)
 
 **Estado:** montado en `serie-claude-code/` (composición `Master`, `episodios/ep-13.json`).
-**Entrega:** `entregas/serie-claude-code-ep-13.mp4`. **Duración:** DURACION (1:47 de voz y 1 s de cola). 1080x1920 a 30 fps, SONORIDAD.
+**Entrega:** `entregas/serie-claude-code-ep-13.mp4`. **Duración:** 1:48 (1:47 de voz y 1 s de cola). 1080x1920 a 30 fps, -13,8 LUFS, pico -1,8 dBTP. La comprobación (`qa_master.py`) sale toda en verde.
 
 ## Archivos
 - `1_guion_y_voz/voz_ep13.txt`: el texto que se grabó. La toma de ElevenLabs («Manu Gordillo», v4, stability 50,
@@ -20,6 +20,9 @@ node scripts/render-lote.mjs episodios/ep-13.json             # → out/claude-c
 python scripts/qa_master.py episodios/ep-13.json out/claude-code-ep-13.mp4
 ```
 Se anclaron 288 de las 291 palabras del guion a la voz. La voz no se ha subido a ningún servicio.
+**Ajuste a mano:** en `public/episodios/ep-13/palabras.json`, la palabra «la» de «con la opción ganadora» empieza 30 ms
+después (104,20 → 104,23 s) para que caiga dentro de su bloque de subtítulos. Si se vuelve a pasar `preparar.py`, hay
+que repetirlo.
 
 ## Escenas
 | Bloque | Tiempo | En pantalla |
