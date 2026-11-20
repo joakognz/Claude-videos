@@ -7,6 +7,10 @@ locales), habla español de España y no es técnico: decide tú lo razonable, e
 - `reel-*/`: reels sueltos, cada uno con su proyecto. Su plantilla es `briefs/plantilla-reel-remotion.md` y su estilo
   de marca es otro (naranja #FF6B1A, Three.js isométrico).
 - `briefs/`: ficha de cada reel o episodio · `entregas/`: los mp4 finales · `audio/raw/`: tomas originales de voz.
+- **Biblioteca de logos e imágenes (para todo el repositorio):** `serie-claude-code/public/logos/` (índice en
+  `_LEEME_LOGOS.md`, muestrario en `_muestrario.png`) y `serie-claude-code/public/imagenes/` (`_LEEME_IMAGENES.md`).
+  Antes de pedirle un logo al usuario, búscalo ahí. Cuando te pase uno nuevo, guárdalo ahí y súbelo, para que ninguna
+  sesión tenga que volver a pedirlo.
 
 ## Serie «Máster de Claude Code»
 
@@ -19,11 +23,20 @@ Este archivo cuenta lo que vive en el repositorio.
 |---|---|---|
 | 01 Qué es Claude Code | 0.1 | `episodios/ep-01.json` (composición antigua «Episodio») · `entregas/serie-claude-code-ep-01.mp4` |
 | 02 VS Code, GitHub, PUSH y PULL | 0.2 | `episodios/ep-02.json` (composición «Master») · `entregas/serie-claude-code-ep-02.mp4` |
-| 03–07 | 0.3–1.4 | no están en este repositorio (hechos en la carpeta del usuario) |
+| 03 Proyectos, instalación y extensiones (2 partes) | 0.3–0.5 | rama `claude/remotion-master-claude-ep3-jykszo` |
+| 04 Meta, etapas y costes (2 partes) | 0.7–0.9 | rama `claude/pensive-gates-1di7iv` |
+| 05 CLAUDE.md e /init | 1.1 | rama `claude/ecstatic-clarke-w4sggd` |
+| 06 Prompting maestro | 1.3 | rama `claude/hopeful-gauss-ztxf8y` |
+| 07 Cambios y correcciones | 1.4 | rama `claude/clever-hopper-qupljb` |
 | 08 Errores típicos y troubleshooting | 1.5 | `episodios/ep-08.json` · `entregas/serie-claude-code-ep-08.mp4` · `briefs/serie-claude-code-ep-08/` |
+| 09 Nivel experto (2 partes) | 1.6 | rama `claude/episodio-9-guion-logos-z4h3v9` |
+| 10 El mapa completo | 1.7 | no está en GitHub |
+| 11 Variantes infinitas | 1.8 | rama `claude/funny-faraday-ckjnww` (reel de prueba) |
+| 12 Computer Use | 1.9 | rama `claude/busy-edison-3oqz70` |
 
-Hoja de ruta: EP09 Nivel experto (1.6, probable 2 partes) · EP10 El mapa completo (1.7) · EP11 Variantes infinitas (1.8) ·
-EP12 Computer Use (1.9) · EP13 Cierre del módulo 1: pregunta a la audiencia (web / automatizaciones / a medida).
+Cada episodio se hizo en su propia rama: para leer uno, `git fetch origin <rama>` y
+`git show origin/<rama>:briefs/serie-claude-code-ep-NN/...`. Siguiente: EP13 Cierre del módulo 1, pregunta a la
+audiencia (web / automatizaciones / a medida).
 
 ### Cómo se hace un episodio aquí
 Material: la voz en MP3 (de ElevenLabs, la genera el usuario), el documento o esquema de la lección y, si hay, el
@@ -71,15 +84,18 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 - **Movimiento:** como mucho 3 s sin un cambio visible. Solo `spring`, `interpolate` y `Easing`: nada de CSS
   transitions ni `setTimeout`.
 - **Logos:** solo los archivos del usuario (`serie-claude-code/public/logos/`, ver `_LEEME_LOGOS.md` y
-  `_muestrario.png`). Hay 35: Claude, Claude Code (mascota y rótulo), Anthropic, Visual Studio Code, Word, Microsoft,
-  Drive, GitHub (gato, círculo y rótulo), Copilot, git, npm, WhatsApp, Gemini, Codex, Next.js, Vite, Tailwind, Vercel,
-  Netlify, Cloudflare Pages, n8n, PHP, Astro, AWS, Node.js, Live Server, YouTube y WordPress. Faltan hostinger y aigencyx.
+  `_muestrario.png`). Hay 49: AIgencyx (oscuro, naranja, naranja grande y claro), Claude, Claude Code (mascota y
+  rótulo), Anthropic, Visual Studio Code, Word, Microsoft, Drive, Gmail, Google Sheets, Google Cloud, Chrome, GitHub
+  (gato, círculo y rótulo), Copilot, git, npm, WhatsApp, Gemini, Codex, Next.js, Vite, Tailwind, Vercel, Netlify,
+  Cloudflare Pages, Hostinger, n8n, Make, Airtable, MCP, PHP, Astro, AWS, Node.js, Live Server, YouTube y WordPress.
   Nunca se redibujan ni se inventan. Si falta uno, se pide con su nombre `logo_xxx` y se espera. Los nuevos se
   guardan en `_originales/` y se les quita el fondo con `scripts/logo_sin_fondo.py`. Los logos oscuros van sobre
   tarjeta clara (`ficha="tarjeta"`).
 - **Iconos e imágenes:** los iconos propios en SVG están en `public/iconos/` (ver `_LEEME_ICONOS.md`); los iconos
   dibujados del usuario (cronómetro, mano, marcador, matraz, tecla Esc, normales y en pegatina), en
-  `public/iconos/usuario/`; y sus ilustraciones o fotos de ejemplo (la floristería), en `public/imagenes/`.
+  `public/iconos/usuario/`; y sus ilustraciones (floristería, panadería y las tres opciones del EP.13: web,
+  automatización y a medida), en `public/imagenes/` (ver `_LEEME_IMAGENES.md`). Las capturas de
+  `public/imagenes/referencias/` son solo modelo para recrear pantallas.
 - **Nunca copiar el vídeo del curso:** otra estructura, otras metáforas, otros ejemplos (otro tipo de negocio) y otras
   frases. Las pantallas se recrean con datos ficticios.
 - **Voz** (texto para el generador): números en letras, «CLAUDE punto M D», «Visual Studio Code» completo, frases
@@ -92,6 +108,9 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
   según el nombre del archivo.
 
 ### Trampas ya vistas
+- Las sesiones nuevas abren la rama principal del repositorio (`claude/script-to-mp3-animation-pukyip`). Lo que se
+  guarda solo en la rama de una sesión no lo ve la siguiente: por eso los logos acababan repartidos y había que
+  pedirlos otra vez. Lo común (logos, imágenes, plantilla, CLAUDE.md) tiene que llegar a la rama principal.
 - Al teclear una URL al ritmo de la voz, termina en ~1 s y carga la página: si no, se ve una pantalla vacía.
 - Cuando la cámara se acerca, comprueba que no corte los bordes de una ventana: con zoom z, el ancho visible es 1080/z.
 - Las caras de texto del cartel ajustan la letra a la longitud. Si añades textos largos, compruébalos en un fotograma.
