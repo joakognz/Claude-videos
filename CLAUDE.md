@@ -32,7 +32,7 @@ Este archivo cuenta lo que vive en el repositorio.
 | 09 Nivel experto (2 partes) | 1.6 | rama `claude/episodio-9-guion-logos-z4h3v9` |
 | 10 El mapa completo | 1.7 | no está en GitHub |
 | 11 Variantes infinitas | 1.8 | rama `claude/funny-faraday-ckjnww` (reel de prueba) |
-| 12 Computer Use | 1.9 | rama `claude/busy-edison-3oqz70` |
+| 12 Computer Use | 1.9 | `episodios/ep-12.json` · `entregas/serie-claude-code-ep-12.mp4` · `briefs/serie-claude-code-ep-12/` |
 
 Cada episodio se hizo en su propia rama: para leer uno, `git fetch origin <rama>` y
 `git show origin/<rama>:briefs/serie-claude-code-ep-NN/...`. Siguiente: EP13 Cierre del módulo 1, pregunta a la
@@ -73,12 +73,15 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 - Piezas reutilizables: `Sello` (PASO N), `Etiqueta`, `Logo`, `Flecha`, `Rejilla` (las 50 casillas), `Cursor`, `Toque`
   y `Editor`. Del EP.8: `Cartel` (cartel colgante que gira de cara), `Dibujos` y `Pantallas`. Las pantallas son
   recreaciones con datos ficticios de la consola de Claude, los límites de uso, la página de estado y Visual Studio
-  Code con el panel de Claude Code.
+  Code con el panel de Claude Code. Del EP.12: `Elemento3D` (las mini animaciones 3D del usuario, en
+  `public/elementos3d/`, sacadas de su vídeo de muestra con `scripts/elementos3d.py`), `Ventana` (navegador) y las
+  pantallas de Google Cloud, la API de Gmail, la verificación de la cuenta y el panel de Claude Code.
 
 ### Reglas fijas
 - **Estilo:** fondo #0B0D12, acento coral #D97757, texto blanco. Tipos: Sora (títulos), Inter (subtítulos) y
   JetBrains Mono (código). 1080x1920 a 30 fps.
-- **Composición:** intro con la cuadrícula de 50 casillas (máx. 4 s). Subtítulos arriba, palabra a palabra, con la
+- **Composición:** intro con la cuadrícula de 50 casillas (máx. 4 s). El EP.12 estrena otra: abre con el gancho (el
+  navegador trabaja solo) y el título sale como una página en ese navegador (`ep12_intro`). Subtítulos arriba, palabra a palabra, con la
   activa en caja coral (máx. 2 líneas). Insignia EP.N/50 arriba a la izquierda y @aigencyx.labs arriba a la derecha.
 - **Música:** -20 dB y -8 dB más bajo la voz. Sonoridad final de -14 LUFS, pico por debajo de -1 dBTP.
 - **Movimiento:** como mucho 3 s sin un cambio visible. Solo `spring`, `interpolate` y `Easing`: nada de CSS
@@ -114,5 +117,7 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 - Al teclear una URL al ritmo de la voz, termina en ~1 s y carga la página: si no, se ve una pantalla vacía.
 - Cuando la cámara se acerca, comprueba que no corte los bordes de una ventana: con zoom z, el ancho visible es 1080/z.
 - Las caras de texto del cartel ajustan la letra a la longitud. Si añades textos largos, compruébalos en un fotograma.
+- `L.en` ignora tildes y signos: «Tú» encuentra antes el «tu» de «tu ratón». Busca una frase («Tú lo ves»).
+- Los clips con transparencia hacen el render más lento y pesado: renderiza con `CONCURRENCIA=3`.
 - `preparar.py` ancla el texto del guion a la voz. Si ancla muchas menos palabras de las que tiene el guion, la voz
   no coincide con el guion: revisa el texto de las escenas.

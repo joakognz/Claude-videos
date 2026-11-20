@@ -1,0 +1,16 @@
+EP.12 · Computer Use · tomas
+
+No hace falta grabar nada: como en el EP.8, las pantallas se recrean como animación tomando solo la interfaz del
+vídeo de la lección como referencia (menús, paneles y orden de los clics). Todo con datos ficticios:
+  - Proyecto: pedidos-floristeria. Cuenta: floristeria@ejemplo.com.
+  - Navegador: Chrome (en la lección es Safari).
+
+Pantallas
+  1. Google Cloud con la sesión iniciada (panel del proyecto, recreado sin datos reales).
+  2. Visual Studio Code con el panel de Claude Code: la petición (texto propio, no el del curso), el plan en una
+     lista y los pasos que va dando («Abro Crear proyecto», «Habilito Gmail»).
+  3. «Nuevo proyecto»: el nombre se escribe solo y se pulsa «Crear».
+  4. Página de la API de Gmail: botón «Habilitar» → estado «Habilitada».
+  5. «Demuestra que eres tú»: campo de contraseña, que rellenas tú (puntos), sin el logo de Google.
+
+Ningún fotograma del curso entra en el reel.

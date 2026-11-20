@@ -1,0 +1,23 @@
+EP.12 · Computer Use · logos e imágenes
+
+NECESITA                                   ESTADO
+logo_claude                                TIENES
+logo_claude_code (mascota)                 TIENES
+logo_claude_code_texto (rótulo)            TIENES
+logo_chrome                                TIENES (nuevo)
+logo_google_cloud                          TIENES (nuevo; el texto es gris: va en tarjeta clara)
+logo_gmail                                 TIENES (nuevo)
+logo_vscode                                TIENES
+logo_drive (CTA)                           TIENES
+logo_aigencyx                              TIENES (recortado de una captura, unos 296 px)
+imagen floristeria.jpg                     TIENES
+icono mano (pegatina)                      TIENES
+icono tecla-esc (pegatina)                 TIENES
+iconos llave y candado (SVG propios)       TIENES
+E1 ventana «Claude al mando» 3D            TIENES (public/elementos3d/ventana.webm)
+E2 ratón quieto 3D                         TIENES (public/elementos3d/raton.webm)
+E3 cursor con clic 3D (bucle)              TIENES (public/elementos3d/cursor.webm)
+E4 cuadrícula episodio 12 3D               TIENES (public/elementos3d/cuadricula.webm)
+
+Los elementos 3D llegaron en un vídeo de muestra (muestra_elementos_3d_ep12.mp4) con el fondo pegado. Se les ha
+quitado el fondo con scripts/elementos3d.py, sin redibujar nada (ver NOTAS_ep12.md).

@@ -1,0 +1,60 @@
+Eres un motion designer senior que trabaja con Remotion. Vas a construir UN reel vertical del episodio 12 de la serie "Máster de Claude Code" de AIgencyx Labs. Público: dueños de negocio y gente que quiere aprender a usar Claude Code. Estilo tutorial, con ritmo.
+
+PASO 0 — ANTES DE GENERAR NADA
+1. Comprueba que existen todos los archivos del manifiesto. Lista los que faltan.
+2. Calcula la duración real del audio. Si supera 180 s, avísame.
+3. Si hay dudas que BLOQUEAN el trabajo (un archivo que falta, un logo que no tienes), pregúntalas todas juntas en una sola lista numerada.
+4. No hace falta que me pidas confirmación para empezar: si no hay dudas bloqueantes, empieza directamente. Si las hay, espera solo esas respuestas y sigue.
+
+CONFIG
+{ "serie":"Máster de Claude Code","episodio":12,"total":50,"handle":"@aigencyx.labs","resolucion":"1080x1920","fps":30,
+ "estilo":{"fondo":"#0B0D12","acento":"#D97757","texto":"#FFFFFF","tipografia":"Sora / Inter / JetBrains Mono","look":"3D macro / pizarra, iconos planos"},
+ "audio":"voz_ep12.mp3","timestamps":"ts_ep12.json",
+ "cta":{"palabra_clave":"AUDITORIA","texto":"¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."},
+ "avance":{"titulo":"EP.13 · CIERRE DEL MÓDULO 1","subtitulo":"Tú eliges lo que viene"},"cierre":"Sígueme para no perdértelo." }
+
+ASSETS (usa SOLO estos archivos; NUNCA redibujes ni inventes un logo de marca; si falta uno, pregúntame)
+Logos: logo_claude, logo_claude_code (mascota), logo_claude_code_texto, logo_chrome, logo_google_cloud (tarjeta clara), logo_gmail, logo_vscode, logo_drive, logo_aigencyx
+Imágenes: floristeria.jpg; iconos del usuario mano_pegatina y tecla-esc_pegatina
+Iconos planos coral que debes dibujar tú: llave, candado, sobre de pedido, check, pausa, interrogación
+Mini animaciones 3D con fondo transparente (secundarias): elem3d_ventana, elem3d_raton, elem3d_cursor (bucle), elem3d_cuadricula
+Tomas: no hay grabaciones; recrea las pantallas descritas en tomas_ep12.txt con datos ficticios.
+Audio: voz_ep12.mp3, ts_ep12.json (timestamps por palabra), musica.mp3 (opcional).
+
+IMÁGENES Y LOGOS (OBLIGATORIO)
+Cada escena donde se nombre una marca, herramienta o concepto con imagen debe mostrar el logo o la imagen que adjunto, en el momento exacto en que se dice. Usa muchos, de forma visible y con animación (entrada con spring, escalonados). No dibujes ni inventes logos ni imágenes de marcas: solo mis archivos. Si necesitas uno que no te he pasado, pídemelo y espera.
+
+MINI ANIMACIONES 3D
+Son elementos secundarios o terciarios: pequeños (como mucho un tercio del ancho), a un lado y algo más tenues que lo principal. Nunca tapan lo que explica la voz. Entran y salen con spring.
+
+ORIGINALIDAD
+Este reel NO debe parecerse al vídeo del curso: composición, escenas, metáforas y animaciones propias. Solo se mantiene la idea y los datos. Ejemplo propio: los pedidos de una floristería (proyecto pedidos-floristeria), en Chrome.
+
+INTRO (nueva en este episodio; gancho primero)
+0-4 s: un navegador rellena solo el formulario "Nuevo proyecto" (pedidos-floristeria) con la etiqueta "CLAUDE AL MANDO"; tu mano levantada (mano_pegatina) y tu ratón quieto (elem3d_raton pequeño, "TU RATÓN, QUIETO"); Claude pulsa "Crear" → "Proyecto creado"; logo_chrome al decir "navegador".
+4-7 s: con "Episodio doce de cincuenta" el mismo navegador escribe "máster de claude code" y abre la portada: cuadrícula 10x5 (1-11 encendidas, la 12 se enciende con "doce"), que se encoge al entrar logo_claude, logo_claude_code_texto, logo_claude_code, "MÁSTER DE CLAUDE CODE" y "EP.12 · COMPUTER USE".
+
+ESCENAS (tiempos orientativos; mandan los timestamps)
+0:07-0:16  Qué es: rótulo COMPUTER USE con logo_claude_code; fichas "abre páginas" (logo_chrome), "rellena campos", "pulsa botones" (elem3d_cursor pequeño); el ayudante a tu lado.
+0:16-0:30  Ejemplo: floristeria.jpg → sobres de pedidos → logo_gmail y logo_google_cloud → laberinto de pantallas "muchos clics" → logo_claude (elem3d_ventana pequeño en una esquina).
+0:30-0:40  PASO 1: Chrome con Google Cloud, sesión iniciada (cuenta ficticia) → "TÚ LO DEJAS ABIERTO".
+0:40-0:50  PASO 2: logo_vscode + panel de Claude Code, se teclea la petición; varias ventanas y solo una con candado coral "SOLO ESA".
+0:50-1:03  PASO 3: el plan se marca (crear proyecto, activar Gmail con logo_gmail, credenciales = llave) → burbuja "?".
+1:03-1:18  PASO 4: proyecto creado → página de Gmail → "Habilitar" → "Habilitada"; elem3d_raton ("sin mover tu ratón") y elem3d_cursor ("pulsa Habilitar"); tecla-esc_pegatina al decir "Escape".
+1:18-1:32  OJO: "Demuestra que eres tú" (sin logo de Google), Claude en pausa, la contraseña la escribes tú (mano), contraseña tachada en el chat "NUNCA EN EL CHAT", "ya lo tienes" y sigue.
+1:32-1:38  Resultado: logo_google_cloud ✓ y logo_gmail ✓ (elem3d_ventana con check, pequeño).
+1:38-1:46  Resumen: TÚ PREPARAS (mano) → CLAUDE HACE LOS CLICS → LAS LLAVES, TUYAS (llave).
+1:46-1:58  CTA: se teclea AUDITORIA, tarjeta de esquemas con logo_drive, sello AUDITORÍA PARA TU NEGOCIO.
+1:58-2:06  Avance: EP.13 · CIERRE DEL MÓDULO 1 (elem3d_cuadricula detrás, pequeña), @aigencyx.labs y Seguir.
+
+ANIMACIÓN
+- Tiempos derivados de los timestamps por palabra, nunca a ojo.
+- Subtítulos arriba, palabra a palabra, palabra activa en caja coral #D97757.
+- Solo spring, interpolate y Easing. Prohibido CSS transitions y setTimeout.
+- Transiciones con @remotion/transitions. Logos con spring escalonado.
+- Sellos "PASO N" donde corresponda.
+- Música (si la hay) a -20 dB con ducking bajo la voz.
+- Marca de agua con el handle, badge "EP.12/50" y barra de progreso.
+
+ENTREGA
+Haz directamente el render final a 1080x1920, con voz y música (si la hay). NO hagas render de prueba y NO esperes mi aprobación: entrega el vídeo terminado.

@@ -1,0 +1,149 @@
+{
+ "composicion": "Master",
+ "serie": "Máster de Claude Code",
+ "episodio": 12,
+ "total": 50,
+ "titulo": "Computer Use",
+ "handle": "@aigencyx.labs",
+ "voz": {
+  "audio": "episodios/ep-12/voz.wav",
+  "timestamps": "episodios/ep-12/palabras.json"
+ },
+ "musica": {
+  "audio": "audio/musica.wav",
+  "db": -20,
+  "duckingDb": -8
+ },
+ "cta": {
+  "tipo": "auditoria",
+  "pregunta": "¿Quieres los esquemas de este episodio?",
+  "palabra_clave": "AUDITORIA",
+  "texto": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.",
+  "sello": {
+   "texto": "AUDITORÍA PARA TU NEGOCIO",
+   "en": "negocio,"
+  },
+  "remate": {
+   "texto": "Optimiza tus procesos",
+   "en": "optimizar"
+  },
+  "seguir": "Sígueme"
+ },
+ "siguiente_episodio": 13,
+ "avance": {
+  "titulo": "CIERRE DEL MÓDULO 1",
+  "subtitulo": "Tú eliges lo que viene"
+ },
+ "logos": {
+  "claude": "logos/claude.png",
+  "claude_code": "logos/claude-code-mascota.png",
+  "claude_code_texto": "logos/claude-code-pixel.png",
+  "chrome": "logos/chrome.png",
+  "google_cloud": "logos/google_cloud.png",
+  "gmail": "logos/gmail.png",
+  "vscode": "logos/vscode.png",
+  "drive": "logos/drive.png",
+  "aigencyx": "logos/aigencyx.png"
+ },
+ "imagenes": {
+  "mano": "iconos/usuario/mano_pegatina.png",
+  "esc": "iconos/usuario/tecla-esc_pegatina.png",
+  "floristeria": "imagenes/floristeria.jpg"
+ },
+ "escenas": [
+  {
+   "id": "gancho",
+   "voz": "No estoy tocando el ratón. Y el navegador trabaja solo."
+  },
+  {
+   "id": "intro",
+   "voz": "Episodio 12 de 50. Máster de Claude Code."
+  },
+  {
+   "id": "que",
+   "voz": "Esto es Computer Use. Claude Code no solo escribe código: también sabe usar los programas de tu ordenador. Abre páginas, rellena campos y pulsa botones por ti. Es como tener un ayudante sentado a tu lado, que hace justo lo que le pides."
+  },
+  {
+   "id": "ejemplo",
+   "voz": "Un ejemplo. La floristería quiere una automatización que lea los pedidos que le llegan por correo. Para eso hay que crear un proyecto en Google Cloud y conectarlo con Gmail. Son muchos clics, en pantallas que no conoces. Así que se los dejamos a Claude."
+  },
+  {
+   "id": "paso1",
+   "voz": "Paso 1. Prepara el terreno. Abre tú Google Cloud en el navegador, con tu cuenta ya iniciada. Claude trabaja sobre lo que tú le dejas abierto."
+  },
+  {
+   "id": "paso2",
+   "voz": "Paso 2. Explícale qué quieres construir y dale permiso para tomar el control de esa ventana. Solo de esa."
+  },
+  {
+   "id": "paso3",
+   "voz": "Paso 3. Antes de tocar nada, Claude te enseña el plan: crear el proyecto, activar Gmail y preparar las credenciales, que son las llaves de tu automatización. Y si le falta un dato, te pregunta."
+  },
+  {
+   "id": "paso4",
+   "voz": "Paso 4. Déjale trabajar. Lo hace por detrás, sin mover tu ratón. Crea el proyecto, busca Gmail y pulsa Habilitar. Tú lo ves todo en directo. Y si algo no te cuadra, pulsa Escape y se para."
+  },
+  {
+   "id": "clave",
+   "voz": "Pero ojo, que aquí hay una línea roja: cuando Google te pide la contraseña, ese paso es tuyo. Escríbela tú en la página, nunca en el chat. Le dices «ya lo tienes», y Claude sigue."
+  },
+  {
+   "id": "resultado",
+   "voz": "¿El resultado? El proyecto creado y Gmail activado, sin que hayas buscado ni un solo botón."
+  },
+  {
+   "id": "resumen",
+   "voz": "En resumen: tú preparas y das permiso, Claude hace los clics, y las llaves, siempre en tu mano."
+  },
+  {
+   "id": "auditoria",
+   "voz": "¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos."
+  },
+  {
+   "id": "avance",
+   "voz": "Y en el siguiente episodio, cerramos el módulo 1, y tú eliges lo que viene. Sígueme para no perdértelo."
+  }
+ ],
+ "bloques": [
+  {
+   "tipo": "ep12_intro",
+   "desde": "gancho"
+  },
+  {
+   "tipo": "ep12_que",
+   "desde": "que"
+  },
+  {
+   "tipo": "ep12_ejemplo",
+   "desde": "ejemplo"
+  },
+  {
+   "tipo": "ep12_preparar",
+   "desde": "paso1"
+  },
+  {
+   "tipo": "ep12_plan",
+   "desde": "paso3"
+  },
+  {
+   "tipo": "ep12_trabaja",
+   "desde": "paso4"
+  },
+  {
+   "tipo": "ep12_clave",
+   "desde": "clave"
+  },
+  {
+   "tipo": "ep12_final",
+   "desde": "resultado"
+  },
+  {
+   "tipo": "ep8_cta",
+   "desde": "auditoria"
+  },
+  {
+   "tipo": "ep12_avance",
+   "desde": "avance"
+  }
+ ]
+}

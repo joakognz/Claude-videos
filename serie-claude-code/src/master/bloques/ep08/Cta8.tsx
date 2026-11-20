@@ -102,7 +102,7 @@ export const Cta8: React.FC<BloqueProps> = ({ t, ep, L, desde, hasta }) => {
           </div>
         </div>
       )}
-      <Logo src={ep.logos.drive} x={300} y={1330} w={120} t={t} at={T.enlace} out={Infinity} pulsos={[T.todo]} />
+      <Logo src={ep.logos.drive} x={300 - (String(ep.episodio).length - 1) * 24} y={1330} w={120} t={t} at={T.enlace} out={Infinity} pulsos={[T.todo]} />
       {ep.cta.sello && <Sello texto={ep.cta.sello.texto} x={540} y={1610} t={t} at={T.negocio} out={hasta + 0.3} size={46} rot={-4} />}
       <div style={{ position: "absolute", left: 540, top: 1810, width: 0, height: 0 }}>
         <div style={{ position: "absolute", transform: "translate(-50%, -50%)", whiteSpace: "nowrap", fontFamily: TITULO, fontWeight: 800, fontSize: 68 }}>
