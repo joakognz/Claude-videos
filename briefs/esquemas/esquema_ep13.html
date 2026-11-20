@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Esquema EP.13 · Cierre del módulo 1</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("fuentes/poppins-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("fuentes/poppins-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("fuentes/poppins-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("fuentes/poppins-latin-700-normal.woff2") format("woff2"); }
+  html, body { margin: 0; padding: 0; background: #1C1C1E; }
+  #hoja { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #1C1C1E; font-family: "Poppins", sans-serif; color: #fff; }
+  #lienzo, #textos { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .caja { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 14px; box-sizing: border-box; }
+  .caja .titulo { font-weight: 700; letter-spacing: 1.5px; line-height: 1.25; color: #fff; }
+  .caja .sub { font-weight: 400; font-size: 19px; margin-top: 6px; color: #fff; }
+  .texto { position: absolute; }
+  .lista { position: absolute; display: flex; flex-direction: column; line-height: 1.38; }
+  .item { display: flex; gap: 12px; align-items: flex-start; }
+  .marca { flex-shrink: 0; margin-top: 0.22em; }
+  .aviso { color: #F5B83D; font-weight: 700; width: 0.85em; text-align: center; margin-top: 0; }
+  .naranja { color: #F2781F; font-weight: 600; }
+  b { font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="hoja">
+  <svg id="lienzo" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+  <div id="textos"></div>
+</div>
+<script src="lib/rough.js"></script>
+<script src="esquema.js"></script>
+<script>
+  cabecera("CIERRE DEL MÓDULO 1", "Todo lo que ya sabes hacer… y lo que viene: tú eliges");
+
+  // ── módulo 1: la caja de herramientas ──
+  texto(960, 150, 900, "MÓDULO 1 · TU CAJA DE HERRAMIENTAS", { size: 24, peso: 600, color: "#F2781F", ancla: "centro" });
+  const pasos = [
+    ["1 · LA BASE", "Claude Code en VS Code, cada proyecto en su carpeta y GitHub (PUSH y PULL)"],
+    ["2 · CLAUDE.md", "Las reglas del proyecto: <b>/init</b> lo genera y tú lo revisas"],
+    ["3 · PEDIR BIEN", "Contexto, tarea acotada y ejemplos. Si te atascas, que te entreviste"],
+    ["4 · CORREGIR", "Ves el cambio antes de aceptar, vuelves con <b>/rewind</b> y lees los errores"],
+    ["5 · NIVEL EXPERTO", "Modo Plan, subagentes, MCP, variantes y Computer Use"],
+  ];
+  pasos.forEach(([t, d], i) => {
+    const x = 60 + i * 375;
+    caja(x, 200, 300, 92, t, { size: 23 });
+    texto(x + 150, 314, 330, d, { size: 21, ancla: "centro" });
+    if (i < pasos.length - 1) flecha({ x: x + 302, y: 246 }, { x: x + 372, y: 246 });
+  });
+
+  // ── módulo 2: tú eliges ──
+  caja(690, 468, 540, 100, "MÓDULO 2 · TÚ ELIGES", { size: 30, sub: "el siguiente paso lo decides tú" });
+  const cols = [
+    ["1 · WEB", ["La web de tu negocio, de la idea a publicada en internet", "Con Next.js, Astro o WordPress", "Publicada en Vercel, Netlify o Hostinger"]],
+    ["2 · AUTOMATIZAR", ["Que las tareas repetitivas se hagan solas", "Pedido por WhatsApp → hoja de cálculo → correo de confirmación", "Con n8n o Make"]],
+    ["3 · A MEDIDA", ["Una herramienta hecha solo para tu negocio", "Panel de pedidos, agenda de citas o gestor de clientes", "Que se adapte a ti, y no tú a ella"]],
+  ];
+  cols.forEach(([t, items], i) => {
+    const x = 60 + i * 640;
+    caja(x, 645, 520, 70, t, { size: 26 });
+    lista(x + 10, 745, 520, items, { size: 23, hueco: 12 });
+    const cx = x + 260;
+    flecha({ x: 960 + (i - 1) * 120, y: 570 }, { x: cx, y: 640 }, { x: cx, y: 575 + (i === 1 ? 30 : 0) });
+  });
+
+  // ── tu tarea ──
+  caja(68, 978, 222, 58, "TU TAREA", { size: 24 });
+  texto(320, 990, 1300, "Comenta <span class=\"naranja\">WEB</span>, <span class=\"naranja\">AUTOMATIZAR</span> o <span class=\"naranja\">MEDIDA</span> · la más votada abre el módulo 2", { size: 23 });
+</script>
+</body>
+</html>

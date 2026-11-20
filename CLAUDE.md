@@ -7,6 +7,8 @@ locales), habla español de España y no es técnico: decide tú lo razonable, e
 - `reel-*/`: reels sueltos, cada uno con su proyecto. Su plantilla es `briefs/plantilla-reel-remotion.md` y su estilo
   de marca es otro (naranja #FF6B1A, Three.js isométrico).
 - `briefs/`: ficha de cada reel o episodio · `entregas/`: los mp4 finales · `audio/raw/`: tomas originales de voz.
+- `briefs/esquemas/`: los esquemas de cada episodio (las láminas que promete el CTA), con el estilo del usuario, sus
+  referencias y la plantilla para hacer uno nuevo (ver `_LEEME.md`).
 - **Biblioteca de logos e imágenes (para todo el repositorio):** `serie-claude-code/public/logos/` (índice en
   `_LEEME_LOGOS.md`, muestrario en `_muestrario.png`) y `serie-claude-code/public/imagenes/` (`_LEEME_IMAGENES.md`).
   Antes de pedirle un logo al usuario, búscalo ahí. Cuando te pase uno nuevo, guárdalo ahí y súbelo, para que ninguna

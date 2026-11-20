@@ -9,6 +9,8 @@
 - `4_assets_extra/logos_e_imagenes_ep13.txt`: lo que hace falta y lo que ya tienes (está todo).
 - `5_proyecto_remotion/PROMPT_MAESTRO_ep13.txt`: el prompt, por si se monta con otra IA.
 - `7_publicacion/caption_ep13.txt`: el texto para Instagram.
+- `7_publicacion/esquema_ep13.png`: el esquema del episodio, para la carpeta de Drive del CTA (fuente en
+  `briefs/esquemas/esquema_ep13.html`).
 - No hay tomas de pantalla: el editor de flujos y la caja de comentario están recreados con datos ficticios.
 
 ## Render
@@ -51,4 +53,4 @@ la metáfora de la caja de herramientas, las tres cartas y la votación son nues
 - **Casillas del repaso:** 1–4 con Claude Code, Visual Studio Code, la carpeta y GitHub; 5 con CLAUDE.md; 6 con pedir
   bien; 7 y 8 con rebobinar y el error; 9–12 con las funciones de experto. El EP.10 no está en GitHub, así que no se
   nombra.
-- **Pendiente del usuario:** subir a la carpeta de esquemas de Drive el esquema del módulo 1 (el CTA lo promete).
+- **Pendiente del usuario:** subir `7_publicacion/esquema_ep13.png` a la carpeta de esquemas de Drive (el CTA lo promete).

@@ -23,5 +23,5 @@ imagenes/floristeria.jpg                   | gancho: el negocio de ejemplo      
 imagenes/referencias/n8n_flujo.webp        | solo modelo para recrear el editor de flujos    | TIENES
 iconos/usuario/cronometro_pegatina.png     | gancho: «en un par de minutos»                  | TIENES
 
-Pendiente del usuario (no es un logo): subir a la carpeta de esquemas de Drive el esquema del módulo 1, porque el
-CTA promete «los esquemas de este episodio».
+Pendiente del usuario (no es un logo): subir a la carpeta de esquemas de Drive el esquema del episodio
+(7_publicacion/esquema_ep13.png), porque el CTA promete «los esquemas de este episodio».
