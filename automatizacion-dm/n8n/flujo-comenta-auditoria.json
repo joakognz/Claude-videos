@@ -1,0 +1,1451 @@
+{
+  "name": "Comenta AUDITORIA → mensajes de Instagram",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "ig-auditoria",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "2078853a-0061-5b32-810f-fd39e5804949",
+      "name": "Instagram · verificación",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        -200
+      ],
+      "webhookId": "d1e5da38-4066-5e6c-a480-dc232799d354"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ig-auditoria",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "dcc474ad-5ed0-54e9-8a36-1b7cd6312b0e",
+      "name": "Instagram · eventos",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        200
+      ],
+      "webhookId": "ca25d8bf-bdb9-5c39-b76d-c3bba0be48e4"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tally-auditoria",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "4a5a9aa3-5e58-5032-94ab-69aff123ab3b",
+      "name": "Tally · formulario enviado",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        400
+      ],
+      "webhookId": "b61cbbdc-7d0a-5d4a-b699-63d2b34149f8"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ⚙️ AJUSTES · lo único que hay que tocar del flujo.\n// Cambia los textos entre comillas. No borres las comas ni las llaves.\nconst AJUSTES = {\n  // Palabra que activa el flujo. Se compara sin tildes ni mayúsculas: «AUDITORÍA», «Auditoria»… valen todas.\n  palabraClave: 'auditoria',\n\n  // Si el texto del reel contiene esto, es un episodio de la serie (manda esquemas + auditoría).\n  // Si no, es un reel suelto (solo auditoría).\n  marcaSerie: 'master de claude code',\n\n  // Versión de la API de Instagram. Solo se cambia si Meta la retira.\n  versionApi: 'v24.0',\n\n  // Enlaces\n  enlaceEsquemas: 'PEGA-AQUI-EL-ENLACE-DE-TU-CARPETA-DE-DRIVE',\n  enlaceFormulario: 'https://tally.so/r/RWWo2j',\n\n  // Hoja de Google donde se apunta todo (la dirección completa, tal cual sale en el navegador).\n  hojaGoogle: 'PEGA-AQUI-LA-DIRECCION-DE-TU-HOJA-DE-GOOGLE',\n\n  // Segundos entre el mensaje 2 (esquemas) y el 3 (auditoría).\n  esperaMensaje3: 6,\n\n  textos: {\n    respuestasPublicas: [\n      '¡Hecho! Te lo acabo de mandar por privado 📩',\n      '¡Enviado! Mira tus mensajes 📬',\n      '¡Ya lo tienes en tus mensajes! 🙌',\n      'Te lo he mandado por privado. Si no lo ves, mira en «Solicitudes» 😉',\n      '¡Listo! Revisa tu bandeja de mensajes 🚀',\n    ],\n\n    // Reels de la serie\n    serie_mensaje1: '¡Hola! 👋 Gracias por comentar.\\n\\nTengo listos los esquemas del Máster de Claude Code para ti. Pulsa el botón y te mando el enlace 👇',\n    serie_boton1: 'Pásame los esquemas',\n    serie_mensaje2: '¡Aquí los tienes! 📂\\n\\nEstán los esquemas de la serie, episodio a episodio. Cada vez que salga uno nuevo, lo añado a la misma carpeta.\\n\\nSígueme para no perderte el siguiente episodio 😉',\n    serie_boton2: 'Ver los esquemas',\n    serie_mensaje3: 'Una cosa más 👇\\n\\nSi tienes un negocio, te preparo gratis una mini auditoría: 2 o 3 ideas concretas de IA y automatización para ahorrar tiempo en tu día a día.\\n\\nSon unos 3 minutos y te la mando por email en 48 horas laborables.',\n    serie_boton3: 'Quiero mi auditoría',\n\n    // Reels sueltos\n    suelto_mensaje1: '¡Hola! 👋 Gracias por comentar.\\n\\nTe preparo gratis una mini auditoría de tu negocio: 2 o 3 ideas concretas de IA y automatización para ahorrar tiempo. Pulsa el botón y te paso el formulario 👇',\n    suelto_boton1: 'Quiero mi auditoría',\n    suelto_mensaje2: '¡Genial! Aquí lo tienes 👇\\n\\nSon unos 3 minutos. Con lo que me cuentes preparo tu auditoría y te la mando por email en 48 horas laborables.\\n\\nSígueme para ver más ideas de IA para negocios 😉',\n    suelto_boton2: 'Empezar (3 min)',\n\n    // Plan B: si Instagram no acepta el botón en el primer mensaje\n    planB_mensaje1: '¡Hola! 👋 Gracias por comentar. Respóndeme con un «SÍ» y te mando el enlace 👇',\n  },\n\n  // Respuestas por privado que cuentan como «sí» en el plan B (sin tildes ni mayúsculas).\n  palabrasSi: ['si', 'sii', 'siii', 'vale', 'claro', 'ok', 'okay', 'porfa', 'por favor', 'si porfa', 'si por favor', 'yes', 'dale', 'venga', 'perfecto', 'genial', 'gracias', 'si gracias', 'pasamelo', 'mandamelo', 'quiero', 'lo quiero'],\n};\n\n// No toques nada de aquí abajo.\nreturn [{ json: { ...AJUSTES, _entrada: $input.first().json } }];\n"
+      },
+      "id": "8c6ad1d8-ab2c-58b0-93f9-d1e4ece55ca5",
+      "name": "⚙️ Ajustes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        200
+      ],
+      "notes": "Textos, enlaces y contraseñas: lo único que se toca",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lee lo que ha llegado (Meta o Tally) y lo convierte en acciones sencillas:\n//   comentario · boton · dm_palabra · dm_si · tally\n// Si no es nada que nos interese, no devuelve nada y el flujo se para ahí.\nconst cfg = $input.first().json;\nconst entrada = cfg._entrada || {};\nconst body = entrada.body || {};\nconst PREFIJO = 'AIGX|';\n\nconst normalizar = (t) => String(t || '')\n  .normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')\n  .toLowerCase().replace(/[^a-z0-9ñ ]+/g, ' ').replace(/\\s+/g, ' ').trim();\nconst palabra = normalizar(cfg.palabraClave);\nconst salida = [];\nconst anadir = (json) => salida.push({ json, pairedItem: { item: 0 } });\n\n// 1) Tally: alguien ha enviado el formulario de la auditoría\nif (body.eventType === 'FORM_RESPONSE' && body.data) {\n  const campos = body.data.fields || [];\n  const campo = campos.find((c) => String(c.label || '').toLowerCase() === 'ig_id' || String(c.key || '').toLowerCase() === 'ig_id');\n  const igId = campo && campo.value ? String(campo.value) : '';\n  if (igId) anadir({ accion: 'tally', ig_id: igId, fecha: new Date().toISOString() });\n  return salida;\n}\n\n// 2) Instagram\nif (body.object !== 'instagram') return salida;\n\nfor (const entry of body.entry || []) {\n  const miCuenta = String(entry.id || '');\n\n  // 2a) Comentarios\n  for (const cambio of entry.changes || []) {\n    if (cambio.field !== 'comments' || !cambio.value) continue;\n    const v = cambio.value;\n    const autor = v.from || {};\n    if (!autor.id || String(autor.id) === miCuenta) continue;           // nunca contestarnos a nosotros mismos\n    if (!normalizar(v.text).includes(palabra)) continue;               // «AUDITORIA», «auditoría!!», «Auditoria porfa»…\n    const reel = (v.media && v.media.id) ? String(v.media.id) : '';\n    anadir({\n      accion: 'comentario',\n      clave: `${autor.id}_${reel}`,\n      ig_id: String(autor.id),\n      usuario: autor.username || '',\n      reel,\n      comentario_id: String(v.id),\n      comentario: String(v.text || '').slice(0, 300),\n      fecha: new Date().toISOString(),\n    });\n  }\n\n  // 2b) Mensajes privados y botones\n  for (const m of entry.messaging || []) {\n    const remitente = String((m.sender && m.sender.id) || '');\n    if (!remitente || remitente === miCuenta) continue;\n    if (m.message && m.message.is_echo) continue;                        // copias de lo que enviamos nosotros\n\n    const payload = (m.postback && m.postback.payload) || (m.message && m.message.quick_reply && m.message.quick_reply.payload) || '';\n    if (payload.startsWith(PREFIJO)) {\n      // AIGX|serie|<clave>  ·  AIGX|suelto|<clave>\n      const [, tipo, clave] = payload.split('|');\n      anadir({ accion: 'boton', remitente, tipo: tipo === 'suelto' ? 'suelto' : 'serie', clave: clave || `${remitente}_dm`, fecha: new Date().toISOString() });\n      continue;\n    }\n\n    const texto = normalizar(m.message && m.message.text);\n    if (!texto) continue;\n    if (texto === palabra || (texto.includes(palabra) && texto.split(' ').length <= 4)) {\n      anadir({ accion: 'dm_palabra', remitente, tipo: 'serie', clave: `${remitente}_dm`, fecha: new Date().toISOString() });\n    } else if ((cfg.palabrasSi || []).map(normalizar).includes(texto)) {\n      anadir({ accion: 'dm_si', remitente, fecha: new Date().toISOString() });\n    }\n  }\n}\n\nreturn salida;\n"
+      },
+      "id": "4e0218fb-e3f3-5c02-8a9c-9f642199c08b",
+      "name": "Leer evento",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7790c485-f67f-5015-a5da-5273be2069d4",
+                    "leftValue": "={{ $json.accion }}",
+                    "rightValue": "comentario",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "comentario"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "12544ad7-4bbe-510e-a044-cc3bb23af212",
+                    "leftValue": "={{ $json.accion }}",
+                    "rightValue": "boton",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "boton"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7a11088c-4504-51ac-8281-1621f88b13fe",
+                    "leftValue": "={{ $json.accion }}",
+                    "rightValue": "dm_palabra",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "dm_palabra"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "3633f7da-eff2-5638-8fc8-31501073102c",
+                    "leftValue": "={{ $json.accion }}",
+                    "rightValue": "dm_si",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "dm_si"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c2f543d7-d12d-5482-807d-5f95d27a8485",
+                    "leftValue": "={{ $json.accion }}",
+                    "rightValue": "tally",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "tally"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "340a989b-294f-59e4-a51a-2d28fce72162",
+      "name": "¿Qué ha pasado?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        700,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🔑 Meta comprueba que esta dirección es tuya antes de mandarte avisos.\n// Pon aquí la misma contraseña que escribas en Meta, en el campo «Verify token» de los webhooks.\nconst CONTRASENA_META = 'CAMBIA-ESTO-por-una-frase-larga';\n\nconst q = $input.first().json.query || {};\nconst ok = q['hub.mode'] === 'subscribe' && q['hub.verify_token'] === CONTRASENA_META;\nreturn [{ json: { codigo: ok ? 200 : 403, respuesta: ok ? String(q['hub.challenge']) : 'contraseña incorrecta' } }];\n"
+      },
+      "id": "cbc603df-7169-5ca4-bc14-6331a5a38eed",
+      "name": "🔑 Contraseña de Meta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        -200
+      ],
+      "notes": "La contraseña («Verify token») de Meta",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.respuesta }}",
+        "options": {
+          "responseCode": "={{ $json.codigo }}"
+        }
+      },
+      "id": "728da13e-99d3-5d1e-93f6-7029b137b4b7",
+      "name": "Responder a Meta",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        -200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Un mensaje por persona y por reel: si ya se lo mandamos, no repetimos.\n// La memoria vive dentro del propio flujo (solo cuenta cuando el flujo está activado, no en las pruebas manuales).\nconst memoria = $getWorkflowStaticData('global');\nmemoria.enviados = memoria.enviados || {};\nconst ahora = Date.now();\nconst SESENTA_DIAS = 60 * 24 * 3600 * 1000;\nfor (const [k, ms] of Object.entries(memoria.enviados)) if (ahora - ms > SESENTA_DIAS) delete memoria.enviados[k];\n\nconst salida = [];\n$input.all().forEach((item, i) => {\n  const d = item.json;\n  if (memoria.enviados[d.clave]) return;\n  memoria.enviados[d.clave] = ahora;\n  salida.push({ json: d, pairedItem: { item: i } });\n});\nreturn salida;\n"
+      },
+      "id": "3836f383-2acd-55d6-afd3-42aa71a9d850",
+      "name": "Filtrar repetidos",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        980,
+        -60
+      ],
+      "notes": "Un mensaje por persona y reel",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/{{ $json.reel }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "caption"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "f4f27575-e572-5bd6-a75b-98e9c3ce4e50",
+      "name": "Leer el reel",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        -60
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      },
+      "notes": "Mira si el reel es de la serie",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Decide si el reel es de la serie (mira su texto) y prepara la respuesta pública y el mensaje 1.\nconst cfg = $('⚙️ Ajustes').first().json;\nconst T = cfg.textos;\nconst normalizar = (t) => String(t || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();\nconst memoria = $getWorkflowStaticData('global');\nmemoria.pendientes = memoria.pendientes || {};\nconst ahora = Date.now();\nfor (const [k, p] of Object.entries(memoria.pendientes)) if (ahora - p.ms > 48 * 3600 * 1000) delete memoria.pendientes[k];\n\nreturn $input.all().map((item, i) => {\n  const d = $('Filtrar repetidos').itemMatching(i).json;\n  const texto = item.json && item.json.caption;\n  // Si no se pudo leer el texto del reel, se trata como de la serie (manda esquemas y auditoría, que cubre los dos casos).\n  const tipo = (texto === undefined || normalizar(texto).includes(normalizar(cfg.marcaSerie))) ? 'serie' : 'suelto';\n  const publicas = T.respuestasPublicas || [];\n  const publico = publicas[Math.floor(Math.random() * publicas.length)] || '';\n\n  const boton = { type: 'postback', title: tipo === 'serie' ? T.serie_boton1 : T.suelto_boton1, payload: `AIGX|${tipo}|${d.clave}` };\n  const cuerpo1 = {\n    recipient: { comment_id: d.comentario_id },\n    message: { attachment: { type: 'template', payload: { template_type: 'button', text: tipo === 'serie' ? T.serie_mensaje1 : T.suelto_mensaje1, buttons: [boton] } } },\n  };\n  const cuerpoPlanB = { recipient: { comment_id: d.comentario_id }, message: { text: T.planB_mensaje1 } };\n\n  // Para el plan B: si luego contesta «sí» por privado, sabremos de qué reel venía.\n  const pendiente = { clave: d.clave, tipo, ms: ahora };\n  memoria.pendientes[d.ig_id] = pendiente;\n  if (d.usuario) memoria.pendientes['@' + String(d.usuario).toLowerCase()] = pendiente;\n\n  return { json: { ...d, tipo, publico, cuerpo1, cuerpoPlanB }, pairedItem: { item: i } };\n});\n"
+      },
+      "id": "dc427a21-8121-554c-abf3-f4e75987b50c",
+      "name": "Preparar mensaje 1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1420,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/{{ $json.comentario_id }}/replies",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "message",
+              "value": "={{ $json.publico }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "2e3071ab-9341-5622-ad43-426485a1326f",
+      "name": "Responder en público",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        -60
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/me/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Preparar mensaje 1').item.json.cuerpo1) }}",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "1b59fc09-7f1d-5fbc-bd45-8eac13d0b716",
+      "name": "Mensaje 1 con botón",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1860,
+        -60
+      ],
+      "onError": "continueErrorOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      },
+      "notes": "Si falla, salta al plan B (solo texto)",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/me/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Preparar mensaje 1').item.json.cuerpoPlanB) }}",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "6287bcc8-2647-5425-9b6e-3cb0cf29464d",
+      "name": "Mensaje 1 · plan B",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2080,
+        100
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5882ee91-d2aa-53d7-ac83-f8c78429bd0e",
+              "name": "clave",
+              "value": "={{ $('Preparar mensaje 1').item.json.clave }}",
+              "type": "string"
+            },
+            {
+              "id": "ab713478-7af1-52c1-9d71-72875ae34bde",
+              "name": "fecha",
+              "value": "={{ $now.setZone('Europe/Madrid').toFormat('dd/MM/yyyy HH:mm') }}",
+              "type": "string"
+            },
+            {
+              "id": "9abac072-b1e0-508a-bbff-fcaacdb473bb",
+              "name": "usuario",
+              "value": "={{ $('Preparar mensaje 1').item.json.usuario }}",
+              "type": "string"
+            },
+            {
+              "id": "7c339ff4-9ad6-5d76-b482-ef97cd6588d6",
+              "name": "ig_id",
+              "value": "={{ $('Preparar mensaje 1').item.json.ig_id }}",
+              "type": "string"
+            },
+            {
+              "id": "9caa946f-4182-5d67-9d4f-fce12bc32920",
+              "name": "reel",
+              "value": "={{ $('Preparar mensaje 1').item.json.reel }}",
+              "type": "string"
+            },
+            {
+              "id": "a5f1f319-0da1-51e1-ac00-e548e9fd42a1",
+              "name": "tipo",
+              "value": "={{ $('Preparar mensaje 1').item.json.tipo }}",
+              "type": "string"
+            },
+            {
+              "id": "d805aa49-301b-5755-92ea-cf6c08b6eb9c",
+              "name": "comentario",
+              "value": "={{ $('Preparar mensaje 1').item.json.comentario }}",
+              "type": "string"
+            },
+            {
+              "id": "645aac66-305f-55ab-83b2-0f144ce7e35d",
+              "name": "mensaje1",
+              "value": "={{ $json.message_id ? ($prevNode.name === 'Mensaje 1 · plan B' ? 'texto (plan B)' : 'con botón') : 'error: ' + JSON.stringify($json.error || $json).slice(0, 200) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "b0c2bf32-20e7-5113-acb3-0bda45f4e9ec",
+      "name": "Fila del comentario",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2300,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "={{ $('⚙️ Ajustes').first().json.hojaGoogle }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Registro"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "clave"
+          ],
+          "schema": [
+            {
+              "id": "clave",
+              "displayName": "clave",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "usuario",
+              "displayName": "usuario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ig_id",
+              "displayName": "ig_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reel",
+              "displayName": "reel",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tipo",
+              "displayName": "tipo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "comentario",
+              "displayName": "comentario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "mensaje1",
+              "displayName": "mensaje1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "boton",
+              "displayName": "boton",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "formulario",
+              "displayName": "formulario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9585940d-0746-50a6-a051-829dc826819e",
+      "name": "Apuntar comentario",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2520,
+        -60
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/{{ $json.remitente }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "username"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "4fb3ac44-7617-5a03-96d9-a5950b4bef51",
+      "name": "¿Quién me escribe?",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        980,
+        620
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Plan B: alguien ha contestado «sí» por privado. Solo seguimos si comentó AUDITORIA en las últimas 24 horas.\nconst memoria = $getWorkflowStaticData('global');\nconst pendientes = memoria.pendientes || {};\nconst ahora = Date.now();\nconst salida = [];\n$input.all().forEach((item, i) => {\n  const d = $('Leer evento').itemMatching(i).json;\n  const usuario = item.json && item.json.username ? '@' + String(item.json.username).toLowerCase() : '';\n  const p = pendientes[d.remitente] || (usuario && pendientes[usuario]);\n  if (!p || ahora - p.ms > 24 * 3600 * 1000) return;\n  salida.push({ json: { accion: 'boton', remitente: d.remitente, tipo: p.tipo, clave: p.clave, fecha: d.fecha }, pairedItem: { item: i } });\n});\nreturn salida;\n"
+      },
+      "id": "6a839db2-e173-5ad0-99cf-f43e0496db42",
+      "name": "Buscar su comentario",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        620
+      ],
+      "notes": "Solo si comentó en las últimas 24 h",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepara el mensaje 2 (y el 3 en los reels de la serie) para quien ha pulsado el botón.\n// Si vuelve a pulsar, solo se le reenvía el enlace (mensaje 2), sin repetir la oferta.\nconst cfg = $('⚙️ Ajustes').first().json;\nconst T = cfg.textos;\nconst memoria = $getWorkflowStaticData('global');\nmemoria.seguimientos = memoria.seguimientos || {};\nconst ahora = Date.now();\n\nconst plantilla = (remitente, texto, titulo, url) => ({\n  recipient: { id: remitente },\n  message: { attachment: { type: 'template', payload: { template_type: 'button', text: texto, buttons: [{ type: 'web_url', url, title: titulo }] } } },\n});\n\nreturn $input.all().map((item, i) => {\n  const d = item.json;\n  const yaEnviado = !!memoria.seguimientos[d.clave];\n  memoria.seguimientos[d.clave] = ahora;\n  const igId = String(d.clave).split('_')[0] || d.remitente;\n  const sep = cfg.enlaceFormulario.includes('?') ? '&' : '?';\n  const urlFormulario = `${cfg.enlaceFormulario}${sep}ig_id=${encodeURIComponent(igId)}`;\n\n  let cuerpo2, cuerpo3 = null;\n  if (d.tipo === 'suelto') {\n    cuerpo2 = plantilla(d.remitente, T.suelto_mensaje2, T.suelto_boton2, urlFormulario);\n  } else {\n    cuerpo2 = plantilla(d.remitente, T.serie_mensaje2, T.serie_boton2, cfg.enlaceEsquemas);\n    cuerpo3 = plantilla(d.remitente, T.serie_mensaje3, T.serie_boton3, urlFormulario);\n  }\n  return { json: { ...d, ig_id: igId, cuerpo2, cuerpo3, enviarMensaje3: !!cuerpo3 && !yaEnviado }, pairedItem: { item: i } };\n});\n"
+      },
+      "id": "5073bcc0-4f84-5cf1-9a7d-2ff3d336bf0c",
+      "name": "Preparar seguimiento",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1420,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/me/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.cuerpo2) }}",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "a1f6d496-6472-5c01-85ae-6fca163528e4",
+      "name": "Mensaje 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        420
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "94604a44-1793-5bf9-b80b-3abcc76f8987",
+              "leftValue": "={{ $('Preparar seguimiento').item.json.enviarMensaje3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d93bb43d-bc5c-5110-86ef-bd8480f635dc",
+      "name": "¿Mandar el mensaje 3?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1860,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('⚙️ Ajustes').first().json.esperaMensaje3 }}",
+        "unit": "seconds"
+      },
+      "id": "80a22d5e-ab57-504c-8ed6-0cff75ad4217",
+      "name": "Esperar unos segundos",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2080,
+        320
+      ],
+      "webhookId": "8bfdffe9-f4d8-5a2b-8bf5-21e429f7e42f"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/{{ $('⚙️ Ajustes').first().json.versionApi }}/me/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Preparar seguimiento').item.json.cuerpo3) }}",
+        "options": {
+          "timeout": 20000
+        }
+      },
+      "id": "f38bb4c2-de5f-5d2f-bfaa-d160eaf6021b",
+      "name": "Mensaje 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2300,
+        320
+      ],
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "",
+          "name": "Instagram (token)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "128aea18-625d-51e9-81b2-4aafac953582",
+              "name": "clave",
+              "value": "={{ $('Preparar seguimiento').item.json.clave }}",
+              "type": "string"
+            },
+            {
+              "id": "010905be-2ddc-5474-b7c4-45f556c6b05b",
+              "name": "ig_id",
+              "value": "={{ $('Preparar seguimiento').item.json.ig_id }}",
+              "type": "string"
+            },
+            {
+              "id": "800fc2df-03f4-5890-a005-e266bf4a022b",
+              "name": "tipo",
+              "value": "={{ $('Preparar seguimiento').item.json.tipo }}",
+              "type": "string"
+            },
+            {
+              "id": "5d162c11-62de-5990-8742-b7a4825b22a3",
+              "name": "boton",
+              "value": "={{ $now.setZone('Europe/Madrid').toFormat('dd/MM/yyyy HH:mm') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "d7822cef-820c-53cc-82af-02db8f285e7d",
+      "name": "Fila del botón",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2520,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "={{ $('⚙️ Ajustes').first().json.hojaGoogle }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Registro"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "clave"
+          ],
+          "schema": [
+            {
+              "id": "clave",
+              "displayName": "clave",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "usuario",
+              "displayName": "usuario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ig_id",
+              "displayName": "ig_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reel",
+              "displayName": "reel",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tipo",
+              "displayName": "tipo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "comentario",
+              "displayName": "comentario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "mensaje1",
+              "displayName": "mensaje1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "boton",
+              "displayName": "boton",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "formulario",
+              "displayName": "formulario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "92b05467-d11b-5bb3-9215-94f85a3a087b",
+      "name": "Apuntar botón",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2740,
+        420
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8ed47af5-6e37-51b0-a277-c5ab715d7072",
+              "name": "ig_id",
+              "value": "={{ $json.ig_id }}",
+              "type": "string"
+            },
+            {
+              "id": "824368b9-6584-589f-844a-7b7b933714f2",
+              "name": "formulario",
+              "value": "={{ $now.setZone('Europe/Madrid').toFormat('dd/MM/yyyy HH:mm') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": false,
+        "options": {}
+      },
+      "id": "d8af8e3f-60eb-5bea-b2e5-8b5c033bf048",
+      "name": "Fila del formulario",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        980,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "={{ $('⚙️ Ajustes').first().json.hojaGoogle }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Registro"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "ig_id"
+          ],
+          "schema": [
+            {
+              "id": "clave",
+              "displayName": "clave",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "fecha",
+              "displayName": "fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "usuario",
+              "displayName": "usuario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ig_id",
+              "displayName": "ig_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "reel",
+              "displayName": "reel",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tipo",
+              "displayName": "tipo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "comentario",
+              "displayName": "comentario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "mensaje1",
+              "displayName": "mensaje1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "boton",
+              "displayName": "boton",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "formulario",
+              "displayName": "formulario",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7e8e6880-e2b4-5acc-b16d-520027b17a32",
+      "name": "Apuntar formulario",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1200,
+        860
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Instagram · eventos": {
+      "main": [
+        [
+          {
+            "node": "⚙️ Ajustes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tally · formulario enviado": {
+      "main": [
+        [
+          {
+            "node": "⚙️ Ajustes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⚙️ Ajustes": {
+      "main": [
+        [
+          {
+            "node": "Leer evento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer evento": {
+      "main": [
+        [
+          {
+            "node": "¿Qué ha pasado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram · verificación": {
+      "main": [
+        [
+          {
+            "node": "🔑 Contraseña de Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔑 Contraseña de Meta": {
+      "main": [
+        [
+          {
+            "node": "Responder a Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Qué ha pasado?": {
+      "main": [
+        [
+          {
+            "node": "Filtrar repetidos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Preparar seguimiento",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Preparar seguimiento",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "¿Quién me escribe?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fila del formulario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtrar repetidos": {
+      "main": [
+        [
+          {
+            "node": "Leer el reel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer el reel": {
+      "main": [
+        [
+          {
+            "node": "Preparar mensaje 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar mensaje 1": {
+      "main": [
+        [
+          {
+            "node": "Responder en público",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Responder en público": {
+      "main": [
+        [
+          {
+            "node": "Mensaje 1 con botón",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensaje 1 con botón": {
+      "main": [
+        [
+          {
+            "node": "Fila del comentario",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Mensaje 1 · plan B",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensaje 1 · plan B": {
+      "main": [
+        [
+          {
+            "node": "Fila del comentario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fila del comentario": {
+      "main": [
+        [
+          {
+            "node": "Apuntar comentario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Quién me escribe?": {
+      "main": [
+        [
+          {
+            "node": "Buscar su comentario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar su comentario": {
+      "main": [
+        [
+          {
+            "node": "Preparar seguimiento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar seguimiento": {
+      "main": [
+        [
+          {
+            "node": "Mensaje 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensaje 2": {
+      "main": [
+        [
+          {
+            "node": "¿Mandar el mensaje 3?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Mandar el mensaje 3?": {
+      "main": [
+        [
+          {
+            "node": "Esperar unos segundos",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fila del botón",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar unos segundos": {
+      "main": [
+        [
+          {
+            "node": "Mensaje 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mensaje 3": {
+      "main": [
+        [
+          {
+            "node": "Fila del botón",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fila del botón": {
+      "main": [
+        [
+          {
+            "node": "Apuntar botón",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fila del formulario": {
+      "main": [
+        [
+          {
+            "node": "Apuntar formulario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "timezone": "Europe/Madrid"
+  },
+  "pinData": {},
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

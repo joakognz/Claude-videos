@@ -7,6 +7,9 @@ locales), habla español de España y no es técnico: decide tú lo razonable, e
 - `reel-*/`: reels sueltos, cada uno con su proyecto. Su plantilla es `briefs/plantilla-reel-remotion.md` y su estilo
   de marca es otro (naranja #FF6B1A, Three.js isométrico).
 - `briefs/`: ficha de cada reel o episodio · `entregas/`: los mp4 finales · `audio/raw/`: tomas originales de voz.
+- `automatizacion-dm/`: la automatización del CTA «Comenta AUDITORIA» (n8n + API de Instagram + Google Sheets + el
+  formulario de Tally `RWWo2j`). Guía en su `README.md`, textos en `mensajes.md`. Si cambia el CTA de los reels,
+  revisa que siga cuadrando con esos mensajes.
 - `briefs/esquemas/`: los esquemas de cada episodio (las láminas que promete el CTA), con el estilo del usuario, sus
   referencias y la plantilla para hacer uno nuevo (ver `_LEEME.md`).
 - **Biblioteca de logos e imágenes (para todo el repositorio):** `serie-claude-code/public/logos/` (índice en
