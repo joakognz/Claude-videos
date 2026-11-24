@@ -119,6 +119,9 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
   publicarlos: fijar un comentario propio («Todo lo del episodio, esquemas incluidos, está en el link de mi bio 👆»),
   responder en público a los dos o tres primeros comentarios («¡Hecho! Lo tienes en el link de mi bio 🔗») y poner
   en la descripción una línea que diga que todo está en el link de la bio.
+- **Bio de Instagram (@aigencyx.labs):** «IA y automatización para negocios locales y pymes. / Esquemas del Máster de
+  Claude Code 👇 / Mini auditoría gratis en el link». El enlace de la bio es una página (carrd) con los botones
+  «Mini auditoría gratis» y «Esquemas del Máster». No hay que prometer mensajes privados en ningún sitio.
 - **Datos:** no inventes cifras. Comprueba los datos técnicos (p. ej. los códigos de error con la skill `claude-api`).
 - **Voz de ElevenLabs:** EP.1 y EP.2 con «Manu Gordillo» v4. La del EP.8 es v4 con stability 50 y similarity 75,
   según el nombre del archivo.
