@@ -7,7 +7,7 @@ locales), habla español de España y no es técnico: decide tú lo razonable, e
 - `reel-*/`: reels sueltos, cada uno con su proyecto. Su plantilla es `briefs/plantilla-reel-remotion.md` y su estilo
   de marca es otro (naranja #FF6B1A, Three.js isométrico).
 - `briefs/`: ficha de cada reel o episodio · `entregas/`: los mp4 finales · `audio/raw/`: tomas originales de voz.
-- `briefs/esquemas/`: los esquemas de cada episodio (las láminas que promete el CTA), con el estilo del usuario, sus
+- `briefs/esquemas/`: los esquemas de cada episodio (las láminas que promete el CTA, que ahora viven en el link de la bio), con el estilo del usuario, sus
   referencias y la plantilla para hacer uno nuevo (ver `_LEEME.md`).
 - **Biblioteca de logos e imágenes (para todo el repositorio):** `serie-claude-code/public/logos/` (índice en
   `_LEEME_LOGOS.md`, muestrario en `_muestrario.png`) y `serie-claude-code/public/imagenes/` (`_LEEME_IMAGENES.md`).
@@ -109,9 +109,16 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
   frases. Las pantallas se recrean con datos ficticios.
 - **Voz** (texto para el generador): números en letras, «CLAUDE punto M D», «Visual Studio Code» completo, frases
   cortas, tuteo, sin precios. Arranque «Episodio N de cincuenta. Máster de Claude Code.» y pasos «Paso uno…». CTA
-  fijo: «¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te paso el enlace con todo. Y si tienes un
-  negocio, te preparamos una auditoría para optimizar tus procesos.» Cierre: «En el siguiente episodio, [tema].
-  Sígueme para no perdértelo.»
+  fijo (desde el EP.14): **ya no se pasa el enlace por mensaje privado**; todo está en el link de la biografía
+  (un enlace que lleva a más enlaces). Se mantiene pedir el comentario, porque los comentarios alimentan el
+  algoritmo: «¿Quieres los esquemas de este episodio? Comenta AUDITORIA y te respondo con el enlace. Lo tienes
+  siempre en el link de mi bio. Y si tienes un negocio, te preparamos una auditoría para optimizar tus procesos.»
+  Nunca decir «te paso el enlace», «te lo mando por privado» ni «te escribo».
+  Cierre: «En el siguiente episodio, [tema]. Sígueme para no perdértelo.»
+- **CTA antiguo (EP.1 a EP.13):** esos vídeos dicen «Comenta AUDITORIA y te paso el enlace». No se regrabaron. Al
+  publicarlos: fijar un comentario propio («Todo lo del episodio, esquemas incluidos, está en el link de mi bio 👆»),
+  responder en público a los dos o tres primeros comentarios («¡Hecho! Lo tienes en el link de mi bio 🔗») y poner
+  en la descripción una línea que diga que todo está en el link de la bio.
 - **Datos:** no inventes cifras. Comprueba los datos técnicos (p. ej. los códigos de error con la skill `claude-api`).
 - **Voz de ElevenLabs:** EP.1 y EP.2 con «Manu Gordillo» v4. La del EP.8 es v4 con stability 50 y similarity 75,
   según el nombre del archivo.
