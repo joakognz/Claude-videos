@@ -22,7 +22,7 @@
    "nivel": "bajo",
    "archivo": "06 Varios/Golpe 17.wav",
    "pico_s": 0,
-   "volumen": 0.213
+   "volumen": 0.212
   },
   {
    "momento": "0:00.38",
@@ -44,7 +44,7 @@
    "nivel": "medio",
    "archivo": "06 Varios/Golpe 12.wav",
    "pico_s": 0.02,
-   "volumen": 0.28
+   "volumen": 0.279
   },
   {
    "momento": "0:00.92",
@@ -55,7 +55,7 @@
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Click suave 01.wav",
    "pico_s": 0,
-   "volumen": 0.809
+   "volumen": 0.808
   },
   {
    "momento": "0:01.66",
@@ -66,7 +66,7 @@
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/Woosh rapido 05.wav",
    "pico_s": 0.09,
-   "volumen": 0.447
+   "volumen": 0.446
   },
   {
    "momento": "0:01.90",
@@ -77,7 +77,7 @@
    "nivel": "bajo",
    "archivo": "03 Glitches/Glitch digital 05.wav",
    "pico_s": 0.11,
-   "volumen": 0.243
+   "volumen": 0.242
   },
   {
    "momento": "0:04.80",
@@ -88,7 +88,7 @@
    "nivel": "medio",
    "archivo": "05 Fotos - flash y shutter/Camera Flash.wav",
    "pico_s": 0.04,
-   "volumen": 0.399
+   "volumen": 0.398
   },
   {
    "momento": "0:05.08",
@@ -99,7 +99,7 @@
    "nivel": "bajo",
    "archivo": "03 Glitches/Glitch digital 02.wav",
    "pico_s": 0.04,
-   "volumen": 0.202
+   "volumen": 0.201
   },
   {
    "momento": "0:05.86",
@@ -110,7 +110,7 @@
    "nivel": "medio",
    "archivo": "04 Destellos y notificaciones/Destello 05.wav",
    "pico_s": 0.15,
-   "volumen": 0.229
+   "volumen": 0.228
   },
   {
    "momento": "0:06.06",
@@ -143,7 +143,7 @@
    "nivel": "bajo",
    "archivo": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 05.wav",
    "pico_s": 0.15,
-   "volumen": 0.385
+   "volumen": 0.384
   },
   {
    "momento": "0:08.61",
@@ -154,7 +154,7 @@
    "nivel": "bajo",
    "archivo": "04 Destellos y notificaciones/Notificacion digital 03.wav",
    "pico_s": 0.09,
-   "volumen": 0.304
+   "volumen": 0.303
   },
   {
    "momento": "0:09.52",
@@ -165,7 +165,7 @@
    "nivel": "medio",
    "archivo": "02 Clicks - textos/Tick 03.wav",
    "pico_s": 0,
-   "volumen": 0.521
+   "volumen": 0.52
   },
   {
    "momento": "0:10.48",
@@ -176,7 +176,7 @@
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/VS_Short Whoosh 4.wav",
    "pico_s": 0.13,
-   "volumen": 0.592
+   "volumen": 0.591
   },
   {
    "momento": "0:11.09",
@@ -187,7 +187,7 @@
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Tick 07.wav",
    "pico_s": 0,
-   "volumen": 0.393
+   "volumen": 0.392
   },
   {
    "momento": "0:11.76",
@@ -220,7 +220,7 @@
    "nivel": "medio",
    "archivo": "02 Clicks - textos/Chasquido épico.wav",
    "pico_s": 0,
-   "volumen": 0.677
+   "volumen": 0.676
   },
   {
    "momento": "0:14.74",
@@ -245,119 +245,31 @@
    "volumen": 0.351
   },
   {
-   "momento": "0:16.40",
-   "segundo": 16.4,
-   "fotograma": 492,
-   "que": "DETRÁS DE CÁMARAS",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 11.wav",
-   "pico_s": 0.04,
-   "volumen": 0.453
-  },
-  {
-   "momento": "0:18.11",
-   "segundo": 18.11,
-   "fotograma": 543,
-   "que": "corte: reloj",
-   "grupo": "glitch",
-   "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 04.wav",
-   "pico_s": 0.06,
-   "volumen": 0.249
-  },
-  {
-   "momento": "0:18.71",
-   "segundo": 18.71,
-   "fotograma": 561,
-   "que": "agujas del reloj girando",
-   "grupo": "reloj",
-   "nivel": "bajo",
-   "archivo": "06 Varios/RELOJ.wav",
-   "pico_s": 2.41,
-   "volumen": 0.705
-  },
-  {
-   "momento": "0:19.47",
-   "segundo": 19.47,
-   "fotograma": 584,
-   "que": "corte: capas de la línea de tiempo",
-   "grupo": "glitch",
-   "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 01.wav",
-   "pico_s": 0.21,
-   "volumen": 0.157
-  },
-  {
-   "momento": "0:20.24",
-   "segundo": 20.24,
-   "fotograma": 607,
-   "que": "botón RENDER pulsado",
-   "grupo": "interfaz",
-   "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Switch 01.wav",
-   "pico_s": 0.11,
-   "volumen": 0.709
-  },
-  {
-   "momento": "0:21.08",
-   "segundo": 21.08,
-   "fotograma": 632,
-   "que": "RENDER otra vez",
-   "grupo": "interfaz",
-   "nivel": "bajo",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 16.wav",
-   "pico_s": 0.34,
-   "volumen": 0.257
-  },
-  {
-   "momento": "0:21.60",
-   "segundo": 21.6,
-   "fotograma": 648,
-   "que": "escena tachada: NO ME CONVENCE",
-   "grupo": "remate",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 05.wav",
-   "pico_s": 0,
-   "volumen": 0.308
-  },
-  {
-   "momento": "0:22.40",
-   "segundo": 22.4,
-   "fotograma": 672,
-   "que": "corte: otra escena tachada",
-   "grupo": "glitch",
-   "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 03.wav",
-   "pico_s": 0.04,
-   "volumen": 0.181
-  },
-  {
-   "momento": "0:22.59",
-   "segundo": 22.59,
-   "fotograma": 678,
-   "que": "contador DOCE EPISODIOS",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Click 01.wav",
-   "pico_s": 0,
-   "volumen": 1
-  },
-  {
-   "momento": "0:23.81",
-   "segundo": 23.81,
-   "fotograma": 714,
-   "que": "el contador llega a 12",
+   "momento": "0:15.57",
+   "segundo": 15.57,
+   "fotograma": 467,
+   "que": "se enciende la casilla 13",
    "grupo": "destello",
    "nivel": "medio",
    "archivo": "04 Destellos y notificaciones/Destello 03.wav",
    "pico_s": 0,
-   "volumen": 0.345
+   "volumen": 0.344
   },
   {
-   "momento": "0:25.84",
-   "segundo": 25.84,
-   "fotograma": 775,
+   "momento": "0:16.31",
+   "segundo": 16.31,
+   "fotograma": 489,
+   "que": "EP.13 · CIERRA EL MÓDULO",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Tick 11.wav",
+   "pico_s": 0.04,
+   "volumen": 0.452
+  },
+  {
+   "momento": "0:17.14",
+   "segundo": 17.14,
+   "fotograma": 514,
    "que": "la caja MÓDULO 1 se cierra de golpe",
    "grupo": "impacto",
    "nivel": "fuerte",
@@ -366,43 +278,76 @@
    "volumen": 0.231
   },
   {
-   "momento": "0:26.85",
-   "segundo": 26.85,
-   "fotograma": 805,
+   "momento": "0:18.09",
+   "segundo": 18.09,
+   "fotograma": 543,
    "que": "sello COMPLETADO",
    "grupo": "acierto",
    "nivel": "medio",
    "archivo": "06 Varios/Correct Answer sound effect.mp3",
    "pico_s": 0.65,
-   "volumen": 0.552
+   "volumen": 0.551
   },
   {
-   "momento": "0:27.23",
-   "segundo": 27.23,
-   "fotograma": 817,
+   "momento": "0:18.52",
+   "segundo": 18.52,
+   "fotograma": 556,
    "que": "transición a repaso",
    "grupo": "woosh",
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/Woosh rapido 19.wav",
    "pico_s": 0.09,
-   "volumen": 0.38
+   "volumen": 0.379
   },
   {
-   "momento": "0:30.75",
-   "segundo": 30.75,
-   "fotograma": 922,
+   "momento": "0:22.07",
+   "segundo": 22.07,
+   "fotograma": 662,
    "que": "logo de Visual Studio Code",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Click 01.wav",
+   "pico_s": 0,
+   "volumen": 1
+  },
+  {
+   "momento": "0:24.55",
+   "segundo": 24.55,
+   "fotograma": 736,
+   "que": "sale el archivo CLAUDE.md",
+   "grupo": "remate",
+   "nivel": "medio",
+   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "pico_s": 0,
+   "volumen": 0.487
+  },
+  {
+   "momento": "0:26.17",
+   "segundo": 26.17,
+   "fotograma": 785,
+   "que": "sale la flecha de deshacer",
+   "grupo": "interfaz",
+   "nivel": "bajo",
+   "archivo": "06 Varios/Interfaz y ventanas/Switch 01.wav",
+   "pico_s": 0.11,
+   "volumen": 0.537
+  },
+  {
+   "momento": "0:27.11",
+   "segundo": 27.11,
+   "fotograma": 813,
+   "que": "sello SIN MIEDO",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Tick 01.wav",
    "pico_s": 0,
-   "volumen": 0.371
+   "volumen": 0.37
   },
   {
-   "momento": "0:33.23",
-   "segundo": 33.23,
-   "fotograma": 997,
-   "que": "sale el archivo CLAUDE.md",
+   "momento": "0:27.95",
+   "segundo": 27.95,
+   "fotograma": 838,
+   "que": "sale el tablero de tareas",
    "grupo": "remate",
    "nivel": "medio",
    "archivo": "02 Clicks - textos/Pop up SFX.wav",
@@ -410,97 +355,64 @@
    "volumen": 0.299
   },
   {
-   "momento": "0:34.94",
-   "segundo": 34.94,
-   "fotograma": 1048,
-   "que": "sale la flecha de deshacer",
-   "grupo": "interfaz",
-   "nivel": "bajo",
-   "archivo": "06 Varios/Interfaz y ventanas/Switch 04.wav",
-   "pico_s": 0.11,
-   "volumen": 0.503
-  },
-  {
-   "momento": "0:35.80",
-   "segundo": 35.8,
-   "fotograma": 1074,
-   "que": "sello SIN MIEDO",
+   "momento": "0:29.05",
+   "segundo": 29.05,
+   "fotograma": 872,
+   "que": "las tareas se reparten",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Click suave 06.wav",
    "pico_s": 0,
-   "volumen": 0.856
+   "volumen": 0.854
   },
   {
-   "momento": "0:36.60",
-   "segundo": 36.6,
-   "fotograma": 1098,
-   "que": "sale el tablero de tareas",
-   "grupo": "remate",
+   "momento": "0:30.21",
+   "segundo": 30.21,
+   "fotograma": 906,
+   "que": "salen GitHub y MCP (conexiones)",
+   "grupo": "glitch",
+   "nivel": "bajo",
+   "archivo": "03 Glitches/Glitch digital 04.wav",
+   "pico_s": 0.06,
+   "volumen": 0.248
+  },
+  {
+   "momento": "0:32.51",
+   "segundo": 32.51,
+   "fotograma": 975,
+   "que": "sale el portátil con el cursor",
+   "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Tick 03.wav",
-   "pico_s": 0,
-   "volumen": 0.521
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 16.wav",
+   "pico_s": 0.34,
+   "volumen": 0.407
   },
   {
-   "momento": "0:37.70",
-   "segundo": 37.7,
-   "fotograma": 1131,
-   "que": "las tareas se reparten",
+   "momento": "0:33.52",
+   "segundo": 33.52,
+   "fotograma": 1006,
+   "que": "el cursor hace clic",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Tick 08.wav",
    "pico_s": 0,
-   "volumen": 0.751
+   "volumen": 0.75
   },
   {
-   "momento": "0:38.94",
-   "segundo": 38.94,
-   "fotograma": 1168,
-   "que": "salen GitHub y MCP (conexiones)",
-   "grupo": "glitch",
-   "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 05.wav",
-   "pico_s": 0.11,
-   "volumen": 0.243
-  },
-  {
-   "momento": "0:41.16",
-   "segundo": 41.16,
-   "fotograma": 1235,
-   "que": "sale el portátil con el cursor",
-   "grupo": "interfaz",
-   "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 27.wav",
-   "pico_s": 0.3,
-   "volumen": 0.35
-  },
-  {
-   "momento": "0:42.17",
-   "segundo": 42.17,
-   "fotograma": 1265,
-   "que": "el cursor hace clic",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Click suave 01.wav",
-   "pico_s": 0,
-   "volumen": 0.809
-  },
-  {
-   "momento": "0:42.42",
-   "segundo": 42.42,
-   "fotograma": 1273,
+   "momento": "0:33.67",
+   "segundo": 33.67,
+   "fotograma": 1010,
    "que": "la cámara abre plano con la caja",
    "grupo": "zoom",
    "nivel": "bajo",
    "archivo": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 02.wav",
    "pico_s": 0.17,
-   "volumen": 0.308
+   "volumen": 0.307
   },
   {
-   "momento": "0:43.32",
-   "segundo": 43.32,
-   "fotograma": 1300,
+   "momento": "0:34.67",
+   "segundo": 34.67,
+   "fotograma": 1040,
    "que": "sello TU CAJA DE HERRAMIENTAS",
    "grupo": "destello",
    "nivel": "medio",
@@ -509,9 +421,20 @@
    "volumen": 0.242
   },
   {
-   "momento": "0:44.66",
-   "segundo": 44.66,
-   "fotograma": 1340,
+   "momento": "0:35.95",
+   "segundo": 35.95,
+   "fotograma": 1078,
+   "que": "se teclea «Llevo días pensando…»",
+   "grupo": "teclado",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Efecto type de letras.wav",
+   "pico_s": 0.09,
+   "volumen": 0.484
+  },
+  {
+   "momento": "0:35.95",
+   "segundo": 35.95,
+   "fotograma": 1078,
    "que": "transición a agradecer",
    "grupo": "woosh",
    "nivel": "medio",
@@ -520,20 +443,9 @@
    "volumen": 0.292
   },
   {
-   "momento": "0:44.76",
-   "segundo": 44.76,
-   "fotograma": 1343,
-   "que": "se teclea «Llevo días pensando…»",
-   "grupo": "teclado",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Efecto type de letras.wav",
-   "pico_s": 0.09,
-   "volumen": 0.485
-  },
-  {
-   "momento": "0:49.06",
-   "segundo": 49.06,
-   "fotograma": 1472,
+   "momento": "0:40.41",
+   "segundo": 40.41,
+   "fotograma": 1212,
    "que": "caen las bolas de papel",
    "grupo": "golpe",
    "nivel": "bajo",
@@ -542,20 +454,20 @@
    "volumen": 0.224
   },
   {
-   "momento": "0:49.88",
-   "segundo": 49.88,
-   "fotograma": 1496,
+   "momento": "0:41.13",
+   "segundo": 41.13,
+   "fotograma": 1234,
    "que": "LO TENGO CLARO",
    "grupo": "click",
    "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 07.wav",
+   "archivo": "02 Clicks - textos/Click suave 01.wav",
    "pico_s": 0,
-   "volumen": 0.393
+   "volumen": 0.808
   },
   {
-   "momento": "0:52.28",
-   "segundo": 52.28,
-   "fotograma": 1568,
+   "momento": "0:43.55",
+   "segundo": 43.55,
+   "fotograma": 1306,
    "que": "sube hacia «LO ELEGÍS VOSOTROS»",
    "grupo": "riser",
    "nivel": "bajo",
@@ -564,9 +476,9 @@
    "volumen": 0.268
   },
   {
-   "momento": "0:52.30",
-   "segundo": 52.3,
-   "fotograma": 1569,
+   "momento": "0:43.57",
+   "segundo": 43.57,
+   "fotograma": 1307,
    "que": "golpe de zoom: LO ELEGÍS VOSOTROS",
    "grupo": "impacto",
    "nivel": "medio",
@@ -575,64 +487,64 @@
    "volumen": 0.197
   },
   {
-   "momento": "0:53.37",
-   "segundo": 53.37,
-   "fotograma": 1601,
+   "momento": "0:44.64",
+   "segundo": 44.64,
+   "fotograma": 1339,
    "que": "la papeleta entra en la urna",
    "grupo": "interfaz",
    "nivel": "bajo",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 20.wav",
-   "pico_s": 0.15,
-   "volumen": 0.235
+   "archivo": "06 Varios/Interfaz y ventanas/Switch 04.wav",
+   "pico_s": 0.11,
+   "volumen": 0.502
   },
   {
-   "momento": "0:53.61",
-   "segundo": 53.61,
-   "fotograma": 1608,
+   "momento": "0:44.91",
+   "segundo": 44.91,
+   "fotograma": 1347,
    "que": "transición a cinco",
    "grupo": "woosh",
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/Woosh rapido 14.wav",
    "pico_s": 0.09,
-   "volumen": 0.461
+   "volumen": 0.46
   },
   {
-   "momento": "0:53.95",
-   "segundo": 53.95,
-   "fotograma": 1618,
+   "momento": "0:45.25",
+   "segundo": 45.25,
+   "fotograma": 1358,
    "que": "caen las cinco cartas boca abajo",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 13.wav",
-   "pico_s": 0.23,
-   "volumen": 0.369
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 27.wav",
+   "pico_s": 0.3,
+   "volumen": 0.349
   },
   {
-   "momento": "0:54.42",
-   "segundo": 54.42,
-   "fotograma": 1633,
+   "momento": "0:45.72",
+   "segundo": 45.72,
+   "fotograma": 1372,
    "que": "el número 5",
    "grupo": "click",
    "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Click suave 03.wav",
-   "pico_s": 0.02,
-   "volumen": 0.734
+   "archivo": "02 Clicks - textos/Tick 07.wav",
+   "pico_s": 0,
+   "volumen": 0.392
   },
   {
-   "momento": "0:54.63",
-   "segundo": 54.63,
-   "fotograma": 1639,
+   "momento": "0:45.93",
+   "segundo": 45.93,
+   "fotograma": 1378,
    "que": "sello 5 OPCIONES",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Chasquido épico.wav",
+   "archivo": "02 Clicks - textos/Tick 03.wav",
    "pico_s": 0,
-   "volumen": 0.677
+   "volumen": 0.52
   },
   {
-   "momento": "0:55.37",
-   "segundo": 55.37,
-   "fotograma": 1661,
+   "momento": "0:46.67",
+   "segundo": 46.67,
+   "fotograma": 1400,
    "que": "transición a apps",
    "grupo": "woosh",
    "nivel": "medio",
@@ -641,43 +553,54 @@
    "volumen": 0.227
   },
   {
-   "momento": "0:55.77",
-   "segundo": 55.77,
-   "fotograma": 1673,
+   "momento": "0:47.07",
+   "segundo": 47.07,
+   "fotograma": 1412,
    "que": "APPS: la carta se da la vuelta",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Switch 01.wav",
-   "pico_s": 0.11,
-   "volumen": 0.709
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 20.wav",
+   "pico_s": 0.15,
+   "volumen": 0.372
   },
   {
-   "momento": "0:56.07",
-   "segundo": 56.07,
-   "fotograma": 1682,
+   "momento": "0:47.37",
+   "segundo": 47.37,
+   "fotograma": 1421,
    "que": "APPS: palabra de la carta",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "archivo": "02 Clicks - textos/Chasquido épico.wav",
    "pico_s": 0,
-   "volumen": 0.488
+   "volumen": 0.676
   },
   {
-   "momento": "0:57.34",
-   "segundo": 57.34,
-   "fotograma": 1720,
+   "momento": "0:48.64",
+   "segundo": 48.64,
+   "fotograma": 1459,
    "que": "APPS: etiqueta COMENTA APPS",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Click suave 03.wav",
+   "pico_s": 0.02,
+   "volumen": 0.734
+  },
+  {
+   "momento": "0:48.83",
+   "segundo": 48.83,
+   "fotograma": 1465,
+   "que": "logos de Node.js y AWS",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Tick 11.wav",
    "pico_s": 0.04,
-   "volumen": 0.453
+   "volumen": 0.452
   },
   {
-   "momento": "0:57.53",
-   "segundo": 57.53,
-   "fotograma": 1726,
-   "que": "logos de Node.js y AWS",
+   "momento": "0:51.05",
+   "segundo": 51.05,
+   "fotograma": 1532,
+   "que": "fila Reservas",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Click 01.wav",
@@ -685,42 +608,31 @@
    "volumen": 1
   },
   {
-   "momento": "0:59.75",
-   "segundo": 59.75,
-   "fotograma": 1792,
-   "que": "fila Reservas",
+   "momento": "0:52.65",
+   "segundo": 52.65,
+   "fotograma": 1580,
+   "que": "fila Datos",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Tick 01.wav",
    "pico_s": 0,
-   "volumen": 0.371
+   "volumen": 0.37
   },
   {
-   "momento": "1:01.35",
-   "segundo": 61.35,
-   "fotograma": 1840,
-   "que": "fila Datos",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Click suave 06.wav",
-   "pico_s": 0,
-   "volumen": 0.856
-  },
-  {
-   "momento": "1:02.15",
-   "segundo": 62.15,
-   "fotograma": 1864,
+   "momento": "0:53.45",
+   "segundo": 53.45,
+   "fotograma": 1604,
    "que": "sello TODO EN UN SITIO",
    "grupo": "destello",
    "nivel": "medio",
    "archivo": "04 Destellos y notificaciones/Destello 09.wav",
    "pico_s": 0,
-   "volumen": 0.375
+   "volumen": 0.374
   },
   {
-   "momento": "1:02.97",
-   "segundo": 62.97,
-   "fotograma": 1889,
+   "momento": "0:54.30",
+   "segundo": 54.3,
+   "fotograma": 1629,
    "que": "transición a auto",
    "grupo": "woosh",
    "nivel": "medio",
@@ -729,21 +641,43 @@
    "volumen": 0.418
   },
   {
-   "momento": "1:03.39",
-   "segundo": 63.39,
-   "fotograma": 1902,
+   "momento": "0:54.74",
+   "segundo": 54.74,
+   "fotograma": 1642,
    "que": "AUTO: la carta se da la vuelta",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 16.wav",
-   "pico_s": 0.34,
-   "volumen": 0.407
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 13.wav",
+   "pico_s": 0.23,
+   "volumen": 0.369
   },
   {
-   "momento": "1:03.73",
-   "segundo": 63.73,
-   "fotograma": 1912,
+   "momento": "0:55.07",
+   "segundo": 55.07,
+   "fotograma": 1652,
    "que": "AUTO: palabra de la carta",
+   "grupo": "remate",
+   "nivel": "medio",
+   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "pico_s": 0,
+   "volumen": 0.487
+  },
+  {
+   "momento": "0:56.29",
+   "segundo": 56.29,
+   "fotograma": 1689,
+   "que": "AUTO: etiqueta COMENTA AUTO",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Click suave 06.wav",
+   "pico_s": 0,
+   "volumen": 0.854
+  },
+  {
+   "momento": "0:57.77",
+   "segundo": 57.77,
+   "fotograma": 1733,
+   "que": "sello SE HACE SOLO",
    "grupo": "remate",
    "nivel": "medio",
    "archivo": "02 Clicks - textos/Pop up SFX.wav",
@@ -751,53 +685,31 @@
    "volumen": 0.299
   },
   {
-   "momento": "1:04.99",
-   "segundo": 64.99,
-   "fotograma": 1950,
-   "que": "AUTO: etiqueta COMENTA AUTO",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 08.wav",
-   "pico_s": 0,
-   "volumen": 0.751
-  },
-  {
-   "momento": "1:06.47",
-   "segundo": 66.47,
-   "fotograma": 1994,
-   "que": "sello SE HACE SOLO",
-   "grupo": "remate",
-   "nivel": "medio",
-   "archivo": "02 Clicks - textos/Tick 03.wav",
-   "pico_s": 0,
-   "volumen": 0.521
-  },
-  {
-   "momento": "1:08.15",
-   "segundo": 68.15,
-   "fotograma": 2045,
+   "momento": "0:59.45",
+   "segundo": 59.45,
+   "fotograma": 1784,
    "que": "llega el pedido por WhatsApp",
    "grupo": "destello",
    "nivel": "bajo",
    "archivo": "04 Destellos y notificaciones/Notificacion digital 05.wav",
    "pico_s": 0.23,
-   "volumen": 0.266
+   "volumen": 0.265
   },
   {
-   "momento": "1:09.10",
-   "segundo": 69.1,
-   "fotograma": 2073,
+   "momento": "1:00.40",
+   "segundo": 60.4,
+   "fotograma": 1812,
    "que": "el pedido viaja a la hoja de cálculo",
    "grupo": "glitch",
    "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 02.wav",
-   "pico_s": 0.04,
-   "volumen": 0.202
+   "archivo": "03 Glitches/Glitch digital 01.wav",
+   "pico_s": 0.21,
+   "volumen": 0.157
   },
   {
-   "momento": "1:10.34",
-   "segundo": 70.34,
-   "fotograma": 2110,
+   "momento": "1:01.64",
+   "segundo": 61.64,
+   "fotograma": 1849,
    "que": "fila apuntada ✓",
    "grupo": "acierto",
    "nivel": "bajo",
@@ -806,9 +718,9 @@
    "volumen": 0.348
   },
   {
-   "momento": "1:10.99",
-   "segundo": 70.99,
-   "fotograma": 2130,
+   "momento": "1:02.29",
+   "segundo": 62.29,
+   "fotograma": 1869,
    "que": "transición a web",
    "grupo": "woosh",
    "nivel": "medio",
@@ -817,53 +729,53 @@
    "volumen": 0.342
   },
   {
-   "momento": "1:11.38",
-   "segundo": 71.38,
-   "fotograma": 2141,
+   "momento": "1:02.68",
+   "segundo": 62.68,
+   "fotograma": 1880,
    "que": "WEB: la carta se da la vuelta",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Switch 04.wav",
+   "archivo": "06 Varios/Interfaz y ventanas/Switch 01.wav",
    "pico_s": 0.11,
-   "volumen": 0.689
+   "volumen": 0.709
   },
   {
-   "momento": "1:11.70",
-   "segundo": 71.7,
-   "fotograma": 2151,
+   "momento": "1:03.00",
+   "segundo": 63,
+   "fotograma": 1890,
    "que": "WEB: palabra de la carta",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Chasquido épico.wav",
+   "archivo": "02 Clicks - textos/Tick 03.wav",
    "pico_s": 0,
-   "volumen": 0.677
+   "volumen": 0.52
   },
   {
-   "momento": "1:12.36",
-   "segundo": 72.36,
-   "fotograma": 2171,
+   "momento": "1:03.66",
+   "segundo": 63.66,
+   "fotograma": 1910,
    "que": "Next.js, Astro y Vercel",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Tick 08.wav",
+   "pico_s": 0,
+   "volumen": 0.75
+  },
+  {
+   "momento": "1:04.21",
+   "segundo": 64.21,
+   "fotograma": 1926,
+   "que": "WEB: etiqueta COMENTA WEB",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Click suave 01.wav",
    "pico_s": 0,
-   "volumen": 0.809
+   "volumen": 0.808
   },
   {
-   "momento": "1:12.91",
-   "segundo": 72.91,
-   "fotograma": 2187,
-   "que": "WEB: etiqueta COMENTA WEB",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 07.wav",
-   "pico_s": 0,
-   "volumen": 0.393
-  },
-  {
-   "momento": "1:13.52",
-   "segundo": 73.52,
-   "fotograma": 2206,
+   "momento": "1:04.82",
+   "segundo": 64.82,
+   "fotograma": 1945,
    "que": "se escribe el código de la página",
    "grupo": "teclado",
    "nivel": "bajo",
@@ -872,9 +784,9 @@
    "volumen": 0.798
   },
   {
-   "momento": "1:16.11",
-   "segundo": 76.11,
-   "fotograma": 2283,
+   "momento": "1:07.41",
+   "segundo": 67.41,
+   "fotograma": 2022,
    "que": "la página se publica",
    "grupo": "destello",
    "nivel": "medio",
@@ -883,54 +795,76 @@
    "volumen": 0.285
   },
   {
-   "momento": "1:16.23",
-   "segundo": 76.23,
-   "fotograma": 2287,
+   "momento": "1:07.53",
+   "segundo": 67.53,
+   "fotograma": 2026,
    "que": "sello PUBLICADA",
    "grupo": "remate",
    "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "archivo": "02 Clicks - textos/Chasquido épico.wav",
    "pico_s": 0,
-   "volumen": 0.308
+   "volumen": 0.426
   },
   {
-   "momento": "1:16.80",
-   "segundo": 76.8,
-   "fotograma": 2304,
+   "momento": "1:08.10",
+   "segundo": 68.1,
+   "fotograma": 2043,
    "que": "transición a escalar",
    "grupo": "woosh",
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/Woosh rapido 40.wav",
    "pico_s": 0.17,
-   "volumen": 0.427
+   "volumen": 0.426
   },
   {
-   "momento": "1:17.16",
-   "segundo": 77.16,
-   "fotograma": 2315,
+   "momento": "1:08.46",
+   "segundo": 68.46,
+   "fotograma": 2054,
    "que": "ESCALAR: la carta se da la vuelta",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 27.wav",
-   "pico_s": 0.3,
-   "volumen": 0.35
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 16.wav",
+   "pico_s": 0.34,
+   "volumen": 0.407
   },
   {
-   "momento": "1:17.56",
-   "segundo": 77.56,
-   "fotograma": 2327,
+   "momento": "1:08.86",
+   "segundo": 68.86,
+   "fotograma": 2066,
    "que": "ESCALAR: palabra de la carta",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Pop up SFX.wav",
-   "pico_s": 0.02,
-   "volumen": 0.299
+   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "pico_s": 0,
+   "volumen": 0.487
   },
   {
-   "momento": "1:18.96",
-   "segundo": 78.96,
-   "fotograma": 2369,
+   "momento": "1:10.26",
+   "segundo": 70.26,
+   "fotograma": 2108,
    "que": "ESCALAR: etiqueta COMENTA ESCALAR",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Tick 07.wav",
+   "pico_s": 0,
+   "volumen": 0.392
+  },
+  {
+   "momento": "1:11.89",
+   "segundo": 71.89,
+   "fotograma": 2157,
+   "que": "la persona se multiplica: equipo",
+   "grupo": "glitch",
+   "nivel": "bajo",
+   "archivo": "03 Glitches/Glitch digital 03.wav",
+   "pico_s": 0.04,
+   "volumen": 0.18
+  },
+  {
+   "momento": "1:12.29",
+   "segundo": 72.29,
+   "fotograma": 2169,
+   "que": "de 3 a 9 personas",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Click suave 03.wav",
@@ -938,76 +872,87 @@
    "volumen": 0.734
   },
   {
-   "momento": "1:20.59",
-   "segundo": 80.59,
-   "fotograma": 2418,
-   "que": "la persona se multiplica: equipo",
-   "grupo": "glitch",
-   "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 06.wav",
-   "pico_s": 0.15,
-   "volumen": 0.227
-  },
-  {
-   "momento": "1:20.99",
-   "segundo": 80.99,
-   "fotograma": 2430,
-   "que": "de 3 a 9 personas",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 11.wav",
-   "pico_s": 0.04,
-   "volumen": 0.453
-  },
-  {
-   "momento": "1:21.87",
-   "segundo": 81.87,
-   "fotograma": 2456,
+   "momento": "1:13.17",
+   "segundo": 73.17,
+   "fotograma": 2195,
    "que": "sello MISMO MÉTODO",
    "grupo": "destello",
    "nivel": "medio",
    "archivo": "04 Destellos y notificaciones/Destello 05.wav",
    "pico_s": 0.15,
-   "volumen": 0.229
+   "volumen": 0.228
   },
   {
-   "momento": "1:22.70",
-   "segundo": 82.7,
-   "fotograma": 2481,
+   "momento": "1:14.01",
+   "segundo": 74.01,
+   "fotograma": 2220,
    "que": "transición a seguridad",
    "grupo": "woosh",
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/Woosh rapido 05.wav",
    "pico_s": 0.09,
-   "volumen": 0.447
+   "volumen": 0.446
   },
   {
-   "momento": "1:23.09",
-   "segundo": 83.09,
-   "fotograma": 2493,
+   "momento": "1:14.39",
+   "segundo": 74.39,
+   "fotograma": 2232,
    "que": "SEGURIDAD: la carta se da la vuelta",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 20.wav",
-   "pico_s": 0.15,
-   "volumen": 0.373
+   "archivo": "06 Varios/Interfaz y ventanas/Switch 04.wav",
+   "pico_s": 0.11,
+   "volumen": 0.689
   },
   {
-   "momento": "1:23.51",
-   "segundo": 83.51,
-   "fotograma": 2505,
+   "momento": "1:14.81",
+   "segundo": 74.81,
+   "fotograma": 2244,
    "que": "SEGURIDAD: palabra de la carta",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Tick 03.wav",
-   "pico_s": 0,
-   "volumen": 0.521
+   "archivo": "02 Clicks - textos/Pop up SFX.wav",
+   "pico_s": 0.02,
+   "volumen": 0.299
   },
   {
-   "momento": "1:24.73",
-   "segundo": 84.73,
-   "fotograma": 2542,
+   "momento": "1:16.03",
+   "segundo": 76.03,
+   "fotograma": 2281,
    "que": "SEGURIDAD: etiqueta COMENTA SEGURIDAD",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Tick 11.wav",
+   "pico_s": 0.04,
+   "volumen": 0.452
+  },
+  {
+   "momento": "1:17.04",
+   "segundo": 77.04,
+   "fotograma": 2311,
+   "que": "el candado se cierra",
+   "grupo": "interfaz",
+   "nivel": "medio",
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 27.wav",
+   "pico_s": 0.3,
+   "volumen": 0.349
+  },
+  {
+   "momento": "1:18.19",
+   "segundo": 78.19,
+   "fotograma": 2346,
+   "que": "la clave se emborrona",
+   "grupo": "glitch",
+   "nivel": "bajo",
+   "archivo": "03 Glitches/Glitch digital 05.wav",
+   "pico_s": 0.11,
+   "volumen": 0.242
+  },
+  {
+   "momento": "1:18.83",
+   "segundo": 78.83,
+   "fotograma": 2365,
+   "que": "clientes.xlsx bloqueado",
    "grupo": "click",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Click 01.wav",
@@ -1015,86 +960,53 @@
    "volumen": 1
   },
   {
-   "momento": "1:25.74",
-   "segundo": 85.74,
-   "fotograma": 2572,
-   "que": "el candado se cierra",
-   "grupo": "interfaz",
-   "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 13.wav",
-   "pico_s": 0.23,
-   "volumen": 0.369
-  },
-  {
-   "momento": "1:26.89",
-   "segundo": 86.89,
-   "fotograma": 2607,
-   "que": "la clave se emborrona",
-   "grupo": "glitch",
-   "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 04.wav",
-   "pico_s": 0.06,
-   "volumen": 0.249
-  },
-  {
-   "momento": "1:27.53",
-   "segundo": 87.53,
-   "fotograma": 2626,
-   "que": "clientes.xlsx bloqueado",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 01.wav",
-   "pico_s": 0,
-   "volumen": 0.371
-  },
-  {
-   "momento": "1:27.79",
-   "segundo": 87.79,
-   "fotograma": 2634,
+   "momento": "1:19.09",
+   "segundo": 79.09,
+   "fotograma": 2373,
    "que": "sello A SALVO",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Chasquido épico.wav",
+   "archivo": "02 Clicks - textos/Tick 03.wav",
    "pico_s": 0,
-   "volumen": 0.677
+   "volumen": 0.52
   },
   {
-   "momento": "1:28.25",
-   "segundo": 88.25,
-   "fotograma": 2648,
+   "momento": "1:19.56",
+   "segundo": 79.56,
+   "fotograma": 2387,
    "que": "transición a votar",
    "grupo": "woosh",
    "nivel": "medio",
    "archivo": "01 Woosh - transiciones/VS_Short Whoosh 4.wav",
    "pico_s": 0.13,
-   "volumen": 0.592
+   "volumen": 0.591
   },
   {
-   "momento": "1:28.35",
-   "segundo": 88.35,
-   "fotograma": 2650,
+   "momento": "1:19.65",
+   "segundo": 79.65,
+   "fotograma": 2390,
    "que": "¿CÓMO VOTAR?",
    "grupo": "remate",
    "nivel": "medio",
-   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "archivo": "02 Clicks - textos/Chasquido épico.wav",
    "pico_s": 0,
-   "volumen": 0.488
+   "volumen": 0.676
   },
   {
-   "momento": "1:29.18",
-   "segundo": 89.18,
-   "fotograma": 2675,
+   "momento": "1:20.48",
+   "segundo": 80.48,
+   "fotograma": 2414,
    "que": "aparece la caja de comentario",
    "grupo": "interfaz",
    "nivel": "bajo",
-   "archivo": "06 Varios/Interfaz y ventanas/Switch 01.wav",
-   "pico_s": 0.11,
-   "volumen": 0.538
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 20.wav",
+   "pico_s": 0.15,
+   "volumen": 0.235
   },
   {
-   "momento": "1:31.51",
-   "segundo": 91.51,
-   "fotograma": 2745,
+   "momento": "1:22.85",
+   "segundo": 82.85,
+   "fotograma": 2486,
    "que": "se teclea APPS",
    "grupo": "teclado",
    "nivel": "bajo",
@@ -1103,20 +1015,20 @@
    "volumen": 0.186
   },
   {
-   "momento": "1:32.15",
-   "segundo": 92.15,
-   "fotograma": 2764,
+   "momento": "1:23.49",
+   "segundo": 83.49,
+   "fotograma": 2505,
    "que": "se teclea AUTO",
    "grupo": "teclado",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Efecto type de letras.wav",
    "pico_s": 0.09,
-   "volumen": 0.485
+   "volumen": 0.484
   },
   {
-   "momento": "1:32.84",
-   "segundo": 92.84,
-   "fotograma": 2785,
+   "momento": "1:24.14",
+   "segundo": 84.14,
+   "fotograma": 2524,
    "que": "se teclea WEB",
    "grupo": "teclado",
    "nivel": "bajo",
@@ -1125,9 +1037,9 @@
    "volumen": 0.798
   },
   {
-   "momento": "1:33.54",
-   "segundo": 93.54,
-   "fotograma": 2806,
+   "momento": "1:24.74",
+   "segundo": 84.74,
+   "fotograma": 2542,
    "que": "se teclea ESCALAR",
    "grupo": "teclado",
    "nivel": "bajo",
@@ -1136,42 +1048,42 @@
    "volumen": 0.186
   },
   {
-   "momento": "1:34.34",
-   "segundo": 94.34,
-   "fotograma": 2830,
+   "momento": "1:25.65",
+   "segundo": 85.65,
+   "fotograma": 2570,
    "que": "se teclea SEGURIDAD",
    "grupo": "teclado",
    "nivel": "bajo",
    "archivo": "02 Clicks - textos/Efecto type de letras.wav",
    "pico_s": 0.09,
-   "volumen": 0.485
+   "volumen": 0.484
   },
   {
-   "momento": "1:35.21",
-   "segundo": 95.21,
-   "fotograma": 2856,
+   "momento": "1:26.51",
+   "segundo": 86.51,
+   "fotograma": 2595,
    "que": "anillo de historias",
    "grupo": "destello",
    "nivel": "medio",
    "archivo": "04 Destellos y notificaciones/Notificacion digital 03.wav",
    "pico_s": 0.09,
-   "volumen": 0.481
+   "volumen": 0.48
   },
   {
-   "momento": "1:37.03",
-   "segundo": 97.03,
-   "fotograma": 2911,
+   "momento": "1:28.34",
+   "segundo": 88.34,
+   "fotograma": 2650,
    "que": "sello CADA OPCIÓN EXPLICADA",
    "grupo": "click",
    "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Click suave 06.wav",
+   "archivo": "02 Clicks - textos/Tick 01.wav",
    "pico_s": 0,
-   "volumen": 0.856
+   "volumen": 0.37
   },
   {
-   "momento": "1:37.68",
-   "segundo": 97.68,
-   "fotograma": 2930,
+   "momento": "1:28.97",
+   "segundo": 88.97,
+   "fotograma": 2669,
    "que": "transición a plazo",
    "grupo": "woosh",
    "nivel": "medio",
@@ -1180,9 +1092,9 @@
    "volumen": 0.351
   },
   {
-   "momento": "1:38.23",
-   "segundo": 98.23,
-   "fotograma": 2947,
+   "momento": "1:29.54",
+   "segundo": 89.54,
+   "fotograma": 2686,
    "que": "golpe: contador 48:00:00",
    "grupo": "impacto",
    "nivel": "bajo",
@@ -1191,21 +1103,54 @@
    "volumen": 0.107
   },
   {
-   "momento": "1:39.13",
-   "segundo": 99.13,
-   "fotograma": 2974,
+   "momento": "1:30.36",
+   "segundo": 90.36,
+   "fotograma": 2711,
    "que": "aparecen las barras de voto vacías",
    "grupo": "glitch",
    "nivel": "bajo",
-   "archivo": "03 Glitches/Glitch digital 01.wav",
-   "pico_s": 0.21,
-   "volumen": 0.157
+   "archivo": "03 Glitches/Glitch digital 02.wav",
+   "pico_s": 0.04,
+   "volumen": 0.201
   },
   {
-   "momento": "1:39.51",
-   "segundo": 99.51,
-   "fotograma": 2985,
+   "momento": "1:30.86",
+   "segundo": 90.86,
+   "fotograma": 2726,
    "que": "sello UN VOTO POR PERSONA",
+   "grupo": "remate",
+   "nivel": "medio",
+   "archivo": "02 Clicks - textos/Tick 05.wav",
+   "pico_s": 0,
+   "volumen": 0.487
+  },
+  {
+   "momento": "1:32.13",
+   "segundo": 92.13,
+   "fotograma": 2764,
+   "que": "transición a modulo2",
+   "grupo": "woosh",
+   "nivel": "medio",
+   "archivo": "01 Woosh - transiciones/Woosh rapido 19.wav",
+   "pico_s": 0.09,
+   "volumen": 0.379
+  },
+  {
+   "momento": "1:32.50",
+   "segundo": 92.5,
+   "fotograma": 2775,
+   "que": "LA MÁS VOTADA",
+   "grupo": "click",
+   "nivel": "bajo",
+   "archivo": "02 Clicks - textos/Click suave 06.wav",
+   "pico_s": 0,
+   "volumen": 0.854
+  },
+  {
+   "momento": "1:33.54",
+   "segundo": 93.54,
+   "fotograma": 2806,
+   "que": "tarjeta MÓDULO 2 y casilla 14 latiendo",
    "grupo": "remate",
    "nivel": "medio",
    "archivo": "02 Clicks - textos/Pop up SFX.wav",
@@ -1213,75 +1158,42 @@
    "volumen": 0.299
   },
   {
-   "momento": "1:40.83",
-   "segundo": 100.83,
-   "fotograma": 3025,
-   "que": "transición a modulo2",
-   "grupo": "woosh",
-   "nivel": "medio",
-   "archivo": "01 Woosh - transiciones/Woosh rapido 19.wav",
-   "pico_s": 0.09,
-   "volumen": 0.38
-  },
-  {
-   "momento": "1:41.19",
-   "segundo": 101.19,
-   "fotograma": 3036,
-   "que": "LA MÁS VOTADA",
-   "grupo": "click",
-   "nivel": "bajo",
-   "archivo": "02 Clicks - textos/Tick 08.wav",
-   "pico_s": 0,
-   "volumen": 0.751
-  },
-  {
-   "momento": "1:42.23",
-   "segundo": 102.23,
-   "fotograma": 3067,
-   "que": "tarjeta MÓDULO 2 y casilla 14 latiendo",
-   "grupo": "remate",
-   "nivel": "medio",
-   "archivo": "02 Clicks - textos/Tick 03.wav",
-   "pico_s": 0,
-   "volumen": 0.521
-  },
-  {
-   "momento": "1:45.19",
-   "segundo": 105.19,
-   "fotograma": 3156,
+   "momento": "1:36.42",
+   "segundo": 96.42,
+   "fotograma": 2893,
    "que": "EP.14 se enciende",
    "grupo": "destello",
    "nivel": "medio",
    "archivo": "04 Destellos y notificaciones/Destello 03.wav",
    "pico_s": 0,
-   "volumen": 0.345
+   "volumen": 0.344
   },
   {
-   "momento": "1:45.64",
-   "segundo": 105.64,
-   "fotograma": 3169,
+   "momento": "1:36.94",
+   "segundo": 96.94,
+   "fotograma": 2908,
    "que": "baja la cámara al perfil",
    "grupo": "zoom",
    "nivel": "bajo",
    "archivo": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 06.wav",
    "pico_s": 0.13,
-   "volumen": 0.723
+   "volumen": 0.721
   },
   {
-   "momento": "1:46.24",
-   "segundo": 106.24,
-   "fotograma": 3187,
+   "momento": "1:37.54",
+   "segundo": 97.54,
+   "fotograma": 2926,
    "que": "se pulsa Seguir",
    "grupo": "interfaz",
    "nivel": "medio",
-   "archivo": "06 Varios/Interfaz y ventanas/Ventana 16.wav",
-   "pico_s": 0.34,
-   "volumen": 0.407
+   "archivo": "06 Varios/Interfaz y ventanas/Ventana 13.wav",
+   "pico_s": 0.23,
+   "volumen": 0.369
   },
   {
-   "momento": "1:46.49",
-   "segundo": 106.49,
-   "fotograma": 3195,
+   "momento": "1:37.79",
+   "segundo": 97.79,
+   "fotograma": 2934,
    "que": "Siguiendo ✓",
    "grupo": "acierto",
    "nivel": "bajo",

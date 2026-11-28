@@ -2,11 +2,14 @@
 
 **Estado:** montado en `serie-claude-code/` (composición `Master`, `episodios/ep-13-v2.json`, bloques `ep13b_*`).
 La v1 (tres opciones: WEB, AUTOMATIZAR, MEDIDA) sigue intacta en `episodios/ep-13.json` y `entregas/serie-claude-code-ep-13.mp4`.
-**Entrega:** `entregas/serie-claude-code-ep-13-v2.mp4`. 1080x1920 a 30 fps. Duración 1:49 (1:48 de voz y 1 s de cola).
+**Entrega:** `entregas/serie-claude-code-ep-13-v2.mp4`. 1080x1920 a 30 fps. Duración 1:40 (1:39 de voz y 1 s de cola).
 
 ## Archivos
 - `voz_ep13_v2.txt`: el guion grabado. Toma de ElevenLabs («Manu Gordillo», v4, stability 50, similarity 75):
-  `audio/raw/serie-claude-code/ep-13-v2.mp3` (montaje con 1 s de cola: `ep-13-v2_montaje.mp3`).
+  `audio/raw/serie-claude-code/ep-13-v2.mp3` (toma entera). Se quitó la frase «No os voy a mentir: detrás de cada
+  episodio hay horas de guion… Doce episodios así.» (de 15,24 s a 24,12 s de la toma, con 0,18 s de silencio en la
+  unión): el usuario no quiere decir que tarda horas, porque lo hace con IA. El montaje que se usa, con la frase fuera
+  y 1 s de cola, es `ep-13-v2_corte_montaje.mp3` (`ep-13-v2_montaje.mp3` es la toma entera con cola).
 - `cues.json`: cada sonido (momento, fotograma, qué pasa en pantalla, archivo de la librería, pico y volumen).
 - Capturas reales de Instagram (30 días hasta el 25 nov): `serie-claude-code/public/imagenes/ep13v2/` (recortes y
   originales). Los números no se tocan: solo se recortan, se inclinan y se acercan.
@@ -14,14 +17,14 @@ La v1 (tres opciones: WEB, AUTOMATIZAR, MEDIDA) sigue intacta en `episodios/ep-1
 ## Render
 ```bash
 cd serie-claude-code
-python scripts/preparar.py episodios/ep-13-v2.json --mp3 ../audio/raw/serie-claude-code/ep-13-v2_montaje.mp3 --modelo <parakeet>
+python scripts/preparar.py episodios/ep-13-v2.json --mp3 ../audio/raw/serie-claude-code/ep-13-v2_corte_montaje.mp3 --modelo <parakeet>
 python scripts/sfx_libreria.py /ruta/a/sonidos-videos        # copia a public/sfx los sonidos usados y mide su nivel
 node scripts/fotogramas.mjs episodios/ep-13-v2.json 5 20 40
 node scripts/render-lote.mjs episodios/ep-13-v2.json          # → out/claude-code-ep-13-v2.mp4
 python scripts/cues.py out/claude-code-ep-13-v2.plan.json ../briefs/serie-claude-code-ep-13/v2/cues.json
 python scripts/qa_master.py episodios/ep-13-v2.json out/claude-code-ep-13-v2.mp4
 ```
-277 de 284 palabras del guion ancladas a la voz (reconocedor local; la voz no se ha subido a ningún servicio).
+251 de 258 palabras del guion ancladas a la voz (reconocedor local; la voz no se ha subido a ningún servicio).
 
 ## Sonido (nuevo en este episodio)
 - Efectos **solo de la librería del usuario** (repo privado `joakognz/sonidos-videos`), nada sintetizado. El JSON lleva
@@ -31,16 +34,18 @@ python scripts/qa_master.py episodios/ep-13-v2.json out/claude-code-ep-13-v2.mp4
   los grupos, copia solo esos archivos a `public/sfx/` con su nombre original y ajusta el volumen de cada uno para que
   quede unos 10 dB por debajo de la voz («medio»), 14 dB («bajo») o 7 dB («fuerte»).
 - La skill `real-sfx` no está instalada en la nube: los sonidos se colocaron con las mismas reglas a mano, y
-  `scripts/cues.py` las comprueba (117 sonidos, reglas OK).
+  `scripts/cues.py` las comprueba (109 sonidos, reglas OK).
 - Música: la de la serie (`public/audio/musica.wav`) a -20 dB y 8 dB más baja bajo la voz; sube 3 dB en las cinco opciones.
 
 ## Escenas
+Tiempos de la versión con la frase quitada (desde «detras», todo va 8,7 s antes que en la toma entera).
+
 | Bloque | Tiempo | En pantalla |
 |---|---|---|
 | gracias | 0–1,7 | GRACIAS letra a letra con golpe, «De verdad.» |
 | cifras | 1,7–10,5 | cuadrícula de 50 (1–12 encendidas, 13 latiendo) → contador 0 → 9.098 con la captura de seguidores (la gráfica se dibuja) y sello +8.911 → corte seco a la captura de reproducciones, zoom a 344.114, los dos picos se iluminan, sello EN 30 DÍAS |
 | titulo | 10,5–15,2 | logos de Claude y Claude Code, destello: EP.13 · FIN DEL MÓDULO 1 · MÁSTER DE CLAUDE CODE; «un episodio normal» se tacha |
-| detras | 15,2–27,2 | visor REC «DETRÁS DE CÁMARAS» → montaje de cortes de 0,4 s (reloj, guion tachado, capas, RENDER ×3, escena tachada) → contador 1 → 12 → la caja MÓDULO 1 se cierra de golpe, sello COMPLETADO |
+| detras | 15,2–18,4 | las 12 casillas encendidas, la 13 se enciende con «hoy» (EP.13 · CIERRA EL MÓDULO), la caja MÓDULO 1 se cierra de golpe, sello COMPLETADO |
 | repaso | 27,2–44,7 | la caja se abre y saltan las herramientas: Claude Code + VS Code, CLAUDE.md, deshacer, tablero, GitHub + MCP, portátil → TU CAJA DE HERRAMIENTAS |
 | agradecer | 44,7–53,6 | negro, texto que se teclea, bolas de papel, LO TENGO CLARO → golpe de zoom LO ELEGÍS VOSOTROS con la urna |
 | cinco | 53,6–55,4 | cinco cartas boca abajo, sello 5 OPCIONES |

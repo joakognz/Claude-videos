@@ -1,5 +1,5 @@
 {
- "voz_rms_max_db": -10.84,
+ "voz_rms_max_db": -10.86,
  "grupos": {
   "woosh": [
    "Woosh rapido 05.wav",
@@ -103,9 +103,9 @@
    "rms_db": -13.8,
    "pico_db": -0.5,
    "vol": {
-    "bajo": 0.282,
-    "medio": 0.447,
-    "fuerte": 0.6313
+    "bajo": 0.2815,
+    "medio": 0.4461,
+    "fuerte": 0.6302
    }
   },
   "VS_Short Whoosh 4.wav": {
@@ -115,9 +115,9 @@
    "rms_db": -16.3,
    "pico_db": -3.2,
    "vol": {
-    "bajo": 0.3735,
-    "medio": 0.5919,
-    "fuerte": 0.8361
+    "bajo": 0.3728,
+    "medio": 0.5908,
+    "fuerte": 0.8346
    }
   },
   "Woosh rapido 13.wav": {
@@ -127,9 +127,9 @@
    "rms_db": -11.8,
    "pico_db": -0.9,
    "vol": {
-    "bajo": 0.2218,
-    "medio": 0.3515,
-    "fuerte": 0.4964
+    "bajo": 0.2213,
+    "medio": 0.3508,
+    "fuerte": 0.4955
    }
   },
   "Woosh rapido 19.wav": {
@@ -139,9 +139,9 @@
    "rms_db": -12.4,
    "pico_db": -2.1,
    "vol": {
-    "bajo": 0.2395,
-    "medio": 0.3796,
-    "fuerte": 0.5362
+    "bajo": 0.2391,
+    "medio": 0.3789,
+    "fuerte": 0.5352
    }
   },
   "SWHOOSH.wav": {
@@ -151,9 +151,9 @@
    "rms_db": -10.2,
    "pico_db": -0.4,
    "vol": {
-    "bajo": 0.1844,
-    "medio": 0.2923,
-    "fuerte": 0.4129
+    "bajo": 0.1841,
+    "medio": 0.2918,
+    "fuerte": 0.4121
    }
   },
   "Woosh rapido 14.wav": {
@@ -163,9 +163,9 @@
    "rms_db": -14.1,
    "pico_db": -1.1,
    "vol": {
-    "bajo": 0.2906,
-    "medio": 0.4606,
-    "fuerte": 0.6507
+    "bajo": 0.2901,
+    "medio": 0.4598,
+    "fuerte": 0.6494
    }
   },
   "Woosh Effect 4.wav": {
@@ -175,9 +175,9 @@
    "rms_db": -8.0,
    "pico_db": -0.1,
    "vol": {
-    "bajo": 0.1433,
-    "medio": 0.2271,
-    "fuerte": 0.3208
+    "bajo": 0.143,
+    "medio": 0.2267,
+    "fuerte": 0.3202
    }
   },
   "Woosh rapido 24.wav": {
@@ -187,9 +187,9 @@
    "rms_db": -13.3,
    "pico_db": -0.9,
    "vol": {
-    "bajo": 0.264,
-    "medio": 0.4184,
-    "fuerte": 0.591
+    "bajo": 0.2635,
+    "medio": 0.4176,
+    "fuerte": 0.5899
    }
   },
   "VS_Short Whoosh 1.wav": {
@@ -199,9 +199,9 @@
    "rms_db": -11.5,
    "pico_db": -1.4,
    "vol": {
-    "bajo": 0.216,
-    "medio": 0.3424,
-    "fuerte": 0.4836
+    "bajo": 0.2156,
+    "medio": 0.3417,
+    "fuerte": 0.4827
    }
   },
   "Woosh rapido 40.wav": {
@@ -211,9 +211,9 @@
    "rms_db": -13.4,
    "pico_db": -0.9,
    "vol": {
-    "bajo": 0.2694,
-    "medio": 0.4269,
-    "fuerte": 0.603
+    "bajo": 0.2689,
+    "medio": 0.4261,
+    "fuerte": 0.6019
    }
   },
   "Woosh largo 05.wav": {
@@ -223,9 +223,9 @@
    "rms_db": -16.5,
    "pico_db": -4.0,
    "vol": {
-    "bajo": 0.3848,
-    "medio": 0.6098,
-    "fuerte": 0.8614
+    "bajo": 0.384,
+    "medio": 0.6087,
+    "fuerte": 0.8598
    }
   },
   "Woosh largo 02.wav": {
@@ -235,9 +235,9 @@
    "rms_db": -14.6,
    "pico_db": -3.9,
    "vol": {
-    "bajo": 0.3078,
-    "medio": 0.4879,
-    "fuerte": 0.6892
+    "bajo": 0.3073,
+    "medio": 0.487,
+    "fuerte": 0.6879
    }
   },
   "Woosh largo 06.wav": {
@@ -247,7 +247,7 @@
    "rms_db": -22.0,
    "pico_db": -12.3,
    "vol": {
-    "bajo": 0.7226,
+    "bajo": 0.7213,
     "medio": 1.0,
     "fuerte": 1.0
    }
@@ -259,7 +259,7 @@
    "rms_db": -21.3,
    "pico_db": -13.4,
    "vol": {
-    "bajo": 0.6635,
+    "bajo": 0.6622,
     "medio": 1.0,
     "fuerte": 1.0
    }
@@ -271,9 +271,9 @@
    "rms_db": -12.4,
    "pico_db": -4.2,
    "vol": {
-    "bajo": 0.2386,
-    "medio": 0.3782,
-    "fuerte": 0.5342
+    "bajo": 0.2382,
+    "medio": 0.3775,
+    "fuerte": 0.5332
    }
   },
   "Woosh largo 01.wav": {
@@ -283,9 +283,9 @@
    "rms_db": -13.7,
    "pico_db": -4.2,
    "vol": {
-    "bajo": 0.2767,
-    "medio": 0.4385,
-    "fuerte": 0.6194
+    "bajo": 0.2761,
+    "medio": 0.4376,
+    "fuerte": 0.6182
    }
   },
   "Click suave 01.wav": {
@@ -295,7 +295,7 @@
    "rms_db": -23.0,
    "pico_db": -1.3,
    "vol": {
-    "bajo": 0.8093,
+    "bajo": 0.8078,
     "medio": 0.8176,
     "fuerte": 0.8176
    }
@@ -307,9 +307,9 @@
    "rms_db": -16.7,
    "pico_db": -2.2,
    "vol": {
-    "bajo": 0.393,
-    "medio": 0.6228,
-    "fuerte": 0.8798
+    "bajo": 0.3922,
+    "medio": 0.6217,
+    "fuerte": 0.8781
    }
   },
   "Click suave 03.wav": {
@@ -331,8 +331,8 @@
    "rms_db": -18.0,
    "pico_db": -2.9,
    "vol": {
-    "bajo": 0.4525,
-    "medio": 0.7172,
+    "bajo": 0.4517,
+    "medio": 0.7159,
     "fuerte": 0.9892
    }
   },
@@ -355,8 +355,8 @@
    "rms_db": -16.2,
    "pico_db": 0.0,
    "vol": {
-    "bajo": 0.3706,
-    "medio": 0.5874,
+    "bajo": 0.3699,
+    "medio": 0.5863,
     "fuerte": 0.7072
    }
   },
@@ -367,7 +367,7 @@
    "rms_db": -23.5,
    "pico_db": -3.2,
    "vol": {
-    "bajo": 0.856,
+    "bajo": 0.8544,
     "medio": 1.0,
     "fuerte": 1.0
    }
@@ -379,7 +379,7 @@
    "rms_db": -22.4,
    "pico_db": -4.5,
    "vol": {
-    "bajo": 0.7509,
+    "bajo": 0.7495,
     "medio": 1.0,
     "fuerte": 1.0
    }
@@ -391,9 +391,9 @@
    "rms_db": -10.4,
    "pico_db": 0.0,
    "vol": {
-    "bajo": 0.1888,
-    "medio": 0.2992,
-    "fuerte": 0.4226
+    "bajo": 0.1884,
+    "medio": 0.2986,
+    "fuerte": 0.4218
    }
   },
   "Tick 03.wav": {
@@ -403,9 +403,9 @@
    "rms_db": -15.2,
    "pico_db": -3.1,
    "vol": {
-    "bajo": 0.3289,
-    "medio": 0.5212,
-    "fuerte": 0.7363
+    "bajo": 0.3283,
+    "medio": 0.5203,
+    "fuerte": 0.7349
    }
   },
   "Chasquido épico.wav": {
@@ -415,8 +415,8 @@
    "rms_db": -17.4,
    "pico_db": -0.1,
    "vol": {
-    "bajo": 0.4271,
-    "medio": 0.6769,
+    "bajo": 0.4263,
+    "medio": 0.6756,
     "fuerte": 0.715
    }
   },
@@ -427,9 +427,9 @@
    "rms_db": -14.6,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.3078,
-    "medio": 0.4879,
-    "fuerte": 0.6891
+    "bajo": 0.3072,
+    "medio": 0.4869,
+    "fuerte": 0.6878
    }
   },
   "Efecto type de letras.wav": {
@@ -439,7 +439,7 @@
    "rms_db": -18.6,
    "pico_db": 0.1,
    "vol": {
-    "bajo": 0.4854,
+    "bajo": 0.4845,
     "medio": 0.7039,
     "fuerte": 0.7039
    }
@@ -463,9 +463,9 @@
    "rms_db": -10.2,
    "pico_db": -0.9,
    "vol": {
-    "bajo": 0.1859,
-    "medio": 0.2946,
-    "fuerte": 0.4162
+    "bajo": 0.1856,
+    "medio": 0.2941,
+    "fuerte": 0.4154
    }
   },
   "Glitch digital 05.wav": {
@@ -475,9 +475,9 @@
    "rms_db": -12.5,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.2428,
-    "medio": 0.3847,
-    "fuerte": 0.5435
+    "bajo": 0.2423,
+    "medio": 0.384,
+    "fuerte": 0.5424
    }
   },
   "Glitch digital 02.wav": {
@@ -487,9 +487,9 @@
    "rms_db": -10.9,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.2017,
-    "medio": 0.3197,
-    "fuerte": 0.4516
+    "bajo": 0.2013,
+    "medio": 0.3191,
+    "fuerte": 0.4508
    }
   },
   "Glitch digital 06.wav": {
@@ -499,9 +499,9 @@
    "rms_db": -12.0,
    "pico_db": -2.7,
    "vol": {
-    "bajo": 0.2271,
-    "medio": 0.3599,
-    "fuerte": 0.5084
+    "bajo": 0.2266,
+    "medio": 0.3592,
+    "fuerte": 0.5074
    }
   },
   "Glitch digital 04.wav": {
@@ -511,9 +511,9 @@
    "rms_db": -12.8,
    "pico_db": -3.6,
    "vol": {
-    "bajo": 0.2488,
-    "medio": 0.3943,
-    "fuerte": 0.5569
+    "bajo": 0.2483,
+    "medio": 0.3935,
+    "fuerte": 0.5559
    }
   },
   "Glitch digital 01.wav": {
@@ -523,9 +523,9 @@
    "rms_db": -8.7,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.1568,
-    "medio": 0.2485,
-    "fuerte": 0.3511
+    "bajo": 0.1565,
+    "medio": 0.2481,
+    "fuerte": 0.3504
    }
   },
   "Glitch digital 03.wav": {
@@ -535,9 +535,9 @@
    "rms_db": -10.0,
    "pico_db": -3.6,
    "vol": {
-    "bajo": 0.1806,
-    "medio": 0.2863,
-    "fuerte": 0.4043
+    "bajo": 0.1803,
+    "medio": 0.2857,
+    "fuerte": 0.4036
    }
   },
   "Destello 05.wav": {
@@ -547,9 +547,9 @@
    "rms_db": -8.0,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.1443,
-    "medio": 0.2287,
-    "fuerte": 0.3231
+    "bajo": 0.1441,
+    "medio": 0.2283,
+    "fuerte": 0.3225
    }
   },
   "Notificacion digital 03.wav": {
@@ -559,9 +559,9 @@
    "rms_db": -14.5,
    "pico_db": -3.1,
    "vol": {
-    "bajo": 0.3037,
-    "medio": 0.4813,
-    "fuerte": 0.6798
+    "bajo": 0.3031,
+    "medio": 0.4804,
+    "fuerte": 0.6785
    }
   },
   "Destello 03.wav": {
@@ -571,9 +571,9 @@
    "rms_db": -11.6,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.2175,
-    "medio": 0.3448,
-    "fuerte": 0.487
+    "bajo": 0.2171,
+    "medio": 0.3441,
+    "fuerte": 0.4861
    }
   },
   "Notificacion digital 01.wav": {
@@ -583,9 +583,9 @@
    "rms_db": -8.5,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.1528,
-    "medio": 0.2422,
-    "fuerte": 0.342
+    "bajo": 0.1525,
+    "medio": 0.2417,
+    "fuerte": 0.3414
    }
   },
   "Destello 09.wav": {
@@ -595,9 +595,9 @@
    "rms_db": -12.3,
    "pico_db": -2.2,
    "vol": {
-    "bajo": 0.2367,
-    "medio": 0.3752,
-    "fuerte": 0.53
+    "bajo": 0.2363,
+    "medio": 0.3745,
+    "fuerte": 0.529
    }
   },
   "Notificacion digital 05.wav": {
@@ -607,9 +607,9 @@
    "rms_db": -13.3,
    "pico_db": -3.1,
    "vol": {
-    "bajo": 0.2659,
-    "medio": 0.4214,
-    "fuerte": 0.5953
+    "bajo": 0.2654,
+    "medio": 0.4206,
+    "fuerte": 0.5942
    }
   },
   "Destello 02.wav": {
@@ -619,9 +619,9 @@
    "rms_db": -9.9,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.1799,
-    "medio": 0.2851,
-    "fuerte": 0.4027
+    "bajo": 0.1795,
+    "medio": 0.2846,
+    "fuerte": 0.402
    }
   },
   "Camera Flash.wav": {
@@ -631,9 +631,9 @@
    "rms_db": -12.9,
    "pico_db": -1.1,
    "vol": {
-    "bajo": 0.2518,
-    "medio": 0.3992,
-    "fuerte": 0.5638
+    "bajo": 0.2514,
+    "medio": 0.3984,
+    "fuerte": 0.5628
    }
   },
   "Camera Shot.wav": {
@@ -643,8 +643,8 @@
    "rms_db": -16.6,
    "pico_db": 1.0,
    "vol": {
-    "bajo": 0.3892,
-    "medio": 0.6168,
+    "bajo": 0.3885,
+    "medio": 0.6157,
     "fuerte": 0.6302
    }
   },
@@ -655,7 +655,7 @@
    "rms_db": -24.9,
    "pico_db": -3.4,
    "vol": {
-    "bajo": 1.0,
+    "bajo": 0.9995,
     "medio": 1.0,
     "fuerte": 1.0
    }
@@ -667,7 +667,7 @@
    "rms_db": -19.4,
    "pico_db": -0.0,
    "vol": {
-    "bajo": 0.5376,
+    "bajo": 0.5366,
     "medio": 0.7093,
     "fuerte": 0.7093
    }
@@ -679,9 +679,9 @@
    "rms_db": -13.0,
    "pico_db": -2.9,
    "vol": {
-    "bajo": 0.257,
-    "medio": 0.4074,
-    "fuerte": 0.5754
+    "bajo": 0.2566,
+    "medio": 0.4066,
+    "fuerte": 0.5743
    }
   },
   "Switch 04.wav": {
@@ -691,7 +691,7 @@
    "rms_db": -18.9,
    "pico_db": 0.2,
    "vol": {
-    "bajo": 0.5029,
+    "bajo": 0.502,
     "medio": 0.689,
     "fuerte": 0.689
    }
@@ -703,9 +703,9 @@
    "rms_db": -11.7,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.2209,
-    "medio": 0.3501,
-    "fuerte": 0.4945
+    "bajo": 0.2205,
+    "medio": 0.3494,
+    "fuerte": 0.4935
    }
   },
   "Ventana 20.wav": {
@@ -715,9 +715,9 @@
    "rms_db": -12.3,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.2353,
-    "medio": 0.3729,
-    "fuerte": 0.5268
+    "bajo": 0.2349,
+    "medio": 0.3722,
+    "fuerte": 0.5258
    }
   },
   "Ventana 13.wav": {
@@ -727,9 +727,9 @@
    "rms_db": -12.2,
    "pico_db": -3.0,
    "vol": {
-    "bajo": 0.2331,
-    "medio": 0.3694,
-    "fuerte": 0.5218
+    "bajo": 0.2326,
+    "medio": 0.3687,
+    "fuerte": 0.5208
    }
   },
   "Deep Bass Hit 1.wav": {
@@ -739,9 +739,9 @@
    "rms_db": -6.7,
    "pico_db": -0.1,
    "vol": {
-    "bajo": 0.1243,
-    "medio": 0.1971,
-    "fuerte": 0.2783
+    "bajo": 0.1241,
+    "medio": 0.1967,
+    "fuerte": 0.2778
    }
   },
   "Boom 2.wav": {
@@ -751,9 +751,9 @@
    "rms_db": -5.4,
    "pico_db": -0.1,
    "vol": {
-    "bajo": 0.1068,
-    "medio": 0.1693,
-    "fuerte": 0.2392
+    "bajo": 0.1066,
+    "medio": 0.169,
+    "fuerte": 0.2387
    }
   },
   "Sub Bass Hit.wav": {
@@ -763,9 +763,9 @@
    "rms_db": -3.9,
    "pico_db": -0.0,
    "vol": {
-    "bajo": 0.0898,
-    "medio": 0.1423,
-    "fuerte": 0.201
+    "bajo": 0.0896,
+    "medio": 0.1421,
+    "fuerte": 0.2007
    }
   },
   "04 Grand Hit B.wav": {
@@ -775,9 +775,9 @@
    "rms_db": -5.1,
    "pico_db": -0.0,
    "vol": {
-    "bajo": 0.1032,
-    "medio": 0.1636,
-    "fuerte": 0.2311
+    "bajo": 0.103,
+    "medio": 0.1633,
+    "fuerte": 0.2306
    }
   },
   "Golpe 17.wav": {
@@ -787,9 +787,9 @@
    "rms_db": -11.4,
    "pico_db": -0.0,
    "vol": {
-    "bajo": 0.2126,
-    "medio": 0.337,
-    "fuerte": 0.476
+    "bajo": 0.2122,
+    "medio": 0.3364,
+    "fuerte": 0.4752
    }
   },
   "Golpe 19.wav": {
@@ -799,9 +799,9 @@
    "rms_db": -12.0,
    "pico_db": -0.0,
    "vol": {
-    "bajo": 0.2271,
-    "medio": 0.3599,
-    "fuerte": 0.5084
+    "bajo": 0.2267,
+    "medio": 0.3592,
+    "fuerte": 0.5074
    }
   },
   "Golpe 12.wav": {
@@ -811,9 +811,9 @@
    "rms_db": -9.8,
    "pico_db": -0.0,
    "vol": {
-    "bajo": 0.1764,
-    "medio": 0.2796,
-    "fuerte": 0.395
+    "bajo": 0.1761,
+    "medio": 0.2791,
+    "fuerte": 0.3942
    }
   },
   "Golpe 20.wav": {
@@ -823,9 +823,9 @@
    "rms_db": -11.8,
    "pico_db": 0.0,
    "vol": {
-    "bajo": 0.2239,
-    "medio": 0.3548,
-    "fuerte": 0.5012
+    "bajo": 0.2235,
+    "medio": 0.3542,
+    "fuerte": 0.5003
    }
   },
   "Golpe 11.wav": {
@@ -835,9 +835,9 @@
    "rms_db": -9.8,
    "pico_db": 0.0,
    "vol": {
-    "bajo": 0.1772,
-    "medio": 0.2808,
-    "fuerte": 0.3967
+    "bajo": 0.1769,
+    "medio": 0.2803,
+    "fuerte": 0.396
    }
   },
   "RISER.wav": {
@@ -847,9 +847,9 @@
    "rms_db": -13.4,
    "pico_db": -1.8,
    "vol": {
-    "bajo": 0.268,
-    "medio": 0.4247,
-    "fuerte": 0.5999
+    "bajo": 0.2675,
+    "medio": 0.4239,
+    "fuerte": 0.5988
    }
   },
   "RELOJ.wav": {
@@ -859,7 +859,7 @@
    "rms_db": -21.8,
    "pico_db": -0.4,
    "vol": {
-    "bajo": 0.7045,
+    "bajo": 0.7032,
     "medio": 0.7448,
     "fuerte": 0.7448
    }
@@ -871,9 +871,9 @@
    "rms_db": -15.7,
    "pico_db": -8.1,
    "vol": {
-    "bajo": 0.3484,
-    "medio": 0.5522,
-    "fuerte": 0.78
+    "bajo": 0.3477,
+    "medio": 0.5511,
+    "fuerte": 0.7785
    }
   }
  }

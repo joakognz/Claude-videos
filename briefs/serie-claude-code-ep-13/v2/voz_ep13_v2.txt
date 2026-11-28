@@ -1,7 +1,7 @@
 Gracias. De verdad.
 Hace un mes, esta cuenta casi no existía. Hoy sois más de nueve mil. Y trescientas cuarenta y cuatro mil reproducciones en treinta días.
 Por eso este episodio trece del Máster de Claude Code no es un episodio normal.
-No os voy a mentir: detrás de cada episodio hay horas de guion, de pruebas y de rehacer escenas que no me convencían. Doce episodios así. Y hoy, con este, cerramos el módulo uno.
+Y hoy, con este, cerramos el módulo uno.
 En doce episodios has aprendido a instalar Claude Code dentro de Visual Studio Code, a darle contexto con CLAUDE punto M D, a corregirlo sin miedo, a que planifique, reparta el trabajo y se conecte con tus herramientas. Hasta a que use tu ordenador. Esa es tu caja de herramientas.
 Llevo días pensando cómo agradeceros todo esto. Y después de muchos dolores de cabeza, lo tengo claro: el próximo módulo lo elegís vosotros.
 Tenéis cinco opciones.

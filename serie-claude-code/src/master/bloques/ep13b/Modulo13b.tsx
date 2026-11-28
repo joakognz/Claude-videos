@@ -1,180 +1,48 @@
 /**
- * EP.13 v2 · El módulo 1: montaje rápido de «detrás de cámaras» (reloj, guion tachado, capas de la línea de tiempo,
- * botón RENDER pulsado varias veces, escena descartada, contador de 1 a 12) y la caja MÓDULO 1 que se cierra de golpe
- * con el sello COMPLETADO (detras). Después, la caja se abre y cada herramienta salta de ella al ritmo de la voz (repaso).
+ * EP.13 v2 · El módulo 1: las 12 casillas de los episodios encendidas, la 13 se enciende con «hoy» y la caja MÓDULO 1
+ * se cierra de golpe con el sello COMPLETADO (detras). Después, la caja se abre y cada herramienta salta de ella al
+ * ritmo de la voz (repaso).
  */
 import React from "react";
-import { AbsoluteFill } from "remotion";
 import { Escena } from "../../componentes/Escena";
-
-/** Centra su contenido en (x, y) del lienzo. */
-const En: React.FC<{ x: number; y: number; children: React.ReactNode }> = ({ x, y, children }) => (
-  <div style={{ position: "absolute", left: x, top: y, transform: "translate(-50%, -50%)" }}>{children}</div>
-);
 import { Logo } from "../../componentes/Logo";
 import { Etiqueta, Sello } from "../../componentes/Sello";
-import { ArchivoMd, Caja, Deshacer, Portatil, Reloj, Tablero, temblor } from "../../componentes/ep13b/Piezas13b";
-import { C, EASE_OUT, MONO, TITULO, clamp01, cue, ramp, sp, vis } from "../../nucleo";
+import { ArchivoMd, Caja, Deshacer, Portatil, Tablero, temblor } from "../../componentes/ep13b/Piezas13b";
+import { C, MONO, TITULO, clamp01, cue, ramp, sp, vis } from "../../nucleo";
 import type { Evento, Linea, Toma } from "../../nucleo";
 import type { BloqueProps } from "../../tipos";
 
-// ── detrás de cámaras ────────────────────────────────────────────────────────────────────────────────────────────
+// ── cerramos el módulo 1 ─────────────────────────────────────────────────────────────────────────────────────────
 const E = "detras";
-const tDetras = (L: Linea) => {
-  const horas = L.en(E, "horas");
-  const guion = L.en(E, "guion,");
-  const pruebas = L.en(E, "pruebas");
-  const rehacer = L.en(E, "rehacer");
-  const convencian = L.en(E, "convencían.");
-  const doce = L.en(E, "12");
-  return {
-    mentir: L.en(E, "mentir:"),
-    detras: L.en(E, "detrás"),
-    horas, guion, pruebas, rehacer, convencian, doce,
-    asi: L.en(E, "así."),
-    hoy: L.en(E, "hoy,"),
-    cerramos: L.en(E, "cerramos"),
-    uno: L.en(E, "1."),
-    // cortes del montaje (cada 0,3–0,5 s): [inicio, plano]
-    cortes: [
-      [horas, "reloj"], [guion, "guion"], [guion + 0.42, "guion2"], [pruebas, "capas"], [pruebas + 0.4, "reloj2"],
-      [rehacer, "render"], [rehacer + 0.42, "render"], [rehacer + 0.84, "render"], [convencian - 0.1, "tachada"], [convencian + 0.4, "reloj3"],
-      [convencian + 0.8, "tachada2"],
-    ] as [number, string][],
-  };
-};
-
-const Visor: React.FC<{ t: number }> = ({ t }) => (
-  <>
-    {[[0, 0], [1, 0], [0, 1], [1, 1]].map(([i, j], k) => (
-      <div key={k} style={{ position: "absolute", left: 140 + i * 740, top: 690 + j * 760, width: 60, height: 60, borderLeft: i === 0 ? `8px solid ${C.texto}` : undefined, borderRight: i === 1 ? `8px solid ${C.texto}` : undefined, borderTop: j === 0 ? `8px solid ${C.texto}` : undefined, borderBottom: j === 1 ? `8px solid ${C.texto}` : undefined, opacity: 0.85 }} />
-    ))}
-    <div style={{ position: "absolute", left: 230, top: 740, display: "flex", alignItems: "center", gap: 14, fontFamily: MONO, fontWeight: 700, fontSize: 38, color: C.texto }}>
-      <div style={{ width: 26, height: 26, borderRadius: "50%", background: "#E5484D", opacity: Math.sin(t * 9) > 0 ? 1 : 0.2 }} />
-      REC
-    </div>
-  </>
-);
-
-const Plano: React.FC<{ tipo: string; t: number; a: number; T: ReturnType<typeof tDetras> }> = ({ tipo, t, a, T }) => {
-  const u = t - a;
-  const punch = 1.08 - 0.08 * EASE_OUT(clamp01(u / 0.18));
-  const caja = (children: React.ReactNode) => (
-    <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, transform: `scale(${punch})`, transformOrigin: "540px 1100px" }}>{children}</div>
-  );
-  if (tipo.startsWith("reloj"))
-    return caja(
-      <En x={540} y={1100}>
-        <div style={{ textAlign: "center" }}>
-          <Reloj w={tipo === "reloj" ? 420 : 340} vueltas={(t - T.horas) * 2.2} />
-          <div style={{ fontFamily: TITULO, fontWeight: 800, fontSize: 70, color: C.texto, marginTop: 24 }}>{tipo === "reloj" ? "HORAS" : tipo === "reloj2" ? "Y MÁS HORAS" : "OTRA VEZ"}</div>
-        </div>
-      </En>,
-    );
-  if (tipo.startsWith("guion")) {
-    const tachas = tipo === "guion" ? clamp01(u / 0.4) * 2 : 2 + clamp01(u / 0.3) * 2;
-    return caja(
-      <En x={540} y={1100}>
-        <div style={{ width: 620, height: 760, background: "#F3EEE4", borderRadius: 18, padding: 50, boxSizing: "border-box", transform: `rotate(${tipo === "guion" ? -3 : 2}deg)`, boxShadow: "0 30px 70px rgba(0,0,0,0.6)" }}>
-          <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 34, color: C.oscuro }}>GUION · EP.{tipo === "guion" ? 7 : 11}</div>
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i} style={{ position: "relative", height: 26, width: [460, 380, 500, 420, 300, 440][i], marginTop: 52, borderRadius: 13, background: "#BDB5A6" }}>
-              <div style={{ position: "absolute", left: -12, top: 6, height: 14, borderRadius: 7, background: C.acento, width: `calc(${clamp01(tachas - i) * 100}% + 24px)`, opacity: clamp01(tachas - i) > 0 ? 1 : 0 }} />
-            </div>
-          ))}
-        </div>
-      </En>,
-    );
-  }
-  if (tipo === "capas")
-    return caja(
-      <En x={540} y={1100}>
-        <div style={{ width: 900, padding: 30, background: C.panel, border: `3px solid ${C.borde}`, borderRadius: 24, boxSizing: "border-box", position: "relative" }}>
-          <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 30, color: C.gris, marginBottom: 18 }}>LÍNEA DE TIEMPO · PRUEBA 23</div>
-          {[0, 1, 2, 3, 4].map((i) => (
-            <div key={i} style={{ height: 70, marginBottom: 14, borderRadius: 10, background: C.panel2, position: "relative" }}>
-              {[0, 1, 2].map((j) => {
-                const x = (i * 97 + j * 251) % 520;
-                const w = 140 + ((i * 53 + j * 71) % 160);
-                return <div key={j} style={{ position: "absolute", left: x + 10, top: 10, width: w * clamp01(u / 0.3 - i * 0.12), height: 50, borderRadius: 8, background: [C.acento, "#5B8DEF", "#9B7BEA", "#4FB38A", "#E2B33F"][i], opacity: 0.85 }} />;
-              })}
-            </div>
-          ))}
-          <div style={{ position: "absolute", top: 70, bottom: 20, left: 40 + 820 * clamp01(u / 0.45), width: 6, background: "#FFFFFF", boxShadow: "0 0 12px #fff" }} />
-        </div>
-      </En>,
-    );
-  if (tipo === "render") {
-    const pulsa = Math.sin(clamp01(u / 0.14) * Math.PI);
-    const barra = clamp01((u - 0.08) / 0.3);
-    return caja(
-      <En x={540} y={1100}>
-        <div style={{ textAlign: "center" }}>
-          <div style={{ display: "inline-block", fontFamily: TITULO, fontWeight: 800, fontSize: 96, color: C.oscuro, background: C.acento, padding: "26px 80px", borderRadius: 30, transform: `scale(${1 - 0.1 * pulsa}) translateY(${pulsa * 10}px)`, boxShadow: `0 ${18 - 12 * pulsa}px 0 #8E4630, 0 0 60px ${C.acento}66` }}>RENDER</div>
-          <div style={{ width: 640, height: 30, margin: "70px auto 0", borderRadius: 15, background: C.panel2, overflow: "hidden" }}>
-            <div style={{ width: `${barra * 100}%`, height: "100%", background: C.texto }} />
-          </div>
-          <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 36, color: C.gris, marginTop: 22 }}>{`claude-code-ep-xx_v${Math.max(2, Math.round((a - T.rehacer) / 0.42) + 3)}.mp4`}</div>
-        </div>
-      </En>,
-    );
-  }
-  // escena descartada
-  const x = clamp01(u / 0.2);
-  return caja(
-    <En x={540} y={1100}>
-      <div style={{ position: "relative", width: 560, height: 760, borderRadius: 28, background: C.panel2, border: `4px solid ${C.borde}`, transform: `rotate(${tipo === "tachada" ? 3 : -4}deg)` }}>
-        <div style={{ position: "absolute", left: 40, right: 40, top: 60, height: 320, borderRadius: 18, background: C.panel, border: `3px dashed ${C.borde}` }} />
-        <div style={{ position: "absolute", left: 40, top: 430, width: 300, height: 30, borderRadius: 15, background: C.borde }} />
-        <div style={{ position: "absolute", left: 40, top: 490, width: 420, height: 30, borderRadius: 15, background: C.borde }} />
-        <svg style={{ position: "absolute", inset: 0 }} width={560} height={760} viewBox="0 0 560 760">
-          <path d="M60 80 L500 680" stroke={C.acento} strokeWidth={34} strokeLinecap="round" strokeDasharray={760} strokeDashoffset={760 * (1 - x)} />
-          <path d="M500 80 L60 680" stroke={C.acento} strokeWidth={34} strokeLinecap="round" strokeDasharray={760} strokeDashoffset={760 * (1 - clamp01(x * 2 - 1))} />
-        </svg>
-        <div style={{ position: "absolute", left: 0, right: 0, bottom: -110, textAlign: "center", fontFamily: TITULO, fontWeight: 800, fontSize: 64, color: C.acento }}>{tipo === "tachada" ? "NO ME CONVENCE" : "OTRA VEZ"}</div>
-      </div>
-    </En>,
-  );
-};
+const tDetras = (L: Linea) => ({
+  hoy: L.en(E, "hoy,"),
+  este: L.en(E, "este,"),
+  cerramos: L.en(E, "cerramos"),
+  uno: L.en(E, "1."),
+});
 
 export const Detras13b: React.FC<BloqueProps> = ({ t, L, desde }) => {
   const T = tDetras(L);
-  const montaje = t >= T.horas && t < T.doce - 0.05;
-  const corte = [...T.cortes].reverse().find(([a]) => t >= a);
-  const tomas: Toma[] = [{ t: desde - 1, x: 540, y: 1100, z: 1.0 }];
-  const sh = temblor(t, [T.cerramos + 0.25, T.uno], 18);
-  // contador 1 → 12
-  const n12 = Math.max(1, Math.min(12, Math.floor(1 + ramp(t, T.doce - 0.05, T.asi + 0.1) * 11.999)));
-  const vCont = vis(t, T.doce - 0.05, T.cerramos - 0.2, 0.7);
+  const tomas: Toma[] = [{ t: desde - 1, x: 540, y: 1120, z: 1.08 }, { t: T.cerramos, x: 540, y: 1150, z: 1.0, d: 0.5 }];
+  const sh = temblor(t, [T.cerramos + 0.28, T.uno], 18);
+  const vCont = vis(t, desde - 0.2, Infinity, 0.7);
   const cierra = 1 - ramp(t, T.cerramos + 0.05, T.cerramos + 0.28, (x) => x * x);
-  const abre = t < T.cerramos ? ramp(t, T.hoy - 0.6, T.hoy - 0.2) : cierra;
+  const abre = t < T.cerramos ? ramp(t, desde, desde + 0.4) : cierra;
   const golpe = Math.sin(clamp01((t - T.cerramos - 0.28) / 0.2) * Math.PI);
-  const vCaja = vis(t, T.hoy - 0.7, Infinity, 0.5);
+  const vCaja = vis(t, desde - 0.1, Infinity, 0.5);
+  const trece = sp(t, T.hoy, { damping: 10, stiffness: 240 });
   return (
-    <Escena t={t} tomas={tomas} puntos={!montaje}>
+    <Escena t={t} tomas={tomas}>
       <div style={{ position: "absolute", inset: 0, transform: `translate(${sh.x}px, ${sh.y}px)` }}>
-        {t < T.horas && (
-          <>
-            <Visor t={t} />
-            <Etiqueta texto="DETRÁS DE CÁMARAS" x={540} y={1100} t={t} at={T.detras - 0.1} size={70} variante="texto" fuente="titulo" />
-            <Etiqueta texto="sin filtro" x={540} y={1210} t={t} at={T.mentir} size={42} variante="gris" />
-          </>
-        )}
-        {montaje && corte && (
-          <>
-            <AbsoluteFill style={{ background: "#07080B" }} />
-            <Plano key={corte[0]} tipo={corte[1]} t={t} a={corte[0]} T={T} />
-          </>
-        )}
         {vCont.on && (
           <div style={{ position: "absolute", left: 0, right: 0, top: 700, textAlign: "center", opacity: vCont.opacity, transform: `scale(${vCont.scale})` }}>
-            <div style={{ fontFamily: TITULO, fontWeight: 800, fontSize: 220, lineHeight: 1, color: C.acento }}>{n12}</div>
-            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 44, color: C.texto, letterSpacing: 8 }}>{n12 === 12 ? "DOCE EPISODIOS" : "EPISODIOS"}</div>
+            <div style={{ fontFamily: TITULO, fontWeight: 800, fontSize: 200, lineHeight: 1, color: t >= T.este ? C.texto : C.acento }}>{t >= T.este ? "EP.13" : "12"}</div>
+            <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 42, color: C.texto, letterSpacing: 8 }}>{t >= T.este ? "CIERRA EL MÓDULO" : "EPISODIOS"}</div>
             <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 50 }}>
               {Array.from({ length: 13 }, (_, i) => {
-                const on = i < n12;
-                const trece = i === 12 && t >= T.hoy;
-                return <div key={i} style={{ width: 60, height: 60, borderRadius: 14, background: on ? C.acento : C.panel2, border: `3px solid ${trece ? C.texto : on ? C.acento : C.borde}`, transform: `scale(${trece ? 1.15 + 0.1 * Math.sin(t * 9) : 1})`, boxShadow: trece ? `0 0 26px ${C.texto}` : undefined }} />;
+                const on = i < 12 ? clamp01((t - desde + 0.1 - i * 0.03) / 0.12) : trece;
+                const es13 = i === 12;
+                return <div key={i} style={{ width: 60, height: 60, borderRadius: 14, background: on > 0.5 ? C.acento : C.panel2, border: `3px solid ${es13 && on > 0.5 ? C.texto : on > 0.5 ? C.acento : C.borde}`, transform: `scale(${es13 ? 0.7 + 0.45 * trece + (trece > 0.9 ? 0.08 * Math.sin(t * 9) : 0) : 1})`, boxShadow: es13 && on > 0.5 ? `0 0 26px ${C.texto}` : undefined }} />;
               })}
             </div>
           </div>
@@ -184,7 +52,7 @@ export const Detras13b: React.FC<BloqueProps> = ({ t, L, desde }) => {
             <Caja x={540} y={1470} w={420} abre={abre} aplasta={golpe} brillo={golpe} />
           </div>
         )}
-        <Sello texto="COMPLETADO ✓" x={540} y={1180} t={t} at={T.uno} size={84} rot={-7} resalte={1} />
+        <Sello texto="COMPLETADO ✓" x={540} y={1360} t={t} at={T.uno} size={84} rot={-7} resalte={1} />
       </div>
     </Escena>
   );
@@ -193,17 +61,8 @@ export const Detras13b: React.FC<BloqueProps> = ({ t, L, desde }) => {
 export const eventosDetras13b = (L: Linea): Evento[] => {
   const T = tDetras(L);
   return [
-    cue(T.detras, "click", "DETRÁS DE CÁMARAS", "bajo"),
-    // montaje: sonido en uno de cada dos o tres cortes
-    cue(T.horas, "glitch", "corte: reloj", "bajo"),
-    cue(T.horas + 0.6, "reloj", "agujas del reloj girando", "bajo", { dur: 1.6 }),
-    cue(T.pruebas, "glitch", "corte: capas de la línea de tiempo", "bajo"),
-    cue(T.rehacer + 0.05, "interfaz", "botón RENDER pulsado", "medio"),
-    cue(T.rehacer + 0.89, "interfaz", "RENDER otra vez", "bajo"),
-    cue(T.convencian + 0.05, "remate", "escena tachada: NO ME CONVENCE", "bajo"),
-    cue(T.convencian + 0.85, "glitch", "corte: otra escena tachada", "bajo"),
-    cue(T.doce, "click", "contador DOCE EPISODIOS", "bajo"),
-    cue(T.asi + 0.1, "destello", "el contador llega a 12", "medio"),
+    cue(T.hoy, "destello", "se enciende la casilla 13", "medio"),
+    cue(T.este, "click", "EP.13 · CIERRA EL MÓDULO", "bajo"),
     cue(T.cerramos + 0.28, "impacto", "la caja MÓDULO 1 se cierra de golpe", "fuerte"),
     cue(T.uno + 0.02, "acierto", "sello COMPLETADO", "medio"),
   ];
