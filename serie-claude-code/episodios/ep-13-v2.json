@@ -1,0 +1,187 @@
+{
+ "composicion": "Master",
+ "serie": "Máster de Claude Code",
+ "episodio": 13,
+ "total": 50,
+ "carpeta": "ep-13-v2",
+ "titulo": "Gracias · cierre del módulo 1 y votación (v2)",
+ "handle": "@aigencyx.labs",
+ "voz": {
+  "audio": "episodios/ep-13-v2/voz.wav",
+  "timestamps": "episodios/ep-13-v2/palabras.json"
+ },
+ "musica": {
+  "audio": "audio/musica.wav",
+  "db": -20,
+  "duckingDb": -8,
+  "subida": {
+   "desde": "cinco",
+   "hasta": "seguridad",
+   "db": 3
+  }
+ },
+ "sonidos": "libreria",
+ "progreso": true,
+ "cta": {
+  "tipo": "votacion",
+  "pregunta": "¿Cómo votar?",
+  "palabra_clave": "APPS · AUTO · WEB · ESCALAR · SEGURIDAD",
+  "texto": "Comenta UNA palabra en este reel · 48 h · un voto por persona",
+  "seguir": "Sígueme"
+ },
+ "siguiente_episodio": 14,
+ "avance": {
+  "titulo": "MÓDULO 2",
+  "subtitulo": "Lo elegís vosotros"
+ },
+ "logos": {
+  "claude": "logos/claude.png",
+  "claude_code": "logos/claude-code-mascota.png",
+  "claude_code_texto": "logos/claude-code-pixel.png",
+  "vscode": "logos/vscode.png",
+  "github": "logos/github_texto.png",
+  "github_circulo": "logos/github_circulo.png",
+  "whatsapp": "logos/whatsapp.png",
+  "google_sheets": "logos/google_sheets.png",
+  "google_sheets_icono": "logos/google_sheets_icono.png",
+  "nodejs": "logos/nodejs.png",
+  "aws": "logos/aws.png",
+  "nextjs": "logos/nextjs.png",
+  "astro": "logos/astro.png",
+  "vercel": "logos/vercel.png",
+  "aigencyx": "logos/aigencyx.png",
+  "mcp": "logos/mcp.png"
+ },
+ "imagenes": {
+  "captura_seguidores": "imagenes/ep13v2/captura_seguidores.png",
+  "captura_reproducciones": "imagenes/ep13v2/captura_reproducciones.png"
+ },
+ "escenas": [
+  {
+   "id": "gracias",
+   "voz": "Gracias. De verdad."
+  },
+  {
+   "id": "cifras",
+   "voz": "Hace un mes, esta cuenta casi no existía. Hoy sois más de 9.000. Y 344.000 reproducciones en 30 días."
+  },
+  {
+   "id": "titulo",
+   "voz": "Por eso este episodio 13 del Máster de Claude Code no es un episodio normal."
+  },
+  {
+   "id": "detras",
+   "voz": "No os voy a mentir: detrás de cada episodio hay horas de guion, de pruebas y de rehacer escenas que no me convencían. 12 episodios así. Y hoy, con este, cerramos el módulo 1."
+  },
+  {
+   "id": "repaso",
+   "voz": "En 12 episodios has aprendido a instalar Claude Code dentro de Visual Studio Code, a darle contexto con CLAUDE.md, a corregirlo sin miedo, a que planifique, reparta el trabajo y se conecte con tus herramientas. Hasta a que use tu ordenador. Esa es tu caja de herramientas."
+  },
+  {
+   "id": "agradecer",
+   "voz": "Llevo días pensando cómo agradeceros todo esto. Y después de muchos dolores de cabeza, lo tengo claro: el próximo módulo lo elegís vosotros."
+  },
+  {
+   "id": "cinco",
+   "voz": "Tenéis 5 opciones."
+  },
+  {
+   "id": "apps",
+   "voz": "Uno. Apps a medida. Una aplicación hecha solo para tu negocio: reservas, clientes y datos en un mismo sitio."
+  },
+  {
+   "id": "auto",
+   "voz": "Dos. Automatizaciones. Que lo que repites cada día se haga solo. Entra un pedido por WhatsApp y se apunta solo en tu hoja de cálculo."
+  },
+  {
+   "id": "web",
+   "voz": "Tres. Desarrollo web. Tu página, creada con Claude Code, desde la idea hasta publicada."
+  },
+  {
+   "id": "escalar",
+   "voz": "Cuatro. Escalar con Claude. Pasar de usarlo tú solo a un equipo que trabaja con el mismo método."
+  },
+  {
+   "id": "seguridad",
+   "voz": "Cinco. Ciberseguridad. Proteger lo que construyes, sin dejar claves ni datos a la vista."
+  },
+  {
+   "id": "votar",
+   "voz": "¿Cómo votar? Comenta una sola palabra en este reel: APPS, AUTO, WEB, ESCALAR o SEGURIDAD. En mis historias tienes cada opción explicada."
+  },
+  {
+   "id": "plazo",
+   "voz": "Tenéis 48 horas. Un voto por persona."
+  },
+  {
+   "id": "modulo2",
+   "voz": "La más votada abre el módulo 2, y la construimos juntos desde el episodio 14."
+  },
+  {
+   "id": "cierre",
+   "voz": "Sígueme para no perderte el resultado."
+  }
+ ],
+ "bloques": [
+  {
+   "tipo": "ep13b_gracias",
+   "desde": "gracias"
+  },
+  {
+   "tipo": "ep13b_cifras",
+   "desde": "cifras"
+  },
+  {
+   "tipo": "ep13b_titulo",
+   "desde": "titulo"
+  },
+  {
+   "tipo": "ep13b_detras",
+   "desde": "detras"
+  },
+  {
+   "tipo": "ep13b_repaso",
+   "desde": "repaso"
+  },
+  {
+   "tipo": "ep13b_agradecer",
+   "desde": "agradecer"
+  },
+  {
+   "tipo": "ep13b_cinco",
+   "desde": "cinco"
+  },
+  {
+   "tipo": "ep13b_opcion",
+   "desde": "apps"
+  },
+  {
+   "tipo": "ep13b_opcion",
+   "desde": "auto"
+  },
+  {
+   "tipo": "ep13b_opcion",
+   "desde": "web"
+  },
+  {
+   "tipo": "ep13b_opcion",
+   "desde": "escalar"
+  },
+  {
+   "tipo": "ep13b_opcion",
+   "desde": "seguridad"
+  },
+  {
+   "tipo": "ep13b_votar",
+   "desde": "votar"
+  },
+  {
+   "tipo": "ep13b_plazo",
+   "desde": "plazo"
+  },
+  {
+   "tipo": "ep13b_final",
+   "desde": "modulo2"
+  }
+ ]
+}

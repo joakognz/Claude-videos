@@ -6,7 +6,7 @@ import { BLOQUES } from "./bloques";
 import { Insignia, MarcaAgua } from "./componentes/Insignia";
 import { Sonido } from "./componentes/Sonido";
 import { Subtitulos, VeloSuperior, trocear } from "./componentes/Subtitulos";
-import { C, FPS, crearLinea } from "./nucleo";
+import { C, FPS, TOP, crearLinea } from "./nucleo";
 import { avance } from "./transicion";
 import type { EpisodioMaster } from "./tipos";
 
@@ -53,6 +53,11 @@ export const Master: React.FC<EpisodioMaster> = (ep) => {
       <Subtitulos bloques={subs} t={t} />
       <Insignia t={t} at={finIntro - 0.5} episodio={ep.episodio} total={ep.total} />
       <MarcaAgua handle={ep.handle} />
+      {ep.progreso && (
+        <div style={{ position: "absolute", left: 44, right: 44, top: TOP - 18, height: 7, borderRadius: 4, background: "rgba(255,255,255,0.13)", overflow: "hidden" }}>
+          <div style={{ width: `${Math.min(100, (t / calc.duracion) * 100)}%`, height: "100%", background: C.acento, boxShadow: `0 0 12px ${C.acento}` }} />
+        </div>
+      )}
       <AbsoluteFill style={{ background: C.fondo, opacity: Math.max(0, (t - (calc.duracion - 0.5)) / 0.5) }} />
       <Sonido ep={ep} calc={calc} />
     </AbsoluteFill>

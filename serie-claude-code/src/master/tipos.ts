@@ -17,9 +17,15 @@ export type EpisodioMaster = {
   titulo?: string;
   handle: string;
   voz: { audio: string; timestamps?: string; palabras?: Palabra[] };
-  musica?: { audio: string; db?: number; duckingDb?: number };
+  musica?: { audio: string; db?: number; duckingDb?: number; subida?: { desde: string; hasta: string; db: number } };
+  /** "libreria": efectos de la librería del usuario (public/sfx) en vez de los de la plantilla */
+  sonidos?: "plantilla" | "libreria";
+  /** barra de progreso arriba */
+  progreso?: boolean;
+  /** carpeta de public/episodios y nombre de salida cuando hay otra versión del episodio */
+  carpeta?: string;
   cta: {
-    tipo: "auditoria" | "drive";
+    tipo: "auditoria" | "drive" | "votacion";
     pregunta: string;
     palabra_clave: string;
     texto: string;

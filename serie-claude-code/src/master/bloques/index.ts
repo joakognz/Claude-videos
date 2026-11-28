@@ -33,7 +33,12 @@ import { Auto13, Medida13, Web13, eventosAuto13, eventosMedida13, eventosWeb13 }
 import { Repaso13, eventosRepaso13 } from "./ep13/Repaso13";
 import { Voto13, eventosVoto13 } from "./ep13/Voto13";
 
-export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster) => Evento[] };
+import { Cifras13b, Gracias13b, Titulo13b, eventosCifras13b, eventosGracias13b, eventosTitulo13b } from "./ep13b/Apertura13b";
+import { Final13b, Plazo13b, Votar13b, eventosFinal13b, eventosPlazo13b, eventosVotar13b } from "./ep13b/Final13b";
+import { Detras13b, Repaso13b, eventosDetras13b, eventosRepaso13b } from "./ep13b/Modulo13b";
+import { Agradecer13b, Cinco13b, Opcion13b, eventosAgradecer13b, eventosCinco13b, eventosOpcion13b } from "./ep13b/Opciones13b";
+
+export type DefBloque = { Componente: React.FC<BloqueProps>; eventos: (L: Linea, ep: EpisodioMaster, desde: string) => Evento[] };
 
 /** Tipos de bloque disponibles para "bloques[].tipo" en el JSON del episodio. */
 export const BLOQUES: Record<string, DefBloque> = {
@@ -73,4 +78,16 @@ export const BLOQUES: Record<string, DefBloque> = {
   ep13_medida: { Componente: Medida13, eventos: eventosMedida13 },
   ep13_voto: { Componente: Voto13, eventos: eventosVoto13 },
   ep13_avance: { Componente: Avance13, eventos: eventosAvance13 },
+  // EP.13 v2 · gracias, cifras reales, cierre del módulo 1 y votación entre cinco opciones (sonidos de la librería)
+  ep13b_gracias: { Componente: Gracias13b, eventos: eventosGracias13b },
+  ep13b_cifras: { Componente: Cifras13b, eventos: eventosCifras13b },
+  ep13b_titulo: { Componente: Titulo13b, eventos: eventosTitulo13b },
+  ep13b_detras: { Componente: Detras13b, eventos: eventosDetras13b },
+  ep13b_repaso: { Componente: Repaso13b, eventos: eventosRepaso13b },
+  ep13b_agradecer: { Componente: Agradecer13b, eventos: eventosAgradecer13b },
+  ep13b_cinco: { Componente: Cinco13b, eventos: eventosCinco13b },
+  ep13b_opcion: { Componente: Opcion13b, eventos: (L, _ep, desde) => eventosOpcion13b(L, desde) },
+  ep13b_votar: { Componente: Votar13b, eventos: eventosVotar13b },
+  ep13b_plazo: { Componente: Plazo13b, eventos: eventosPlazo13b },
+  ep13b_final: { Componente: Final13b, eventos: eventosFinal13b },
 };

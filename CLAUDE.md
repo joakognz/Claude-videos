@@ -36,10 +36,11 @@ Este archivo cuenta lo que vive en el repositorio.
 | 11 Variantes infinitas | 1.8 | rama `claude/funny-faraday-ckjnww` (reel de prueba) |
 | 12 Computer Use | 1.9 | `episodios/ep-12.json` · `entregas/serie-claude-code-ep-12.mp4` · `briefs/serie-claude-code-ep-12/` |
 | 13 Cierre del módulo 1 y votación | — | `episodios/ep-13.json` · `entregas/serie-claude-code-ep-13.mp4` · `briefs/serie-claude-code-ep-13/` |
+| 13 v2 Gracias y votación (5 opciones) | — | `episodios/ep-13-v2.json` (bloques `ep13b_*`) · `entregas/serie-claude-code-ep-13-v2.mp4` · `briefs/serie-claude-code-ep-13/v2/` |
 
 Cada episodio se hizo en su propia rama: para leer uno, `git fetch origin <rama>` y
 `git show origin/<rama>:briefs/serie-claude-code-ep-NN/...`. Siguiente: EP14, primer episodio del módulo 2. Su tema es
-la opción más votada en los comentarios del EP13 (WEB, AUTOMATIZAR o MEDIDA): pregúntaselo al usuario.
+la opción más votada en los comentarios del EP13 v2 (APPS, AUTO, WEB, ESCALAR o SEGURIDAD): pregúntaselo al usuario.
 
 ### Cómo se hace un episodio aquí
 Material: la voz en MP3 (de ElevenLabs, la genera el usuario), el documento o esquema de la lección y, si hay, el
@@ -61,6 +62,11 @@ cp out/claude-code-ep-NN.mp4 ../entregas/serie-claude-code-ep-NN.mp4
 ```
 - La máquina tiene 4 núcleos: no pongas `CONCURRENCIA` por encima de 4 (el valor por defecto ya va bien).
 - La voz no se sube a ningún servicio: los tiempos por palabra salen del reconocedor local.
+- **Sonidos (desde el EP.13 v2):** solo de la librería del usuario (repo privado `joakognz/sonidos-videos`, clónalo
+  con `add_repo`). `"sonidos": "libreria"` en el JSON; los bloques piden grupos con `cue(t, grupo, qué, nivel)` y
+  `src/master/sfx.ts` elige el archivo (pico en el evento, sin repetir, sin dos woosh seguidos).
+  `python scripts/sfx_libreria.py <librería>` copia los usados a `public/sfx/`; `scripts/cues.py` comprueba y lista.
+- `"carpeta": "ep-13-v2"` en el JSON permite otra versión de un episodio sin pisar la anterior.
 - Revisa siempre con fotogramas sueltos antes del render y un fotograma cada 2,5 s después.
 - Ficha del episodio en `briefs/serie-claude-code-ep-NN/` (voz, prompt maestro, tomas, logos, caption, NOTAS).
 

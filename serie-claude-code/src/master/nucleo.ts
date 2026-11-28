@@ -180,4 +180,24 @@ export const largoCurva = (cv: Curva) => {
 
 // ── sonido ───────────────────────────────────────────────────────────────────────────────────────────────────────
 export type Sfx = "golpe" | "tick" | "whoosh" | "pop" | "tecleo" | "envio";
-export type Evento = { t: number; sfx: Sfx; vol: number; dur?: number };
+export type Evento = {
+  /** momento del evento en pantalla (s). Con la librería, aquí cae el pico del sonido */
+  t: number;
+  /** efecto propio de la plantilla (public/audio/sfx) — episodios hasta el EP.13 */
+  sfx?: Sfx;
+  vol: number;
+  dur?: number;
+  /** librería del usuario (public/sfx, ver scripts/sfx_libreria.py): grupo y nivel; calcular.ts elige el archivo */
+  grupo?: string;
+  nivel?: "bajo" | "medio" | "fuerte";
+  /** lo rellena calcular.ts: archivo de public/sfx, pico (s), segundo del archivo desde el que suena y motivo */
+  src?: string;
+  pico?: number;
+  desde?: number;
+  /** qué pasa en pantalla (para la lista de cues) */
+  que?: string;
+};
+/** Evento con un sonido de la librería: el pico cae en t. */
+export const cue = (t: number, grupo: string, que: string, nivel: "bajo" | "medio" | "fuerte" = "medio", extra: Partial<Evento> = {}): Evento => ({
+  t, grupo, nivel, que, vol: 1, ...extra,
+});

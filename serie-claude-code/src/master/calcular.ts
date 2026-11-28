@@ -7,6 +7,11 @@ import { envolventeMusica } from "./componentes/Sonido";
 import { FPS, crearLinea } from "./nucleo";
 import type { Evento, Palabra } from "./nucleo";
 import type { EpisodioMaster } from "./tipos";
+import { asignarLibreria } from "./sfx";
+import type { Libreria } from "./sfx";
+
+// woosh de transición entre bloques (librería): en la mitad de la transición, que dura 20 fotogramas
+const WOOSH_CORTE = 0;
 
 export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async ({ props }) => {
   const duracion = await duracionAudio(staticFile(props.voz.audio));
@@ -29,9 +34,15 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
   props.bloques.forEach((b, i) => {
     const B = BLOQUES[b.tipo];
     if (!B) throw new Error(`Tipo de bloque desconocido: ${b.tipo}`);
-    eventos.push(...B.eventos(L, props));
-    if (i > 0) eventos.push({ t: cortes[i] - 0.3, sfx: "whoosh", vol: 0.28 });
+    eventos.push(...B.eventos(L, props, b.desde));
+    if (i > 0)
+      eventos.push(props.sonidos === "libreria" ? { t: cortes[i] + WOOSH_CORTE, grupo: "woosh", nivel: "medio", vol: 1, que: `transición a ${b.desde}` } : { t: cortes[i] - 0.3, sfx: "whoosh", vol: 0.28 });
   });
+  let finales = eventos.filter((e) => e.t >= 0 && e.t < duracion).sort((a, b) => a.t - b.t);
+  if (props.sonidos === "libreria") {
+    const lib = (await (await fetch(staticFile("sfx/_libreria.json"))).json()) as Libreria;
+    finales = asignarLibreria(finales, lib);
+  }
   const mus = props.musica;
   const frames = Math.ceil(duracion * FPS);
   return {
@@ -43,10 +54,12 @@ export const calcularMaster: CalculateMetadataFunction<EpisodioMaster> = async (
         frames,
         palabras,
         cortes,
-        musica: mus ? envolventeMusica(palabras, duracion, mus.db ?? -20, mus.duckingDb ?? -8) : [],
-        eventos: eventos.filter((e) => e.t >= 0 && e.t < duracion).sort((a, b) => a.t - b.t),
+        musica: mus
+          ? envolventeMusica(palabras, duracion, mus.db ?? -20, mus.duckingDb ?? -8, mus.subida ? { a: L.ini(mus.subida.desde), b: L.fin(mus.subida.hasta), db: mus.subida.db } : undefined)
+          : [],
+        eventos: finales,
       },
     },
-    defaultOutName: `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,
+    defaultOutName: props.carpeta ? `claude-code-${props.carpeta}` : `claude-code-ep-${String(props.episodio).padStart(2, "0")}`,
   };
 };

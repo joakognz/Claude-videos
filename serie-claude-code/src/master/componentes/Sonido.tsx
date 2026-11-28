@@ -14,6 +14,22 @@ export const Sonido: React.FC<{ ep: EpisodioMaster; calc: Calculo }> = ({ ep, ca
         <Audio src={staticFile(ep.musica.audio)} loop loopVolumeCurveBehavior="extend" volume={(f) => vol[Math.min(vol.length - 1, Math.max(0, f))]} />
       )}
       {calc.eventos.map((ev, i) => {
+        if (ev.src) {
+          // librería del usuario: el pico del archivo cae en ev.t (o suena desde ev.desde, si es un tramo de un archivo largo)
+          const ini = ev.desde != null ? ev.t : ev.t - (ev.pico ?? 0);
+          const dur = Math.min(ev.dur ?? 1.2, calc.duracion - ini);
+          const n = Math.max(1, Math.round(dur * FPS));
+          const fade = Math.min(6, Math.floor(n / 3));
+          return (
+            <Sequence key={i} from={Math.round(ini * FPS)} durationInFrames={n} layout="none">
+              <Audio
+                src={staticFile(`sfx/${ev.src}`)}
+                trimBefore={ev.desde ? Math.round(ev.desde * FPS) : undefined}
+                volume={(f) => ev.vol * Math.min(1, (n - f) / Math.max(1, fade))}
+              />
+            </Sequence>
+          );
+        }
         const dur = ev.dur ?? 1.2;
         return (
           <Sequence key={i} from={Math.round(ev.t * FPS)} durationInFrames={Math.max(1, Math.round(Math.min(dur, calc.duracion - ev.t) * FPS))} layout="none">
@@ -26,7 +42,7 @@ export const Sonido: React.FC<{ ep: EpisodioMaster; calc: Calculo }> = ({ ep, ca
 };
 
 /** Envolvente de la música: nivel `db` (respecto a la voz) y `duck` dB más bajo mientras hay voz. */
-export const envolventeMusica = (pal: { inicio: number; fin: number }[], dur: number, db: number, duck: number): number[] => {
+export const envolventeMusica = (pal: { inicio: number; fin: number }[], dur: number, db: number, duck: number, subida?: { a: number; b: number; db: number }): number[] => {
   const n = Math.ceil(dur * FPS);
   const voz = new Array<number>(n).fill(0);
   pal.forEach((p, k) => {
@@ -39,7 +55,9 @@ export const envolventeMusica = (pal: { inicio: number; fin: number }[], dur: nu
   const att = 1 - Math.exp(-1 / (0.15 * FPS));
   const rel = 1 - Math.exp(-1 / (0.5 * FPS));
   for (let f = 0; f < n; f++) {
-    const obj = db + (voz[f] ? duck : 0);
+    const tf = f / FPS;
+    const extra = subida && tf >= subida.a - 0.5 && tf <= subida.b + 0.5 ? subida.db * Math.min(1, (tf - subida.a + 0.5) / 0.5, (subida.b + 0.5 - tf) / 0.5) : 0;
+    const obj = db + extra + (voz[f] ? duck : 0);
     g += (obj - g) * (obj < g ? att : rel);
     const t = f / FPS;
     const fade = Math.min(1, t / 0.6, (dur - t) / 1.2);

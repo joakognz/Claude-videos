@@ -20,7 +20,7 @@ if (!fichero || !tiempos.length) {
   process.exit(1);
 }
 const ep = JSON.parse(fs.readFileSync(path.resolve(ROOT, fichero), "utf8"));
-const salida = path.join(ROOT, "out", "fotogramas", `ep-${String(ep.episodio).padStart(2, "0")}`);
+const salida = path.join(ROOT, "out", "fotogramas", ep.carpeta ?? `ep-${String(ep.episodio).padStart(2, "0")}`);
 fs.mkdirSync(salida, { recursive: true });
 const serveUrl = await bundle({ entryPoint: path.join(ROOT, "src/index.ts"), rspack: true });
 const browser = await openBrowser("chrome", { browserExecutable });

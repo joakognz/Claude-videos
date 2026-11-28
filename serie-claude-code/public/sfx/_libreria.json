@@ -1,0 +1,880 @@
+{
+ "voz_rms_max_db": -10.84,
+ "grupos": {
+  "woosh": [
+   "Woosh rapido 05.wav",
+   "VS_Short Whoosh 4.wav",
+   "Woosh rapido 13.wav",
+   "Woosh rapido 19.wav",
+   "SWHOOSH.wav",
+   "Woosh rapido 14.wav",
+   "Woosh Effect 4.wav",
+   "Woosh rapido 24.wav",
+   "VS_Short Whoosh 1.wav",
+   "Woosh rapido 40.wav"
+  ],
+  "zoom": [
+   "Woosh largo 05.wav",
+   "Woosh largo 02.wav",
+   "Woosh largo 06.wav",
+   "Woosh largo 10.wav",
+   "Woosh largo 04.wav",
+   "Woosh largo 01.wav"
+  ],
+  "click": [
+   "Click suave 01.wav",
+   "Tick 07.wav",
+   "Click suave 03.wav",
+   "Tick 11.wav",
+   "Click 01.wav",
+   "Tick 01.wav",
+   "Click suave 06.wav",
+   "Tick 08.wav"
+  ],
+  "remate": [
+   "Pop up SFX.wav",
+   "Tick 03.wav",
+   "Chasquido épico.wav",
+   "Tick 05.wav"
+  ],
+  "teclado": [
+   "Efecto type de letras.wav",
+   "Escribir teclado.wav",
+   "Type Digital SFX.wav"
+  ],
+  "glitch": [
+   "Glitch digital 05.wav",
+   "Glitch digital 02.wav",
+   "Glitch digital 06.wav",
+   "Glitch digital 04.wav",
+   "Glitch digital 01.wav",
+   "Glitch digital 03.wav"
+  ],
+  "destello": [
+   "Destello 05.wav",
+   "Notificacion digital 03.wav",
+   "Destello 03.wav",
+   "Notificacion digital 01.wav",
+   "Destello 09.wav",
+   "Notificacion digital 05.wav",
+   "Destello 02.wav"
+  ],
+  "foto": [
+   "Camera Flash.wav",
+   "Camera Shot.wav",
+   "CameraShutterMotorized35mmShutters.wav"
+  ],
+  "interfaz": [
+   "Switch 01.wav",
+   "Ventana 16.wav",
+   "Switch 04.wav",
+   "Ventana 27.wav",
+   "Ventana 20.wav",
+   "Ventana 13.wav"
+  ],
+  "impacto": [
+   "Deep Bass Hit 1.wav",
+   "Boom 2.wav",
+   "Sub Bass Hit.wav",
+   "04 Grand Hit B.wav"
+  ],
+  "golpe": [
+   "Golpe 17.wav",
+   "Golpe 19.wav",
+   "Golpe 12.wav",
+   "Golpe 20.wav",
+   "Golpe 11.wav"
+  ],
+  "riser": [
+   "RISER.wav"
+  ],
+  "reloj": [
+   "RELOJ.wav"
+  ],
+  "acierto": [
+   "Correct Answer sound effect.mp3"
+  ]
+ },
+ "archivos": {
+  "Woosh rapido 05.wav": {
+   "origen": "01 Woosh - transiciones/Woosh rapido 05.wav",
+   "duracion": 0.42,
+   "pico": 0.09,
+   "rms_db": -13.8,
+   "pico_db": -0.5,
+   "vol": {
+    "bajo": 0.282,
+    "medio": 0.447,
+    "fuerte": 0.6313
+   }
+  },
+  "VS_Short Whoosh 4.wav": {
+   "origen": "01 Woosh - transiciones/VS_Short Whoosh 4.wav",
+   "duracion": 0.81,
+   "pico": 0.13,
+   "rms_db": -16.3,
+   "pico_db": -3.2,
+   "vol": {
+    "bajo": 0.3735,
+    "medio": 0.5919,
+    "fuerte": 0.8361
+   }
+  },
+  "Woosh rapido 13.wav": {
+   "origen": "01 Woosh - transiciones/Woosh rapido 13.wav",
+   "duracion": 0.52,
+   "pico": 0.09,
+   "rms_db": -11.8,
+   "pico_db": -0.9,
+   "vol": {
+    "bajo": 0.2218,
+    "medio": 0.3515,
+    "fuerte": 0.4964
+   }
+  },
+  "Woosh rapido 19.wav": {
+   "origen": "01 Woosh - transiciones/Woosh rapido 19.wav",
+   "duracion": 0.39,
+   "pico": 0.09,
+   "rms_db": -12.4,
+   "pico_db": -2.1,
+   "vol": {
+    "bajo": 0.2395,
+    "medio": 0.3796,
+    "fuerte": 0.5362
+   }
+  },
+  "SWHOOSH.wav": {
+   "origen": "01 Woosh - transiciones/SWHOOSH.wav",
+   "duracion": 0.8,
+   "pico": 0.34,
+   "rms_db": -10.2,
+   "pico_db": -0.4,
+   "vol": {
+    "bajo": 0.1844,
+    "medio": 0.2923,
+    "fuerte": 0.4129
+   }
+  },
+  "Woosh rapido 14.wav": {
+   "origen": "01 Woosh - transiciones/Woosh rapido 14.wav",
+   "duracion": 0.4,
+   "pico": 0.09,
+   "rms_db": -14.1,
+   "pico_db": -1.1,
+   "vol": {
+    "bajo": 0.2906,
+    "medio": 0.4606,
+    "fuerte": 0.6507
+   }
+  },
+  "Woosh Effect 4.wav": {
+   "origen": "01 Woosh - transiciones/Woosh Effect 4.wav",
+   "duracion": 1.01,
+   "pico": 0.38,
+   "rms_db": -8.0,
+   "pico_db": -0.1,
+   "vol": {
+    "bajo": 0.1433,
+    "medio": 0.2271,
+    "fuerte": 0.3208
+   }
+  },
+  "Woosh rapido 24.wav": {
+   "origen": "01 Woosh - transiciones/Woosh rapido 24.wav",
+   "duracion": 0.71,
+   "pico": 0.23,
+   "rms_db": -13.3,
+   "pico_db": -0.9,
+   "vol": {
+    "bajo": 0.264,
+    "medio": 0.4184,
+    "fuerte": 0.591
+   }
+  },
+  "VS_Short Whoosh 1.wav": {
+   "origen": "01 Woosh - transiciones/VS_Short Whoosh 1.wav",
+   "duracion": 0.97,
+   "pico": 0.28,
+   "rms_db": -11.5,
+   "pico_db": -1.4,
+   "vol": {
+    "bajo": 0.216,
+    "medio": 0.3424,
+    "fuerte": 0.4836
+   }
+  },
+  "Woosh rapido 40.wav": {
+   "origen": "01 Woosh - transiciones/Woosh rapido 40.wav",
+   "duracion": 0.53,
+   "pico": 0.17,
+   "rms_db": -13.4,
+   "pico_db": -0.9,
+   "vol": {
+    "bajo": 0.2694,
+    "medio": 0.4269,
+    "fuerte": 0.603
+   }
+  },
+  "Woosh largo 05.wav": {
+   "origen": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 05.wav",
+   "duracion": 0.76,
+   "pico": 0.15,
+   "rms_db": -16.5,
+   "pico_db": -4.0,
+   "vol": {
+    "bajo": 0.3848,
+    "medio": 0.6098,
+    "fuerte": 0.8614
+   }
+  },
+  "Woosh largo 02.wav": {
+   "origen": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 02.wav",
+   "duracion": 0.82,
+   "pico": 0.17,
+   "rms_db": -14.6,
+   "pico_db": -3.9,
+   "vol": {
+    "bajo": 0.3078,
+    "medio": 0.4879,
+    "fuerte": 0.6892
+   }
+  },
+  "Woosh largo 06.wav": {
+   "origen": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 06.wav",
+   "duracion": 0.66,
+   "pico": 0.13,
+   "rms_db": -22.0,
+   "pico_db": -12.3,
+   "vol": {
+    "bajo": 0.7226,
+    "medio": 1.0,
+    "fuerte": 1.0
+   }
+  },
+  "Woosh largo 10.wav": {
+   "origen": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 10.wav",
+   "duracion": 1.07,
+   "pico": 0.3,
+   "rms_db": -21.3,
+   "pico_db": -13.4,
+   "vol": {
+    "bajo": 0.6635,
+    "medio": 1.0,
+    "fuerte": 1.0
+   }
+  },
+  "Woosh largo 04.wav": {
+   "origen": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 04.wav",
+   "duracion": 1.01,
+   "pico": 0.19,
+   "rms_db": -12.4,
+   "pico_db": -4.2,
+   "vol": {
+    "bajo": 0.2386,
+    "medio": 0.3782,
+    "fuerte": 0.5342
+   }
+  },
+  "Woosh largo 01.wav": {
+   "origen": "01 Woosh - transiciones/Largos (zooms)/Woosh largo 01.wav",
+   "duracion": 0.56,
+   "pico": 0.11,
+   "rms_db": -13.7,
+   "pico_db": -4.2,
+   "vol": {
+    "bajo": 0.2767,
+    "medio": 0.4385,
+    "fuerte": 0.6194
+   }
+  },
+  "Click suave 01.wav": {
+   "origen": "02 Clicks - textos/Click suave 01.wav",
+   "duracion": 0.09,
+   "pico": 0.0,
+   "rms_db": -23.0,
+   "pico_db": -1.3,
+   "vol": {
+    "bajo": 0.8093,
+    "medio": 0.8176,
+    "fuerte": 0.8176
+   }
+  },
+  "Tick 07.wav": {
+   "origen": "02 Clicks - textos/Tick 07.wav",
+   "duracion": 0.06,
+   "pico": 0.0,
+   "rms_db": -16.7,
+   "pico_db": -2.2,
+   "vol": {
+    "bajo": 0.393,
+    "medio": 0.6228,
+    "fuerte": 0.8798
+   }
+  },
+  "Click suave 03.wav": {
+   "origen": "02 Clicks - textos/Click suave 03.wav",
+   "duracion": 0.08,
+   "pico": 0.02,
+   "rms_db": -26.9,
+   "pico_db": -0.3,
+   "vol": {
+    "bajo": 0.7344,
+    "medio": 0.7344,
+    "fuerte": 0.7344
+   }
+  },
+  "Tick 11.wav": {
+   "origen": "02 Clicks - textos/Tick 11.wav",
+   "duracion": 0.06,
+   "pico": 0.04,
+   "rms_db": -18.0,
+   "pico_db": -2.9,
+   "vol": {
+    "bajo": 0.4525,
+    "medio": 0.7172,
+    "fuerte": 0.9892
+   }
+  },
+  "Click 01.wav": {
+   "origen": "02 Clicks - textos/Click 01.wav",
+   "duracion": 0.1,
+   "pico": 0.0,
+   "rms_db": -28.0,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 1.0,
+    "medio": 1.0,
+    "fuerte": 1.0
+   }
+  },
+  "Tick 01.wav": {
+   "origen": "02 Clicks - textos/Tick 01.wav",
+   "duracion": 0.04,
+   "pico": 0.0,
+   "rms_db": -16.2,
+   "pico_db": 0.0,
+   "vol": {
+    "bajo": 0.3706,
+    "medio": 0.5874,
+    "fuerte": 0.7072
+   }
+  },
+  "Click suave 06.wav": {
+   "origen": "02 Clicks - textos/Click suave 06.wav",
+   "duracion": 0.06,
+   "pico": 0.0,
+   "rms_db": -23.5,
+   "pico_db": -3.2,
+   "vol": {
+    "bajo": 0.856,
+    "medio": 1.0,
+    "fuerte": 1.0
+   }
+  },
+  "Tick 08.wav": {
+   "origen": "02 Clicks - textos/Tick 08.wav",
+   "duracion": 0.06,
+   "pico": 0.0,
+   "rms_db": -22.4,
+   "pico_db": -4.5,
+   "vol": {
+    "bajo": 0.7509,
+    "medio": 1.0,
+    "fuerte": 1.0
+   }
+  },
+  "Pop up SFX.wav": {
+   "origen": "02 Clicks - textos/Pop up SFX.wav",
+   "duracion": 0.75,
+   "pico": 0.02,
+   "rms_db": -10.4,
+   "pico_db": 0.0,
+   "vol": {
+    "bajo": 0.1888,
+    "medio": 0.2992,
+    "fuerte": 0.4226
+   }
+  },
+  "Tick 03.wav": {
+   "origen": "02 Clicks - textos/Tick 03.wav",
+   "duracion": 0.37,
+   "pico": 0.0,
+   "rms_db": -15.2,
+   "pico_db": -3.1,
+   "vol": {
+    "bajo": 0.3289,
+    "medio": 0.5212,
+    "fuerte": 0.7363
+   }
+  },
+  "Chasquido épico.wav": {
+   "origen": "02 Clicks - textos/Chasquido épico.wav",
+   "duracion": 1.09,
+   "pico": 0.0,
+   "rms_db": -17.4,
+   "pico_db": -0.1,
+   "vol": {
+    "bajo": 0.4271,
+    "medio": 0.6769,
+    "fuerte": 0.715
+   }
+  },
+  "Tick 05.wav": {
+   "origen": "02 Clicks - textos/Tick 05.wav",
+   "duracion": 0.37,
+   "pico": 0.0,
+   "rms_db": -14.6,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.3078,
+    "medio": 0.4879,
+    "fuerte": 0.6891
+   }
+  },
+  "Efecto type de letras.wav": {
+   "origen": "02 Clicks - textos/Efecto type de letras.wav",
+   "duracion": 1.65,
+   "pico": 0.09,
+   "rms_db": -18.6,
+   "pico_db": 0.1,
+   "vol": {
+    "bajo": 0.4854,
+    "medio": 0.7039,
+    "fuerte": 0.7039
+   }
+  },
+  "Escribir teclado.wav": {
+   "origen": "02 Clicks - textos/Escribir teclado.wav",
+   "duracion": 16.62,
+   "pico": 6.4,
+   "rms_db": -24.3,
+   "pico_db": -1.0,
+   "vol": {
+    "bajo": 0.7981,
+    "medio": 0.7981,
+    "fuerte": 0.7981
+   }
+  },
+  "Type Digital SFX.wav": {
+   "origen": "02 Clicks - textos/Type Digital SFX.wav",
+   "duracion": 17.23,
+   "pico": 0.58,
+   "rms_db": -10.2,
+   "pico_db": -0.9,
+   "vol": {
+    "bajo": 0.1859,
+    "medio": 0.2946,
+    "fuerte": 0.4162
+   }
+  },
+  "Glitch digital 05.wav": {
+   "origen": "03 Glitches/Glitch digital 05.wav",
+   "duracion": 0.47,
+   "pico": 0.11,
+   "rms_db": -12.5,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.2428,
+    "medio": 0.3847,
+    "fuerte": 0.5435
+   }
+  },
+  "Glitch digital 02.wav": {
+   "origen": "03 Glitches/Glitch digital 02.wav",
+   "duracion": 0.37,
+   "pico": 0.04,
+   "rms_db": -10.9,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.2017,
+    "medio": 0.3197,
+    "fuerte": 0.4516
+   }
+  },
+  "Glitch digital 06.wav": {
+   "origen": "03 Glitches/Glitch digital 06.wav",
+   "duracion": 0.42,
+   "pico": 0.15,
+   "rms_db": -12.0,
+   "pico_db": -2.7,
+   "vol": {
+    "bajo": 0.2271,
+    "medio": 0.3599,
+    "fuerte": 0.5084
+   }
+  },
+  "Glitch digital 04.wav": {
+   "origen": "03 Glitches/Glitch digital 04.wav",
+   "duracion": 0.44,
+   "pico": 0.06,
+   "rms_db": -12.8,
+   "pico_db": -3.6,
+   "vol": {
+    "bajo": 0.2488,
+    "medio": 0.3943,
+    "fuerte": 0.5569
+   }
+  },
+  "Glitch digital 01.wav": {
+   "origen": "03 Glitches/Glitch digital 01.wav",
+   "duracion": 0.45,
+   "pico": 0.21,
+   "rms_db": -8.7,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.1568,
+    "medio": 0.2485,
+    "fuerte": 0.3511
+   }
+  },
+  "Glitch digital 03.wav": {
+   "origen": "03 Glitches/Glitch digital 03.wav",
+   "duracion": 0.34,
+   "pico": 0.04,
+   "rms_db": -10.0,
+   "pico_db": -3.6,
+   "vol": {
+    "bajo": 0.1806,
+    "medio": 0.2863,
+    "fuerte": 0.4043
+   }
+  },
+  "Destello 05.wav": {
+   "origen": "04 Destellos y notificaciones/Destello 05.wav",
+   "duracion": 0.49,
+   "pico": 0.15,
+   "rms_db": -8.0,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.1443,
+    "medio": 0.2287,
+    "fuerte": 0.3231
+   }
+  },
+  "Notificacion digital 03.wav": {
+   "origen": "04 Destellos y notificaciones/Notificacion digital 03.wav",
+   "duracion": 0.35,
+   "pico": 0.09,
+   "rms_db": -14.5,
+   "pico_db": -3.1,
+   "vol": {
+    "bajo": 0.3037,
+    "medio": 0.4813,
+    "fuerte": 0.6798
+   }
+  },
+  "Destello 03.wav": {
+   "origen": "04 Destellos y notificaciones/Destello 03.wav",
+   "duracion": 0.54,
+   "pico": 0.0,
+   "rms_db": -11.6,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.2175,
+    "medio": 0.3448,
+    "fuerte": 0.487
+   }
+  },
+  "Notificacion digital 01.wav": {
+   "origen": "04 Destellos y notificaciones/Notificacion digital 01.wav",
+   "duracion": 0.48,
+   "pico": 0.11,
+   "rms_db": -8.5,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.1528,
+    "medio": 0.2422,
+    "fuerte": 0.342
+   }
+  },
+  "Destello 09.wav": {
+   "origen": "04 Destellos y notificaciones/Destello 09.wav",
+   "duracion": 0.69,
+   "pico": 0.0,
+   "rms_db": -12.3,
+   "pico_db": -2.2,
+   "vol": {
+    "bajo": 0.2367,
+    "medio": 0.3752,
+    "fuerte": 0.53
+   }
+  },
+  "Notificacion digital 05.wav": {
+   "origen": "04 Destellos y notificaciones/Notificacion digital 05.wav",
+   "duracion": 0.49,
+   "pico": 0.23,
+   "rms_db": -13.3,
+   "pico_db": -3.1,
+   "vol": {
+    "bajo": 0.2659,
+    "medio": 0.4214,
+    "fuerte": 0.5953
+   }
+  },
+  "Destello 02.wav": {
+   "origen": "04 Destellos y notificaciones/Destello 02.wav",
+   "duracion": 0.29,
+   "pico": 0.0,
+   "rms_db": -9.9,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.1799,
+    "medio": 0.2851,
+    "fuerte": 0.4027
+   }
+  },
+  "Camera Flash.wav": {
+   "origen": "05 Fotos - flash y shutter/Camera Flash.wav",
+   "duracion": 0.84,
+   "pico": 0.04,
+   "rms_db": -12.9,
+   "pico_db": -1.1,
+   "vol": {
+    "bajo": 0.2518,
+    "medio": 0.3992,
+    "fuerte": 0.5638
+   }
+  },
+  "Camera Shot.wav": {
+   "origen": "05 Fotos - flash y shutter/Camera Shot.wav",
+   "duracion": 0.54,
+   "pico": 0.13,
+   "rms_db": -16.6,
+   "pico_db": 1.0,
+   "vol": {
+    "bajo": 0.3892,
+    "medio": 0.6168,
+    "fuerte": 0.6302
+   }
+  },
+  "CameraShutterMotorized35mmShutters.wav": {
+   "origen": "05 Fotos - flash y shutter/CameraShutterMotorized35mmShutters.wav",
+   "duracion": 0.36,
+   "pico": 0.26,
+   "rms_db": -24.9,
+   "pico_db": -3.4,
+   "vol": {
+    "bajo": 1.0,
+    "medio": 1.0,
+    "fuerte": 1.0
+   }
+  },
+  "Switch 01.wav": {
+   "origen": "06 Varios/Interfaz y ventanas/Switch 01.wav",
+   "duracion": 0.61,
+   "pico": 0.11,
+   "rms_db": -19.4,
+   "pico_db": -0.0,
+   "vol": {
+    "bajo": 0.5376,
+    "medio": 0.7093,
+    "fuerte": 0.7093
+   }
+  },
+  "Ventana 16.wav": {
+   "origen": "06 Varios/Interfaz y ventanas/Ventana 16.wav",
+   "duracion": 0.4,
+   "pico": 0.34,
+   "rms_db": -13.0,
+   "pico_db": -2.9,
+   "vol": {
+    "bajo": 0.257,
+    "medio": 0.4074,
+    "fuerte": 0.5754
+   }
+  },
+  "Switch 04.wav": {
+   "origen": "06 Varios/Interfaz y ventanas/Switch 04.wav",
+   "duracion": 0.5,
+   "pico": 0.11,
+   "rms_db": -18.9,
+   "pico_db": 0.2,
+   "vol": {
+    "bajo": 0.5029,
+    "medio": 0.689,
+    "fuerte": 0.689
+   }
+  },
+  "Ventana 27.wav": {
+   "origen": "06 Varios/Interfaz y ventanas/Ventana 27.wav",
+   "duracion": 0.37,
+   "pico": 0.3,
+   "rms_db": -11.7,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.2209,
+    "medio": 0.3501,
+    "fuerte": 0.4945
+   }
+  },
+  "Ventana 20.wav": {
+   "origen": "06 Varios/Interfaz y ventanas/Ventana 20.wav",
+   "duracion": 0.23,
+   "pico": 0.15,
+   "rms_db": -12.3,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.2353,
+    "medio": 0.3729,
+    "fuerte": 0.5268
+   }
+  },
+  "Ventana 13.wav": {
+   "origen": "06 Varios/Interfaz y ventanas/Ventana 13.wav",
+   "duracion": 0.26,
+   "pico": 0.23,
+   "rms_db": -12.2,
+   "pico_db": -3.0,
+   "vol": {
+    "bajo": 0.2331,
+    "medio": 0.3694,
+    "fuerte": 0.5218
+   }
+  },
+  "Deep Bass Hit 1.wav": {
+   "origen": "06 Varios/Deep Bass Hit 1.wav",
+   "duracion": 2.61,
+   "pico": 0.09,
+   "rms_db": -6.7,
+   "pico_db": -0.1,
+   "vol": {
+    "bajo": 0.1243,
+    "medio": 0.1971,
+    "fuerte": 0.2783
+   }
+  },
+  "Boom 2.wav": {
+   "origen": "06 Varios/Boom 2.wav",
+   "duracion": 2.54,
+   "pico": 0.04,
+   "rms_db": -5.4,
+   "pico_db": -0.1,
+   "vol": {
+    "bajo": 0.1068,
+    "medio": 0.1693,
+    "fuerte": 0.2392
+   }
+  },
+  "Sub Bass Hit.wav": {
+   "origen": "06 Varios/Sub Bass Hit.wav",
+   "duracion": 1.52,
+   "pico": 0.0,
+   "rms_db": -3.9,
+   "pico_db": -0.0,
+   "vol": {
+    "bajo": 0.0898,
+    "medio": 0.1423,
+    "fuerte": 0.201
+   }
+  },
+  "04 Grand Hit B.wav": {
+   "origen": "06 Varios/04 Grand Hit B.wav",
+   "duracion": 5.74,
+   "pico": 0.28,
+   "rms_db": -5.1,
+   "pico_db": -0.0,
+   "vol": {
+    "bajo": 0.1032,
+    "medio": 0.1636,
+    "fuerte": 0.2311
+   }
+  },
+  "Golpe 17.wav": {
+   "origen": "06 Varios/Golpe 17.wav",
+   "duracion": 0.18,
+   "pico": 0.0,
+   "rms_db": -11.4,
+   "pico_db": -0.0,
+   "vol": {
+    "bajo": 0.2126,
+    "medio": 0.337,
+    "fuerte": 0.476
+   }
+  },
+  "Golpe 19.wav": {
+   "origen": "06 Varios/Golpe 19.wav",
+   "duracion": 0.14,
+   "pico": 0.0,
+   "rms_db": -12.0,
+   "pico_db": -0.0,
+   "vol": {
+    "bajo": 0.2271,
+    "medio": 0.3599,
+    "fuerte": 0.5084
+   }
+  },
+  "Golpe 12.wav": {
+   "origen": "06 Varios/Golpe 12.wav",
+   "duracion": 0.4,
+   "pico": 0.02,
+   "rms_db": -9.8,
+   "pico_db": -0.0,
+   "vol": {
+    "bajo": 0.1764,
+    "medio": 0.2796,
+    "fuerte": 0.395
+   }
+  },
+  "Golpe 20.wav": {
+   "origen": "06 Varios/Golpe 20.wav",
+   "duracion": 0.14,
+   "pico": 0.0,
+   "rms_db": -11.8,
+   "pico_db": 0.0,
+   "vol": {
+    "bajo": 0.2239,
+    "medio": 0.3548,
+    "fuerte": 0.5012
+   }
+  },
+  "Golpe 11.wav": {
+   "origen": "06 Varios/Golpe 11.wav",
+   "duracion": 0.43,
+   "pico": 0.02,
+   "rms_db": -9.8,
+   "pico_db": 0.0,
+   "vol": {
+    "bajo": 0.1772,
+    "medio": 0.2808,
+    "fuerte": 0.3967
+   }
+  },
+  "RISER.wav": {
+   "origen": "06 Varios/RISER.wav",
+   "duracion": 3.91,
+   "pico": 1.66,
+   "rms_db": -13.4,
+   "pico_db": -1.8,
+   "vol": {
+    "bajo": 0.268,
+    "medio": 0.4247,
+    "fuerte": 0.5999
+   }
+  },
+  "RELOJ.wav": {
+   "origen": "06 Varios/RELOJ.wav",
+   "duracion": 4.31,
+   "pico": 2.41,
+   "rms_db": -21.8,
+   "pico_db": -0.4,
+   "vol": {
+    "bajo": 0.7045,
+    "medio": 0.7448,
+    "fuerte": 0.7448
+   }
+  },
+  "Correct Answer sound effect.mp3": {
+   "origen": "06 Varios/Correct Answer sound effect.mp3",
+   "duracion": 1.72,
+   "pico": 0.65,
+   "rms_db": -15.7,
+   "pico_db": -8.1,
+   "vol": {
+    "bajo": 0.3484,
+    "medio": 0.5522,
+    "fuerte": 0.78
+   }
+  }
+ }
+}
